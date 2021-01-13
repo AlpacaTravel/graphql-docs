@@ -1,0 +1,46 @@
+# The below example provides a simple illustration of adding a fake place
+# to an itinerary with autoRoute enabled, and customising the auto-route
+# behaviour so that it uses an alternative mode of transport when adding.
+# There is further behaviours provided to extend auto-routing, but further
+# than this, you can leverage the createItineraryDirections mutations that
+# can support multi-modal transport, GPS sequences or further
+mutation CreateItineraryWithAutoRouteOptions {
+  # When creating an itinerary location
+  createItineraryLocation(
+    # Provide the itinerary to modify
+    itineraryId: "itinerary/ABC"
+
+    # Provide the location/place (dummy example)
+    location: {
+      place: {
+        # See how to reference and add locations properly
+        position: { lon: 123, lat: 45 }
+      }
+      # Supply specific attributes to customise this location
+      attrs: [
+        # Provide an alternative position to directions navigating to this location
+        # such as sending the user to the entrace for the location, or alternative
+        # [lon,lat]
+        {
+          id: "itinerary/location/directions-position-preference"
+          value: [123, 45.6]
+        }
+      ]
+    }
+
+    # Modify the auto route behaviour
+    autoRoute: {
+      mode: Foot
+      # Other options; positions, distance, duration, useRouteSearching...
+    }
+  ) {
+    cascaded {
+      # Read back what has been created when adding
+      created {
+        # Expecting ItineraryLocation and ItineraryDirections (auto route)
+        __typename
+        id
+      }
+    }
+  }
+}

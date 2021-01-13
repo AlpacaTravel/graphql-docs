@@ -1,8 +1,8 @@
 # Creates an Itinerary you can use for a wide range of use cases
-# Leverages the "createItinerary" mutation, capable of initialising
-# an itinerary, and reads back the identifier in order to make
-# further queries or mutations
+# such as lists or sequenced itieraries.
 mutation CreateItinerary {
+  # Leverages the "createItinerary" mutation operation to create
+  # an itinerary with some initial content
   createItinerary(
     # Supply the initial content about the itinerary
     itinerary: { title: "Basic Itinerary Example" }
