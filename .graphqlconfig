@@ -1,0 +1,12 @@
+{
+  "name": "Alpaca GraphQL",
+  "schemaPath": "./graphql.schema.json",
+  "extensions": {
+    "endpoints": {
+      "Remote GraphQL Endpoint": {
+        "url": "https://withalpaca.com/api/graphql",
+        "introspect": true
+      }
+    }
+  }
+}

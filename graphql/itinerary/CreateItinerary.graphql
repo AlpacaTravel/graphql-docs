@@ -1,0 +1,7 @@
+mutation CreateItinerary {
+  createItinerary(itinerary: { title: "Basic Itinerary Example" }) {
+    itinerary {
+      id
+    }
+  }
+}
