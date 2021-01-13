@@ -1,0 +1,17 @@
+# Creates an itinerary and associates it to the supplied profile ID
+# If you need to identify your profile ID, use the query authorizedProfiles
+
+mutation CreateItineraryAssociatedToProfile {
+  createItinerary(
+    # Provide the profile to assign the itinerary
+    profileId: "profile/ABC123"
+    # Initial itinerary content
+    itinerary: { title: "Itinerary associated to profile ID" }
+  ) {
+    # Read back the created itinerary
+    itinerary {
+      # Access the ID
+      id
+    }
+  }
+}

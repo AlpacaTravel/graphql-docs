@@ -1,9 +1,0 @@
-# Creates an anonymous itinerary with the title of "Example Itinerary"
-# Returns with the ID of the itinerary for further modifications (such as adding locations)
-mutation CreateAnonymousItinerary {
-  createItinerary(itinerary: { title: "Example Itinerary" }) {
-    itinerary {
-      id
-    }
-  }
-}
