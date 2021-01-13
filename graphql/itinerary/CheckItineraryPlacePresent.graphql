@@ -1,0 +1,19 @@
+# You may wish to check if a specific place has already been added to
+# an itinerary, such as indicating on a place that it is already added
+# to their itinerary.
+query CheckItineraryPlacePresent {
+  # Use the itinerary query, supplying the itinerary ID to check
+  itinerary(id: "itinerary/ABC123") {
+    # Query the descendants, providing some constraints
+    descendants(
+      # Provide the place identifiers to check
+      placeIds: ["place/123"]
+      # You may not need to read them back, but it suit..
+      first: 0
+    ) {
+      # Total Count should be greater than 0, as the place
+      # could be added more than once to an itinerary
+      totalCount
+    }
+  }
+}
