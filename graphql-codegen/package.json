@@ -1,0 +1,30 @@
+{
+  "name": "@alpaca-travel/graph-sdk-gists",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate": "graphql-codegen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlpacaTravel/graph-sdk-gists.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlpacaTravel/graph-sdk-gists/issues"
+  },
+  "homepage": "https://github.com/AlpacaTravel/graph-sdk-gists#readme",
+  "dependencies": {
+    "graphql": "^15.4.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.0",
+    "@graphql-codegen/fragment-matcher": "1.17.8",
+    "@graphql-codegen/introspection": "1.17.8",
+    "@graphql-codegen/typescript": "^1.17.8",
+    "@graphql-codegen/typescript-graphql-files-modules": "1.17.8",
+    "@graphql-codegen/typescript-operations": "1.17.8"
+  }
+}
