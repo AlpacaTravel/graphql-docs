@@ -1,0 +1,12 @@
+# Removes an itinerary
+
+mutation DeleteItinerary {
+  # Use the deleteItinerary operation to remove an itinerary
+  deleteItinerary(
+    # Supply your ID of the itinerary to remove (no undo)
+    id: "itinerary/ABC123"
+  ) {
+    # Select back the ID of the itinerary that was removed
+    id
+  }
+}

@@ -1,0 +1,30 @@
+# Reorder/move the itinerary location to the start of the sequence. Useful
+# depending on the way you reorder you drag-drop functionality. You can also
+# position using relative positional references, such as positionBeforeSibling
+# or positionAfterSibling if easier. If you are using multi-segment collections
+# you can optionally define using parentId property
+
+mutation MoveItineraryLocationToStartPosition {
+  # Use the moveItineraryItem operation to moving around locations
+  moveItineraryItem(
+    # Supply your itinerary item (or location)
+    id: "itinerary/ABC123"
+    # Determine the strategy to position the element
+    # Also includes options: positionAtEnd, position<After/Before>Sibling, etc
+    positionAtStart: {}
+  ) {
+    # Query back the affected items if necessary. Useful for determining any
+    # changes to directions if you are locally caching them
+    cascaded {
+      created {
+        id
+        __typename
+      }
+      updated {
+        id
+        __typename
+      }
+      deletedIds
+    }
+  }
+}

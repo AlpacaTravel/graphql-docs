@@ -1,0 +1,30 @@
+# Move an itinerary location to a relative position to another item in the
+# itinerary. You can leverage a query like this allowing the user to drag the
+# location to a position after another element, or specify it to be the first
+# in a collection by switching the position to positionAtStart.
+
+mutation MoveItineraryLocation {
+  # Use the moveItineraryItem operation to moving around locations
+  moveItineraryItem(
+    # Supply your itinerary item (or location)
+    id: "itinerary/ABC123/item/DEF456"
+    # Determine the strategy to position the element
+    # Also includes options: positionAtEnd, position<After/Before>Sibling,
+    # positionAtStart, positionOnLastCollection etc
+    positionAfterSibling: { siblingId: "itinerary/ABC123/item/SIBLING" }
+  ) {
+    # Query back the affected items if necessary. Useful for determining any
+    # changes to directions if you are locally caching them
+    cascaded {
+      created {
+        id
+        __typename
+      }
+      updated {
+        id
+        __typename
+      }
+      deletedIds
+    }
+  }
+}
