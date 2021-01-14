@@ -1,6 +1,7 @@
-# You may wish to check if a specific place has already been added to
-# an itinerary, such as indicating on a place that it is already added
-# to their itinerary.
+# You may wish to check if a specific place has already been added to an
+# itinerary, such as indicating on a place that it is already added to their
+# itinerary.
+
 query CheckItineraryPlacePresent {
   # Use the itinerary query, supplying the itinerary ID to check
   itinerary(id: "itinerary/ABC123") {
@@ -11,8 +12,8 @@ query CheckItineraryPlacePresent {
       # You may not need to read them back, but it suit..
       first: 0
     ) {
-      # Total Count should be greater than 0, as the place
-      # could be added more than once to an itinerary
+      # Total Count should be greater than 0, as the place could be added more
+      # than once to an itinerary
       totalCount
     }
   }

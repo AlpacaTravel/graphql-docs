@@ -1,0 +1,43 @@
+# Adds a location to an itinerary, also supplying additional positions to help
+# describe the location more accurately for a visiting user.
+
+mutation CreateItineraryLocationWithAdditionalPositions {
+  # Use the createItineraryLocation mutation operation
+  createItineraryLocation(
+    # Supply our Itinerary to add the item to
+    itineraryId: "itinerary/ABC123"
+    # Describe the location
+    location: {
+      # Ignore the place marker provided by Facebook, and instead use the
+      # following position preference.
+      position: { lon: 144.96849954128265, lat: -37.81827673774657 }
+      # Public Space, such as Federation Square in Melbourne
+      place: {
+        id: "facebook:page:fedsquare"
+        # This position is a fallback position in case Facebook does not respond
+        # with information about this place. The facebook supplied position
+        # will be obtained when querying this data in the future.
+        position: { lon: 144.96835184759, lat: -37.817885289542 }
+      }
+      # Add in some other meaningful attributes
+      attrs: [
+        # Provide an alternative position to directions navigating to this
+        # location such as sending the user to the entrace for the location, or
+        # alternative [lon,lat]
+        {
+          id: "itinerary/location/directions-position-preference"
+          value: [144.97072041034698, -37.8178826331262]
+        }
+      ]
+    }
+  ) {
+    # Select what we need from the itinerary or the result of the operation
+    cascaded {
+      created {
+        # Access the itinerary location ID as needed
+        __typename
+        id
+      }
+    }
+  }
+}

@@ -1,7 +1,6 @@
-# Uses a query with the supplied AccessToken/API Key in order to determine
-# the associated authorized profiles.
-# Note: This does not provice information about access control, such as
-# ability to read/write to these profiles
+# Uses a query with the supplied AccessToken/API Key in order to determine the
+# associated authorized profiles. Note: This does not provice information about
+# access control, such as ability to read/write to these profiles
 
 query AuthorizedProfiles {
   authorizedProfiles(first: 5) {

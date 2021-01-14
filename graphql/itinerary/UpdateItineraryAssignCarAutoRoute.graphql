@@ -1,6 +1,6 @@
-# Enable "auto-route" behaviour to an existing itinerary
-# Auto-route will assist users create itineraries with directions automatically
-# added between locations
+# Enable "auto-route" behaviour to an existing itinerary. Auto-route will assist
+# users create itineraries with directions automatically added between locations
+
 mutation UpdateItineraryAssignCarAutoRoute {
   # Use the updateItinerary to modify an existing itinerary
   updateItinerary(

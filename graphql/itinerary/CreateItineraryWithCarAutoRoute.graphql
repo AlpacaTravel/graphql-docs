@@ -1,7 +1,7 @@
-# Creates an itinerary, and configures it to assign automatic routes
-# Automatic routes will assist basic itineraries by sequentially linking
-# locations that are added with directions, providing information about
-# moving between these locations.
+# Creates an itinerary, and configures it to assign automatic routes. Automatic
+# routes will assist basic itineraries by sequentially linking locations that
+# are added with directions, providing information about moving between these
+# locations.
 
 mutation CreateItineraryWithCarAutoRoute {
   # When using the createItinerary mutation to create our itinerary

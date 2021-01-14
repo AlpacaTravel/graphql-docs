@@ -1,5 +1,5 @@
-# Creates an itinerary and associates it to the supplied profile ID
-# If you need to identify your profile ID, use the query authorizedProfiles
+# Creates an itinerary and associates it to the supplied profile ID. If you need
+# to identify your profile ID, use the query authorizedProfiles
 
 mutation CreateItineraryAssociatedToProfile {
   createItinerary(
