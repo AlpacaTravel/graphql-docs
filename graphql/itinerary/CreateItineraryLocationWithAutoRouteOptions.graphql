@@ -5,7 +5,7 @@
 # leverage the createItineraryDirections mutations that can support multi-modal
 # transport, GPS sequences or further
 
-mutation CreateItineraryWithAutoRouteOptions {
+mutation CreateItineraryLocationWithAutoRouteOptions {
   # When creating an itinerary location
   createItineraryLocation(
     # Provide the itinerary to modify
