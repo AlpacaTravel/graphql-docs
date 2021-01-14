@@ -13,7 +13,7 @@ mutation CreateItineraryLocationWithAdditionalPositions {
       position: { lon: 144.96849954128265, lat: -37.81827673774657 }
       # Public Space, such as Federation Square in Melbourne
       place: {
-        id: "facebook:page:fedsquare"
+        id: "place/facebook:page:fedsquare"
         # This position is a fallback position in case Facebook does not respond
         # with information about this place. The facebook supplied position
         # will be obtained when querying this data in the future.

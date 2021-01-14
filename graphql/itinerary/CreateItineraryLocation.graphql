@@ -15,7 +15,7 @@ mutation CreateItineraryLocation {
       # Link the location to a known place
       place: {
         # Referencing the place from Facebook
-        id: "facebook:page:mavisthegrocer"
+        id: "place/facebook:page:mavisthegrocer"
         # Providing the position lon/lat
         position: { lon: 144.99702, lat: -37.8031099 }
       }
