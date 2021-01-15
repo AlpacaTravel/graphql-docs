@@ -1,4 +1,4 @@
-# This example will modify an existing Itinerary by changing the title
+# Modify an existing Itinerary by changing the title
 
 mutation UpdateItineraryTitle {
   # Use the updateItinerary operation to modify the itinerary

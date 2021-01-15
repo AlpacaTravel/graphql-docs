@@ -1,6 +1,6 @@
 # Load information about a winery from Australian Tourism Data Warehouse
 
-query PlaceATDWWinery {
+query QueryPlaceATDWWinery {
   # use the place() query to load information about a specific winery
   place(id: "place/wineryABC123") {
     # Identifiers/Type

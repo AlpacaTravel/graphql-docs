@@ -1,0 +1,17 @@
+# Modify an existing collection location title
+
+mutation UpdateCollectionLocationTitle {
+  # use the updateCollectionLocation() operation
+  updateCollectionLocation(
+    # ID of record to update
+    id: "item/ABC123"
+    # Update the data for the location
+    location: { title: "New Title" }
+  ) {
+    # Query back data after the mutation for the response
+    location {
+      # Should now become "New Title"
+      title
+    }
+  }
+}

@@ -2,7 +2,7 @@
 # autocomplete style text query. Search includes highlighting for results
 # and summarising places into 2 main/secondary labels
 
-query PlaceAutocompleteSearchViaATDW {
+query SearchPlaceAutocompleteFromATDW {
   # use the placeAutocompleteSearch operation to query ATDW
   placeAutocompleteSearch(
     text: "Mavis the Grocer"

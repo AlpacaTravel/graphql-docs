@@ -3,7 +3,7 @@
 # relation to another place. Query the bearing, compass or distance to let
 # contextualise the position.
 
-query PlaceContextualOrientation {
+query QueryPlaceContextualOrientation {
   place(
     # A place (or any joined node as a place type)
     id: "place/ABC123"
@@ -21,7 +21,7 @@ query PlaceContextualOrientation {
     ) {
       # Provides a 360 degree bearing
       bearing
-      # Provides a 16-point compass (N,NE,E etc)
+      # Provides a 16-point compass (N, NNE, NE, ENE, E etc)
       compass
       # Provides a distance (line of sight), default metric unit
       # use distance(unit: <UNIT>) such as Feet, Miles, Kilometers etc to return
