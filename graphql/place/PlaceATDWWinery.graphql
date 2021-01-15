@@ -1,8 +1,8 @@
 # Load information about a winery from Australian Tourism Data Warehouse
 
 query PlaceATDWWinery {
-  # use the place() query to load information about a winery
-  place(id: "place/winery") {
+  # use the place() query to load information about a specific winery
+  place(id: "place/wineryABC123") {
     # Identifiers/Type
     id
     __typename
@@ -16,7 +16,7 @@ query PlaceATDWWinery {
       instagramUrl
       bookingsUrl
     }
-    # Required attribution for the place for ATDW
+    # Required attribution/tracking for the place for ATDW
     attribution {
       pixel
     }
