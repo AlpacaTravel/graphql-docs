@@ -1,7 +1,7 @@
 # Query the itinerary locations for an itinerary, and access basic information
 # about the place
 
-query QueryItineraryLocations {
+query QueryItineraryLocationsAsSimpleList {
   itinerary(
     # Supply the itinerary ID
     id: "itinerary/ABC123"
@@ -16,11 +16,23 @@ query QueryItineraryLocations {
     ) {
       edges {
         node {
+          # ID/Types
+          id
+          __typename
+          # Specific information drawn from the Itinerary Location
           ... on ItineraryLocation {
             # Query the itinerary location
             place {
               # Peel off what information we want from to show about the place
               name
+              # Take what level from the address we want
+              address {
+                locality
+              }
+              # Categories, like restaurant, hotel etc
+              layers {
+                name
+              }
             }
           }
         }

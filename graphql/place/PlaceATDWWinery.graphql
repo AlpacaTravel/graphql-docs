@@ -1,0 +1,70 @@
+# Load information about a winery from Australian Tourism Data Warehouse
+
+query PlaceATDWWinery {
+  # use the place() query to load information about a winery
+  place(id: "place/winery") {
+    # Identifiers/Type
+    id
+    __typename
+    # Basic information
+    name
+    description
+    # Various contact methods for the place
+    contact {
+      facebookUrl
+      twitterUrl
+      instagramUrl
+      bookingsUrl
+    }
+    # Required attribution for the place for ATDW
+    attribution {
+      pixel
+    }
+    # Address Information
+    address {
+      addressLineOne
+      locality
+      region
+      postalCode
+    }
+    # Geo Coordinates
+    position {
+      lon
+      lat
+    }
+    # Layers/Categories
+    layers {
+      name
+    }
+    # Wine specific attributes...
+    # There are many attributes that can be obtain about places which we have
+    # catalogued, this example draws from specific wine information
+    # Wine Varieties
+    wineVarieties: attr(id: "place/wine-varieties") {
+      value
+    }
+    # Wine Alternative Styles
+    wineAlternativeStyles: attr(id: "place/wine-alternative-styles") {
+      value
+    }
+    # Wine Viticultural Practices
+    wineViticulturalPractices: attr(
+      id: "place/winemaking-viticultural-practices"
+    ) {
+      value
+    }
+    # Some additional...
+    # Accreditations for Venue
+    accreditations: attr(id: "place/accreditations") {
+      value
+    }
+    # Cuisine Types
+    cuisineTypes: attr(id: "place/cuisine-types") {
+      value
+    }
+    # Accessibility
+    accessibility: attr(id: "place/accessibility") {
+      value
+    }
+  }
+}

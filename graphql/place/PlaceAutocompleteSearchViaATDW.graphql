@@ -1,0 +1,42 @@
+# Search the Australian Tourism Data Warehouse (ATDW) for places using an
+# autocomplete style text query. Search includes highlighting for results
+# and summarising places into 2 main/secondary labels
+
+query PlaceAutocompleteSearchViaATDW {
+  # use the placeAutocompleteSearch operation to query ATDW
+  placeAutocompleteSearch(
+    text: "Mavis the Grocer"
+    # Supply Australian Tourism Data Warehouse as source
+    sources: [AustralianTourismDataWarehouse]
+    # Provide the max number of records to return (differs by provider)
+    first: 5
+  ) {
+    edges {
+      node {
+        # Place Identifier/types
+        id
+        __typename
+        # obtain place information here...
+      }
+      # Autocomplete Matching
+      # Main label for place
+      main {
+        label
+        # Text matching for text highlighting on result
+        matches {
+          offset
+          length
+        }
+      }
+      # Secondary label for place (additional supporting text, 2nd line text)
+      secondary {
+        label
+        # Text maching for text highlighting on result
+        matches {
+          offset
+          length
+        }
+      }
+    }
+  }
+}
