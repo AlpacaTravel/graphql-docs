@@ -1,0 +1,26 @@
+# Creates a Collection Location within a collection
+
+mutation CreateCollectionLocation {
+  # use createCollectionLocation for this operation
+  createCollectionLocation(
+    # Supply the collection to place the collection location within
+    collectionId: "collection/ABC123"
+    # Supply the data for the location model
+    location: {
+      # Provide content for the collection item
+      title: "Mavis the Grocer"
+      # Synopsis, tags, description, media, website etc.
+      # Provide a reference to the place/position for the place location
+      place: {
+        id: "place/atdw:product:5cae80be57a096cd7084b6ab"
+        position: { lon: 144.9970825017, lat: -37.803058481 }
+      }
+    }
+  ) {
+    location {
+      # Returns with the collection location just created
+      id
+      __typename
+    }
+  }
+}

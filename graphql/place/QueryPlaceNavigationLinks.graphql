@@ -1,0 +1,13 @@
+# Queries a place to identify navigation links to generate URL's to send the
+# user to obtain navigation links using their preferred service
+
+query QueryPlaceNavigationLinks {
+  # use the place node
+  place(id: "place/ABC123") {
+    # Access what is needed from the place
+    title
+    # Generate out navigation urls based on different providers
+    google: navigationUrl(provider: Google)
+    apple: navigationUrl(provider: Apple)
+  }
+}
