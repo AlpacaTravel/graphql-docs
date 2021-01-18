@@ -2,7 +2,7 @@
 # associated authorized profiles. Note: This does not provice information about
 # access control, such as ability to read/write to these profiles
 
-query AuthorizedProfiles {
+query QueryAuthorizedProfiles {
   authorizedProfiles(first: 5) {
     nodes {
       id

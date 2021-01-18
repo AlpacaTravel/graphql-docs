@@ -40,3 +40,19 @@ Collection
 - [Query Collection Locations By Tag](example-operations/collection/QueryCollectionLocationsByTag.graphql)
 - [Query Collection Location With External Reference](example-operations/collection/QueryCollectionLocationWithExternalReference.graphql)
 - [Update Collection Location Add External Reference](example-operations/collection/UpdateCollectionLocationAddExternalReference.graphql)
+
+Place
+
+- [Search Place Autocomplete From ATDW](example-operations/place/SearchPlaceAutocompleteFromATDW.graphql)
+- [Search Place Reverse](example-operations/place/SearchPlaceReverse.graphql)
+- [Query Place ATDW Winery](example-operations/place/QueryPlaceATDWWinery.graphql)
+- [Query Place Contextual Orientation](example-operations/place/QueryPlaceContextualOrientation.graphql)
+- [Query Place Navigation Links](example-operations/place/QueryPlaceNavigationLinks.graphql)
+
+Route
+
+- [Query Routes Between Positions](example-operations/route/QueryRoutesBetweenPositions.graphql)
+
+Profile
+
+- [Query Authorized Profiles](example-operations/profile/QueryAuthorizedProfiles.graphql)
