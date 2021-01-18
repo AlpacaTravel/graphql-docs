@@ -1,0 +1,32 @@
+# Queries for collection locations from a collection by a supplied tag. This
+# will take a supplied collection ID and look for items that have the tag of
+# "my-tag" present. This is a basic filtering capability based on tagging items
+# within groups.
+
+query QueryCollectionLocationsByTag {
+  # use collectionItems() operation
+  collectionItems(
+    # Specify the collection ID
+    collectionIds: "collection/ABC123"
+    # Specify the tag to include
+    tags: "my-tag"
+    # Pagination controls for relay "cursor connections"
+    # See: https://relay.dev/graphql/connections.htm
+    first: 10 #, after: <cursor>
+  ) {
+    edges {
+      node {
+        # Returned records
+        id
+        __typename
+        # Access whatever we want here about the items
+        ... on CollectionLocation {
+          title
+        }
+      }
+      # Use the cursor and supply to "after" in operation to paginate
+      cursor
+    }
+    totalCount
+  }
+}

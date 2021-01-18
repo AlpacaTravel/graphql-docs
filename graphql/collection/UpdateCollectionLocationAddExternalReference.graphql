@@ -1,0 +1,27 @@
+# Update a record to store a corresponding identifier in an external system
+
+mutation UpdateCollectionLocationAddExternalReference {
+  # use the updateCollectionItem
+  updateCollectionLocation(
+    # Supply the ID for the record
+    id: "item/ABC123"
+    # Update the location data
+    location: {
+      # Use upsert to insert/update a record
+      upsertAttrs: [
+        # Supply an external ID for this record
+        { id: "custom://external-id", value: "my-reference-UUID" }
+      ]
+    }
+  ) {
+    # Query back the location updated
+    location {
+      id
+      __typename
+      # Attribute will now exist on the collection item
+      externalId: attr(id: "custom://external-id") {
+        value
+      }
+    }
+  }
+}
