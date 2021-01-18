@@ -25,6 +25,11 @@
     "@graphql-codegen/introspection": "1.17.8",
     "@graphql-codegen/typescript": "^1.17.8",
     "@graphql-codegen/typescript-graphql-files-modules": "1.17.8",
-    "@graphql-codegen/typescript-operations": "1.17.8"
+    "@graphql-codegen/typescript-operations": "1.17.8",
+    "remark": "^8.0.0",
+    "remark-shortcodes": "^0.3.1",
+    "unified": "^9.2.0",
+    "unified-stream": "^1.0.6",
+    "unist-util-visit": "^2.0.3"
   }
 }

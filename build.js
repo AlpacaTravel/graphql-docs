@@ -15,7 +15,11 @@ function attacher() {
     visit(tree, "shortcode", function (node, index, parent) {
       if (node.identifier === "CodeBlock") {
         const { src } = node.attributes;
-        const resolved = path.resolve(__dirname, "../graphql", src);
+        const resolved = path.resolve(
+          __dirname,
+          "./graphql-example-operations",
+          src
+        );
         const contents = fs.readFileSync(resolved, "utf-8");
 
         parent.children.splice(index, 1, {

@@ -3,13 +3,13 @@ overwrite: true
 generates:
   # Schema for general autocomplete
   # Place this at the root of your project
-  ../graphql.schema.json:
+  ./graphql.schema.json:
     schema: "https://withalpaca.com/api/graphql"
     plugins:
       - "introspection"
   ./types.ts:
     schema: "https://withalpaca.com/api/graphql"
-    documents: "../graphql/**/*.graphql"
+    documents: "graphql-example-operations/**/*.graphql"
     plugins:
       - "typescript"
       - "typescript-operations"
