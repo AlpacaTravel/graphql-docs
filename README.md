@@ -56,3 +56,32 @@ Route
 Profile
 
 - [Query Authorized Profiles](example-operations/profile/QueryAuthorizedProfiles.graphql)
+
+## Contributing
+
+We are happy to accept pull-requests, suggestions and corrections.
+
+We have quality control mechanisms to assist in keeping the documentation is
+kept maintained. This includes GitHub actions to validate site links as well
+as valid GraphQL examples (in both .graphql files and featuring in markdown).
+
+Sections such as the [reference](reference/README.md) is managed external to
+this repository and can't be changed. In that case, please describe the change
+to us in an Issue, and we will resolve.
+
+### Quick Edits
+
+You can make quick edits through GitHub by using the pencil :pencil2 edit
+process and submit a pull request.
+
+### Further Edits
+
+Alternatively, you can pull down the git repo to make your changes. You can
+check your changes by using the following commands:
+
+```
+npm i
+npm run graphql-codegen
+npm run test:markdown-links
+npm run test:markdown-graphql
+```
