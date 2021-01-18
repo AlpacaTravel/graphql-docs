@@ -11,6 +11,7 @@ const [, , file] = process.argv;
 if (!file) {
   throw new Error("Provide the target file");
 }
+console.log(`Reviewing file: ${file}`);
 
 // Obtain the markdown contents
 const sourceFileResolved = path.resolve(__dirname, file);
@@ -22,6 +23,7 @@ function validator() {
   function transformer(tree) {
     visit(tree, "link", function (node) {
       const { url } = node;
+      console.log(`Validating url: ${url}`);
       // Local reference
       if (/^(?!www\.|(?:http|ftp)s?:\/\/|[A-Za-z]:\\|\/\/).*/.test(url)) {
         const resolvedLink = path.resolve(
@@ -29,7 +31,8 @@ function validator() {
           url
         );
         if (!fs.existsSync(resolvedLink)) {
-          throw new Error(`Link unresolveable: ${url} - ${resolvedLink}`);
+          console.error(`Link unresolveable: ${url} - ${resolvedLink}`);
+          process.exit(255);
         }
       }
     });

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "generate": "graphql-codegen",
-    "test:links": "node validate-links.js README.md"
+    "test:links": "find ./ -not -path \"./node_modules/*\" -type f -name \"*.md\" -print0 | xargs -0 -n 1 node validate-links.js"
   },
   "repository": {
     "type": "git",
