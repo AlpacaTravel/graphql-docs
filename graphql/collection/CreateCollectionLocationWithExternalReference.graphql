@@ -1,0 +1,37 @@
+# Creates a collection location with a reference to an external primary key
+# reference, so that we can track ID's to synchronize data between platforms.
+# We leverage a named attribute that is supported for querying items and
+# obtaining locations from a collection based on their external references.
+
+mutation CreateCollectionWithExternalReference {
+  # use the standard createCollectionLocation
+  createCollectionLocation(
+    # Supply the collection to place the location within
+    collectionId: "collection/ABC123"
+    # Supply the collection location
+    location: {
+      # Content about the location
+      title: "Dr. Morse Cafe"
+      # Supply the place data
+      place: { position: { lon: 144.99414682388306, lat: -37.79990202116163 } }
+      # Leverage Attributes to extend the data stored and accessible for the
+      # location
+      attrs: [
+        # Track the ID from my platform into the "custom://external-ref". This
+        # is a recognised attribute that can be later used to find the matching
+        # collection location based on your own IDs
+        { id: "custom://external-ref", value: "my-external-UUID" }
+        # Support for external sources, also for grouping together multiple
+        # different sources. Can be used to query all records from a specific
+        # source later using the query collectionItems()
+        { id: "custom://external-source", value: "example.com" }
+      ]
+    }
+  ) {
+    # Confirm the ID that is created
+    location {
+      id
+      __typename
+    }
+  }
+}

@@ -1,0 +1,32 @@
+# Queries collection items based on a ID within an external platform. When
+# creating locations, you can set the attributes custom://external-ref and
+# custom://external-source in order to store identifiers and sources of your
+# platform. This enables you to reference and query items through your own
+# ID scheme. External Ref is intended to be used on a 'per record' ID, where
+# External source is to reference the source of all records, and can therefore
+# differentiate multiple sources of data and potentially overlapping IDs
+
+query QueryCollectionLocationWithExternalReference {
+  collectionItems(
+    # Query the collection
+    collectionIds: "collection/ABC123"
+    # Query the external ID's supplied
+    customExternalRefs: ["my-external-UUID", "my-other-external-UUID"]
+    # Query a specific website source
+    customExternalSources: ["example.com"]
+    # Pagination controls for relay "cursor connections"
+    # See: https://relay.dev/graphql/connections.htm
+    first: 10 #, after: <cursor>
+  ) {
+    edges {
+      node {
+        # Matching collection item
+        id
+        __typename
+      }
+      # Use the cursor and supply to "after" in operation to paginate
+      cursor
+    }
+    totalCount
+  }
+}
