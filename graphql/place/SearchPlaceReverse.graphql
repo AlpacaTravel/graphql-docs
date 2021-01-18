@@ -1,6 +1,6 @@
 # Queries a position and returns with matching places
 
-query QueryPlaceReverse {
+query SearchPlaceReverse {
   # Use placeReverseSearch to identify places near
   placeReverseSearch(
     # Set the focus position
