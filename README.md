@@ -71,7 +71,7 @@ to us in an Issue, and we will resolve.
 
 ### Quick Edits
 
-You can make quick edits through GitHub by using the pencil :pencil2 edit
+You can make quick edits through GitHub by using the pencil :pencil2: edit
 process and submit a pull request.
 
 ### Further Edits
