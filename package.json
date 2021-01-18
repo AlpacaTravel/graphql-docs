@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generate": "graphql-codegen"
+    "generate": "graphql-codegen",
+    "test:links": "node validate-links.js README.md"
   },
   "repository": {
     "type": "git",

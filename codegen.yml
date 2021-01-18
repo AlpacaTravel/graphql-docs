@@ -9,7 +9,7 @@ generates:
       - "introspection"
   ./types.ts:
     schema: "https://withalpaca.com/api/graphql"
-    documents: "graphql-example-operations/**/*.graphql"
+    documents: "example-operations/**/*.graphql"
     plugins:
       - "typescript"
       - "typescript-operations"
