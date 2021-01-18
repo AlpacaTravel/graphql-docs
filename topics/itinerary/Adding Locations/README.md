@@ -49,8 +49,3 @@ We also support the use custom data to contain further positions that you wish
 to store and leverage in you use case.
 
 #### Adding custom Read More URL's
-
-#### Additional Resources
-
-- [Creating an Itinerary](/reference/graphql-api/topics/itinerary/creating-an-itinerary)
-- Adding Custom Data
