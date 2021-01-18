@@ -6,6 +6,43 @@ and travel applications.
 This project contains some of the reference documentation that is used to
 support developers integrating to the API.
 
+## Getting Started
+
+GraphQL is a flexible data query language that allows you to design queries that
+match your use case. Opposed to making several REST API requests, you can make a
+single query to obtain the data you need.
+
+If you are new to GraphQL, the following educational resources may be helpful as
+a starting point.
+
+- [Introduction to GraphQL](https://graphql.org/learn/)
+- [How to GraphQL](https://www.howtographql.com/)
+- [Guides and Best Practices](https://www.graphql.com/guides/)
+- [GraphQL Clients](https://graphql.org/graphql-js/graphql-clients/)
+
+### Endpoint URL
+
+In order to interact with GraphQL, you will need to use the following root
+endpoint:
+
+```
+https://withalpaca.com/api/graphql?accessToken=xxx
+```
+
+When using the root endpoint, it is important to authenticate via providing your
+access token (which is your API Key) as a query parameter.
+
+#### GraphQL Playground
+
+GraphQL offers an introspection capability with a defined schema. This helps you
+develop the query that suits your specific use case or technical needs without
+having to go through a lot of API Documentation. Through the GraphQL Playground,
+you can try out your queries and mutations directly onto the GraphQL
+environment.
+
+Visit the [GraphQL Playground](https://withalpaca.com/api/graphql). Remember to
+add your `?accessToken=` to the URL
+
 ## Example Operations
 
 As a series of gists to common requirements, a section of example GraphQL
