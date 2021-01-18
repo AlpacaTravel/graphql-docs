@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "graphql-codegen": "graphql-codegen",
-    "graphql-schema-reference": "graphql-markdown https://withalpaca.com/api/graphql > reference/schema.md",
+    "graphql-schema-reference": "graphql-markdown https://withalpaca.com/api/graphql > reference/README.md",
     "test:markdown-links": "find ./ -not -path \"./node_modules/*\" -type f -name \"*.md\" -print0 | xargs -0 -n 1 node validate-links.js",
     "test:markdown-graphql": "find ./ -not -path \"./node_modules/*\" -type f -name \"*.md\" -print0 | xargs -0 -n 1 node validate-graphql.js"
   },
