@@ -18,8 +18,40 @@ Locations contain the content and information about a particular place on earth.
 Our itineraries can add specific information to contextualise a visit to this
 location, as well as supply information about the physical place itself.
 
-```graphql-github
-itinerary/CreateItineraryLocation.graphql
+```graphql
+# Add a location to our itinerary, associating the place to Mavis The Grocer
+# using the Facebook Page identifier. Once the location is added to the
+# itinerary, we query back the create items on the itinerary.
+
+mutation CreateItineraryLocation {
+  # Use the createItineraryLocation mutation operation
+  createItineraryLocation(
+    # Supply our Itinerary to add the item to
+    itineraryId: "itinerary/ABC123"
+    # Describe the location
+    location: {
+      # Provide some optional content to personalise the itinerary
+      title: "Grab a coffee"
+      synopsis: "Nearby, we can find Mavis the Grocer open most days"
+      # Link the location to a known place
+      place: {
+        # Referencing the place from Facebook
+        id: "place/facebook:page:mavisthegrocer"
+        # Providing the position lon/lat
+        position: { lon: 144.99702, lat: -37.8031099 }
+      }
+    }
+  ) {
+    # Select what we need from the itinerary or the result of the operation
+    cascaded {
+      created {
+        # Access the itinerary location ID as needed
+        __typename
+        id
+      }
+    }
+  }
+}
 ```
 
 If you leave the place.id field empty, you'll need to supply all the information

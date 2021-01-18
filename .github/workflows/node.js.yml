@@ -26,5 +26,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: npm ci
-      - run: npm run test:links
       - run: npm run graphql-codegen
+      - run: npm run test:markdown-links
+      - run: npm run test:markdown-graphql
