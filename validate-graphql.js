@@ -48,6 +48,10 @@ const tree = unified()
     Promise.all(
       nodes.map((node) => {
         return new Promise((success, fail) => {
+          if (node.lang !== "graphql") {
+            success();
+            return;
+          }
           const doc = parser(node.value);
           const errors = validate(graphqlSchemaObj, doc);
           if (errors.length) {
