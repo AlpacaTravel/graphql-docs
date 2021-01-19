@@ -19,6 +19,7 @@ a starting point.
 - [How to GraphQL](https://www.howtographql.com/)
 - [Guides and Best Practices](https://www.graphql.com/guides/)
 - [GraphQL Clients](https://graphql.org/graphql-js/graphql-clients/)
+- [Awesome GraphQL](https://github.com/chentsulin/awesome-graphql)
 
 ### Endpoint URL
 
