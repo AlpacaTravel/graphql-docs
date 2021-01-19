@@ -43,6 +43,25 @@ environment.
 Visit the [GraphQL Playground](https://withalpaca.com/api/graphql). Remember to
 add your `?accessToken=` to the URL
 
+## Topics
+
+The following sections can help you become familiar with the GraphQL API for
+your purposes.
+
+JavaScript
+
+- [Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)
+
+Itinerary
+
+- [Adding Locations](topics/itinerary/Adding%20Locations/README.md)
+
+More coming soon
+
+## Tutorials
+
+Coming soon
+
 ## Example Operations
 
 As a series of gists to common requirements, a section of example GraphQL
@@ -93,6 +112,10 @@ Route
 Profile
 
 - [Query Authorized Profiles](example-operations/profile/QueryAuthorizedProfiles.graphql)
+
+# GraphQL Schema Reference
+
+You can [review the reference schema documentation](reference/README.md).
 
 ## Contributing
 

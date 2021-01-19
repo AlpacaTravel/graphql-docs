@@ -31,7 +31,7 @@ function validator() {
       ) {
         const resolvedLink = path.resolve(
           path.resolve(sourceFileResolved, ".."),
-          url
+          url.replace(/%20/g, " ")
         );
         if (!fs.existsSync(resolvedLink)) {
           console.error(`Link unresolveable: ${url} - ${resolvedLink}`);
