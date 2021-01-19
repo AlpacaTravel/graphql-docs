@@ -1,15 +1,47 @@
-# Making GraphQL Calls
+# Making GraphQL Calls using JavaScript
+
+> GraphQL is easy to call in a number of technologies because underlying it is
+> simply a HTTP call encapsulating your query.
 
 GraphQL is sent as JSON across HTTP. This makes it possible for many different
 languages and frameworks capable of being able to execute GraphQL calls to
 the Alpaca Travel GraphQL API.
 
+A number of languages and frameworks already offer tools to connect and make
+calling GraphQL easy. See this
+[Awesome GraphQL](https://github.com/chentsulin/awesome-graphql) list to see
+alternatives.
+
+## Considering choices
+
+For basic requirements, consider using:
+
+- Fetch (native for browsers - see below)
+- [GraphQL Request](https://github.com/prisma-labs/graphql-request)
+
+For comprehensive requirements, consider using:
+
+- [urql](https://formidable.com/open-source/urql/docs/)
+- [Apollo](https://www.apollographql.com/)
+- [Relay](https://relay.dev/)
+
+## Requirements for configuring clients
+
+For all the clients, you will need to configure your GraphQL Root Endpoint.
+
+GraphQL will send queries and mutations to a single end-point. As such, the only
+configuration that is required in order to send and receive will be the root
+end-point.
+
+`https://withalpaca.com/api/graphql?accessToken=<YOUR_API_KEY>`
+
 ## Getting Started using Fetch
 
-The Fetch API provides a JavaScript interface to making requests and reading
-responses. Fetch is [widely](https://caniuse.com/#feat=fetch) supported on
-modern browsers and provides a replacement for the older XMLHttpRequest style
-requests.
+> The Fetch API provides a JavaScript interface to making requests and reading
+> responses.
+
+Fetch is [widely](https://caniuse.com/#feat=fetch) supported on modern browsers
+and provides a replacement for the older XMLHttpRequest style requests.
 
 You can develop your query using the
 [GraphQL Playground](https://withalpaca.com/api/graphql) and then update your
@@ -133,6 +165,9 @@ function Example() {
 export default Example;
 ```
 
-A working example is shared on the codesandbox below:
+# React / Apollo Code Sandbox
+
+A working example is shared on the codesandbox for you to start playing around
+with without having to worry about setting up your environment.
 
 [Simple apollo and react demo](https://codesandbox.io/s/alpaca-graphql-with-apollo-boost-xky2i?file=/src/Items.js)
