@@ -113,7 +113,7 @@ import { gql } from "apollo-boost";
 
 // Example query will obtain items from a collection from Alpaca
 const COLLECTION_ITEMS = /* GraphQL */ gql`
-  {
+  query {
     collectionItems(
       # Obtain the first 5 records
       first: 5
@@ -128,14 +128,18 @@ const COLLECTION_ITEMS = /* GraphQL */ gql`
         synopsis
         # The preferred media to use (will pick uploaded or place)
         preferredMedia {
-          # Chose a thumbnail that covers the 100x100 width/height
-          thumbnail: source(bestFit: [100, 100]) {
-            url
-            width
-            height
+          resource {
+            ... on MediaImage {
+              # Chose a thumbnail that covers the 100x100 width/height
+              thumbnail: source(bestFit: [100, 100]) {
+                url
+                width
+                height
+              }
+              # Text for images
+              altText
+            }
           }
-          # Text for images
-          altText
         }
       }
     }
@@ -152,8 +156,8 @@ function Example() {
     ({ id, title, synopsis, preferredMedia }) => (
       <div key={id}>
         <img
-          altText={preferredMedia.altText}
-          url={preferredMedia.thumbnail.url}
+          altText={preferredMedia.resource.altText}
+          url={preferredMedia.resource.thumbnail.url}
         />
         <h2>{title}</h2>
         <p>{synopsis}</p>
