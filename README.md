@@ -18,23 +18,16 @@ services.
 
 We are offering the Alpaca Travel services to assist you do things like:
 
-- Access content and leverage the capabilities of Alpaca Travel into your app
-  or website :relieved: :rocket:
-- Manage and access place information as your own powerful place database
-  :performing_arts::hotel::ferris_wheel::mount_fuji:
-- Build applications to help users plan favourites, tracks and trails, trips and
-  itineraries :bookmark::pencil2:
-- Access capabilities such as searching routes, building isochrones, uploading
-  and resizing media :hammer: :wrench:
-- Leverage integrations into a growing list of 3rd party place providers
-  (including OpenStreetMap, Who's on First, Facebook, Yelp, Foursquare, Zomato,
-  TripAdvisor, Australian Tourism Data Warehouse [atdw] and more) :blue_book:
-  :round_pushpin:
-- Leverage GIS Capabilities to help power maps (GeoJSON/Polylines and Vector
-  Tiles) :earth_africa: :earth_americas: :earth_asia: to visualise
-  and context travel content
-- Leverage our content management system and create your own front-end and
-  interactive experiences :v::thumbsup::metal:
+- A powerful **places database** to power your website or application information
+- A service to build your own users **trip planning services**, such as favorites lists or complex multi-day itineraries
+- A service to access many **tracks, trails, trips and itineraries** authored on the Alpaca Travel platform
+- A **powerful toolkit** of related services to build travel applications, including accessing routing, travel information, media management, nearby services and more
+- Out of the box place **provider integration services** to access and keep your information up to date
+- **GIS mapping services** to display maps and create interactive content with higher engagement
+- **Platform as a service** capabilities, including CDN, image resizing/optimisation, vector tile creation and hosting with uptime SLAs
+- **Export** data capabilities to PDF, GPX, KML, GeoJSON, Polyline and more
+- Built on **GraphQL** to leverage a great data experience
+- Backed by ongoing active research and development and commercial support
 
 At [Alpaca Travel](https://alpaca.travel), we leverage the API for building our
 editor and client applications. We will be continuing to add capabilities and
