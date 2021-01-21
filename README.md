@@ -1,16 +1,25 @@
+<div align="center">
+  <img alt="Developer Documentation" src="https://developer.alpacamaps.com/_media/logo.svg" height="75" width=75 />
+</div>
+
 # Alpaca Travel GraphQL
 
 Alpaca Travel offers an GraphQL API for developers to build tourism websites
 and travel applications.
 
-This project contains some of the reference documentation that is used to
-support developers integrating to the API.
+We are offering documentation within this
 
 ## Getting Started
 
 GraphQL is a flexible data query language that allows you to design queries that
 match your use case. Opposed to making several REST API requests, you can make a
 single query to obtain the data you need.
+
+### New to GraphQL?
+
+GraphQL is sent as JSON using a standard HTTP request. This makes it possible
+for many different languages and frameworks capable of being able to execute
+GraphQL calls to the Alpaca Travel GraphQL API.
 
 If you are new to GraphQL, the following educational resources may be helpful as
 a starting point.
@@ -42,6 +51,25 @@ environment.
 
 Visit the [GraphQL Playground](https://withalpaca.com/api/graphql). Remember to
 add your `?accessToken=` to the URL
+
+## Authentication
+
+You will need to obtain your API Key in order to authenticate your application
+when making calls to GraphQL. We accept the API Key as an `?accessToken=` query
+parameter.
+
+### Authorisation
+
+Your API Key will have different read and write scopes, depending on when it is
+created. By default, Alpaca Travel offers both private and public API Keys. A
+private API Key will enable the application to perform mutations on profiles
+it has been assigned, where the public API Key is read only access to content.
+
+### Obtaining your API Key
+
+Your API Key is available by request during our BETA testing phase. Please
+contact us via <sayhello@alpaca.travel> or following the URL
+<https://alpaca.travel>
 
 ## Topics
 
