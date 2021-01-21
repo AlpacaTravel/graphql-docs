@@ -2,7 +2,7 @@
   <img alt="Developer Documentation" src="https://developer.alpacamaps.com/_media/logo.svg" height="75" width=75 />
 </div>
 
-# Alpaca Travel GraphQL
+# Alpaca Travel GraphQL API Documentation
 
 > [Alpaca Travel](https://alpaca.travel) offers an GraphQL API for developers to
 > build tourism websites and travel applications.
