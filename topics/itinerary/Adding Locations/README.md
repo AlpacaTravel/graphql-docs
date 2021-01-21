@@ -1,4 +1,4 @@
-### Adding Locations to Itineraries
+# Adding Locations to Itineraries
 
 Using GraphQL, you can locations to your itinerary.
 
@@ -6,13 +6,13 @@ Locations added to an itinerary contain information for the audience such as the
 place they are visiting, as well as any personalised content about that location
 (such as stories/phgotos or supplying reasons to visit the place).
 
-#### Prerequisits
+## Prerequisits
 
 - You'll need an itinerary you want to add to and locate the Itinerary ID
 - The itinerary will need to be unassigned to a profile, or you'll need your
   private API Key
 
-#### Adding an place
+## Adding an place
 
 Locations contain the content and information about a particular place on earth.
 Our itineraries can add specific information to contextualise a visit to this
@@ -58,7 +58,53 @@ If you leave the place.id field empty, you'll need to supply all the information
 about the place. If you have supplied a place.id, we will using this to join on
 information about this place when you query the itinerary.
 
-#### Preferred Positions
+## Checking if the place is present already in an Itinerary
+
+You may also wish to first check whether a place is present within an itinerary,
+so that you don't have the user add the place in the itinerary twice. This is
+often useful for if you want to design an "Add to favourites" button, that might
+inform the user the place has already been added and there is no reason to add
+it again.
+
+Note: There is no limit to adding the same place multiple times. This can
+capture itineraries where the user may return to locations/places at different
+times and is therefore a design feature.
+
+Using a query, you can request to query the itinerary based on the supplied
+place ID.
+
+```graphql
+# Checks whether a place has been added to an itinerary, for creating a button
+# state on an "Add to Itinerary" button. If a result is returned, you may then
+# want to indicate to the user it is already present in their itinerary, or
+# offer them to remove it. You can pass the matching itinerary location ID that
+# has this place associated from this query to the deleteItineraryItem operation
+
+query CheckItineraryPlacePresent {
+  # Use the itinerary query, supplying the itinerary ID to check
+  itinerary(id: "itinerary/ABC123") {
+    # Query the descendants, providing some constraints
+    descendants(
+      # Provide the place identifiers to check
+      placeIds: ["place/123"]
+      # You may support adding a place multiple times, but for most reading
+      # back one will be enough
+      first: 1
+    ) {
+      nodes {
+        # Obtain the ID, so we can remove this location using the operation
+        # deleteItineraryItem() to remove the item from the itinerary.
+        id
+      }
+      # Total Count should be greater than 0, as the place could be added more
+      # than once to an itinerary
+      totalCount
+    }
+  }
+}
+```
+
+## Advanced: Preferred Positions
 
 The Location can also contain other positions that can assist with presenting
 the location to the user.
@@ -79,5 +125,3 @@ an attribute to the location with the ID of
 
 We also support the use custom data to contain further positions that you wish
 to store and leverage in you use case.
-
-#### Adding custom Read More URL's

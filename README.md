@@ -28,6 +28,7 @@ a starting point.
 - [How to GraphQL](https://www.howtographql.com/)
 - [Guides and Best Practices](https://www.graphql.com/guides/)
 - [GraphQL Clients](https://graphql.org/graphql-js/graphql-clients/)
+- [Awesome GraphQL](https://github.com/chentsulin/awesome-graphql)
 
 ### Endpoint URL
 
@@ -35,11 +36,11 @@ In order to interact with GraphQL, you will need to use the following root
 endpoint:
 
 ```
-https://withalpaca.com/api/graphql?accessToken=xxx
+https://withalpaca.com/api/graphql?accessToken=<YOUR_API_KEY>
 ```
 
 When using the root endpoint, it is important to authenticate via providing your
-access token (which is your API Key) as a query parameter.
+`accessToken` (which is your API Key) as a query parameter.
 
 #### GraphQL Playground
 
@@ -82,13 +83,21 @@ JavaScript
 
 Itinerary
 
+- [Creating an itinerary](topics/itinerary/Creating%20an%20itinerary/README.md)
+- [Checking if a place is within an itinerary](topics/itinerary/Checking%20if%20a%20place%20is%20within%20an%20itinerary/README.md)
 - [Adding Locations](topics/itinerary/Adding%20Locations/README.md)
+- [Automatic Routing](topics/itinerary/Automatic%20Routing/README.md)
 
 More coming soon
 
 ## Tutorials
 
-Coming soon
+React
+
+- [Connecting to Apollo Boost](tutorials/react/Connecting%20to%20Apollo%20Boost/README.md)
+- [Connecting to URQL](tutorials/react/Connecting%20URQL/README.md)
+
+More Coming soon
 
 ## Example Operations
 
