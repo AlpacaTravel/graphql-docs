@@ -26,7 +26,9 @@ function validator() {
       console.log(`Validating url: ${url}`);
       // Local reference
       if (
-        /^(?!www\.|(?:http|ftp)s?:\/\/|[A-Za-z]:\\|\/\/).*/.test(url) &&
+        /^(?!www\.|(?:http|ftp|mailto)s?:(\/\/)?|[A-Za-z]:\\|\/\/).*/.test(
+          url
+        ) &&
         !/^#/.test(url)
       ) {
         const resolvedLink = path.resolve(
