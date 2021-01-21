@@ -50,7 +50,7 @@ supporting information on GraphQL and why it is used below.
 - **[Tutorials](#tutorials)** - We will also be expanding on examples and topics
   to create series in the form of [tutorials](#tutorials) to expand upon
   concepts and create complete working examples.
-- **[Example Sandboxes](#example-code-sandboxes)** - We have provided some
+- **[Example Applications](#example-applications)** - We have provided some
   working examples of apps for you to play and adapt that demonstrates the
   technology in use.
 
@@ -160,17 +160,17 @@ React
 
 More Coming soon
 
-## Example code sandboxes
+## Example Applications
 
 We have included some example stand-alone code that you can use to build upon
 in order to display content from the Alpaca Travel service.
 
-These are provided as working examples you can modify for your own uses and
-can run and modify the code base on your browser.
+These are provided as working examples you can modify for your own uses.
 
-- [React loading place cards](https://codesandbox.io/s/alpaca-travel-collection-location-sliding-cards-2kpjt?file=/src/components/Slider.js)
-  Example loading a sliding carousel of location cards from a collection pulling
-  in information from Australian Tourism Data Warehouse (ATDW)
+- **[React Place Slider](https://codesandbox.io/s/alpaca-travel-collection-location-sliding-cards-2kpjt?file=/src/components/Slider.js)**
+  Example loading a "slider" of location cards from a collection pulling in
+  information from Australian Tourism Data Warehouse (ATDW). You can customise
+  and run this in browser as a demo (code sandbox).
 
 More examples to come
 
