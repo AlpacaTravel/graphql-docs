@@ -4,16 +4,49 @@
 
 # Alpaca Travel GraphQL
 
-Alpaca Travel offers an GraphQL API for developers to build tourism websites
-and travel applications.
+> [Alpaca Travel](https://alpaca.travel) offers an GraphQL API for developers to
+> build tourism websites and travel applications.
 
-We are offering documentation within this
+We are offering documentation within this Github repository for developers to
+reference when planning and performing integration with the Alpaca Travel
+services.
+
+## What is it?
+
+> The API is offered as a set of services to enable developers and product
+> managers to build the travel related product they really wanted to.
+
+We are offering the Alpaca Travel services to assist you do things like:
+
+- Access content and leverage the capabilities of Alpaca Travel into your app
+  or website :relieved: :car::bike::airplane:
+- Manage and access place information
+  :mount_fuji::performing_arts::hotel::ferris_wheel::tent:
+- Build applications to help users plan favourites, tracks and trails, trips and
+  itineraries :bookmark::pencil2:
+- Access capabilities such as searching routes, building isochrones, uploading
+  and resizing media :hammer: :wrench:
+- Leverage integrations into a growing list of 3rd party place providers
+  (including OpenStreetMap, Who's on First, Facebook, Yelp, Foursquare, Zomato,
+  TripAdvisor, Australian Tourism Data Warehouse [atdw] and more) :blue_book:
+  :round_pushpin:
+- Leverage GIS Capabilities to help power maps (GeoJSON/Polylines and Vector
+  Tiles) :earth_africa: :earth_americas: :earth_asia: to visualise
+  and context travel content
+- Leverage our content management system and create your own front-end and
+  interactive experiences :v::thumbsup::metal:
+
+At [Alpaca Travel](https://alpaca.travel), we leverage the API for building our
+editor and client applications. We will be continuing to add capabilities and
+perform R&D work in order to offer enhance what your application or website can
+do.
 
 ## Getting Started
 
 GraphQL is a flexible data query language that allows you to design queries that
-match your use case. Opposed to making several REST API requests, you can make a
-single query to obtain the data you need.
+match your use case. Opposed to making several REST API requests or over/under
+fetching data for your application, you can make a single query to obtain the
+data you need.
 
 ### New to GraphQL?
 
@@ -150,9 +183,15 @@ Profile
 
 - [Query Authorized Profiles](example-operations/profile/QueryAuthorizedProfiles.graphql)
 
-# GraphQL Schema Reference
+## GraphQL Schema Reference
 
 You can [review the reference schema documentation](reference/README.md).
+
+## Support :thumbsup:
+
+Alpaca Travel offers support for API clients. Clients are provided access to
+Basecamp to manage integration projects, or alternatively questions can be
+directed to <sayhello@alpaca.travel>.
 
 ## Contributing
 
