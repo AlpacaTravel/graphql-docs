@@ -19,9 +19,9 @@ services.
 We are offering the Alpaca Travel services to assist you do things like:
 
 - Access content and leverage the capabilities of Alpaca Travel into your app
-  or website :relieved: :car::bike::airplane:
+  or website :relieved: :rocket:
 - Manage and access place information as your own powerful place database
-  :mount_fuji::performing_arts::hotel::ferris_wheel::tent:
+  :performing_arts::hotel::ferris_wheel::mount_fuji:
 - Build applications to help users plan favourites, tracks and trails, trips and
   itineraries :bookmark::pencil2:
 - Access capabilities such as searching routes, building isochrones, uploading
@@ -47,16 +47,16 @@ The Alpaca Travel API is accessed using GraphQL, a powerful and easily
 integrated techology for your website or application. You can read some
 supporting information on GraphQL and why it is used below.
 
-We have put together concrete examples of typical calls to the API in our
-[example operations](#example-operations) section. These will assist you become
-familiar with GraphQL as well as the capabilities of the platform.
-
-We are grouping together common requirements have under [topics](#topics) to
-bring developers up to speed quickly on certain concepts they may need.
-
-We will also be expanding on examples and topics to create series in the form
-of [tutorials](#tutorials) to expand upon concepts and create complete working
-examples.
+- **[Example Operations](#example-operations)** - We have put together concrete
+  examples of typical calls to the API in our
+  [example operations](#example-operations) section. These will assist you
+  become familiar with GraphQL as well as the capabilities of the platform.
+- **[Topics](#topics)** - We are grouping together common requirements have
+  under [topics](#topics) to bring developers up to speed quickly on certain
+  concepts they may need.
+- **[Tutorials](#tutorials)** - We will also be expanding on examples and topics
+  to create series in the form of [tutorials](#tutorials) to expand upon
+  concepts and create complete working examples.
 
 Finally, we have a [GraphQL Playground](https://withalpaca.com/api/graphql)
 which is a way to quickly experiment with the real API in order to run GraphQL
