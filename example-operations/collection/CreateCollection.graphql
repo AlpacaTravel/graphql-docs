@@ -1,0 +1,27 @@
+# Creates a collection for the supplied profile
+
+mutation CreateCollection {
+  # Use the createCollection()
+  createCollection(
+    # Provide the profile ID to assign this collection to
+    # Use authorizedProfiles() to determine your profiles attached to the API
+    # Key
+    profileId: "profile/ABC123"
+    # Supply the data for the collection
+    collection: {
+      # Title of your collection
+      title: "My Collection"
+      # Differentiate the style of collection if necessary
+      discriminator: "collection"
+    }
+  ) {
+    # Query back the created collection
+    collection {
+      # Identifiers for the created collection
+      id
+      __typename
+      # Should return "My Collection"
+      title
+    }
+  }
+}
