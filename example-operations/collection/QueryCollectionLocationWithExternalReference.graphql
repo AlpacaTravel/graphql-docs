@@ -11,9 +11,9 @@ query QueryCollectionLocationWithExternalReference {
     # Query the collection
     collectionIds: "collection/ABC123"
     # Query the external ID's supplied
-    customExternalRefs: ["my-external-UUID", "my-other-external-UUID"]
+    externalIds: ["my-external-UUID", "my-other-external-UUID"]
     # Query a specific website source
-    customExternalSources: ["example.com"]
+    externalSources: ["example.com"]
     # Pagination controls for relay "cursor connections"
     # See: https://relay.dev/graphql/connections.htm
     first: 10 #, after: <cursor>
