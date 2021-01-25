@@ -199,6 +199,7 @@ Itinerary
 
 Collection
 
+- [Create Collection](example-operations/collection/CreateCollection.graphql)
 - [Query Collections](example-operations/collection/QueryCollections.graphql)
 - [Query Collection Items](example-operations/collection/QueryCollectionItems.graphql)
 - [Create Collection Location](example-operations/collection/CreateCollectionLocation.graphql)
