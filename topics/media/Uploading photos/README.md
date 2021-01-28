@@ -95,7 +95,7 @@ mutation ProcessPhotoUploadProgress {
     token: "token123"
     # Supply the profile ID you are authorized to modify. Use authorizedProfiles
     # operation if you need to identify the profile ID for your API key
-    profile: "profile/ABC123"
+    profileId: "profile/ABC123"
     # Supply content for the media
     mediaResource: {
       # Supply content for the resulting media resource
