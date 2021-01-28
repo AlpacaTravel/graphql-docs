@@ -213,7 +213,7 @@ Various media can be accessed on the Alpaca platform.
 - **[Using Unsplash](topics/media/Using%20unsplash/README.md)** Referencing a
   photo on the unsplash platform
 
-## GraphQL
+### GraphQL
 
 - **[Pagination using cursor connections](/topics/graphql/Pagination%20using%20cursor%20connections/README.md)**
   Using the standarised best practice for pagination using cursor connections
