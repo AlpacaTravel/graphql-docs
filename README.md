@@ -156,7 +156,8 @@ Itineraries are the data structure to store simple lists to complex
 multi-segment scheduled itineraries (and what is in-between).
 
 - **[Creating an itinerary](topics/itinerary/Creating%20an%20itinerary/README.md)**
-  Start with creating an itinerary either anonymously or assigned to a profile
+  Start with creating an itinerary either anonymously or assigned to a profile,
+  to house your saved/favourited list, trail, track, trip or itinerary
 - **[Checking if a place is within an itinerary](topics/itinerary/Checking%20if%20a%20place%20is%20within%20an%20itinerary/README.md)**
   Determine if a place you are viewing is already within an itinerary
 - **[Adding Locations](topics/itinerary/Adding%20Locations/README.md)**
@@ -178,6 +179,14 @@ website or application.
 
 - **[Importing Locations](topics/collection/Importing%20Locations/README.md)**
   Working with concepts of importing 3rd party locations from another platform
+
+### Australian Tourism Data Warehouse
+
+We support working with various place providers on the platform, including the
+Australian Tourism Data Warehouse (ATDW)
+
+- **[Working with ATDW](topics/atdw/Working%20with%20the%20ATDW/README.md)**
+  Understanding how to work with the ATDW place provider for the API
 
 ## Tutorials
 
