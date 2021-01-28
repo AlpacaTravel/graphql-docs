@@ -117,6 +117,12 @@ created. By default, Alpaca Travel offers both private and public API Keys. A
 private API Key will enable the application to perform mutations on profiles
 it has been assigned, where the public API Key is read only access to content.
 
+- **Public Scope** Able to read from assigned profiles and author anonymous
+  itineraries. For use in front-end applications without priviledges to the
+  profile.
+- **Private Scope** Able to read/write from assigned profiles (full access).
+  Do not share this API Key with the public.
+
 ### Obtaining your API Key
 
 Your API Key is available by request during our BETA testing phase. Please
