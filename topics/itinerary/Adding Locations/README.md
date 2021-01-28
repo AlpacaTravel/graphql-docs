@@ -21,7 +21,7 @@ to visit the place).
 - The itinerary will need to be unassigned to a profile, or you'll need your
   private API Key
 
-## Adding an place
+## Adding a place
 
 Locations contain the content and information about a particular place on earth.
 Our itineraries can add specific information to contextualise a visit to this
@@ -138,6 +138,7 @@ to store and leverage in you use case.
 ## Additional Resources
 
 - [Creating an itinerary](/topics/itinerary/Creating%20an%20itinerary/README.md)
+- [Reordering Locations](/topics/itinerary/Reordering%20Locations/README.md)
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
 - [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
 - [Deleting an Itinerary Location](/example-operations/itinerary/DeleteItineraryLocation.graphql)
