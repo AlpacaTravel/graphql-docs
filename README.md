@@ -138,29 +138,29 @@ GraphQL service:
 The following sections can help you become familiar with the GraphQL API for
 your purposes.
 
-JavaScript
+More coming soon. Make us a suggestion.
+
+### JavaScript
 
 - [Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)
 
-Itinerary
+### Itinerary
 
-- [Creating an itinerary](topics/itinerary/Creating%20an%20itinerary/README.md)
+- **[Creating an itinerary](topics/itinerary/Creating%20an%20itinerary/README.md)**
   Start with creating an itinerary either anonymously or assigned to a profile
-- [Checking if a place is within an itinerary](topics/itinerary/Checking%20if%20a%20place%20is%20within%20an%20itinerary/README.md)
+- **[Checking if a place is within an itinerary](topics/itinerary/Checking%20if%20a%20place%20is%20within%20an%20itinerary/README.md)**
   Determine if a place you are viewing is already within an itinerary
-- [Adding Locations](topics/itinerary/Adding%20Locations/README.md)
+- **[Adding Locations](topics/itinerary/Adding%20Locations/README.md)**
   Add locations to your itinerary
-- [Querying an Itinerary](topics/itinerary/Querying%20an%20Itinerary/README.md)
+- **[Querying an Itinerary](topics/itinerary/Querying%20an%20Itinerary/README.md)**
   Present the itinerary back to the user
-- [Automatic Routing](topics/itinerary/Automatic%20Routing/README.md)
+- **[Automatic Routing](topics/itinerary/Automatic%20Routing/README.md)**
   Leverage the automatic routing feature of itineraries, to automatically
   provide directions between locations
-- [Reordering Locations](topics/itinerary/Reordering%20Locations/README.md)
+- **[Reordering Locations](topics/itinerary/Reordering%20Locations/README.md)**
   Provide the ability for the user to reorder the itinerary to suit
-- [Adding Directions](topics/itinerary/Adding%20Directions/README.md)
+- **[Adding Directions](topics/itinerary/Adding%20Directions/README.md)**
   Add more complex directions, including multi-modal or manual directions
-
-More coming soon.
 
 ## Tutorials
 
