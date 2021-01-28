@@ -185,9 +185,14 @@ website or application.
 We support working with various place providers on the platform, to access place
 information and keep your place information up to date.
 
-- **[Working with ATDW](topics/atdw/Working%20with%20the%20ATDW/README.md)**
+- **[Working with OSM](topics/places/Working%20with%20OSM/README.md)** Access
+  information directly from OpenStreetMaps database
+- **[Working with ATDW](topics/places/Working%20with%20the%20ATDW/README.md)**
   Understanding how to work with the Australian Tourism Data Warehouse place
   provider for place information
+
+Other providers integrated include; TripAdvisor, Zomato, Yelp, WOF, GeoNames,
+Foursquare, Facebook, Wikidata are more.
 
 ## Tutorials
 
