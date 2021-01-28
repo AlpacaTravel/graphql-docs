@@ -13,11 +13,18 @@ mutation CreateCollectionLocationWithExternalReference {
       # Content about the location
       title: "Dr. Morse Cafe"
       # Supply the place data
-      place: { position: { lon: 144.99414682388306, lat: -37.79990202116163 } }
+      place: {
+        # Supply the place position coordinates (mandatory)
+        position: { lon: 144.99414682388306, lat: -37.79990202116163 }
+        # Optionally relate to a known place, such as a place from ATDW if you
+        # are leveraging place information to be updated automatically without
+        # a re-import.
+        id: "place/atdw:product:5cae80be57a096cd7084b6ab"
+      }
       # Leverage Attributes to extend the data stored and accessible for the
       # location
       attrs: [
-        # Track the ID from my platform into the "custom://external-ref". This
+        # Track the ID from my platform into the "custom://external-id". This
         # is a recognised attribute that can be later used to find the matching
         # collection location based on your own IDs
         { id: "custom://external-ref", value: "my-external-UUID" }

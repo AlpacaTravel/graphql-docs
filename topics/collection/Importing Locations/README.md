@@ -41,7 +41,14 @@ mutation CreateCollectionLocationWithExternalReference {
       # Content about the location
       title: "Dr. Morse Cafe"
       # Supply the place data
-      place: { position: { lon: 144.99414682388306, lat: -37.79990202116163 } }
+      place: {
+        # Supply the place position coordinates
+        position: { lon: 144.99414682388306, lat: -37.79990202116163 }
+        # Optionally relate to a known place, such as a place from ATDW if you
+        # are leveraging place information to be updated automatically without
+        # a re-import.
+        id: "place/atdw:product:5cae80be57a096cd7084b6ab"
+      }
       # Leverage Attributes to extend the data stored and accessible for the
       # location
       attrs: [
@@ -138,6 +145,9 @@ If you choose to later associate an external reference to an existing location,
 you can do so via a mutation similar to below. This mutation will insert or
 update an attribute value as required.
 
+You can also use the same `updateCollectionLocation` operation to update your
+content, such as title, etc.
+
 ```graphql
 # Update a record to store a corresponding identifier in an external system
 
@@ -148,6 +158,8 @@ mutation UpdateCollectionLocationAddExternalReference {
     id: "item/ABC123"
     # Update the location data
     location: {
+      # Update our title, description or any other content here...
+      # ...
       # Use upsert to insert/update a record
       upsertAttrs: [
         # Supply an external ID for this record
