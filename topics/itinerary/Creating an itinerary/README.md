@@ -8,7 +8,7 @@ lists to multi-day, multi-modal itineraries able to model all travel movements.
 Itineraries also support detailed mapping data and GPS tracks, enabling you to
 also have powerful maps to assist users.
 
-#### Prerequisits
+### Prerequisits
 
 - GraphQL development environment (or GraphQL Playground)
 - Your API Key
@@ -33,7 +33,7 @@ mutation CreateItinerary {
 }
 ```
 
-##### Association to a Profile
+## Association to a Profile
 
 By default, if you don't assign a profile, content is psueo-anonymous and is
 public writable/editable. This allows anyone with the ID to be able to modify
@@ -64,3 +64,43 @@ mutation CreateItineraryAssociatedToProfile {
   }
 }
 ```
+
+## Creating an itinerary with Auto Routing
+
+Alpaca can manage creating navigation routes between each of the itinerary
+locations that are added to your itinerary. You can enable this by creating
+your itinerary with the `autoRoute` feature enabled with a default route mode
+supplied.
+
+```
+# Creates an itinerary, and configures it to assign automatic routes. Automatic
+# routes will assist basic itineraries by sequentially linking locations that
+# are added with directions, providing information about moving between these
+# locations.
+
+mutation CreateItineraryWithCarAutoRoute {
+  # When using the createItinerary mutation to create our itinerary
+  createItinerary(
+    itinerary: {
+      # Add our basic required fields
+      title: "Example Itinerary"
+      # Indicate the behaviour to auto route using Car as the default mode
+      autoRoute: { defaultMode: Car }
+    }
+  ) {
+    # Read back the created itinerary
+    itinerary {
+      # Access the Identifier, required for further query/mutations
+      id
+    }
+  }
+}
+```
+
+Learn more about [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md).
+
+## Further Reading
+
+- [Obtaining your profile IDs](/example-operations/profile/QueryAuthorizedProfiles.graphql)
+- [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)
+- [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)

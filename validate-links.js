@@ -31,12 +31,18 @@ function validator() {
         ) &&
         !/^#/.test(url)
       ) {
-        const resolvedLink = path.resolve(
-          path.resolve(sourceFileResolved, ".."),
-          url.replace(/%20/g, " ")
-        );
-        if (!fs.existsSync(resolvedLink)) {
-          console.error(`Link unresolveable: ${url} - ${resolvedLink}`);
+        // Clean the URL
+        const cleanUrl = url.replace(/%20/g, " ");
+        // Create a resolved path
+        const resolvedLinkPath = (() => {
+          if (/\//.test(cleanUrl)) {
+            return path.resolve(__dirname, `./${cleanUrl}`);
+          }
+          return path.resolve(path.resolve(sourceFileResolved, ".."), cleanUrl);
+        })();
+
+        if (!fs.existsSync(resolvedLinkPath)) {
+          console.error(`Link unresolveable: ${url} - ${resolvedLinkPath}`);
           process.exit(255);
         }
       }
