@@ -9,6 +9,34 @@ number of ways to query your itinerary.
 - Your itinerary ID
 - Your API Key
 
+## Querying just the number of locations
+
+You may wish to provide a simple interface UI that provides a list of the
+number of itinerary locations within a list. Useful for when you are displaying
+a number of locations that a user has in their itinerary.
+
+```graphql
+# Slim query just to access the number of locations
+
+query QueryItineraryLocationsTotalCount {
+  # Query using the itinerary() operation
+  itinerary(
+    # Supply the itinerary ID to query
+    id: "itinerary/ABC123"
+  ) {
+    children(
+      # Query the locations
+      type: ItineraryLocation
+      # We don't need any locations returned,
+      first: 0
+    ) {
+      # Access the totalCount, indicating the total itinerary locations present
+      totalCount
+    }
+  }
+}
+```
+
 ## Basic List of Locations (Favourites, Curated List, etc)
 
 A common representation of an itinerary is used to display a list of favourites
