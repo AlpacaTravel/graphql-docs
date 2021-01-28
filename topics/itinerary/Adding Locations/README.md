@@ -139,3 +139,5 @@ to store and leverage in you use case.
 
 - [Creating an itinerary](/topics/itinerary/Creating%20an%20itinerary/README.md)
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
+- [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
+- [Deleting an Itinerary Location](/example-operations/itinerary/DeleteItineraryLocation.graphql)

@@ -1,11 +1,12 @@
-### Checking if a place is within an itinerary
+# Checking if a place is within an itinerary
 
 You can check whether a place has already been added to an itinerary by
 performing a query and supplying the place identifier.
 
-#### Prerequisits
+### Prerequisits
 
-- You will need to supply an ID in order to check the place exists in an Itinerary
+- You will need to supply an ID in order to check the place exists in an
+  Itinerary
 - You will need to have access to the ID of the itinerary to check for a place
 
 ```graphql
@@ -38,3 +39,8 @@ query CheckItineraryPlacePresent {
   }
 }
 ```
+
+## Additional Resources
+
+- [Creating an itinerary](/topics/itinerary/Creating%20an%20itinerary/README.md)
+- [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)

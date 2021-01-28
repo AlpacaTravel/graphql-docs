@@ -16,7 +16,7 @@ be used to search for routes
 - Basic Profiles: Car, Foot, Bike, etc
 - Advanced Profiles: MountainBike, Hike, Bus, Motorcycle, etc.
 
-## Prerequisits
+### Prerequisits
 
 - GraphQL development environment (or GraphQL Playground)
 - Your API Key
@@ -140,8 +140,6 @@ mutation CreateItineraryLocationWithAutoRouteOptions {
 }
 ```
 
-#### Additional Resources
+## Additional Resources
 
-- Accessing Directions
-- Managing Directions
-- Querying the Itinerary
+- [Adding Directions](/topics/itinerary/Adding%20Directions/README.md)

@@ -99,8 +99,9 @@ mutation CreateItineraryWithCarAutoRoute {
 
 Learn more about [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md).
 
-## Further Reading
+## Additional Resources
 
 - [Obtaining your profile IDs](/example-operations/profile/QueryAuthorizedProfiles.graphql)
 - [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
+- [Deleting an Itinerary](/example-operations/itinerary/DeleteItinerary.graphql)
