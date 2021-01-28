@@ -160,7 +160,7 @@ mutation UpdateCollectionLocationAddExternalReference {
       id
       __typename
       # Attribute will now exist on the collection item
-      externalId: attr(id: "custom://external-id") {
+      externalId: attr(id: "custom://external-ref") {
         value
       }
     }
