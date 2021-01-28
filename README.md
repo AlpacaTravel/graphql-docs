@@ -207,6 +207,8 @@ Various media can be accessed on the Alpaca platform.
 
 - **[Uploading photos](topics/media/Uploading%20photos/README.md)** Upload
   photos to be served in content leveraging optimising and serving via CDN
+- **[Using Unsplash](topics/media/Using%20unsplash/README.md)** Referencing a
+  photo on the unsplash platform
 
 ## Tutorials
 
