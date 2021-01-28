@@ -18,13 +18,20 @@ services.
 
 We are offering the Alpaca Travel services to assist you do things like:
 
-- A powerful **places database** to power your website or application information
-- A service to build your own users **trip planning services**, such as favorites lists or complex multi-day itineraries
-- A service to access many **tracks, trails, trips and itineraries** authored on the Alpaca Travel platform
-- A **powerful toolkit** of related services to build travel applications, including accessing routing, travel information, media management, nearby services and more
-- Out of the box place **provider integration services** to access and keep your information up to date
-- **GIS mapping services** to display maps and create interactive content with higher engagement
-- **Platform as a service** capabilities, including CDN, image resizing/optimisation, vector tile creation and hosting with uptime SLAs
+- A **places database** to power your website or application information
+- A service to build your own users **trip planning services**, such as
+  favorites lists or complex multi-day itineraries
+- A service to access many **tracks, trails, trips and itineraries** authored on
+  the Alpaca Travel platform
+- A **powerful toolkit** of related services to build travel applications,
+  including accessing routing, travel information, media management, nearby
+  services and more
+- Out of the box place **provider integration services** to access and keep your
+  information up to date
+- **GIS mapping services** to display maps and create interactive content with
+  higher engagement
+- **Platform as a service** capabilities, including CDN, image
+  resizing/optimisation, vector tile creation and hosting with uptime SLAs
 - **Export** data capabilities to PDF, GPX, KML, GeoJSON, Polyline and more
 - Built on **GraphQL** to leverage a great data experience
 - Backed by ongoing active research and development and commercial support
