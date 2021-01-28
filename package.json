@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/AlpacaTravel/graph-sdk-gists#readme",
   "dependencies": {
+    "glob": "^7.1.6",
     "graphql": "^15.4.0",
     "graphql-markdown": "^5.2.0"
   },
