@@ -15,6 +15,9 @@ collection, consider also reviewing the
 
 ## List available collections
 
+Associated to profiles are collections. You will need to identify which
+collection you are managing in order to be able to supply a collection ID.
+
 ```graphql
 # Load the collections available for a profile
 
@@ -51,6 +54,9 @@ Note: the `collections` operation returns a cursor connection. You can read
 
 ## Query the locations assigned to the collection
 
+The API provides mechanisms to query the collection to list locations associated
+to the collection.
+
 ```graphql
 # Queries for collection locations from a collection by a supplied tag. This
 # will take a supplied collection ID and look for items that have the tag of
@@ -85,6 +91,11 @@ query QueryCollectionLocationsByTag {
   }
 }
 ```
+
+Note: A collection can house diffent types of items, outside of just locations.
+As such, you will need to select fields from the CollectionLocation type as
+illustated below using `... on CollectionLocation { ... }`. This allows you
+to select the specific fields when the `__typename` is `CollectionLocation`.
 
 ## Query a specific collection location
 
@@ -149,6 +160,21 @@ query QueryCollectionLocation {
 
 ## Create a collection location
 
+When creating a collection location, you will need to supply a `place` value.
+
+The Place within a collection location represents the physical place associated
+to this location.
+
+You can supply just the position of this place, such as when you have placed
+a dropped-pin, or supply a `place.id` that refers to a place identifier from
+a source of place information.
+
+Alpaca supports a number of place providers, such as the ATDW, OSM, Facebook and
+others. When you supply a `place.id` to these providers, you will be able to
+query back up to date information about that place in future queries, as Alpaca
+will leverage integration to these providers to enable you to query data about
+those places.
+
 ```graphql
 # Creates a Collection Location within a collection
 
@@ -167,6 +193,7 @@ mutation CreateCollectionLocation {
       # Note: See external refs/source if you want to store your own identifiers
       # Provide a reference to the place/position for the place location
       place: {
+        # Place information will be sourced from ATDW provider
         id: "place/atdw:product:5cae80be57a096cd7084b6ab"
         position: { lon: 144.9970825017, lat: -37.803058481 }
       }
@@ -182,6 +209,11 @@ mutation CreateCollectionLocation {
 ```
 
 ## Update a collection location
+
+You can update information you have added about your location by supplying
+the arguments in `location`. There are a number of fields you can manage, as
+well as attributes to store extended information or overwrite/augment
+information from place providers.
 
 ```graphql
 # Modify an existing collection location title
@@ -204,6 +236,8 @@ mutation UpdateCollectionLocationTitle {
 ```
 
 ## Delete a collection location
+
+Removing collection items is done so via the `deleteCollectionItem` operation.
 
 ```graphql
 # Removes a collection item from a collection
