@@ -42,7 +42,7 @@ mutation CreateCollectionLocationWithExternalReference {
       title: "Dr. Morse Cafe"
       # Supply the place data
       place: {
-        # Supply the place position coordinates
+        # Supply the place position coordinates (mandatory)
         position: { lon: 144.99414682388306, lat: -37.79990202116163 }
         # Optionally relate to a known place, such as a place from ATDW if you
         # are leveraging place information to be updated automatically without
