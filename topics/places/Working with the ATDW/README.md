@@ -1,8 +1,19 @@
-# Working with the ATDW
+# Working with the Australian Tourism Data Warehouse (ATDW)
 
 Alpaca provide an integration directly into the Australian Tourism Data
 Warehouse (ATDW) to enable you to leverage their API and service for information
 about Australian tourism products.
+
+This information becomes easily accessible to drive your place database or be
+integrated seemlessly into lists, itineraries and more.
+
+The Australian Tourism Data Warehouse, commonly shortenned to ATDW, is a private
+company owned by the state tourism bodies, and offers servies for Australian
+Tourism Operators to offer information about their products to distributors.
+With an ATDW distributor agreement, you can access a wealth of information about
+different tourism operators in Australia. This information is encouraged to be
+kept up to date, as it is used by the state tourism providers, RTO's and other
+commercial distributors to list information about the business.
 
 ### Prerequisits
 
