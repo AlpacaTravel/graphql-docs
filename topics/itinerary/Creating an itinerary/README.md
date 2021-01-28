@@ -72,7 +72,7 @@ locations that are added to your itinerary. You can enable this by creating
 your itinerary with the `autoRoute` feature enabled with a default route mode
 supplied.
 
-```
+```graphql
 # Creates an itinerary, and configures it to assign automatic routes. Automatic
 # routes will assist basic itineraries by sequentially linking locations that
 # are added with directions, providing information about moving between these
