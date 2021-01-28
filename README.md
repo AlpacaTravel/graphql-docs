@@ -180,13 +180,14 @@ website or application.
 - **[Importing Locations](topics/collection/Importing%20Locations/README.md)**
   Working with concepts of importing 3rd party locations from another platform
 
-### Australian Tourism Data Warehouse
+### Places
 
-We support working with various place providers on the platform, including the
-Australian Tourism Data Warehouse (ATDW)
+We support working with various place providers on the platform, to access place
+information and keep your place information up to date.
 
 - **[Working with ATDW](topics/atdw/Working%20with%20the%20ATDW/README.md)**
-  Understanding how to work with the ATDW place provider for the API
+  Understanding how to work with the Australian Tourism Data Warehouse place
+  provider for place information
 
 ## Tutorials
 
