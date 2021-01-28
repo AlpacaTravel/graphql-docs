@@ -39,6 +39,9 @@ query QueryCollectionLocationWithExternalReference {
       # Use the cursor and supply to "after" in operation to paginate
       cursor
     }
+    pageInfo {
+      hasNextPage
+    }
     totalCount
   }
 }

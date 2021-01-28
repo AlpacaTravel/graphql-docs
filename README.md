@@ -184,6 +184,9 @@ multi-segment scheduled itineraries (and what is in-between).
 Collections support the ability to create a database of locations to power your
 website or application.
 
+- **[Managing collection locations](topics/collection/Managing%20collection%20locations/README.md)**
+  Managing collection locations, including listing, creating, updating and
+  removing
 - **[Importing Locations](topics/collection/Importing%20Locations/README.md)**
   Working with concepts of importing 3rd party locations from another platform
 
@@ -209,6 +212,11 @@ Various media can be accessed on the Alpaca platform.
   photos to be served in content leveraging optimising and serving via CDN
 - **[Using Unsplash](topics/media/Using%20unsplash/README.md)** Referencing a
   photo on the unsplash platform
+
+## GraphQL
+
+- **[Pagination using cursor connections](/topics/graphql/Pagination%20using%20cursor%20connections/README.md)**
+  Using the standarised best practice for pagination using cursor connections
 
 ## Tutorials
 
