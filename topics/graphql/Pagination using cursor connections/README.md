@@ -66,6 +66,6 @@ as well as offer other response type data, such as `totalCount` or
 
 ### FAQ
 
-## How do I jump to a specific page
+#### How do I jump to a specific page
 
 We currently do not support jumping to a specific page using Cursor Connections.
