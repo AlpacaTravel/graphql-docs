@@ -1,0 +1,12 @@
+# Removes a collection item from a collection
+
+mutation DeleteCollectionItem {
+  # Use the deleteCollectionItem() operation
+  deleteCollectionItem(
+    # Supply the ID of the record to remove
+    id: "item/ABC123"
+  ) {
+    # select back a response of the ID of the removed item
+    id
+  }
+}

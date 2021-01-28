@@ -3,7 +3,7 @@
 # We leverage a named attribute that is supported for querying items and
 # obtaining locations from a collection based on their external references.
 
-mutation CreateCollectionWithExternalReference {
+mutation CreateCollectionLocationWithExternalReference {
   # use the standard createCollectionLocation
   createCollectionLocation(
     # Supply the collection to place the location within

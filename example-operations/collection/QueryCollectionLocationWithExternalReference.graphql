@@ -10,9 +10,9 @@ query QueryCollectionLocationWithExternalReference {
   collectionItems(
     # Query the collection
     collectionIds: "collection/ABC123"
-    # Query the external ID's supplied
+    # Optionally query the external ID's supplied
     externalIds: ["my-external-UUID", "my-other-external-UUID"]
-    # Query a specific website source
+    # Optionally query a specific website source
     externalSources: ["example.com"]
     # Pagination controls for relay "cursor connections"
     # See: https://relay.dev/graphql/connections.htm
@@ -23,6 +23,18 @@ query QueryCollectionLocationWithExternalReference {
         # Matching collection item
         id
         __typename
+
+        # Timestamps
+        created
+        modified
+
+        # Obtain the values for the external refs
+        externalId: attr(id: "custom://external-ref") {
+          value
+        }
+        externalSource: attr(id: "custom://external-source") {
+          value
+        }
       }
       # Use the cursor and supply to "after" in operation to paginate
       cursor

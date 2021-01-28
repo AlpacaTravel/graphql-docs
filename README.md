@@ -152,6 +152,9 @@ More coming soon. Make us a suggestion.
 
 ### Itinerary
 
+Itineraries are the data structure to store simple lists to complex
+multi-segment scheduled itineraries (and what is in-between).
+
 - **[Creating an itinerary](topics/itinerary/Creating%20an%20itinerary/README.md)**
   Start with creating an itinerary either anonymously or assigned to a profile
 - **[Checking if a place is within an itinerary](topics/itinerary/Checking%20if%20a%20place%20is%20within%20an%20itinerary/README.md)**
@@ -167,6 +170,14 @@ More coming soon. Make us a suggestion.
   Provide the ability for the user to reorder the itinerary to suit
 - **[Adding Directions](topics/itinerary/Adding%20Directions/README.md)**
   Add more complex directions, including multi-modal or manual directions
+
+### Collection
+
+Collections support the ability to create a database of locations to power your
+website or application.
+
+- **[Importing Locations](topics/collection/Importing%20Locations/README.md)**
+  Working with concepts of importing 3rd party locations from another platform
 
 ## Tutorials
 
