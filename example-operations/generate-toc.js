@@ -1,7 +1,6 @@
 const glob = require("glob");
 const fs = require("fs");
 const path = require("path");
-const { parse: parser } = require("graphql");
 
 glob("**/*.graphql", (er, files) => {
   const structures = files.map(info).reduce((c, t) => {
@@ -18,19 +17,45 @@ Each section of this area is broken up by the resource type. If you are still
 new to the Alpaca Travel GraphQL API, you may want to review the initial
 GraphQL Articles also located in this repository first.  
   `;
-  const sections = Object.keys(structures).map((section) => {
-    // Links
-    const contents = structures[section].map(
-      (p) => `- **[${p.title}](${p.link})**\n  ${p.comment.trim()}`
-    );
+  const footer = `
+## Contributing
 
-    return `## ${section}\n\n${contents.join("\n")}`;
-  });
+If you would like to share an operation that is useful to others, please send us
+a pull request with the operation created in the appropriate sub-folder. If you
+need to correct a comment, please update the operations directly, and not the 
+generated markdown
+  `;
+  const sections = Object.keys(structures).map((key) =>
+    section(key, structures)
+  );
 
-  const doc = [title, sections.join("\n\n")].join("\n\n");
-
+  // Table of contents
+  const doc = [
+    title,
+    sections.map((s) => `### ${s.title}\n\n${s.toc}`).join("\n\n"),
+    footer,
+  ].join("\n\n");
   fs.writeFileSync(path.resolve(__dirname, "./README.md"), doc);
+
+  sections.forEach((s) => {
+    const sectionDoc = `# ${s.title}\n\n${s.toc}\n\n[View other operation examples](/example-operations)`;
+    fs.writeFileSync(
+      path.resolve(__dirname, `./${s.key}/README.md`),
+      sectionDoc
+    );
+  });
 });
+
+function section(key, structures) {
+  // Links
+  return {
+    key: key,
+    title: capitalizeFirstLetter(key),
+    toc: structures[key]
+      .map((p) => `- **[${p.title}](${p.link})**\n  ${p.comment.trim()}`)
+      .join("\n"),
+  };
+}
 
 function info(input) {
   // Split out title
@@ -58,4 +83,8 @@ function info(input) {
     comment,
     link,
   };
+}
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }

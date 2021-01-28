@@ -9,7 +9,7 @@ new to the Alpaca Travel GraphQL API, you may want to review the initial
 GraphQL Articles also located in this repository first.  
   
 
-## collection
+### Collection
 
 - **[Create Collection](/example-operations/collection/CreateCollection.graphql)**
   Creates a collection for the supplied profile
@@ -36,7 +36,7 @@ GraphQL Articles also located in this repository first.
 - **[Update Collection Location Title](/example-operations/collection/UpdateCollectionLocationTitle.graphql)**
   Modify an existing collection location title
 
-## itinerary
+### Itinerary
 
 - **[Check Itinerary Place Present](/example-operations/itinerary/CheckItineraryPlacePresent.graphql)**
   Checks whether a place has been added to an itinerary, for creating a button state on an "Add to Itinerary" button
@@ -75,7 +75,7 @@ GraphQL Articles also located in this repository first.
 - **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
   Modify an existing Itinerary by changing the title
 
-## place
+### Place
 
 - **[Query Place ATDWWinery](/example-operations/place/QueryPlaceATDWWinery.graphql)**
   Load information about a winery from Australian Tourism Data Warehouse
@@ -88,12 +88,21 @@ GraphQL Articles also located in this repository first.
 - **[Search Place Reverse](/example-operations/place/SearchPlaceReverse.graphql)**
   Queries a position and returns with matching places
 
-## profile
+### Profile
 
 - **[Query Authorized Profiles](/example-operations/profile/QueryAuthorizedProfiles.graphql)**
   Uses a query with the supplied AccessToken/API Key in order to determine the associated authorized profiles
 
-## route
+### Route
 
 - **[Query Routes Between Positions](/example-operations/route/QueryRoutesBetweenPositions.graphql)**
   Queries routes that exist through the supplied positions
+
+
+## Contributing
+
+If you would like to share an operation that is useful to others, please send us
+a pull request with the operation created in the appropriate sub-folder. If you
+need to correct a comment, please update the operations directly, and not the 
+generated markdown
+  
