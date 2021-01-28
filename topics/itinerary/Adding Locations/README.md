@@ -1,12 +1,21 @@
 # Adding Locations to Itineraries
 
-Using GraphQL, you can locations to your itinerary.
+Using GraphQL, you can locations to your itinerary. Alpaca will organise the
+locations you add for itineraries into various structures, including a simple
+list through to something more complex (such as organised by segments etc).
+
+You can leverage features such as [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
+between the locations or presenting the data on a map to make creating
+itineraries an easy function to add to your application. You can request
+information about each of the locations added to your itinerary to present the
+itinerary in the best possible way to your users.
 
 Locations added to an itinerary contain information for the audience such as the
-place they are visiting, as well as any personalised content about that location
-(such as stories/phgotos or supplying reasons to visit the place).
+physical place they are visiting, as well as any personalised content or
+planning data about that location (such as stories/photos or supplying reasons
+to visit the place).
 
-## Prerequisits
+### Prerequisits
 
 - You'll need an itinerary you want to add to and locate the Itinerary ID
 - The itinerary will need to be unassigned to a profile, or you'll need your
@@ -125,3 +134,8 @@ an attribute to the location with the ID of
 
 We also support the use custom data to contain further positions that you wish
 to store and leverage in you use case.
+
+## Additional Resources
+
+- [Creating an itinerary](/topics/itinerary/Creating%20an%20itinerary/README.md)
+- [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
