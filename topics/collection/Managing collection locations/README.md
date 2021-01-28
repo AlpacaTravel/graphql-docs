@@ -224,3 +224,4 @@ mutation DeleteCollectionItem {
 
 - [Importing Locations](/topics/collection/Importing%20Locations/README.md)
 - [Pagination using cursor connections](/topics/graphql/Pagination%20using%20cursor%20connections/README.md)
+- [Example GraphQL operations for collections](/example-operations/collection)

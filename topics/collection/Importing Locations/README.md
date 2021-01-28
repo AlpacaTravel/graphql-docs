@@ -134,10 +134,17 @@ query QueryCollectionLocationWithExternalReference {
       # Use the cursor and supply to "after" in operation to paginate
       cursor
     }
+    pageInfo {
+      hasNextPage
+    }
     totalCount
   }
 }
 ```
+
+Note: The `collectionItems` query returns a cursor connection in order to
+paginate through the returned edges. You can read about
+[Paginating using cursor connections](/topics/graphql/Pagination%20using%20cursor%20connections/README.md)
 
 ## Updating an existing location
 
@@ -198,3 +205,9 @@ mutation DeleteCollectionItem {
   }
 }
 ```
+
+## Additional Resources
+
+- [Pagination using cursor connections](/topics/graphql/Pagination%20using%20cursor%20connections/README.md)
+- [Managing collection locations](/topics/collection/Managing%20collection%20locations/README.md)
+- [Example GraphQL operations for collections](/example-operations/collection)

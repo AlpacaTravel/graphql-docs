@@ -113,6 +113,28 @@ query CheckItineraryPlacePresent {
 }
 ```
 
+## Reordering a location
+
+A specific topic exists to assist you with
+[reordering locations](/topics/itinerary/Reordering%20Locations/README.md).
+
+## Removing a location
+
+```graphql
+# Removes an itinerary item, such as a location
+
+mutation DeleteItineraryLocation {
+  # Use the deleteItineraryItem operation to remove an itinerary location
+  deleteItineraryItem(
+    # Supply your ID of the itinerary location to remove (no undo)
+    id: "itinerary/ABC123/item/DEF456"
+  ) {
+    # Select back the ID of the itinerary location that was removed
+    id
+  }
+}
+```
+
 ## Advanced: Preferred Positions
 
 The Location can also contain other positions that can assist with presenting
