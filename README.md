@@ -201,6 +201,13 @@ information and keep your place information up to date.
 Other providers integrated include; TripAdvisor, Zomato, Yelp, WOF, GeoNames,
 Foursquare, Facebook, Wikidata are more.
 
+### Media
+
+Various media can be accessed on the Alpaca platform.
+
+- **[Uploading photos](topics/media/Uploading%20photos/README.md)** Upload
+  photos to be served in content leveraging optimising and serving via CDN
+
 ## Tutorials
 
 React

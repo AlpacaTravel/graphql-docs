@@ -75,6 +75,15 @@ GraphQL Articles also located in this repository first.
 - **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
   Modify an existing Itinerary by changing the title
 
+### Media
+
+- **[Process Photo Upload Progress](/example-operations/media/ProcessPhotoUploadProgress.graphql)**
+  Finalise an upload process commenced with startMediaUpload, supplying content and associations to profile
+- **[Start Photo Upload](/example-operations/media/StartPhotoUpload.graphql)**
+  Request information to commence a photo upload via HTTPs
+- **[Update Photo Content](/example-operations/media/UpdatePhotoContent.graphql)**
+  Modifies a media asset to change various attributes or content
+
 ### Place
 
 - **[Query Place ATDWWinery](/example-operations/place/QueryPlaceATDWWinery.graphql)**

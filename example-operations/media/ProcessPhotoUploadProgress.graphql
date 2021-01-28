@@ -1,0 +1,27 @@
+# Finalise an upload process commenced with startMediaUpload, supplying content
+# and associations to profile. This operation will register the uploaded file
+# and supply you with ID's necessary to associate with other API types
+
+mutation ProcessPhotoUploadProgress {
+  # use the finalizeMediaUpload operation
+  finalizeMediaUpload(
+    # Supply the token created by startMediaUpload
+    token: "token123"
+    # Supply the profile ID you are authorized to modify. Use authorizedProfiles
+    # operation if you need to identify the profile ID for your API key
+    profileId: "profile/ABC123"
+    # Supply content for the media
+    mediaResource: {
+      # Supply content for the resulting media resource
+      caption: "A photo of us standing out the front of Mavis the Grocer"
+    }
+  ) {
+    # Status will be "AwaitingUpload", "Processing", "Complete" or
+    # "ProcessingFailed" to represent the various states of finalizing the media
+    status
+    media {
+      # Obtain the media identifier. This will be similar to "media/ABC123"
+      id
+    }
+  }
+}
