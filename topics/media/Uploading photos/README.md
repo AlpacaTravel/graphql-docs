@@ -105,7 +105,7 @@ mutation ProcessPhotoUploadProgress {
     # Status will be "AwaitingUpload", "Processing", "Complete" or
     # "ProcessingFailed" to represent the various states of finalizing the media
     status
-    mediaResource {
+    media {
       # Obtain the media identifier. This will be similar to "media/ABC123"
       id
     }
