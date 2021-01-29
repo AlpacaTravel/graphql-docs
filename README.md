@@ -215,6 +215,8 @@ Various media can be accessed on the Alpaca platform.
 
 ### GraphQL
 
+Topics across our API can be explored from the following list;
+
 - **[Pagination using cursor connections](/topics/graphql/Pagination%20using%20cursor%20connections/README.md)**
   Using the standarised best practice for pagination using cursor connections
 - **[Attributes](/topics/graphql/Attributes/README.md)**
