@@ -99,6 +99,10 @@ to select the specific fields when the `__typename` is `CollectionLocation`.
 
 ## Query a specific collection location
 
+You can also query a specific collection location by leveraging the
+`collectionItem` operation. This can help you when wanting to load more
+information about a particular location.
+
 ```graphql
 # Loads in a specific collection location
 

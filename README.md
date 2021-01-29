@@ -217,6 +217,9 @@ Various media can be accessed on the Alpaca platform.
 
 - **[Pagination using cursor connections](/topics/graphql/Pagination%20using%20cursor%20connections/README.md)**
   Using the standarised best practice for pagination using cursor connections
+- **[Attributes](/topics/graphql/Attributes/README.md)**
+  Using attributes to access or update extended data for resources, including
+  storing localisation or custom values against supported resources
 
 ## Tutorials
 
