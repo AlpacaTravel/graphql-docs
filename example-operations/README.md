@@ -66,8 +66,12 @@ GraphQL Articles also located in this repository first.
   Move an itinerary location to a relative position to another item in the itinerary
 - **[Move Itinerary Location To Start](/example-operations/itinerary/MoveItineraryLocationToStart.graphql)**
   Reorder/move the itinerary location to the start of the sequence
+- **[Query Itinerary Location Directions](/example-operations/itinerary/QueryItineraryLocationDirections.graphql)**
+  Query an itinerary location and load the associated inbound or outbound directions
 - **[Query Itinerary Locations As Simple List](/example-operations/itinerary/QueryItineraryLocationsAsSimpleList.graphql)**
   Query the itinerary locations for an itinerary, and access basic information about the place
+- **[Query Itinerary Locations With Directions](/example-operations/itinerary/QueryItineraryLocationsWithDirections.graphql)**
+  Query the itinerary locations, with information about the directions between each of the locations
 - **[Query Profile Itineraries](/example-operations/itinerary/QueryProfileItineraries.graphql)**
   Query the itineraries that are created and associated to a profile
 - **[Update Itinerary Assign Car Auto Route](/example-operations/itinerary/UpdateItineraryAssignCarAutoRoute.graphql)**
