@@ -92,7 +92,85 @@ query QueryItineraryLocationsAsSimpleList {
 }
 ```
 
+## List of locations with route directions between them
+
+When listing locations of an itinerary, you can leverage the query edge data to
+return any itinerary directions available between locations. This query method
+makes it easier to display a list of locations, and between each of those
+locations, indicate the directions that connect them.
+
+These itinerary directions are pre-determined or automatically added using the
+[automatic routing](/topics/itinerary/Automatic%20Routing/README.md) when
+enabled on an itinerary.
+
+```graphql
+# Query the itinerary locations, with information about the directions between
+# each of the locations
+
+query QueryItineraryLocationsWithDirections {
+  itinerary(
+    # Supply the itinerary ID
+    id: "itinerary/ABC123"
+  ) {
+    # Select the associated itinerary locations using the children selector
+    children(
+      # Limit to querying the itinerary locations
+      type: ItineraryLocation
+      # Using the relay "cursor connection" specification for pagination
+      # See: https://relay.dev/graphql/connections.htm
+      first: 10
+    ) {
+      edges {
+        node {
+          # ID/Types
+          id
+          __typename
+          # Specific information drawn from the Itinerary Location
+          ... on ItineraryLocation {
+            # Query the itinerary location
+            place {
+              # Peel off what information we want from to show about the place
+              name
+              # Take what level from the address we want
+              address {
+                locality
+              }
+              # Categories, like restaurant, hotel etc
+              layers {
+                name
+              }
+            }
+          }
+        }
+        # Additionally, query the routes between the locations as edge data,
+        # which will obtain directions from the itinerary that arrive (Inbound)
+        # to this location, from the last location in the edge sequence
+        directions(first: 1, direction: Inbound) {
+          nodes {
+            # Duration
+            durationMin
+            # Access the route modes (e.g. Car, etc)
+            route {
+              segments {
+                # Access polyline or geojson for each segment
+                mode
+              }
+            }
+            # Query any other ItineraryDirections data here..
+          }
+        }
+        # Obtain the cursor to pass back as the "after" property
+        cursor
+      }
+      # Total number of locations
+      totalCount
+    }
+  }
+}
+```
+
 ## Additional Resources
 
 - [Creating an itinerary](/topics/itinerary/Creating%20an%20itinerary/README.md)
 - [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)
+- [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)

@@ -2,6 +2,9 @@
 
 ## February, 2021
 
+- Added query examples for itinerary directions, and how to contextualise and
+  connect locations of an itinerary
+
 ### Breaking Changes
 
 We have opted to implement a breaking change on our media mutations which are

@@ -137,6 +137,129 @@ mutation CreateItineraryDirectionsWithManualPositions {
 }
 ```
 
+## Showing directions to and from a location
+
+When querying an itinerary location, you can query the corresponding directions
+for a given location.
+
+```graphql
+# Query an itinerary location and load the associated inbound or outbound
+# directions
+
+query QueryItineraryLocationDirections {
+  # Use the itineraryLocation operation
+  node(
+    # Supply the itinerary location ID
+    id: "itinerary/ABC123/item/DEF456"
+  ) {
+    ... on ItineraryLocation {
+      # Query the data you want for the itinerary location, such as
+      # content or information about the place
+      title
+      place {
+        address {
+          locality
+        }
+        maki
+        layers {
+          name
+        }
+      }
+      # Query any itinerary directions to or from this location
+      directions(first: 2) {
+        edges {
+          # Inbound or outbound direction
+          direction
+          node {
+            # Query the ItineraryDirection here
+            durationMin
+            distance
+            route {
+              segments {
+                mode
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+## Showing directions as part of an list of locations
+
+When displaying a sequence of locations, such as a summary of the locations on
+an itinerary and the directions moving between these locations, you can use the
+edge data available between locations to query the connecting directions.
+
+```graphql
+# Query the itinerary locations, with information about the directions between
+# each of the locations
+
+query QueryItineraryLocationsWithDirections {
+  itinerary(
+    # Supply the itinerary ID
+    id: "itinerary/ABC123"
+  ) {
+    # Select the associated itinerary locations using the children selector
+    children(
+      # Limit to querying the itinerary locations
+      type: ItineraryLocation
+      # Using the relay "cursor connection" specification for pagination
+      # See: https://relay.dev/graphql/connections.htm
+      first: 10
+    ) {
+      edges {
+        node {
+          # ID/Types
+          id
+          __typename
+          # Specific information drawn from the Itinerary Location
+          ... on ItineraryLocation {
+            # Query the itinerary location
+            place {
+              # Peel off what information we want from to show about the place
+              name
+              # Take what level from the address we want
+              address {
+                locality
+              }
+              # Categories, like restaurant, hotel etc
+              layers {
+                name
+              }
+            }
+          }
+        }
+        # Additionally, query the routes between the locations as edge data,
+        # which will obtain directions from the itinerary that arrive (Inbound)
+        # to this location, from the last location in the edge sequence
+        directions(first: 1, direction: Inbound) {
+          nodes {
+            # Duration
+            durationMin
+            # Access the route modes (e.g. Car, etc)
+            route {
+              segments {
+                # Access polyline or geojson for each segment
+                mode
+              }
+            }
+            # Query any other ItineraryDirections data here..
+          }
+        }
+        # Obtain the cursor to pass back as the "after" property
+        cursor
+      }
+      # Total number of locations
+      totalCount
+    }
+  }
+}
+```
+
 ## Additional Resources
 
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
+- [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
