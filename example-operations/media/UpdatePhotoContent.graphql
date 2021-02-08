@@ -13,7 +13,7 @@ mutation UpdatePhotoContent {
   ) {
     # Query back what information you need once successfully modified the
     # content (such as updated in-memory cache values)
-    resource {
+    mediaResource {
       # Identifiers
       id
       __typename
