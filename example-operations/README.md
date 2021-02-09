@@ -25,6 +25,8 @@ GraphQL Articles also located in this repository first.
   Loads in a specific collection location
 - **[Query Collection Locations By Tag](/example-operations/collection/QueryCollectionLocationsByTag.graphql)**
   Queries for collection locations from a collection by a supplied tag
+- **[Query Collection Locations Order By Modified Desc](/example-operations/collection/QueryCollectionLocationsOrderByModifiedDesc.graphql)**
+  
 - **[Query Collection Location With External Reference](/example-operations/collection/QueryCollectionLocationWithExternalReference.graphql)**
   Queries collection items based on a ID within an external platform
 - **[Query Collections](/example-operations/collection/QueryCollections.graphql)**
