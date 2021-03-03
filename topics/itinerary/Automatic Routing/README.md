@@ -14,7 +14,7 @@ There are a number of supported routing modes provided by Alpaca Travel that can
 be used to search for routes
 
 - Basic Profiles: Car, Foot, Bike, etc
-- Advanced Profiles: MountainBike, Hike, Bus, Motorcycle, etc.
+- Advanced Profiles: MountainBike, Hike, Bus, Motorcycle, Scooter, etc.
 
 ### Prerequisits
 
@@ -51,6 +51,10 @@ mutation CreateItineraryWithCarAutoRoute {
 It can be possible to enable automatic routing on an existing itinerary by
 performing an mutation to update the itinerary.
 
+<p align="center">
+  <img src="autorouting.png" alt="Enabling automatic routing between locations">
+</p>
+
 ```graphql
 # Enable "auto-route" behaviour to an existing itinerary. Auto-route will assist
 # users create itineraries with directions automatically added between locations
@@ -73,6 +77,16 @@ mutation UpdateItineraryAssignCarAutoRoute {
   }
 }
 ```
+
+## Making locations "optional"
+
+The Alpaca auto-route feature will create a sequence of ItineraryDirections
+between each of the ItineraryLocations that are added to an itinerary with this
+behaviour enabled.
+
+In some use-cases, you may wish to not automatically route to a specific
+location, as it may be along the way between two locations, but not a mandatory
+stop for users.
 
 ## Advanced: Assigning waypoints or alternative transport modes when adding locations
 
