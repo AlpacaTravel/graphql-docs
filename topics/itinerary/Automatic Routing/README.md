@@ -7,6 +7,10 @@ This feature when applied will assist creation of an itinerary by automatically
 creating directions between the sequence of locations as they are added to the
 itinerary.
 
+<p align="center">
+  <img src="autorouting.png" alt="Enabling automatic routing between locations">
+</p>
+
 Directions contain information such as duration and distance estimates based, as
 well as providing map data for rendering.
 
@@ -51,10 +55,6 @@ mutation CreateItineraryWithCarAutoRoute {
 It can be possible to enable automatic routing on an existing itinerary by
 performing an mutation to update the itinerary.
 
-<p align="center">
-  <img src="autorouting.png" alt="Enabling automatic routing between locations">
-</p>
-
 ```graphql
 # Enable "auto-route" behaviour to an existing itinerary. Auto-route will assist
 # users create itineraries with directions automatically added between locations
@@ -87,6 +87,10 @@ behaviour enabled.
 In some use-cases, you may wish to not automatically route to a specific
 location, as it may be along the way between two locations, but not a mandatory
 stop for users.
+
+<p align="center">
+  <img src="optional-locations.png" alt="Marking locations as optional to skip over in auto routing">
+</p>
 
 ## Advanced: Assigning waypoints or alternative transport modes when adding locations
 
