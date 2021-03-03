@@ -92,6 +92,44 @@ stop for users.
   <img src="optional-locations.png" alt="Marking locations as optional to skip over in auto routing">
 </p>
 
+```graphql
+# Updates an itinerary location and marks the itinerary location as an optional
+# stop
+
+mutation UpdateItineraryLocationAsOptional {
+  # Use updateItineraryLocation mutation for making changes to ItineraryLocation
+  updateItineraryLocation(
+    # Supply your itinerary location that you wish to make optional
+    id: "itinerary/ABC123/item/DEF456"
+    # Supply the location fields changing
+    location: {
+      # Update the location to be marked as optional
+      optional: true
+    }
+  ) {
+    # Query back your location
+    location {
+      # Optional should now be true
+      optional
+    }
+    # Optionally see what else has been affected, such as a result of the
+    # autoroute behaviour updating new and existing ItineraryDirections when
+    # using this feature.
+    cascaded {
+      created {
+        id
+        __typename
+      }
+      updated {
+        id
+        __typename
+      }
+      deletedIds
+    }
+  }
+}
+```
+
 ## Advanced: Assigning waypoints or alternative transport modes when adding locations
 
 By default, directions are added using the default mode of the auto route
