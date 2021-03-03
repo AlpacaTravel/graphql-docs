@@ -139,6 +139,57 @@ mutation UpdateItineraryLocationAsOptional {
 }
 ```
 
+## Changing the mode of transport for a created itinerary direction
+
+You can also switch the directions mode of transport for a specific section
+of your itinerary, such as switching from a car direction to a foot direction.
+
+```graphql
+# Updates an itinerary directions to switch the mode of transportation from one
+# mode (such as car) to an alterative mode, such as foot
+
+mutation UpdateItineraryDirectionMode {
+  # Use updateItineraryDirections operation to update directions
+  updateItineraryDirections(
+    # Provide the itinerary directions ID to update
+    id: "itinerary/ABC123/item/DEF456"
+    # Supply the directions
+    directions: {
+      # Modify the route with the directions
+      route: {
+        segments: [
+          # A single route segment..., you can use multiple.
+          {
+            # Indicate the mode of transport for this route segment
+            mode: Foot
+            # Provide the information for the segment
+            useRouteSearching: true
+            # Provide positions: [] here if you want to control the routing
+          }
+        ]
+      }
+    }
+  ) {
+    # Query what was affected as a response
+    cascaded {
+      updated {
+        id
+        __typename
+      }
+    }
+  }
+}
+```
+
+You can manage the created itinerary direction as a normal itinerary direciton.
+As such, you can refer to the
+[adding directions documentation](/topics/itinerary/Adding%20Directions/README.md)
+
+It is also possible to create more complex representations of a route, including
+directing the user to a point, and then switching the mode of transport to move
+the user to another point. This is known as "multi-modal" transportation and
+is supported by the Alpaca Travel platform.
+
 ## Advanced: Assigning waypoints or alternative transport modes when adding locations
 
 By default, directions are added using the default mode of the auto route
@@ -210,5 +261,6 @@ mutation CreateItineraryLocationWithAutoRouteOptions {
 
 ## Additional Resources
 
-- [Adding specific or alternative directions](/topics/itinerary/Adding%20Directions/README.md)
+- [Reordering locations](/topics/itinerary/Reordering%20locations/README.md)
 - [Querying the itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
+- [Adding specific or alternative directions](/topics/itinerary/Adding%20Directions/README.md)

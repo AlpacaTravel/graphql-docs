@@ -1,0 +1,34 @@
+# Updates an itinerary directions to switch the mode of transportation from one
+# mode (such as car) to an alterative mode, such as foot
+
+mutation UpdateItineraryDirectionMode {
+  # Use updateItineraryDirections operation to update directions
+  updateItineraryDirections(
+    # Provide the itinerary directions ID to update
+    id: "itinerary/ABC123/item/DEF456"
+    # Supply the directions
+    directions: {
+      # Modify the route with the directions
+      route: {
+        segments: [
+          # A single route segment..., you can use multiple.
+          {
+            # Indicate the mode of transport for this route segment
+            mode: Foot
+            # Provide the information for the segment
+            useRouteSearching: true
+            # Provide positions: [] here if you want to control the routing
+          }
+        ]
+      }
+    }
+  ) {
+    # Query what was affected as a response
+    cascaded {
+      updated {
+        id
+        __typename
+      }
+    }
+  }
+}
