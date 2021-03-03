@@ -78,6 +78,8 @@ GraphQL Articles also located in this repository first.
   Query the itineraries that are created and associated to a profile
 - **[Update Itinerary Assign Car Auto Route](/example-operations/itinerary/UpdateItineraryAssignCarAutoRoute.graphql)**
   Enable "auto-route" behaviour to an existing itinerary
+- **[Update Itinerary Location As Optional](/example-operations/itinerary/UpdateItineraryLocationAsOptional.graphql)**
+  Updates an itinerary location and marks the itinerary location as an optional stop
 - **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
   Modify an existing Itinerary by changing the title
 
