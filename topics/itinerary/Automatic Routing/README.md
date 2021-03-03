@@ -139,64 +139,6 @@ mutation UpdateItineraryLocationAsOptional {
 }
 ```
 
-## Modifying auto route behaviours
-
-### When creating a location
-
-You can modify the auto-route behaviour during creation, as such that you could
-nominate the specific mode of transport used when adding a location.
-
-```graphql
-# Adds a new location to an itinerary that has auto route enabled, and
-# customises the auto-route behaviour so that it uses an alternative mode of
-# transport when adding. There are further behaviours provided to extend
-# auto-routing, but further than this, you can leverage the
-# createItineraryDirections mutations that can support multi-modal transport,
-# GPS sequences or further
-
-mutation CreateItineraryLocationWithAutoRouteOptions {
-  # When creating an itinerary location
-  createItineraryLocation(
-    # Provide the itinerary to modify
-    itineraryId: "itinerary/ABC"
-
-    # Provide the location/place (dummy example)
-    location: {
-      # Describe the physical place
-      place: {
-        # See how to reference and add locations properly
-        position: { lon: 123, lat: 45 }
-      }
-      # Supply specific attributes to customise this location
-      attrs: [
-        # Provide an alternative position to directions navigating to this
-        # location such as sending the user to the entrace for the location, or
-        # alternative [lon,lat]
-        {
-          id: "itinerary/location/directions-position-preference"
-          value: [123, 45.6]
-        }
-      ]
-    }
-
-    # Modify the auto route behaviour
-    autoRoute: {
-      mode: Foot
-      # Other options; positions, distance, duration, useRouteSearching...
-    }
-  ) {
-    cascaded {
-      # Read back what has been created when adding
-      created {
-        # Expecting ItineraryLocation and ItineraryDirections (auto route)
-        __typename
-        id
-      }
-    }
-  }
-}
-```
-
 ### Modifying the itinerary direction
 
 You can also switch the directions mode of transport for a specific section
@@ -267,12 +209,12 @@ automatic route behaviour, including:
   itinerary
 
 ```graphql
-# The below example provides a simple illustration of adding a fake place to an
-# itinerary with autoRoute enabled, and customising the auto-route behaviour so
-# that it uses an alternative mode of transport when adding. There are further
-# behaviours provided to extend auto-routing, but further than this, you can
-# leverage the createItineraryDirections mutations that can support multi-modal
-# transport, GPS sequences or further
+# Adds a new location to an itinerary that has auto route enabled, and
+# customises the auto-route behaviour so that it uses an alternative mode of
+# transport when adding. There are further behaviours provided to extend
+# auto-routing, but further than this, you can leverage the
+# createItineraryDirections mutations that can support multi-modal transport,
+# GPS sequences or further
 
 mutation CreateItineraryLocationWithAutoRouteOptions {
   # When creating an itinerary location
@@ -299,7 +241,9 @@ mutation CreateItineraryLocationWithAutoRouteOptions {
       ]
     }
 
-    # Modify the auto route behaviour
+    # Modify the auto route behaviour when creating this location. Note: This
+    # is not a permanent change to the itinerary, and is instead modifying
+    # the resulting autoroute that would be created at the same time
     autoRoute: {
       mode: Foot
       # Other options; positions, distance, duration, useRouteSearching...

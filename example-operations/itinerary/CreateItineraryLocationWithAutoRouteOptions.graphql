@@ -30,7 +30,9 @@ mutation CreateItineraryLocationWithAutoRouteOptions {
       ]
     }
 
-    # Modify the auto route behaviour
+    # Modify the auto route behaviour when creating this location. Note: This
+    # is not a permanent change to the itinerary, and is instead modifying
+    # the resulting autoroute that would be created at the same time
     autoRoute: {
       mode: Foot
       # Other options; positions, distance, duration, useRouteSearching...
