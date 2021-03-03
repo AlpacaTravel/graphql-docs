@@ -1,7 +1,14 @@
-# Automatic Routing
+# Automatic Routing between Locations
 
 To assist with a common use case, you can leverage a basic feature known as
 automatic routing for your itinerary.
+
+- Add directions automatically between Locations
+- Can be enable on existing itineraries
+- Supports making stops optional
+- Can use preferred entry positions for locations
+- Supports a wide range of direction modes, including Car, Foot, Bike, Hike etc
+- Can customise to include waypoints or preferred directions
 
 This feature when applied will assist creation of an itinerary by automatically
 creating directions between the sequence of locations as they are added to the
@@ -140,10 +147,13 @@ This works for a majority of use cases, but in order to capture more real-world
 examples, Alpaca Travel offers a number of finer-grain specifications for
 automatic route behaviour, including:
 
-- Alternative GPS positions to navigate the user to, such as a preferred entrance locations, car-parks etc
+- Alternative GPS positions to navigate the user to, such as a preferred
+  entrance locations, car-parks etc
 - Guiding the resulting searched route, by providing waypoints
-- Creating manual route paths, supply positions, duration, distances and disabling search behaviours
-- Switching the mode of transport used, deferring from the default mode of the itinerary
+- Creating manual route paths, supply positions, duration, distances and
+  disabling search behaviours
+- Switching the mode of transport used, deferring from the default mode of the
+  itinerary
 
 ```graphql
 # The below example provides a simple illustration of adding a fake place to an
@@ -198,4 +208,5 @@ mutation CreateItineraryLocationWithAutoRouteOptions {
 
 ## Additional Resources
 
-- [Adding Directions](/topics/itinerary/Adding%20Directions/README.md)
+- [Adding specific or alternative directions](/topics/itinerary/Adding%20Directions/README.md)
+- [Querying the itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
