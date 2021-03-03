@@ -4,10 +4,12 @@ To assist with a common use case, you can leverage a basic feature known as
 automatic routing for your itinerary.
 
 - Add directions automatically between Locations
-- Can be enable on existing itineraries
+- Can be enabled on existing itineraries (such as simple lists or favourites)
 - Supports making stops optional
 - Can use preferred entry positions for locations
 - Supports a wide range of direction modes, including Car, Foot, Bike, Hike etc
+- Can change the directions to use specific modes of transport, such as
+  alternating between Car/Foot/etc.
 - Can customise to include waypoints or preferred directions
 
 This feature when applied will assist creation of an itinerary by automatically
