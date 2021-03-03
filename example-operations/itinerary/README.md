@@ -17,7 +17,7 @@
 - **[Create Itinerary Location With Atdw Place](/example-operations/itinerary/CreateItineraryLocationWithAtdwPlace.graphql)**
   Add a location to our itinerary, associating the place to Mavis The Grocer using the ATDW Product identifier
 - **[Create Itinerary Location With Auto Route Options](/example-operations/itinerary/CreateItineraryLocationWithAutoRouteOptions.graphql)**
-  The below example provides a simple illustration of adding a fake place to an itinerary with autoRoute enabled, and customising the auto-route behaviour so that it uses an alternative mode of transport when adding
+  Adds a new location to an itinerary that has auto route enabled, and customises the auto-route behaviour so that it uses an alternative mode of transport when adding
 - **[Create Itinerary With Car Auto Route](/example-operations/itinerary/CreateItineraryWithCarAutoRoute.graphql)**
   Creates an itinerary, and configures it to assign automatic routes
 - **[Delete Itinerary](/example-operations/itinerary/DeleteItinerary.graphql)**
