@@ -43,6 +43,10 @@ A common representation of an itinerary is used to display a list of favourites
 that a user may have selected from a website, or a curated list of locations
 that form a thematic shortlist.
 
+<p align="center">
+  <img src="list.png" alt="Query favourites or a curated list without directions">
+</p>
+
 ```graphql
 # Query the itinerary locations for an itinerary, and access basic information
 # about the place
@@ -102,6 +106,10 @@ locations, indicate the directions that connect them.
 These itinerary directions are pre-determined or automatically added using the
 [automatic routing](/topics/itinerary/Automatic%20Routing/README.md) when
 enabled on an itinerary.
+
+<p align="center">
+  <img src="list-with-directions.png" alt="Understanding direction inbound or outbound">
+</p>
 
 ```graphql
 # Query the itinerary locations, with information about the directions between
@@ -168,6 +176,71 @@ query QueryItineraryLocationsWithDirections {
   }
 }
 ```
+
+## Advanced: Understanding query options "limitImmediate" and "skipOptional"
+
+In more complex scenarios, it is possible to create itineraries that contain
+a number of optional stops, auto-routing behaviour or manually added itinerary
+directions (such as providing alternative modes of transportation etc).
+
+<p align="center">
+  <img src="list-with-directions-and-optional.png" alt="Complex itinerary showing numerous concepts">
+</p>
+
+A reasonable default is used in order to identify which directions by default
+are likely applicable when drawing a sequence of routes with an attempt to avoid
+over-fetching data. It is possible to change this behaviour to select the
+Itinerary Directions that you prefer, to widen the selection criteria.
+
+- `limitImmediate` will limit the which locations prior/next will be queried for
+  directions. By default, we will only check for the immediately prior or next
+  locations in the sequence. (Default = true)
+- `skipOptional` will be used to determine whether to include optional stops
+  in determining the immediate prior or next locations. By default, the query
+  will bypass optional locations and continue to seek the immediate where
+  optional is false. (Default = true)
+
+#### limitImediate: true, skipOptional: true (Default)
+
+This query is the default query configuration adopted for using the directions()
+when querying children() of an itinerary.
+
+| Location | Inbound Directions | Outbound Directions |
+|==========|====================|=====================|
+| A | | A to B |
+| B | A to B | B to D |
+| C | | C to D |
+| D | B to D | |
+
+#### limitImediate: true, skipOptional: false
+
+Alternatively, the routes could be queried including the optional stops as the
+immediate.
+
+| Location | Inbound Directions | Outbound Directions |
+|==========|====================|=====================|
+| A | | A to B |
+| B | A to B | |
+| C | | C to D |
+| D | C to D | |
+
+#### limitImediate: false, skipOptional: true
+
+| Location | Inbound Directions | Outbound Directions |
+|==========|====================|=====================|
+| A | | A to B |
+| B | A to B | B to D |
+| C | | C to D |
+| D | C to D | |
+
+#### limitImediate: false, skipOptional: false
+
+| Location | Inbound Directions | Outbound Directions |
+|==========|====================|=====================|
+| A | | A to B |
+| B | A to B | B to D |
+| C | | C to D |
+| D | C to D, B to D | |
 
 ## Additional Resources
 
