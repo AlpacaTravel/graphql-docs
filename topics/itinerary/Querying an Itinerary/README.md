@@ -233,7 +233,7 @@ immediate.
 | A        |                    | A to B              |
 | B        | A to B             | B to D              |
 | C        |                    | C to D              |
-| D        | C to D             |                     |
+| D        | B to D             |                     |
 
 #### limitImediate: false, skipOptional: false
 
