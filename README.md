@@ -178,6 +178,9 @@ multi-segment scheduled itineraries (and what is in-between).
   Provide the ability for the user to reorder the itinerary to suit
 - **[Adding Directions](topics/itinerary/Adding%20Directions/README.md)**
   Add more complex directions, including multi-modal or manual directions
+- **[Mapping](topics/itinerary/Mapping/README.md)**
+  Accessing information from the API as a GIS data source for itinerary
+  information
 
 ### Collection
 
