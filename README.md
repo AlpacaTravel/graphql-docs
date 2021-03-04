@@ -153,10 +153,6 @@ your purposes.
 
 More coming soon. Make us a suggestion.
 
-### JavaScript
-
-- [Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)
-
 ### Itinerary
 
 Itineraries are the data structure to store simple lists to complex
@@ -225,6 +221,11 @@ Topics across our API can be explored from the following list;
 - **[Attributes](/topics/graphql/Attributes/README.md)**
   Using attributes to access or update extended data for resources, including
   storing localisation or custom values against supported resources
+
+### JavaScript
+
+- **[Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)**
+  Simple methods for executing GraphQL using JavaScript
 
 ## Tutorials
 
