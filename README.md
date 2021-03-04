@@ -182,10 +182,10 @@ multi-segment scheduled itineraries (and what is in-between).
   Accessing information from the API as a GIS data source for itinerary
   information
 
-### Collection
+### Collections
 
-Collections support the ability to create a database of locations to power your
-website or application.
+Collections support the ability to create groups of places or itineraries to
+power your website or application.
 
 - **[Managing collection locations](topics/collection/Managing%20collection%20locations/README.md)**
   Managing collection locations, including listing, creating, updating and
