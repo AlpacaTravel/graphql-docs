@@ -37,7 +37,7 @@ query QueryItineraryLocationsTotalCount {
 }
 ```
 
-## Creating an Itinerary List
+## Showing an Itinerary List
 
 Alpaca's supports a wide range of itinerary structures, supporting basic
 itineraries which are most common, such as; shortlists, favourites, and
