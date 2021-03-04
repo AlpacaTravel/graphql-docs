@@ -37,7 +37,21 @@ query QueryItineraryLocationsTotalCount {
 }
 ```
 
-## Basic List of Locations (Favourites, Curated List, etc)
+## Creating an Itinerary List
+
+Alpaca's supports a wide range of itinerary structures, supporting basic
+itineraries which are most common, such as; shortlists, favourites, and
+sequentially routed itineraries, through to multi-day collections with
+alternative route options and segments.
+
+All these structures support a wide set of use cases, including simple
+top-10 lists, walking trails, trips and itineraries. Alpaca leverages the
+terminology of `Itinerary` regardless of the application.
+
+The following section outlines some common queries to access information and
+present in your application.
+
+### Querying a Basic List of Locations (Favourites, Curated List, etc)
 
 A common representation of an itinerary is used to display a list of favourites
 that a user may have selected from a website, or a curated list of locations
@@ -46,6 +60,11 @@ that form a thematic shortlist.
 <p align="center">
   <img src="list.png" alt="Query favourites or a curated list without directions">
 </p>
+
+We can query the `Itinerary` and combine using the `itinerary()` and
+`children()` operations to obtain information about the itinerary, and the
+`ItineraryLocation`s as a list. The `ItineraryLocation` provides information
+about a stop or place on an itinerary.
 
 ```graphql
 # Query the itinerary locations for an itinerary, and access basic information
@@ -96,7 +115,12 @@ query QueryItineraryLocationsAsSimpleList {
 }
 ```
 
-## List of locations with route directions between them
+The above query returns a list of ItineraryLocation type items, in the structure
+of a GraphQL Connection. A GraphQL connection is a consistent scalable approach
+to paginating that has been adopted in the API. You can learn more about using
+a [GraphQL Connection here](/topics/graphql/Pagination%20using%20cursor%20connections/README.md).
+
+## Querying a List of locations with directions between them
 
 When listing locations of an itinerary, you can leverage the query edge data to
 return any itinerary directions available between locations. This query method
@@ -105,7 +129,8 @@ locations, indicate the directions that connect them.
 
 These itinerary directions are pre-determined or automatically added using the
 [automatic routing](/topics/itinerary/Automatic%20Routing/README.md) when
-enabled on an itinerary.
+enabled on an itinerary, or you can manually create directions between
+locations.
 
 <p align="center">
   <img src="list-with-directions.png" alt="Understanding direction inbound or outbound">
@@ -177,7 +202,71 @@ query QueryItineraryLocationsWithDirections {
 }
 ```
 
-## Advanced: Understanding query options "limitImmediate" and "skipOptional"
+## Obtaining more information
+
+The Alpaca GraphQL API enables you to access a wide range of data both necessary
+and optionally to create detailed itineraries. Leveraging GraphQL, you can join
+the information into your listing query, or defer loading more information about
+a single itinerary item to another call.
+
+We encourage you to only request the information you need for your application
+at any time, to avoid over-fetching data from the API.
+
+Generally speaking, Alpaca has supported querying individual items by using the
+`node()` query. You simply need to provide the ID to this function, and it will
+enable you to query data about that item.
+
+```graphql
+# Query an itinerary location and load the associated inbound or outbound
+# directions
+
+query QueryItineraryLocationDirections {
+  # Use the itineraryLocation operation
+  node(
+    # Supply the itinerary location ID
+    id: "itinerary/ABC123/item/DEF456"
+  ) {
+    ... on ItineraryLocation {
+      # Query the data you want for the itinerary location, such as
+      # content or information about the place
+      title
+      place {
+        address {
+          locality
+        }
+        maki
+        layers {
+          name
+        }
+      }
+      # Query any itinerary directions to or from this location
+      directions(first: 2) {
+        edges {
+          # Inbound or outbound direction
+          direction
+          node {
+            # Query the ItineraryDirection here
+            durationMin
+            distance
+            route {
+              segments {
+                mode
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+You can adapt the above query to support loading information specifically
+about the `ItineraryDirection`.
+
+## Advanced Querying Topics
+
+### Understanding `children()` query options "limitImmediate" and "skipOptional"
 
 In more complex scenarios, it is possible to create itineraries that contain
 a number of optional stops, auto-routing behaviour or manually added itinerary
