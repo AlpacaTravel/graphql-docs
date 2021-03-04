@@ -192,6 +192,8 @@ are likely applicable when drawing a sequence of routes with an attempt to avoid
 over-fetching data. It is possible to change this behaviour to select the
 Itinerary Directions that you prefer, to widen the selection criteria.
 
+Within the `directions()` query, you can control the selection criteria basis:
+
 - `limitImmediate` will limit the which locations prior/next will be queried for
   directions. By default, we will only check for the immediately prior or next
   locations in the sequence. (Default = true)
@@ -206,11 +208,11 @@ This query is the default query configuration adopted for using the directions()
 when querying children() of an itinerary.
 
 | Location | Inbound Directions | Outbound Directions |
-|==========|====================|=====================|
-| A | | A to B |
-| B | A to B | B to D |
-| C | | C to D |
-| D | B to D | |
+| -------- | ------------------ | ------------------- |
+| A        |                    | A to B              |
+| B        | A to B             | B to D              |
+| C        |                    | C to D              |
+| D        | B to D             |                     |
 
 #### limitImediate: true, skipOptional: false
 
@@ -218,29 +220,29 @@ Alternatively, the routes could be queried including the optional stops as the
 immediate.
 
 | Location | Inbound Directions | Outbound Directions |
-|==========|====================|=====================|
-| A | | A to B |
-| B | A to B | |
-| C | | C to D |
-| D | C to D | |
+| -------- | ------------------ | ------------------- |
+| A        |                    | A to B              |
+| B        | A to B             |                     |
+| C        |                    | C to D              |
+| D        | C to D             |                     |
 
 #### limitImediate: false, skipOptional: true
 
 | Location | Inbound Directions | Outbound Directions |
-|==========|====================|=====================|
-| A | | A to B |
-| B | A to B | B to D |
-| C | | C to D |
-| D | C to D | |
+| -------- | ------------------ | ------------------- |
+| A        |                    | A to B              |
+| B        | A to B             | B to D              |
+| C        |                    | C to D              |
+| D        | C to D             |                     |
 
 #### limitImediate: false, skipOptional: false
 
 | Location | Inbound Directions | Outbound Directions |
-|==========|====================|=====================|
-| A | | A to B |
-| B | A to B | B to D |
-| C | | C to D |
-| D | C to D, B to D | |
+| -------- | ------------------ | ------------------- |
+| A        |                    | A to B              |
+| B        | A to B             | B to D              |
+| C        |                    | C to D              |
+| D        | C to D, B to D     |                     |
 
 ## Additional Resources
 
