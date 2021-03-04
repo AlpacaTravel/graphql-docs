@@ -127,14 +127,17 @@ return any itinerary directions available between locations. This query method
 makes it easier to display a list of locations, and between each of those
 locations, indicate the directions that connect them.
 
-These itinerary directions are pre-determined or automatically added using the
-[automatic routing](/topics/itinerary/Automatic%20Routing/README.md) when
-enabled on an itinerary, or you can manually create directions between
-locations.
+We can differentiate between directions between locations by querying whether
+we would like `Inbound` or `Outbound` directions.
 
 <p align="center">
   <img src="list-with-directions.png" alt="Understanding direction inbound or outbound">
 </p>
+
+We can leverage the same `itinerary()` query with the `children()` operation
+and add in the `directions()` operation. This operation allows you to query any
+routes that can exist between the sequence of itinerary locations that you
+have queried, in order to provide information on travel time.
 
 ```graphql
 # Query the itinerary locations, with information about the directions between
@@ -201,6 +204,15 @@ query QueryItineraryLocationsWithDirections {
   }
 }
 ```
+
+We support the ability to support alternative directions between locations,
+enabling the `Itinerary` to describe optional modes, routes or directions
+between locations.
+
+These itinerary directions can be pre-determined or automatically added using
+the [automatic routing](/topics/itinerary/Automatic%20Routing/README.md) when
+enabled on an itinerary, or you can manually create directions between
+locations.
 
 ## Obtaining more information
 
