@@ -278,7 +278,7 @@ about the `ItineraryDirection`.
 
 ## Advanced Querying Topics
 
-### Understanding `children()` query options "limitImmediate" and "skipOptional"
+### Understanding `children()` query options `limitImmediate` and `skipOptional`
 
 In more complex scenarios, it is possible to create itineraries that contain
 a number of optional stops, auto-routing behaviour or manually added itinerary
@@ -303,7 +303,7 @@ Within the `directions()` query, you can control the selection criteria basis:
   will bypass optional locations and continue to seek the immediate where
   optional is false. (Default = true)
 
-#### limitImediate: true, skipOptional: true (Default)
+#### `limitImediate`: true, `skipOptional`: true (Default)
 
 This query is the default query configuration adopted for using the directions()
 when querying children() of an itinerary.
@@ -315,7 +315,7 @@ when querying children() of an itinerary.
 | C        |                    | C to D              |
 | D        | B to D             |                     |
 
-#### limitImediate: true, skipOptional: false
+#### `limitImediate`: true, `skipOptional`: false
 
 Alternatively, the routes could be queried including the optional stops as the
 immediate.
@@ -327,7 +327,7 @@ immediate.
 | C        |                    | C to D              |
 | D        | C to D             |                     |
 
-#### limitImediate: false, skipOptional: true
+#### `limitImediate`: false, `skipOptional`: true
 
 | Location | Inbound Directions | Outbound Directions |
 | -------- | ------------------ | ------------------- |
@@ -336,7 +336,7 @@ immediate.
 | C        |                    | C to D              |
 | D        | B to D             |                     |
 
-#### limitImediate: false, skipOptional: false
+#### `limitImediate`: false, `skipOptional`: false
 
 | Location | Inbound Directions | Outbound Directions |
 | -------- | ------------------ | ------------------- |
