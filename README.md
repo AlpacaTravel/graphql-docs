@@ -293,3 +293,7 @@ npm run graphql-codegen
 npm run test:markdown-links
 npm run test:markdown-graphql
 ```
+
+## Legal Statement
+
+Copyright © 2020 Alpaca Travel. All right reserved.
