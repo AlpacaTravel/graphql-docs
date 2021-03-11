@@ -1,7 +1,7 @@
 # Place
 
 - **[Query Hours Public Holidays Time Zone](/example-operations/place/QueryHoursPublicHolidaysTimeZone.graphql)**
-  Query the place opening hours (where available), as well as the timezone and any public holidays for the selected period.
+  Query the place opening hours (where available), as well as the time zone and any public holidays for the selected period.
 - **[Query Place ATDWWinery](/example-operations/place/QueryPlaceATDWWinery.graphql)**
   Load information about a winery from Australian Tourism Data Warehouse
 - **[Query Place Contextual Orientation](/example-operations/place/QueryPlaceContextualOrientation.graphql)**
