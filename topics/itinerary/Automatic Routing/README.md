@@ -263,6 +263,6 @@ mutation CreateItineraryLocationWithAutoRouteOptions {
 
 ## Additional Resources
 
-- [Reordering locations](/topics/itinerary/Reordering%20locations/README.md)
+- [Reordering locations](/topics/itinerary/Reordering%20Locations/README.md)
 - [Querying the itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
 - [Adding specific or alternative directions](/topics/itinerary/Adding%20Directions/README.md)
