@@ -1,10 +1,10 @@
-# Query the place opening hours (where available), as well as the time zone
+# Query the place opening hours (where available), as well as the timezone
 # and any public holidays for the selected period.
 
-query QueryHoursPublicHolidaysTimeZone {
+query QueryHoursPublicHolidaysTimezone {
   # Use the place() operation
   place(id: "place/facebook:page:mavisthegrocer") {
-    # Access the time zone for this location
+    # Access the timezone for this location
     attr(id: "place/time-zone") {
       value
     }

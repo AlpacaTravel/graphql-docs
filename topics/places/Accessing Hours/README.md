@@ -1,4 +1,4 @@
-# Accessing Opening Hours, Timezones and Public Holidays
+# Accessing Opening Hours, Time zones and Public Holidays
 
 The opening hours is a crucial part of place information.
 
@@ -29,7 +29,7 @@ user.
 # Query the place opening hours (where available), as well as the timezone
 # and any public holidays for the selected period.
 
-query QueryHoursPublicHolidaysTimezone {
+query QueryHoursPublicHolidaysTimeZone {
   # Use the place() operation
   place(id: "place/facebook:page:mavisthegrocer") {
     # Access the time-zone for this location
