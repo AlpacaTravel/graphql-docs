@@ -1,17 +1,21 @@
-# Accessing Opening Hours, Time zones and Public Holidays
+# Accessing Hours
 
-The opening hours is a crucial part of place information.
+The opening hours is a crucial part of place information. This information can
+be used to plan a visit to the venue in advance, such as determining the next
+time the venue is open, or a future series of dates such as when the user wishes
+to be
 
 When considering presenting opening hours to a user, you must observe several
 user interface considerations:
 
-- Places can have multiple opening hours for a day
-- Places can be open always/24H or open till late
-- Places may indicate if they are open on public holidays, but can often not be
-  kept updated
-- Places can provide comments against a status
-- A user may wish to know the opening hours for a place in local time, such as
-  if they need reach out during open time
+- Multiple open/closed intervals per day
+- Open always/24H or open late
+- Public holidays can affect regular trading hours
+- Some open/closed times can be restricted (use comment)
+- Time zones can be critical for local visitors or distant travellers trying
+  to contact the operator
+- Hours could not be accurate, and user interfaces should consider warning
+  users
 
 ## Opening Hours
 
@@ -69,7 +73,7 @@ query QueryUpcomingOpenClosedTimes {
 }
 ```
 
-### Open/Closed hours for a specific date range
+### Open/Closed hours for a specific date range using `forDays()` operation
 
 The `forDays()` operation allows you to define a date range, such as for the
 next day, week or future calendar range. For each of the dates that are
@@ -118,10 +122,11 @@ query QueryDateRangeOpenClosedTimes {
 
 ## Time zone
 
-For places accessed on the Alpaca platform, we make available an attribute
-to access the time zone. The time zone can enable you to locally adjust the
-hours against the hours the place is open, or present the opening hours in
-local time.
+Dates, including the `from`/`to` fields, are formatted in ISO-8601 standard and
+are based on the time zone of the place. This enables you to present the hours
+considerate of time zone differences of the user to the place. You can also
+access the time zone of places using the `place/time-zone` attribute and present
+the hours in the local time-zone.
 
 | Attribute ID      | Value                            | Example     |
 | ----------------- | -------------------------------- | ----------- |
