@@ -82,7 +82,12 @@ mutation CreateItineraryDirections {
 }
 ```
 
-## Adding a manual path
+## Adding a GPS Track (manual path)
+
+You can also specify directions such as providing a manual track from GPS data.
+
+Provide the GPS observations as the `positions`, and it is not necesarry to use
+`useRouteSearching`.
 
 ```graphql
 # Creates itinerary directions for between locations in an itinerary by
