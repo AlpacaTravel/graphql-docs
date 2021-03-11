@@ -26,20 +26,33 @@ user.
   a calendar).
 
 ```graphql
-# Query the place opening hours (where available), as well as the timezone
+# Query the place opening hours (where available), as well as the time zone
 # and any public holidays for the selected period.
 
 query QueryHoursPublicHolidaysTimeZone {
   # Use the place() operation
   place(id: "place/facebook:page:mavisthegrocer") {
-    # Access the time-zone for this location
+    # Access the time zone for this location
     attr(id: "place/time-zone") {
       value
     }
     # Access the opening hours (where specified)
     hours {
-      # Select a period, can use forDays for this
-      forDays(from: "2021-04-01", to: "2021-04-08") {
+      # Access the next window that the place is open. Supports selecting a
+      # series of Open/Closed hours and can be used to let users know when
+      # a venue will be open/closed next.
+      intervals(first: 1, status: Open) {
+        nodes {
+          from
+          to
+          status
+          comment
+        }
+      }
+      # Select the period (e.g. the week between the from/to dates). Also access
+      # the local public holidays in order to present to the user and let them
+      # know of any events that could affect regular trading hours.
+      forDays(from: "2021-04-01", to: "2021-04-07") {
         # Date
         date
         # Whether there is a public holiday for this date detected for this
