@@ -3,19 +3,21 @@
 The opening hours is a crucial part of place information. This information can
 be used to plan a visit to the venue in advance, such as determining the next
 time the venue is open, or a future series of dates such as when the user wishes
-to be
+to visit.
 
-When considering presenting opening hours to a user, you must observe several
-user interface considerations:
+When considering presenting opening hours to a user, you should observe several
+key user interface considerations:
 
-- Multiple open/closed intervals per day
-- Open always/24H or open late
+- Multiple open/closed intervals can occur per day
+- Venues can be open always/24H, open late or closed all day
 - Public holidays can affect regular trading hours
-- Some open/closed times can be restricted (use comment)
+- Some open/closed times can be restricted (provide space for a comment)
 - Time zones can be critical for local visitors or distant travellers trying
   to contact the operator
-- Hours could not be accurate, and user interfaces should consider warning
-  users
+
+Note: The source/provider of opening hours can affect the quality of the opening
+hours, and how up to date the information may be. It is generally recommended
+that you suggest to users to check the official opening hours with the operator.
 
 ## Opening Hours
 
