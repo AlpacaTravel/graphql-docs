@@ -5,8 +5,8 @@ The opening hours is a crucial part of place information.
 When considering presenting opening hours to a user, you must observe several
 user interface considerations:
 
-- Places can be open always/24H or open till late
 - Places can have multiple opening hours for a day
+- Places can be open always/24H or open till late
 - Places may indicate if they are open on public holidays, but can often not be
   kept updated
 - Places can provide comments against a status
@@ -19,8 +19,11 @@ Various place providers engage operators to contribute their opening hours.
 These are made accessible through the API in order for you to present to the
 user.
 
-- Use `intervals()` to access the next series of opening hours for a place
-- Use `forDays()` to query a range of dates for opening hours for a place
+- Use `intervals()` to access the next series of opening hours for a place. Use
+  this to present the next Openning hours to a user
+- Use `forDays()` to query a range of dates for opening hours for a place. Use
+  this to present a weeks worth of opening hours, or possibly more (such as
+  a calendar).
 
 ```graphql
 # Query the place opening hours (where available), as well as the timezone
