@@ -96,6 +96,8 @@ GraphQL Articles also located in this repository first.
 
 ### Place
 
+- **[Query Hours Public Holidays Timezone](/example-operations/place/QueryHoursPublicHolidaysTimezone.graphql)**
+  Query the place opening hours (where available), as well as the timezone and any public holidays for the selected period.
 - **[Query Place ATDWWinery](/example-operations/place/QueryPlaceATDWWinery.graphql)**
   Load information about a winery from Australian Tourism Data Warehouse
 - **[Query Place Contextual Orientation](/example-operations/place/QueryPlaceContextualOrientation.graphql)**

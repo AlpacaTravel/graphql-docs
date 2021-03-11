@@ -199,6 +199,9 @@ information and keep your place information up to date.
 - **[Working with ATDW](topics/places/Working%20with%20the%20ATDW/README.md)**
   Understanding how to work with the Australian Tourism Data Warehouse place
   provider for place information
+- **[Accessing Hours](topics/places/Accessing%20Hours/README.md)**
+  Access information about opening hours of a vendor, and present them in
+  time zone appropriate formats.
 
 Other providers integrated include; TripAdvisor, Zomato, Yelp, WOF, GeoNames,
 Foursquare, Facebook, Wikidata are more.
