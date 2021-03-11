@@ -1,0 +1,31 @@
+# Query the next series of open/closed hours for a place, in order to present
+# information whether the venue is open, closed, opening soon, closing soon,
+# etc.
+
+query QueryUpcomingOpenClosedTimes {
+  # Use the place() operation
+  place(id: "place/facebook:page:mavisthegrocer") {
+    # Access the opening hours (where specified)
+    hours {
+      # Access the next window that the place is open. Supports selecting a
+      # series of Open/Closed hours and can be used to let users know when
+      # a venue will be open/closed next.
+      intervals(first: 1, status: Open) {
+        nodes {
+          # Times from/to
+          from
+          to
+          # Status Open/Closed
+          status
+          # Any comments attached to the opening hours
+          comment
+        }
+      }
+    }
+    # Access the time zone for this location, which can be used for presenting
+    # localised dates.
+    attr(id: "place/time-zone") {
+      value
+    }
+  }
+}
