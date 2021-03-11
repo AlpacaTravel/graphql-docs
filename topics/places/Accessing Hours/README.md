@@ -20,7 +20,7 @@ These are made accessible through the API in order for you to present to the
 user.
 
 - Use `intervals()` to access the next series of opening hours for a place. Use
-  this to present the next Openning hours to a user
+  this to present the immediate open/closed times
 - Use `forDays()` to query a range of dates for opening hours for a place. Use
   this to present a weeks worth of opening hours, or possibly more (such as
   a calendar).
