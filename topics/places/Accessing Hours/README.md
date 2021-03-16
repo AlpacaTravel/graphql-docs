@@ -125,16 +125,16 @@ query QueryDateRangeOpenClosedTimes {
 ## Time zone
 
 Dates, including the `from`/`to` fields, are formatted in ISO-8601 standard and
-are based on the time zone of the place. This enables you to present the hours
-considerate of time zone differences of the user to the place. You can also
-access the time zone of places using the `place/time-zone` attribute and present
-the hours in the local time-zone.
+are based on UTC. This enables you to present the hours considerate of time zone
+differences of the user to the place. You can also access the time zone of
+places using the `place/time-zone` attribute and present the hours in the local
+time-zone.
 
 | Attribute ID      | Value                            | Example     |
 | ----------------- | -------------------------------- | ----------- |
 | `place/time-zone` | Time zone for the place position | "UTC+10:00" |
 
-## Regions for idnetifying Public Holidays
+## Regions for identifying Public Holidays
 
 Alpaca source a list of public holidays from publicly accessible and maintained
 sources. If you would like to access the public holiday information from an
