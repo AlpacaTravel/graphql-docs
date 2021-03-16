@@ -133,3 +133,15 @@ the hours in the local time-zone.
 | Attribute ID      | Value                            | Example     |
 | ----------------- | -------------------------------- | ----------- |
 | `place/time-zone` | Time zone for the place position | "UTC+10:00" |
+
+## Regions for idnetifying Public Holidays
+
+Alpaca source a list of public holidays from publicly accessible and maintained
+sources. If you would like to access the public holiday information from an
+alternative source, it may be beneficial to use some of the other attributes
+to locate the place against other sources. For this purpose, Alpaca provides
+the ISO-3166-2 for the place, allowing you to access the country and region.
+
+| Attribute ID       | Value      | Example |
+| ------------------ | ---------- | ------- |
+| `place/iso-3166-2` | ISO-3166-2 | "AU-VIC |

@@ -26,8 +26,9 @@ attributes are available.
 
 | ID                          | Name                    | Data Structure |
 | --------------------------- | ----------------------- | -------------- |
-| `place/iso-3166-1-alpha-2`  | ISO 3166-1 alpha-2      | string         |
 | `place/iso-3166-2`          | ISO-3166-2              | string         |
+| `place/iso-3166-1-alpha-2`  | ISO 3166-1 alpha-2      | string         |
+| `place/iso-3166-1-alpha-3`  | ISO 3166-1 alpha-3      | string         |
 | `place/continent`           | Continent               | string         |
 | `place/subregion`           | Subregion               | string         |
 | `place/region-wb`           | Region (World Bank)     | string         |
