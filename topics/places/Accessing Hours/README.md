@@ -160,8 +160,7 @@ output strings in a preferred user language.
 Dates, including the `from`/`to` fields, are formatted in ISO-8601 standard and
 are based on UTC. This enables you to present the hours considerate of time zone
 differences of the user to the place. You can also access the time zone of
-places using the `place/time-zone` attribute and present the hours in the local
-time-zone.
+places using the `place/time-zone` attribute.
 
 | Attribute ID      | Value                            | Example     |
 | ----------------- | -------------------------------- | ----------- |
