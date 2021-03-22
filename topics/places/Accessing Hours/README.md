@@ -121,6 +121,28 @@ query QueryDateRangeOpenClosedTimes {
 }
 ```
 
+## Working with Date/Times
+
+The fields of `date`/`from`/`to` return ISO-8601 strings with time zones. You
+can supply arguments to these fields to format the return string so that you can
+control the presentation.
+
+Supply `format` to provide an output based on the [Unicode Technical Standard
+TR35 - Date Field Symboles](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)
+to return dates such as `Wed, Mar 31` etc. These can make dates easier to
+include on the front-end.
+
+You can optionally provide your own `timeZone` (such as `Australia/Melbourne`),
+to format the output of the date/times, relative to another time zone, such as a
+visitors local time zone.
+
+You can also make use of a `relativeTo` field argument, supplying either `null`
+to take the current date/time, or a ISO-8601 string, and will provide a relative
+time expression (such as `in 8 hours`).
+
+Finally, for internationalisation, you can also provide a `locale` in order to
+output strings in a preferred user language.
+
 ## Time zone
 
 Dates, including the `from`/`to` fields, are formatted in ISO-8601 standard and
