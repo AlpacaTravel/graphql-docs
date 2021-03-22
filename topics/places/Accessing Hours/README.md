@@ -54,22 +54,23 @@ query QueryUpcomingOpenClosedTimes {
       # Access the next window that the place is open. Supports selecting a
       # series of Open/Closed hours and can be used to let users know when
       # a venue will be open/closed next.
-      intervals(first: 1, status: Open) {
+      intervals(first: 2) {
+        # First node is the current state, second node is the upcoming change
+        # of status.
         nodes {
-          # Times from/to
-          from
-          to
+          # Times from/to as ISO-8601 string, or formatted using the Unicode
+          # Technical Standard #35 Date Field Symbols
+          from(format: "EEE, MMM d, h:mm a")
+          to(format: "EEE, MMM d, h:mm a")
+          # Create a relative expression (in X minutes/hours etc) based on a
+          # a supplied relative to ISO 8601, or null (for now)
+          relative: from(relativeTo: null)
           # Status Open/Closed
           status
           # Any comments attached to the opening hours
           comment
         }
       }
-    }
-    # Access the time zone for this location, which can be used for presenting
-    # localised dates.
-    attr(id: "place/time-zone") {
-      value
     }
   }
 }
@@ -96,27 +97,25 @@ query QueryDateRangeOpenClosedTimes {
       # the local public holidays in order to present to the user and let them
       # know of any events that could affect regular trading hours.
       forDays(from: "2021-04-01", to: "2021-04-07") {
-        # Date
-        date
+        # Date/day, as ISO-8601, or as formatted for presentation using the
+        # Unicode Technical Standard #35 Date Field Symbols
+        date(format: "EEE, MMM d")
         # Whether there is a public holiday for this date detected for this
         # region on this date
         publicHoliday
         # Obtain the intervals for this date, requesting the opening status
         # status is optional, otherwise use Open/Closed to specify your pref
         intervals(status: Open) {
-          # Hours
-          from
-          to
+          # Hours, from/to as ISO-8601 string, or formatted using the Unicode
+          # Technical Standard #35 Date Field Symbols
+          from(format: "h:mm a")
+          to(format: "h:mm a")
           # Status (Open/Closed)
           status
           # Any corresponding comment for the opening hours
           comment
         }
       }
-    }
-    # Access the time zone for this location
-    attr(id: "place/time-zone") {
-      value
     }
   }
 }
