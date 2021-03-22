@@ -30,6 +30,9 @@ user.
 - Use `forDays()` to query a range of dates for opening hours for a place. Use
   this to present a weeks worth of opening hours, or possibly more (such as
   a calendar).
+- Use `osmTag` field to return a single string representation of the opening
+  hours encoded in a way that can be parsed, according to using Open Street Map
+  opening hours specification.
 
 ### Upcoming Open/Closed hours using `intervals()` connection
 
@@ -119,6 +122,15 @@ query QueryDateRangeOpenClosedTimes {
     }
   }
 }
+```
+
+### OpenStreetMap Opening Hours Specification `osmTag`
+
+Opening Hours can also be accessed as a string according to the [OpenStreetMap
+(OSM) opening hours tag specification](https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification).
+
+```
+Mo,Tu,Th,Fr 12:00-18:00; Sa,PH 12:00-17:00
 ```
 
 ## Working with Date/Times
