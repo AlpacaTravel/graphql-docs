@@ -42,11 +42,21 @@ query MediaImage {
 
       # Accessing EXIF information if found for the supplied photo
       # Access all using the field "exifIds"
-      make: exif(id: 'Camera make')
-      model: exif(id: 'Camera model')
-      focalLength: exif(id: 'Focal length')
-      exposureTime: exif(id: 'Exposure time')
-      aperture: exif(id: 'Aperture')
+      make: exif(id: "Camera make") {
+        value
+      }
+      model: exif(id: "Camera model") {
+        value
+      }
+      focalLength: exif(id: "Focal length") {
+        value
+      }
+      exposureTime: exif(id: "Exposure time") {
+        value
+      }
+      aperture: exif(id: "Aperture") {
+        value
+      }
     }
   }
 }
