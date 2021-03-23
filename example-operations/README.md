@@ -87,6 +87,8 @@ GraphQL Articles also located in this repository first.
 
 ### Media
 
+- **[Media Image](/example-operations/media/MediaImage.graphql)**
+  Loads a media resource of type MediaImage
 - **[Process Photo Upload Progress](/example-operations/media/ProcessPhotoUploadProgress.graphql)**
   Finalise an upload process commenced with startMediaUpload, supplying content and associations to profile
 - **[Start Photo Upload](/example-operations/media/StartPhotoUpload.graphql)**

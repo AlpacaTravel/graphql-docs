@@ -218,6 +218,7 @@ Various media can be accessed on the Alpaca platform.
   photos to be served in content leveraging optimising and serving via CDN
 - **[Using Unsplash](topics/media/Using%20unsplash/README.md)** Referencing a
   photo on the unsplash platform
+- **[Querying media](topics/media/Querying%20media/README.md)** Querying media
 
 ### GraphQL
 
