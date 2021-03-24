@@ -234,6 +234,9 @@ Topics across our API can be explored from the following list;
 
 - **[Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)**
   Simple methods for executing GraphQL using JavaScript
+- **[Create React App](topics/javascript/Create%20React%20App/README.md)**
+  Get started with a template to build React Apps in Typescript/Apollo with
+  added codegen to make development faster.
 
 ## Tutorials
 
