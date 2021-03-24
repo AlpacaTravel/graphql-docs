@@ -25,59 +25,14 @@ Various place providers engage operators to contribute their opening hours.
 These are made accessible through the API in order for you to present to the
 user.
 
-- Use `intervals()` to access the next series of opening hours for a place. Use
-  this to present the immediate open/closed times
 - Use `forDays()` to query a range of dates for opening hours for a place. Use
   this to present a weeks worth of opening hours, or possibly more (such as
   a calendar).
+- Use `intervals()` to access the next series of opening hours for a place. Use
+  this to present the immediate open/closed times
 - Use `osmTag` field to return a single string representation of the opening
   hours encoded in a way that can be parsed, according to using Open Street Map
   opening hours specification.
-
-### Upcoming Open/Closed hours using `intervals()` connection
-
-The `intervals()` operation provides you the information about the immediate
-next open/closed hours for a place. You are provided back a series of
-`from`/`to` window intervals along with the associated `status` and `comment`.
-
-This operation was designed to assist user interfaces that wish to present the
-next time a venue is open, or perform more nuanced interface messages, such as
-"opening soon" or "closing soon".
-
-```graphql
-# Query the next series of open/closed hours for a place, in order to present
-# information whether the venue is open, closed, opening soon, closing soon,
-# etc.
-
-query QueryUpcomingOpenClosedTimes {
-  # Use the place() operation
-  place(id: "place/facebook:page:mavisthegrocer") {
-    # Access the opening hours (where specified)
-    hours {
-      # Access the next window that the place is open. Supports selecting a
-      # series of Open/Closed hours and can be used to let users know when
-      # a venue will be open/closed next.
-      intervals(first: 2) {
-        # First node is the current state, second node is the upcoming change
-        # of status.
-        nodes {
-          # Times from/to as ISO-8601 string, or formatted using the Unicode
-          # Technical Standard #35 Date Field Symbols
-          from(format: "EEE, MMM d, h:mm a")
-          to(format: "EEE, MMM d, h:mm a")
-          # Create a relative expression (in X minutes/hours etc) based on a
-          # a supplied relative to ISO 8601, or null (for now)
-          relative: from(relativeTo: null)
-          # Status Open/Closed
-          status
-          # Any comments attached to the opening hours
-          comment
-        }
-      }
-    }
-  }
-}
-```
 
 ### Open/Closed hours for a specific date range using `forDays()` operation
 
@@ -116,6 +71,51 @@ query QueryDateRangeOpenClosedTimes {
           # Status (Open/Closed)
           status
           # Any corresponding comment for the opening hours
+          comment
+        }
+      }
+    }
+  }
+}
+```
+
+### Upcoming Open/Closed hours using `intervals()` connection
+
+The `intervals()` operation provides you the information about the immediate
+next open/closed hours for a place. You are provided back a series of
+`from`/`to` window intervals along with the associated `status` and `comment`.
+
+This operation was designed to assist user interfaces that wish to present the
+next time a venue is open, or perform more nuanced interface messages, such as
+"opening soon" or "closing soon".
+
+```graphql
+# Query the next series of open/closed hours for a place, in order to present
+# information whether the venue is open, closed, opening soon, closing soon,
+# etc.
+
+query QueryUpcomingOpenClosedTimes {
+  # Use the place() operation
+  place(id: "place/facebook:page:mavisthegrocer") {
+    # Access the opening hours (where specified)
+    hours {
+      # Access the next window that the place is open. Supports selecting a
+      # series of Open/Closed hours and can be used to let users know when
+      # a venue will be open/closed next.
+      intervals(first: 2) {
+        # First node is the current state, second node is the upcoming change
+        # of status.
+        nodes {
+          # Times from/to as ISO-8601 string, or formatted using the Unicode
+          # Technical Standard #35 Date Field Symbols
+          from(format: "EEE, MMM d, h:mm a")
+          to(format: "EEE, MMM d, h:mm a")
+          # Create a relative expression (in X minutes/hours etc) based on a
+          # a supplied relative to ISO 8601, or null (for now)
+          relative: from(relativeTo: null)
+          # Status Open/Closed
+          status
+          # Any comments attached to the opening hours
           comment
         }
       }
