@@ -156,6 +156,9 @@ More coming soon. Make us a suggestion.
 ### JavaScript
 
 - [Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)
+- [Create React App](topics/javascript/Create%20React%20App/README.md) Get
+  started with a template to build React Apps in Typescript/Apollo with added
+  codegen to make development faster.
 
 ### Itinerary
 
