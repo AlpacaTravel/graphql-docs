@@ -117,12 +117,22 @@ query QueryUpcomingOpenClosedTimes {
           status
           # Any comments attached to the opening hours
           comment
+          # Access any local public holidays that may affect these hours
+          publicHolidays { name }
         }
       }
     }
   }
 }
 ```
+#### Checking a status at a future specific datetime
+
+Note: You can also use the `interval()` method to check the opening hours at a
+specific date/time in the future. This can give you spot checks when assisting
+a user with checking a future travel date. You can also access whether there 
+are any public holidays that could affect that time. Use a query providing the
+`from` field argument (with optional `to` value) in order to check the status
+at a point of time: `interval(from:"<ISO8601_DATE>", first: 1) { status }`.
 
 ### OpenStreetMap Opening Hours Specification `osmTag`
 
