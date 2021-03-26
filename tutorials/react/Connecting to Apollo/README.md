@@ -1,7 +1,7 @@
-# Connecting Apollo Boost
+# Connecting Apollo
 
 This guide will quickly setup a React single-page application using
-create-react-app, and configure it using Apollo Boost to connect to the Alpaca
+create-react-app, and configure it using Apollo to connect to the Alpaca
 Travel API.
 
 Apollo is the industry-standard GraphQL implementation, proving the data graph
@@ -29,17 +29,30 @@ developer experience while optimising for production.
 Using the below command, you will be up and running with a React application and
 a connection to the Alpaca Travel API through Apollo Boost.
 
+This package uses:
+
+- Typescript (recommended)
+- Apollo Client
+- GraphQL Codegen (for generating types and hooks)
+
 ```shell
-npx create-react-app my-project --template @alpaca-travel/apollo-boost
+npx create-react-app my-project --template @alpaca-travel/typescript-apollo-codegen
 ```
 
 Note in the above, we are using `npx` which is not a typo. It is a package
 runner installed with npm 5.2+.
 
+[Refer to the documentation](https://github.com/AlpacaTravel/cra-template-typescript-apollo-codegen)
+for help with this template.
+
 ### Update your API Key
 
-Modify the `.env` file and replace `REACT_APP_ALPACA_ACCESS_TOKEN=...` with your
+Create a `.env` file and replace `REACT_APP_ALPACA_ACCESS_TOKEN=...` with your
 API Key.
+
+```
+REACT_APP_ALPACA_ACCESS_TOKEN=<your-api-public-key>
+```
 
 ### Start the development server
 
@@ -56,24 +69,20 @@ For any issues starting your React application, refer to the
 
 ## Alternatively, add to an existing React App
 
-Apollo Boost is a package that provides a quick setup for the Apollo Client.
-Apollo Boost includes some packages which help configure a reasonable starting
-point, such as including a recommended in-memory cache, http fetching and error
-handling.
+You can add Apollo to your existing react application using the following:
 
-- `apollo-boost`: The main package we will be using
-- `@apollo/react-hooks`: React hooks based view layer integration
+- `@apollo/client`: The main package we will be using
 - `graphql`: For working with our grapql queries
 
 ```shell
-npm install apollo-boost @apollo/react-hooks graphql
+npm install @apollo/client graphql
 # or
-yarn add apollo-boost @apollo/react-hooks graphql
+yarn add @apollo/client graphql
 ```
 
 ### Configuring the GraphQL Client
 
-Apollo Boost will be used as the client to connect to the Alpaca Travel API. All
+Apollo will be used as the client to connect to the Alpaca Travel API. All
 GraphQL clients send requests to a single "root endpoint" which is shown below.
 We will configure this into our app in the next section.
 
@@ -112,7 +121,7 @@ object.
 
 ```javascript
 // src/client.js
-import ApolloClient from "apollo-boost";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 // Access the environment variables to configure the URI
 const endpoint = process.env.REACT_APP_ALPACA_GRAPHQL_ENDPOINT;
@@ -120,6 +129,7 @@ const accessToken = process.env.REACT_APP_ALPACA_ACCESS_TOKEN;
 
 const client = new ApolloClient({
   uri: `${endpoint}?accessToken=${accessToken}`,
+  cache: new InMemoryCache(),
 });
 
 export default client;
@@ -138,7 +148,7 @@ provide it our configured client.
 // src/index.js
 import React from "react";
 import ReactDOM from "react-dom";
-import { ApolloProvider } from "@apollo/react-hooks";
+import { ApolloProvider } from "@apollo/client";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -166,8 +176,7 @@ We can now run a query in a React Component and start querying the API for data.
 ```javascript
 // src/App.js
 import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
+import { useQuery, gql } from "@apollo/client";
 
 const PLACE = gql`
   query getPlace($placeId: ID!) {

@@ -242,7 +242,7 @@ Topics across our API can be explored from the following list;
 
 React
 
-- [Connecting to Apollo Boost](tutorials/react/Connecting%20to%20Apollo%20Boost/README.md)
+- [Connecting to Apollo](tutorials/react/Connecting%20to%20Apollo/README.md)
 - [Connecting to URQL](tutorials/react/Connecting%20URQL/README.md)
 
 More Coming soon
