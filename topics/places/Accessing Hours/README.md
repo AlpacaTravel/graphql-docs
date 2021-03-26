@@ -177,3 +177,7 @@ the ISO-3166-2 for the place, allowing you to access the country and region.
 | Attribute ID       | Value      | Example |
 | ------------------ | ---------- | ------- |
 | `place/iso-3166-2` | ISO-3166-2 | "AU-VIC |
+
+## More Resources
+
+- [Example React Opening Hours](https://github.com/AlpacaTravel/react-graphql-acessing-place-hours-example)

@@ -258,6 +258,9 @@ These are provided as working examples you can modify for your own uses.
   Example loading a "slider" of location cards from a collection pulling in
   information from Australian Tourism Data Warehouse (ATDW). You can customise
   and run this in browser as a demo (code sandbox).
+- **[React Opening Hours](https://codesandbox.io/s/alpaca-travel-graphql-opening-hours-cggl9?file=/src/opening-hours/opening-hours.tsx)**
+  Example loading of a place opening hours, demonstrating some presentation of
+  current status or schedule for a series of dates.
 
 More examples to come
 
