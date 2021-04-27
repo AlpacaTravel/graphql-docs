@@ -3,9 +3,17 @@
 # access control, such as ability to read/write to these profiles
 
 query QueryAuthorizedProfiles {
-  authorizedProfiles(first: 5) {
+  authorizedProfiles(
+    # Number of records to return
+    first: 5
+  ) {
     nodes {
+      # Identifiers
       id
+      __typename
+      handle
+
+      # Presentation of profiles
       name
     }
   }
