@@ -1,4 +1,4 @@
-# Load a query by a supplied profile identifier
+# Load a query by a supplied profile identifier.
 
 query QueryProfile {
   # Use the profile() operation to load the profile

@@ -1,4 +1,4 @@
-# Claim a handle for a profile, associating something more friendly
+# Claim a handle for a profile, associating something more friendly.
 
 mutation ClaimProfileHandle($id: ID!, $handle: String) {
   # Use the claimProfileHandle operation to claim a handle for a profile

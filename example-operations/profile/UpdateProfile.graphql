@@ -1,4 +1,4 @@
-# Update profile details (such as name, bio, website) for a supplied profile
+# Update profile details (such as name, bio, website) for a supplied profile.
 
 mutation UpdateProfile($id: ID!, $profile: UpdateProfileInput!) {
   # Use the updateProfile to update profile settings
