@@ -1,0 +1,19 @@
+# Update the collection details
+
+mutation UpdateCollectionTitle {
+  # use the updateCollection
+  updateCollection(
+    # Supply the ID for the record
+    id: "collection/ABC123"
+    # Update the location data
+    collection: { title: "Updated title" }
+  ) {
+    # Query back the location updated
+    collection {
+      id
+      __typename
+      # Title will now be updated to "Updated title"
+      title
+    }
+  }
+}

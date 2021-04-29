@@ -20,6 +20,8 @@
   Queries collection items based on a ID within an external platform
 - **[Query Collections](/example-operations/collection/QueryCollections.graphql)**
   Load the collections available for a profile
+- **[Update Collection](/example-operations/collection/UpdateCollection.graphql)**
+  Update the collection details
 - **[Update Collection Location Add External Reference](/example-operations/collection/UpdateCollectionLocationAddExternalReference.graphql)**
   Update a record to store a corresponding identifier in an external system
 - **[Update Collection Location Tags](/example-operations/collection/UpdateCollectionLocationTags.graphql)**
