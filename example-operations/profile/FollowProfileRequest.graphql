@@ -1,0 +1,14 @@
+# Requests to follow from one profile to another profile
+
+mutation {
+  # Use the followProfile() mutation to establish a follow relationship
+  followProfile(
+    # The requesting profile attempting to follow another profile
+    fromProfile: "profile/ABC123"
+    # The target profile to follow
+    toProfile: "profile/DEF456"
+  ) {
+    # The status of the request
+    status
+  }
+}
