@@ -124,7 +124,7 @@ GraphQL Articles also located in this repository first.
 - **[Deny Profile Follow](/example-operations/profile/DenyProfileFollow.graphql)**
   Denies a profiles request to follow another profile.
 - **[Follow Profile Request](/example-operations/profile/FollowProfileRequest.graphql)**
-  Requests to follow from one profile to another profilemutation {   Use the followProfile() mutation to establish a follow relationship  followProfile(     The requesting profile attempting to follow another profile    fromProfile: "profile/ABC123"     The target profile to follow    toProfile: "profile/DEF456"  ) {     The status of the request    status  }}
+  Requests to follow from one profile to another profile.
 - **[Query Authorized Profiles](/example-operations/profile/QueryAuthorizedProfiles.graphql)**
   Uses a query with the supplied AccessToken/API Key in order to determine the associated authorized profiles
 - **[Query Profile](/example-operations/profile/QueryProfile.graphql)**
@@ -134,7 +134,7 @@ GraphQL Articles also located in this repository first.
 - **[Query Profiles By Handle](/example-operations/profile/QueryProfilesByHandle.graphql)**
   Queries for profiles based on a registered handle claimed for profiles.
 - **[Unfollow Profile](/example-operations/profile/UnfollowProfile.graphql)**
-  Unfollows a profilemutation {   Use the followProfile() mutation to remove a follow relationship  unfollowProfile(     The requesting profile currently following another profile    fromProfile: "profile/ABC123"     The target profile to unfollow    toProfile: "profile/DEF456"  ) {     The status of the relationship    status  }}
+  Unfollows a profile.
 - **[Update Profile](/example-operations/profile/UpdateProfile.graphql)**
   Update profile details (such as name, bio, website) for a supplied profile
 

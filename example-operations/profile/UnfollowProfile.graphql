@@ -1,6 +1,6 @@
-# Unfollows a profile
+# Unfollows a profile.
 
-mutation {
+mutation UnfollowProfile {
   # Use the followProfile() mutation to remove a follow relationship
   unfollowProfile(
     # The requesting profile currently following another profile
