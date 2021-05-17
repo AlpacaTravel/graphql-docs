@@ -1,13 +1,4 @@
-# Profile
-
-- **[Authorized Profiles](/example-operations/profile/AuthorizedProfiles.graphql)**
-  Uses a query with the supplied AccessToken/API Key in order to determine the associated authorized profiles
-- **[Profile](/example-operations/profile/Profile.graphql)**
-  Load a query by a supplied profile identifier.
-- **[Update Profile](/example-operations/profile/UpdateProfile.graphql)**
-  Update profile details (such as name, bio, website) for a supplied profile
-
-## Profile Social
+# Profile Social
 
 - **[Approve Profile Request](/example-operations/profile/social/ApproveProfileRequest.graphql)**
   Approves a profile follow request to follow another profile
@@ -24,4 +15,4 @@
 - **[Unfollow Profile](/example-operations/profile/social/UnfollowProfile.graphql)**
   Unfollows a profile.
 
-[View other operation examples](/example-operations)
+[View other profile operation examples](/example-operations/profile)
