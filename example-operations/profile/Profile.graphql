@@ -1,6 +1,6 @@
 # Load a query by a supplied profile identifier.
 
-query QueryProfile {
+query Profile {
   # Use the profile() operation to load the profile
   profile(
     # Supply the profile

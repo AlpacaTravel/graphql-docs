@@ -32,13 +32,34 @@ generated markdown
   // Table of contents
   const doc = [
     title,
-    sections.map((s) => `### ${s.title}\n\n${s.toc}`).join("\n\n"),
+    sections
+      .filter((sect) => sect.parent[0] === null)
+      .map((s) => {
+        const sectionStart = `### ${s.title}\n\n${s.toc}`;
+        const sectionMiddle = sections.reduce((c, sect) => {
+          if (sect.parent[0] === s.key) {
+            return c.concat(`\n\n#### ${sect.title}\n\n${sect.toc}`);
+          }
+          return c;
+        }, []);
+        const sectionDoc = [sectionStart, ...sectionMiddle].join("");
+        return sectionDoc;
+      })
+      .join("\n\n"),
     footer,
   ].join("\n\n");
   fs.writeFileSync(path.resolve(__dirname, "./README.md"), doc);
 
   sections.forEach((s) => {
-    const sectionDoc = `# ${s.title}\n\n${s.toc}\n\n[View other operation examples](/example-operations)`;
+    const sectionStart = `# ${s.title}\n\n${s.toc}\n\n`;
+    const sectionMiddle = sections.reduce((c, sect) => {
+      if (sect.parent[0] === s.key) {
+        return c.concat(`## ${sect.title}\n\n${sect.toc}\n\n`);
+      }
+      return c;
+    }, []);
+    const sectionEnd = `[${s.parent[1]}](${s.parent[2]})`;
+    const sectionDoc = [sectionStart, ...sectionMiddle, sectionEnd].join("");
     fs.writeFileSync(
       path.resolve(__dirname, `./${s.key}/README.md`),
       sectionDoc
@@ -47,19 +68,33 @@ generated markdown
 });
 
 function section(key, structures) {
+  const [parent, parentText, parentLink] = (() => {
+    const first = structures[key][0];
+    const isParentDifferent = first.dirParent !== first.dir;
+    if (!isParentDifferent) {
+      return [null, "View other operation examples", "/example-operations"];
+    }
+    return [
+      first.dirParent,
+      `View other ${first.dirParent} operation examples`,
+      `/example-operations/${first.dirParent}`,
+    ];
+  })();
+
   // Links
   return {
     key: key,
-    title: capitalizeFirstLetter(key),
+    title: formatString(key),
     toc: structures[key]
       .map((p) => `- **[${p.title}](${p.link})**\n  ${p.comment.trim()}`)
       .join("\n"),
+    parent: [parent, parentText, parentLink],
   };
 }
 
 function info(input) {
   // Split out title
-  const [dir, file] = input.split("/");
+  const [dir, file] = rsplit(input);
 
   // Create a title
   const title = file
@@ -77,7 +112,8 @@ function info(input) {
   const link = `/example-operations/${input}`;
 
   return {
-    dir,
+    dirParent: dir[0],
+    dir: dir.join("/"),
     title,
     path: input,
     comment,
@@ -85,6 +121,21 @@ function info(input) {
   };
 }
 
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+function formatString(string) {
+  switch (string.toLowerCase()) {
+    case "place/atdw":
+      return "Place Provider: Australian Tourism Data Warehouse";
+    default:
+      break;
+  }
+  return string.split("/").map(upperCaseFirst).join(" ");
+}
+
+function upperCaseFirst(input) {
+  return input.charAt(0).toUpperCase() + input.slice(1);
+}
+
+function rsplit(input) {
+  const split = input.split("/");
+  return [split.slice(0, -1), split.slice(-1)[0]];
 }

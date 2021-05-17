@@ -1,6 +1,6 @@
 # Query to list which profiles who follows a supplied profile.
 
-query QueryProfileFollows {
+query ProfileFollows {
   # Use profile() along with followers()
   profile(
     # Supply the profile to query

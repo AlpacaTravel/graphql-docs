@@ -1,6 +1,6 @@
 # Performs a query on a collection in order to obtain basic locations
 
-query QueryCollectionItems {
+query CollectionItems {
   # Use the collectionItems operation to query across items
   collectionItems(
     # Supply which collections to query

@@ -3,7 +3,7 @@
 # relation to another place. Query the bearing, compass or distance to let
 # contextualise the position.
 
-query QueryPlaceContextualOrientation {
+query PlaceContextualOrientation {
   place(
     # A place (or any joined node as a place type)
     id: "place/ABC123"

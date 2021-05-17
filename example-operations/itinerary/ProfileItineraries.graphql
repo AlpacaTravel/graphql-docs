@@ -1,6 +1,6 @@
 # Query the itineraries that are created and associated to a profile
 
-query QueryProfileItineraries {
+query ProfileItineraries {
   # Use the itineraries operation to query for a supplied profile
   itineraries(
     # You will need to have your profile ID to query

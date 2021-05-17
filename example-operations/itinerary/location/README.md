@@ -1,32 +1,4 @@
-# Itinerary
-
-- **[Check Itinerary Place Present](/example-operations/itinerary/CheckItineraryPlacePresent.graphql)**
-  Checks whether a place has been added to an itinerary, for creating a button state on an "Add to Itinerary" button
-- **[Create Itinerary](/example-operations/itinerary/CreateItinerary.graphql)**
-  Creates an Itinerary you can use for a wide range of use cases such as lists or sequenced itieraries.
-- **[Create Itinerary Associated To Profile](/example-operations/itinerary/CreateItineraryAssociatedToProfile.graphql)**
-  Creates an itinerary and associates it to the supplied profile ID
-- **[Create Itinerary With Car Auto Route](/example-operations/itinerary/CreateItineraryWithCarAutoRoute.graphql)**
-  Creates an itinerary, and configures it to assign automatic routes
-- **[Delete Itinerary](/example-operations/itinerary/DeleteItinerary.graphql)**
-  Removes an itinerary
-- **[Profile Itineraries](/example-operations/itinerary/ProfileItineraries.graphql)**
-  Query the itineraries that are created and associated to a profile
-- **[Update Itinerary Assign Car Auto Route](/example-operations/itinerary/UpdateItineraryAssignCarAutoRoute.graphql)**
-  Enable "auto-route" behaviour to an existing itinerary
-- **[Update Itinerary Direction Mode](/example-operations/itinerary/UpdateItineraryDirectionMode.graphql)**
-  Updates an itinerary directions to switch the mode of transportation from one mode (such as car) to an alterative mode, such as foot
-- **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
-  Modify an existing Itinerary by changing the title
-
-## Itinerary Directions
-
-- **[Create Itinerary Directions](/example-operations/itinerary/directions/CreateItineraryDirections.graphql)**
-  Creates itinerary directions for between locations in an itinerary manually
-- **[Create Itinerary Directions With Manual Positions](/example-operations/itinerary/directions/CreateItineraryDirectionsWithManualPositions.graphql)**
-  Creates itinerary directions for between locations in an itinerary by supplying all the point information with a custom mode of transportation.
-
-## Itinerary Location
+# Itinerary Location
 
 - **[Create Itinerary Location](/example-operations/itinerary/location/CreateItineraryLocation.graphql)**
   Add a location to our itinerary, associating the place to Mavis The Grocer using the Facebook Page identifier
@@ -51,4 +23,4 @@
 - **[Update Itinerary Location As Optional](/example-operations/itinerary/location/UpdateItineraryLocationAsOptional.graphql)**
   Updates an itinerary location and marks the itinerary location as an optional stop
 
-[View other operation examples](/example-operations)
+[View other itinerary operation examples](/example-operations/itinerary)

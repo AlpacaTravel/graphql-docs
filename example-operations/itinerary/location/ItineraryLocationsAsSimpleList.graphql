@@ -1,7 +1,7 @@
 # Query the itinerary locations for an itinerary, and access basic information
 # about the place
 
-query QueryItineraryLocationsAsSimpleList {
+query ItineraryLocationsAsSimpleList {
   itinerary(
     # Supply the itinerary ID
     id: "itinerary/ABC123"

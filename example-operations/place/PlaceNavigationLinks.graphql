@@ -1,7 +1,7 @@
 # Queries a place to identify navigation links to generate URL's to send the
 # user to obtain navigation links using their preferred service
 
-query QueryPlaceNavigationLinks {
+query PlaceNavigationLinks {
   # use the place node
   place(id: "place/ABC123") {
     # Access what is needed from the place

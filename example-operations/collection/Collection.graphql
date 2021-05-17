@@ -1,0 +1,33 @@
+# Loads information about the collection.
+
+query Collection {
+  # use the node() query to address the collection
+  node(id: "collection/ABC123") {
+    ... on Collection {
+      id
+      __typename
+
+      # Query some standard content fields
+      title
+      synopsis
+      discriminator
+
+      # Query the profile owner
+      profile {
+        name
+      }
+
+      # Query the items from
+      items(first: 5) {
+        edges {
+          node {
+            ... on CollectionLocation {
+              title
+            }
+          }
+        }
+        totalCount
+      }
+    }
+  }
+}

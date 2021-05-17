@@ -1,7 +1,7 @@
 # Query an itinerary location and load the associated inbound or outbound
 # directions
 
-query QueryItineraryLocationDirections {
+query ItineraryLocationDirections {
   # Use the itineraryLocation operation
   node(
     # Supply the itinerary location ID

@@ -1,6 +1,6 @@
 # Queries for profiles based on a registered handle claimed for profiles.
 
-query QueryProfileByHandle {
+query ProfileByHandle {
   # Use the profiles query to search profiles based on a supplied handle
   profiles(
     # The handle to search for

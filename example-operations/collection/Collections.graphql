@@ -1,6 +1,6 @@
 # Load the collections available for a profile
 
-query QueryCollections {
+query Collections {
   # Use collections() operation for listing collections
   collections(
     # Supply the profile to list profiles for

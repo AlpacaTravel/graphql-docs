@@ -1,6 +1,6 @@
 # Loads in a specific collection location
 
-query QueryCollectionLocation {
+query CollectionLocation {
   collectionItem(
     # Provide the individual collection item ID
     id: "item/ABC123"

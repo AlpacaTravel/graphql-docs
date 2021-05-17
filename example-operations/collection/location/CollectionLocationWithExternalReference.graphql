@@ -6,7 +6,7 @@
 # External source is to reference the source of all records, and can therefore
 # differentiate multiple sources of data and potentially overlapping IDs
 
-query QueryCollectionLocationWithExternalReference {
+query CollectionLocationWithExternalReference {
   collectionItems(
     # Query the collection
     collectionIds: "collection/ABC123"

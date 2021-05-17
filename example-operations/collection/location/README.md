@@ -1,19 +1,4 @@
-# Collection
-
-- **[Collection](/example-operations/collection/Collection.graphql)**
-  Loads information about the collection.
-- **[Collection Items](/example-operations/collection/CollectionItems.graphql)**
-  Performs a query on a collection in order to obtain basic locations
-- **[Collections](/example-operations/collection/Collections.graphql)**
-  Load the collections available for a profile
-- **[Create Collection](/example-operations/collection/CreateCollection.graphql)**
-  Creates a collection for the supplied profile
-- **[Delete Collection Item](/example-operations/collection/DeleteCollectionItem.graphql)**
-  Removes a collection item from a collection
-- **[Update Collection](/example-operations/collection/UpdateCollection.graphql)**
-  Update the collection details
-
-## Collection Location
+# Collection Location
 
 - **[Collection Location](/example-operations/collection/location/CollectionLocation.graphql)**
   Loads in a specific collection location
@@ -34,4 +19,4 @@
 - **[Update Collection Location Title](/example-operations/collection/location/UpdateCollectionLocationTitle.graphql)**
   Modify an existing collection location title
 
-[View other operation examples](/example-operations)
+[View other collection operation examples](/example-operations/collection)

@@ -2,7 +2,7 @@
 # information whether the venue is open, closed, opening soon, closing soon,
 # etc.
 
-query QueryUpcomingOpenClosedTimes {
+query UpcomingOpenClosedTimes {
   # Use the place() operation
   place(id: "place/facebook:page:mavisthegrocer") {
     # Access the opening hours (where specified)

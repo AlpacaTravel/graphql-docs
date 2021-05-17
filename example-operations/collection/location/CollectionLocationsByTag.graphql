@@ -3,7 +3,7 @@
 # "my-tag" present. This is a basic filtering capability based on tagging items
 # within groups.
 
-query QueryCollectionLocationsByTag {
+query CollectionLocationsByTag {
   # use collectionItems() operation
   collectionItems(
     # Specify the collection ID

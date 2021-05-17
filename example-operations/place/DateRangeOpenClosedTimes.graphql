@@ -2,7 +2,7 @@
 # upcoming week or future date range. Includes information on local public
 # holidays that could affect opening hours.
 
-query QueryDateRangeOpenClosedTimes {
+query DateRangeOpenClosedTimes {
   # Use the place() operation
   place(id: "place/facebook:page:mavisthegrocer") {
     # Access the opening hours (where specified)

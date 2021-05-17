@@ -1,7 +1,7 @@
 # Query the itinerary locations, with information about the directions between
 # each of the locations
 
-query QueryItineraryLocationsWithDirections {
+query ItineraryLocationsWithDirections {
   itinerary(
     # Supply the itinerary ID
     id: "itinerary/ABC123"
