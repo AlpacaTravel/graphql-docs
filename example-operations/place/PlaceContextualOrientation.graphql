@@ -5,8 +5,8 @@
 
 query PlaceContextualOrientation {
   place(
-    # A place (or any joined node as a place type)
-    id: "place/ABC123"
+    # Provide a place ID, example for a cafe in Melbourne
+    id: "place/facebook:page:mavisthegrocer"
   ) {
     # Identifiers
     id
