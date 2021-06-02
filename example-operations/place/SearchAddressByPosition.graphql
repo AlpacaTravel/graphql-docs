@@ -1,12 +1,12 @@
-# Queries a position and returns with matching places
+# Searches to find addresses by supplied position lon/lat.
 
-query SearchPlaceReverse {
+query SearchAddressByPosition {
   # Use placeReverseSearch to identify places near
   placeReverseSearch(
     # Set the focus position
     focus: { lon: 144.9994334578514, lat: -37.79998573598068 }
     # Determine the place provider, OpenAddresses for street addresses
-    sources: [OpenAddresses]
+    sources: OpenAddresses
     # Number of matches to return
     first: 5
   ) {
