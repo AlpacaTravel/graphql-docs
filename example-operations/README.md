@@ -119,7 +119,7 @@ GraphQL Articles also located in this repository first.
 - **[Place Contextual Orientation](/example-operations/place/PlaceContextualOrientation.graphql)**
   Query a place and contextualise it's location to other points of interest such as accomodation, towns, or other contextual places you are showing in relation to another place
 - **[Place Currency](/example-operations/place/PlaceCurrency.graphql)**
-  Queries the currency for the country for a place
+  Queries the currency used in the country for a place.
 - **[Place Navigation Links](/example-operations/place/PlaceNavigationLinks.graphql)**
   Queries a place to identify navigation links to generate URL's to send the user to obtain navigation links using their preferred service
 - **[Place Time Zone](/example-operations/place/PlaceTimeZone.graphql)**
