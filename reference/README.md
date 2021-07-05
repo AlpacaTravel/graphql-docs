@@ -6,48 +6,36 @@
   * [Query](#query)
   * [Mutation](#mutation)
   * [Objects](#objects)
-    * [ApproveProfileFollowPayload](#approveprofilefollowpayload)
     * [Attribute](#attribute)
     * [AttributeConnection](#attributeconnection)
     * [AttributeEdge](#attributeedge)
     * [Bounds](#bounds)
-    * [ClaimProfileHandlePayload](#claimprofilehandlepayload)
+    * [ClaimProfileUsernamePayload](#claimprofileusernamepayload)
     * [Collection](#collection)
     * [CollectionConnection](#collectionconnection)
     * [CollectionEdge](#collectionedge)
     * [CollectionItemConnection](#collectionitemconnection)
     * [CollectionItemEdge](#collectionitemedge)
     * [CollectionLocation](#collectionlocation)
-    * [ConnectedApp](#connectedapp)
-    * [ConnectedAppConnection](#connectedappconnection)
-    * [ConnectedAppEdge](#connectedappedge)
     * [CreateCollectionLocationPayload](#createcollectionlocationpayload)
     * [CreateCollectionPayload](#createcollectionpayload)
-    * [CreateConnectedAppPayload](#createconnectedapppayload)
     * [CreateItineraryCollectionPayload](#createitinerarycollectionpayload)
     * [CreateItineraryDirectionsPayload](#createitinerarydirectionspayload)
     * [CreateItineraryLocationPayload](#createitinerarylocationpayload)
     * [CreateItineraryPayload](#createitinerarypayload)
     * [DeleteCollectionItemPayload](#deletecollectionitempayload)
     * [DeleteCollectionPayload](#deletecollectionpayload)
-    * [DeleteConnectedAppPayload](#deleteconnectedapppayload)
     * [DeleteItineraryItemPayload](#deleteitineraryitempayload)
     * [DeleteItineraryPayload](#deleteitinerarypayload)
-    * [DenyProfileFollowPayload](#denyprofilefollowpayload)
     * [Elevation](#elevation)
     * [FinalizeMediaUploadPayload](#finalizemediauploadpayload)
-    * [FollowProfilePayload](#followprofilepayload)
     * [Isochrone](#isochrone)
     * [Itinerary](#itinerary)
     * [ItineraryAutoRoute](#itineraryautoroute)
     * [ItineraryCollection](#itinerarycollection)
     * [ItineraryConnection](#itineraryconnection)
     * [ItineraryDirections](#itinerarydirections)
-    * [ItineraryDirectionsConnection](#itinerarydirectionsconnection)
     * [ItineraryDirectionsDurations](#itinerarydirectionsdurations)
-    * [ItineraryDirectionsEdge](#itinerarydirectionsedge)
-    * [ItineraryDirectionsPseudoConnection](#itinerarydirectionspseudoconnection)
-    * [ItineraryDirectionsPseudoEdge](#itinerarydirectionspseudoedge)
     * [ItineraryEdge](#itineraryedge)
     * [ItineraryItemCascadedChanges](#itineraryitemcascadedchanges)
     * [ItineraryItemConnection](#itineraryitemconnection)
@@ -62,30 +50,26 @@
     * [Place](#place)
     * [PlaceAddress](#placeaddress)
     * [PlaceAttribution](#placeattribution)
+    * [PlaceConnection](#placeconnection)
     * [PlaceContact](#placecontact)
+    * [PlaceEdge](#placeedge)
     * [PlaceLayer](#placelayer)
-    * [PlaceSearchConnection](#placesearchconnection)
-    * [PlaceSearchEdge](#placesearchedge)
     * [PlaceTowards](#placetowards)
     * [Position](#position)
     * [Profile](#profile)
     * [ProfileConnection](#profileconnection)
     * [ProfileEdge](#profileedge)
-    * [ProfileFollowConnection](#profilefollowconnection)
-    * [ProfileFollowEdge](#profilefollowedge)
     * [PublishItineraryPayload](#publishitinerarypayload)
+    * [Request](#request)
     * [Route](#route)
     * [RouteConnection](#routeconnection)
     * [RouteEdge](#routeedge)
-    * [RouteElevation](#routeelevation)
     * [RouteSegment](#routesegment)
     * [SearchResult](#searchresult)
     * [SearchResultMatch](#searchresultmatch)
     * [StartMediaUploadPayload](#startmediauploadpayload)
-    * [UnfollowProfilePayload](#unfollowprofilepayload)
     * [UpdateCollectionLocationPayload](#updatecollectionlocationpayload)
     * [UpdateCollectionPayload](#updatecollectionpayload)
-    * [UpdateConnectedAppPayload](#updateconnectedapppayload)
     * [UpdateItineraryCollectionPayload](#updateitinerarycollectionpayload)
     * [UpdateItineraryDirectionsPayload](#updateitinerarydirectionspayload)
     * [UpdateItineraryLocationPayload](#updateitinerarylocationpayload)
@@ -97,11 +81,8 @@
     * [AttributeInput](#attributeinput)
     * [BoundsCircleInput](#boundscircleinput)
     * [BoundsInput](#boundsinput)
-    * [CollectionItemsSort](#collectionitemssort)
-    * [CollectionsSort](#collectionssort)
     * [CreateCollectionInput](#createcollectioninput)
     * [CreateCollectionLocationInput](#createcollectionlocationinput)
-    * [CreateConnectedAppInput](#createconnectedappinput)
     * [CreateItineraryCollectionInput](#createitinerarycollectioninput)
     * [CreateItineraryDirectionsInput](#createitinerarydirectionsinput)
     * [CreateItineraryInput](#createitineraryinput)
@@ -110,7 +91,6 @@
     * [ElevationInput](#elevationinput)
     * [GeoJsonSimplification](#geojsonsimplification)
     * [GeoJsonSimplificationRamerDouglasPeucker](#geojsonsimplificationramerdouglaspeucker)
-    * [ItinerariesSort](#itinerariessort)
     * [ItineraryAutoRouteInput](#itineraryautorouteinput)
     * [ItineraryDirectionsDurationsInput](#itinerarydirectionsdurationsinput)
     * [ItineraryItemPositionAfterSibling](#itineraryitempositionaftersibling)
@@ -124,7 +104,6 @@
     * [RouteSegmentInput](#routesegmentinput)
     * [UpdateCollectionInput](#updatecollectioninput)
     * [UpdateCollectionLocationInput](#updatecollectionlocationinput)
-    * [UpdateConnectedAppInput](#updateconnectedappinput)
     * [UpdateItineraryCollectionInput](#updateitinerarycollectioninput)
     * [UpdateItineraryDirectionsInput](#updateitinerarydirectionsinput)
     * [UpdateItineraryInput](#updateitineraryinput)
@@ -134,24 +113,17 @@
   * [Enums](#enums)
     * [AngleUnit](#angleunit)
     * [CompassPoint](#compasspoint)
-    * [ConnectedAppAuthTypes](#connectedappauthtypes)
-    * [ConnectedAppServiceKeys](#connectedappservicekeys)
-    * [ConnectedAppTypes](#connectedapptypes)
     * [DistanceUnit](#distanceunit)
     * [DurationUnit](#durationunit)
     * [IsochroneMode](#isochronemode)
-    * [ItineraryDirectionsAccuracy](#itinerarydirectionsaccuracy)
-    * [ItineraryDirectionsDirection](#itinerarydirectionsdirection)
-    * [ItineraryDirectionsRestrict](#itinerarydirectionsrestrict)
     * [ItineraryItemType](#itineraryitemtype)
     * [MediaUploadStatus](#mediauploadstatus)
     * [PlaceNavigationUrlProvider](#placenavigationurlprovider)
     * [PlaceSearchSource](#placesearchsource)
     * [ProfileFollowStatus](#profilefollowstatus)
-    * [ProfileType](#profiletype)
+    * [ProfileFollowStatusAction](#profilefollowstatusaction)
     * [RouteMode](#routemode)
     * [RouteSearchableMode](#routesearchablemode)
-    * [SortDirection](#sortdirection)
   * [Scalars](#scalars)
     * [Boolean](#boolean)
     * [Float](#float)
@@ -190,11 +162,7 @@ Get a resource that implements Node by id
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The unique identifier of the resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>profile</strong></td>
@@ -208,38 +176,26 @@ Obtains a profile by a provided id
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The unique identifier of the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>authorizedProfiles</strong></td>
 <td valign="top"><a href="#profileconnection">ProfileConnection</a>!</td>
 <td>
 
-Look up all authorised profiles
+Query for all authorised profiles
 
 </td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>profiles</strong></td>
@@ -253,74 +209,42 @@ Search profiles
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">handle</td>
+<td colspan="2" align="right" valign="top">username</td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-Filter by profile handle
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>routes</strong></td>
 <td valign="top"><a href="#routeconnection">RouteConnection</a>!</td>
-<td>
-
-Look up routes for traveling along the given positions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">positions</td>
 <td valign="top">[<a href="#positioninput">PositionInput</a>!]!</td>
-<td>
-
-The positions the route should visit
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">mode</td>
 <td valign="top"><a href="#routesearchablemode">RouteSearchableMode</a>!</td>
-<td>
-
-The mode of transport of the route
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>place</strong></td>
@@ -334,477 +258,268 @@ Get a place by id
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The unique identifier of the place
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>placeSearch</strong></td>
-<td valign="top"><a href="#placesearchconnection">PlaceSearchConnection</a>!</td>
-<td>
-
-Search for places
-
-</td>
+<td valign="top"><a href="#placeconnection">PlaceConnection</a>!</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">text</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter places by a text query
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">focus</td>
 <td valign="top"><a href="#positioninput">PositionInput</a></td>
-<td>
-
-A focus point that the places should be close to
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">bounds</td>
 <td valign="top"><a href="#boundsinput">BoundsInput</a></td>
-<td>
-
-A bounding box that the item positions must fall within
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">sources</td>
 <td valign="top">[<a href="#placesearchsource">PlaceSearchSource</a>!]</td>
-<td>
-
-The place sources to search
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">layers</td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The place layers to search
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">thirdPartyQuery</td>
 <td valign="top"><a href="#json">JSON</a></td>
-<td>
-
-Additional third-party specific arguments
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">maxLabelLength</td>
 <td valign="top"><a href="#int">Int</a></td>
-<td>
-
-Maximum text length for search results labels
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>placeAutocompleteSearch</strong></td>
-<td valign="top"><a href="#placesearchconnection">PlaceSearchConnection</a>!</td>
-<td>
-
-Autocomplete for place search
-
-</td>
+<td valign="top"><a href="#placeconnection">PlaceConnection</a>!</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">text</td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-Filter places by a text query
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">focus</td>
 <td valign="top"><a href="#positioninput">PositionInput</a></td>
-<td>
-
-A focus point that the places should be close to
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">bounds</td>
 <td valign="top"><a href="#boundsinput">BoundsInput</a></td>
-<td>
-
-A bounding box that the item positions must fall within
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">sources</td>
 <td valign="top">[<a href="#placesearchsource">PlaceSearchSource</a>!]</td>
-<td>
-
-The place sources to search
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">layers</td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The place layers to search
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">thirdPartyQuery</td>
 <td valign="top"><a href="#json">JSON</a></td>
-<td>
-
-Additional third-party specific arguments
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">maxLabelLength</td>
 <td valign="top"><a href="#int">Int</a></td>
-<td>
-
-Maximum text length for search results labels
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>placeAddressSearch</strong></td>
-<td valign="top"><a href="#placesearchconnection">PlaceSearchConnection</a>!</td>
-<td>
-
-Search for places based on address details
-
-</td>
+<td valign="top"><a href="#placeconnection">PlaceConnection</a>!</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">borough</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by borough
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">country</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by country
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">county</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by county
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">locality</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by locality
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">neighbourhood</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by neighbourhood
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">postalCode</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by postalCode
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">region</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by region
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">streetAddress</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by streetAddress
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">sources</td>
 <td valign="top">[<a href="#placesearchsource">PlaceSearchSource</a>!]</td>
-<td>
-
-The place sources to search
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">layers</td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The place layers to search
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">thirdPartyQuery</td>
 <td valign="top"><a href="#json">JSON</a></td>
-<td>
-
-Additional third-party specific arguments
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">maxLabelLength</td>
 <td valign="top"><a href="#int">Int</a></td>
-<td>
-
-Maximum text length for search results labels
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>placeReverseSearch</strong></td>
-<td valign="top"><a href="#placesearchconnection">PlaceSearchConnection</a>!</td>
-<td>
-
-Search for places by location
-
-</td>
+<td valign="top"><a href="#placeconnection">PlaceConnection</a>!</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">focus</td>
 <td valign="top"><a href="#positioninput">PositionInput</a>!</td>
-<td>
-
-A focus point that the places should be close to
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">sources</td>
 <td valign="top">[<a href="#placesearchsource">PlaceSearchSource</a>!]</td>
-<td>
-
-The place sources to search
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">layers</td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The place layers to search
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">thirdPartyQuery</td>
 <td valign="top"><a href="#json">JSON</a></td>
-<td>
-
-Additional third-party specific arguments
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">maxLabelLength</td>
 <td valign="top"><a href="#int">Int</a></td>
-<td>
-
-Maximum text length for search results labels
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>collection</strong></td>
 <td valign="top"><a href="#collection">Collection</a></td>
 <td>
 
-Retrieve a collection by id
+Get a collection by id
 
 </td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The unique identifier of the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>collections</strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a>!</td>
-<td>
-
-Retrieve multiple collections
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">profileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-Filter by the profile owner of the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">discriminator</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by the collection's discriminator
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">sort</td>
-<td valign="top">[<a href="#collectionssort">CollectionsSort</a>!]</td>
-<td>
-
-Sort result by given field. Results can be sorted only by one field
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>collectionItem</strong></td>
 <td valign="top"><a href="#collectionitem">CollectionItem</a></td>
 <td>
 
-Retrieve a collection item by id
+Obtains an CollectionItem by a provided id
 
 </td>
 </tr>
@@ -813,43 +528,31 @@ Retrieve a collection item by id
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
-The unique identifier of the collection item
+The collection item identifier, in the form of item/XYZ
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>collectionItems</strong></td>
 <td valign="top"><a href="#collectionitemconnection">CollectionItemConnection</a>!</td>
-<td>
-
-Retrieve multiple collection items filtered by different criteria
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">profileId</td>
 <td valign="top"><a href="#id">ID</a></td>
 <td>
 
-Filter by the profile owner of the item
+The profile owner of the item, in the form of profile/XYZ
 
 </td>
 </tr>
@@ -858,7 +561,7 @@ Filter by the profile owner of the item
 <td valign="top">[<a href="#id">ID</a>!]</td>
 <td>
 
-Filter by the collections that items are associated to
+The collection identifiers that items are associated to, in the form of collection/XYZ
 
 </td>
 </tr>
@@ -867,7 +570,7 @@ Filter by the collections that items are associated to
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-Filter by a supplied keyword, checking the title, synopsis, description and tags of items
+A supplied keyword to locate items, checking the title, synopsis, description and tags of items
 
 </td>
 </tr>
@@ -876,7 +579,7 @@ Filter by a supplied keyword, checking the title, synopsis, description and tags
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td>
 
-Filter by the tags that are applied to the item
+The tags that are applied to the item
 
 </td>
 </tr>
@@ -885,7 +588,7 @@ Filter by the tags that are applied to the item
 <td valign="top">[<a href="#id">ID</a>!]</td>
 <td>
 
-Filter by the collection sections that the items are associated to
+The collection sections that the items are associated to
 
 </td>
 </tr>
@@ -894,25 +597,21 @@ Filter by the collection sections that the items are associated to
 <td valign="top">[<a href="#id">ID</a>!]</td>
 <td>
 
-Filter by the resource identifiers that the items are associated to
+The resource identifiers that the items are associated to
 
 </td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">boundsCircle</td>
 <td valign="top"><a href="#boundscircleinput">BoundsCircleInput</a></td>
-<td>
-
-A bounding circle that the item positions must fall within
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">bounds</td>
 <td valign="top"><a href="#boundsinput">BoundsInput</a></td>
 <td>
 
-A bounding box that the item positions must fall within
+A bounds expression that the item positions must fall within
 
 </td>
 </tr>
@@ -921,7 +620,7 @@ A bounding box that the item positions must fall within
 <td valign="top">[<a href="#id">ID</a>!]</td>
 <td>
 
-Filter by the custom/external-ref attribute of the items
+The attribute custom/external-ref attribute associations that are to be returned
 
 </td>
 </tr>
@@ -930,16 +629,7 @@ Filter by the custom/external-ref attribute of the items
 <td valign="top">[<a href="#id">ID</a>!]</td>
 <td>
 
-Filter by the custom/external-source attribute of the items
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">sort</td>
-<td valign="top">[<a href="#collectionitemssort">CollectionItemsSort</a>!]</td>
-<td>
-
-Sort result by given field. Results can be sorted only by one field
+The attribute custom/external-source attribute associations that are to be returned
 
 </td>
 </tr>
@@ -955,11 +645,7 @@ Get an itinerary by id
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The unique identifier of the itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>itineraries</strong></td>
@@ -973,47 +659,22 @@ Query itineraries that belong to a profile
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">profileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-Filter by the profile owner of the itienrary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">keyword</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by a supplied keyword, checking the title, synopsis, description and tags of itineraries
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">sort</td>
-<td valign="top">[<a href="#itinerariessort">ItinerariesSort</a>!]</td>
-<td>
-
-Sort result by given field. Results can be sorted only by one field
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>isochrone</strong></td>
@@ -1027,128 +688,21 @@ Query for fetching isochrone
 <tr>
 <td colspan="2" align="right" valign="top">center</td>
 <td valign="top"><a href="#positioninput">PositionInput</a>!</td>
-<td>
-
-The center (starting point) of the isochrone
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">duration</td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td>
 
-The duration of the isochrone in minutes
+Duration for isochrone in minutes
 
 </td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">mode</td>
 <td valign="top"><a href="#isochronemode">IsochroneMode</a>!</td>
-<td>
-
-The mode of transport of the isochrone
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>connectedApp</strong></td>
-<td valign="top"><a href="#connectedapp">ConnectedApp</a></td>
-<td>
-
-Obtains a connected app by a provided id
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The unique identifier of the connected-app
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>connectedApps</strong></td>
-<td valign="top"><a href="#connectedappconnection">ConnectedAppConnection</a>!</td>
-<td>
-
-Search connected apps
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">profileId</td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-Filter by the profile owner of the connected-app
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">deleted</td>
-<td valign="top"><a href="#boolean">Boolean</a></td>
-<td>
-
-Return only deleted applications
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">expired</td>
-<td valign="top"><a href="#boolean">Boolean</a></td>
-<td>
-
-Return only expired applications
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">type</td>
-<td valign="top"><a href="#connectedapptypes">ConnectedAppTypes</a></td>
-<td>
-
-Filter by the app's type
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">authType</td>
-<td valign="top"><a href="#connectedappauthtypes">ConnectedAppAuthTypes</a></td>
-<td>
-
-Filter by the app's authorization type
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">serviceKey</td>
-<td valign="top"><a href="#connectedappservicekeys">ConnectedAppServiceKeys</a></td>
-<td>
-
-Filter by the app's service key
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -1165,229 +719,119 @@ Filter by the app's service key
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>followProfile</strong></td>
-<td valign="top"><a href="#followprofilepayload">FollowProfilePayload</a>!</td>
-<td>
-
-Create a follow request between two profiles
-
-</td>
+<td colspan="2" valign="top"><strong>createProfileFollowRequest</strong></td>
+<td valign="top"><a href="#request">Request</a>!</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">fromProfile</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The follower profile
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">toProfile</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The profile being followed
-
-</td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>unfollowProfile</strong></td>
-<td valign="top"><a href="#unfollowprofilepayload">UnfollowProfilePayload</a>!</td>
-<td>
-
-Remove the follow between two profiles
-
-</td>
+<td colspan="2" valign="top"><strong>setProfileFollowStatus</strong></td>
+<td valign="top"><a href="#request">Request</a>!</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">fromProfile</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The follower profile
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">toProfile</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The profile being followed
-
-</td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>approveProfileFollow</strong></td>
-<td valign="top"><a href="#approveprofilefollowpayload">ApproveProfileFollowPayload</a>!</td>
-<td>
-
-Approve a follow request between two profiles
-
-</td>
+<td colspan="2" align="right" valign="top">status</td>
+<td valign="top"><a href="#profilefollowstatusaction">ProfileFollowStatusAction</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>cancelProfileFollow</strong></td>
+<td valign="top"><a href="#request">Request</a>!</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">fromProfile</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The follower profile
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">toProfile</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The profile being followed
-
-</td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>denyProfileFollow</strong></td>
-<td valign="top"><a href="#denyprofilefollowpayload">DenyProfileFollowPayload</a>!</td>
-<td>
-
-Deny a follow request between two profiles
-
-</td>
+<td colspan="2" valign="top"><strong>claimProfileUsername</strong></td>
+<td valign="top"><a href="#claimprofileusernamepayload">ClaimProfileUsernamePayload</a>!</td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">fromProfile</td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The follower profile
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">toProfile</td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The profile being followed
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>claimProfileHandle</strong></td>
-<td valign="top"><a href="#claimprofilehandlepayload">ClaimProfileHandlePayload</a>!</td>
-<td>
-
-Claim an unclaimed handle for the given profile
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The unique identifier of the profile that will claim the handle
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">handle</td>
+<td colspan="2" align="right" valign="top">username</td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The handle to claim
-
-</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profile</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>updateProfile</strong></td>
 <td valign="top"><a href="#updateprofilepayload">UpdateProfilePayload</a>!</td>
-<td>
-
-Updates the specified profile with the given fields
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The id of the profile to update
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">profile</td>
 <td valign="top"><a href="#updateprofileinput">UpdateProfileInput</a>!</td>
-<td>
-
-The fields to update on the profile
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>startMediaUpload</strong></td>
 <td valign="top"><a href="#startmediauploadpayload">StartMediaUploadPayload</a>!</td>
-<td>
-
-Start a media upload
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">filename</td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The file name of the media file that will be uploaded
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">contentType</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The content type of the media file that will be uploaded
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>finalizeMediaUpload</strong></td>
 <td valign="top"><a href="#finalizemediauploadpayload">FinalizeMediaUploadPayload</a>!</td>
-<td>
-
-Finalize the media upload by creating a media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">token</td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The upload token returned by Mutation.startMediaUpload
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">profileId</td>
 <td valign="top"><a href="#id">ID</a></td>
-<td>
-
-The identifier of the profile that will own the new media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">mediaResource</td>
 <td valign="top"><a href="#createmediaresourceinput">CreateMediaResourceInput</a></td>
-<td>
-
-Details of the new media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>updateMediaResource</strong></td>
@@ -1410,11 +854,7 @@ The id of the media resource to update
 <tr>
 <td colspan="2" align="right" valign="top">mediaResource</td>
 <td valign="top"><a href="#updatemediaresourceinput">UpdateMediaResourceInput</a>!</td>
-<td>
-
-The fields to update on the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>createCollection</strong></td>
@@ -1428,20 +868,12 @@ The return fields available after creating a collection
 <tr>
 <td colspan="2" align="right" valign="top">profileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The identifier of the profile that will own the new collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">collection</td>
 <td valign="top"><a href="#createcollectioninput">CreateCollectionInput</a>!</td>
-<td>
-
-The new collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>updateCollection</strong></td>
@@ -1455,20 +887,12 @@ Updates a collection
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The id of the collection to update
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">collection</td>
 <td valign="top"><a href="#updatecollectioninput">UpdateCollectionInput</a>!</td>
-<td>
-
-The updated collection data
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>deleteCollection</strong></td>
@@ -1509,11 +933,7 @@ The ID of the collection deleted
 <tr>
 <td colspan="2" valign="top"><strong>createCollectionLocation</strong></td>
 <td valign="top"><a href="#createcollectionlocationpayload">CreateCollectionLocationPayload</a>!</td>
-<td>
-
-Create a new collection-location under the given collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">collectionId</td>
@@ -1572,11 +992,7 @@ Create a new itinerary
 <tr>
 <td colspan="2" align="right" valign="top">itinerary</td>
 <td valign="top"><a href="#createitineraryinput">CreateItineraryInput</a>!</td>
-<td>
-
-The new itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">profileId</td>
@@ -1603,20 +1019,12 @@ Updates a itinerary
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The id of the itinerary to update
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">itinerary</td>
 <td valign="top"><a href="#updateitineraryinput">UpdateItineraryInput</a>!</td>
-<td>
-
-The fields to update on the itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>deleteItinerary</strong></td>
@@ -1675,47 +1083,27 @@ The itinerary item identifier, in the form of item/XYZ
 <tr>
 <td colspan="2" align="right" valign="top">positionAtStart</td>
 <td valign="top"><a href="#itineraryitempositionatstart">ItineraryItemPositionAtStart</a></td>
-<td>
-
-Moves the item to be before all its siblings
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">positionAtEnd</td>
 <td valign="top"><a href="#itineraryitempositionatend">ItineraryItemPositionAtEnd</a></td>
-<td>
-
-Moves the item to be after all of its siblings
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">positionAfterSibling</td>
 <td valign="top"><a href="#itineraryitempositionaftersibling">ItineraryItemPositionAfterSibling</a></td>
-<td>
-
-Moves the item after the given sibling
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">positionBeforeSibling</td>
 <td valign="top"><a href="#itineraryitempositionbeforesibling">ItineraryItemPositionBeforeSibling</a></td>
-<td>
-
-Moves the item before the given sibling
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">positionOnLastCollection</td>
 <td valign="top"><a href="#itineraryitempositiononlastcollection">ItineraryItemPositionOnLastCollection</a></td>
-<td>
-
-Moves the item to the last position of the last itinerary-collection item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>deleteItineraryItem</strong></td>
@@ -1906,124 +1294,10 @@ The fields to update on the itinerary directions item
 
 </td>
 </tr>
-<tr>
-<td colspan="2" valign="top"><strong>createConnectedApp</strong></td>
-<td valign="top"><a href="#createconnectedapppayload">CreateConnectedAppPayload</a>!</td>
-<td>
-
-The return fields available after creating a connected app
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">profileId</td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The identifier of the profile that will own the new connected-app
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">connectedApp</td>
-<td valign="top"><a href="#createconnectedappinput">CreateConnectedAppInput</a>!</td>
-<td>
-
-The new connected-app
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>updateConnectedApp</strong></td>
-<td valign="top"><a href="#updateconnectedapppayload">UpdateConnectedAppPayload</a>!</td>
-<td>
-
-Update a connected app
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The id of the connected-app to update
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">connectedApp</td>
-<td valign="top"><a href="#updateconnectedappinput">UpdateConnectedAppInput</a>!</td>
-<td>
-
-The updated connected-app data
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>deleteConnectedApp</strong></td>
-<td valign="top"><a href="#deleteconnectedapppayload">DeleteConnectedAppPayload</a>!</td>
-<td>
-
-Deleted a connected app
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The id of the connected app to delete
-
-</td>
-</tr>
 </tbody>
 </table>
 
 ## Objects
-
-### ApproveProfileFollowPayload
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>fromProfile</strong></td>
-<td valign="top"><a href="#profile">Profile</a>!</td>
-<td>
-
-The follower profile
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>toProfile</strong></td>
-<td valign="top"><a href="#profile">Profile</a>!</td>
-<td>
-
-The profile being followed
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>status</strong></td>
-<td valign="top"><a href="#profilefollowstatus">ProfileFollowStatus</a></td>
-<td>
-
-The status of the follow request
-
-</td>
-</tr>
-</tbody>
-</table>
 
 ### Attribute
 
@@ -2040,15 +1314,6 @@ Additional data defined on a resource
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -2060,7 +1325,6 @@ Has the form "{{resource_type}}/{{attribute_name}}"
 eg: The "title" attribute on an item will have the id: "item/title"
 
 Custom attributes have the form "custom/{{attribute_name}}"
-
 
 </td>
 </tr>
@@ -2109,38 +1373,22 @@ Optional string representing the locale of the attribute value
 <tr>
 <td colspan="2" valign="top"><strong>edges</strong></td>
 <td valign="top">[<a href="#attributeedge">AttributeEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>nodes</strong></td>
 <td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>pageInfo</strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>totalCount</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2160,27 +1408,17 @@ The total number of items in the connection (in all pages)
 <tr>
 <td colspan="2" valign="top"><strong>cursor</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>node</strong></td>
 <td valign="top"><a href="#attribute">Attribute</a>!</td>
-<td>
-
-The item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### Bounds
-
-A bounding box on a map defined by two positions (opposite corners of the box)
 
 <table>
 <thead>
@@ -2195,81 +1433,44 @@ A bounding box on a map defined by two positions (opposite corners of the box)
 <tr>
 <td colspan="2" valign="top"><strong>w</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The west-most longitude of the bounding box
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>s</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The south-most latitude of the bounding box
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>e</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The east-most longitude of the bounding box
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>n</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The north-most latitude of the bounding box
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ws</strong></td>
 <td valign="top">[<a href="#float">Float</a>!]!</td>
-<td>
-
-The south-west point of the bounding box in the form: [west, south]
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>en</strong></td>
 <td valign="top">[<a href="#float">Float</a>!]!</td>
-<td>
-
-The north-east point of the bounding box in the form: [east, north]
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>wsen</strong></td>
-<td valign="top">[<a href="#float">Float</a>!]!</td>
-<td>
-
-The south-west and north-east points of the bounding box in the form: [west, south, east, north]
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>minMax</strong></td>
 <td valign="top">[[<a href="#float">Float</a>!]!]!</td>
-<td>
-
-The minimum and maximum points of the bounding box in the form: [minimum, maximum]
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
-### ClaimProfileHandlePayload
+### ClaimProfileUsernamePayload
 
-Response of claiming a handle
+Response of claiming a username
 
 <table>
 <thead>
@@ -2283,10 +1484,15 @@ Response of claiming a handle
 <tbody>
 <tr>
 <td colspan="2" valign="top"><strong>profile</strong></td>
-<td valign="top"><a href="#profile">Profile</a></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>username</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td>
 
-The profile that will claim the handle
+The username that was claimed
 
 </td>
 </tr>
@@ -2305,15 +1511,6 @@ The profile that will claim the handle
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -2398,11 +1595,7 @@ A collection of Media objects representing images or other media
 <tr>
 <td colspan="2" align="right" valign="top">limit</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The number of media to return
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>preferredMedia</strong></td>
@@ -2416,20 +1609,12 @@ A single Media object representing the preferred media to use
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attr</strong></td>
@@ -2487,7 +1672,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -2497,11 +1682,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>allAttrs</strong></td>
@@ -2515,20 +1696,12 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -2542,20 +1715,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -2596,119 +1761,62 @@ Returns an item belonging to this collection by id
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The unique identifier of the collection item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>items</strong></td>
 <td valign="top"><a href="#collectionitemconnection">CollectionItemConnection</a>!</td>
-<td>
-
-Retrieve multiple collection-items belonging to this collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">keyword</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by a supplied keyword, checking the title, synopsis, description and tags of items
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">tags</td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-Filter by the tags that are applied to the item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">sectionIds</td>
 <td valign="top">[<a href="#id">ID</a>!]</td>
-<td>
-
-Filter by the collection sections that the items are associated to
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">resourceIds</td>
 <td valign="top">[<a href="#id">ID</a>!]</td>
-<td>
-
-Filter by the resource identifiers that the items are associated to
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">boundsCircle</td>
 <td valign="top"><a href="#boundscircleinput">BoundsCircleInput</a></td>
-<td>
-
-A bounding circle that the item positions must fall within
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">bounds</td>
 <td valign="top"><a href="#boundsinput">BoundsInput</a></td>
-<td>
-
-A bounding box that the item positions must fall within
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">externalIds</td>
 <td valign="top">[<a href="#id">ID</a>!]</td>
-<td>
-
-Filter by the custom/external-ref attribute of the items
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">externalSources</td>
 <td valign="top">[<a href="#id">ID</a>!]</td>
-<td>
-
-Filter by the custom/external-source attribute of the items
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">sort</td>
-<td valign="top">[<a href="#collectionitemssort">CollectionItemsSort</a>!]</td>
-<td>
-
-Sort result by given field. Results can be sorted only by one field
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2728,38 +1836,22 @@ Sort result by given field. Results can be sorted only by one field
 <tr>
 <td colspan="2" valign="top"><strong>edges</strong></td>
 <td valign="top">[<a href="#collectionedge">CollectionEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>nodes</strong></td>
 <td valign="top">[<a href="#collection">Collection</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>pageInfo</strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>totalCount</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2779,20 +1871,12 @@ The total number of items in the connection (in all pages)
 <tr>
 <td colspan="2" valign="top"><strong>cursor</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>node</strong></td>
 <td valign="top"><a href="#collection">Collection</a>!</td>
-<td>
-
-The item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2812,38 +1896,22 @@ The item
 <tr>
 <td colspan="2" valign="top"><strong>edges</strong></td>
 <td valign="top">[<a href="#collectionitemedge">CollectionItemEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>nodes</strong></td>
 <td valign="top">[<a href="#collectionitem">CollectionItem</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>pageInfo</strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>totalCount</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2863,20 +1931,12 @@ The total number of items in the connection (in all pages)
 <tr>
 <td colspan="2" valign="top"><strong>cursor</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>node</strong></td>
 <td valign="top"><a href="#collectionitem">CollectionItem</a>!</td>
-<td>
-
-The item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2895,15 +1955,6 @@ A CollectionItem used to represents a single location association to a place.
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -2988,11 +2039,7 @@ A collection of Media objects representing images or other media
 <tr>
 <td colspan="2" align="right" valign="top">limit</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The number of media to return
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>preferredMedia</strong></td>
@@ -3006,47 +2053,12 @@ A single Media object representing the preferred media to use
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sectionIds</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]!</td>
-<td>
-
-One or more sections this item belongs to
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>externalId</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-Identifier from an external source this item is associated with
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>externalSource</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-The source of the item's externalId
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attr</strong></td>
@@ -3104,7 +2116,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -3114,11 +2126,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>allAttrs</strong></td>
@@ -3132,20 +2140,12 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -3159,20 +2159,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -3198,206 +2190,6 @@ The locale of the attribute to select
 <td>
 
 The associated place information for this location
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>position</strong></td>
-<td valign="top"><a href="#position">Position</a>!</td>
-<td>
-
-The position of the collection-location (derived from place if not overridden)
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>bounds</strong></td>
-<td valign="top"><a href="#bounds">Bounds</a></td>
-<td>
-
-The bounding box around the collection-location (derived from place if not overridden)
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ConnectedApp
-
-Connected apps stored in the profile
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The Globally Unique ID of the object.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>profile</strong></td>
-<td valign="top"><a href="#profile">Profile</a></td>
-<td>
-
-The profile associated with this connected app
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
-<td valign="top"><a href="#connectedapptypes">ConnectedAppTypes</a></td>
-<td>
-
-A key to describe the type of connection to the application
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>serviceKey</strong></td>
-<td valign="top"><a href="#connectedappservicekeys">ConnectedAppServiceKeys</a>!</td>
-<td>
-
-This is the key relating to the service, such as "atdw" or "crowdriff-api" - it identifies the "App" we are connecting to
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>authType</strong></td>
-<td valign="top"><a href="#connectedappauthtypes">ConnectedAppAuthTypes</a></td>
-<td>
-
-Depending on the authentication method, this can highlight the authenticated application method (e.g. OAuth)
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>scope</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Any specific scope that has been granted to the 3rd party application
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>configuration</strong></td>
-<td valign="top"><a href="#json">JSON</a></td>
-<td>
-
-Encrypted JSON
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>thirdPartyId</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-A 3rd party ID or Account ID, this does not affect any of the Alpaca ID naming - for instance, if we are connecting to an Identity in OAUTH, this is the OAUTH Identity ID - This is just a place to store data
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ConnectedAppConnection
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
-<td valign="top">[<a href="#connectedappedge">ConnectedAppEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
-<td valign="top">[<a href="#connectedapp">ConnectedApp</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
-<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ConnectedAppEdge
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
-<td valign="top"><a href="#connectedapp">ConnectedApp</a>!</td>
-<td>
-
-The item
 
 </td>
 </tr>
@@ -3447,37 +2239,7 @@ The return fields avaialble after creating a collection
 <tr>
 <td colspan="2" valign="top"><strong>collection</strong></td>
 <td valign="top"><a href="#collection">Collection</a></td>
-<td>
-
-The newly created collection
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### CreateConnectedAppPayload
-
-The return fields available after creating a connected app
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>connectedApp</strong></td>
-<td valign="top"><a href="#connectedapp">ConnectedApp</a></td>
-<td>
-
-The newly created connected-app
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3517,11 +2279,7 @@ The modified itinerary
 <tr>
 <td colspan="2" valign="top"><strong>cascaded</strong></td>
 <td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
-<td>
-
-Other changes to the itinerary caused by the creation of the itinerary-collection
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3561,11 +2319,7 @@ The modified itinerary
 <tr>
 <td colspan="2" valign="top"><strong>cascaded</strong></td>
 <td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
-<td>
-
-Other changes to the itinerary caused by the creation of the itinerary-directions
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3605,11 +2359,7 @@ The modified itinerary
 <tr>
 <td colspan="2" valign="top"><strong>cascaded</strong></td>
 <td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
-<td>
-
-Other changes to the itinerary caused by the creation of the itinerary-location
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3692,32 +2442,6 @@ The ID of the deleted collection
 </tbody>
 </table>
 
-### DeleteConnectedAppPayload
-
-The available payload after performing a delete connected app
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-The ID of the deleted connected app
-
-</td>
-</tr>
-</tbody>
-</table>
-
 ### DeleteItineraryItemPayload
 
 Deletes a itinerary item
@@ -3753,11 +2477,7 @@ The modified itinerary
 <tr>
 <td colspan="2" valign="top"><strong>cascaded</strong></td>
 <td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
-<td>
-
-Other changes to the itinerary that caused by deleting the itinerary-item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3786,48 +2506,6 @@ The ID of the deleted itinerary
 </tbody>
 </table>
 
-### DenyProfileFollowPayload
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>fromProfile</strong></td>
-<td valign="top"><a href="#profile">Profile</a>!</td>
-<td>
-
-The follower profile
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>toProfile</strong></td>
-<td valign="top"><a href="#profile">Profile</a>!</td>
-<td>
-
-The profile being followed
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>status</strong></td>
-<td valign="top"><a href="#profilefollowstatus">ProfileFollowStatus</a></td>
-<td>
-
-The status of the follow request
-
-</td>
-</tr>
-</tbody>
-</table>
-
 ### Elevation
 
 <table>
@@ -3843,38 +2521,22 @@ The status of the follow request
 <tr>
 <td colspan="2" valign="top"><strong>gain</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The cumulative elevation gain
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>loss</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The cumulative elevation loss
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>min</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The minimum elevation
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>max</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The maximum elevation
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3894,62 +2556,12 @@ The maximum elevation
 <tr>
 <td colspan="2" valign="top"><strong>status</strong></td>
 <td valign="top"><a href="#mediauploadstatus">MediaUploadStatus</a>!</td>
-<td>
-
-The status of this media upload
-
-</td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mediaResource</strong></td>
+<td colspan="2" valign="top"><strong>media</strong></td>
 <td valign="top"><a href="#mediaresource">MediaResource</a></td>
-<td>
-
-The newly created media-resource
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### FollowProfilePayload
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>fromProfile</strong></td>
-<td valign="top"><a href="#profile">Profile</a>!</td>
-<td>
-
-The follower profile
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>toProfile</strong></td>
-<td valign="top"><a href="#profile">Profile</a>!</td>
-<td>
-
-The profile being followed
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>status</strong></td>
-<td valign="top"><a href="#profilefollowstatus">ProfileFollowStatus</a></td>
-<td>
-
-The status of the follow request
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -3969,76 +2581,39 @@ Isochrone for the given position with duration and vehicle
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>duration</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The duration of the isochrone
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">unit</td>
 <td valign="top"><a href="#durationunit">DurationUnit</a>!</td>
-<td>
-
-The unit of the output value
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>copyrights</strong></td>
 <td valign="top">[<a href="#string">String</a>!]!</td>
-<td>
-
-Copyright details of the isochrone
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>mode</strong></td>
-<td valign="top"><a href="#isochronemode">IsochroneMode</a>!</td>
-<td>
-
-The mode of transport of the isochrone
-
-</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bounds</strong></td>
 <td valign="top"><a href="#bounds">Bounds</a>!</td>
-<td>
-
-A bounding box around the isochrone
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>polygon</strong></td>
 <td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-The isochrone as a geojson polygon
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">simplify</td>
 <td valign="top"><a href="#geojsonsimplification">GeoJsonSimplification</a></td>
-<td>
-
-Optionally simplify the geojson data
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -4057,15 +2632,6 @@ An itinerary type is used to structure a series of items representing a travel i
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -4114,20 +2680,12 @@ Returns a single item from this itinerary by id
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The unique identifier of the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>autoRoute</strong></td>
 <td valign="top"><a href="#itineraryautoroute">ItineraryAutoRoute</a></td>
-<td>
-
-If true, itinerary-directions will be created to automatically route between itinerary-locations
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>title</strong></td>
@@ -4177,11 +2735,7 @@ A collection of Media objects representing images or other media
 <tr>
 <td colspan="2" align="right" valign="top">limit</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The number of media to return
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>preferredMedia</strong></td>
@@ -4195,20 +2749,12 @@ A single Media object representing the preferred media to use
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>descendants</strong></td>
@@ -4222,20 +2768,12 @@ The descending items within this itinerary item
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -4302,20 +2840,12 @@ The immediate associated children itinerary items
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -4325,6 +2855,18 @@ Returns elements that come after the given cursor
 
 Optionally filter by item type
 eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
 
 </td>
 </tr>
@@ -4396,7 +2938,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -4406,11 +2948,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -4424,20 +2962,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -4469,20 +2999,12 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bounds</strong></td>
@@ -4496,11 +3018,7 @@ Bounds for the itinerary item
 <tr>
 <td colspan="2" valign="top"><strong>elevation</strong></td>
 <td valign="top"><a href="#elevation">Elevation</a>!</td>
-<td>
-
-Elevation data of the itinerary
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -4546,22 +3064,9 @@ An itinerary item representing a collection of other itinerary items
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-Unique identifier for the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>title</strong></td>
@@ -4611,11 +3116,7 @@ A collection of Media objects representing images or other media
 <tr>
 <td colspan="2" align="right" valign="top">limit</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The number of media to return
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>preferredMedia</strong></td>
@@ -4629,20 +3130,12 @@ A single Media object representing the preferred media to use
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>itinerary</strong></td>
@@ -4788,29 +3281,17 @@ Only looks at the place field on ItineraryLocations
 <tr>
 <td colspan="2" valign="top"><strong>ancestors</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All ancestors of the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -4850,29 +3331,17 @@ Only looks at the place field on ItineraryLocations
 <tr>
 <td colspan="2" valign="top"><strong>descendants</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All the descendants of the itinerary-item in depth-first-search order
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -4930,29 +3399,17 @@ Optionally limit the minimum depth of the traversal
 <tr>
 <td colspan="2" valign="top"><strong>children</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All the direct children of the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -5045,7 +3502,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -5055,11 +3512,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -5073,20 +3526,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -5118,20 +3563,12 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bounds</strong></td>
@@ -5160,38 +3597,22 @@ Bounds for the itinerary item
 <tr>
 <td colspan="2" valign="top"><strong>edges</strong></td>
 <td valign="top">[<a href="#itineraryedge">ItineraryEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>nodes</strong></td>
 <td valign="top">[<a href="#itinerary">Itinerary</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>pageInfo</strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>totalCount</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -5211,22 +3632,9 @@ An itinerary item representing directions from an origin location to the parent 
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-Unique identifier for the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>title</strong></td>
@@ -5276,11 +3684,7 @@ A collection of Media objects representing images or other media
 <tr>
 <td colspan="2" align="right" valign="top">limit</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The number of media to return
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>preferredMedia</strong></td>
@@ -5294,20 +3698,12 @@ A single Media object representing the preferred media to use
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>itinerary</strong></td>
@@ -5453,29 +3849,17 @@ Only looks at the place field on ItineraryLocations
 <tr>
 <td colspan="2" valign="top"><strong>ancestors</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All ancestors of the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -5515,29 +3899,17 @@ Only looks at the place field on ItineraryLocations
 <tr>
 <td colspan="2" valign="top"><strong>descendants</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All the descendants of the itinerary-item in depth-first-search order
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -5595,29 +3967,17 @@ Optionally limit the minimum depth of the traversal
 <tr>
 <td colspan="2" valign="top"><strong>children</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All the direct children of the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -5710,7 +4070,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -5720,11 +4080,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -5738,20 +4094,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -5783,54 +4131,33 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bounds</strong></td>
 <td valign="top"><a href="#bounds">Bounds</a></td>
 <td>
 
-Bounds for the itinerary-directions and it's descendants
+Bounds for the itinerary item
 
 </td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">excludeDescendants</td>
 <td valign="top"><a href="#boolean">Boolean</a></td>
-<td>
-
-If true, bounds will be calculated without taking the descendants into account
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>origin</strong></td>
 <td valign="top"><a href="#itinerarylocation">ItineraryLocation</a></td>
 <td>
 
-The itinerary-location that is the starting point of the directions
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>destination</strong></td>
-<td valign="top"><a href="#itinerarylocation">ItineraryLocation</a></td>
-<td>
-
-The itinerary-location that is the ending point of the directions
+The item that is the starting point of the directions
 
 </td>
 </tr>
@@ -5846,105 +4173,32 @@ The route details of this directions item
 <tr>
 <td colspan="2" valign="top"><strong>durations</strong></td>
 <td valign="top">[<a href="#itinerarydirectionsdurations">ItineraryDirectionsDurations</a>!]!</td>
-<td>
-
-The duration of this itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>durationMin</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The minimum duration of this itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>durationMax</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The maximum duration of this itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>distance</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The distance of this itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>elevation</strong></td>
 <td valign="top"><a href="#elevation">Elevation</a>!</td>
-<td>
-
-The elevation details of this itinerary-directions
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ItineraryDirectionsConnection
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
-<td valign="top">[<a href="#itinerarydirectionsedge">ItineraryDirectionsEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
-<td valign="top">[<a href="#itinerarydirections">ItineraryDirections</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
-<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### ItineraryDirectionsDurations
-
-An itinerary-directions duration value
 
 <table>
 <thead>
@@ -5959,148 +4213,17 @@ An itinerary-directions duration value
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-Unique identifier for this duration
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>duration</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The duration value
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>label</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Label for the duration
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ItineraryDirectionsEdge
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
-<td valign="top"><a href="#itinerarydirections">ItineraryDirections</a>!</td>
-<td>
-
-The item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>direction</strong></td>
-<td valign="top"><a href="#itinerarydirectionsdirection">ItineraryDirectionsDirection</a>!</td>
-<td>
-
-Whether this itinerary-directions is inbound or outbound from the itinerary-location
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ItineraryDirectionsPseudoConnection
-
-A Connection like object that contains itinerary-directions. This object does not confirm to the Connection specification and does not use cursors but merely provides a similar interface
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
-<td valign="top">[<a href="#itinerarydirectionspseudoedge">ItineraryDirectionsPseudoEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
-<td valign="top">[<a href="#itinerarydirections">ItineraryDirections</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ItineraryDirectionsPseudoEdge
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
-<td valign="top"><a href="#itinerarydirections">ItineraryDirections</a>!</td>
-<td>
-
-The item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>direction</strong></td>
-<td valign="top"><a href="#itinerarydirectionsdirection">ItineraryDirectionsDirection</a>!</td>
-<td>
-
-Whether this itinerary-directions is inbound or outbound from the itinerary-item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -6120,20 +4243,12 @@ Whether this itinerary-directions is inbound or outbound from the itinerary-item
 <tr>
 <td colspan="2" valign="top"><strong>cursor</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>node</strong></td>
 <td valign="top"><a href="#itinerary">Itinerary</a>!</td>
-<td>
-
-The item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -6153,29 +4268,17 @@ The item
 <tr>
 <td colspan="2" valign="top"><strong>deletedIds</strong></td>
 <td valign="top">[<a href="#id">ID</a>!]!</td>
-<td>
-
-Itinerary-items that were deleted due to the mutation
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>created</strong></td>
 <td valign="top">[<a href="#itineraryitem">ItineraryItem</a>!]!</td>
-<td>
-
-Itinerary-items that were created due to the mutation
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>updated</strong></td>
 <td valign="top">[<a href="#itineraryitem">ItineraryItem</a>!]!</td>
-<td>
-
-Itinerary-items that were updated due to the mutation
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -6195,38 +4298,22 @@ Itinerary-items that were updated due to the mutation
 <tr>
 <td colspan="2" valign="top"><strong>edges</strong></td>
 <td valign="top">[<a href="#itineraryitemedge">ItineraryItemEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>nodes</strong></td>
 <td valign="top">[<a href="#itineraryitem">ItineraryItem</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>pageInfo</strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>totalCount</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -6246,47 +4333,12 @@ The total number of items in the connection (in all pages)
 <tr>
 <td colspan="2" valign="top"><strong>cursor</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>node</strong></td>
 <td valign="top"><a href="#itineraryitem">ItineraryItem</a>!</td>
-<td>
-
-The item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>directions</strong></td>
-<td valign="top"><a href="#itinerarydirectionspseudoconnection">ItineraryDirectionsPseudoConnection</a>!</td>
-<td>
-
-List itinerary-directions connecting this node to the next or prior nodes in the connection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">direction</td>
-<td valign="top"><a href="#itinerarydirectionsdirection">ItineraryDirectionsDirection</a></td>
-<td>
-
-Filter inbound or outbound itinerary-directions
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -6306,22 +4358,9 @@ An itinerary item representing a location with an associated place in the itiner
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-Unique identifier for the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>title</strong></td>
@@ -6371,11 +4410,7 @@ A collection of Media objects representing images or other media
 <tr>
 <td colspan="2" align="right" valign="top">limit</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The number of media to return
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>preferredMedia</strong></td>
@@ -6389,20 +4424,12 @@ A single Media object representing the preferred media to use
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>itinerary</strong></td>
@@ -6548,29 +4575,17 @@ Only looks at the place field on ItineraryLocations
 <tr>
 <td colspan="2" valign="top"><strong>ancestors</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All ancestors of the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -6610,29 +4625,17 @@ Only looks at the place field on ItineraryLocations
 <tr>
 <td colspan="2" valign="top"><strong>descendants</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All the descendants of the itinerary-item in depth-first-search order
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -6690,29 +4693,17 @@ Optionally limit the minimum depth of the traversal
 <tr>
 <td colspan="2" valign="top"><strong>children</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All the direct children of the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -6805,7 +4796,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -6815,11 +4806,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -6833,20 +4820,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -6878,38 +4857,26 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bounds</strong></td>
 <td valign="top"><a href="#bounds">Bounds</a>!</td>
 <td>
 
-Bounds for the itinerary-location and it's descendants
+Bounds for the itinerary item
 
 </td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">excludeDescendants</td>
 <td valign="top"><a href="#boolean">Boolean</a></td>
-<td>
-
-If true, bounds will be calculated without taking the descendants into account
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>place</strong></td>
@@ -6923,11 +4890,7 @@ The place details of this location
 <tr>
 <td colspan="2" valign="top"><strong>position</strong></td>
 <td valign="top"><a href="#position">Position</a>!</td>
-<td>
-
-The position of the collection-location (derived from place if not overridden)
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>geoJson</strong></td>
@@ -6947,66 +4910,10 @@ Whether the location is an optional stop
 
 </td>
 </tr>
-<tr>
-<td colspan="2" valign="top"><strong>directions</strong></td>
-<td valign="top"><a href="#itinerarydirectionsconnection">ItineraryDirectionsConnection</a>!</td>
-<td>
-
-Retrieves itinerary-directions associated with this itinerary-location
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">direction</td>
-<td valign="top"><a href="#itinerarydirectionsdirection">ItineraryDirectionsDirection</a></td>
-<td>
-
-Filter inbound or outbound itinerary-directions
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">accuracy</td>
-<td valign="top"><a href="#itinerarydirectionsaccuracy">ItineraryDirectionsAccuracy</a></td>
-<td>
-
-How to determine if an itinerary-directions is related to the itinerary-location
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">restrict</td>
-<td valign="top"><a href="#itinerarydirectionsrestrict">ItineraryDirectionsRestrict</a></td>
-<td>
-
-Restrict search to only portions of the itinerary. If set to null, directions from any part of the itinerary will be returned
-
-</td>
-</tr>
 </tbody>
 </table>
 
 ### Media
-
-A container for a media-resource
 
 <table>
 <thead>
@@ -7019,30 +4926,15 @@ A container for a media-resource
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>resource</strong></td>
 <td valign="top"><a href="#mediaresource">MediaResource</a>!</td>
-<td>
-
-The media-resource
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### MediaImage
 
-And image type media-resource
-
 <table>
 <thead>
 <tr>
@@ -7053,15 +4945,6 @@ And image type media-resource
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
@@ -7092,38 +4975,22 @@ The provider for the media
 <tr>
 <td colspan="2" valign="top"><strong>caption</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Text caption for the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attribution</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Text attribution for the source of the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>copyright</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Copyright details of the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>altText</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alternative text for the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
@@ -7190,7 +5057,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -7200,11 +5067,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>allAttrs</strong></td>
@@ -7218,20 +5081,12 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -7245,20 +5100,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -7281,11 +5128,7 @@ The locale of the attribute to select
 <tr>
 <td colspan="2" valign="top"><strong>originalSize</strong></td>
 <td valign="top">[<a href="#int">Int</a>!]</td>
-<td>
-
-The original width and height of the image
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>url</strong></td>
@@ -7353,36 +5196,22 @@ A collection of sources for the media
 <tr>
 <td colspan="2" valign="top"><strong>exifIds</strong></td>
 <td valign="top">[<a href="#id">ID</a>!]!</td>
-<td>
-
-Ids of all exif data in this media-image
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>exif</strong></td>
 <td valign="top"><a href="#mediaimageexif">MediaImageExif</a></td>
-<td>
-
-Look up one exif value in this media-image by id
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-Unique identifier of the exif value to look up
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### MediaImageExif
-
-One exif datum on a media-image
 
 <table>
 <thead>
@@ -7395,31 +5224,14 @@ One exif datum on a media-image
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-Unique identifier of this exif datum
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>value</strong></td>
 <td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-The exif value
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -7438,15 +5250,6 @@ An source for a media image
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>type</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
@@ -7530,18 +5333,12 @@ The modified itinerary
 <tr>
 <td colspan="2" valign="top"><strong>cascaded</strong></td>
 <td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
-<td>
-
-Other changes to the itinerary that caused by moving the itinerary-item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### PageInfo
-
-Details regarding a page in a connnection
 
 <table>
 <thead>
@@ -7556,38 +5353,22 @@ Details regarding a page in a connnection
 <tr>
 <td colspan="2" valign="top"><strong>hasPreviousPage</strong></td>
 <td valign="top"><a href="#boolean">Boolean</a>!</td>
-<td>
-
-True if there is a page before this one
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>hasNextPage</strong></td>
 <td valign="top"><a href="#boolean">Boolean</a>!</td>
-<td>
-
-True if there is a page after this one
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>startCursor</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The cursor of the first edge in this page
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>endCursor</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The cursor of the last edge in this page
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -7607,20 +5388,11 @@ A defined location in the world
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
-The Globally Unique ID of the object.
+Unique identifier for the place
 
 </td>
 </tr>
@@ -7629,7 +5401,7 @@ The Globally Unique ID of the object.
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-Alias for `Place.name`
+The name of the place
 
 </td>
 </tr>
@@ -7638,7 +5410,7 @@ Alias for `Place.name`
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The name of the place
+Alias for title. (Prefer title instead)
 
 </td>
 </tr>
@@ -7708,11 +5480,7 @@ The operating hours for this place, as encoded in OpenStreetMap hours specificat
 <tr>
 <td colspan="2" valign="top"><strong>maki</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The maki icon for this place
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>contributor</strong></td>
@@ -7779,7 +5547,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -7789,11 +5557,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>allAttrs</strong></td>
@@ -7807,20 +5571,12 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -7834,20 +5590,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -7869,7 +5617,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attribution</strong></td>
-<td valign="top">[<a href="#placeattribution">PlaceAttribution</a>!]!</td>
+<td valign="top"><a href="#placeattribution">PlaceAttribution</a>!</td>
 <td>
 
 The required attribution required when using this place information
@@ -7906,11 +5654,7 @@ Media supplied with the place information, such as images of the places
 <tr>
 <td colspan="2" align="right" valign="top">limit</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The number of media to return
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>preferredMedia</strong></td>
@@ -7924,56 +5668,32 @@ A single Media object representing the preferred media to use
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>navigationUrl</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-A url displaying how to navigate to this place
-
-</td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">provider</td>
 <td valign="top"><a href="#placenavigationurlprovider">PlaceNavigationUrlProvider</a>!</td>
-<td>
-
-The provider of the navigation url
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>towards</strong></td>
 <td valign="top">[<a href="#placetowards">PlaceTowards</a>!]!</td>
-<td>
-
-Calculate distance and bearing information from the specified positions to this place
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">positions</td>
 <td valign="top">[<a href="#positioninput">PositionInput</a>!]!</td>
-<td>
-
-Positions to calculate against
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -7992,15 +5712,6 @@ The address data of a place
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>addressLineOne</strong></td>
 <td valign="top"><a href="#string">String</a></td>
@@ -8079,15 +5790,6 @@ Describes the attribution requirements associated with the place.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>text</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
@@ -8135,6 +5837,36 @@ Any media to be used in attribution, such as watermarks
 </tbody>
 </table>
 
+### PlaceConnection
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>edges</strong></td>
+<td valign="top">[<a href="#placeedge">PlaceEdge</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td valign="top">[<a href="#place">Place</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### PlaceContact
 
 <table>
@@ -8148,76 +5880,79 @@ Any media to be used in attribution, such as watermarks
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Contact website for this place
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>phoneNumber</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Phone number for this place
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>emailAddress</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Email address for this place
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bookingsUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Bookings url for this place
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>facebookUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Facebook page for this place
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>twitterUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Twitter for this place
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>instagramUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
-Instagram for this place
+### PlaceEdge
 
-</td>
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>node</strong></td>
+<td valign="top"><a href="#place">Place</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>single</strong></td>
+<td valign="top"><a href="#searchresult">SearchResult</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>main</strong></td>
+<td valign="top"><a href="#searchresult">SearchResult</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>secondary</strong></td>
+<td valign="top"><a href="#searchresult">SearchResult</a>!</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -8235,133 +5970,14 @@ Instagram for this place
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-Unique identifier for this place layer
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>name</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Name for this place layer
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### PlaceSearchConnection
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
-<td valign="top">[<a href="#placesearchedge">PlaceSearchEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
-<td valign="top">[<a href="#place">Place</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
-<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### PlaceSearchEdge
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
-<td valign="top"><a href="#place">Place</a>!</td>
-<td>
-
-The item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>single</strong></td>
-<td valign="top"><a href="#searchresult">SearchResult</a>!</td>
-<td>
-
-The one line text search result
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>main</strong></td>
-<td valign="top"><a href="#searchresult">SearchResult</a>!</td>
-<td>
-
-The main line of the two line search result
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>secondary</strong></td>
-<td valign="top"><a href="#searchresult">SearchResult</a>!</td>
-<td>
-
-The secondary line of the two line search result
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -8385,45 +6001,29 @@ Place bearing and distance information towards point
 <td valign="top"><a href="#position">Position</a>!</td>
 <td>
 
-The point
+The point current place towards at
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bearing</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The bearing angle from the place to the point
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">unit</td>
 <td valign="top"><a href="#angleunit">AngleUnit</a>!</td>
-<td>
-
-The unit of the output value
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>distance</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The distance from the place to the point
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">unit</td>
 <td valign="top"><a href="#distanceunit">DistanceUnit</a>!</td>
-<td>
-
-The unit of the output value
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>compass</strong></td>
@@ -8439,8 +6039,6 @@ Compass point towards given point
 
 ### Position
 
-A position on a map with a longitude and latitude
-
 <table>
 <thead>
 <tr>
@@ -8454,38 +6052,22 @@ A position on a map with a longitude and latitude
 <tr>
 <td colspan="2" valign="top"><strong>lonLat</strong></td>
 <td valign="top">[<a href="#float">Float</a>!]!</td>
-<td>
-
-The position in the form: [longitude, latitude]
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>latLon</strong></td>
 <td valign="top">[<a href="#float">Float</a>!]!</td>
-<td>
-
-The position in the form: [latitude, longitude]
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>lat</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The position's latitude
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>lon</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The position's longitude
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -8504,15 +6086,6 @@ Profile
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -8533,7 +6106,7 @@ The name of the profile
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>type</strong></td>
-<td valign="top"><a href="#profiletype">ProfileType</a>!</td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td>
 
 The type of the profile
@@ -8541,20 +6114,20 @@ The type of the profile
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>autoApproveFollows</strong></td>
+<td colspan="2" valign="top"><strong>requireFollowApprove</strong></td>
 <td valign="top"><a href="#boolean">Boolean</a>!</td>
 <td>
 
-Indicates if follows on this profile are automatically approved
+Indicates if follows on this profile require manual approval
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>handle</strong></td>
+<td colspan="2" valign="top"><strong>username</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The (optional) unique handle of the profile
+The username
 
 </td>
 </tr>
@@ -8578,7 +6151,7 @@ The Website URL
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>followers</strong></td>
-<td valign="top"><a href="#profilefollowconnection">ProfileFollowConnection</a>!</td>
+<td valign="top"><a href="#profileconnection">ProfileConnection</a>!</td>
 <td>
 
 Profiles that follow this profile
@@ -8588,42 +6161,26 @@ Profiles that follow this profile
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">status</td>
 <td valign="top"><a href="#profilefollowstatus">ProfileFollowStatus</a></td>
-<td>
-
-Filter by follow request status
-
-</td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">handle</td>
+<td colspan="2" align="right" valign="top">username</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by follower's handle
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>following</strong></td>
-<td valign="top"><a href="#profilefollowconnection">ProfileFollowConnection</a>!</td>
+<td valign="top"><a href="#profileconnection">ProfileConnection</a>!</td>
 <td>
 
 Profiles that this profile follows
@@ -8633,38 +6190,22 @@ Profiles that this profile follows
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">status</td>
 <td valign="top"><a href="#profilefollowstatus">ProfileFollowStatus</a></td>
-<td>
-
-Filter by follow request status
-
-</td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">handle</td>
+<td colspan="2" align="right" valign="top">username</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Filter by following profile's handle
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -8684,38 +6225,22 @@ Filter by following profile's handle
 <tr>
 <td colspan="2" valign="top"><strong>edges</strong></td>
 <td valign="top">[<a href="#profileedge">ProfileEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>nodes</strong></td>
 <td valign="top">[<a href="#profile">Profile</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>pageInfo</strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>totalCount</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -8735,120 +6260,19 @@ The total number of items in the connection (in all pages)
 <tr>
 <td colspan="2" valign="top"><strong>cursor</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>node</strong></td>
 <td valign="top"><a href="#profile">Profile</a>!</td>
-<td>
-
-The item
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ProfileFollowConnection
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
-<td valign="top">[<a href="#profilefollowedge">ProfileFollowEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
-<td valign="top">[<a href="#profile">Profile</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
-<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ProfileFollowEdge
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
-<td valign="top"><a href="#profile">Profile</a>!</td>
-<td>
-
-The item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>status</strong></td>
-<td valign="top"><a href="#profilefollowstatus">ProfileFollowStatus</a>!</td>
-<td>
-
-The status of the follow request
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### PublishItineraryPayload
 
-Response to Mutation.publishItinerary
+The published itinerary
 
 <table>
 <thead>
@@ -8863,11 +6287,27 @@ Response to Mutation.publishItinerary
 <tr>
 <td colspan="2" valign="top"><strong>itinerary</strong></td>
 <td valign="top"><a href="#itinerary">Itinerary</a></td>
-<td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
-The published itinerary
+### Request
 
-</td>
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>status</strong></td>
+<td valign="top"><a href="#profilefollowstatus">ProfileFollowStatus</a>!</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -8913,29 +6353,17 @@ The segments of this route
 <tr>
 <td colspan="2" valign="top"><strong>edges</strong></td>
 <td valign="top">[<a href="#routeedge">RouteEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>nodes</strong></td>
 <td valign="top">[<a href="#route">Route</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>pageInfo</strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -8955,109 +6383,12 @@ Details regarding the current page of the connnection
 <tr>
 <td colspan="2" valign="top"><strong>cursor</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>node</strong></td>
 <td valign="top"><a href="#route">Route</a>!</td>
-<td>
-
-The item
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### RouteElevation
-
-The elevation information of a route path taken
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>gain</strong></td>
-<td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The estimated total elevation gain of this path
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">unit</td>
-<td valign="top"><a href="#distanceunit">DistanceUnit</a>!</td>
-<td>
-
-The unit of the output value
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>loss</strong></td>
-<td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The estimated total elevation loss of this path
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">unit</td>
-<td valign="top"><a href="#distanceunit">DistanceUnit</a>!</td>
-<td>
-
-The unit of the output value
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>min</strong></td>
-<td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The estimated minimum elevation of this path
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">unit</td>
-<td valign="top"><a href="#distanceunit">DistanceUnit</a>!</td>
-<td>
-
-The unit of the output value
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>max</strong></td>
-<td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The estimated maximum elevation of this path
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">unit</td>
-<td valign="top"><a href="#distanceunit">DistanceUnit</a>!</td>
-<td>
-
-The unit of the output value
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -9074,15 +6405,6 @@ The unit of the output value
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -9104,20 +6426,12 @@ The mode of transport to be taken. eg: car, walk, kayak, etc
 <tr>
 <td colspan="2" valign="top"><strong>positions</strong></td>
 <td valign="top">[<a href="#position">Position</a>!]</td>
-<td>
-
-The way positions along this route
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>useRouteSearching</strong></td>
 <td valign="top"><a href="#boolean">Boolean</a>!</td>
-<td>
-
-Whether this route was searched for
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>geoJson</strong></td>
@@ -9131,11 +6445,7 @@ The representation of this path as encoded as geojson FeatureCollection type
 <tr>
 <td colspan="2" align="right" valign="top">simplify</td>
 <td valign="top"><a href="#geojsonsimplification">GeoJsonSimplification</a></td>
-<td>
-
-Optionally simplify the geojson data
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>duration</strong></td>
@@ -9149,11 +6459,7 @@ The estimated duration for this path
 <tr>
 <td colspan="2" align="right" valign="top">unit</td>
 <td valign="top"><a href="#durationunit">DurationUnit</a>!</td>
-<td>
-
-The unit of the output value
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>distance</strong></td>
@@ -9167,20 +6473,7 @@ The estimated distance for this path
 <tr>
 <td colspan="2" align="right" valign="top">unit</td>
 <td valign="top"><a href="#distanceunit">DistanceUnit</a>!</td>
-<td>
-
-The unit of the output value
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>elevation</strong></td>
-<td valign="top"><a href="#routeelevation">RouteElevation</a></td>
-<td>
-
-The elevation details of this route
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>polyline</strong></td>
@@ -9194,18 +6487,12 @@ The path representation as encoded as a polyline format
 <tr>
 <td colspan="2" align="right" valign="top">simplify</td>
 <td valign="top"><a href="#geojsonsimplification">GeoJsonSimplification</a></td>
-<td>
-
-Optionally simplify the path data before encoding
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### SearchResult
-
-A text search result with a label and matches to highlight
 
 <table>
 <thead>
@@ -9220,20 +6507,12 @@ A text search result with a label and matches to highlight
 <tr>
 <td colspan="2" valign="top"><strong>label</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-Search result label
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>matches</strong></td>
 <td valign="top">[<a href="#searchresultmatch">SearchResultMatch</a>!]!</td>
-<td>
-
-Text substring matches in the label text
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -9253,20 +6532,12 @@ Text substring matches in the label text
 <tr>
 <td colspan="2" valign="top"><strong>offset</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Start of the match
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>length</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Length of the match
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -9307,48 +6578,6 @@ The url to upload media to (via HTTP POST)
 <td>
 
 Data to pass with the upload
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### UnfollowProfilePayload
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>fromProfile</strong></td>
-<td valign="top"><a href="#profile">Profile</a>!</td>
-<td>
-
-The follower profile
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>toProfile</strong></td>
-<td valign="top"><a href="#profile">Profile</a>!</td>
-<td>
-
-The profile being followed
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>status</strong></td>
-<td valign="top"><a href="#profilefollowstatus">ProfileFollowStatus</a></td>
-<td>
-
-The status of the follow request
 
 </td>
 </tr>
@@ -9407,32 +6636,6 @@ The updated collection
 </tbody>
 </table>
 
-### UpdateConnectedAppPayload
-
-The available fields after updating a connected app
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>connectedApp</strong></td>
-<td valign="top"><a href="#connectedapp">ConnectedApp</a></td>
-<td>
-
-The updated connected app
-
-</td>
-</tr>
-</tbody>
-</table>
-
 ### UpdateItineraryCollectionPayload
 
 The fields available after updating the itinerary collection
@@ -9468,11 +6671,7 @@ The modified itinerary
 <tr>
 <td colspan="2" valign="top"><strong>cascaded</strong></td>
 <td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
-<td>
-
-Other changes to the itinerary that caused by deleting the itinerary-item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -9512,11 +6711,7 @@ The modified itinerary
 <tr>
 <td colspan="2" valign="top"><strong>cascaded</strong></td>
 <td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
-<td>
-
-Other changes to the itinerary that caused by deleting the itinerary-item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -9556,11 +6751,7 @@ The modified itinerary
 <tr>
 <td colspan="2" valign="top"><strong>cascaded</strong></td>
 <td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
-<td>
-
-Other changes to the itinerary that caused by deleting the itinerary-item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -9593,7 +6784,7 @@ The updated itinerary
 
 ### UpdateMediaResourcePayload
 
-Response payload to Mutation.updateMediaResource
+The updated media resource after the action
 
 <table>
 <thead>
@@ -9606,20 +6797,14 @@ Response payload to Mutation.updateMediaResource
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>mediaResource</strong></td>
+<td colspan="2" valign="top"><strong>resource</strong></td>
 <td valign="top"><a href="#mediaresource">MediaResource</a>!</td>
-<td>
-
-The updated media-resource
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### UpdateProfilePayload
-
-Response payload to Mutation.updateProfile
 
 <table>
 <thead>
@@ -9634,11 +6819,7 @@ Response payload to Mutation.updateProfile
 <tr>
 <td colspan="2" valign="top"><strong>profile</strong></td>
 <td valign="top"><a href="#profile">Profile</a></td>
-<td>
-
-The updated profile
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -9647,8 +6828,6 @@ The updated profile
 
 ### AttributeIdentifierInput
 
-A selector for an attribute
-
 <table>
 <thead>
 <tr>
@@ -9661,28 +6840,18 @@ A selector for an attribute
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The attribute identifier
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>locale</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The locale of the attribute
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### AttributeInput
 
-Defines an attribute
-
 <table>
 <thead>
 <tr>
@@ -9695,45 +6864,27 @@ Defines an attribute
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-The attribute identifier
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>value</strong></td>
 <td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-The attribute value, can be any JSON-serialisable type
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>meta</strong></td>
 <td valign="top"><a href="#json">JSON</a></td>
-<td>
-
-Optional attribute metadata, can be any JSON-serialisable type
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>locale</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Optional string representing the locale of the attribute value
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### BoundsCircleInput
-
-A bounding circle on a map defined by a center positions and a radius
 
 <table>
 <thead>
@@ -9747,27 +6898,17 @@ A bounding circle on a map defined by a center positions and a radius
 <tr>
 <td colspan="2" valign="top"><strong>position</strong></td>
 <td valign="top"><a href="#positioninput">PositionInput</a>!</td>
-<td>
-
-The center position of the circle
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>radius</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The radius of the bounding circle
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### BoundsInput
-
-A bounding box on a map defined by two positions (opposite corners of the box)
 
 <table>
 <thead>
@@ -9781,120 +6922,22 @@ A bounding box on a map defined by two positions (opposite corners of the box)
 <tr>
 <td colspan="2" valign="top"><strong>n</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The north-most latitude of the bounding box
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>e</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The east-most longitude of the bounding box
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>s</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The south-most latitude of the bounding box
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>w</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The west-most longitude of the bounding box
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### CollectionItemsSort
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>created</strong></td>
-<td valign="top"><a href="#sortdirection">SortDirection</a></td>
-<td>
-
-Sort by the created date
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>modified</strong></td>
-<td valign="top"><a href="#sortdirection">SortDirection</a></td>
-<td>
-
-Sort by the modified date
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>title</strong></td>
-<td valign="top"><a href="#sortdirection">SortDirection</a></td>
-<td>
-
-Sort by the collection-item title
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### CollectionsSort
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>created</strong></td>
-<td valign="top"><a href="#sortdirection">SortDirection</a></td>
-<td>
-
-Sort by the created date
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>modified</strong></td>
-<td valign="top"><a href="#sortdirection">SortDirection</a></td>
-<td>
-
-Sort by the modified date
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>title</strong></td>
-<td valign="top"><a href="#sortdirection">SortDirection</a></td>
-<td>
-
-Sort by the collection title
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -9915,74 +6958,42 @@ Creates a collection
 <tr>
 <td colspan="2" valign="top"><strong>discriminator</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-A label used to differentiate types of collections
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>title</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Title of the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>synopsis</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-A short text summary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-A longer text description
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-A series of strings applied to label the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Additional data defined on the collection
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -10005,7 +7016,7 @@ The input to create a collection location
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-Title for the new item
+Title for this item
 
 </td>
 </tr>
@@ -10014,7 +7025,7 @@ Title for the new item
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-A short summary text content for the new item
+A short summary text content for this item
 
 </td>
 </tr>
@@ -10023,7 +7034,7 @@ A short summary text content for the new item
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-A longer description content for the new item
+A longer description content for this item
 
 </td>
 </tr>
@@ -10032,63 +7043,24 @@ A longer description content for the new item
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td>
 
-A collection of strings used to label the new item
+A collection of strings used to label this item
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sectionIds</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td>
-
-One or more sections for this new item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>externalId</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-Identifier from an external source this new item is associated with
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>externalSource</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-The source of this item's externalId
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Additional data defined on the new collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>place</strong></td>
@@ -10096,74 +7068,6 @@ Additional data defined on the new collection
 <td>
 
 The associated place record for this location
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### CreateConnectedAppInput
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
-<td valign="top"><a href="#connectedapptypes">ConnectedAppTypes</a></td>
-<td>
-
-The type of the connected-app
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>serviceKey</strong></td>
-<td valign="top"><a href="#connectedappservicekeys">ConnectedAppServiceKeys</a>!</td>
-<td>
-
-Identifies the service being connected to
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>scope</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Any specific scope that has been granted to the 3rd party application
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>authType</strong></td>
-<td valign="top"><a href="#connectedappauthtypes">ConnectedAppAuthTypes</a></td>
-<td>
-
-The authenticated application method
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>configuration</strong></td>
-<td valign="top"><a href="#json">JSON</a></td>
-<td>
-
-Encrypted JSON
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>thirdPartyId</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-3rd party ID or account ID
 
 </td>
 </tr>
@@ -10188,108 +7092,64 @@ Creates an itinerary item collection type
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The title for the new itinerary-collection
+The title for the itinerary item collection
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>synopsis</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The synopsis for the new itinerary-collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The description for the new itinerary-collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The tags for the new itinerary-collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Additional data defined on the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionAtStart</strong></td>
 <td valign="top"><a href="#itineraryitempositionatstart">ItineraryItemPositionAtStart</a></td>
-<td>
-
-Creates the item positioned before all its siblings
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionAtEnd</strong></td>
 <td valign="top"><a href="#itineraryitempositionatend">ItineraryItemPositionAtEnd</a></td>
-<td>
-
-Creates the item positioned after all its siblings
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionAfterSibling</strong></td>
 <td valign="top"><a href="#itineraryitempositionaftersibling">ItineraryItemPositionAfterSibling</a></td>
-<td>
-
-Create the item positioned after the given sibling
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionBeforeSibling</strong></td>
 <td valign="top"><a href="#itineraryitempositionbeforesibling">ItineraryItemPositionBeforeSibling</a></td>
-<td>
-
-Create the item positioned before the given sibling
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionOnLastCollection</strong></td>
 <td valign="top"><a href="#itineraryitempositiononlastcollection">ItineraryItemPositionOnLastCollection</a></td>
-<td>
-
-Create the item at last position of the last itinerary-collection item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -10312,63 +7172,39 @@ The input fields to creating new itinerary directions items
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The title for the new itinerary-directions
+The title
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>synopsis</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The synopsis for the new itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The description for the new itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The tags for the new itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Additional data on the new itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>originId</strong></td>
@@ -10391,74 +7227,42 @@ The route of this item, must include at least one route segment
 <tr>
 <td colspan="2" valign="top"><strong>durations</strong></td>
 <td valign="top">[<a href="#itinerarydirectionsdurationsinput">ItineraryDirectionsDurationsInput</a>!]</td>
-<td>
-
-The duration details of the new itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>distance</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The distance of the new itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>elevation</strong></td>
 <td valign="top"><a href="#elevationinput">ElevationInput</a></td>
-<td>
-
-The elevation details of the new itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionAtStart</strong></td>
 <td valign="top"><a href="#itineraryitempositionatstart">ItineraryItemPositionAtStart</a></td>
-<td>
-
-Creates the itinerary-directions to be before all its siblings
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionAtEnd</strong></td>
 <td valign="top"><a href="#itineraryitempositionatend">ItineraryItemPositionAtEnd</a></td>
-<td>
-
-Creates the itinerary-directions to be after all its siblings
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionAfterSibling</strong></td>
 <td valign="top"><a href="#itineraryitempositionaftersibling">ItineraryItemPositionAfterSibling</a></td>
-<td>
-
-Creates the itinerary-directions after the given sibling
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionBeforeSibling</strong></td>
 <td valign="top"><a href="#itineraryitempositionbeforesibling">ItineraryItemPositionBeforeSibling</a></td>
-<td>
-
-Creates the itinerary-directions before the given sibling
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionOnLastCollection</strong></td>
 <td valign="top"><a href="#itineraryitempositiononlastcollection">ItineraryItemPositionOnLastCollection</a></td>
-<td>
-
-Creates the itinerary-directions at the last position of the last itinerary-collection item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -10481,63 +7285,39 @@ Creates a itinerary
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The title for the new itinerary
+The title for the itinerary
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>synopsis</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The synopsis for the new itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The description for the new itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The tags for the new itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Additional data on the new itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>autoRoute</strong></td>
@@ -10551,11 +7331,7 @@ Enable auto routing, or set to null to disable
 <tr>
 <td colspan="2" valign="top"><strong>elevation</strong></td>
 <td valign="top"><a href="#elevationinput">ElevationInput</a></td>
-<td>
-
-Elevation data of the new itinerary
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -10578,79 +7354,51 @@ The fields to create an itinerary location
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The title for the new itinerary-location
+The title
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>synopsis</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The synopsis for the new itinerary-location
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The description for the new itinerary-location
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The tags for the new itinerary-location
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Additional data defined on the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>position</strong></td>
 <td valign="top"><a href="#positioninput">PositionInput</a></td>
-<td>
-
-The position of the itinerary-location
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>place</strong></td>
 <td valign="top"><a href="#placeinput">PlaceInput</a>!</td>
 <td>
 
-The place for this new itinerary-location
+The place information
 
 </td>
 </tr>
@@ -10666,47 +7414,27 @@ Whether this is an optional location on the itinerary
 <tr>
 <td colspan="2" valign="top"><strong>positionAtStart</strong></td>
 <td valign="top"><a href="#itineraryitempositionatstart">ItineraryItemPositionAtStart</a></td>
-<td>
-
-Creates the item positioned before all its siblings
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionAtEnd</strong></td>
 <td valign="top"><a href="#itineraryitempositionatend">ItineraryItemPositionAtEnd</a></td>
-<td>
-
-Creates the item positioned after all its siblings
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionAfterSibling</strong></td>
 <td valign="top"><a href="#itineraryitempositionaftersibling">ItineraryItemPositionAfterSibling</a></td>
-<td>
-
-Create the item positioned after the given sibling
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionBeforeSibling</strong></td>
 <td valign="top"><a href="#itineraryitempositionbeforesibling">ItineraryItemPositionBeforeSibling</a></td>
-<td>
-
-Create the item positioned before the given sibling
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>positionOnLastCollection</strong></td>
 <td valign="top"><a href="#itineraryitempositiononlastcollection">ItineraryItemPositionOnLastCollection</a></td>
-<td>
-
-Create the item at last position of the last itinerary-collection item
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -10727,47 +7455,27 @@ Uploads a media resource
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-List of labels to apply to the new media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attribution</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Text attribution for the source of the new media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>caption</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Text caption for the new media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>copyright</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Copyright details of the new media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Additional data to define on the new media-resource
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -10786,45 +7494,27 @@ Additional data to define on the new media-resource
 <tr>
 <td colspan="2" valign="top"><strong>gain</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The cumulative elevation gain
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>loss</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The cumulative elevation loss
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>min</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The minimum elevation
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>max</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The maximum elevation
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### GeoJsonSimplification
-
-Different GeoJSON simplification algorithms
 
 <table>
 <thead>
@@ -10838,18 +7528,12 @@ Different GeoJSON simplification algorithms
 <tr>
 <td colspan="2" valign="top"><strong>ramerDouglasPeucker</strong></td>
 <td valign="top"><a href="#geojsonsimplificationramerdouglaspeucker">GeoJsonSimplificationRamerDouglasPeucker</a>!</td>
-<td>
-
-The Ramer-Douglas-Peucker algorithm
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### GeoJsonSimplificationRamerDouglasPeucker
-
-The Ramer-Douglas-Peucker algorithm
 
 <table>
 <thead>
@@ -10863,61 +7547,12 @@ The Ramer-Douglas-Peucker algorithm
 <tr>
 <td colspan="2" valign="top"><strong>tolerance</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The amount of application applied, higher values result in more simplification
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>highQuality</strong></td>
 <td valign="top"><a href="#boolean">Boolean</a></td>
-<td>
-
-Modify the algorithm to be slower by produce higher quality results
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ItinerariesSort
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>created</strong></td>
-<td valign="top"><a href="#sortdirection">SortDirection</a></td>
-<td>
-
-Sort by the created date
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>modified</strong></td>
-<td valign="top"><a href="#sortdirection">SortDirection</a></td>
-<td>
-
-Sort by the modified date
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>title</strong></td>
-<td valign="top"><a href="#sortdirection">SortDirection</a></td>
-<td>
-
-Sort by the itinerary title
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -10961,20 +7596,12 @@ The default mode of transport to use for the generated ItineraryDirections, if e
 <tr>
 <td colspan="2" valign="top"><strong>duration</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The duration value
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>label</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Label for the duration
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -11118,27 +7745,17 @@ The itinerary item identifier to limit descendent searching withing
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
-<td>
-
-Unique place identifier
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>position</strong></td>
-<td valign="top"><a href="#positioninput">PositionInput</a>!</td>
-<td>
-
-The position of the place
-
-</td>
+<td valign="top"><a href="#positioninput">PositionInput</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### PositionInput
-
-A position on a map with a longitude and latitude
 
 <table>
 <thead>
@@ -11152,20 +7769,12 @@ A position on a map with a longitude and latitude
 <tr>
 <td colspan="2" valign="top"><strong>lon</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The longitude
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>lat</strong></td>
 <td valign="top"><a href="#float">Float</a>!</td>
-<td>
-
-The latitude
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -11216,11 +7825,7 @@ The mode of transport to be taken on this segment, defaults to Car
 <tr>
 <td colspan="2" valign="top"><strong>positions</strong></td>
 <td valign="top">[<a href="#positioninput">PositionInput</a>!]</td>
-<td>
-
-The way positions along this route
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>useRouteSearching</strong></td>
@@ -11234,20 +7839,12 @@ Whether to plan out a route using the positions. Defaults to true if the mode is
 <tr>
 <td colspan="2" valign="top"><strong>distance</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The distance for this route segment
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>duration</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The duration for this route segment
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -11277,65 +7874,37 @@ The title for the collection
 <tr>
 <td colspan="2" valign="top"><strong>synopsis</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The synopsis for the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The description for the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The tags for the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Insert or update attributes to the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
-<td>
-
-Delete attributes to the collection
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -11392,47 +7961,12 @@ A collection of strings used to label this item
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Shortcut for setting the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Shortcut for setting the website-url attribute
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sectionIds</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td>
-
-One or more sections for this item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>externalId</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-Identifier from an external source this item is associated with
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>externalSource</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-The source of this item's externalId
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>place</strong></td>
@@ -11446,72 +7980,12 @@ The associated place information for this item
 <tr>
 <td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Insert or update attributes to the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
-<td>
-
-Delete attributes to the collection
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### UpdateConnectedAppInput
-
-Updates a connected app
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>authType</strong></td>
-<td valign="top"><a href="#connectedappauthtypes">ConnectedAppAuthTypes</a></td>
-<td>
-
-The type of the connected-app
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>scope</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Any specific scope that has been granted to the 3rd party application
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>thirdPartyId</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-3rd party ID or account ID
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>configuration</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Encrypted JSON
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -11534,72 +8008,44 @@ The intinerary collection fields to update
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The title for the itinerary-collection
+The title for the itinerary collection
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>synopsis</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The synopsis for the itinerary-collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The description for the itinerary-collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The tags for the itinerary-collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Insert or update attributes to the itinerary-collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
-<td>
-
-Delete attributes to the itinerary-collection
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -11629,65 +8075,37 @@ The title for the itinerary directions
 <tr>
 <td colspan="2" valign="top"><strong>synopsis</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The synopsis for the itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The description for the itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The tags for the itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Insert or update attributes to the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
-<td>
-
-Delete attributes to the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>originId</strong></td>
@@ -11710,29 +8128,17 @@ The route of this item, must include at least one route segment
 <tr>
 <td colspan="2" valign="top"><strong>distance</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td>
-
-The distance of the itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>durations</strong></td>
 <td valign="top">[<a href="#itinerarydirectionsdurationsinput">ItineraryDirectionsDurationsInput</a>!]</td>
-<td>
-
-The duration details of the new itinerary-directions
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>elevation</strong></td>
 <td valign="top"><a href="#elevationinput">ElevationInput</a></td>
-<td>
-
-The elevation details of the new itinerary-directions
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -11762,65 +8168,37 @@ The title for the itinerary
 <tr>
 <td colspan="2" valign="top"><strong>synopsis</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The synopsis for the itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The description for the itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The tags for the itinerary
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Insert or update attributes to the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
-<td>
-
-Delete attributes to the collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>autoRoute</strong></td>
@@ -11834,11 +8212,7 @@ Enable auto routing, or set to null to disable
 <tr>
 <td colspan="2" valign="top"><strong>elevation</strong></td>
 <td valign="top"><a href="#elevationinput">ElevationInput</a></td>
-<td>
-
-Elevation data of the new itinerary
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -11861,88 +8235,56 @@ The fields to update on an itinerary location
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The title for the itinerary-location
+The title
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>synopsis</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The synopsis for the itinerary-location
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The description for the itinerary-location
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-The tags for the itinerary-location
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Insert or update attributes to the itinerary-collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
-<td>
-
-Delete attributes to the itinerary-collection
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>position</strong></td>
 <td valign="top"><a href="#positioninput">PositionInput</a></td>
-<td>
-
-The place for this itinerary-location
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>place</strong></td>
 <td valign="top"><a href="#placeinput">PlaceInput</a></td>
 <td>
 
-The place for this itinerary-location
+The place information
 
 </td>
 </tr>
@@ -11974,63 +8316,37 @@ Updates a media resource
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
-<td>
-
-List of labels to apply to the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attribution</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Text attribution for the source of the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>caption</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Text caption for the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>copyright</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Copyright details of the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
 <td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
-<td>
-
-Insert or update attributes to the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
-<td>
-
-Delete attributes to the media-resource
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
 ### UpdateProfileInput
-
-Input object to Mutation.updateProfile
 
 <table>
 <thead>
@@ -12044,38 +8360,22 @@ Input object to Mutation.updateProfile
 <tr>
 <td colspan="2" valign="top"><strong>name</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The name of the profile
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bio</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-A short biography
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-The website url
-
-</td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>autoApproveFollows</strong></td>
+<td colspan="2" valign="top"><strong>requireFollowApprove</strong></td>
 <td valign="top"><a href="#boolean">Boolean</a></td>
-<td>
-
-If follow requests should be automatically approved for this profile
-
-</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -12143,75 +8443,6 @@ Points on the compass rose
 </tr>
 <tr>
 <td valign="top"><strong>NW</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### ConnectedAppAuthTypes
-
-<table>
-<thead>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>Tokens</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>Oauth</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>Credentials</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### ConnectedAppServiceKeys
-
-<table>
-<thead>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>Atdw</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>CrowdriffApi</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>ShopifyApi</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### ConnectedAppTypes
-
-<table>
-<thead>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>Configuration</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>Credentials</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>Api</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -12292,71 +8523,6 @@ Mode of transport for an isochrone
 <tr>
 <td valign="top"><strong>Foot</strong></td>
 <td></td>
-</tr>
-</tbody>
-</table>
-
-### ItineraryDirectionsAccuracy
-
-<table>
-<thead>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>Location</strong></td>
-<td>
-
-Consider itinerary-directions related if the itinerary-location matches
-
-</td>
-</tr>
-<tr>
-<td valign="top"><strong>Place</strong></td>
-<td>
-
-Consider itinerary-directions related if the place inside the itinerary-location matches
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ItineraryDirectionsDirection
-
-<table>
-<thead>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>Inbound</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>Outbound</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### ItineraryDirectionsRestrict
-
-<table>
-<thead>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>ParentDescendants</strong></td>
-<td>
-
-Restrict results to include directions that are descendants of the parent item
-
-</td>
 </tr>
 </tbody>
 </table>
@@ -12501,12 +8667,16 @@ Profile follow status
 <td valign="top"><strong>Denied</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>Cancelled</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
-### ProfileType
+### ProfileFollowStatusAction
 
-Profile type
+Profile follow status action
 
 <table>
 <thead>
@@ -12515,11 +8685,11 @@ Profile type
 </thead>
 <tbody>
 <tr>
-<td valign="top"><strong>Individual</strong></td>
+<td valign="top"><strong>Approve</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>Organization</strong></td>
+<td valign="top"><strong>Deny</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -12639,33 +8809,6 @@ Subset of RouteModes supporting route search
 </tbody>
 </table>
 
-### SortDirection
-
-<table>
-<thead>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>Asc</strong></td>
-<td>
-
-Sort in ascending order
-
-</td>
-</tr>
-<tr>
-<td valign="top"><strong>Desc</strong></td>
-<td>
-
-Sort in descending order
-
-</td>
-</tr>
-</tbody>
-</table>
-
 ## Scalars
 
 ### Boolean
@@ -12710,15 +8853,6 @@ A collection item contains data about a single entity and is assigned within a c
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -12803,11 +8937,7 @@ A collection of Media objects representing images or other media
 <tr>
 <td colspan="2" align="right" valign="top">limit</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The number of media to return
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>preferredMedia</strong></td>
@@ -12821,47 +8951,12 @@ A single Media object representing the preferred media to use
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sectionIds</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]!</td>
-<td>
-
-One or more sections this item belongs to
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>externalId</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-Identifier from an external source this item is associated with
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>externalSource</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td>
-
-The source of the item's externalId
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attr</strong></td>
@@ -12919,7 +9014,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -12929,11 +9024,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>allAttrs</strong></td>
@@ -12947,20 +9038,12 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -12974,20 +9057,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -13025,22 +9100,9 @@ An item in an itinerary as part of the tree
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
-Unique identifier for the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>title</strong></td>
@@ -13090,11 +9152,7 @@ A collection of Media objects representing images or other media
 <tr>
 <td colspan="2" align="right" valign="top">limit</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The number of media to return
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>preferredMedia</strong></td>
@@ -13108,20 +9166,12 @@ A single Media object representing the preferred media to use
 <tr>
 <td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the read-more attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alias for the website-url attribute
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>itinerary</strong></td>
@@ -13267,29 +9317,17 @@ Only looks at the place field on ItineraryLocations
 <tr>
 <td colspan="2" valign="top"><strong>ancestors</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All ancestors of the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -13329,29 +9367,17 @@ Only looks at the place field on ItineraryLocations
 <tr>
 <td colspan="2" valign="top"><strong>descendants</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All the descendants of the itinerary-item in depth-first-search order
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -13409,29 +9435,17 @@ Optionally limit the minimum depth of the traversal
 <tr>
 <td colspan="2" valign="top"><strong>children</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
-<td>
-
-All the direct children of the itinerary-item
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
@@ -13524,7 +9538,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -13534,11 +9548,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -13552,20 +9562,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -13597,20 +9599,12 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bounds</strong></td>
@@ -13638,15 +9632,6 @@ Representing media such as images/photos as well as other types such as video or
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
@@ -13677,38 +9662,22 @@ The provider for the media
 <tr>
 <td colspan="2" valign="top"><strong>caption</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Text caption for the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attribution</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Text attribution for the source of the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>copyright</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Copyright details of the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>altText</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Alternative text for the media-resource
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
@@ -13775,7 +9744,7 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td valign="top">[<a href="#attribute">Attribute</a>!]!</td>
 <td>
 
 Query multiple attributes by id and optionally locale
@@ -13785,11 +9754,7 @@ Query multiple attributes by id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">attrs</td>
 <td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>allAttrs</strong></td>
@@ -13803,20 +9768,12 @@ Return all attributes on the resource
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrsById</strong></td>
@@ -13830,20 +9787,12 @@ Query multiple attributes with the same id and optionally locale
 <tr>
 <td colspan="2" align="right" valign="top">first</td>
 <td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">after</td>
 <td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
@@ -13880,15 +9829,6 @@ An object with a Globally Unique ID
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
