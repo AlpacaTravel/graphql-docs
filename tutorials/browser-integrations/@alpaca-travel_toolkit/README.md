@@ -1,6 +1,6 @@
 # Alpaca Toolkit
 
-The (Alpaca Toolkit)[https://developer.alpacamaps.com/] provides a method of
+The [Alpaca Toolkit](https://developer.alpacamaps.com/) provides a method of
 integrating assets provided by Alpaca Travel. These assets include various
 prebuilt area guides, maps and itinerary layouts.
 
@@ -30,6 +30,17 @@ features more broadly into the application via GraphQL.
   your website application
 - You need to read/write to the local storage key detailed here in order to
   have the assets and your website application kept in sync
+
+_Example integrations_
+
+- Full functioning Itinerary Creation, including simple lists and automatically
+  routed itineraries
+- Create "Add to Itinerary" buttons on your website application that can
+  determine whether a [place is present within an itinerary](topics/itinerary/Checking%20if%20a%20place%20is%20within%20an%20itinerary/README.md)
+- Show the number of places added to a users itinerary
+- Present a list of the places added to the itinerary
+- Add, remove and reorder places
+- Automatically create routes between an itinerary
 
 _Requirements_
 You must be using the script tag with "inline=true" in order to leverage this
