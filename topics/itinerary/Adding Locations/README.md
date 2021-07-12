@@ -163,4 +163,4 @@ to store and leverage in you use case.
 - [Reordering Locations](/topics/itinerary/Reordering%20Locations/README.md)
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
 - [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
-- [Deleting an Itinerary Location](/example-operations/itinerary/DeleteItineraryLocation.graphql)
+- [Deleting an Itinerary Location](/example-operations/itinerary/location/DeleteItineraryLocation.graphql)

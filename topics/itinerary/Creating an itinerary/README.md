@@ -101,7 +101,7 @@ Learn more about [Automatic Routing](/topics/itinerary/Automatic%20Routing/READM
 
 ## Additional Resources
 
-- [Obtaining your profile IDs](/example-operations/profile/QueryAuthorizedProfiles.graphql)
+- [Obtaining your profile IDs](/example-operations/profile/AuthorizedProfiles.graphql)
 - [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)
 - [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)

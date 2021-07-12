@@ -11,7 +11,7 @@ collection, consider also reviewing the
 ### Prerequisits
 
 - Your API Key
-- Your [profile ID](/example-operations/profile/QueryAuthorizedProfiles.graphql)
+- Your [profile ID](/example-operations/profile/AuthorizedProfiles.graphql)
 
 ## List available collections
 
@@ -262,4 +262,4 @@ mutation DeleteCollectionItem {
 
 - [Importing Locations](/topics/collection/Importing%20Locations/README.md)
 - [Pagination using cursor connections](/topics/graphql/Pagination%20using%20cursor%20connections/README.md)
-- [Example GraphQL operations for collections](/example-operations/collection)
+- [Example GraphQL operations for collection locations](/example-operations/collection/location)

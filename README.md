@@ -203,7 +203,7 @@ information and keep your place information up to date.
 - **[Accessing Hours](topics/places/Accessing%20Hours/README.md)**
   Access information about opening hours of a vendor, and present them in
   time zone appropriate formats.
-- **[Standard place attributes](topiocs/places/Standard%20place%20attributes/README.md)**
+- **[Standard place attributes](topics/places/Standard%20place%20attributes/README.md)**
   Standardised place attributes used to provide extensible information around
   places.
 
