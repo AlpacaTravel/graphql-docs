@@ -6,7 +6,7 @@ prebuilt area guides, maps and itinerary layouts.
 
 _Example: Presenting an itinerary using a script tag_
 
-```javascript
+```html
 <!-- Example of configuring script -->
 <div class="alpaca-wrapper">
   <div id="alpaca-container">
@@ -25,7 +25,7 @@ _Example: Presenting an itinerary using a script tag_
 
 _Example: Presenting an area guide using a script tag_
 
-```javascript
+```html
 <!-- Example of configuring script -->
 <div class="alpaca-wrapper">
   <div id="alpaca-container">
