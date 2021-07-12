@@ -7,15 +7,38 @@ prebuilt area guides, maps and itinerary layouts.
 _Example: Presenting an itinerary using a script tag_
 
 ```javascript
-<!-- Example of configuring includes -->
+<!-- Example of configuring script -->
 <div class="alpaca-wrapper">
-  <div id="alpaca-container"><span class="loading">Loading...</span></div>
+  <div id="alpaca-container">
+    <!-- Add you strategy here for the loading presentation -->
+    <span class="loading">Loading...</span>
+  </div>
   <script
     src="https://cdn.alpacamaps.com/scripts/alpaca-widget@v2.js"
     data-id="journey/94d8276c-fd26-11ea-96fe-067ec0c7e8f4"
     data-view-mode="article"
     data-container-id="alpaca-container"
     data-inline="true"
+  ></script>
+</div>
+```
+
+_Example: Presenting an area guide using a script tag_
+
+```javascript
+<!-- Example of configuring script -->
+<div class="alpaca-wrapper">
+  <div id="alpaca-container">
+    <!-- Add you strategy here for the loading presentation -->
+    <span class="loading">Loading...</span>
+  </div>
+  <script
+    src="https://cdn.alpacamaps.com/scripts/alpaca-widget@v2.js"
+    data-id="locale/wine-australia"
+    data-view-mode="article"
+    data-container-id="alpaca-container"
+    data-inline="true"
+    data-query-params="tags:prefilter=_appointment_only"
   ></script>
 </div>
 ```
@@ -58,10 +81,18 @@ value of this must be in the format of `alpaca://<itinerary-id>`, such as:
 You can listen to local storage events in order to obtain the reference to the
 itinerary as it is created.
 
-- [Mozilla Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-- [Mozilla Local Storage Event](https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event)
+- Read the created itinerary from the localStorage key 
+  `alpaca:add-to-itinerary:itinerary:ref:selected` on load to obtain any 
+  itinerary that is in progress
+- Add an event handler to the window.localStorage so that if a new itinerary
+  is started in the asset, you will also then have access to the ID
+- Push any newly created itineraries made outside the asset to local storage
+  so that the asset also can use the itinerary.
 
 #### Vanilla JavaScript
+
+As an example gist, the below provides a basic javascript event handler
+for subscribing to the local storage to obtain the created itinerary.
 
 ```javascript
 // Create a window variable in sync with the current itinerary
@@ -121,6 +152,10 @@ window.addEventListener('storage', () => {
 // Set the itinerary ID when we boot
 itineraryId = getLocalStorageItineraryId();
 ```
+
+- [Mozilla Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- [Mozilla Local Storage Event](https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event)
+
 
 ### Further References
 
