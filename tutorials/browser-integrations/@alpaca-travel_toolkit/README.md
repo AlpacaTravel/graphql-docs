@@ -4,13 +4,28 @@ The [Alpaca Toolkit](https://developer.alpacamaps.com/) provides a method of
 integrating assets provided by Alpaca Travel. These assets include various
 prebuilt area guides, maps and itinerary layouts.
 
+## Example Inline Scripts
+
+Using the below script examples, you can configure the behaviour and content
+using data attributes. The examples load an itinerary and an area guide into
+the `alpaca-container` div. You can style CSS for the presentation
+of the elements as appropriate for your site.
+
 _Example: Presenting an itinerary using a script tag_
+
+The below example will draw an itinerary onto the page of your site. The
+specific itinerary is configured by changing the `data-id` data attribute on the
+script tag. The `data-view-mode` attribute can configure the layout presentation
+that is used to present the asset. The `data-container-id` will configured 
+which div to replace the contents with the asset once it is ready. Finally, the
+`data-inline` data attribute will load the asset on page, allowing it to share
+the local storage access (opposed to using an iframe to seperate).
 
 ```html
 <!-- Example of configuring script -->
-<div class="alpaca-wrapper">
+<div class="alpaca-wrapper alpaca-itinerary">
   <div id="alpaca-container">
-    <!-- Add you strategy here for the loading presentation -->
+    <!-- Recommended: Add you strategy here for the loading presentation -->
     <span class="loading">Loading...</span>
   </div>
   <script
@@ -25,17 +40,25 @@ _Example: Presenting an itinerary using a script tag_
 
 _Example: Presenting an area guide using a script tag_
 
+The below example places an area guide on the page, as defined by the `data-id`
+data attribute. It is configured to run `inline`, necessary to operate the asset
+on the same domain to share the local storage access. The content will load into
+the `alpaca-container` div once the application has downloaded and is ready to
+boot.
+
+This example also passes through some query parameters, in order to filter the
+content to a specific state of the application.
+
 ```html
 <!-- Example of configuring script -->
-<div class="alpaca-wrapper">
+<div class="alpaca-wrapper alpaca-area-guide">
   <div id="alpaca-container">
-    <!-- Add you strategy here for the loading presentation -->
+    <!-- Recommended: Add you strategy here for the loading presentation -->
     <span class="loading">Loading...</span>
   </div>
   <script
     src="https://cdn.alpacamaps.com/scripts/alpaca-widget@v2.js"
     data-id="locale/wine-australia"
-    data-view-mode="article"
     data-container-id="alpaca-container"
     data-inline="true"
     data-query-params="tags:prefilter=_appointment_only"
