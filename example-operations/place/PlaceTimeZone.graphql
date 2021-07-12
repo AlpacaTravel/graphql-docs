@@ -1,0 +1,18 @@
+# Queries the timezone for a place.
+
+query PlaceTimeZone {
+  # Use the place() operation
+  place(id: "place/facebook:page:mavisthegrocer") {
+    # Some information about the place...
+    name
+    address {
+      locality
+      region
+      country
+    }
+    # Use the attr with the id "time-zone"
+    timezone: attr(id: "time-zone") {
+      value
+    }
+  }
+}

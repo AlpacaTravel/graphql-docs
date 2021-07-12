@@ -5,8 +5,8 @@
 
 query PlaceContextualOrientation {
   place(
-    # A place (or any joined node as a place type)
-    id: "place/ABC123"
+    # Provide a place ID, example for a cafe in Melbourne
+    id: "place/facebook:page:mavisthegrocer"
   ) {
     # Identifiers
     id
@@ -20,12 +20,12 @@ query PlaceContextualOrientation {
       positions: [{ lon: 123, lat: 45 }]
     ) {
       # Provides a 360 degree bearing
-      bearing
+      bearing(unit: Degrees)
       # Provides a 16-point compass (N, NNE, NE, ENE, E etc)
       compass
       # Provides a distance (line of sight), default metric unit
       # use distance(unit: <UNIT>) such as Feet, Miles, Kilometers etc to return
-      distance
+      distance(unit: Kilometers)
     }
   }
 }

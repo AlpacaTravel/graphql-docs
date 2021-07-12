@@ -1,0 +1,19 @@
+# Queries the currency used in the country for a place.
+
+query PlaceTimeZone {
+  # Use the place() operation
+  place(id: "place/facebook:page:mavisthegrocer") {
+    # Some information about the place...
+    name
+    address {
+      locality
+      region
+      country
+    }
+    # Use the attr with the id "country-currency"
+    currency: attr(id: "country-currency") {
+      # Access symbols, name, ISO4217 codes, etc
+      value
+    }
+  }
+}

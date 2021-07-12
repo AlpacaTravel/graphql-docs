@@ -16,7 +16,7 @@ query DateRangeOpenClosedTimes {
         date(format: "EEE, MMM d")
         # Whether there is a public holiday for this date detected for this
         # region on this date
-        publicHoliday
+        publicHolidays
         # Obtain the intervals for this date, requesting the opening status
         # status is optional, otherwise use Open/Closed to specify your pref
         intervals(status: Open) {
