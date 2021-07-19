@@ -12,7 +12,7 @@ mutation CreateCollection {
       # Title of your collection
       title: "My Collection"
       # Differentiate the style of collection if necessary
-      discriminator: "collection"
+      discriminator: Collection
     }
   ) {
     # Query back the created collection
