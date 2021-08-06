@@ -158,6 +158,9 @@ function setLocalStorageItineraryId(id) {
 
     // Set the itinerary ID reference into local storage
     window.localStorage.setItem(localStorageKey, ref);
+  } catch(e) {
+    // Error handling...
+    console.error(e);
   }
 }
 
