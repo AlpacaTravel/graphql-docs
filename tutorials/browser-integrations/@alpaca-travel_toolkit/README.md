@@ -123,6 +123,8 @@ var itineraryId = null;
 
 // Local storage key for accessing the current selected itinerary
 var localStorageKey = 'alpaca:add-to-itinerary:itinerary:ref:selected'
+// Local storage key for accessing all the known itineraries (multiple list)
+var localStorageKeyList = 'alpaca:add-to-itinerary:itinerary:refs:known'
 
 /**
  * Obtain the current value of local storage for the selected itinerary
@@ -131,7 +133,7 @@ function getLocalStorageItineraryId() {
   // Access the current itinerary ref from the local storage
   try {
     // Update the local variable
-    localStorageItineraryRef = window.localStorage.getItem(localStorageKey);
+    var localStorageItineraryRef = window.localStorage.getItem(localStorageKey);
     if (typeof localStorageItineraryRef === 'string') {
       return localStorageItineraryRef.replace('alpaca://', '');
     }
@@ -167,7 +169,7 @@ function setLocalStorageItineraryId(id) {
 // Add an event listener to local storage to update our local variable
 window.addEventListener('storage', () => {
   // When the local storage is updated, keep it in sync
-  localStorageItineraryRef = getLocalStorageItineraryId();
+  var localStorageItineraryRef = getLocalStorageItineraryId();
   if (localStorageItineraryRef !== itineraryId) {
     itineraryId = localStorageItineraryRef;
     // You can do something else with the updated itinerary ID here...
@@ -182,6 +184,25 @@ itineraryId = getLocalStorageItineraryId();
 - [Mozilla Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 - [Mozilla Local Storage Event](https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event)
 
+### Custom Events
+
+Alpaca also triggers custom events on the window that you can subscribe and observe. These are triggered
+by the application when certain events happen, and can bne an alternative to listening to the storage 
+layer.
+
+```javascript
+// Create an event handler to listen to events from Alpaca
+function alpacaEventHandler(event) {
+  var method = event.detail.method;
+  
+  console.log('Caught an event, such as createItinerary or deleteItinerary');
+}
+
+// Register to the window as the event target
+window.addEventListener('alpaca', alpacaEventHandler);
+```
+
+- [Mozilla EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 
 ### Further References
 
