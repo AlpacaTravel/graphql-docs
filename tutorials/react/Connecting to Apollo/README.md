@@ -4,6 +4,10 @@ This guide will quickly setup a React single-page application using
 create-react-app, and configure it using Apollo to connect to the Alpaca
 Travel API.
 
+You can bypass the need for this tutorial now by reviewing the
+[Alpaca GraphQL JavaScript SDK For React/Apollo](https://github.com/AlpacaTravel/graph-sdk/tree/develop/packages/react-apollo)
+which allows you to add capabilities to your existing applications.
+
 Apollo is the industry-standard GraphQL implementation, proving the data graph
 layer that connects modern apps to the cloud. It is popular to use for its' ease
 of getting started, and that you can incrementally adopt features such as

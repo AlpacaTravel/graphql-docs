@@ -238,6 +238,13 @@ Topics across our API can be explored from the following list;
   Get started with a template to build React Apps in Typescript/Apollo with
   added codegen to make development faster.
 
+### Alpaca GraphQL JavaScript SDK
+
+- **[Alpaca GraphQL JavaScript SDK](https://github.com/AlpacaTravel/graph-sdk/tree/develop)** (New)
+  SDKs based on popular JavaScript development environments, including `React`,
+  `Vue`, `Svelte` and `Stencil`. The SDK provides options for developers such as
+  leveraging `urql`, `graphql-request`, `react-query`and `apollo`.
+
 ## Tutorials
 
 React
