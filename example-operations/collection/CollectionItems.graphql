@@ -1,0 +1,46 @@
+# Performs a query on a collection in order to obtain basic locations
+
+query CollectionItems {
+  # Use the collectionItems operation to query across items
+  collectionItems(
+    # Supply which collections to query
+    collectionIds: ["collection/ABC123"]
+    # Pagination controls for relay "cursor connections"
+    # See: https://relay.dev/graphql/connections.htm
+    first: 10 # after: <cursor>
+  ) {
+    edges {
+      node {
+        # ID/Types
+        id
+        __typename
+        # Obtain information specifically about the location
+        ... on CollectionLocation {
+          # Access the associated place node
+          place {
+            # Wide range of place information to be able to access based on the
+            # specific supported Place Provider the reference is obtained from
+            name
+            # As a simple example, request parts of the address
+            address {
+              locality
+            }
+            # Or the categories
+            layers {
+              name
+            }
+            # Or a suggested maki icon
+            maki
+          }
+        }
+      }
+      # Use the cursor and supply to "after" in operation to paginate
+      cursor
+    }
+    # Information to help determine your pagination
+    pageInfo {
+      hasNextPage
+    }
+    totalCount
+  }
+}

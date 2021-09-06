@@ -97,7 +97,7 @@ mutation ProcessPhotoUploadProgress {
     # operation if you need to identify the profile ID for your API key
     profileId: "profile/ABC123"
     # Supply content for the media
-    mediaResource: {
+    resource: {
       # Supply content for the resulting media resource
       caption: "A photo of us standing out the front of Mavis the Grocer"
     }
@@ -105,7 +105,7 @@ mutation ProcessPhotoUploadProgress {
     # Status will be "AwaitingUpload", "Processing", "Complete" or
     # "ProcessingFailed" to represent the various states of finalizing the media
     status
-    media {
+    resource {
       # Obtain the media identifier. This will be similar to "media/ABC123"
       id
     }
@@ -126,7 +126,7 @@ mutation UpdatePhotoContent {
   updateMediaResource(
     # Supply the ID for the media, as accessed from finalizeMediaUpload
     id: "media/ABC123"
-    mediaResource: {
+    resource: {
       # Update various content, such as the attribution, caption, copyright
       attribution: "My Photographer"
       caption: "Updated caption for media"

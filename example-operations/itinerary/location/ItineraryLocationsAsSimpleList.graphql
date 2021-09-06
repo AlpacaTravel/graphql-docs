@@ -1,0 +1,46 @@
+# Query the itinerary locations for an itinerary, and access basic information
+# about the place
+
+query ItineraryLocationsAsSimpleList {
+  itinerary(
+    # Supply the itinerary ID
+    id: "itinerary/ABC123"
+  ) {
+    # Select the associated itinerary locations using the children selector
+    children(
+      # Limit to querying the itinerary locations
+      type: ItineraryLocation
+      # Using the relay "cursor connection" specification for pagination
+      # See: https://relay.dev/graphql/connections.htm
+      first: 10
+    ) {
+      edges {
+        node {
+          # ID/Types
+          id
+          __typename
+          # Specific information drawn from the Itinerary Location
+          ... on ItineraryLocation {
+            # Query the itinerary location
+            place {
+              # Peel off what information we want from to show about the place
+              name
+              # Take what level from the address we want
+              address {
+                locality
+              }
+              # Categories, like restaurant, hotel etc
+              layers {
+                name
+              }
+            }
+          }
+        }
+        # Obtain the cursor to pass back as the "after" property
+        cursor
+      }
+      # Total number of locations
+      totalCount
+    }
+  }
+}

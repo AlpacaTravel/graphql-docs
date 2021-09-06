@@ -4,6 +4,10 @@ This guide will quickly setup a React single-page application using
 create-react-app, and configure it using URQL in order to send and receive
 data from the Alpaca Travel API
 
+You can bypass the need for this tutorial now by reviewing the
+[Alpaca GraphQL JavaScript SDK For URQL](https://github.com/AlpacaTravel/graph-sdk/tree/develop/packages/urql)
+which allows you to add capabilities to your existing applications.
+
 URQL is a highly customisable and versatile GraphQL client that is popular for
 its simple to advanced use. The aim is to create something lightweight, opposed
 to traditionally larger frameworks such as Apollo or Relay.

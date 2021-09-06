@@ -1,0 +1,35 @@
+# Obtain the open/closed hours for the place given a period, such as the
+# upcoming week or future date range. Includes information on local public
+# holidays that could affect opening hours.
+
+query DateRangeOpenClosedTimes {
+  # Use the place() operation
+  place(id: "place/facebook:page:mavisthegrocer") {
+    # Access the opening hours (where specified)
+    hours {
+      # Select the period (e.g. the week between the from/to dates). Also access
+      # the local public holidays in order to present to the user and let them
+      # know of any events that could affect regular trading hours.
+      forDays(from: "2021-04-01", to: "2021-04-07") {
+        # Date/day, as ISO-8601, or as formatted for presentation using the
+        # Unicode Technical Standard #35 Date Field Symbols
+        date(format: "EEE, MMM d")
+        # Whether there is a public holiday for this date detected for this
+        # region on this date
+        publicHolidays
+        # Obtain the intervals for this date, requesting the opening status
+        # status is optional, otherwise use Open/Closed to specify your pref
+        intervals(status: Open) {
+          # Hours, from/to as ISO-8601 string, or formatted using the Unicode
+          # Technical Standard #35 Date Field Symbols
+          from(format: "h:mm a")
+          to(format: "h:mm a")
+          # Status (Open/Closed)
+          status
+          # Any corresponding comment for the opening hours
+          comment
+        }
+      }
+    }
+  }
+}

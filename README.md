@@ -153,13 +153,6 @@ your purposes.
 
 More coming soon. Make us a suggestion.
 
-### JavaScript
-
-- [Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)
-- [Create React App](topics/javascript/Create%20React%20App/README.md) Get
-  started with a template to build React Apps in Typescript/Apollo with added
-  codegen to make development faster.
-
 ### Itinerary
 
 Itineraries are the data structure to store simple lists to complex
@@ -180,12 +173,16 @@ multi-segment scheduled itineraries (and what is in-between).
 - **[Reordering Locations](topics/itinerary/Reordering%20Locations/README.md)**
   Provide the ability for the user to reorder the itinerary to suit
 - **[Adding Directions](topics/itinerary/Adding%20Directions/README.md)**
-  Add more complex directions, including multi-modal or manual directions
+  Add more complex directions, including multi-modal or manual directions (such
+  as GPS tracks)
+- **[Mapping](topics/itinerary/Mapping/README.md)**
+  Accessing information from the API as a GIS data source for itinerary
+  information
 
-### Collection
+### Collections
 
-Collections support the ability to create a database of locations to power your
-website or application.
+Collections support the ability to create groups of places or itineraries to
+power your website or application.
 
 - **[Managing collection locations](topics/collection/Managing%20collection%20locations/README.md)**
   Managing collection locations, including listing, creating, updating and
@@ -203,6 +200,12 @@ information and keep your place information up to date.
 - **[Working with ATDW](topics/places/Working%20with%20the%20ATDW/README.md)**
   Understanding how to work with the Australian Tourism Data Warehouse place
   provider for place information
+- **[Accessing Hours](topics/places/Accessing%20Hours/README.md)**
+  Access information about opening hours of a vendor, and present them in
+  time zone appropriate formats.
+- **[Standard place attributes](topics/places/Standard%20place%20attributes/README.md)**
+  Standardised place attributes used to provide extensible information around
+  places.
 
 Other providers integrated include; TripAdvisor, Zomato, Yelp, WOF, GeoNames,
 Foursquare, Facebook, Wikidata are more.
@@ -215,6 +218,7 @@ Various media can be accessed on the Alpaca platform.
   photos to be served in content leveraging optimising and serving via CDN
 - **[Using Unsplash](topics/media/Using%20unsplash/README.md)** Referencing a
   photo on the unsplash platform
+- **[Querying media](topics/media/Querying%20media/README.md)** Querying media
 
 ### GraphQL
 
@@ -226,11 +230,26 @@ Topics across our API can be explored from the following list;
   Using attributes to access or update extended data for resources, including
   storing localisation or custom values against supported resources
 
+### JavaScript
+
+- **[Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)**
+  Simple methods for executing GraphQL using JavaScript
+- **[Create React App](topics/javascript/Create%20React%20App/README.md)**
+  Get started with a template to build React Apps in Typescript/Apollo with
+  added codegen to make development faster.
+
+### Alpaca GraphQL JavaScript SDK
+
+- **[Alpaca GraphQL JavaScript SDK](https://github.com/AlpacaTravel/graph-sdk/tree/develop)** (New)
+  SDKs based on popular JavaScript development environments, including `React`,
+  `Vue`, `Svelte` and `Stencil`. The SDK provides options for developers such as
+  leveraging `urql`, `graphql-request`, `react-query`and `apollo`.
+
 ## Tutorials
 
 React
 
-- [Connecting to Apollo Boost](tutorials/react/Connecting%20to%20Apollo%20Boost/README.md)
+- [Connecting to Apollo](tutorials/react/Connecting%20to%20Apollo/README.md)
 - [Connecting to URQL](tutorials/react/Connecting%20URQL/README.md)
 
 More Coming soon
@@ -246,6 +265,9 @@ These are provided as working examples you can modify for your own uses.
   Example loading a "slider" of location cards from a collection pulling in
   information from Australian Tourism Data Warehouse (ATDW). You can customise
   and run this in browser as a demo (code sandbox).
+- **[React Opening Hours](https://codesandbox.io/s/alpaca-travel-graphql-opening-hours-cggl9?file=/src/opening-hours/opening-hours.tsx)**
+  Example loading of a place opening hours, demonstrating some presentation of
+  current status or schedule for a series of dates.
 
 More examples to come
 

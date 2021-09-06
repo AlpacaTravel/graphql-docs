@@ -1,0 +1,24 @@
+# Load the collections available for a profile
+
+query Collections {
+  # Use collections() operation for listing collections
+  collections(
+    # Supply the profile to list profiles for
+    profileId: "profile/ABC123"
+    # Pagination controls for relay "cursor connections"
+    # See: https://relay.dev/graphql/connections.htm
+    first: 10 #, after: <cursor>
+  ) {
+    edges {
+      node {
+        # Collection ID/Type
+        id
+        __typename
+        # Information to obtain about the collection
+        title
+      }
+      cursor
+    }
+    totalCount
+  }
+}

@@ -1,0 +1,47 @@
+# Query to list which profiles who follows a supplied profile.
+
+query ProfileFollows {
+  # Use profile() along with followers()
+  profile(
+    # Supply the profile to query
+    id: "profile/ABC123"
+  ) {
+    # Whether the profile requires followers to be approved before being able to
+    # view listed content of the profile
+    autoApproveFollows
+    # Identify profiles that follow this profile
+    followers(
+      # Follower status is restricted to Approved when request is not authorised
+      # As a profile owner, you can view additional status: Pending, Denied
+      status: Approved
+      # Pagination controls for relay "cursor connections"
+      first: 10
+    ) {
+      # List of the follower details
+      nodes {
+        id
+        __typename
+        name
+        bio
+      }
+      # Total Followers
+      totalCount
+    }
+    # Identify which profiles this profile is following
+    following(
+      status: Approved
+      # Pagination controls for relay "cursor connections"
+      first: 10
+    ) {
+      # List of the follower details
+      nodes {
+        id
+        __typename
+        name
+        bio
+      }
+      # Total Following
+      totalCount
+    }
+  }
+}

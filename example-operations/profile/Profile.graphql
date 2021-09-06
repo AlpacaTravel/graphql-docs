@@ -1,0 +1,19 @@
+# Load a query by a supplied profile identifier.
+
+query Profile {
+  # Use the profile() operation to load the profile
+  profile(
+    # Supply the profile
+    id: "profile/ABC123"
+  ) {
+    # Record Identifiers
+    id
+    __typename
+    handle
+
+    # Profile information
+    name
+    bio
+    websiteUrl
+  }
+}

@@ -1,0 +1,28 @@
+# Searches by text to find matching addresses.
+
+query SearchPlaceByAddress {
+  # Use placeSearch to perform a text search
+  placeSearch(
+    # Supply some keyword text to match from
+    text: "129 Little Turner"
+    # Limit the search to an address search provider
+    sources: OpenAddresses
+    # Number of matching results
+    first: 3
+  ) {
+    nodes {
+      # Position of address
+      position {
+        lon
+        lat
+      }
+      # Full Address Match
+      address {
+        addressLineOne
+        locality
+        region
+        country
+      }
+    }
+  }
+}

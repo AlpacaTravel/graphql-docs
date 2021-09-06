@@ -1,0 +1,16 @@
+# Queries a place to identify navigation links to generate URL's to send the
+# user to obtain navigation links using their preferred service
+
+query PlaceNavigationLinks {
+  # use the place node
+  place(
+    # Provide a place ID, example for a cafe in Melbourne
+    id: "place/facebook:page:mavisthegrocer"
+  ) {
+    # Access what is needed from the place
+    title
+    # Generate out navigation urls based on different providers
+    google: navigationUrl(provider: Google)
+    apple: navigationUrl(provider: Apple)
+  }
+}

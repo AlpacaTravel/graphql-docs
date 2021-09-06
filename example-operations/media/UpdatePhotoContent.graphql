@@ -5,7 +5,7 @@ mutation UpdatePhotoContent {
   updateMediaResource(
     # Supply the ID for the media, as accessed from finalizeMediaUpload
     id: "media/ABC123"
-    mediaResource: {
+    resource: {
       # Update various content, such as the attribution, caption, copyright
       attribution: "My Photographer"
       caption: "Updated caption for media"

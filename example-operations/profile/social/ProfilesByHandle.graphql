@@ -1,0 +1,24 @@
+# Queries for profiles based on a registered handle claimed for profiles.
+
+query ProfileByHandle {
+  # Use the profiles query to search profiles based on a supplied handle
+  profiles(
+    # The handle to search for
+    handle: "cammanderson"
+    # How many match results to return
+    first: 5
+  ) {
+    edges {
+      node {
+        # Identifiers
+        id
+        __typename
+        handle
+
+        # Friendly
+        name
+      }
+    }
+    totalCount
+  }
+}

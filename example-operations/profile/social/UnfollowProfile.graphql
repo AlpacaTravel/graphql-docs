@@ -1,0 +1,14 @@
+# Unfollows a profile.
+
+mutation UnfollowProfile {
+  # Use the followProfile() mutation to remove a follow relationship
+  unfollowProfile(
+    # The requesting profile currently following another profile
+    fromProfile: "profile/ABC123"
+    # The target profile to unfollow
+    toProfile: "profile/DEF456"
+  ) {
+    # The status of the relationship
+    status
+  }
+}

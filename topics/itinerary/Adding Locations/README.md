@@ -29,10 +29,10 @@ location, as well as supply information about the physical place itself.
 
 ```graphql
 # Add a location to our itinerary, associating the place to Mavis The Grocer
-# using the Facebook Page identifier. Once the location is added to the
+# using the ATDW Product identifier. Once the location is added to the
 # itinerary, we query back the create items on the itinerary.
 
-mutation CreateItineraryLocation {
+mutation CreateItineraryLocationWithAtdwPlace {
   # Use the createItineraryLocation mutation operation
   createItineraryLocation(
     # Supply our Itinerary to add the item to
@@ -44,10 +44,10 @@ mutation CreateItineraryLocation {
       synopsis: "Nearby, we can find Mavis the Grocer open most days"
       # Link the location to a known place
       place: {
-        # Referencing the place from Facebook
-        id: "place/facebook:page:mavisthegrocer"
+        # Referencing the place from ATDW
+        id: "place/atdw:product:5cae80be57a096cd7084b6ab"
         # Providing the position lon/lat
-        position: { lon: 144.99702, lat: -37.8031099 }
+        position: { lon: 144.9970825017, lat: -37.8030584810 }
       }
     }
   ) {
@@ -95,7 +95,7 @@ query CheckItineraryPlacePresent {
     # Query the descendants, providing some constraints
     descendants(
       # Provide the place identifiers to check
-      placeIds: ["place/123"]
+      placeIds: ["place/atdw:product:5cae80be57a096cd7084b6ab"]
       # You may support adding a place multiple times, but for most reading
       # back one will be enough
       first: 1
@@ -163,4 +163,4 @@ to store and leverage in you use case.
 - [Reordering Locations](/topics/itinerary/Reordering%20Locations/README.md)
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
 - [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
-- [Deleting an Itinerary Location](/example-operations/itinerary/DeleteItineraryLocation.graphql)
+- [Deleting an Itinerary Location](/example-operations/itinerary/location/DeleteItineraryLocation.graphql)

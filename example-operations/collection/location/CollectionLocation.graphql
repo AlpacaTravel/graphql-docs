@@ -1,0 +1,56 @@
+# Loads in a specific collection location
+
+query CollectionLocation {
+  collectionItem(
+    # Provide the individual collection item ID
+    id: "item/ABC123"
+  ) {
+    # Identifier/Types
+    id
+    __typename
+    ... on CollectionLocation {
+      # Load some of the content as you need
+      title
+      synopsis
+      # ... description, tags, websiteUrl, readMoreUrl, etc etc
+      # Load the preferred media
+      preferredMedia {
+        resource {
+          ... on MediaImage {
+            # Load a thumnail at the desired size
+            thumbnail: source(bestFit: [100, 100]) {
+              url
+            }
+          }
+          # Text
+          altText
+          caption
+          # Photographer Attribution
+          copyright
+          attribution
+        }
+      }
+      # Load information about the place by joining the place node, allowing
+      # access to all the underlying place information that is provided by a
+      # place provider service (Facebook, ATDW, Yelp, TripAdvisor etc)
+      place {
+        # Identifier/Types
+        id
+        __typename
+        # Load contact information about the place
+        contact {
+          phoneNumber
+          websiteUrl
+          facebookUrl
+        }
+        # Geocoding positions
+        position {
+          lon
+          lat
+        }
+        # Maki icon
+        maki
+      }
+    }
+  }
+}

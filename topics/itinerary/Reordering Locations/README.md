@@ -89,4 +89,4 @@ mutation MoveItineraryLocationToStartPosition {
 
 - [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
 - [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)
-- [Deleting an Itinerary Location](/example-operations/itinerary/DeleteItineraryLocation.graphql)
+- [Deleting an Itinerary Location](/example-operations/itinerary/location/DeleteItineraryLocation.graphql)

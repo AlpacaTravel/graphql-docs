@@ -1,0 +1,42 @@
+# Query an itinerary location and load the associated inbound or outbound
+# directions
+
+query ItineraryLocationDirections {
+  # Use the itineraryLocation operation
+  node(
+    # Supply the itinerary location ID
+    id: "itinerary/ABC123/item/DEF456"
+  ) {
+    ... on ItineraryLocation {
+      # Query the data you want for the itinerary location, such as
+      # content or information about the place
+      title
+      place {
+        address {
+          locality
+        }
+        maki
+        layers {
+          name
+        }
+      }
+      # Query any itinerary directions to or from this location
+      directions(first: 2) {
+        edges {
+          # Inbound or outbound direction
+          direction
+          node {
+            # Query the ItineraryDirection here
+            durationMin
+            distance
+            route {
+              segments {
+                mode
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
