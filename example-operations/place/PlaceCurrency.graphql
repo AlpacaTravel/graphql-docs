@@ -1,6 +1,6 @@
 # Queries the currency used in the country for a place.
 
-query PlaceTimeZone {
+query PlaceCurrency {
   # Use the place() operation
   place(id: "place/facebook:page:mavisthegrocer") {
     # Some information about the place...
