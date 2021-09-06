@@ -6146,6 +6146,15 @@ The minimum duration of this itinerary-directions
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">unit</td>
+<td valign="top"><a href="#durationunit">DurationUnit</a>!</td>
+<td>
+
+The unit of the output value
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>durationMax</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td>
@@ -6155,11 +6164,29 @@ The maximum duration of this itinerary-directions
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">unit</td>
+<td valign="top"><a href="#durationunit">DurationUnit</a>!</td>
+<td>
+
+The unit of the output value
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>distance</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td>
 
-The distance of this itinerary-directions
+The estimated distance of this itinerary-directions
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">unit</td>
+<td valign="top"><a href="#distanceunit">DistanceUnit</a>!</td>
+<td>
+
+The unit of the output value
 
 </td>
 </tr>
@@ -6257,6 +6284,15 @@ Unique identifier for this duration
 <td>
 
 The duration value
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">unit</td>
+<td valign="top"><a href="#durationunit">DurationUnit</a>!</td>
+<td>
+
+The unit of the output value
 
 </td>
 </tr>
@@ -9322,7 +9358,7 @@ The point
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bearing</strong></td>
-<td valign="top"><a href="#float">Float</a></td>
+<td valign="top"><a href="#float">Float</a>!</td>
 <td>
 
 The bearing angle from the place to the point
@@ -9340,7 +9376,7 @@ The unit of the output value
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>distance</strong></td>
-<td valign="top"><a href="#float">Float</a></td>
+<td valign="top"><a href="#float">Float</a>!</td>
 <td>
 
 The distance from the place to the point

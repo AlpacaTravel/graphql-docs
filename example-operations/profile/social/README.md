@@ -2,7 +2,7 @@
 
 - **[Approve Profile Request](/example-operations/profile/social/ApproveProfileRequest.graphql)**
   Approves a profile follow request to follow another profile
-- **[Claim Handle](/example-operations/profile/social/ClaimHandle.graphql)**
+- **[Claim Profile Handle](/example-operations/profile/social/ClaimProfileHandle.graphql)**
   Claim a handle for a profile, associating something more friendly
 - **[Deny Profile Follow](/example-operations/profile/social/DenyProfileFollow.graphql)**
   Denies a profiles request to follow another profile.

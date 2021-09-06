@@ -9,7 +9,7 @@ query MediaImage {
     # In this query, we are accessing the image
     ... on MediaImage {
       # Select a thumbnail from the image sources, based on the bestFit strategy
-      thumbnail: sources(bestFit: [100, 50]) {
+      thumbnail: source(bestFit: [100, 50]) {
         url
       }
       # ... create more sizes you want to access here

@@ -8,7 +8,7 @@ query ProfileFollows {
   ) {
     # Whether the profile requires followers to be approved before being able to
     # view listed content of the profile
-    requireFollowApprove
+    autoApproveFollows
     # Identify profiles that follow this profile
     followers(
       # Follower status is restricted to Approved when request is not authorised

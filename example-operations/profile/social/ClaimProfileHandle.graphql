@@ -1,6 +1,6 @@
 # Claim a handle for a profile, associating something more friendly.
 
-mutation ClaimProfileHandle($id: ID!, $handle: String) {
+mutation ClaimProfileHandle($id: ID!, $handle: String!) {
   # Use the claimProfileHandle operation to claim a handle for a profile
   claimProfileHandle(
     # The profile ID to load, such as profile "profile/123"
