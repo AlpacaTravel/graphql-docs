@@ -317,4 +317,4 @@ npm run test:markdown-graphql
 
 ## Legal Statement
 
-Copyright © 2020 Alpaca Travel. All right reserved.
+Copyright © 2020-2021 Alpaca Travel. All right reserved.
