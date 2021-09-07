@@ -240,7 +240,7 @@ Topics across our API can be explored from the following list;
 
 ### Alpaca GraphQL JavaScript SDK
 
-- **[Alpaca GraphQL JavaScript SDK](https://github.com/AlpacaTravel/graph-sdk/tree/develop)** (New)
+- **[Alpaca GraphQL JavaScript SDK](https://github.com/AlpacaTravel/graph-sdk)** (New)
   SDKs based on popular JavaScript development environments, including `React`,
   `Vue`, `Svelte` and `Stencil`. The SDK provides options for developers such as
   leveraging `urql`, `graphql-request`, `react-query`and `apollo`.
