@@ -1,7 +1,7 @@
 # Creates an Itinerary you can use for a wide range of use cases such as lists
 # or sequenced itieraries with the supplied title.
 
-mutation createItinerary($title: String!) {
+mutation createItineraryWithTitle($title: String!) {
   # Leverages the "createItinerary" mutation operation to create an itinerary
   # with some initial content
   createItinerary(
