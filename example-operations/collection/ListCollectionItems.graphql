@@ -1,13 +1,14 @@
-# Performs a query on a collection in order to obtain basic locations
+# Performs a query on a collection in order to obtain basic locations.
 
-query CollectionItems {
+query listCollectionItems($collectionIds: [ID!], $first: Int!, $after: String) {
   # Use the collectionItems operation to query across items
   collectionItems(
     # Supply which collections to query
-    collectionIds: ["collection/ABC123"]
+    collectionIds: $collectionIds
     # Pagination controls for relay "cursor connections"
     # See: https://relay.dev/graphql/connections.htm
-    first: 10 # after: <cursor>
+    first: $first
+    after: $after
   ) {
     edges {
       node {
@@ -18,6 +19,10 @@ query CollectionItems {
         ... on CollectionLocation {
           # Access the associated place node
           place {
+            # ID/Types
+            id
+            __typename
+
             # Wide range of place information to be able to access based on the
             # specific supported Place Provider the reference is obtained from
             name
@@ -40,6 +45,7 @@ query CollectionItems {
     # Information to help determine your pagination
     pageInfo {
       hasNextPage
+      endCursor
     }
     totalCount
   }

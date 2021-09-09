@@ -1,6 +1,6 @@
 # Media
 
-- **[Media Image](/example-operations/media/MediaImage.graphql)**
+- **[Get Media Image](/example-operations/media/GetMediaImage.graphql)**
   Loads a media resource of type MediaImage
 - **[Update Photo Content](/example-operations/media/UpdatePhotoContent.graphql)**
   Modifies a media asset to change various attributes or content

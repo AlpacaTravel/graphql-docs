@@ -3,23 +3,33 @@
 # We leverage a named attribute that is supported for querying items and
 # obtaining locations from a collection based on their external references.
 
-mutation CreateCollectionLocationWithExternalReference {
+mutation createCollectionLocationWithExternalReference(
+  $collectionId: ID!
+  $title: String!
+  $longitude: Float!
+  $latitude: Float!
+  $placeId: ID
+  # String Value
+  $externalId: JSON!
+  # String Value
+  $externalSource: JSON!
+) {
   # use the standard createCollectionLocation
   createCollectionLocation(
     # Supply the collection to place the location within
-    collectionId: "collection/ABC123"
+    collectionId: $collectionId
     # Supply the collection location
     location: {
       # Content about the location
-      title: "Dr. Morse Cafe"
+      title: $title
       # Supply the place data
       place: {
         # Supply the place position coordinates (mandatory)
-        position: { lon: 144.99414682388306, lat: -37.79990202116163 }
+        position: { lon: $longitude, lat: $latitude }
         # Optionally relate to a known place, such as a place from ATDW if you
         # are leveraging place information to be updated automatically without
         # a re-import.
-        id: "place/atdw:product:5cae80be57a096cd7084b6ab"
+        id: $placeId
       }
       # Leverage Attributes to extend the data stored and accessible for the
       # location
@@ -27,11 +37,11 @@ mutation CreateCollectionLocationWithExternalReference {
         # Track the ID from my platform into the "custom://external-id". This
         # is a recognised attribute that can be later used to find the matching
         # collection location based on your own IDs
-        { id: "custom://external-ref", value: "my-external-UUID" }
+        { id: "custom://external-id", value: $externalId }
         # Support for external sources, also for grouping together multiple
         # different sources. Can be used to query all records from a specific
         # source later using the query collectionItems()
-        { id: "custom://external-source", value: "example.com" }
+        { id: "custom://external-source", value: $externalSource }
       ]
     }
   ) {

@@ -1,15 +1,15 @@
 # Updates an itinerary location and marks the itinerary location as an optional
-# stop
+# stop.
 
-mutation UpdateItineraryLocationAsOptional {
+mutation UpdateItineraryLocationAsOptional($id: ID!, $optional: Boolean!) {
   # Use updateItineraryLocation mutation for making changes to ItineraryLocation
   updateItineraryLocation(
     # Supply your itinerary location that you wish to make optional
-    id: "itinerary/ABC123/item/DEF456"
+    id: $id
     # Supply the location fields changing
     location: {
       # Update the location to be marked as optional
-      optional: true
+      optional: $optional
     }
   ) {
     # Query back your location

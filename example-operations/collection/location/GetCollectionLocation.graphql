@@ -1,9 +1,9 @@
-# Loads in a specific collection location
+# Loads in a specific collection location.
 
-query CollectionLocation {
+query getCollectionLocation($id: ID!) {
   collectionItem(
     # Provide the individual collection item ID
-    id: "item/ABC123"
+    id: $id
   ) {
     # Identifier/Types
     id
@@ -19,6 +19,9 @@ query CollectionLocation {
           ... on MediaImage {
             # Load a thumnail at the desired size
             thumbnail: source(bestFit: [100, 100]) {
+              url
+            }
+            card: source(bestFit: [600, 400]) {
               url
             }
           }

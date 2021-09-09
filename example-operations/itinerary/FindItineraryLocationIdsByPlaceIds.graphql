@@ -4,21 +4,30 @@
 # offer them to remove it. You can pass the matching itinerary location ID that
 # has this place associated from this query to the deleteItineraryItem operation
 
-query CheckItineraryPlacePresent {
+query findItineraryLocationIdsByPlaceIds(
+  $itineraryId: ID!
+  $placeIds: [ID!]
+  $first: Int!
+  $after: String
+) {
   # Use the itinerary query, supplying the itinerary ID to check
-  itinerary(id: "itinerary/ABC123") {
+  itinerary(id: $itineraryId) {
     # Query the descendants, providing some constraints
     descendants(
       # Provide the place identifiers to check
-      placeIds: ["place/123"]
+      placeIds: $placeIds
       # You may support adding a place multiple times, but for most reading
       # back one will be enough
-      first: 1
+      first: $first
+      after: $after
     ) {
       nodes {
         # Obtain the ID, so we can remove this location using the operation
         # deleteItineraryItem() to remove the item from the itinerary.
         id
+        __typename
+
+        # Select other data you want
       }
       # Total Count should be greater than 0, as the place could be added more
       # than once to an itinerary

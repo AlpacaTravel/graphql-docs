@@ -1,21 +1,17 @@
 # Creates an Itinerary you can use for a wide range of use cases such as lists
 # or sequenced itieraries with the supplied title.
 
-mutation createItinerary($itinerary: CreateItineraryInput!, $profileId: ID!) {
+mutation createItineraryWithTitle($title: String!) {
   # Leverages the "createItinerary" mutation operation to create an itinerary
   # with some initial content
   createItinerary(
-    profileId: $profileId
     # Supply the initial content about the itinerary
-    itinerary: $itinerary
+    itinerary: { title: $title }
   ) {
     # Read back the created itinerary
     itinerary {
       # Access the Identifier, required for further query/mutations
       id
-      __typename
-
-      # Any other fragment/fields
     }
   }
 }

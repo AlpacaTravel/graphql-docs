@@ -1,16 +1,19 @@
 # Searches by text to find matching addresses.
 
-query SearchPlaceByAddress {
+query SearchPlaceByAddress($text: String, $first: Int!) {
   # Use placeSearch to perform a text search
   placeSearch(
     # Supply some keyword text to match from
-    text: "129 Little Turner"
+    text: $text
     # Limit the search to an address search provider
     sources: OpenAddresses
     # Number of matching results
-    first: 3
+    first: $first
   ) {
     nodes {
+      id
+      __typename
+
       # Position of address
       position {
         lon

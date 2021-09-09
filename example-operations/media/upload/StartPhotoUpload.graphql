@@ -1,12 +1,12 @@
-# Request information to commence a photo upload via HTTPs
+# Request information to commence a photo upload via HTTPs.
 
-mutation StartPhotoUpload {
+mutation startPhotoUpload($filename: String!, $contentType: String!) {
   # Use the startMediaUpload() operation
   startMediaUpload(
     # Supply the filename label
-    filename: "cool-mavis-photo.jpeg"
+    filename: $filename
     # Supply the content type
-    contentType: "image/jpeg"
+    contentType: $contentType
   ) {
     # Request an upload token. This will be used after the upload to call
     # finalizeMediaUpload in order to inform the API which file upload we are

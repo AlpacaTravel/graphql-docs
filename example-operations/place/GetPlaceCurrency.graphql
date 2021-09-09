@@ -1,13 +1,13 @@
 # Queries the currency used in the country for a place.
 
-query PlaceCurrency {
+query getPlaceCurrency($id: ID!) {
   # Use the place() operation
-  place(id: "place/facebook:page:mavisthegrocer") {
+  place(id: $id) {
+    id
+    __typename
+
     # Some information about the place...
-    name
     address {
-      locality
-      region
       country
     }
     # Use the attr with the id "country-currency"

@@ -1,12 +1,12 @@
 # Queries for profiles based on a registered handle claimed for profiles.
 
-query ProfileByHandle {
+query findProfileByHandle($handle: String!, $first: Int!) {
   # Use the profiles query to search profiles based on a supplied handle
   profiles(
     # The handle to search for
-    handle: "cammanderson"
+    handle: $handle
     # How many match results to return
-    first: 5
+    first: $first
   ) {
     edges {
       node {

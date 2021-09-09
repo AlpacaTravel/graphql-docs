@@ -1,13 +1,13 @@
-# Approves a profile follow request to follow another profile
+# Approves a profile follow request to follow another profile.
 
-mutation ApproveProfileRequest {
+mutation approveProfileRequest($fromProfileId: ID!, $toProfileId: ID!) {
   # Use the approveProfileFollow() operation to set the follow status to
   # "Approved"
   approveProfileFollow(
     # The requesting profile wishing to follow another account
-    fromProfile: "profile/ABC123"
+    fromProfile: $fromProfileId
     # The target profile to follow
-    toProfile: "profile/DEF456"
+    toProfile: $toProfileId
   ) {
     status
   }

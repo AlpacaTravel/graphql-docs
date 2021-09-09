@@ -1,10 +1,10 @@
 # Query to list which profiles who follows a supplied profile.
 
-query ProfileFollows {
+query getProfileSocialStatistics($profileId: ID!) {
   # Use profile() along with followers()
   profile(
     # Supply the profile to query
-    id: "profile/ABC123"
+    id: $profileId
   ) {
     # Whether the profile requires followers to be approved before being able to
     # view listed content of the profile

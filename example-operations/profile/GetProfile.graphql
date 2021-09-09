@@ -1,10 +1,10 @@
 # Load a query by a supplied profile identifier.
 
-query Profile {
+query getProfile($profileId: ID!) {
   # Use the profile() operation to load the profile
   profile(
     # Supply the profile
-    id: "profile/ABC123"
+    id: $profileId
   ) {
     # Record Identifiers
     id

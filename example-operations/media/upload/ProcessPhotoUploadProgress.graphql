@@ -2,19 +2,21 @@
 # and associations to profile. This operation will register the uploaded file
 # and supply you with ID's necessary to associate with other API types
 
-mutation ProcessPhotoUploadProgress {
+mutation processPhotoUploadProgress(
+  $token: String!
+  $profileId: ID!
+  $resource: FinalizeMediaUploadInput
+) {
   # use the finalizeMediaUpload operation
   finalizeMediaUpload(
     # Supply the token created by startMediaUpload
-    token: "token123"
+    token: $token
     # Supply the profile ID you are authorized to modify. Use authorizedProfiles
     # operation if you need to identify the profile ID for your API key
-    profileId: "profile/ABC123"
+    profileId: $profileId
     # Supply content for the media
-    resource: {
-      # Supply content for the resulting media resource
-      caption: "A photo of us standing out the front of Mavis the Grocer"
-    }
+    # Supply content for the resulting media resource
+    resource: $resource
   ) {
     # Status will be "AwaitingUpload", "Processing", "Complete" or
     # "ProcessingFailed" to represent the various states of finalizing the media
@@ -22,6 +24,7 @@ mutation ProcessPhotoUploadProgress {
     resource {
       # Obtain the media identifier. This will be similar to "media/ABC123"
       id
+      __typename
     }
   }
 }

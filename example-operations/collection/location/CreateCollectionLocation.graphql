@@ -1,23 +1,30 @@
-# Creates a Collection Location within a collection
+# Creates a Collection Location within a collection.
 
-mutation CreateCollectionLocation {
+mutation createCollectionLocation(
+  $collectionId: ID!
+  $title: String!
+  $longitude: Float!
+  $latitude: Float!
+  $tags: [String!]
+  $placeId: ID
+) {
   # use createCollectionLocation for this operation
   createCollectionLocation(
     # Supply the collection to place the collection location within
-    collectionId: "collection/ABC123"
+    collectionId: $collectionId
     # Supply the data for the location model
     location: {
       # Provide content for the collection item
       # Synopsis, tags, description, media, website etc.
-      title: "Mavis the Grocer"
+      title: $title
       # Supply tags (we can later query on this)
-      tags: ["cafe"]
+      tags: $tags
       # Note: See external refs/source if you want to store your own identifiers
       # Provide a reference to the place/position for the place location
       place: {
         # Place information will be sourced from ATDW provider
-        id: "place/atdw:product:5cae80be57a096cd7084b6ab"
-        position: { lon: 144.9970825017, lat: -37.803058481 }
+        id: $placeId
+        position: { lon: $longitude, lat: $latitude }
       }
     }
   ) {

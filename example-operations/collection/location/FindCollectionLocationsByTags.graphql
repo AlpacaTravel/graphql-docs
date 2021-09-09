@@ -3,16 +3,22 @@
 # "my-tag" present. This is a basic filtering capability based on tagging items
 # within groups.
 
-query CollectionLocationsByTag {
+query findCollectionLocationsByTags(
+  $collectionIds: [ID!]
+  $tags: [String!]
+  $first: Int!
+  $after: String
+) {
   # use collectionItems() operation
   collectionItems(
     # Specify the collection ID
-    collectionIds: "collection/ABC123"
+    collectionIds: $collectionIds
     # Specify the tag to include
-    tags: "my-tag"
+    tags: $tags
     # Pagination controls for relay "cursor connections"
     # See: https://relay.dev/graphql/connections.htm
-    first: 10 #, after: <cursor>
+    first: $first
+    after: $after
   ) {
     edges {
       node {

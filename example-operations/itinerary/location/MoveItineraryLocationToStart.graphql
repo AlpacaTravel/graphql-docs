@@ -4,11 +4,11 @@
 # or positionAfterSibling if easier. If you are using multi-segment collections
 # you can optionally define using parentId property
 
-mutation MoveItineraryLocationToStartPosition {
+mutation MoveItineraryLocationToStartPosition($id: ID!) {
   # Use the moveItineraryItem operation to moving around locations
   moveItineraryItem(
     # Supply your itinerary item (or location)
-    id: "itinerary/ABC123"
+    id: $id
     # Determine the strategy to position the element
     # Also includes options: positionAtEnd, position<After/Before>Sibling, etc
     positionAtStart: {}

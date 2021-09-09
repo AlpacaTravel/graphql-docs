@@ -11,7 +11,7 @@ collection, consider also reviewing the
 ### Prerequisits
 
 - Your API Key
-- Your [profile ID](/example-operations/profile/AuthorizedProfiles.graphql)
+- Your [profile ID](/example-operations/profile/GetAuthorizedProfiles.graphql)
 
 ## List available collections
 

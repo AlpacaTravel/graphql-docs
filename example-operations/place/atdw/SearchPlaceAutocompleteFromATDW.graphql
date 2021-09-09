@@ -2,10 +2,10 @@
 # autocomplete style text query. Search includes highlighting for results
 # and summarising places into 2 main/secondary labels
 
-query SearchPlaceAutocompleteFromATDW {
+query searchPlaceAutocompleteFromATDW($text: String!) {
   # use the placeAutocompleteSearch operation to query ATDW
   placeAutocompleteSearch(
-    text: "Mavis the Grocer"
+    text: $text
     # Supply Australian Tourism Data Warehouse as source
     sources: [AustralianTourismDataWarehouse]
     # Provide the max number of records to return (differs by provider)

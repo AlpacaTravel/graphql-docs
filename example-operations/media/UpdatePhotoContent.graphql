@@ -1,14 +1,20 @@
-# Modifies a media asset to change various attributes or content
+# Modifies a media asset to change various attributes or content.
 
-mutation UpdatePhotoContent {
+mutation updatePhotoContent(
+  $id: ID!
+  $caption: String
+  $attribution: String
+  $copyright: String
+) {
   # Use the updateMediaResource operation
   updateMediaResource(
     # Supply the ID for the media, as accessed from finalizeMediaUpload
-    id: "media/ABC123"
+    id: $id
     resource: {
       # Update various content, such as the attribution, caption, copyright
-      attribution: "My Photographer"
-      caption: "Updated caption for media"
+      attribution: $attribution
+      caption: $caption
+      copyright: $copyright
     }
   ) {
     # Query back what information you need once successfully modified the
@@ -21,6 +27,7 @@ mutation UpdatePhotoContent {
       # Updated fields
       attribution
       caption
+      copyright
     }
   }
 }

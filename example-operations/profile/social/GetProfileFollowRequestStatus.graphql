@@ -1,12 +1,12 @@
 # Requests to follow from one profile to another profile.
 
-mutation FollowProfileRequest {
+mutation getProfileFollowRequestStatus($fromProfileId: ID!, $toProfileId: ID!) {
   # Use the followProfile() mutation to establish a follow relationship
   followProfile(
     # The requesting profile attempting to follow another profile
-    fromProfile: "profile/ABC123"
+    fromProfile: $fromProfileId
     # The target profile to follow
-    toProfile: "profile/DEF456"
+    toProfile: $toProfileId
   ) {
     # The status of the request
     status

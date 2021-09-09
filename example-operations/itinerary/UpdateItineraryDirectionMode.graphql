@@ -1,11 +1,16 @@
 # Updates an itinerary directions to switch the mode of transportation from one
-# mode (such as car) to an alterative mode, such as foot
+# mode (such as car) to an alterative mode, such as foot.
 
-mutation UpdateItineraryDirectionMode {
+mutation updateItineraryDirectionMode(
+  $id: ID!
+  $mode: RouteMode
+  $useRouteSearching: Boolean!
+  $positions: [PositionInput!]
+) {
   # Use updateItineraryDirections operation to update directions
   updateItineraryDirections(
     # Provide the itinerary directions ID to update
-    id: "itinerary/ABC123/item/DEF456"
+    id: $id
     # Supply the directions
     directions: {
       # Modify the route with the directions
@@ -14,10 +19,11 @@ mutation UpdateItineraryDirectionMode {
           # A single route segment..., you can use multiple.
           {
             # Indicate the mode of transport for this route segment
-            mode: Foot
+            mode: $mode
             # Provide the information for the segment
-            useRouteSearching: true
+            useRouteSearching: $useRouteSearching
             # Provide positions: [] here if you want to control the routing
+            positions: $positions
           }
         ]
       }

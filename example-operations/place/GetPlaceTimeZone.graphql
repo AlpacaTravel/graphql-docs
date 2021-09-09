@@ -1,8 +1,8 @@
 # Queries the timezone for a place.
 
-query PlaceTimeZone {
+query getPlaceTimeZone($placeId: ID!) {
   # Use the place() operation
-  place(id: "place/facebook:page:mavisthegrocer") {
+  place(id: $placeId) {
     # Some information about the place...
     name
     address {

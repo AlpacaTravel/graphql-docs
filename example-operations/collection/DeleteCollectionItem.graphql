@@ -1,10 +1,10 @@
-# Removes a collection item from a collection
+# Removes a collection item from a collection.
 
-mutation DeleteCollectionItem {
+mutation deleteCollectionItem($id: ID!) {
   # Use the deleteCollectionItem() operation
   deleteCollectionItem(
     # Supply the ID of the record to remove
-    id: "item/ABC123"
+    id: $id
   ) {
     # select back a response of the ID of the removed item
     id
