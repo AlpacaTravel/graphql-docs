@@ -2,10 +2,11 @@
 # associated authorized profiles. Note: This does not provice information about
 # access control, such as ability to read/write to these profiles
 
-query AuthorizedProfiles {
+query getAuthorizedProfiles($first: Int!, $after: String) {
   authorizedProfiles(
     # Number of records to return
-    first: 5
+    first: $first
+    after: $after
   ) {
     nodes {
       # Identifiers
@@ -15,6 +16,12 @@ query AuthorizedProfiles {
 
       # Presentation of profiles
       name
+    }
+
+    totalCount
+    pageInfo {
+      hasNextPage
+      endCursor
     }
   }
 }

@@ -1,8 +1,8 @@
-# Loads information about the collection.
+# Loads information about the supplied collection ID.
 
-query Collection {
+query getCollection($id: ID!) {
   # use the node() query to address the collection
-  node(id: "collection/ABC123") {
+  node(id: $id) {
     ... on Collection {
       id
       __typename
@@ -14,6 +14,9 @@ query Collection {
 
       # Query the profile owner
       profile {
+        id
+        __typename
+
         name
       }
 
@@ -22,6 +25,9 @@ query Collection {
         edges {
           node {
             ... on CollectionLocation {
+              id
+              __typename
+
               title
             }
           }

@@ -1,12 +1,12 @@
 # Denies a profiles request to follow another profile.
 
-mutation DenyProfileFollow {
+mutation denyProfileFollow($fromProfileId: ID!, $toProfileId: ID!) {
   # Use the denyProfileFollow() operation to set the follow status to "Denied"
   denyProfileFollow(
     # The requesting profile wishing to follow another account
-    fromProfile: "profile/ABC123"
+    fromProfile: $fromProfileId
     # The target profile to follow
-    toProfile: "profile/DEF456"
+    toProfile: $toProfileId
   ) {
     status
   }

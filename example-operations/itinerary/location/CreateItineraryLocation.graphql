@@ -2,22 +2,29 @@
 # using the Facebook Page identifier. Once the location is added to the
 # itinerary, we query back the create items on the itinerary.
 
-mutation CreateItineraryLocation {
+mutation createItineraryLocation(
+  $itineraryId: ID!
+  $title: String!
+  $synopsis: String
+  $placeId: ID
+  $longitude: Float!
+  $latitude: Float!
+) {
   # Use the createItineraryLocation mutation operation
   createItineraryLocation(
     # Supply our Itinerary to add the item to
-    itineraryId: "itinerary/ABC123"
+    itineraryId: $itineraryId
     # Describe the location
     location: {
       # Provide some optional content to personalise the itinerary
-      title: "Grab a coffee"
-      synopsis: "Nearby, we can find Mavis the Grocer open most days"
+      title: $title
+      synopsis: $synopsis
       # Link the location to a known place
       place: {
-        # Referencing the place from Facebook
-        id: "place/facebook:page:mavisthegrocer"
+        # Referencing the place from Facebook, etc
+        id: $placeId
         # Providing the position lon/lat
-        position: { lon: 144.99702, lat: -37.8031099 }
+        position: { lon: $longitude, lat: $latitude }
       }
     }
   ) {

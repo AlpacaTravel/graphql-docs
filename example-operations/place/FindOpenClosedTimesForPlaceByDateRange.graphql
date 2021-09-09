@@ -2,15 +2,19 @@
 # upcoming week or future date range. Includes information on local public
 # holidays that could affect opening hours.
 
-query DateRangeOpenClosedTimes {
+query findOpenClosedTimesForPlaceByDateRange(
+  $placeId: ID!
+  $fromDate: String
+  $toDate: String
+) {
   # Use the place() operation
-  place(id: "place/facebook:page:mavisthegrocer") {
+  place(id: $placeId) {
     # Access the opening hours (where specified)
     hours {
       # Select the period (e.g. the week between the from/to dates). Also access
       # the local public holidays in order to present to the user and let them
       # know of any events that could affect regular trading hours.
-      forDays(from: "2021-04-01", to: "2021-04-07") {
+      forDays(from: $fromDate, to: $toDate) {
         # Date/day, as ISO-8601, or as formatted for presentation using the
         # Unicode Technical Standard #35 Date Field Symbols
         date(format: "EEE, MMM d")

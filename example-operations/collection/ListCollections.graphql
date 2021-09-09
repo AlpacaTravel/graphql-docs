@@ -1,13 +1,14 @@
 # Load the collections available for a profile
 
-query Collections {
+query listCollections($profile: ID!, $first: Int!, $after: String) {
   # Use collections() operation for listing collections
   collections(
     # Supply the profile to list profiles for
-    profileId: "profile/ABC123"
+    profileId: $profile
     # Pagination controls for relay "cursor connections"
     # See: https://relay.dev/graphql/connections.htm
-    first: 10 #, after: <cursor>
+    first: $first
+    after: $after
   ) {
     edges {
       node {
@@ -20,5 +21,9 @@ query Collections {
       cursor
     }
     totalCount
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
   }
 }

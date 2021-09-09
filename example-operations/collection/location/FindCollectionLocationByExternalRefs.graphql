@@ -6,17 +6,24 @@
 # External source is to reference the source of all records, and can therefore
 # differentiate multiple sources of data and potentially overlapping IDs
 
-query CollectionLocationWithExternalReference {
+query findCollectionLocationByExternalRefs(
+  $collectionIds: [ID!]
+  $externalIds: [ID!]
+  $externalSources: [ID!]
+  $first: Int!
+  $after: String
+) {
   collectionItems(
     # Query the collection
-    collectionIds: "collection/ABC123"
+    collectionIds: $collectionIds
     # Optionally query the external ID's supplied
-    externalIds: ["my-external-UUID", "my-other-external-UUID"]
+    externalIds: $externalIds
     # Optionally query a specific website source
-    externalSources: ["example.com"]
+    externalSources: $externalSources
     # Pagination controls for relay "cursor connections"
     # See: https://relay.dev/graphql/connections.htm
-    first: 10 #, after: <cursor>
+    first: $first
+    after: $after
   ) {
     edges {
       node {

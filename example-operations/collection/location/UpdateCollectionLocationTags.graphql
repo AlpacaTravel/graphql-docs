@@ -1,11 +1,8 @@
 # Simply updates tags on locations, so that they can grouped or labeled
 
-mutation UpdateCollectionLocationTags {
+mutation updateCollectionLocationTags($id: ID!, $tags: [String!]) {
   # Use the updateCollectionLocation to modify parts of the collection location
-  updateCollectionLocation(
-    id: "item/ABC123"
-    location: { tags: ["tag1", "tag2"] }
-  ) {
+  updateCollectionLocation(id: $id, location: { tags: $tags }) {
     location {
       # Should be updated with the set of tags
       tags

@@ -1,10 +1,10 @@
 # Query the itinerary locations for an itinerary, and access basic information
 # about the place
 
-query ItineraryLocationsAsSimpleList {
+query listItineraryLocations($itineraryId: ID!, $first: Int!, $after: String) {
   itinerary(
     # Supply the itinerary ID
-    id: "itinerary/ABC123"
+    id: $itineraryId
   ) {
     # Select the associated itinerary locations using the children selector
     children(
@@ -12,17 +12,23 @@ query ItineraryLocationsAsSimpleList {
       type: ItineraryLocation
       # Using the relay "cursor connection" specification for pagination
       # See: https://relay.dev/graphql/connections.htm
-      first: 10
+      first: $first
+      after: $after
     ) {
       edges {
         node {
           # ID/Types
           id
           __typename
+
           # Specific information drawn from the Itinerary Location
           ... on ItineraryLocation {
             # Query the itinerary location
             place {
+              # ID/Types
+              id
+              __typename
+
               # Peel off what information we want from to show about the place
               name
               # Take what level from the address we want
@@ -41,6 +47,10 @@ query ItineraryLocationsAsSimpleList {
       }
       # Total number of locations
       totalCount
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
     }
   }
 }

@@ -1,9 +1,9 @@
 # Load information about a winery from Australian Tourism Data Warehouse
 
-query PlaceATDWWinery {
+query getPlaceATDWWinery($placeId: ID!) {
   # use the place() query to load information about a specific winery
   # This example is a winery in Mornington Peninsula/Red Hill
-  place(id: "place/atdw:product:5b232362e54942f27d7a3d4a") {
+  place(id: $placeId) {
     # Identifiers/Type
     id
     __typename

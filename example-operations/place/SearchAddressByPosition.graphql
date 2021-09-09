@@ -1,17 +1,24 @@
 # Searches to find addresses by supplied position lon/lat.
 
-query SearchAddressByPosition {
+query searchAddressByPosition(
+  $longitude: Float!
+  $latitude: Float!
+  $first: Int!
+) {
   # Use placeReverseSearch to identify places near
   placeReverseSearch(
     # Set the focus position
-    focus: { lon: 144.9994334578514, lat: -37.79998573598068 }
+    focus: { lon: $longitude, lat: $latitude }
     # Determine the place provider, OpenAddresses for street addresses
     sources: OpenAddresses
     # Number of matches to return
-    first: 5
+    first: $first
   ) {
     # Query back the matching nodes
     nodes {
+      id
+      __typename
+
       # Position of the match
       position {
         lon

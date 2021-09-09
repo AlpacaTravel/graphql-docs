@@ -1,17 +1,22 @@
 # Enable "auto-route" behaviour to an existing itinerary. Auto-route will assist
 # users create itineraries with directions automatically added between locations
 
-mutation UpdateItineraryAssignCarAutoRoute {
+mutation updateItineraryAssignAutoRouteDefaultMode(
+  $id: ID!
+  $defaultMode: RouteMode
+) {
   # Use the updateItinerary to modify an existing itinerary
   updateItinerary(
     # Supply the identifier of the itinerary
-    id: "itinerary/ABC123"
+    id: $id
     # Change the property of autoRoute to assign a default mode
-    itinerary: { autoRoute: { defaultMode: Car } }
+    itinerary: { autoRoute: { defaultMode: $defaultMode } }
   ) {
     # Read back information
     itinerary {
       id
+      __typename
+
       autoRoute {
         defaultMode
       }

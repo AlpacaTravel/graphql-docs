@@ -1,40 +1,54 @@
 # Query an itinerary location and load the associated inbound or outbound
 # directions
 
-query ItineraryLocationDirections {
+query listItineraryDirectionsForItineraryLocation(
+  $id: ID!
+  $first: Int!
+  $after: String
+  $direction: ItineraryDirectionsDirection
+) {
   # Use the itineraryLocation operation
   node(
     # Supply the itinerary location ID
-    id: "itinerary/ABC123/item/DEF456"
+    id: $id
   ) {
     ... on ItineraryLocation {
+      # ID/Types
+      id
+      __typename
+
       # Query the data you want for the itinerary location, such as
       # content or information about the place
-      title
-      place {
-        address {
-          locality
-        }
-        maki
-        layers {
-          name
-        }
-      }
+
       # Query any itinerary directions to or from this location
-      directions(first: 2) {
+      directions(first: $first, after: $after, direction: $direction) {
         edges {
           # Inbound or outbound direction
           direction
           node {
+            # ID/Types
+            id
+            __typename
+
             # Query the ItineraryDirection here
             durationMin
             distance
             route {
               segments {
+                # ID/Types
+                id
+                __typename
+
+                # Query what information you want for each route segment
                 mode
               }
             }
           }
+        }
+        totalCount
+        pageInfo {
+          hasNextPage
+          endCursor
         }
       }
     }

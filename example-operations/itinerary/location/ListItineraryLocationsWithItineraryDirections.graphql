@@ -1,10 +1,15 @@
 # Query the itinerary locations, with information about the directions between
-# each of the locations
+# each of the locations. There are various ways to join on Inbound/Outbound
+# directions and various customisation of how you would present this list
 
-query ItineraryLocationsWithDirections {
+query listItineraryLocationsWithItineraryDirections(
+  $itineraryId: ID!
+  $first: Int!
+  $after: String
+) {
   itinerary(
     # Supply the itinerary ID
-    id: "itinerary/ABC123"
+    id: $itineraryId
   ) {
     # Select the associated itinerary locations using the children selector
     children(
@@ -12,7 +17,8 @@ query ItineraryLocationsWithDirections {
       type: ItineraryLocation
       # Using the relay "cursor connection" specification for pagination
       # See: https://relay.dev/graphql/connections.htm
-      first: 10
+      first: $first
+      after: $after
     ) {
       edges {
         node {
@@ -23,6 +29,10 @@ query ItineraryLocationsWithDirections {
           ... on ItineraryLocation {
             # Query the itinerary location
             place {
+              # ID/Types
+              id
+              __typename
+
               # Peel off what information we want from to show about the place
               name
               # Take what level from the address we want
@@ -41,11 +51,19 @@ query ItineraryLocationsWithDirections {
         # to this location, from the last location in the edge sequence
         directions(first: 1, direction: Inbound) {
           nodes {
+            # ID/Types
+            id
+            __typename
+
             # Duration
             durationMin
             # Access the route modes (e.g. Car, etc)
             route {
               segments {
+                # ID/Types
+                id
+                __typename
+
                 # Access polyline or geojson for each segment
                 mode
               }
@@ -58,6 +76,10 @@ query ItineraryLocationsWithDirections {
       }
       # Total number of locations
       totalCount
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
     }
   }
 }

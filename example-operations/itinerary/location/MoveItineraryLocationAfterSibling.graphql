@@ -3,15 +3,15 @@
 # location to a position after another element, or specify it to be the first
 # in a collection by switching the position to positionAtStart.
 
-mutation MoveItineraryLocation {
+mutation moveItineraryLocationAfterSibling($id: ID!, $siblingId: ID!) {
   # Use the moveItineraryItem operation to moving around locations
   moveItineraryItem(
     # Supply your itinerary item (or location)
-    id: "itinerary/ABC123/item/DEF456"
+    id: $id
     # Determine the strategy to position the element
     # Also includes options: positionAtEnd, position<After/Before>Sibling,
     # positionAtStart, positionOnLastCollection etc
-    positionAfterSibling: { siblingId: "itinerary/ABC123/item/SIBLING" }
+    positionAfterSibling: { siblingId: $siblingId }
   ) {
     # Query back the affected items if necessary. Useful for determining any
     # changes to directions if you are locally caching them

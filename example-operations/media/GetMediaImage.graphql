@@ -1,15 +1,18 @@
 # Loads a media resource of type MediaImage
 
-query MediaImage {
+query getMediaImage($id: ID!) {
   # Use the mediaResource() to load MediaImage types
   mediaResource(
     # Supply your Media Resource ID
-    id: "media/ABC123"
+    id: $id
   ) {
     # In this query, we are accessing the image
     ... on MediaImage {
       # Select a thumbnail from the image sources, based on the bestFit strategy
       thumbnail: source(bestFit: [100, 50]) {
+        url
+      }
+      card: source(bestFit: [600, 400]) {
         url
       }
       # ... create more sizes you want to access here

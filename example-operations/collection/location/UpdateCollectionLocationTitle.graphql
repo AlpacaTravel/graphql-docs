@@ -1,16 +1,16 @@
 # Modify an existing collection location title
 
-mutation UpdateCollectionLocationTitle {
+mutation updateCollectionLocationTitle($id: ID!, $title: String!) {
   # use the updateCollectionLocation() operation
   updateCollectionLocation(
     # ID of record to update
-    id: "item/ABC123"
+    id: $id
     # Update the data for the location
-    location: { title: "New Title" }
+    location: { title: $title }
   ) {
     # Query back data after the mutation for the response
     location {
-      # Should now become "New Title"
+      # Should now become the supplied title
       title
     }
   }

@@ -1,10 +1,10 @@
 # Searches to find a locality by supplied position lon/lat.
 
-query SearchLocalityByPosition {
+query searchLocalityByPosition($longitude: Float!, $latitude: Float!) {
   # Use placeReverseSearch to identify places near
   placeReverseSearch(
     # Set the focus position
-    focus: { lon: 144.9994334578514, lat: -37.79998573598068 }
+    focus: { lon: $longitude, lat: $latitude }
     # Determine the place provider, WhosOnFirst for localities
     sources: WhosOnFirst
     # Number of matches to return

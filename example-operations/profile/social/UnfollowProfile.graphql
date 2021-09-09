@@ -1,12 +1,12 @@
 # Unfollows a profile.
 
-mutation UnfollowProfile {
+mutation unfollowProfile($fromProfileId: ID!, $toProfileId: ID!) {
   # Use the followProfile() mutation to remove a follow relationship
   unfollowProfile(
     # The requesting profile currently following another profile
-    fromProfile: "profile/ABC123"
+    fromProfile: $fromProfileId
     # The target profile to unfollow
-    toProfile: "profile/DEF456"
+    toProfile: $toProfileId
   ) {
     # The status of the relationship
     status

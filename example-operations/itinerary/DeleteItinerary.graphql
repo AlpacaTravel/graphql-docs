@@ -1,10 +1,10 @@
 # Removes an itinerary
 
-mutation DeleteItinerary {
+mutation deleteItinerary($id: ID!) {
   # Use the deleteItinerary operation to remove an itinerary
   deleteItinerary(
     # Supply your ID of the itinerary to remove (no undo)
-    id: "itinerary/ABC123"
+    id: $id
   ) {
     # Select back the ID of the itinerary that was removed
     id
