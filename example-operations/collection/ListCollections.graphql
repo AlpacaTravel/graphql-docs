@@ -1,4 +1,4 @@
-# Load the collections available for a profile
+# Load the collections available for a profile.
 
 query listCollections($profile: ID!, $first: Int!, $after: String) {
   # Use collections() operation for listing collections

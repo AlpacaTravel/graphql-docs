@@ -1,5 +1,5 @@
 # Query the itinerary locations for an itinerary, and access basic information
-# about the place
+# about the place.
 
 query listItineraryLocations($itineraryId: ID!, $first: Int!, $after: String) {
   itinerary(

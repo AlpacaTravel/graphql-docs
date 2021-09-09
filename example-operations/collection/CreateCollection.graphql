@@ -1,4 +1,4 @@
-# Creates a collection for the supplied profile
+# Creates a collection for the supplied profile.
 
 mutation createCollection($profileId: ID!, $title: String!) {
   # Use the createCollection()

@@ -1,4 +1,4 @@
-# Removes a collection item from a collection
+# Removes a collection item from a collection.
 
 mutation deleteCollectionItem($id: ID!) {
   # Use the deleteCollectionItem() operation

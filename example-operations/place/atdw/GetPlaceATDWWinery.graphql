@@ -1,4 +1,4 @@
-# Load information about a winery from Australian Tourism Data Warehouse
+# Load information about a winery from Australian Tourism Data Warehouse.
 
 query getPlaceATDWWinery($placeId: ID!) {
   # use the place() query to load information about a specific winery

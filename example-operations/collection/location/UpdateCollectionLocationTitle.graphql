@@ -1,4 +1,4 @@
-# Modify an existing collection location title
+# Modify an existing collection location title.
 
 mutation updateCollectionLocationTitle($id: ID!, $title: String!) {
   # use the updateCollectionLocation() operation

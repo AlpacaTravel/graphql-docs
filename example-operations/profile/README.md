@@ -10,7 +10,7 @@
 ## Profile Social
 
 - **[Approve Profile Request](/example-operations/profile/social/ApproveProfileRequest.graphql)**
-  Approves a profile follow request to follow another profilemutation approveProfileRequest($fromProfileId: ID!, $toProfileId: ID!) {   Use the approveProfileFollow() operation to set the follow status to   "Approved"  approveProfileFollow(     The requesting profile wishing to follow another account    fromProfile: $fromProfileId     The target profile to follow    toProfile: $toProfileId  ) {    status  }}
+  Approves a profile follow request to follow another profile
 - **[Claim Profile Handle](/example-operations/profile/social/ClaimProfileHandle.graphql)**
   Claim a handle for a profile, associating something more friendly
 - **[Deny Profile Follow](/example-operations/profile/social/DenyProfileFollow.graphql)**

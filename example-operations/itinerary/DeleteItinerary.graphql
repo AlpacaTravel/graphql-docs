@@ -1,4 +1,4 @@
-# Removes an itinerary
+# Removes an itinerary.
 
 mutation deleteItinerary($id: ID!) {
   # Use the deleteItinerary operation to remove an itinerary

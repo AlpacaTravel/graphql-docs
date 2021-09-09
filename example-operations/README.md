@@ -12,22 +12,22 @@ GraphQL Articles also located in this repository first.
 ### Collection
 
 - **[Create Collection](/example-operations/collection/CreateCollection.graphql)**
-  Creates a collection for the supplied profilemutation createCollection($profileId: ID!, $title: String!) {   Use the createCollection()  createCollection(     Provide the profile ID to assign this collection to     Use authorizedProfiles() to determine your profiles attached to the API     Key    profileId: $profileId     Supply the data for the collection    collection: {       Title of your collection      title: $title       Differentiate the style of collection if necessary      discriminator: Collection    }  ) {     Query back the created collection    collection {       Identifiers for the created collection      id      __typename       Should return "My Collection"      title    }  }}
+  Creates a collection for the supplied profile
 - **[Delete Collection Item](/example-operations/collection/DeleteCollectionItem.graphql)**
-  Removes a collection item from a collectionmutation deleteCollectionItem($id: ID!) {   Use the deleteCollectionItem() operation  deleteCollectionItem(     Supply the ID of the record to remove    id: $id  ) {     select back a response of the ID of the removed item    id  }}
+  Removes a collection item from a collection
 - **[Get Collection](/example-operations/collection/GetCollection.graphql)**
   Loads information about the supplied collection ID
 - **[List Collection Items](/example-operations/collection/ListCollectionItems.graphql)**
-  Performs a query on a collection in order to obtain basic locationsquery listCollectionItems($collectionIds: [ID!], $first: Int!, $after: String) {   Use the collectionItems operation to query across items  collectionItems(     Supply which collections to query    collectionIds: $collectionIds     Pagination controls for relay "cursor connections"     See: https://relay
+  Performs a query on a collection in order to obtain basic locations
 - **[List Collections](/example-operations/collection/ListCollections.graphql)**
-  Load the collections available for a profilequery listCollections($profile: ID!, $first: Int!, $after: String) {   Use collections() operation for listing collections  collections(     Supply the profile to list profiles for    profileId: $profile     Pagination controls for relay "cursor connections"     See: https://relay
+  Load the collections available for a profile
 - **[Update Collection](/example-operations/collection/UpdateCollection.graphql)**
-  Update the collection detailsmutation updateCollectionTitle($id: ID!, $title: String!) {   use the updateCollection  updateCollection(     Supply the ID for the record    id: $id     Update the location data    collection: { title: $title }  ) {     Query back the location updated    collection {      id      __typename       Title will now be updated to supplied value      title    }  }}
+  Update the collection details
 
 #### Collection Location
 
 - **[Create Collection Location](/example-operations/collection/location/CreateCollectionLocation.graphql)**
-  Creates a Collection Location within a collectionmutation createCollectionLocation(  $collectionId: ID!  $title: String!  $longitude: Float!  $latitude: Float!  $tags: [String!]  $placeId: ID) {   use createCollectionLocation for this operation  createCollectionLocation(     Supply the collection to place the collection location within    collectionId: $collectionId     Supply the data for the location model    location: {       Provide content for the collection item       Synopsis, tags, description, media, website etc
+  Creates a Collection Location within a collection
 - **[Create Collection Location With External Reference](/example-operations/collection/location/CreateCollectionLocationWithExternalReference.graphql)**
   Creates a collection location with a reference to an external primary key reference, so that we can track ID's to synchronize data between platforms
 - **[Find Collection Location By External Refs](/example-operations/collection/location/FindCollectionLocationByExternalRefs.graphql)**
@@ -35,13 +35,13 @@ GraphQL Articles also located in this repository first.
 - **[Find Collection Locations By Tags](/example-operations/collection/location/FindCollectionLocationsByTags.graphql)**
   Queries for collection locations from a collection by a supplied tag
 - **[Get Collection Location](/example-operations/collection/location/GetCollectionLocation.graphql)**
-  Loads in a specific collection locationquery getCollectionLocation($id: ID!) {  collectionItem(     Provide the individual collection item ID    id: $id  ) {     Identifier/Types    id    __typename
+  Loads in a specific collection location
 - **[Update Collection Location Add External Reference](/example-operations/collection/location/UpdateCollectionLocationAddExternalReference.graphql)**
-  Update a record to store a corresponding identifier in an external systemmutation updateCollectionLocationAddExternalReference(  $id: ID!  $externalId: JSON!) {   use the updateCollectionItem  updateCollectionLocation(     Supply the ID for the record    id: $id     Update the location data    location: {       Use upsert to insert/update a record      upsertAttrs: [         Supply an external ID for this record        { id: "custom://external-id", value: $externalId }      ]    }  ) {     Query back the location updated    location {      id      __typename       Attribute will now exist on the collection item      externalId: attr(id: "custom://external-id") {        value      }    }  }}
+  Update a record to store a corresponding identifier in an external system
 - **[Update Collection Location Tags](/example-operations/collection/location/UpdateCollectionLocationTags.graphql)**
-  Simply updates tags on locations, so that they can grouped or labeledmutation updateCollectionLocationTags($id: ID!, $tags: [String!]) {   Use the updateCollectionLocation to modify parts of the collection location  updateCollectionLocation(id: $id, location: { tags: $tags }) {    location {       Should be updated with the set of tags      tags    }  }}
+  Simply updates tags on locations, so that they can grouped or labeled
 - **[Update Collection Location Title](/example-operations/collection/location/UpdateCollectionLocationTitle.graphql)**
-  Modify an existing collection location titlemutation updateCollectionLocationTitle($id: ID!, $title: String!) {   use the updateCollectionLocation() operation  updateCollectionLocation(     ID of record to update    id: $id     Update the data for the location    location: { title: $title }  ) {     Query back data after the mutation for the response    location {       Should now become the supplied title      title    }  }}
+  Modify an existing collection location title
 
 ### Itinerary
 
@@ -50,17 +50,17 @@ GraphQL Articles also located in this repository first.
 - **[Create Itinerary With Title](/example-operations/itinerary/CreateItineraryWithTitle.graphql)**
   Creates an Itinerary you can use for a wide range of use cases such as lists or sequenced itieraries with the supplied title
 - **[Delete Itinerary](/example-operations/itinerary/DeleteItinerary.graphql)**
-  Removes an itinerarymutation deleteItinerary($id: ID!) {   Use the deleteItinerary operation to remove an itinerary  deleteItinerary(     Supply your ID of the itinerary to remove (no undo)    id: $id  ) {     Select back the ID of the itinerary that was removed    id  }}
+  Removes an itinerary
 - **[Find Itinerary Location Ids By Place Ids](/example-operations/itinerary/FindItineraryLocationIdsByPlaceIds.graphql)**
   Checks whether a place has been added to an itinerary, for creating a button state on an "Add to Itinerary" button
 - **[List Itineraries](/example-operations/itinerary/ListItineraries.graphql)**
-  Query the itineraries that are created and associated to a profilequery listItineraries($profileId: ID!, $first: Int!, $after: String) {   Use the itineraries operation to query for a supplied profile  itineraries(     You will need to have your profile ID to query    profileId: $profileId     Pagination controls for relay "cursor connections"     See: https://relay
+  Query the itineraries that are created and associated to a profile
 - **[Update Itinerary Assign Car Auto Route](/example-operations/itinerary/UpdateItineraryAssignCarAutoRoute.graphql)**
   Enable "auto-route" behaviour to an existing itinerary
 - **[Update Itinerary Direction Mode](/example-operations/itinerary/UpdateItineraryDirectionMode.graphql)**
-  Updates an itinerary directions to switch the mode of transportation from one mode (such as car) to an alterative mode, such as footmutation updateItineraryDirectionMode(  $id: ID!  $mode: RouteMode  $useRouteSearching: Boolean!  $positions: [PositionInput!]) {   Use updateItineraryDirections operation to update directions  updateItineraryDirections(     Provide the itinerary directions ID to update    id: $id     Supply the directions    directions: {       Modify the route with the directions      route: {        segments: [           A single route segment
+  Updates an itinerary directions to switch the mode of transportation from one mode (such as car) to an alterative mode, such as foot
 - **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
-  Modify an existing Itinerary by changing the titlemutation updateItineraryTitle($id: ID!, $title: String!) {   Use the updateItinerary operation to modify the itinerary  updateItinerary(     Specify the itinerary ID    id: $id     Provide new data for itinerary    itinerary: {       Supply a new title for the itinerary      title: $title    }  ) {     You can query back after the mutation    itinerary {      id      __typename       Title should return "New Title"      title    }  }}
+  Modify an existing Itinerary by changing the title
 
 #### Itinerary Directions
 
@@ -74,11 +74,11 @@ GraphQL Articles also located in this repository first.
 - **[Create Itinerary Location With Additional Positions](/example-operations/itinerary/location/CreateItineraryLocationWithAdditionalPositions.graphql)**
   Adds a location to an itinerary, also supplying additional positions to help describe the location more accurately for a visiting user
 - **[Delete Itinerary Location](/example-operations/itinerary/location/DeleteItineraryLocation.graphql)**
-  Removes an itinerary item, such as a locationmutation deleteItineraryLocation($id: ID!) {   Use the deleteItineraryItem operation to remove an itinerary location  deleteItineraryItem(     Supply your ID of the itinerary location to remove (no undo)    id: $id  ) {     Select back the ID of the itinerary location that was removed    id  }}
+  Removes an itinerary item, such as a location
 - **[List Itinerary Directions For Itinerary Location](/example-operations/itinerary/location/ListItineraryDirectionsForItineraryLocation.graphql)**
-  Query an itinerary location and load the associated inbound or outbound directionsquery listItineraryDirectionsForItineraryLocation(  $id: ID!  $first: Int!  $after: String  $direction: ItineraryDirectionsDirection) {   Use the itineraryLocation operation  node(     Supply the itinerary location ID    id: $id  ) {
+  Query an itinerary location and load the associated inbound or outbound directions
 - **[List Itinerary Locations](/example-operations/itinerary/location/ListItineraryLocations.graphql)**
-  Query the itinerary locations for an itinerary, and access basic information about the placequery listItineraryLocations($itineraryId: ID!, $first: Int!, $after: String) {  itinerary(     Supply the itinerary ID    id: $itineraryId  ) {     Select the associated itinerary locations using the children selector    children(       Limit to querying the itinerary locations      type: ItineraryLocation       Using the relay "cursor connection" specification for pagination       See: https://relay
+  Query the itinerary locations for an itinerary, and access basic information about the place
 - **[List Itinerary Locations With Itinerary Directions](/example-operations/itinerary/location/ListItineraryLocationsWithItineraryDirections.graphql)**
   Query the itinerary locations, with information about the directions between each of the locations
 - **[Move Itinerary Location After Sibling](/example-operations/itinerary/location/MoveItineraryLocationAfterSibling.graphql)**
@@ -86,21 +86,21 @@ GraphQL Articles also located in this repository first.
 - **[Move Itinerary Location To Start](/example-operations/itinerary/location/MoveItineraryLocationToStart.graphql)**
   Reorder/move the itinerary location to the start of the sequence
 - **[Update Itinerary Location As Optional](/example-operations/itinerary/location/UpdateItineraryLocationAsOptional.graphql)**
-  Updates an itinerary location and marks the itinerary location as an optional stopmutation UpdateItineraryLocationAsOptional($id: ID!, $optional: Boolean!) {   Use updateItineraryLocation mutation for making changes to ItineraryLocation  updateItineraryLocation(     Supply your itinerary location that you wish to make optional    id: $id     Supply the location fields changing    location: {       Update the location to be marked as optional      optional: $optional    }  ) {     Query back your location    location {       Optional should now be true      optional    }     Optionally see what else has been affected, such as a result of the     autoroute behaviour updating new and existing ItineraryDirections when     using this feature
+  Updates an itinerary location and marks the itinerary location as an optional stop
 
 ### Media
 
 - **[Get Media Image](/example-operations/media/GetMediaImage.graphql)**
-  Loads a media resource of type MediaImagequery getMediaImage($id: ID!) {   Use the mediaResource() to load MediaImage types  mediaResource(     Supply your Media Resource ID    id: $id  ) {     In this query, we are accessing the image
+  Loads a media resource of type MediaImage
 - **[Update Photo Content](/example-operations/media/UpdatePhotoContent.graphql)**
-  Modifies a media asset to change various attributes or contentmutation updatePhotoContent(  $id: ID!  $caption: String  $attribution: String  $copyright: String) {   Use the updateMediaResource operation  updateMediaResource(     Supply the ID for the media, as accessed from finalizeMediaUpload    id: $id    resource: {       Update various content, such as the attribution, caption, copyright      attribution: $attribution      caption: $caption      copyright: $copyright    }  ) {     Query back what information you need once successfully modified the     content (such as updated in-memory cache values)    resource {       Identifiers      id      __typename       Updated fields      attribution      caption      copyright    }  }}
+  Modifies a media asset to change various attributes or content
 
 #### Media Upload
 
 - **[Process Photo Upload Progress](/example-operations/media/upload/ProcessPhotoUploadProgress.graphql)**
   Finalise an upload process commenced with startMediaUpload, supplying content and associations to profile
 - **[Start Photo Upload](/example-operations/media/upload/StartPhotoUpload.graphql)**
-  Request information to commence a photo upload via HTTPsmutation startPhotoUpload($filename: String!, $contentType: String!) {   Use the startMediaUpload() operation  startMediaUpload(     Supply the filename label    filename: $filename     Supply the content type    contentType: $contentType  ) {     Request an upload token
+  Request information to commence a photo upload via HTTPs
 
 ### Place
 
@@ -111,7 +111,7 @@ GraphQL Articles also located in this repository first.
 - **[Get Place Currency](/example-operations/place/GetPlaceCurrency.graphql)**
   Queries the currency used in the country for a place
 - **[Get Place Navigation Links](/example-operations/place/GetPlaceNavigationLinks.graphql)**
-  Queries a place to identify navigation links to generate URL's to send the user to obtain navigation links using their preferred servicequery getPlaceNavigationLinks($placeId: ID!) {   use the place node  place(     Provide a place ID, example for a cafe in Melbourne    id: $placeId  ) {     Access what is needed from the place    title     Generate out navigation urls based on different providers    google: navigationUrl(provider: Google)    apple: navigationUrl(provider: Apple)  }}
+  Queries a place to identify navigation links to generate URL's to send the user to obtain navigation links using their preferred service
 - **[Get Place Time Zone](/example-operations/place/GetPlaceTimeZone.graphql)**
   Queries the timezone for a place
 - **[Get Upcoming Open Closed Times](/example-operations/place/GetUpcomingOpenClosedTimes.graphql)**
@@ -126,7 +126,7 @@ GraphQL Articles also located in this repository first.
 #### Place Provider: Australian Tourism Data Warehouse
 
 - **[Get Place ATDWWinery](/example-operations/place/atdw/GetPlaceATDWWinery.graphql)**
-  Load information about a winery from Australian Tourism Data Warehousequery getPlaceATDWWinery($placeId: ID!) {   use the place() query to load information about a specific winery   This example is a winery in Mornington Peninsula/Red Hill  place(id: $placeId) {     Identifiers/Type    id    __typename     Basic information    name    description     Various contact methods for the place    contact {      facebookUrl      twitterUrl      instagramUrl      bookingsUrl    }     Required attribution/tracking for the place for ATDW    attribution {      pixel    }     Address Information    address {      addressLineOne      locality      region      postalCode    }     Geo Coordinates    position {      lon      lat    }     Layers/Categories    layers {      name    }     Wine specific attributes
+  Load information about a winery from Australian Tourism Data Warehouse
 - **[Search Place Autocomplete From ATDW](/example-operations/place/atdw/SearchPlaceAutocompleteFromATDW.graphql)**
   Search the Australian Tourism Data Warehouse (ATDW) for places using an autocomplete style text query
 
@@ -142,7 +142,7 @@ GraphQL Articles also located in this repository first.
 #### Profile Social
 
 - **[Approve Profile Request](/example-operations/profile/social/ApproveProfileRequest.graphql)**
-  Approves a profile follow request to follow another profilemutation approveProfileRequest($fromProfileId: ID!, $toProfileId: ID!) {   Use the approveProfileFollow() operation to set the follow status to   "Approved"  approveProfileFollow(     The requesting profile wishing to follow another account    fromProfile: $fromProfileId     The target profile to follow    toProfile: $toProfileId  ) {    status  }}
+  Approves a profile follow request to follow another profile
 - **[Claim Profile Handle](/example-operations/profile/social/ClaimProfileHandle.graphql)**
   Claim a handle for a profile, associating something more friendly
 - **[Deny Profile Follow](/example-operations/profile/social/DenyProfileFollow.graphql)**

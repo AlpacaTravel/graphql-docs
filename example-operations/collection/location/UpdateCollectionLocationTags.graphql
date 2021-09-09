@@ -1,4 +1,4 @@
-# Simply updates tags on locations, so that they can grouped or labeled
+# Simply updates tags on locations, so that they can grouped or labeled.
 
 mutation updateCollectionLocationTags($id: ID!, $tags: [String!]) {
   # Use the updateCollectionLocation to modify parts of the collection location

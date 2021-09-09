@@ -1,5 +1,5 @@
 # Updates an itinerary location and marks the itinerary location as an optional
-# stop
+# stop.
 
 mutation UpdateItineraryLocationAsOptional($id: ID!, $optional: Boolean!) {
   # Use updateItineraryLocation mutation for making changes to ItineraryLocation

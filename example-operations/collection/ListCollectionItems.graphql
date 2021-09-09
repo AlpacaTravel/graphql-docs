@@ -1,4 +1,4 @@
-# Performs a query on a collection in order to obtain basic locations
+# Performs a query on a collection in order to obtain basic locations.
 
 query listCollectionItems($collectionIds: [ID!], $first: Int!, $after: String) {
   # Use the collectionItems operation to query across items

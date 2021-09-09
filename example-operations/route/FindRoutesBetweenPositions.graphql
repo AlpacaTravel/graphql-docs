@@ -1,5 +1,5 @@
 # Queries routes that exist through the supplied positions. Supports a wide
-# range of different travel modes and
+# range of different travel modes and waypoints
 
 query findRoutesBetweenPositions(
   $mode: RouteSearchableMode!

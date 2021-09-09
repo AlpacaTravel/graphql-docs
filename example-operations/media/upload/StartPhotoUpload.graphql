@@ -1,4 +1,4 @@
-# Request information to commence a photo upload via HTTPs
+# Request information to commence a photo upload via HTTPs.
 
 mutation startPhotoUpload($filename: String!, $contentType: String!) {
   # Use the startMediaUpload() operation

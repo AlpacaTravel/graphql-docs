@@ -1,5 +1,5 @@
 # Queries a place to identify navigation links to generate URL's to send the
-# user to obtain navigation links using their preferred service
+# user to obtain navigation links using their preferred service.
 
 query getPlaceNavigationLinks($placeId: ID!) {
   # use the place node

@@ -1,4 +1,4 @@
-# Approves a profile follow request to follow another profile
+# Approves a profile follow request to follow another profile.
 
 mutation approveProfileRequest($fromProfileId: ID!, $toProfileId: ID!) {
   # Use the approveProfileFollow() operation to set the follow status to

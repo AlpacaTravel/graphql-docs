@@ -1,5 +1,5 @@
 # Updates an itinerary directions to switch the mode of transportation from one
-# mode (such as car) to an alterative mode, such as foot
+# mode (such as car) to an alterative mode, such as foot.
 
 mutation updateItineraryDirectionMode(
   $id: ID!

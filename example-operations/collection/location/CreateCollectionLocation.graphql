@@ -1,4 +1,4 @@
-# Creates a Collection Location within a collection
+# Creates a Collection Location within a collection.
 
 mutation createCollectionLocation(
   $collectionId: ID!

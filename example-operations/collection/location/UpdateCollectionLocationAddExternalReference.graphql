@@ -1,4 +1,4 @@
-# Update a record to store a corresponding identifier in an external system
+# Update a record to store a corresponding identifier in an external system.
 
 mutation updateCollectionLocationAddExternalReference(
   $id: ID!

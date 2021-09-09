@@ -1,4 +1,4 @@
-# Update the collection details
+# Update the collection details.
 
 mutation updateCollectionTitle($id: ID!, $title: String!) {
   # use the updateCollection

@@ -1,5 +1,5 @@
 # Query an itinerary location and load the associated inbound or outbound
-# directions
+# directions.
 
 query listItineraryDirectionsForItineraryLocation(
   $id: ID!

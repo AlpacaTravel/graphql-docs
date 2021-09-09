@@ -1,4 +1,4 @@
-# Query the itineraries that are created and associated to a profile
+# Query the itineraries that are created and associated to a profile.
 
 query listItineraries($profileId: ID!, $first: Int!, $after: String) {
   # Use the itineraries operation to query for a supplied profile

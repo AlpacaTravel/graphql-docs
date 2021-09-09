@@ -1,4 +1,4 @@
-# Modifies a media asset to change various attributes or content
+# Modifies a media asset to change various attributes or content.
 
 mutation updatePhotoContent(
   $id: ID!

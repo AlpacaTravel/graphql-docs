@@ -1,4 +1,4 @@
-# Loads in a specific collection location
+# Loads in a specific collection location.
 
 query getCollectionLocation($id: ID!) {
   collectionItem(

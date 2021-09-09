@@ -1,4 +1,4 @@
-# Loads a media resource of type MediaImage
+# Loads a media resource of type MediaImage.
 
 query getMediaImage($id: ID!) {
   # Use the mediaResource() to load MediaImage types
