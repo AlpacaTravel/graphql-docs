@@ -4,9 +4,9 @@ mutation unfollowProfile($fromProfileId: ID!, $toProfileId: ID!) {
   # Use the followProfile() mutation to remove a follow relationship
   unfollowProfile(
     # The requesting profile currently following another profile
-    fromProfile: $fromProfileId
+    fromProfileId: $fromProfileId
     # The target profile to unfollow
-    toProfile: $toProfileId
+    toProfileId: $toProfileId
   ) {
     # The status of the relationship
     status

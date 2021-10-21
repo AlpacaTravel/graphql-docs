@@ -5,9 +5,9 @@ mutation approveProfileRequest($fromProfileId: ID!, $toProfileId: ID!) {
   # "Approved"
   approveProfileFollow(
     # The requesting profile wishing to follow another account
-    fromProfile: $fromProfileId
+    fromProfileId: $fromProfileId
     # The target profile to follow
-    toProfile: $toProfileId
+    toProfileId: $toProfileId
   ) {
     status
   }

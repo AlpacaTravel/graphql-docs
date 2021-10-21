@@ -4,9 +4,9 @@ mutation denyProfileFollow($fromProfileId: ID!, $toProfileId: ID!) {
   # Use the denyProfileFollow() operation to set the follow status to "Denied"
   denyProfileFollow(
     # The requesting profile wishing to follow another account
-    fromProfile: $fromProfileId
+    fromProfileId: $fromProfileId
     # The target profile to follow
-    toProfile: $toProfileId
+    toProfileId: $toProfileId
   ) {
     status
   }
