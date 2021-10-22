@@ -24,6 +24,14 @@ query getMediaImage($id: ID!) {
       copyright
       attribution
 
+      # More detailed attribution
+      attributionUrl: attrValue(id: "attribution-url")
+      attributionHtml: attrValue(id: "attribution-html")
+      photographer: attrValue(id: "photographer")
+      usageTerms: attrValue(id: "usage-terms")
+      licenseUrl: attrValue(id: "license-url")
+      licenseShortName: attrValue(id: "license-short-name")
+
       # Accessing alternative text
       caption
       altText
@@ -33,19 +41,22 @@ query getMediaImage($id: ID!) {
 
       # Accessing EXIF information if found for the supplied photo
       # Access all using the field "exifIds"
-      make: exif(id: "Camera make") {
+      make: exif(id: "make") {
         value
       }
-      model: exif(id: "Camera model") {
+      model: exif(id: "model") {
         value
       }
-      focalLength: exif(id: "Focal length") {
+      focalLength: exif(id: "focalLength") {
         value
       }
-      exposureTime: exif(id: "Exposure time") {
+      exposureTime: exif(id: "exposureTime") {
         value
       }
-      aperture: exif(id: "Aperture") {
+      aperture: exif(id: "aperture") {
+        value
+      }
+      iso: exif(id: "iso") {
         value
       }
     }
