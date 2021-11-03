@@ -84,6 +84,9 @@ query QueryItineraryLocationsAsSimpleList {
       first: 10
     ) {
       edges {
+        # Using the edge position, we can get a numbering of the result 1...X
+        edgePositionNumber
+
         node {
           # ID/Types
           id
@@ -157,6 +160,9 @@ query QueryItineraryLocationsWithDirections {
       first: 10
     ) {
       edges {
+        # Using the edge position, we can get a numbering of the result 1...X
+        edgePositionNumber
+
         node {
           # ID/Types
           id
