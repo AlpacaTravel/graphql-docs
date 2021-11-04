@@ -66,6 +66,35 @@ content to a specific state of the application.
 </div>
 ```
 
+_Example: Advanced customisation of base URL's and API links_
+
+In certain circumstances, you may be advised to change the URL's that are being
+used for the toolkit to communicate with. These could be to do with changing the
+domain for custom domains, or changing API targets for preview releases.
+
+```
+<!-- Example of configuring script -->
+<div class="alpaca-wrapper alpaca-area-guide">
+  <div id="alpaca-container">
+    <!-- Recommended: Add you strategy here for the loading presentation -->
+    <span class="loading">Loading...</span>
+  </div>
+  <script lang="text/javascript">
+    // Modify the API URL for the content
+    var API_URL = 'https://embed.alpacamaps.com/api/v1'; // Default
+    // Modify the API URL for the trip planning
+    var API_URL = 'https://withalpaca.com/api/v2'; // Default
+  </script>
+  <script
+    src="https://cdn.alpacamaps.com/scripts/alpaca-widget@v2.js"
+    data-id="locale/wine-australia"
+    data-container-id="alpaca-container"
+    data-inline="true"
+    data-base-url="https://made.withalpaca.com/"
+  ></script>
+</div>
+```
+
 ## Shared Itinerary Creation
 
 Assets can be enabled to provide itinerary planning features within the
