@@ -72,8 +72,8 @@ In certain circumstances, you may be advised to change the URL's that are being
 used for the toolkit to communicate with. These could be to do with changing the
 domain for custom domains, or changing API targets for preview releases.
 
-```
-<!-- Example of configuring script -->
+```html
+<!-- Example of configuring script with changing URL endpoints -->
 <div class="alpaca-wrapper alpaca-area-guide">
   <div id="alpaca-container">
     <!-- Recommended: Add you strategy here for the loading presentation -->
