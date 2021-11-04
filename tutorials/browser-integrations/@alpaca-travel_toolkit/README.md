@@ -82,8 +82,8 @@ domain for custom domains, or changing API targets for preview releases.
   <script lang="text/javascript">
     // Modify the API URL for the content
     var API_URL = 'https://embed.alpacamaps.com/api/v1'; // Default
-    // Modify the API URL for the trip planning
-    var API_URL = 'https://withalpaca.com/api/v2'; // Default
+    // Modify the v2 API URL for the trip planning
+    var ALPACA_API_URL_V2 = 'https://withalpaca.com/api/v2'; // Default
   </script>
   <script
     src="https://cdn.alpacamaps.com/scripts/alpaca-widget@v2.js"
