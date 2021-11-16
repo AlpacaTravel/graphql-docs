@@ -214,6 +214,12 @@ information and keep your place information up to date.
 Other providers integrated include; TripAdvisor, Zomato, Yelp, WOF, GeoNames,
 Foursquare, Facebook, Wikidata are more.
 
+### Position
+
+- **[Position attributes](topics/position/Position%20attributes/README.md)**
+  Access global information about a position, such as region, time-zone or ISO
+  data, or local data such as information about a location from the ABS dataset
+
 ### Media
 
 Various media can be accessed on the Alpaca platform.
