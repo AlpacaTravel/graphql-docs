@@ -1,5 +1,13 @@
 # Working with the Australian Tourism Data Warehouse (ATDW)
 
+> The Alpaca GraphQL API allows you to connect to ATDW in a single integration,
+> accessing product information as well as performing search, and adding those
+> products to your own collection. In addition to loading the information from
+> ATDW, you can add your own tags, categories and other attributes to the data.
+> You can also put ATDW data into Itineraries, to form itineraries that are kept
+> up to date with information from organisations that update when data in ATDW
+> updates.
+
 Alpaca provide an integration directly into the Australian Tourism Data
 Warehouse (ATDW) to enable you to leverage their API and service for information
 about Australian tourism products.
