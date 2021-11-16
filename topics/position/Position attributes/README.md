@@ -19,7 +19,7 @@ query {
       currency: attrValue(id: "place/country-currency")
 
       # Further information, such as regions..
-      iso3166: attrValue(id: "place/iso-3166-1-alpha-3")
+      iso3166: attrValue(id: "place/iso-3166-2")
 
       # Australian information, such as locality, gov, etc
       locality: attrValue(id: "place/abs:locality")
