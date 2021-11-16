@@ -15,6 +15,8 @@ query {
 
       # Access the timezone at the coordinate
       timezone: attrValue(id: "place/time-zone")
+      # Access the currency for the country
+      currency: attrValue(id: "place/country-currency")
 
       # Further information, such as regions..
       iso3166: attrValue(id: "place/iso-3166-1-alpha-3")
@@ -58,6 +60,7 @@ attributes are available.
 | `place/region`              | Region                  | string |
 | `place/region-abbreviation` | Region (Abbrev)         | string |
 | `place/time-zone`           | Time zone               | string |
+| `place/country-currency`    | Currency                | object |
 
 ### Australian Bureau of Statistics (ABS)
 
