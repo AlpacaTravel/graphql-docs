@@ -190,16 +190,18 @@ power your website or application.
 - **[Importing Locations](topics/collection/Importing%20Locations/README.md)**
   Working with concepts of importing 3rd party locations from another platform
 
-### Places
+### Places / Place Information
 
 We support working with various place providers on the platform, to access place
 information and keep your place information up to date.
 
-- **[Working with OSM](topics/places/Working%20with%20OSM/README.md)** Access
+- **[Working with Open Street Map (OSM)](topics/places/Working%20with%20OSM/README.md)** Access
   information directly from OpenStreetMaps database
-- **[Working with ATDW](topics/places/Working%20with%20the%20ATDW/README.md)**
-  Understanding how to work with the Australian Tourism Data Warehouse place
-  provider for place information
+- **[Australian Tourism Data Warehouse (ATDW)](topics/places/Working%20with%20the%20ATDW/README.md)**
+  Alpaca provides the ability to query and use data from the ATDW API through a
+  GraphQL interface, allowing you to easily structure the data into itineraries
+  or your own collections, as well as access all the rich data from ATDW in a
+  convenient and consistent way, speeding up your integration
 - **[Accessing Hours](topics/places/Accessing%20Hours/README.md)**
   Access information about opening hours of a vendor, and present them in
   time zone appropriate formats.
