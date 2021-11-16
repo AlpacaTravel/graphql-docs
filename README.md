@@ -201,7 +201,9 @@ information and keep your place information up to date.
   Alpaca provides the ability to query and use data from the ATDW API through a
   GraphQL interface, allowing you to easily structure the data into itineraries
   or your own collections, as well as access all the rich data from ATDW in a
-  convenient and consistent way, speeding up your integration
+  convenient and consistent way, speeding up your integration. You can also
+  store additional data beside ATDW data, including missing places or additional
+  data attributes (tags, custom data etc)
 - **[Accessing Hours](topics/places/Accessing%20Hours/README.md)**
   Access information about opening hours of a vendor, and present them in
   time zone appropriate formats.
