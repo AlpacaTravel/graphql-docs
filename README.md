@@ -232,8 +232,10 @@ Various media can be accessed on the Alpaca platform.
 
 ### Icons
 
-- **[Managing profile icons](topics/icons/Managing%20itinerary%20icons/README.md)**
+- **[Managing profile icons](topics/icons/Managing%20profile%20icons/README.md)**
   Managing icons associated for use by a profile
+- **[Managing itinerary icons](topics/icons/Managing%20itinerary%20icons/README.md)**
+  Managing icons for itineraries
 
 ### GraphQL
 
