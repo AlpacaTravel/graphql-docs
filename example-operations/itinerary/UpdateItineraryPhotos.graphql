@@ -1,0 +1,46 @@
+# Updates an itinerary with a selection of photos.
+
+mutation UpdateItineraryPhotos(
+  $id: ID!
+  $createMedia: [CreateMediaContainerInput!]
+  $updateMedia: [UpdateMediaContainerInput!]
+  $deleteMedia: [ID!]
+) {
+  # Use the updateItinerary() operation to update the itinerary media
+  updateItinerary(
+    # Specify the itinerary
+    id: $id
+    # Update the itinrary content
+    itinerary: {
+      # Create the itinerary media
+      createMedia: $createMedia
+      # Update the itinerary media
+      updateMedia: $updateMedia
+      # Remoe an itinerary media
+      deleteMedia: $deleteMedia
+    }
+  ) {
+    # Query back the itinerary updated fields
+    itinerary {
+      id
+      __typename
+
+      # Read in the media
+      media(limit: 10) {
+        # Media container id
+        id
+        __typename
+        
+        # Read back the uploaded photo resource
+        resource  {
+          # Identifiers
+          id
+          __typename
+
+          # Content
+          caption
+        }
+      }
+    }
+  }
+}

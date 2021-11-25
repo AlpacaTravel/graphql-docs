@@ -59,6 +59,8 @@ GraphQL Articles also located in this repository first.
   Enable "auto-route" behaviour to an existing itinerary
 - **[Update Itinerary Direction Mode](/example-operations/itinerary/UpdateItineraryDirectionMode.graphql)**
   Updates an itinerary directions to switch the mode of transportation from one mode (such as car) to an alterative mode, such as foot
+- **[Update Itinerary Photos](/example-operations/itinerary/UpdateItineraryPhotos.graphql)**
+  Updates an itinerary with a selection of photos
 - **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
   Modify an existing Itinerary by changing the title
 
@@ -87,6 +89,8 @@ GraphQL Articles also located in this repository first.
   Reorder/move the itinerary location to the start of the sequence
 - **[Update Itinerary Location As Optional](/example-operations/itinerary/location/UpdateItineraryLocationAsOptional.graphql)**
   Updates an itinerary location and marks the itinerary location as an optional stop
+- **[Update Itinerary Location Photos](/example-operations/itinerary/location/UpdateItineraryLocationPhotos.graphql)**
+  Updates an itinerary location with a selection of photos
 
 ### Media
 

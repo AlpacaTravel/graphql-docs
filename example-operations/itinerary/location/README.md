@@ -18,5 +18,7 @@
   Reorder/move the itinerary location to the start of the sequence
 - **[Update Itinerary Location As Optional](/example-operations/itinerary/location/UpdateItineraryLocationAsOptional.graphql)**
   Updates an itinerary location and marks the itinerary location as an optional stop
+- **[Update Itinerary Location Photos](/example-operations/itinerary/location/UpdateItineraryLocationPhotos.graphql)**
+  Updates an itinerary location with a selection of photos
 
 [View other itinerary operation examples](/example-operations/itinerary)
