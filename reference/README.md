@@ -148,9 +148,9 @@
     * [AngleUnit](#angleunit)
     * [CollectionDiscriminator](#collectiondiscriminator)
     * [CompassPoint](#compasspoint)
-    * [ConnectedAppAuthTypes](#connectedappauthtypes)
-    * [ConnectedAppServiceKeys](#connectedappservicekeys)
-    * [ConnectedAppTypes](#connectedapptypes)
+    * [ConnectedAppAuthType](#connectedappauthtype)
+    * [ConnectedAppServiceKey](#connectedappservicekey)
+    * [ConnectedAppType](#connectedapptype)
     * [DistanceUnit](#distanceunit)
     * [DurationUnit](#durationunit)
     * [IsochroneMode](#isochronemode)
@@ -510,7 +510,7 @@ Return only expired applications
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">type</td>
-<td valign="top"><a href="#connectedapptypes">ConnectedAppTypes</a></td>
+<td valign="top"><a href="#connectedapptype">ConnectedAppType</a></td>
 <td>
 
 Filter by the app's type
@@ -519,7 +519,7 @@ Filter by the app's type
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">authType</td>
-<td valign="top"><a href="#connectedappauthtypes">ConnectedAppAuthTypes</a></td>
+<td valign="top"><a href="#connectedappauthtype">ConnectedAppAuthType</a></td>
 <td>
 
 Filter by the app's authorization type
@@ -528,7 +528,7 @@ Filter by the app's authorization type
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">serviceKey</td>
-<td valign="top"><a href="#connectedappservicekeys">ConnectedAppServiceKeys</a></td>
+<td valign="top"><a href="#connectedappservicekey">ConnectedAppServiceKey</a></td>
 <td>
 
 Filter by the app's service key
@@ -721,6 +721,24 @@ Get a place by id
 <td>
 
 The unique identifier of the place
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>places</strong></td>
+<td valign="top">[<a href="#place">Place</a>]!</td>
+<td>
+
+Get multiple places by id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">ids</td>
+<td valign="top">[<a href="#id">ID</a>!]!</td>
+<td>
+
+List of unique place identifiers
 
 </td>
 </tr>
@@ -1868,7 +1886,7 @@ Create a follow request between two profiles
 </td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">fromProfile</td>
+<td colspan="2" align="right" valign="top">fromProfileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -1877,7 +1895,7 @@ The follower profile
 </td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">toProfile</td>
+<td colspan="2" align="right" valign="top">toProfileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -1895,7 +1913,7 @@ Remove the follow between two profiles
 </td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">fromProfile</td>
+<td colspan="2" align="right" valign="top">fromProfileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -1904,7 +1922,7 @@ The follower profile
 </td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">toProfile</td>
+<td colspan="2" align="right" valign="top">toProfileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -1922,7 +1940,7 @@ Approve a follow request between two profiles
 </td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">fromProfile</td>
+<td colspan="2" align="right" valign="top">fromProfileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -1931,7 +1949,7 @@ The follower profile
 </td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">toProfile</td>
+<td colspan="2" align="right" valign="top">toProfileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -1949,7 +1967,7 @@ Deny a follow request between two profiles
 </td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">fromProfile</td>
+<td colspan="2" align="right" valign="top">fromProfileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -1958,7 +1976,7 @@ The follower profile
 </td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">toProfile</td>
+<td colspan="2" align="right" valign="top">toProfileId</td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -3451,7 +3469,7 @@ The profile associated with this connected app
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>type</strong></td>
-<td valign="top"><a href="#connectedapptypes">ConnectedAppTypes</a></td>
+<td valign="top"><a href="#connectedapptype">ConnectedAppType</a></td>
 <td>
 
 A key to describe the type of connection to the application
@@ -3460,16 +3478,16 @@ A key to describe the type of connection to the application
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>serviceKey</strong></td>
-<td valign="top"><a href="#connectedappservicekeys">ConnectedAppServiceKeys</a>!</td>
+<td valign="top"><a href="#connectedappservicekey">ConnectedAppServiceKey</a>!</td>
 <td>
 
-This is the key relating to the service, such as "atdw" or "crowdriff-api" - it identifies the "App" we are connecting to
+This is the key relating to the service - it identifies the "App" we are connecting to
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>authType</strong></td>
-<td valign="top"><a href="#connectedappauthtypes">ConnectedAppAuthTypes</a></td>
+<td valign="top"><a href="#connectedappauthtype">ConnectedAppAuthType</a></td>
 <td>
 
 Depending on the authentication method, this can highlight the authenticated application method (e.g. OAuth)
@@ -11199,7 +11217,7 @@ Create a new ConnectedApp
 <tbody>
 <tr>
 <td colspan="2" valign="top"><strong>type</strong></td>
-<td valign="top"><a href="#connectedapptypes">ConnectedAppTypes</a></td>
+<td valign="top"><a href="#connectedapptype">ConnectedAppType</a></td>
 <td>
 
 The type of the connected-app
@@ -11208,7 +11226,7 @@ The type of the connected-app
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>serviceKey</strong></td>
-<td valign="top"><a href="#connectedappservicekeys">ConnectedAppServiceKeys</a>!</td>
+<td valign="top"><a href="#connectedappservicekey">ConnectedAppServiceKey</a>!</td>
 <td>
 
 Identifies the service being connected to
@@ -11226,7 +11244,7 @@ Any specific scope that has been granted to the 3rd party application
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>authType</strong></td>
-<td valign="top"><a href="#connectedappauthtypes">ConnectedAppAuthTypes</a></td>
+<td valign="top"><a href="#connectedappauthtype">ConnectedAppAuthType</a></td>
 <td>
 
 The authenticated application method
@@ -12993,7 +13011,7 @@ Updates a connected app
 <tbody>
 <tr>
 <td colspan="2" valign="top"><strong>authType</strong></td>
-<td valign="top"><a href="#connectedappauthtypes">ConnectedAppAuthTypes</a></td>
+<td valign="top"><a href="#connectedappauthtype">ConnectedAppAuthType</a></td>
 <td>
 
 The type of the connected-app
@@ -13861,7 +13879,7 @@ Points on the compass rose
 </tbody>
 </table>
 
-### ConnectedAppAuthTypes
+### ConnectedAppAuthType
 
 Possible auth types for a ConnectedApp
 
@@ -13886,7 +13904,7 @@ Possible auth types for a ConnectedApp
 </tbody>
 </table>
 
-### ConnectedAppServiceKeys
+### ConnectedAppServiceKey
 
 The key of the service for a ConnectedApp
 
@@ -13897,7 +13915,7 @@ The key of the service for a ConnectedApp
 </thead>
 <tbody>
 <tr>
-<td valign="top"><strong>Atdw</strong></td>
+<td valign="top"><strong>AustralianTourismDataWarehouse</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -13911,7 +13929,7 @@ The key of the service for a ConnectedApp
 </tbody>
 </table>
 
-### ConnectedAppTypes
+### ConnectedAppType
 
 Possible types of ConnectedApp
 
