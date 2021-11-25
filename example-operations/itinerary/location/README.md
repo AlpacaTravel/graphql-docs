@@ -1,5 +1,7 @@
 # Itinerary Location
 
+- **[Associate Itinerary Location Icon](/example-operations/itinerary/location/AssociateItineraryLocationIcon.graphql)**
+  Associates an itinerary icon composition with an itinerary location
 - **[Create Itinerary Location](/example-operations/itinerary/location/CreateItineraryLocation.graphql)**
   Add a location to our itinerary, associating the place to Mavis The Grocer using the Facebook Page identifier
 - **[Create Itinerary Location With Additional Positions](/example-operations/itinerary/location/CreateItineraryLocationWithAdditionalPositions.graphql)**

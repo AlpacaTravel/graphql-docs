@@ -1,0 +1,12 @@
+# Removes an icon.
+
+mutation DeleteIcon($id: ID!) {
+  # Use the deleteIcon operation to remove an icon
+  deleteIcon(
+    # Supply your ID of the icon to remove (no undo)
+    id: $id
+  ) {
+    # Select back the ID of the icon that was removed
+    id
+  }
+}

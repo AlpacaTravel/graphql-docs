@@ -1,0 +1,15 @@
+# Creates an icon based on the supplied SVG path data. An icon consists
+# primarily of a name, paths and viewbox, but also supports attributes for
+# storing additional icon data.
+
+mutation CreateIcon($profileId: ID!, $icon: CreateIconInput!) {
+  # Use the createIcon() operation to create an icon
+  createIcon(profileId: $profileId, icon: $icon) {
+    # Read back the created icon
+    icon {
+      # Access the Identifier, required for further query/mutations
+      __typename
+      id
+    }
+  }
+}

@@ -43,6 +43,21 @@ GraphQL Articles also located in this repository first.
 - **[Update Collection Location Title](/example-operations/collection/location/UpdateCollectionLocationTitle.graphql)**
   Modify an existing collection location title
 
+### Icon
+
+- **[Create Icon](/example-operations/icon/CreateIcon.graphql)**
+  Creates an icon based on the supplied SVG path data
+- **[Delete Icon](/example-operations/icon/DeleteIcon.graphql)**
+  Removes an icon
+- **[Get Icon](/example-operations/icon/GetIcon.graphql)**
+  Retrieves an icon by a specific ID
+- **[List Icons](/example-operations/icon/ListIcons.graphql)**
+  Lists icons that have been created for a supplied profile
+- **[Update Icon](/example-operations/icon/UpdateIcon.graphql)**
+  Updates an icon that exists
+- **[Update Icon Paths](/example-operations/icon/UpdateIconPaths.graphql)**
+  Updates the paths associated to an icon
+
 ### Itinerary
 
 - **[Create Itinerary](/example-operations/itinerary/CreateItinerary.graphql)**
@@ -59,6 +74,8 @@ GraphQL Articles also located in this repository first.
   Enable "auto-route" behaviour to an existing itinerary
 - **[Update Itinerary Direction Mode](/example-operations/itinerary/UpdateItineraryDirectionMode.graphql)**
   Updates an itinerary directions to switch the mode of transportation from one mode (such as car) to an alterative mode, such as foot
+- **[Update Itinerary Icons](/example-operations/itinerary/UpdateItineraryIcons.graphql)**
+  Updates the icons associated with an Itinerary
 - **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
   Modify an existing Itinerary by changing the title
 
@@ -69,6 +86,8 @@ GraphQL Articles also located in this repository first.
 
 #### Itinerary Location
 
+- **[Associate Itinerary Location Icon](/example-operations/itinerary/location/AssociateItineraryLocationIcon.graphql)**
+  Associates an itinerary icon composition with an itinerary location
 - **[Create Itinerary Location](/example-operations/itinerary/location/CreateItineraryLocation.graphql)**
   Add a location to our itinerary, associating the place to Mavis The Grocer using the Facebook Page identifier
 - **[Create Itinerary Location With Additional Positions](/example-operations/itinerary/location/CreateItineraryLocationWithAdditionalPositions.graphql)**

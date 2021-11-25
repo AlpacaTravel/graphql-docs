@@ -1,0 +1,17 @@
+# Updates the paths associated to an icon.
+
+mutation UpdateIconPaths($id: ID!, $viewBox: String!, $paths: [String!]!) {
+  # Update the icon leveraging the updateIcon() operation
+  updateIcon(id: $id, icon: { viewBox: $viewBox, paths: $paths }) {
+    # Read back the modified icon
+    icon {
+      # Identifiers
+      id
+      __typename
+
+      # Data that has been updated by updateIcon operation
+      viewBox
+      paths
+    }
+  }
+}

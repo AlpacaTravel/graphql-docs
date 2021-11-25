@@ -1,0 +1,17 @@
+# Retrieves an icon by a specific ID. You can use the icon() or node() to
+# achieve this.
+
+query GetIcon($id: ID!) {
+  # Use the icon() operation to retrieve by an ID
+  icon(id: $id) {
+    # Identifiers
+    id
+    __typename
+
+    # Obtain what you want from the icon
+    name
+    key
+    viewBox
+    paths
+  }
+}
