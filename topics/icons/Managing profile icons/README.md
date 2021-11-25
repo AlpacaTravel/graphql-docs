@@ -1,8 +1,11 @@
 # Adding Profile Icons
 
-Icons are used to store the silhouette obtained from SVG path data. These icons
-that are added to the profile will later be referenced when using icons for
-various content, such as with itineraries.
+Profile Icons allow you to create icon sihouttes for use in UI components or
+within maps (such as for markers).
+
+Icons store the silhouette obtained from SVG path data. These icons that are 
+added to the profile will later be referenced when using icons for various
+content, such as with itineraries.
 
 The first step to working with icons is understanding how to prepare your icon
 data, and then creating the icons associated with a profile. You can then later
@@ -162,12 +165,10 @@ mutation UpdateIcon {
   updateIcon(
     id: "icon/ICON123"
     icon: {
-      # Update the icon name
-      name: "New name"
       # Provide the corresponding view box
       viewBox: "0 0 1024 1024"
       # Provide the icon silhouette path data
-      paths: $paths
+      paths: ["M 100 ... "]
     }
   ) {
     # Read back the modified icon
