@@ -170,6 +170,8 @@ multi-segment scheduled itineraries (and what is in-between).
 - **[Automatic Routing](topics/itinerary/Automatic%20Routing/README.md)**
   Leverage the automatic routing feature of itineraries, to automatically
   provide directions between locations
+- **[Places of interest](topics/itinerary/Places%20of%20interest/README.md)**
+  Creating places of interest associated to locations
 - **[Reordering Locations](topics/itinerary/Reordering%20Locations/README.md)**
   Provide the ability for the user to reorder the itinerary to suit
 - **[Adding Directions](topics/itinerary/Adding%20Directions/README.md)**
