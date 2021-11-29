@@ -5,8 +5,8 @@ You can request routes for various supported modes of transport.
 ## Searching between positions
 
 In order to search for a route between two positions, you must supply at least
-2 [positions](/reference/README.md#position) and up to 50 positions overall.
-You will also need to supply the
+2 [positions](/reference/README.md#positioninput) and up to 50 positions
+overall. You will also need to supply the
 [mode](/reference/README.md#routesearchablemode) of transport.
 
 ```graphql
