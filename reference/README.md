@@ -24,6 +24,7 @@
     * [CreateCollectionLocationPayload](#createcollectionlocationpayload)
     * [CreateCollectionPayload](#createcollectionpayload)
     * [CreateConnectedAppPayload](#createconnectedapppayload)
+    * [CreateIconSilhouettePayload](#createiconsilhouettepayload)
     * [CreateItineraryCollectionPayload](#createitinerarycollectionpayload)
     * [CreateItineraryDirectionsPayload](#createitinerarydirectionspayload)
     * [CreateItineraryLocationPayload](#createitinerarylocationpayload)
@@ -31,12 +32,19 @@
     * [DeleteCollectionItemPayload](#deletecollectionitempayload)
     * [DeleteCollectionPayload](#deletecollectionpayload)
     * [DeleteConnectedAppPayload](#deleteconnectedapppayload)
+    * [DeleteIconResourcePayload](#deleteiconresourcepayload)
     * [DeleteItineraryItemPayload](#deleteitineraryitempayload)
     * [DeleteItineraryPayload](#deleteitinerarypayload)
     * [DenyProfileFollowPayload](#denyprofilefollowpayload)
     * [Elevation](#elevation)
     * [FinalizeMediaUploadPayload](#finalizemediauploadpayload)
     * [FollowProfilePayload](#followprofilepayload)
+    * [IconComposition](#iconcomposition)
+    * [IconCompositionConnection](#iconcompositionconnection)
+    * [IconCompositionEdge](#iconcompositionedge)
+    * [IconResourceConnection](#iconresourceconnection)
+    * [IconResourceEdge](#iconresourceedge)
+    * [IconSilhouette](#iconsilhouette)
     * [Isochrone](#isochrone)
     * [Itinerary](#itinerary)
     * [ItineraryAutoRoute](#itineraryautoroute)
@@ -91,6 +99,7 @@
     * [UpdateCollectionLocationPayload](#updatecollectionlocationpayload)
     * [UpdateCollectionPayload](#updatecollectionpayload)
     * [UpdateConnectedAppPayload](#updateconnectedapppayload)
+    * [UpdateIconSilhouettePayload](#updateiconsilhouettepayload)
     * [UpdateItineraryCollectionPayload](#updateitinerarycollectionpayload)
     * [UpdateItineraryDirectionsPayload](#updateitinerarydirectionspayload)
     * [UpdateItineraryLocationPayload](#updateitinerarylocationpayload)
@@ -107,6 +116,8 @@
     * [CreateCollectionInput](#createcollectioninput)
     * [CreateCollectionLocationInput](#createcollectionlocationinput)
     * [CreateConnectedAppInput](#createconnectedappinput)
+    * [CreateIconCompositionInput](#createiconcompositioninput)
+    * [CreateIconSilhouetteInput](#createiconsilhouetteinput)
     * [CreateItineraryCollectionInput](#createitinerarycollectioninput)
     * [CreateItineraryDirectionsInput](#createitinerarydirectionsinput)
     * [CreateItineraryInput](#createitineraryinput)
@@ -137,6 +148,8 @@
     * [UpdateCollectionInput](#updatecollectioninput)
     * [UpdateCollectionLocationInput](#updatecollectionlocationinput)
     * [UpdateConnectedAppInput](#updateconnectedappinput)
+    * [UpdateIconCompositionInput](#updateiconcompositioninput)
+    * [UpdateIconSilhouetteInput](#updateiconsilhouetteinput)
     * [UpdateItineraryCollectionInput](#updateitinerarycollectioninput)
     * [UpdateItineraryDirectionsInput](#updateitinerarydirectionsinput)
     * [UpdateItineraryInput](#updateitineraryinput)
@@ -176,6 +189,7 @@
     * [String](#string)
   * [Interfaces](#interfaces)
     * [CollectionItem](#collectionitem)
+    * [IconResource](#iconresource)
     * [ItineraryItem](#itineraryitem)
     * [MediaResource](#mediaresource)
     * [Node](#node)
@@ -532,6 +546,60 @@ Filter by the app's authorization type
 <td>
 
 Filter by the app's service key
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>iconResource</strong></td>
+<td valign="top"><a href="#iconresource">IconResource</a></td>
+<td>
+
+Obtains an IconResource with a provided id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The unique identifier of the IconResource
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>iconResources</strong></td>
+<td valign="top"><a href="#iconresourceconnection">IconResourceConnection</a>!</td>
+<td>
+
+Retrieve multiple IconResources under a profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profileId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+Filter by the profile owner of the IconResources
 
 </td>
 </tr>
@@ -1441,6 +1509,78 @@ The id of the connected app to delete
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>createIconSilhouette</strong></td>
+<td valign="top"><a href="#createiconsilhouettepayload">CreateIconSilhouettePayload</a>!</td>
+<td>
+
+Creates a new icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profileId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The identifier of the profile that will own the new IconSilhouette
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">icon</td>
+<td valign="top"><a href="#createiconsilhouetteinput">CreateIconSilhouetteInput</a>!</td>
+<td>
+
+The new IconSilhouette
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updateIconSilhouette</strong></td>
+<td valign="top"><a href="#updateiconsilhouettepayload">UpdateIconSilhouettePayload</a>!</td>
+<td>
+
+Updates a icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the icon to update
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">icon</td>
+<td valign="top"><a href="#updateiconsilhouetteinput">UpdateIconSilhouetteInput</a>!</td>
+<td>
+
+The updated icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteIconResource</strong></td>
+<td valign="top"><a href="#deleteiconresourcepayload">DeleteIconResourcePayload</a>!</td>
+<td>
+
+Delete an icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the icon to delete
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>moveItineraryItem</strong></td>
 <td valign="top"><a href="#moveitineraryitempayload">MoveItineraryItemPayload</a>!</td>
 <td>
@@ -2102,6 +2242,15 @@ Additional data defined on a resource
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -2364,6 +2513,15 @@ A collection type is used to group together a unordered set of items
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -3036,6 +3194,15 @@ A CollectionItem used to represents a single location association to a place.
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -3432,6 +3599,24 @@ The bounding box around the collection-location (derived from place if not overr
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong>contact</strong></td>
+<td valign="top"><a href="#placecontact">PlaceContact</a>!</td>
+<td>
+
+Contact information for the collection location
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>address</strong></td>
+<td valign="top"><a href="#placeaddress">PlaceAddress</a>!</td>
+<td>
+
+Address information for the collection location
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -3449,6 +3634,15 @@ Connected apps stored in the profile
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -3690,6 +3884,32 @@ The newly created connected-app
 </tbody>
 </table>
 
+### CreateIconSilhouettePayload
+
+The response after creating an IconSilhouette
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>icon</strong></td>
+<td valign="top"><a href="#iconsilhouette">IconSilhouette</a></td>
+<td>
+
+The newly created IconSilhouette
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### CreateItineraryCollectionPayload
 
 The fields available after creating an itinerary collection
@@ -3920,6 +4140,32 @@ The available payload after performing a delete connected app
 <td>
 
 The ID of the deleted connected app
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### DeleteIconResourcePayload
+
+The response after deleting an icon
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+The ID of the deleted icon
 
 </td>
 </tr>
@@ -4208,6 +4454,695 @@ The status of the follow request
 </tbody>
 </table>
 
+### IconComposition
+
+An icon with styles for use in an Itinerary
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+Unique ID for this IconComposition
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+A name for this IconComposition, should be unique across the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>created</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The date when the IconComposition was created
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modified</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The date when the IconComposition was last modified
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>resource</strong></td>
+<td valign="top"><a href="#iconresource">IconResource</a>!</td>
+<td>
+
+The Icon used by this IconComposition
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>iconFill</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Optional fill color for the icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>shieldKey</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Indicates which shield to use
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>shieldFill</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Optional fill color for the shield
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>shieldStroke</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Optional stroke color for the shield
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### IconCompositionConnection
+
+Connection of IconCompositions
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>edges</strong></td>
+<td valign="top">[<a href="#iconcompositionedge">IconCompositionEdge</a>!]!</td>
+<td>
+
+All the edges in this page of the connection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td valign="top">[<a href="#iconcomposition">IconComposition</a>!]!</td>
+<td>
+
+Shortcut for edges[].node
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
+<td>
+
+Details regarding the current page of the connnection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The total number of items in the connection (in all pages)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### IconCompositionEdge
+
+Edge containing a IconComposition
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The cursor string pointing to this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>node</strong></td>
+<td valign="top"><a href="#iconcomposition">IconComposition</a>!</td>
+<td>
+
+The item
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### IconResourceConnection
+
+Connection of IconResources
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>edges</strong></td>
+<td valign="top">[<a href="#iconresourceedge">IconResourceEdge</a>!]!</td>
+<td>
+
+All the edges in this page of the connection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td valign="top">[<a href="#iconresource">IconResource</a>!]!</td>
+<td>
+
+Shortcut for edges[].node
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
+<td>
+
+Details regarding the current page of the connnection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The total number of items in the connection (in all pages)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### IconResourceEdge
+
+Edge containing a IconResource
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The cursor string pointing to this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>node</strong></td>
+<td valign="top"><a href="#iconresource">IconResource</a>!</td>
+<td>
+
+The item
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### IconSilhouette
+
+SVG path based IconResource
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The Globally Unique ID of the object.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>profile</strong></td>
+<td valign="top"><a href="#profile">Profile</a>!</td>
+<td>
+
+The profile associated with this icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>created</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the icon was created
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modified</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the icon was last modified
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The supplied name for this icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>key</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The key of the icon, unique across the profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attr</strong></td>
+<td valign="top"><a href="#attribute">Attribute</a></td>
+<td>
+
+Arbitrary JSON value stored on this resource, keyed by an id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrValue</strong></td>
+<td valign="top"><a href="#json">JSON</a></td>
+<td>
+
+Shortcut for the attr.value, returns null if the attribute doesn't exist
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td>
+
+Query multiple attributes by id and optionally locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">attrs</td>
+<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
+<td>
+
+The attributes to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>allAttrs</strong></td>
+<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td>
+
+Return all attributes on the resource
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrsById</strong></td>
+<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td>
+
+Query multiple attributes with the same id and optionally locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>paths</strong></td>
+<td valign="top">[<a href="#string">String</a>!]!</td>
+<td>
+
+SVG path data for this icon, eg: "M 100 .."
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>viewBox</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Optional SVG viewBox for this icon
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### Isochrone
 
 Isochrone for the given position with duration and vehicle
@@ -4222,6 +5157,15 @@ Isochrone for the given position with duration and vehicle
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>duration</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
@@ -4302,6 +5246,15 @@ An itinerary type is used to structure a series of items representing a travel i
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -4591,6 +5544,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" align="right" valign="top">depthMax</td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
@@ -4655,6 +5617,42 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>icons</strong></td>
+<td valign="top"><a href="#iconcompositionconnection">IconCompositionConnection</a>!</td>
+<td>
+
+Icons that are used in this itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
 
 </td>
 </tr>
@@ -4864,11 +5862,56 @@ An itinerary item representing a collection of other itinerary items
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
 Unique identifier for the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>siblingPositionNumber</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td>
+
+A number corresponding to the item's position compared to it's siblings.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+Only count items of the given type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOptional</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count locations that are optional. Non-locations will always be counted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOmitList</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count items that have the omit-list attrubute set to true
 
 </td>
 </tr>
@@ -5007,6 +6050,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>after</strong></td>
 <td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
 <td>
@@ -5051,6 +6103,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>parent</strong></td>
 <td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
 <td>
@@ -5091,6 +6152,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -5157,6 +6227,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>descendants</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
 <td>
@@ -5215,6 +6294,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -5295,6 +6383,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -5522,11 +6619,56 @@ An itinerary item representing directions from an origin location to the parent 
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
 Unique identifier for the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>siblingPositionNumber</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td>
+
+A number corresponding to the item's position compared to it's siblings.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+Only count items of the given type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOptional</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count locations that are optional. Non-locations will always be counted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOmitList</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count items that have the omit-list attrubute set to true
 
 </td>
 </tr>
@@ -5665,6 +6807,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>after</strong></td>
 <td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
 <td>
@@ -5709,6 +6860,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>parent</strong></td>
 <td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
 <td>
@@ -5749,6 +6909,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -5815,6 +6984,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>descendants</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
 <td>
@@ -5873,6 +7051,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -5953,6 +7140,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -6535,6 +7731,42 @@ The item
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>edgePositionNumber</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td>
+
+A number corresponding to the item's position in the connection.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+Only count items of the given type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOptional</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count ItineraryLocations that are optional. Other types of ItineraryItems will be counted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOmitList</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count items that have the omit-list attrubute set to true
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>directions</strong></td>
 <td valign="top"><a href="#itinerarydirectionsconnection">ItineraryDirectionsConnection</a>!</td>
 <td>
@@ -6606,11 +7838,56 @@ An itinerary item representing a location with an associated place in the itiner
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
 Unique identifier for the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>siblingPositionNumber</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td>
+
+A number corresponding to the item's position compared to it's siblings.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+Only count items of the given type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOptional</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count locations that are optional. Non-locations will always be counted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOmitList</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count items that have the omit-list attrubute set to true
 
 </td>
 </tr>
@@ -6749,6 +8026,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>after</strong></td>
 <td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
 <td>
@@ -6793,6 +8079,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>parent</strong></td>
 <td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
 <td>
@@ -6833,6 +8128,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -6899,6 +8203,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>descendants</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
 <td>
@@ -6957,6 +8270,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -7037,6 +8359,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -7239,6 +8570,24 @@ Whether the location is an optional stop
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>contact</strong></td>
+<td valign="top"><a href="#placecontact">PlaceContact</a>!</td>
+<td>
+
+Contact information for the itinerary location
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>address</strong></td>
+<td valign="top"><a href="#placeaddress">PlaceAddress</a>!</td>
+<td>
+
+Address information for the itinerary location
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>directions</strong></td>
 <td valign="top"><a href="#itinerarydirectionsconnection">ItineraryDirectionsConnection</a>!</td>
 <td>
@@ -7292,6 +8641,24 @@ Restrict search to only portions of the itinerary. If set to null, directions fr
 
 </td>
 </tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>icon</strong></td>
+<td valign="top"><a href="#iconcomposition">IconComposition</a></td>
+<td>
+
+The IconComposition used by the this ItineraryLocation
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -7309,6 +8676,15 @@ A container for a MediaResource
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -7344,6 +8720,15 @@ A MediaResource representing an image
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
@@ -7677,6 +9062,15 @@ One exif datum on a media-image
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -7711,6 +9105,15 @@ An source for a media image
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#string">String</a></td>
@@ -7870,6 +9273,15 @@ A defined location in the world
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -8257,6 +9669,15 @@ The address data of a place
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>addressLineOne</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -8334,6 +9755,15 @@ Describes the attribution requirements associated with the place.
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>text</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
@@ -8396,6 +9826,15 @@ Contact information for a Place
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
@@ -8423,11 +9862,11 @@ Email address for this place
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>bookingsUrl</strong></td>
+<td colspan="2" valign="top"><strong>bookingUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-Bookings url for this place
+Booking url for this place
 
 </td>
 </tr>
@@ -9092,6 +10531,15 @@ A layer on a Place
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -9258,6 +10706,15 @@ A result from a place search
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -9651,6 +11108,15 @@ Profile
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -10138,6 +11604,15 @@ One segment of a Route
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -10487,6 +11962,32 @@ The available fields after updating a connected app
 <td>
 
 The updated connected app
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### UpdateIconSilhouettePayload
+
+The response after updating an icon
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>icon</strong></td>
+<td valign="top"><a href="#iconsilhouette">IconSilhouette</a></td>
+<td>
+
+The updated icon
 
 </td>
 </tr>
@@ -11272,6 +12773,128 @@ Encrypted JSON
 </tbody>
 </table>
 
+### CreateIconCompositionInput
+
+Create an IconComposition
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+A name for this IconComposition, should be unique across the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>resourceId</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+ID to the Icon used by this IconComposition
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>iconFill</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Optional fill color for the icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>shieldKey</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Indicates which shield to use
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>shieldFill</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Optional fill color for the shield
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>shieldStroke</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Optional stroke color for the shield
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CreateIconSilhouetteInput
+
+Fields for a new IconSilhouette
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The name of the icon, key will be generated from this value and so should be unique across the profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>paths</strong></td>
+<td valign="top">[<a href="#string">String</a>!]!</td>
+<td>
+
+SVG path data for this icon, eg: "M 100 .."
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>viewBox</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Optional SVG viewBox for this icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
+<td>
+
+Additional data defined on the icon
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### CreateItineraryCollectionInput
 
 Creates an itinerary item collection type
@@ -11686,6 +13309,15 @@ The list of MediaContainers to add to the new Itinerary
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong>icons</strong></td>
+<td valign="top">[<a href="#createiconcompositioninput">CreateIconCompositionInput</a>!]</td>
+<td>
+
+The list of IconCompositions to add to the new Itinerary
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -11798,6 +13430,15 @@ The place for this new itinerary-location
 <td>
 
 Whether this is an optional location on the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>icon</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+Set the optional icon, passed ID must exist in the Itinerary.icons
 
 </td>
 </tr>
@@ -13048,6 +14689,137 @@ Encrypted JSON
 </tbody>
 </table>
 
+### UpdateIconCompositionInput
+
+Update an IconComposition
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+ID of the IconComposition to update
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Change the name
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>resourceId</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Change the Icon used by this IconComposition
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>iconFill</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Change the fill color for the icon, set to null to remove the fill
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>shieldKey</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Change which shield to use for the icon, set to null to clear the shieldFill and shieldStroke as well
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>shieldFill</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Change the fill color for the shield, set to null to remove the fill
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>shieldStroke</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Change the stroke color for the shield, set to null to remove the stroke
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### UpdateIconSilhouetteInput
+
+Fields for updating an IconSilhouette
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>paths</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td>
+
+SVG path data for this icon, eg: "M 100 .."
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>viewBox</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Optional SVG viewBox for this icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
+<td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
+<td>
+
+Insert or update attributes to the icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
+<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
+<td>
+
+Delete attributes to the icon
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### UpdateItineraryCollectionInput
 
 The intinerary collection fields to update
@@ -13463,6 +15235,33 @@ Delete one or move MediaContainers
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>createIcons</strong></td>
+<td valign="top">[<a href="#createiconcompositioninput">CreateIconCompositionInput</a>!]</td>
+<td>
+
+Add new IconCompositions to the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updateIcons</strong></td>
+<td valign="top">[<a href="#updateiconcompositioninput">UpdateIconCompositionInput</a>!]</td>
+<td>
+
+Update IconCompositions in the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteIcons</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Delete one or move IconCompositions
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>autoRoute</strong></td>
 <td valign="top"><a href="#itineraryautorouteinput">ItineraryAutoRouteInput</a></td>
 <td>
@@ -13628,6 +15427,15 @@ The place for this itinerary-location
 <td>
 
 Whether the location specified is optional on the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>icon</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+Set or remove the optional icon, passed ID must exist in the Itinerary.icons
 
 </td>
 </tr>
@@ -14487,6 +16295,15 @@ A collection item contains data about a single entity and is assigned within a c
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -14859,6 +16676,312 @@ The locale of the attribute to select
 </tbody>
 </table>
 
+### IconResource
+
+An icon for use in the UI or Map
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The Globally Unique ID of the object.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>profile</strong></td>
+<td valign="top"><a href="#profile">Profile</a>!</td>
+<td>
+
+The profile associated with this icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>created</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the icon was created
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modified</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the icon was last modified
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The supplied name for this icon
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>key</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The key of the icon, unique across the profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attr</strong></td>
+<td valign="top"><a href="#attribute">Attribute</a></td>
+<td>
+
+Arbitrary JSON value stored on this resource, keyed by an id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrValue</strong></td>
+<td valign="top"><a href="#json">JSON</a></td>
+<td>
+
+Shortcut for the attr.value, returns null if the attribute doesn't exist
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
+<td>
+
+Query multiple attributes by id and optionally locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">attrs</td>
+<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
+<td>
+
+The attributes to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>allAttrs</strong></td>
+<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td>
+
+Return all attributes on the resource
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrsById</strong></td>
+<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td>
+
+Query multiple attributes with the same id and optionally locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### ItineraryItem
 
 An item in an itinerary as part of the tree
@@ -14874,11 +16997,56 @@ An item in an itinerary as part of the tree
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
 Unique identifier for the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>siblingPositionNumber</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td>
+
+A number corresponding to the item's position compared to it's siblings.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+Only count items of the given type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOptional</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count locations that are optional. Non-locations will always be counted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOmitList</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count items that have the omit-list attrubute set to true
 
 </td>
 </tr>
@@ -15017,6 +17185,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>after</strong></td>
 <td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
 <td>
@@ -15061,6 +17238,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>parent</strong></td>
 <td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
 <td>
@@ -15101,6 +17287,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -15167,6 +17362,15 @@ Only looks at the place field on ItineraryLocations
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>descendants</strong></td>
 <td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
 <td>
@@ -15225,6 +17429,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -15305,6 +17518,15 @@ eg: "ItineraryCollection"
 Optionally look for items that contain any of the given places
 Only looks at the place field on ItineraryLocations
 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
 
 </td>
 </tr>
@@ -15478,6 +17700,15 @@ Representing media such as images/photos as well as other types such as video or
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
@@ -15711,6 +17942,15 @@ An object with a Globally Unique ID
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>_raw_</strong></td>
+<td valign="top"><a href="#json">JSON</a>!</td>
+<td>
+
+[DEBUG ONLY] The internal data as raw JSON
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>

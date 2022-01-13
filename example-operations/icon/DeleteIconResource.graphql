@@ -1,8 +1,8 @@
 # Removes an icon.
 
-mutation DeleteIcon($id: ID!) {
+mutation DeleteIconResource($id: ID!) {
   # Use the deleteIcon operation to remove an icon
-  deleteIcon(
+  deleteIconResource(
     # Supply your ID of the icon to remove (no undo)
     id: $id
   ) {

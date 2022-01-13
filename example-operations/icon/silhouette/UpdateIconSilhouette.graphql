@@ -1,8 +1,8 @@
 # Updates an icon that exists.
 
-mutation UpdateIcon($id: ID!, $icon: UpdateIconInput!) {
+mutation UpdateIconSilhouette($id: ID!, $icon: UpdateIconSilhouetteInput!) {
   # Update the icon leveraging the updateIcon() operation
-  updateIcon(id: $id, icon: $icon) {
+  updateIconSilhouette(id: $id, icon: $icon) {
     # Read back the modified icon
     icon {
       # Identifiers

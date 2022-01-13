@@ -2,9 +2,12 @@
 # primarily of a name, paths and viewbox, but also supports attributes for
 # storing additional icon data.
 
-mutation CreateIcon($profileId: ID!, $icon: CreateIconInput!) {
+mutation CreateIconSilhouette(
+  $profileId: ID!
+  $icon: CreateIconSilhouetteInput!
+) {
   # Use the createIcon() operation to create an icon
-  createIcon(profileId: $profileId, icon: $icon) {
+  createIconSilhouette(profileId: $profileId, icon: $icon) {
     # Read back the created icon
     icon {
       # Access the Identifier, required for further query/mutations

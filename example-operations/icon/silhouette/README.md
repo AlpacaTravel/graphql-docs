@@ -1,11 +1,4 @@
-# Icon
-
-- **[Delete Icon Resource](/example-operations/icon/DeleteIconResource.graphql)**
-  Removes an icon
-- **[List Icon Resources](/example-operations/icon/ListIconResources.graphql)**
-  Lists icons that have been created for a supplied profile
-
-## Icon Silhouette
+# Icon Silhouette
 
 - **[Create Icon Silhouette](/example-operations/icon/silhouette/CreateIconSilhouette.graphql)**
   Creates an icon based on the supplied SVG path data
@@ -18,4 +11,4 @@
 - **[Update Icon Silhouette Paths](/example-operations/icon/silhouette/UpdateIconSilhouettePaths.graphql)**
   Updates the paths associated to an icon
 
-[View other operation examples](/example-operations)
+[View other icon operation examples](/example-operations/icon)

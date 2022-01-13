@@ -1,6 +1,6 @@
 # Adding Profile Icons
 
-Icons are used to store the silhouette obtained from SVG path data. These icons
+Icons can be created from silhouettes obtain from SVG path data. These icons
 that are added to the profile will later be referenced when using icons for
 various content, such as with itineraries.
 
@@ -13,7 +13,7 @@ use this icon to create icons for your itineraries.
 - You'll need to know your profile ID
 - You'll need to work on obtaining your and SVG view box and path data
 
-## Understanding SVG view box and path data
+## Understanding SVG view box and silhouette path data
 
 When creating an icon, you need to provide two important pieces of information;
 the viewBox, and the path data. The icon will be described using this data.
@@ -56,9 +56,9 @@ should be unique to the other icons.
 # primarily of a name, paths and viewbox, but also supports attributes for
 # storing additional icon data.
 
-mutation CreateIcon {
+mutation CreateIconSilhouette {
   # Use the createIcon() operation to create an icon
-  createIcon(
+  createIconSilhouette(
     # Your profile ID
     profileId: "profile/ABC123"
     # The icon input
@@ -79,15 +79,15 @@ mutation CreateIcon {
 For any icon that is created and associated with a profile, you'll be able to
 list those icons to see what icons are available for that user.
 
-You can leverage the `icons()` field operation to list icons for a specific
+You can leverage the `iconResources()` field operation to list icons for a specific
 profile ID.
 
 ```graphql
 # Lists icons that have been created for a supplied profile.
 
-query ListIcons {
+query ListIconSilhouettes {
   # Use the icons() operation in order to read back icons for the profile
-  icons(
+  iconResources(
     # You will need to have your profile ID to query
     profileId: "profile/ABC123"
     # Pagination controls for relay "cursor connections"
@@ -107,8 +107,10 @@ query ListIcons {
         key
 
         # SVG Path Information for icon path silhouette
-        viewBox
-        paths
+        ... on IconSilhouette {
+          viewBox
+          paths
+        }
       }
       # This is the cursor of this node, you can use this for passing to "after"
       # when requesting results after this record
@@ -127,15 +129,15 @@ query ListIcons {
 ```
 
 If you know what the icon ID is, you will be able to directly load the icon by
-and ID. You can either use `icon()` or `node()` query operations.
+and ID. You can either use `iconResource()` or `node()` query operations.
 
 ```graphql
 # Retrieves an icon by a specific ID. You can use the icon() or node() to
 # achieve this.
 
-query GetIcon {
+query GetIconSilhouette {
   # Use the icon() operation to retrieve by an ID
-  icon(id: "icon/ICON123") {
+  iconResource(id: "icon/ICON123") {
     # Identifiers
     id
     __typename
@@ -143,8 +145,11 @@ query GetIcon {
     # Obtain what you want from the icon
     name
     key
-    viewBox
-    paths
+
+    ... on IconSilhouette {
+      viewBox
+      paths
+    }
   }
 }
 ```
@@ -152,22 +157,21 @@ query GetIcon {
 ## Update Icons
 
 You can update icons once they have been created with the ID that is supplied
-for each icon associated with a profile.
+for each icon associated with a profile. To update an icon silhouette you can
+leverage the `updateIconSilhouette()` field operation.
 
 ```graphql
 # Updates the paths associated to an icon.
 
-mutation UpdateIcon {
+mutation UpdateIconSilhouette {
   # Update the icon leveraging the updateIcon() operation
-  updateIcon(
+  updateIconSilhouette(
     id: "icon/ICON123"
     icon: {
-      # Update the icon name
-      name: "New name"
       # Provide the corresponding view box
       viewBox: "0 0 1024 1024"
       # Provide the icon silhouette path data
-      paths: $paths
+      paths: ["M 100 .."]
     }
   ) {
     # Read back the modified icon
@@ -187,14 +191,14 @@ mutation UpdateIcon {
 ## Removing Icons
 
 You can easily remove icons at any stage with the ID. You can leverage the
-`deleteIcon()` field operation.
+`deleteIconResource()` field operation.
 
 ```graphql
 # Removes an icon.
 
 mutation DeleteIcon {
   # Use the deleteIcon operation to remove an icon
-  deleteIcon(
+  deleteIconResource(
     # Supply your ID of the icon to remove (no undo)
     id: "icon/ICON123"
   ) {

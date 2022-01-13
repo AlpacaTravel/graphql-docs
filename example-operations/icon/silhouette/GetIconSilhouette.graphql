@@ -1,9 +1,9 @@
 # Retrieves an icon by a specific ID. You can use the icon() or node() to
 # achieve this.
 
-query GetIcon($id: ID!) {
+query GetIconSilhouette($id: ID!) {
   # Use the icon() operation to retrieve by an ID
-  icon(id: $id) {
+  iconResource(id: $id) {
     # Identifiers
     id
     __typename
@@ -11,7 +11,10 @@ query GetIcon($id: ID!) {
     # Obtain what you want from the icon
     name
     key
-    viewBox
-    paths
+
+    ... on IconSilhouette {
+      viewBox
+      paths
+    }
   }
 }

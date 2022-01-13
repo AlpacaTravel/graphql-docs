@@ -45,17 +45,22 @@ GraphQL Articles also located in this repository first.
 
 ### Icon
 
-- **[Create Icon](/example-operations/icon/CreateIcon.graphql)**
-  Creates an icon based on the supplied SVG path data
-- **[Delete Icon](/example-operations/icon/DeleteIcon.graphql)**
+- **[Delete Icon Resource](/example-operations/icon/DeleteIconResource.graphql)**
   Removes an icon
-- **[Get Icon](/example-operations/icon/GetIcon.graphql)**
-  Retrieves an icon by a specific ID
-- **[List Icons](/example-operations/icon/ListIcons.graphql)**
+- **[List Icon Resources](/example-operations/icon/ListIconResources.graphql)**
   Lists icons that have been created for a supplied profile
-- **[Update Icon](/example-operations/icon/UpdateIcon.graphql)**
+
+#### Icon Silhouette
+
+- **[Create Icon Silhouette](/example-operations/icon/silhouette/CreateIconSilhouette.graphql)**
+  Creates an icon based on the supplied SVG path data
+- **[Get Icon Silhouette](/example-operations/icon/silhouette/GetIconSilhouette.graphql)**
+  Retrieves an icon by a specific ID
+- **[List Icon Silhouettes](/example-operations/icon/silhouette/ListIconSilhouettes.graphql)**
+  
+- **[Update Icon Silhouette](/example-operations/icon/silhouette/UpdateIconSilhouette.graphql)**
   Updates an icon that exists
-- **[Update Icon Paths](/example-operations/icon/UpdateIconPaths.graphql)**
+- **[Update Icon Silhouette Paths](/example-operations/icon/silhouette/UpdateIconSilhouettePaths.graphql)**
   Updates the paths associated to an icon
 
 ### Itinerary
