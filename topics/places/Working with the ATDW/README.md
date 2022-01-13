@@ -64,7 +64,7 @@ query QueryPlaceATDWWinery {
       facebookUrl
       twitterUrl
       instagramUrl
-      bookingsUrl
+      bookingUrl
     }
     # Required attribution/tracking for the place for ATDW
     attribution {
