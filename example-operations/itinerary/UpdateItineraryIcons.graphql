@@ -39,8 +39,11 @@ mutation UpdateItineraryIcons(
               id
               __typename
 
-              viewBox
-              paths
+              # Read back in the icon silhouette
+              ... on IconSilhouette {
+                viewBox
+                paths
+              }
             }
 
             # Localised use of the icon
