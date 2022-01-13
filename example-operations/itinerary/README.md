@@ -14,6 +14,8 @@
   Enable "auto-route" behaviour to an existing itinerary
 - **[Update Itinerary Direction Mode](/example-operations/itinerary/UpdateItineraryDirectionMode.graphql)**
   Updates an itinerary directions to switch the mode of transportation from one mode (such as car) to an alterative mode, such as foot
+- **[Update Itinerary Icons](/example-operations/itinerary/UpdateItineraryIcons.graphql)**
+  Updates the icons associated with an Itinerary
 - **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
   Modify an existing Itinerary by changing the title
 
@@ -24,6 +26,8 @@
 
 ## Itinerary Location
 
+- **[Associate Itinerary Location Icon](/example-operations/itinerary/location/AssociateItineraryLocationIcon.graphql)**
+  Associates an itinerary icon composition with an itinerary location
 - **[Create Itinerary Location](/example-operations/itinerary/location/CreateItineraryLocation.graphql)**
   Add a location to our itinerary, associating the place to Mavis The Grocer using the Facebook Page identifier
 - **[Create Itinerary Location With Additional Positions](/example-operations/itinerary/location/CreateItineraryLocationWithAdditionalPositions.graphql)**
