@@ -32,7 +32,7 @@ function validator() {
         !/^#/.test(url)
       ) {
         // Clean the URL
-        const cleanUrl = url.replace(/%20/g, " ");
+        const cleanUrl = url.replace(/%20/g, " ").replace(/#.+/, "");
         // Create a resolved path
         const resolvedLinkPath = (() => {
           if (/\//.test(cleanUrl)) {
