@@ -15,6 +15,57 @@ For each attribute, it is also possible to provide a locale, in order to
 localise the value. Your queries can be used in order to determine translations
 to other localisations based on the needs of your users.
 
+## Custom Attributes
+
+Where attributes are offered (such as within itineraries), it is possible to
+store some data that can assist you integrate the content within your 
+application.
+
+When creating an attribute containing your own custom data, you must use the
+prefix of `custom://` before your ID. You should identify your attribute using
+kebab case naming, such as `custom://application-record-id`. This provides your
+application a namespace for your own additional custom data to be stored against
+resources in the platform.
+
+```graphql
+# Update an itinerary, and store some custom attribute data
+
+mutation UpdateItineraryWithCustomAttributeData {
+  # Use the updateItinerary() mutation as normal
+  updateItinerary(
+    # Supply the itinerary ID
+    id: "itinerary/ABC123"
+    # Update the data for the itinerary
+    itinerary: {
+      # Leverage attributes to store extended data available for
+      # itineraries
+      upsertAttrs: [
+        # Custom data that is being stored within the itinerary
+        {
+          id: "custom://my-custom-data"
+          value: "Example Custom Data JSON"
+        }
+      ]
+    }
+  ) {
+    itinerary {
+      id
+      __typename
+      
+      # Read back the custom data from the attribute
+      myCustomData: attrValue(id: "custom://my-custom-data")
+    }
+  }
+}
+```
+*Note*: We recommend using the id `custom://external-ref` and 
+`custom://external-source` when assocating resources to your platform. Alpaca
+can provide some query integration with data in these fields.
+
+*Important*: Do not store sensitive or personal information within these
+attributes. You should store this information within your platform as 
+custom attributes are not approprtiate for storing this type of data.
+
 ## Lifecycle of attributes
 
 ### Creating Attributes

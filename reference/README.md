@@ -2242,15 +2242,6 @@ Additional data defined on a resource
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -2513,15 +2504,6 @@ A collection type is used to group together a unordered set of items
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -3194,15 +3176,6 @@ A CollectionItem used to represents a single location association to a place.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -3634,15 +3607,6 @@ Connected apps stored in the profile
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -4469,15 +4433,6 @@ An icon with styles for use in an Itinerary
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -4834,15 +4789,6 @@ SVG path based IconResource
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -5158,15 +5104,6 @@ Isochrone for the given position with duration and vehicle
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>duration</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td>
@@ -5246,15 +5183,6 @@ An itinerary type is used to structure a series of items representing a travel i
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -5861,15 +5789,6 @@ An itinerary item representing a collection of other itinerary items
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -6618,15 +6537,6 @@ An itinerary item representing directions from an origin location to the parent 
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -7838,15 +7748,6 @@ An itinerary item representing a location with an associated place in the itiner
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -8677,15 +8578,6 @@ A container for a MediaResource
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -8720,15 +8612,6 @@ A MediaResource representing an image
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
@@ -9062,15 +8945,6 @@ One exif datum on a media-image
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -9105,15 +8979,6 @@ An source for a media image
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#string">String</a></td>
@@ -9273,15 +9138,6 @@ A defined location in the world
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -9669,15 +9525,6 @@ The address data of a place
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>addressLineOne</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -9755,15 +9602,6 @@ Describes the attribution requirements associated with the place.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>text</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
@@ -9825,15 +9663,6 @@ Contact information for a Place
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>websiteUrl</strong></td>
 <td valign="top"><a href="#string">String</a></td>
@@ -10531,15 +10360,6 @@ A layer on a Place
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -10706,15 +10526,6 @@ A result from a place search
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -11108,15 +10919,6 @@ Profile
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -11603,15 +11405,6 @@ One segment of a Route
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -16295,15 +16088,6 @@ A collection item contains data about a single entity and is assigned within a c
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -16691,15 +16475,6 @@ An icon for use in the UI or Map
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
@@ -16996,15 +16771,6 @@ An item in an itinerary as part of the tree
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
@@ -17701,15 +17467,6 @@ Representing media such as images/photos as well as other types such as video or
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
 <td>
@@ -17942,15 +17699,6 @@ An object with a Globally Unique ID
 </tr>
 </thead>
 <tbody>
-<tr>
-<td colspan="2" valign="top"><strong>_raw_</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-[DEBUG ONLY] The internal data as raw JSON
-
-</td>
-</tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
