@@ -1,0 +1,41 @@
+# Associates an itinerary icon composition with an itinerary location. This can
+# be done during creation of the itinerary location, or via an update on the
+# itinerary location. This example shows it being used in the
+# updateItineraryLocation operation.
+#
+# Note: To associate an icon, you must first create an icon for the profile,
+# then create an itinerary icon composition.
+
+mutation AssociateItineraryLocationIcon($id: ID!, $icon: ID!) {
+  # Leverage the updateItinerary() operation to associate
+  updateItineraryLocation(
+    id: $id
+    location: {
+      # This is the itinerary icon ID, and you should make sure you have
+      # obtained this from first adding icons to the itinerary.
+      icon: $icon
+    }
+  ) {
+    # Read back the affected location
+    location {
+      id
+      __typename
+
+      # Read the itinerary icon
+      icon {
+        # Identifiers for the itinerary icon
+        id
+        __typename
+
+        # Obtain the icon resource
+        resource {
+          id
+          __typename
+        }
+
+        # ...and any other icon composition elements
+        iconFill
+      }
+    }
+  }
+}

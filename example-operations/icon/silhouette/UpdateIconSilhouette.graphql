@@ -1,0 +1,19 @@
+# Updates an icon that exists.
+
+mutation UpdateIconSilhouette($id: ID!, $icon: UpdateIconSilhouetteInput!) {
+  # Update the icon leveraging the updateIcon() operation
+  updateIconSilhouette(id: $id, icon: $icon) {
+    # Read back the modified icon
+    icon {
+      # Identifiers
+      id
+      __typename
+
+      # Read back the data from your update...
+      name
+      key
+      viewBox
+      paths
+    }
+  }
+}

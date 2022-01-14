@@ -232,6 +232,13 @@ Various media can be accessed on the Alpaca platform.
   photo on the unsplash platform
 - **[Querying media](topics/media/Querying%20media/README.md)** Querying media
 
+### Icons
+
+- **[Managing profile icons](topics/icons/Managing%20profile%20icons/README.md)**
+  Managing profile icon sets
+- **[Associating itinerary icons](topics/icons/Associating%20itinerary%20icons/README.md)**
+  Associating icons for use in itineraries
+
 ### GraphQL
 
 Topics across our API can be explored from the following list;

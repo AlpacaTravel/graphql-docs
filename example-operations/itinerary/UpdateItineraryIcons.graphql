@@ -1,0 +1,56 @@
+# Updates the icons associated with an Itinerary. Icons for an itinerary are
+# composed of the icons associated to a profile, as well as customisations.
+
+mutation UpdateItineraryIcons(
+  $id: ID!
+  $createIcons: [CreateIconCompositionInput!]
+  $updateIcons: [UpdateIconCompositionInput!]
+  $deleteIcons: [ID!]
+) {
+  # Leverage the updateItinerary() operation to update the itinerary icons
+  updateItinerary(
+    id: $id
+    itinerary: {
+      # Create new itinerary icon compositions
+      # You will need to have created the icons for the profile first
+      createIcons: $createIcons
+      # Update existing icon compositions
+      updateIcons: $updateIcons
+      # Delete any itinerary icon compositions
+      deleteIcons: $deleteIcons
+    }
+  ) {
+    # Read back the itinerary affected fields
+    itinerary {
+      # Identifiers
+      id
+      __typename
+
+      # Read back icons associated to this itinerary
+      icons(first: 100) {
+        edges {
+          node {
+            # Identifier for the compositions
+            id
+            __typename
+
+            # The icon resource (associated to the profile)
+            resource {
+              id
+              __typename
+
+              # Read back in the icon silhouette
+              ... on IconSilhouette {
+                viewBox
+                paths
+              }
+            }
+
+            # Localised use of the icon
+            iconFill
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+# Obtain the icon set that is used in the itinerary.
+
+query GetItineraryIcons($id: ID!, $first: Int!, $after: String) {
+  # Use the itinerary() field operations to select the itinerary
+  itinerary(id: $id) {
+    # Identifiers for the itinerary
+    id
+    __typename
+
+    # Query the icons
+    # Pagination controls for relay "cursor connections"
+    # See: https://relay.dev/graphql/connections.htm
+    icons(first: $first, after: $after) {
+      edges {
+        node {
+          # Identifiers
+          id
+          __typename
+
+          # Meta naming
+          name
+
+          # Profile icon
+          resource {
+            # Profile icon identifiers
+            id
+            __typename
+
+            # Data for icon
+            ... on IconSilhouette {
+              viewBox
+              paths
+            }
+          }
+
+          # Optional customisations
+          iconFill
+        }
+      }
+
+      # Total icons in the itinerary set
+      totalCount
+      pageInfo {
+        hasPreviousPage
+        endCursor
+      }
+    }
+  }
+}
