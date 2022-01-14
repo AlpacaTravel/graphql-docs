@@ -165,7 +165,7 @@ multi-segment scheduled itineraries (and what is in-between).
   Determine if a place you are viewing is already within an itinerary
 - **[Adding Locations](topics/itinerary/Adding%20Locations/README.md)**
   Add locations to your itinerary
-- **[Querying an Itinerary](topics/itinerary/Querying%20an%20Itinerary/README.md)**
+- **[Showing/Querying an Itinerary](topics/itinerary/Querying%20an%20Itinerary/README.md)**
   Present the itinerary back to the user
 - **[Automatic Routing](topics/itinerary/Automatic%20Routing/README.md)**
   Leverage the automatic routing feature of itineraries, to automatically
