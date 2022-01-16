@@ -30,7 +30,7 @@ query ItineraryLocationSiblingPositionNumber {
       position: siblingPositionNumber(
         # Reduce the sibling types to just Itinerary Locations
         type: ItineraryLocation
-        # Optionally, control the omits with further properties
+        # Control the omits with further properties
         skipOptional: true
         skipOmitList: true
       )
@@ -68,6 +68,7 @@ query ItineraryEdgePositionNumber {
         # Determine a position number, relative to the current edge
         position: edgePositionNumber(
           type: ItineraryLocation
+          # Control the omits with further properties
           skipOptional: true
           skipOmitList: true
         )
@@ -86,6 +87,7 @@ query ItineraryEdgePositionNumber {
         # Determine the position number, relative to the current edge
         position: edgePositionNumber(
           type: ItineraryLocation
+          # Control the omits with further properties
           skipOptional: true
           skipOmitList: true
         )
