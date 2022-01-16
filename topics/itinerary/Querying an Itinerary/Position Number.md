@@ -10,6 +10,10 @@ also provides some fields to assist common use cases.
 When loading information about a specific itinerary location, you may wish to
 identify a numbering that could be displayed as relative to the other siblings.
 
+To determine a position number for the node, you can use the
+`siblingPositionNumber()` and determine any constraints, such as the type or any
+skip behaviour for any of the siblings.
+
 ```graphql
 # Identify a number for a specific itinerary location without loading the list
 # of siblings.
@@ -40,6 +44,10 @@ query ItineraryLocationSiblingPositionNumber {
 Additionally, if you are presenting a list of itinerary locations via a
 connection response of `children()` and `descendants()`, you can use the edge
 numbering to assist determine a number.
+
+To determine a position number for the edge, you can use the
+`edgePositionNumber()` and determine any constraints, such as the type or any
+skip behaviour.
 
 ```graphql
 # Leverage the connection edge data to create a position number for each of the
