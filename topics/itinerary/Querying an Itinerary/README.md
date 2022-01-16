@@ -353,12 +353,12 @@ immediate.
 
 ## Numbering strategies
 
-Using GraphQL queries, it is possible to query and access numbering for queries. 
+Using GraphQL queries, it is possible to query and access numbering for queries.
 This can be used for presenting basic numeric ordering in your list or for when
 you load a specific itinerary location.
 
-- Using `edge` data provided by `children` or `descendants` queries, you can 
-  access the `edgePositionNumber`. This will provide a numeric value for the 
+- Using `edge` data provided by `children` or `descendants` queries, you can
+  access the `edgePositionNumber`. This will provide a numeric value for the
   returned as a position relative to the other edges returned as a sequence
 - Using `siblingPositionNumber` on `ItineraryLocation` and `ItineraryDirection`,
   you can access the position relative to the other child siblings
@@ -373,3 +373,4 @@ being returned in a list.
 - [Creating an itinerary](/topics/itinerary/Creating%20an%20itinerary/README.md)
 - [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
+- [Position Numbering](/topics/itinerary/Querying%20an%20Itinerary/Position%20Number.md)
