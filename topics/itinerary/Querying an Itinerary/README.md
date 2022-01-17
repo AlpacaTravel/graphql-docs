@@ -58,7 +58,7 @@ that a user may have selected from a website, or a curated list of locations
 that form a thematic shortlist.
 
 <p align="center">
-  <img src="list.png" alt="Query favourites or a curated list without directions">
+  <img src="assets/list.png" alt="Query favourites or a curated list without directions">
 </p>
 
 We can query the `Itinerary` and combine using the `itinerary()` and
@@ -134,7 +134,7 @@ We can differentiate between directions between locations by querying whether
 we would like `Inbound` or `Outbound` directions.
 
 <p align="center">
-  <img src="list-with-directions.png" alt="Understanding direction inbound or outbound">
+  <img src="assets/list-with-directions.png" alt="Understanding direction inbound or outbound">
 </p>
 
 We can leverage the same `itinerary()` query with the `children()` operation
@@ -291,7 +291,7 @@ a number of optional stops, auto-routing behaviour or manually added itinerary
 directions (such as providing alternative modes of transportation etc).
 
 <p align="center">
-  <img src="list-with-directions-and-optional.png" alt="Complex itinerary showing numerous concepts">
+  <img src="assets/list-with-directions-and-optional.png" alt="Complex itinerary showing numerous concepts">
 </p>
 
 A reasonable default is used in order to identify which directions by default
