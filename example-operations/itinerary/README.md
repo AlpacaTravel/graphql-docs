@@ -8,6 +8,8 @@
   Removes an itinerary
 - **[Find Itinerary Location Ids By Place Ids](/example-operations/itinerary/FindItineraryLocationIdsByPlaceIds.graphql)**
   Checks whether a place has been added to an itinerary, for creating a button state on an "Add to Itinerary" button
+- **[Get Itinerary Icons](/example-operations/itinerary/GetItineraryIcons.graphql)**
+  Obtain the icon set that is used in the itinerary
 - **[List Itineraries](/example-operations/itinerary/ListItineraries.graphql)**
   Query the itineraries that are created and associated to a profile
 - **[Update Itinerary Assign Car Auto Route](/example-operations/itinerary/UpdateItineraryAssignCarAutoRoute.graphql)**
