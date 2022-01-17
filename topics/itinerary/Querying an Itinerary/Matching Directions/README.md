@@ -1,6 +1,10 @@
 # Matching Directions
 
-The API provides mechanisms for searching directions to locations.
+The API provides mechanisms for searching directions to locations. Directions
+are managed by strategies such as via
+[automatic routing](/topics/itinerary/Automatic%20Routing/README.md) or by
+[adding directions](/topics/itinerary/Adding%20Directions/README.md)
+yourself between your itinerary locations.
 
 ## Matching Directions to a List of Itinerary Locations
 
@@ -229,3 +233,8 @@ query QueryItineraryLocationDirections {
 
 You can adapt the above query to support loading information specifically
 about the `ItineraryDirection`.
+
+## Additional Resources
+
+- [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
+- [Adding Directions](/topics/itinerary/Adding%20Directions/README.md)

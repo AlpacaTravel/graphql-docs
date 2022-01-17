@@ -4,10 +4,8 @@ Querying the itinerary depends largely on the way you want to present it to the
 users. In order to provide as much flexibility as possible, Alpaca offers a
 number of ways to query your itinerary.
 
-### Prerequisits
-
-- Your itinerary ID
-- Your API Key
+The API provides various query capability in order to represent your itinerary
+in various ways.
 
 ## Querying the total number of locations
 
@@ -129,17 +127,23 @@ of a GraphQL Connection. A GraphQL connection is a consistent scalable approach
 to paginating that has been adopted in the API. You can learn more about using
 a [GraphQL Connection here](/topics/graphql/Pagination%20using%20cursor%20connections/README.md).
 
+## Additional Query Topics
+
 ## Matching Directions
 
 When you query the itinerary, you can also match corresponding directions
-between the Itinerary Locations.
+between the Itinerary Locations, such as showing driving times or routes between
+locations in your itinerary.
 
 See [Matching Directions](/topics/itinerary/Querying%20an%20Itinerary/Matching%20Directions/README.md)
+
+## Position Numbering
+
+Leverage a position numbering strategy when showing your itinerary in a list.
+
+See [Position Numbering](/topics/itinerary/Querying%20an%20Itinerary/Position%20Numbering/README.md)
 
 ## Additional Resources
 
 - [Creating an itinerary](/topics/itinerary/Creating%20an%20itinerary/README.md)
 - [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)
-- [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
-- [Matching Directions](/topics/itinerary/Querying%20an%20Itinerary/Matching%20Directions/README.md)
-- [Position Numbering](/topics/itinerary/Querying%20an%20Itinerary/Position%20Number/README.md)
