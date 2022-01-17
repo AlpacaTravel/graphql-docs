@@ -5,6 +5,21 @@ to represent visiting places in order. While you are able to query GraphQL to
 obtain and represent ordering in your application how you want, the GraphQL API
 also provides some fields to assist common use cases.
 
+Using GraphQL queries, it is possible to query and access numbering for queries.
+This can be used for presenting basic numeric ordering in your list or for when
+you load a specific itinerary location.
+
+- Using `edge` data provided by `children` or `descendants` queries, you can
+  access the `edgePositionNumber`. This will provide a numeric value for the
+  returned as a position relative to the other edges returned as a sequence
+- Using `siblingPositionNumber` on `ItineraryLocation` and `ItineraryDirection`,
+  you can access the position relative to the other child siblings
+
+You can modify the numbering behaviour with the optional `skipOptional` or  
+`skipOmitList` query parameters. These default to `true`, and will provide
+a null number on nodes that have been marked as optional, or excluded from
+being returned in a list.
+
 ## Sibling Numbering
 
 When loading information about a specific itinerary location, you may wish to
