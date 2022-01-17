@@ -28,13 +28,13 @@ mutation CreatePlaceOfInterestLocation {
   # Create the location as normal using the createItineraryLocation()
   createItineraryLocation(
     # Supply the itinerary to create the location within
-    id: "itinerary/ABC123"
+    itineraryId: "itinerary/ABC123"
     # Supply the information to create the location
     location: {
       # Create the content for the place of interest
       title: "My Place of Interest"
       # Add the place
-      place: { lon: 144, lat: -37 }
+      place: { position: { lon: 144, lat: -37 } }
       # Important: Position at the end of the places of interest for a location
       positionAtEnd: {
         # This is the top-level location ID
