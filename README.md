@@ -41,7 +41,13 @@ editor and client applications. We will be continuing to add capabilities and
 perform R&D work in order to offer enhance what your application or website can
 do.
 
-## Getting Started
+## Mapping Services
+
+In addition to accessing information with our API, we also provide hosted
+mapping services for accessing and presenting data on maps. You can read the
+[mapping services documentation](https://github.com/AlpacaTravel/mapping-docs).
+
+## Getting Started with the Alpaca GraphQL API
 
 The Alpaca Travel API is accessed using GraphQL, a powerful and easily
 integrated techology for your website or application. You can read some
