@@ -329,10 +329,12 @@ check your changes by using the following commands:
 
 ```
 npm i
-npm run graphql-codegen
-npm run test:markdown-links
-npm run test:markdown-graphql
+npm test
 ```
+
+Note: This documentation package is validated against GraphQL and we check
+to make sure we don't have dead links. Please check against mistakes using
+`npm test` above.
 
 ## Legal Statement
 
