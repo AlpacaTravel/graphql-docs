@@ -171,16 +171,25 @@ multi-segment scheduled itineraries (and what is in-between).
   Determine if a place you are viewing is already within an itinerary
 - **[Adding Locations](topics/itinerary/Adding%20Locations/README.md)**
   Add locations to your itinerary
-- **[Querying an Itinerary](topics/itinerary/Querying%20an%20Itinerary/README.md)**
+- **[Showing/Querying an Itinerary](topics/itinerary/Querying%20an%20Itinerary/README.md)**
   Present the itinerary back to the user
 - **[Automatic Routing](topics/itinerary/Automatic%20Routing/README.md)**
   Leverage the automatic routing feature of itineraries, to automatically
   provide directions between locations
+- **[Places of interest](topics/itinerary/Places%20of%20interest/README.md)**
+  Creating places of interest associated to locations
 - **[Reordering Locations](topics/itinerary/Reordering%20Locations/README.md)**
   Provide the ability for the user to reorder the itinerary to suit
 - **[Adding Directions](topics/itinerary/Adding%20Directions/README.md)**
   Add more complex directions, including multi-modal or manual directions (such
   as GPS tracks)
+<<<<<<< HEAD
+- **[Adding Photos](topics/itinerary/Adding%20Photos/README.md)**
+  Add photos for itinerary or itinerary locations
+=======
+- **[Segments](topics/itinerary/Segments/README.md)**
+  Group itinerary items into trip segments
+>>>>>>> b6e65ddff6e50111b628c7c88e49485fc032e015
 - **[Mapping](topics/itinerary/Mapping/README.md)**
   Accessing information from the API as a GIS data source for itinerary
   information
@@ -235,6 +244,13 @@ Various media can be accessed on the Alpaca platform.
 - **[Using Unsplash](topics/media/Using%20unsplash/README.md)** Referencing a
   photo on the unsplash platform
 - **[Querying media](topics/media/Querying%20media/README.md)** Querying media
+
+### Icons
+
+- **[Managing profile icons](topics/icons/Managing%20profile%20icons/README.md)**
+  Managing profile icon sets
+- **[Associating itinerary icons](topics/icons/Associating%20itinerary%20icons/README.md)**
+  Associating icons for use in itineraries
 
 ### GraphQL
 
@@ -326,10 +342,12 @@ check your changes by using the following commands:
 
 ```
 npm i
-npm run graphql-codegen
-npm run test:markdown-links
-npm run test:markdown-graphql
+npm test
 ```
+
+Note: This documentation package is validated against GraphQL and we check
+to make sure we don't have dead links. Please check against mistakes using
+`npm test` above.
 
 ## Legal Statement
 

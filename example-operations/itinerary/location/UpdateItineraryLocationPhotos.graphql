@@ -1,0 +1,46 @@
+# Updates an itinerary location with a selection of photos.
+
+mutation UpdateItineraryLocationPhotos(
+  $id: ID!
+  $createMedia: [CreateMediaContainerInput!]
+  $updateMedia: [UpdateMediaContainerInput!]
+  $deleteMedia: [ID!]
+) {
+  # Use the updateItineraryLocation() operation to update the itinerary media
+  updateItineraryLocation(
+    # Specify the itinerary
+    id: $id
+    # Update the itinrary content
+    location: {
+      # Create the itinerary media
+      createMedia: $createMedia
+      # Update the itinerary media
+      updateMedia: $updateMedia
+      # Remoe an itinerary media
+      deleteMedia: $deleteMedia
+    }
+  ) {
+    # Query back the location updated fields
+    location {
+      id
+      __typename
+
+      # Read in the media
+      media(limit: 10) {
+        # Media container id
+        id
+        __typename
+        
+        # Read back the uploaded photo resource
+        resource  {
+          # Identifiers
+          id
+          __typename
+
+          # Content
+          caption
+        }
+      }
+    }
+  }
+}

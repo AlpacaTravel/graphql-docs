@@ -8,12 +8,20 @@
   Removes an itinerary
 - **[Find Itinerary Location Ids By Place Ids](/example-operations/itinerary/FindItineraryLocationIdsByPlaceIds.graphql)**
   Checks whether a place has been added to an itinerary, for creating a button state on an "Add to Itinerary" button
+- **[Get Itinerary Icons](/example-operations/itinerary/GetItineraryIcons.graphql)**
+  Obtain the icon set that is used in the itinerary
 - **[List Itineraries](/example-operations/itinerary/ListItineraries.graphql)**
   Query the itineraries that are created and associated to a profile
 - **[Update Itinerary Assign Car Auto Route](/example-operations/itinerary/UpdateItineraryAssignCarAutoRoute.graphql)**
   Enable "auto-route" behaviour to an existing itinerary
 - **[Update Itinerary Direction Mode](/example-operations/itinerary/UpdateItineraryDirectionMode.graphql)**
   Updates an itinerary directions to switch the mode of transportation from one mode (such as car) to an alterative mode, such as foot
+- **[Update Itinerary Icons](/example-operations/itinerary/UpdateItineraryIcons.graphql)**
+  Updates the icons associated with an Itinerary
+- **[Update Itinerary Photos](/example-operations/itinerary/UpdateItineraryPhotos.graphql)**
+  Updates an itinerary with a selection of photos
+- **[Update Itinerary Segments](/example-operations/itinerary/UpdateItinerarySegments.graphql)**
+  Updates an itinerary to add in segments
 - **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
   Modify an existing Itinerary by changing the title
 
@@ -24,6 +32,8 @@
 
 ## Itinerary Location
 
+- **[Associate Itinerary Location Icon](/example-operations/itinerary/location/AssociateItineraryLocationIcon.graphql)**
+  Associates an itinerary icon composition with an itinerary location
 - **[Create Itinerary Location](/example-operations/itinerary/location/CreateItineraryLocation.graphql)**
   Add a location to our itinerary, associating the place to Mavis The Grocer using the Facebook Page identifier
 - **[Create Itinerary Location With Additional Positions](/example-operations/itinerary/location/CreateItineraryLocationWithAdditionalPositions.graphql)**
@@ -42,5 +52,9 @@
   Reorder/move the itinerary location to the start of the sequence
 - **[Update Itinerary Location As Optional](/example-operations/itinerary/location/UpdateItineraryLocationAsOptional.graphql)**
   Updates an itinerary location and marks the itinerary location as an optional stop
+- **[Update Itinerary Location Photos](/example-operations/itinerary/location/UpdateItineraryLocationPhotos.graphql)**
+  Updates an itinerary location with a selection of photos
+- **[Update Itinerary Location Segments](/example-operations/itinerary/location/UpdateItineraryLocationSegments.graphql)**
+  Assign a series of segments to your itinerary locations
 
 [View other operation examples](/example-operations)
