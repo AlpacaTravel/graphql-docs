@@ -23,11 +23,11 @@ query GetItineraryIcons($id: ID!, $first: Int!, $after: String) {
           # Profile icon
           resource {
             # Profile icon identifiers
-            id
             __typename
 
             # Data for icon
             ... on IconSilhouette {
+              id
               viewBox
               paths
             }

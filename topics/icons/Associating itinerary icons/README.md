@@ -58,11 +58,11 @@ mutation UpdateItineraryIcons {
             # The icon resource (associated to the profile)
             resource {
               # Profile icon identifiers
-              id
               __typename
 
               # Data for icon
               ... on IconSilhouette {
+                id
                 viewBox
                 paths
               }
@@ -113,11 +113,11 @@ query GetItineraryIcons {
           # Profile icon
           resource {
             # Profile icon identifiers
-            id
             __typename
 
             # Data for icon
             ... on IconSilhouette {
+              id
               viewBox
               paths
             }
@@ -179,11 +179,11 @@ mutation AssociateItineraryLocationIcon {
         # Obtain the icon resource
         resource {
           # Profile icon identifiers
-          id
           __typename
 
           # Data for icon
           ... on IconSilhouette {
+            id
             viewBox
             paths
           }

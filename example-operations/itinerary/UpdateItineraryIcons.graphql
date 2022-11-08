@@ -36,11 +36,11 @@ mutation UpdateItineraryIcons(
 
             # The icon resource (associated to the profile)
             resource {
-              id
               __typename
 
               # Read back in the icon silhouette
               ... on IconSilhouette {
+                id
                 viewBox
                 paths
               }

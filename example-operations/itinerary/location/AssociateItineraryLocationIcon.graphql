@@ -29,8 +29,10 @@ mutation AssociateItineraryLocationIcon($id: ID!, $icon: ID!) {
 
         # Obtain the icon resource
         resource {
-          id
           __typename
+          ... on IconResource {
+            id
+          }
         }
 
         # ...and any other icon composition elements
