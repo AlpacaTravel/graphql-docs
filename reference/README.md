@@ -10,17 +10,33 @@
     * [Attribute](#attribute)
     * [AttributeConnection](#attributeconnection)
     * [AttributeEdge](#attributeedge)
+    * [BillingAddress](#billingaddress)
+    * [BillingDetails](#billingdetails)
+    * [BillingPlan](#billingplan)
+    * [BillingPrice](#billingprice)
+    * [BillingPriceConnection](#billingpriceconnection)
+    * [BillingPriceEdge](#billingpriceedge)
+    * [BillingPriceRecurring](#billingpricerecurring)
+    * [BillingProduct](#billingproduct)
+    * [BillingSubscription](#billingsubscription)
+    * [BillingSubscriptionConnection](#billingsubscriptionconnection)
+    * [BillingSubscriptionEdge](#billingsubscriptionedge)
     * [Bounds](#bounds)
+    * [CaptureMarketingInformationPayload](#capturemarketinginformationpayload)
+    * [ChangeItineraryDefaultLocalePayload](#changeitinerarydefaultlocalepayload)
     * [ClaimProfileHandlePayload](#claimprofilehandlepayload)
     * [Collection](#collection)
     * [CollectionConnection](#collectionconnection)
     * [CollectionEdge](#collectionedge)
     * [CollectionItemConnection](#collectionitemconnection)
     * [CollectionItemEdge](#collectionitemedge)
+    * [CollectionItemFailedToLoad](#collectionitemfailedtoload)
     * [CollectionLocation](#collectionlocation)
     * [ConnectedApp](#connectedapp)
     * [ConnectedAppConnection](#connectedappconnection)
     * [ConnectedAppEdge](#connectedappedge)
+    * [CreateBillingCheckoutSessionOutput](#createbillingcheckoutsessionoutput)
+    * [CreateBillingPortalSessionOutput](#createbillingportalsessionoutput)
     * [CreateCollectionLocationPayload](#createcollectionlocationpayload)
     * [CreateCollectionPayload](#createcollectionpayload)
     * [CreateConnectedAppPayload](#createconnectedapppayload)
@@ -29,13 +45,17 @@
     * [CreateItineraryDirectionsPayload](#createitinerarydirectionspayload)
     * [CreateItineraryLocationPayload](#createitinerarylocationpayload)
     * [CreateItineraryPayload](#createitinerarypayload)
+    * [CreateProfilePayload](#createprofilepayload)
+    * [CreateUserAgreementPayload](#createuseragreementpayload)
     * [DeleteCollectionItemPayload](#deletecollectionitempayload)
     * [DeleteCollectionPayload](#deletecollectionpayload)
     * [DeleteConnectedAppPayload](#deleteconnectedapppayload)
     * [DeleteIconResourcePayload](#deleteiconresourcepayload)
     * [DeleteItineraryItemPayload](#deleteitineraryitempayload)
     * [DeleteItineraryPayload](#deleteitinerarypayload)
+    * [DeleteProfilePayload](#deleteprofilepayload)
     * [DenyProfileFollowPayload](#denyprofilefollowpayload)
+    * [DuplicateItineraryPayload](#duplicateitinerarypayload)
     * [Elevation](#elevation)
     * [FinalizeMediaUploadPayload](#finalizemediauploadpayload)
     * [FollowProfilePayload](#followprofilepayload)
@@ -44,25 +64,30 @@
     * [IconCompositionEdge](#iconcompositionedge)
     * [IconResourceConnection](#iconresourceconnection)
     * [IconResourceEdge](#iconresourceedge)
+    * [IconResourceFailedToLoad](#iconresourcefailedtoload)
     * [IconSilhouette](#iconsilhouette)
     * [Isochrone](#isochrone)
     * [Itinerary](#itinerary)
     * [ItineraryAutoRoute](#itineraryautoroute)
     * [ItineraryCollection](#itinerarycollection)
-    * [ItineraryConnection](#itineraryconnection)
     * [ItineraryDirections](#itinerarydirections)
     * [ItineraryDirectionsConnection](#itinerarydirectionsconnection)
     * [ItineraryDirectionsDurations](#itinerarydirectionsdurations)
     * [ItineraryDirectionsEdge](#itinerarydirectionsedge)
-    * [ItineraryEdge](#itineraryedge)
     * [ItineraryItemCascadedChanges](#itineraryitemcascadedchanges)
     * [ItineraryItemConnection](#itineraryitemconnection)
     * [ItineraryItemEdge](#itineraryitemedge)
     * [ItineraryLocation](#itinerarylocation)
+    * [ItinerarySearchConnection](#itinerarysearchconnection)
+    * [ItinerarySearchEdge](#itinerarysearchedge)
+    * [ItinerarySearchNode](#itinerarysearchnode)
     * [MediaContainer](#mediacontainer)
+    * [MediaContainerConnection](#mediacontainerconnection)
+    * [MediaContainerEdge](#mediacontaineredge)
     * [MediaImage](#mediaimage)
     * [MediaImageExif](#mediaimageexif)
     * [MediaImageSource](#mediaimagesource)
+    * [MediaResourceFailedToLoad](#mediaresourcefailedtoload)
     * [MoveItineraryItemPayload](#moveitineraryitempayload)
     * [PageInfo](#pageinfo)
     * [Place](#place)
@@ -76,7 +101,6 @@
     * [PlaceHoursIntervalEdge](#placehoursintervaledge)
     * [PlaceHoursIntervalHoliday](#placehoursintervalholiday)
     * [PlaceLayer](#placelayer)
-    * [PlaceResolutionError](#placeresolutionerror)
     * [PlaceSearchConnection](#placesearchconnection)
     * [PlaceSearchEdge](#placesearchedge)
     * [PlaceSearchNode](#placesearchnode)
@@ -88,6 +112,8 @@
     * [ProfileFollowConnection](#profilefollowconnection)
     * [ProfileFollowEdge](#profilefollowedge)
     * [PublishItineraryPayload](#publishitinerarypayload)
+    * [ResolutionError](#resolutionerror)
+    * [RevertItineraryPayload](#revertitinerarypayload)
     * [Route](#route)
     * [RouteConnection](#routeconnection)
     * [RouteEdge](#routeedge)
@@ -96,6 +122,7 @@
     * [TextSearchResult](#textsearchresult)
     * [TextSearchResultMatch](#textsearchresultmatch)
     * [UnfollowProfilePayload](#unfollowprofilepayload)
+    * [UpdateBillingDetailsOutput](#updatebillingdetailsoutput)
     * [UpdateCollectionLocationPayload](#updatecollectionlocationpayload)
     * [UpdateCollectionPayload](#updatecollectionpayload)
     * [UpdateConnectedAppPayload](#updateconnectedapppayload)
@@ -106,9 +133,14 @@
     * [UpdateItineraryPayload](#updateitinerarypayload)
     * [UpdateMediaResourcePayload](#updatemediaresourcepayload)
     * [UpdateProfilePayload](#updateprofilepayload)
+    * [UserAgreement](#useragreement)
+    * [UserAgreementConnection](#useragreementconnection)
+    * [UserAgreementEdge](#useragreementedge)
   * [Inputs](#inputs)
     * [AttributeIdentifierInput](#attributeidentifierinput)
     * [AttributeInput](#attributeinput)
+    * [BillingAddressInput](#billingaddressinput)
+    * [BillingPriceInput](#billingpriceinput)
     * [BoundsCircleInput](#boundscircleinput)
     * [BoundsInput](#boundsinput)
     * [CollectionItemsSort](#collectionitemssort)
@@ -123,6 +155,8 @@
     * [CreateItineraryInput](#createitineraryinput)
     * [CreateItineraryLocationInput](#createitinerarylocationinput)
     * [CreateMediaContainerInput](#createmediacontainerinput)
+    * [CreateProfileInput](#createprofileinput)
+    * [CreateUserAgreementInput](#createuseragreementinput)
     * [DatetimeOffset](#datetimeoffset)
     * [ElevationInput](#elevationinput)
     * [FinalizeMediaUploadInput](#finalizemediauploadinput)
@@ -136,6 +170,7 @@
     * [ItineraryItemPositionAtStart](#itineraryitempositionatstart)
     * [ItineraryItemPositionBeforeSibling](#itineraryitempositionbeforesibling)
     * [ItineraryItemPositionOnLastCollection](#itineraryitempositiononlastcollection)
+    * [MediaContainerInput](#mediacontainerinput)
     * [MediaContainerPositionAfter](#mediacontainerpositionafter)
     * [MediaContainerPositionAtEnd](#mediacontainerpositionatend)
     * [MediaContainerPositionAtStart](#mediacontainerpositionatstart)
@@ -145,6 +180,7 @@
     * [PositionInput](#positioninput)
     * [RouteInput](#routeinput)
     * [RouteSegmentInput](#routesegmentinput)
+    * [UpdateBillingDetailsInput](#updatebillingdetailsinput)
     * [UpdateCollectionInput](#updatecollectioninput)
     * [UpdateCollectionLocationInput](#updatecollectionlocationinput)
     * [UpdateConnectedAppInput](#updateconnectedappinput)
@@ -159,6 +195,8 @@
     * [UpdateProfileInput](#updateprofileinput)
   * [Enums](#enums)
     * [AngleUnit](#angleunit)
+    * [BillingPriceRecurringInterval](#billingpricerecurringinterval)
+    * [BillingSubscriptionStatus](#billingsubscriptionstatus)
     * [CollectionDiscriminator](#collectiondiscriminator)
     * [CompassPoint](#compasspoint)
     * [ConnectedAppAuthType](#connectedappauthtype)
@@ -497,7 +535,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">profileId</td>
-<td valign="top"><a href="#id">ID</a></td>
+<td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
 Filter by the profile owner of the connected-app
@@ -659,7 +697,7 @@ The unique identifier of the itinerary
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>itineraries</strong></td>
-<td valign="top"><a href="#itineraryconnection">ItineraryConnection</a>!</td>
+<td valign="top"><a href="#itinerarysearchconnection">ItinerarySearchConnection</a>!</td>
 <td>
 
 Query itineraries that belong to a profile
@@ -753,6 +791,24 @@ The positions the route should visit
 <td>
 
 The mode of transport of the route
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainer</strong></td>
+<td valign="top"><a href="#mediacontainer">MediaContainer</a></td>
+<td>
+
+Retrieve a MediaContainer by id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The unique identifier of the MediaContainer
 
 </td>
 </tr>
@@ -1278,6 +1334,123 @@ Filter by profile handle
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong>billingPrices</strong></td>
+<td valign="top"><a href="#billingpriceconnection">BillingPriceConnection</a>!</td>
+<td>
+
+List of available billing prices
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>billingSubscriptions</strong></td>
+<td valign="top"><a href="#billingsubscriptionconnection">BillingSubscriptionConnection</a>!</td>
+<td>
+
+Fetch billing subscriptions associated with a profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profileId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The profile id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>billingDetails</strong></td>
+<td valign="top"><a href="#billingdetails">BillingDetails</a></td>
+<td>
+
+Fetch billing details associated with a profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profileId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The profile id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>userAgreements</strong></td>
+<td valign="top"><a href="#useragreementconnection">UserAgreementConnection</a>!</td>
+<td>
+
+Query for fetching agreements made by this user
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profileId</td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+Filter by the profile associated with the agreement
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -1644,6 +1817,15 @@ Moves the item to the last position of the last itinerary-collection item
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>deleteItineraryItem</strong></td>
 <td valign="top"><a href="#deleteitineraryitempayload">DeleteItineraryItemPayload</a>!</td>
 <td>
@@ -1658,6 +1840,15 @@ Delete an ItineraryItem
 <td>
 
 The itinerary item identifier of the removed item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
 
 </td>
 </tr>
@@ -1693,6 +1884,15 @@ Omit to create an anonymous itinerary
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the new itinerary will be automatically published.
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>updateItinerary</strong></td>
 <td valign="top"><a href="#updateitinerarypayload">UpdateItineraryPayload</a>!</td>
 <td>
@@ -1716,6 +1916,15 @@ The id of the itinerary to update
 <td>
 
 The fields to update on the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
 
 </td>
 </tr>
@@ -1756,6 +1965,69 @@ The id of the itinerary to publish
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>revertItinerary</strong></td>
+<td valign="top"><a href="#publishitinerarypayload">PublishItineraryPayload</a>!</td>
+<td>
+
+Revert the draft version of an itinerary to last published version
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the itinerary to revert
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>duplicateItinerary</strong></td>
+<td valign="top"><a href="#duplicateitinerarypayload">DuplicateItineraryPayload</a>!</td>
+<td>
+
+Duplicate an itinerary, creating copy with a new id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the itinerary to duplicate
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>changeItineraryDefaultLocale</strong></td>
+<td valign="top"><a href="#duplicateitinerarypayload">DuplicateItineraryPayload</a>!</td>
+<td>
+
+Change the itinerary's default-locale as well the locale of attributes with the previous default-locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the itinerary to duplicate
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">defaultLocale</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The new default locale for this itinerary
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>createItineraryCollection</strong></td>
 <td valign="top"><a href="#createitinerarycollectionpayload">CreateItineraryCollectionPayload</a>!</td>
 <td>
@@ -1783,6 +2055,15 @@ The fields for creating the itinerary collection
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>updateItineraryCollection</strong></td>
 <td valign="top"><a href="#updateitinerarycollectionpayload">UpdateItineraryCollectionPayload</a>!</td>
 <td>
@@ -1806,6 +2087,15 @@ The itinerary collection identifier, in the form of item/XYZ
 <td>
 
 The fields to update on the itinerary collection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
 
 </td>
 </tr>
@@ -1846,6 +2136,15 @@ Modify the first segment of the route automatically created by autoRoute when cr
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>updateItineraryLocation</strong></td>
 <td valign="top"><a href="#updateitinerarylocationpayload">UpdateItineraryLocationPayload</a>!</td>
 <td>
@@ -1869,6 +2168,15 @@ The itinerary location identifier, in the form of item/XYZ
 <td>
 
 The fields for updating the itinerary location
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
 
 </td>
 </tr>
@@ -1900,6 +2208,15 @@ The directions input fields
 </td>
 </tr>
 <tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>updateItineraryDirections</strong></td>
 <td valign="top"><a href="#updateitinerarydirectionspayload">UpdateItineraryDirectionsPayload</a>!</td>
 <td>
@@ -1923,6 +2240,15 @@ The itinerary directions identifier, in the form of item/XYZ
 <td>
 
 The fields to update on the itinerary directions item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
 
 </td>
 </tr>
@@ -2152,6 +2478,24 @@ The handle to claim
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>createProfile</strong></td>
+<td valign="top"><a href="#createprofilepayload">CreateProfilePayload</a>!</td>
+<td>
+
+Creates a new profile with the given fields. Can only be called with a bearer token.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profile</td>
+<td valign="top"><a href="#createprofileinput">CreateProfileInput</a>!</td>
+<td>
+
+The fields to set on the new profile
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>updateProfile</strong></td>
 <td valign="top"><a href="#updateprofilepayload">UpdateProfilePayload</a>!</td>
 <td>
@@ -2175,6 +2519,188 @@ The id of the profile to update
 <td>
 
 The fields to update on the profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteProfile</strong></td>
+<td valign="top"><a href="#deleteprofilepayload">DeleteProfilePayload</a>!</td>
+<td>
+
+Delete a profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the itinerary to delete
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>captureMarketingInformation</strong></td>
+<td valign="top"><a href="#capturemarketinginformationpayload">CaptureMarketingInformationPayload</a>!</td>
+<td>
+
+Capture marketing information against the given profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profileId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the profile to associate the information against
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">name</td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">organizationType</td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">intendedUses</td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">leadSource</td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updateBillingDetails</strong></td>
+<td valign="top"><a href="#updatebillingdetailsoutput">UpdateBillingDetailsOutput</a>!</td>
+<td>
+
+Update the billing details associated with a profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profileId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The identifier of the profile the billing details apply to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">billingDetails</td>
+<td valign="top"><a href="#updatebillingdetailsinput">UpdateBillingDetailsInput</a>!</td>
+<td>
+
+The updated billing details
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createBillingCheckoutSession</strong></td>
+<td valign="top"><a href="#createbillingcheckoutsessionoutput">CreateBillingCheckoutSessionOutput</a>!</td>
+<td>
+
+Create a billing checkout session
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profileId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The identifier of the profile the billing details apply to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">successUrl</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+Redirect url on success
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">cancelUrl</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+Redirect url on cancel
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">prices</td>
+<td valign="top">[<a href="#billingpriceinput">BillingPriceInput</a>!]!</td>
+<td>
+
+The prices to checkout with
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createBillingPortalSession</strong></td>
+<td valign="top"><a href="#createbillingportalsessionoutput">CreateBillingPortalSessionOutput</a>!</td>
+<td>
+
+Create a billing portal session
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profileId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The identifier of the profile the billing details apply to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">returnUrl</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+Redirect url to return to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createUserAgreement</strong></td>
+<td valign="top"><a href="#createuseragreementpayload">CreateUserAgreementPayload</a>!</td>
+<td>
+
+The return fields available after creating a user agreement
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">profileId</td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+The identifier of the profile that will be associated with the agreement
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">userAgreement</td>
+<td valign="top"><a href="#createuseragreementinput">CreateUserAgreementInput</a>!</td>
+<td>
+
+The new user agreement
 
 </td>
 </tr>
@@ -2375,6 +2901,638 @@ The item
 </tbody>
 </table>
 
+### BillingAddress
+
+The address field of a BillingDetails object
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>addressLineOne</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>addressLineTwo</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>locality</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>region</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>postalCode</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>countryCode</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BillingDetails
+
+Billing details associated with a profile
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>profile</strong></td>
+<td valign="top"><a href="#profile">Profile</a>!</td>
+<td>
+
+Profile that these billing details apply to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>emailAddress</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The email address
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>givenName</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The given name
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>familyName</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The family name
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>organization</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The optional organization name
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>address</strong></td>
+<td valign="top"><a href="#billingaddress">BillingAddress</a>!</td>
+<td>
+
+The billing address
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BillingPlan
+
+A billing plan
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The identifier for this plan
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>quantity</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The quantity
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>price</strong></td>
+<td valign="top"><a href="#billingprice">BillingPrice</a></td>
+<td>
+
+The price of this plan
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BillingPrice
+
+A price available for a billing plan
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The unique id for this price
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>product</strong></td>
+<td valign="top"><a href="#billingproduct">BillingProduct</a>!</td>
+<td>
+
+The product corres
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>currency</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The currency used for this price
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>amount</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The amount of this price
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>recurring</strong></td>
+<td valign="top"><a href="#billingpricerecurring">BillingPriceRecurring</a>!</td>
+<td>
+
+Recurrence details of the price
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BillingPriceConnection
+
+Connection of BillingPrices
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>edges</strong></td>
+<td valign="top">[<a href="#billingpriceedge">BillingPriceEdge</a>!]!</td>
+<td>
+
+All the edges in this page of the connection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td valign="top">[<a href="#billingprice">BillingPrice</a>!]!</td>
+<td>
+
+Shortcut for edges[].node
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
+<td>
+
+Details regarding the current page of the connnection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The total number of items in the connection (in all pages)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BillingPriceEdge
+
+Edge containing a BillingPrice
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The cursor string pointing to this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>node</strong></td>
+<td valign="top"><a href="#billingprice">BillingPrice</a>!</td>
+<td>
+
+The item
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BillingPriceRecurring
+
+The recurrence details for a BillingPrice
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>interval</strong></td>
+<td valign="top"><a href="#billingpricerecurringinterval">BillingPriceRecurringInterval</a>!</td>
+<td>
+
+The interval type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>count</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The number of interval per recurrence
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BillingProduct
+
+A product corresponding to a price
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The unique id for this product
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The name of this product
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The description for this product
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BillingSubscription
+
+A billing subscription
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The unique id for this subscription
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>profile</strong></td>
+<td valign="top"><a href="#profile">Profile</a>!</td>
+<td>
+
+Profile that this billing subscription belongs to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>status</strong></td>
+<td valign="top"><a href="#billingsubscriptionstatus">BillingSubscriptionStatus</a>!</td>
+<td>
+
+The current status of this subscription
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>created</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The date when the subscription was created
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modified</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The date when the subscription was last modified
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>plans</strong></td>
+<td valign="top">[<a href="#billingplan">BillingPlan</a>!]!</td>
+<td>
+
+The plans attached to this subscription
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BillingSubscriptionConnection
+
+Connection of BillingSubscriptions
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>edges</strong></td>
+<td valign="top">[<a href="#billingsubscriptionedge">BillingSubscriptionEdge</a>!]!</td>
+<td>
+
+All the edges in this page of the connection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td valign="top">[<a href="#billingsubscription">BillingSubscription</a>!]!</td>
+<td>
+
+Shortcut for edges[].node
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
+<td>
+
+Details regarding the current page of the connnection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The total number of items in the connection (in all pages)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BillingSubscriptionEdge
+
+Edge containing a BillingSubscription
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The cursor string pointing to this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>node</strong></td>
+<td valign="top"><a href="#billingsubscription">BillingSubscription</a>!</td>
+<td>
+
+The item
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### Bounds
 
 A bounding box on a map defined by two positions (opposite corners of the box)
@@ -2458,6 +3616,58 @@ The south-west and north-east points of the bounding box in the form: [west, sou
 <td>
 
 The minimum and maximum points of the bounding box in the form: [minimum, maximum]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CaptureMarketingInformationPayload
+
+The result of Mutation.captureMarketingInformation
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>profileId</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+The ID of the profile that the information is associated against
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### ChangeItineraryDefaultLocalePayload
+
+Response to Mutation.changeItineraryDefaultLocale
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a></td>
+<td>
+
+The changed itinerary
 
 </td>
 </tr>
@@ -2659,12 +3869,18 @@ A series of strings applied to label this item
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>media</strong></td>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
 <td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
 <td>
 
 List of MediaContainers containing images or other media
 
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
 </td>
 </tr>
 <tr>
@@ -2673,6 +3889,33 @@ List of MediaContainers containing images or other media
 <td>
 
 The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
 
 </td>
 </tr>
@@ -2759,55 +4002,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
-<td>
-
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -2831,7 +4029,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -2843,7 +4041,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -2858,7 +4065,7 @@ A label used to differentiate types of collections
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>item</strong></td>
-<td valign="top"><a href="#collectionitem">CollectionItem</a></td>
+<td valign="top"><a href="#collectionitemembedded">CollectionItemEmbedded</a></td>
 <td>
 
 Returns an item belonging to this collection by id
@@ -3161,6 +4368,32 @@ The item
 </tbody>
 </table>
 
+### CollectionItemFailedToLoad
+
+Represents an embedded CollectionItem that failed to load
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The Globally Unique ID of the object.
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### CollectionLocation
 
 A CollectionItem used to represents a single location association to a place.
@@ -3330,12 +4563,18 @@ A series of strings applied to label this item
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>media</strong></td>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
 <td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
 <td>
 
 List of MediaContainers containing images or other media
 
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
 </td>
 </tr>
 <tr>
@@ -3344,6 +4583,33 @@ List of MediaContainers containing images or other media
 <td>
 
 The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
 
 </td>
 </tr>
@@ -3457,55 +4723,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
-<td>
-
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -3529,7 +4750,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -3541,7 +4762,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -3662,16 +4892,16 @@ Any specific scope that has been granted to the 3rd party application
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>configuration</strong></td>
+<td colspan="2" valign="top"><strong>privateConfiguration</strong></td>
 <td valign="top"><a href="#json">JSON</a></td>
 <td>
 
-Encrypted JSON
+Private configuration information as encrypted JSON
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>thirdPartyId</strong></td>
+<td colspan="2" valign="top"><strong>publicId</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
 <td>
 
@@ -3764,6 +4994,58 @@ The cursor string pointing to this item
 <td>
 
 The item
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CreateBillingCheckoutSessionOutput
+
+The output after creating a billing checkout session
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>url</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The url for the checkout session
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CreateBillingPortalSessionOutput
+
+The output after creating a billing portal session
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>url</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The url for the portal session
 
 </td>
 </tr>
@@ -4032,6 +5314,58 @@ The newly created itinerary
 </tbody>
 </table>
 
+### CreateProfilePayload
+
+Response payload to Mutation.createProfile
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>profile</strong></td>
+<td valign="top"><a href="#profile">Profile</a></td>
+<td>
+
+The newly created profile
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CreateUserAgreementPayload
+
+The return fields available after creating a user agreement
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>userAgreement</strong></td>
+<td valign="top"><a href="#useragreement">UserAgreement</a></td>
+<td>
+
+The newly created user agreement
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### DeleteCollectionItemPayload
 
 The fields available after deleting a collection
@@ -4206,6 +5540,32 @@ The ID of the deleted itinerary
 </tbody>
 </table>
 
+### DeleteProfilePayload
+
+The result of deleting a profile
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+The ID of the profile itinerary
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### DenyProfileFollowPayload
 
 Result of denying a follow request
@@ -4244,6 +5604,32 @@ The profile being followed
 <td>
 
 The status of the follow request
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### DuplicateItineraryPayload
+
+Response to Mutation.duplicateItinerary
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a></td>
+<td>
+
+The newly duplicated itinerary
 
 </td>
 </tr>
@@ -4437,7 +5823,7 @@ An icon with styles for use in an Itinerary
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
-Unique ID for this IconComposition
+The Globally Unique ID of the object.
 
 </td>
 </tr>
@@ -4447,6 +5833,15 @@ Unique ID for this IconComposition
 <td>
 
 A name for this IconComposition, should be unique across the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>key</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+A key for this IconComposition. Derived from the name
 
 </td>
 </tr>
@@ -4552,7 +5947,7 @@ Set the output locale
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>resource</strong></td>
-<td valign="top"><a href="#iconresource">IconResource</a>!</td>
+<td valign="top"><a href="#iconresourceembedded">IconResourceEmbedded</a>!</td>
 <td>
 
 The Icon used by this IconComposition
@@ -4774,6 +6169,32 @@ The item
 </tbody>
 </table>
 
+### IconResourceFailedToLoad
+
+Represents an embedded IconResource that failed to load
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The Globally Unique ID of the object.
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### IconSilhouette
 
 SVG path based IconResource
@@ -4980,55 +6401,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
-<td>
-
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -5052,7 +6428,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -5064,7 +6440,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -5302,6 +6687,165 @@ Set the output locale
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>published</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when this itinerary was last published. Will be null on draft versions
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastPublished</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the itinerary was last published
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastDraft</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the draft version was last modified
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>defaultLocale</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The default locale of this itinerary's content
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>item</strong></td>
 <td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
 <td>
@@ -5365,12 +6909,18 @@ A series of strings applied to label this item
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>media</strong></td>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
 <td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
 <td>
 
 List of MediaContainers containing images or other media
 
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
 </td>
 </tr>
 <tr>
@@ -5379,6 +6929,33 @@ List of MediaContainers containing images or other media
 <td>
 
 The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
 
 </td>
 </tr>
@@ -5640,28 +7217,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -5685,7 +7244,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -5697,34 +7256,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -5871,12 +7412,18 @@ A series of strings applied to label this item
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>media</strong></td>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
 <td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
 <td>
 
 List of MediaContainers containing images or other media
 
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
 </td>
 </tr>
 <tr>
@@ -5885,6 +7432,33 @@ List of MediaContainers containing images or other media
 <td>
 
 The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
 
 </td>
 </tr>
@@ -6370,28 +7944,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -6415,7 +7971,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -6427,34 +7983,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -6464,59 +8002,6 @@ Returns elements that come after the given cursor
 <td>
 
 Bounds for the itinerary item
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ItineraryConnection
-
-Connection of Itinerarys
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
-<td valign="top">[<a href="#itineraryedge">ItineraryEdge</a>!]!</td>
-<td>
-
-All the edges in this page of the connection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
-<td valign="top">[<a href="#itinerary">Itinerary</a>!]!</td>
-<td>
-
-Shortcut for edges[].node
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
-<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
-<td>
-
-Details regarding the current page of the connnection
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-The total number of items in the connection (in all pages)
 
 </td>
 </tr>
@@ -6619,12 +8104,18 @@ A series of strings applied to label this item
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>media</strong></td>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
 <td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
 <td>
 
 List of MediaContainers containing images or other media
 
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
 </td>
 </tr>
 <tr>
@@ -6633,6 +8124,33 @@ List of MediaContainers containing images or other media
 <td>
 
 The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
 
 </td>
 </tr>
@@ -7118,28 +8636,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -7163,7 +8663,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -7175,34 +8675,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -7212,15 +8694,6 @@ Returns elements that come after the given cursor
 <td>
 
 Bounds for the itinerary-directions and it's descendants
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">excludeDescendants</td>
-<td valign="top"><a href="#boolean">Boolean</a></td>
-<td>
-
-If true, bounds will be calculated without taking the descendants into account
 
 </td>
 </tr>
@@ -7470,41 +8943,6 @@ The item
 <td>
 
 Whether this itinerary-directions is inbound or outbound from the itinerary-location
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ItineraryEdge
-
-Edge containing a Itinerary
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-The cursor string pointing to this item
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
-<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
-<td>
-
-The item
 
 </td>
 </tr>
@@ -7829,12 +9267,18 @@ A series of strings applied to label this item
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>media</strong></td>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
 <td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
 <td>
 
 List of MediaContainers containing images or other media
 
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
 </td>
 </tr>
 <tr>
@@ -7843,6 +9287,33 @@ List of MediaContainers containing images or other media
 <td>
 
 The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
 
 </td>
 </tr>
@@ -8328,28 +9799,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -8373,7 +9826,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -8385,40 +9838,22 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>bounds</strong></td>
-<td valign="top"><a href="#bounds">Bounds</a>!</td>
+<td valign="top"><a href="#bounds">Bounds</a></td>
 <td>
 
 Bounds for the itinerary-location and it's descendants
@@ -8426,11 +9861,11 @@ Bounds for the itinerary-location and it's descendants
 </td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">excludeDescendants</td>
-<td valign="top"><a href="#boolean">Boolean</a></td>
+<td colspan="2" align="right" valign="top">raw</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
 <td>
 
-If true, bounds will be calculated without taking the descendants into account
+If true, bounds will be the raw value on the location rather than a calculated value that takes descendants into account
 
 </td>
 </tr>
@@ -8449,15 +9884,6 @@ The place details of this location
 <td>
 
 The position of the collection-location (derived from place if not overridden)
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>geoJson</strong></td>
-<td valign="top"><a href="#json">JSON</a>!</td>
-<td>
-
-The representation of a location, as a GeoJSON FeatureCollection
 
 </td>
 </tr>
@@ -8563,6 +9989,505 @@ The IconComposition used by the this ItineraryLocation
 </tbody>
 </table>
 
+### ItinerarySearchConnection
+
+Connection of ItinerarySearchs
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>edges</strong></td>
+<td valign="top">[<a href="#itinerarysearchedge">ItinerarySearchEdge</a>!]!</td>
+<td>
+
+All the edges in this page of the connection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td valign="top">[<a href="#itinerarysearchnode">ItinerarySearchNode</a>!]!</td>
+<td>
+
+Shortcut for edges[].node
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
+<td>
+
+Details regarding the current page of the connnection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The total number of items in the connection (in all pages)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### ItinerarySearchEdge
+
+Edge containing a ItinerarySearch
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The cursor string pointing to this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>node</strong></td>
+<td valign="top"><a href="#itinerarysearchnode">ItinerarySearchNode</a>!</td>
+<td>
+
+The item
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### ItinerarySearchNode
+
+A result from an itinerary search
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The full itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The Globally Unique ID of the itinerary.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>profile</strong></td>
+<td valign="top"><a href="#profile">Profile</a></td>
+<td>
+
+Profile that owns this itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The supplied title
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A short text summary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A longer text description
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]!</td>
+<td>
+
+A series of strings applied to label this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>created</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the itinerary was created
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modified</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the itinerary was last modified
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>published</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when this itinerary was last published. Will be null on draft versions
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastPublished</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the itinerary was last published
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastDraft</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the draft version was last modified
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>preferredMedia</strong></td>
+<td valign="top"><a href="#mediacontainer">MediaContainer</a></td>
+<td>
+
+The preferred MediaContainer to use
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>bounds</strong></td>
+<td valign="top"><a href="#bounds">Bounds</a></td>
+<td>
+
+Bounds for the itinerary item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalLocations</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Total number of ItineraryLocations inside this Itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>defaultLocale</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The default locale of this itinerary's content
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>type</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The type of itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>listed</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether this itinerary is publically listed
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>genres</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td>
+
+The genres of this Itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>externalId</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+Identifier from an external source this itinerary is associated with
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>externalSource</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+The source of this itinerary's externalId
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### MediaContainer
 
 A container for a MediaResource
@@ -8588,10 +10513,98 @@ Unique identifier for this container
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>resource</strong></td>
-<td valign="top"><a href="#mediaresource">MediaResource</a>!</td>
+<td valign="top"><a href="#mediaresourceembedded">MediaResourceEmbedded</a>!</td>
 <td>
 
 The MediaResource inside this container
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### MediaContainerConnection
+
+Connection of MediaContainers
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>edges</strong></td>
+<td valign="top">[<a href="#mediacontaineredge">MediaContainerEdge</a>!]!</td>
+<td>
+
+All the edges in this page of the connection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
+<td>
+
+Shortcut for edges[].node
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
+<td>
+
+Details regarding the current page of the connnection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The total number of items in the connection (in all pages)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### MediaContainerEdge
+
+Edge containing a MediaContainer
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The cursor string pointing to this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>node</strong></td>
+<td valign="top"><a href="#mediacontainer">MediaContainer</a>!</td>
+<td>
+
+The item
 
 </td>
 </tr>
@@ -8663,6 +10676,15 @@ Text attribution for the source of the media-resource
 <td>
 
 Copyright details of the media-resource
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>hasContent</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Will be true if the resource has a caption, attribution or copyright
 
 </td>
 </tr>
@@ -8740,55 +10762,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
-<td>
-
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -8812,7 +10789,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -8824,7 +10801,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -8860,7 +10846,7 @@ The specific source id to obtain the URL
 <td valign="top">[<a href="#int">Int</a>!]</td>
 <td>
 
-The dimensions as [width,height] to identify a preffered source for the media
+The dimensions as [width,height] to identify a preferred source for the media
 
 </td>
 </tr>
@@ -8887,7 +10873,7 @@ The specific source id to obtain the URL
 <td valign="top">[<a href="#int">Int</a>!]</td>
 <td>
 
-The dimensions as [width,height] to identify a preffered source for the media
+The dimensions as [width,height] to identify a preferred source for the media
 
 </td>
 </tr>
@@ -9027,6 +11013,32 @@ The height of the media
 </tbody>
 </table>
 
+### MediaResourceFailedToLoad
+
+Represents an embedded MediaResource that failed to load
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The Globally Unique ID of the object.
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### MoveItineraryItemPayload
 
 Moves the itinerary item
@@ -9149,7 +11161,7 @@ The Globally Unique ID of the object.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>resolutionError</strong></td>
-<td valign="top"><a href="#placeresolutionerror">PlaceResolutionError</a></td>
+<td valign="top"><a href="#resolutionerror">ResolutionError</a></td>
 <td>
 
 If non-null, an error occured while resolving this place and only a subset of data will be accessible
@@ -9311,55 +11323,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
-<td>
-
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -9383,7 +11350,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -9395,7 +11362,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -9427,12 +11403,18 @@ Layers associated to this place
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>media</strong></td>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
 <td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
 <td>
 
 List of MediaContainers supplied with the place information, such as images of the places
 
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
 </td>
 </tr>
 <tr>
@@ -9441,6 +11423,33 @@ List of MediaContainers supplied with the place information, such as images of t
 <td>
 
 The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers supplied with the place information, such as images of the places
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
 
 </td>
 </tr>
@@ -9639,7 +11648,7 @@ The required tracking pixel
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>mediaResource</strong></td>
-<td valign="top"><a href="#mediaresource">MediaResource</a></td>
+<td valign="top"><a href="#mediaresourceembedded">MediaResourceEmbedded</a></td>
 <td>
 
 Any media to be used in attribution, such as watermarks
@@ -9910,7 +11919,7 @@ Cannot be used with the "from", "to" or "offset" arguments.
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-Look up hours starting from this day. If omitted or null, the current day will be used.
+Look up hours starting from this day. If omitted or null, the current day (local time) will be used.
 
 Should be an ISO 8601 formatted string.
 Time information will be ignored.
@@ -10380,32 +12389,6 @@ Name for this place layer
 </tbody>
 </table>
 
-### PlaceResolutionError
-
-Error which occured while resolving a Place ID
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong>message</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td>
-
-Human readable error message
-
-</td>
-</tr>
-</tbody>
-</table>
-
 ### PlaceSearchConnection
 
 Connection of PlaceSearchs
@@ -10814,55 +12797,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
-<td>
-
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -10886,7 +12824,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -10898,7 +12836,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -10979,6 +12926,15 @@ A short biography
 <td>
 
 The Website URL
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>avatar</strong></td>
+<td valign="top"><a href="#mediacontainer">MediaContainer</a></td>
+<td>
+
+The avatar
 
 </td>
 </tr>
@@ -11069,6 +13025,222 @@ Filter by follow request status
 <td>
 
 Filter by following profile's handle
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>billingDetails</strong></td>
+<td valign="top"><a href="#billingdetails">BillingDetails</a></td>
+<td>
+
+Fetch billing details associated with this profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>billingSubscriptions</strong></td>
+<td valign="top"><a href="#billingsubscriptionconnection">BillingSubscriptionConnection</a>!</td>
+<td>
+
+Fetch billing subscriptions associated with a profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>connectedApps</strong></td>
+<td valign="top"><a href="#connectedappconnection">ConnectedAppConnection</a>!</td>
+<td>
+
+Fetch connected-apps associated with this profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">deleted</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Return only deleted applications
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">expired</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Return only expired applications
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#connectedapptype">ConnectedAppType</a></td>
+<td>
+
+Filter by the app's type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">authType</td>
+<td valign="top"><a href="#connectedappauthtype">ConnectedAppAuthType</a></td>
+<td>
+
+Filter by the app's authorization type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">serviceKey</td>
+<td valign="top"><a href="#connectedappservicekey">ConnectedAppServiceKey</a></td>
+<td>
+
+Filter by the app's service key
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attr</strong></td>
+<td valign="top"><a href="#attribute">Attribute</a></td>
+<td>
+
+Arbitrary JSON value stored on this resource, keyed by an id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrValue</strong></td>
+<td valign="top"><a href="#json">JSON</a></td>
+<td>
+
+Shortcut for the attr.value, returns null if the attribute doesn't exist
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td>
+
+Query multiple attributes optionally filtering by id and/or locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -11286,6 +13458,58 @@ The published itinerary
 </tbody>
 </table>
 
+### ResolutionError
+
+Error which occurred while resolving an ID
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>message</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+Human readable error message
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### RevertItineraryPayload
+
+Response to Mutation.revertItinerary
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a></td>
+<td>
+
+The reverted itinerary
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### Route
 
 The representation of a route path taken
@@ -11306,6 +13530,15 @@ The representation of a route path taken
 <td>
 
 The segments of this route
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>modes</strong></td>
+<td valign="top">[<a href="#routemode">RouteMode</a>!]!</td>
+<td>
+
+The set of all RouteModes used by all the segments
 
 </td>
 </tr>
@@ -11683,6 +13916,32 @@ The status of the follow request
 </tbody>
 </table>
 
+### UpdateBillingDetailsOutput
+
+The output after updating the billing details
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>billingDetails</strong></td>
+<td valign="top"><a href="#billingdetails">BillingDetails</a>!</td>
+<td>
+
+The updated billing details
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### UpdateCollectionLocationPayload
 
 The fields available after the collection location has been updated
@@ -12006,6 +14265,188 @@ The updated profile
 </tbody>
 </table>
 
+### UserAgreement
+
+An agreement made by a user
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The Globally Unique ID of the object.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>profile</strong></td>
+<td valign="top"><a href="#profile">Profile</a></td>
+<td>
+
+Profile that associated with this agreement
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>date</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The date when the agreement was made
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>type</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The type of agreement
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### UserAgreementConnection
+
+Connection of UserAgreements
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>edges</strong></td>
+<td valign="top">[<a href="#useragreementedge">UserAgreementEdge</a>!]!</td>
+<td>
+
+All the edges in this page of the connection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td valign="top">[<a href="#useragreement">UserAgreement</a>!]!</td>
+<td>
+
+Shortcut for edges[].node
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
+<td>
+
+Details regarding the current page of the connnection
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The total number of items in the connection (in all pages)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### UserAgreementEdge
+
+Edge containing a UserAgreement
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The cursor string pointing to this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>node</strong></td>
+<td valign="top"><a href="#useragreement">UserAgreement</a>!</td>
+<td>
+
+The item
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Inputs
 
 ### AttributeIdentifierInput
@@ -12088,6 +14529,86 @@ Optional attribute metadata, can be any JSON-serialisable type
 <td>
 
 Optional string representing the locale of the attribute value
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BillingAddressInput
+
+Fields for update billing address field
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>addressLineOne</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>addressLineTwo</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>locality</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>region</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>postalCode</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>countryCode</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BillingPriceInput
+
+The billing price to use
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>priceId</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The ID of a BillingPrice
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>quantity</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+
+The quantity, defaults to 1
 
 </td>
 </tr>
@@ -12546,7 +15067,7 @@ The authenticated application method
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>configuration</strong></td>
+<td colspan="2" valign="top"><strong>privateConfiguration</strong></td>
 <td valign="top"><a href="#json">JSON</a></td>
 <td>
 
@@ -12555,7 +15076,7 @@ Encrypted JSON
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>thirdPartyId</strong></td>
+<td colspan="2" valign="top"><strong>publicId</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
 <td>
 
@@ -12590,7 +15111,7 @@ A name for this IconComposition, should be unique across the itinerary
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>resourceId</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
+<td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
 ID to the Icon used by this IconComposition
@@ -13013,6 +15534,15 @@ Creates a itinerary
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>defaultLocale</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The default locale of this itinerary's content
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>title</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
@@ -13209,6 +15739,15 @@ The position of the itinerary-location
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>bounds</strong></td>
+<td valign="top"><a href="#boundsinput">BoundsInput</a></td>
+<td>
+
+The bounds of the itinerary-location
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>place</strong></td>
 <td valign="top"><a href="#placeinput">PlaceInput</a>!</td>
 <td>
@@ -13285,7 +15824,7 @@ Create the item at last position of the last itinerary-collection item
 
 ### CreateMediaContainerInput
 
-Create a MediaContainer
+Create a MediaContainer in a MediaContainer list
 
 <table>
 <thead>
@@ -13338,6 +15877,110 @@ Add the MediaContainer at the start of the list
 <td>
 
 Add the MediaContainer at the end of the list
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CreateProfileInput
+
+Input object to Mutation.createProfile
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>type</strong></td>
+<td valign="top"><a href="#profiletype">ProfileType</a>!</td>
+<td>
+
+The type of profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The name of the profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>bio</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A short biography
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The website url
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>autoApproveFollows</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+If follow requests should be automatically approved for this profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>avatar</strong></td>
+<td valign="top"><a href="#mediacontainerinput">MediaContainerInput</a></td>
+<td>
+
+The avatar image
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
+<td>
+
+Additional data defined on the profile
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CreateUserAgreementInput
+
+Input object to Mutation.createUserAgreement
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>type</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The type of agreement
 
 </td>
 </tr>
@@ -13822,6 +16465,31 @@ The itinerary item identifier to limit descendent searching withing
 </tbody>
 </table>
 
+### MediaContainerInput
+
+Set a singular MediaContainer
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>resourceId</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+ID to a MediaResource to contain
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### MediaContainerPositionAfter
 
 Positions the MediaContainer after a sibling MediaContainer
@@ -14131,6 +16799,67 @@ The distance for this route segment
 <td>
 
 The duration for this route segment
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### UpdateBillingDetailsInput
+
+The fields to change when updating the billing details
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>emailAddress</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The email address
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>givenName</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The given name
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>familyName</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The family name
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>organization</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The optional organization name
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>address</strong></td>
+<td valign="top"><a href="#billingaddressinput">BillingAddressInput</a>!</td>
+<td>
+
+The billing address
 
 </td>
 </tr>
@@ -14462,7 +17191,7 @@ Any specific scope that has been granted to the 3rd party application
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>thirdPartyId</strong></td>
+<td colspan="2" valign="top"><strong>publicId</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
 <td>
 
@@ -14471,7 +17200,7 @@ Any specific scope that has been granted to the 3rd party application
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>configuration</strong></td>
+<td colspan="2" valign="top"><strong>privateConfiguration</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -14515,7 +17244,7 @@ Change the name
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>resourceId</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 Change the Icon used by this IconComposition
@@ -14574,6 +17303,15 @@ Fields for updating an IconSilhouette
 </tr>
 </thead>
 <tbody>
+<tr>
+<td colspan="2" valign="top"><strong>name</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Change the name of this icon
+
+</td>
+</tr>
 <tr>
 <td colspan="2" valign="top"><strong>paths</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
@@ -14920,6 +17658,15 @@ Updates a itinerary
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>defaultLocale</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The default locale of this itinerary's content
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>title</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
@@ -15060,6 +17807,15 @@ Delete one or move IconCompositions
 <td>
 
 Enable auto routing, or set to null to disable
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>autoRouteRemoveExisting</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Remove any routes that were created with auto routing
 
 </td>
 </tr>
@@ -15206,6 +17962,15 @@ The place for this itinerary-location
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>bounds</strong></td>
+<td valign="top"><a href="#boundsinput">BoundsInput</a></td>
+<td>
+
+The bounds of the itinerary-location
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>place</strong></td>
 <td valign="top"><a href="#placeinput">PlaceInput</a></td>
 <td>
@@ -15237,7 +18002,7 @@ Set or remove the optional icon, passed ID must exist in the Itinerary.icons
 
 ### UpdateMediaContainerInput
 
-Update a MediaContainer
+Update a MediaContainer in a MediaContainer list
 
 <table>
 <thead>
@@ -15353,6 +18118,15 @@ Input object to Mutation.updateProfile
 </thead>
 <tbody>
 <tr>
+<td colspan="2" valign="top"><strong>type</strong></td>
+<td valign="top"><a href="#profiletype">ProfileType</a></td>
+<td>
+
+The type of profile
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>name</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
@@ -15388,6 +18162,33 @@ If follow requests should be automatically approved for this profile
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong>avatar</strong></td>
+<td valign="top"><a href="#mediacontainerinput">MediaContainerInput</a></td>
+<td>
+
+The avatar image
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
+<td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
+<td>
+
+Insert or update attributes to the profile
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
+<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
+<td>
+
+Delete attributes to the profile
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -15409,6 +18210,64 @@ Angle unit
 </tr>
 <tr>
 <td valign="top"><strong>Radians</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BillingPriceRecurringInterval
+
+The interval type
+
+<table>
+<thead>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>Year</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Month</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Week</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Day</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BillingSubscriptionStatus
+
+The status of a BillingSubscription
+
+<table>
+<thead>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>Active</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Inactive</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Expired</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Cancelled</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -15525,6 +18384,14 @@ The key of the service for a ConnectedApp
 </tr>
 <tr>
 <td valign="top"><strong>ShopifyApi</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>GoogleAnalytics4</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>AlpacaLegacy</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -15915,11 +18782,11 @@ Modes of transport
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>Boat</strong></td>
+<td valign="top"><strong>Bus</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>Bus</strong></td>
+<td valign="top"><strong>Camel</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -15927,11 +18794,15 @@ Modes of transport
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>Cruise</strong></td>
+<td valign="top"><strong>Cycling</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>DogSled</strong></td>
+<td valign="top"><strong>ElectricCar</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ElectricMotorbike</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -15939,11 +18810,31 @@ Modes of transport
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>FourWheelDriving</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>Hike</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>Kayak</strong></td>
+<td valign="top"><strong>Hitchhiking</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Horse</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>HorseAndCart</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>InlineSkate</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Minibus</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -15955,7 +18846,243 @@ Modes of transport
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>NordicWalking</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Rickshaw</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Run</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Scooter</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Snowshoe</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>TaxiOrRideshare</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>TrailRun</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Trekking</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>WalkOrRide</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Wheelchair</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Abseiling</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>AdventureBike</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>AerialLift</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>AlpineSki</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>BackcountrySki</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Barge</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Boat</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>CableCar</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Canoe</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Caving</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Chairlift</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>CrossCountrySky</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Cruise</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Dirtbike</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Dive</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>DogSled</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Ferry</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Funicular</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Geocaching</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Glider</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Golfcar</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Gondola</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>HandGliding</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Handcycle</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Helicopter</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>HotAirBaloon</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>IceSkate</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>JetBoat</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Jetski</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Kayak</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Kitesurf</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>LightAircraft</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>LightRail</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Monorail</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Mountaineering</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>NordicSki</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Orienteering</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>Plane</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Quadbike</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>RockClimbing</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Row</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Rowboat</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Sail</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Skateboarding</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Skydive</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Snorkel</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Snowboard</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>StandUpPaddleBoard</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Surf</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Swim</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -15964,6 +19091,30 @@ Modes of transport
 </tr>
 <tr>
 <td valign="top"><strong>Transit</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Tubing</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>WaterSki</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>WaterTaxi</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>WhiteWaterRafting</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Windsurf</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ZipLine</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -15988,7 +19139,23 @@ Subset of RouteModes supporting route search
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>Camel</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>Car</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Cycling</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ElectricCar</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ElectricMotorbike</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -15996,7 +19163,31 @@ Subset of RouteModes supporting route search
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>FourWheelDriving</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>Hike</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Hitchhiking</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Horse</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>HorseAndCart</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>InlineSkate</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Minibus</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -16008,7 +19199,43 @@ Subset of RouteModes supporting route search
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>Transit</strong></td>
+<td valign="top"><strong>NordicWalking</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Rickshaw</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Run</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Scooter</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Snowshoe</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>TaxiOrRideshare</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>TrailRun</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Trekking</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>WalkOrRide</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Wheelchair</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -16242,12 +19469,18 @@ A series of strings applied to label this item
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>media</strong></td>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
 <td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
 <td>
 
 List of MediaContainers containing images or other media
 
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
 </td>
 </tr>
 <tr>
@@ -16256,6 +19489,33 @@ List of MediaContainers containing images or other media
 <td>
 
 The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
 
 </td>
 </tr>
@@ -16369,55 +19629,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
-<td>
-
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -16441,7 +19656,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -16453,7 +19668,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -16666,55 +19890,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
-<td>
-
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -16738,7 +19917,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -16750,7 +19929,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -16853,12 +20041,18 @@ A series of strings applied to label this item
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>media</strong></td>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
 <td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
 <td>
 
 List of MediaContainers containing images or other media
 
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
 </td>
 </tr>
 <tr>
@@ -16867,6 +20061,33 @@ List of MediaContainers containing images or other media
 <td>
 
 The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
 
 </td>
 </tr>
@@ -17352,28 +20573,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -17397,7 +20600,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -17409,34 +20612,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>
@@ -17521,6 +20706,15 @@ Copyright details of the media-resource
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>hasContent</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Will be true if the resource has a caption, attribution or copyright
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>altText</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
@@ -17594,55 +20788,10 @@ The locale of the attribute to select
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>attrs</strong></td>
-<td valign="top">[<a href="#attribute">Attribute</a>]!</td>
-<td>
-
-Query multiple attributes by id and optionally locale
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">attrs</td>
-<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]!</td>
-<td>
-
-The attributes to select
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>allAttrs</strong></td>
 <td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
 <td>
 
-Return all attributes on the resource
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
-Returns up to the first n elements in the list
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">after</td>
-<td valign="top"><a href="#string">String</a></td>
-<td>
-
-Returns elements that come after the given cursor
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>attrsById</strong></td>
-<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
-<td>
-
-Query multiple attributes with the same id and optionally locale
+Query multiple attributes optionally filtering by id and/or locale
 
 </td>
 </tr>
@@ -17666,7 +20815,7 @@ Returns elements that come after the given cursor
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#id">ID</a></td>
 <td>
 
 The id of the attribute to select
@@ -17678,7 +20827,16 @@ The id of the attribute to select
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
-The locale of the attribute to select
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
 
 </td>
 </tr>

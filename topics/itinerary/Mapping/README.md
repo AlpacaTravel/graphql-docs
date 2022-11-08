@@ -1,8 +1,22 @@
 # Mapping
 
+<img alt="Mapping Data" src="./map.png" width="803" height="598" />
+
+> Alpaca makes it easy for developers to present and work with content on maps.
+> You can access GIS information through our API, of use our mapping service
+> which creates consumeable mapping data to plug straight into mapping products
+
 A core focus of the Alpaca `Itinerary` structures is to support content to be
 presented on maps. As such, Alpaca provides a wide range geographic information
 to be stored and accessed around your content.
+
+Alpaca provides data that can be used with mapping clients, from desktop
+mapping software such as QGis, or with popular website mapping clients such as
+Mapbox, Google Maps, Leaflet or Pigeon Maps.
+
+Alpaca provides access to the underlying mapping data via the GraphQL API, but
+also provides various mapping services (which as documented
+[here](https://github.com/AlpacaTravel/mapping-docs)).
 
 ### Prerequisits
 
@@ -10,7 +24,7 @@ to be stored and accessed around your content.
 - Your API Key
 - Itinerary IDs to query
 
-# Querying Data
+# Querying Data via the API
 
 Alpaca API uses a number of data types when used for querying mapping
 information for your content. These data types will return the underlying
@@ -38,11 +52,39 @@ Polylines are an optimised representation for a linestring feature and available
 for representing continous line data. We also offer simplication to reduce
 the density of the data.
 
-# Vector Tiles
+# Accessing mapping services
 
-Alpaca generates corresponding vector tiles for the content stored within the
-platform. Vector tiles make maps load fast, as well as provide the ability to
-stylise the data how you prefer.
+As mentioned above, you can use the GraphQL API or alternatively access our
+mapping service which provides an optimised and idiomatic environment for
+working with popular mapping technologies.
+
+[View the documentation for our mapping services](https://github.com/AlpacaTravel/mapping-docs).
+
+## Hosted datasets
+
+Alpaca provides a specification for GeoJSON and Vector Tiles, as well as a
+hosted vector tile service which enables developers easy way to access data.
+
+These services can be accessed without leveraging the GraphQL API/
+
+[View information about accessing data sets](https://github.com/AlpacaTravel/mapping-docs).
+
+## SVG and other representations
+
+<img src="./svg-basic-styled.png" alt="SVG Output for styling" />
+
+In addition to detailed mapping representations and access via the API, Alpaca
+Travel also provides unstyled SVG documents that can be styled using CSS or
+via alternative design software.
+
+The SVG's contain unique features to assist the common use cases of SVG, such
+as producing generalised representations of routes (through simplifying
+routes or introducing bezier splines) as well as choosing base map landmarks,
+such as administrative boundaries (countries, regions, suburbs, postal etc) or
+tourism regions.
+
+See the [mapping service documentation](https://github.com/AlpacaTravel/mapping-docs)
+for more information about leveraging SVGs.
 
 # Projection and Coordinate Reference System (CRS)
 
