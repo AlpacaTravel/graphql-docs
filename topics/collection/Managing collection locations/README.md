@@ -127,13 +127,13 @@ query QueryCollectionLocation {
             thumbnail: source(bestFit: [100, 100]) {
               url
             }
+            # Text
+            altText
+            caption
+            # Photographer Attribution
+            copyright
+            attribution
           }
-          # Text
-          altText
-          caption
-          # Photographer Attribution
-          copyright
-          attribution
         }
       }
       # Load information about the place by joining the place node, allowing
