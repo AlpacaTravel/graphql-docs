@@ -18,6 +18,8 @@
   Updates an itinerary directions to switch the mode of transportation from one mode (such as car) to an alterative mode, such as foot
 - **[Update Itinerary Icons](/example-operations/itinerary/UpdateItineraryIcons.graphql)**
   Updates the icons associated with an Itinerary
+- **[Update Itinerary Photos](/example-operations/itinerary/UpdateItineraryPhotos.graphql)**
+  Updates an itinerary with a selection of photos
 - **[Update Itinerary Segments](/example-operations/itinerary/UpdateItinerarySegments.graphql)**
   Updates an itinerary to add in segments
 - **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
@@ -50,6 +52,8 @@
   Reorder/move the itinerary location to the start of the sequence
 - **[Update Itinerary Location As Optional](/example-operations/itinerary/location/UpdateItineraryLocationAsOptional.graphql)**
   Updates an itinerary location and marks the itinerary location as an optional stop
+- **[Update Itinerary Location Photos](/example-operations/itinerary/location/UpdateItineraryLocationPhotos.graphql)**
+  Updates an itinerary location with a selection of photos
 - **[Update Itinerary Location Segments](/example-operations/itinerary/location/UpdateItineraryLocationSegments.graphql)**
   Assign a series of segments to your itinerary locations
 

@@ -183,8 +183,13 @@ multi-segment scheduled itineraries (and what is in-between).
 - **[Adding Directions](topics/itinerary/Adding%20Directions/README.md)**
   Add more complex directions, including multi-modal or manual directions (such
   as GPS tracks)
+<<<<<<< HEAD
+- **[Adding Photos](topics/itinerary/Adding%20Photos/README.md)**
+  Add photos for itinerary or itinerary locations
+=======
 - **[Segments](topics/itinerary/Segments/README.md)**
   Group itinerary items into trip segments
+>>>>>>> b6e65ddff6e50111b628c7c88e49485fc032e015
 - **[Mapping](topics/itinerary/Mapping/README.md)**
   Accessing information from the API as a GIS data source for itinerary
   information
