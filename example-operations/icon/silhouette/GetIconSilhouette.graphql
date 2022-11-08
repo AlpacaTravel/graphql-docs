@@ -1,0 +1,20 @@
+# Retrieves an icon by a specific ID. You can use the icon() or node() to
+# achieve this.
+
+query GetIconSilhouette($id: ID!) {
+  # Use the icon() operation to retrieve by an ID
+  iconResource(id: $id) {
+    # Identifiers
+    id
+    __typename
+
+    # Obtain what you want from the icon
+    name
+    key
+
+    ... on IconSilhouette {
+      viewBox
+      paths
+    }
+  }
+}

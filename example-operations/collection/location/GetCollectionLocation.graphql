@@ -24,13 +24,14 @@ query getCollectionLocation($id: ID!) {
             card: source(bestFit: [600, 400]) {
               url
             }
+
+            # Text
+            altText
+            caption
+            # Photographer Attribution
+            copyright
+            attribution
           }
-          # Text
-          altText
-          caption
-          # Photographer Attribution
-          copyright
-          attribution
         }
       }
       # Load information about the place by joining the place node, allowing

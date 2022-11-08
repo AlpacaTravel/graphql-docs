@@ -41,7 +41,13 @@ editor and client applications. We will be continuing to add capabilities and
 perform R&D work in order to offer enhance what your application or website can
 do.
 
-## Getting Started
+## Mapping Services
+
+In addition to accessing information with our API, we also provide hosted
+mapping services for accessing and presenting data on maps. You can read the
+[mapping services documentation](https://github.com/AlpacaTravel/mapping-docs).
+
+## Getting Started with the Alpaca GraphQL API
 
 The Alpaca Travel API is accessed using GraphQL, a powerful and easily
 integrated techology for your website or application. You can read some
@@ -165,11 +171,13 @@ multi-segment scheduled itineraries (and what is in-between).
   Determine if a place you are viewing is already within an itinerary
 - **[Adding Locations](topics/itinerary/Adding%20Locations/README.md)**
   Add locations to your itinerary
-- **[Querying an Itinerary](topics/itinerary/Querying%20an%20Itinerary/README.md)**
+- **[Showing/Querying an Itinerary](topics/itinerary/Querying%20an%20Itinerary/README.md)**
   Present the itinerary back to the user
 - **[Automatic Routing](topics/itinerary/Automatic%20Routing/README.md)**
   Leverage the automatic routing feature of itineraries, to automatically
   provide directions between locations
+- **[Places of interest](topics/itinerary/Places%20of%20interest/README.md)**
+  Creating places of interest associated to locations
 - **[Reordering Locations](topics/itinerary/Reordering%20Locations/README.md)**
   Provide the ability for the user to reorder the itinerary to suit
 - **[Adding Directions](topics/itinerary/Adding%20Directions/README.md)**
@@ -231,6 +239,13 @@ Various media can be accessed on the Alpaca platform.
 - **[Using Unsplash](topics/media/Using%20unsplash/README.md)** Referencing a
   photo on the unsplash platform
 - **[Querying media](topics/media/Querying%20media/README.md)** Querying media
+
+### Icons
+
+- **[Managing profile icons](topics/icons/Managing%20profile%20icons/README.md)**
+  Managing profile icon sets
+- **[Associating itinerary icons](topics/icons/Associating%20itinerary%20icons/README.md)**
+  Associating icons for use in itineraries
 
 ### GraphQL
 
@@ -322,10 +337,12 @@ check your changes by using the following commands:
 
 ```
 npm i
-npm run graphql-codegen
-npm run test:markdown-links
-npm run test:markdown-graphql
+npm test
 ```
+
+Note: This documentation package is validated against GraphQL and we check
+to make sure we don't have dead links. Please check against mistakes using
+`npm test` above.
 
 ## Legal Statement
 

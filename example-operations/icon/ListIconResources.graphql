@@ -1,0 +1,38 @@
+# Lists icons that have been created for a supplied profile.
+
+query ListIconResources($profileId: ID!, $first: Int!, $after: String) {
+  # Use the icons() operation in order to read back icons for the profile
+  iconResources(
+    # You will need to have your profile ID to query
+    profileId: $profileId
+    # Pagination controls for relay "cursor connections"
+    # See: https://relay.dev/graphql/connections.htm
+    first: $first
+    after: $after
+  ) {
+    # Using a relay style "cursor connection" specification response
+    edges {
+      # The node will contain each icon
+      node {
+        # Type and ID
+        id
+        __typename
+
+        # Name and other identifiers
+        name
+        key
+      }
+      # This is the cursor of this node, you can use this for passing to "after"
+      # when requesting results after this record
+      cursor
+    }
+
+    # Total icons
+    totalCount
+    # Pagination information
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
