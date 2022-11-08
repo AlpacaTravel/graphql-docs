@@ -1,0 +1,32 @@
+# Assign a series of segments to your itinerary locations. Be sure to first
+# add your segments using the "itinerary/segment" attribute avaialble on the 
+# itinerary.
+
+mutation UpdateItineraryLocationSegments(
+  $id: ID!
+  $segmentIds: JSON!
+) {
+  # use updateItineraryLocation()
+  updateItineraryLocation(
+    # Supply the itinerary location ID
+    id: $id
+    # Update the location
+    location: {
+      upsertAttrs: [
+        # Add the association of segment IDs
+        # Value: ["my-UID"] as correlates to the "itinerary/segments" ids
+        { id: "itinerary/location/segments" value: $segmentIds }
+      ]
+    }
+  ) {
+    # Read back the changed data
+    itinerary {
+      # Identifiers
+      id
+      __typename
+      
+      # Add in the segments
+      segments: attrValue(id: "itinerary/location/segments")
+    }
+  }
+}

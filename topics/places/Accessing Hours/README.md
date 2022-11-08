@@ -51,10 +51,12 @@ query QueryDateRangeOpenClosedTimes {
   place(id: "place/facebook:page:mavisthegrocer") {
     # Access the opening hours (where specified)
     hours {
-      # Select the period (e.g. the week between the from/to dates). Also access
-      # the local public holidays in order to present to the user and let them
-      # know of any events that could affect regular trading hours.
-      forDays(from: "2021-04-01", to: "2021-04-07") {
+      # Use the forDays operation to obtain days across a range of dates. By
+      # default, without any arguments the next 7 days will be selected. You
+      # can change the range by specifying an alternative offset (which allows
+      # you to specify values like { days: 14 }) or provide a specific start and
+      # end dates (as ISO-8601 date strings)
+      forDays {
         # Date/day, as ISO-8601, or as formatted for presentation using the
         # Unicode Technical Standard #35 Date Field Symbols
         date(format: "EEE, MMM d")
