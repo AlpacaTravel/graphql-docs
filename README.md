@@ -67,7 +67,7 @@ supporting information on GraphQL and why it is used below.
   [example operations](/example-operations) section. These will assist you
   become familiar with GraphQL as well as the capabilities of the platform.
 
-Finally, we have a [GraphQL Playground](https://withalpaca.com/api/graphql)
+Finally, we recommend the [GraphQL Sandbox](https://studio.apollographql.com/sandbox/explorer)
 which is a way to quickly experiment with the real API in order to run GraphQL
 queries and mutations.
 
