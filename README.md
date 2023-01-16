@@ -67,9 +67,8 @@ supporting information on GraphQL and why it is used below.
   [example operations](/example-operations) section. These will assist you
   become familiar with GraphQL as well as the capabilities of the platform.
 
-Finally, we recommend the [GraphQL Sandbox](https://studio.apollographql.com/sandbox/explorer)
-which is a way to quickly experiment with the real API in order to run GraphQL
-queries and mutations.
+Finally, we recommend the [Apollo Sandbox](https://studio.apollographql.com/sandbox/explorer).
+See below for moree information.
 
 ### Endpoint URL
 
@@ -83,16 +82,24 @@ https://withalpaca.com/api/graphql?accessToken=<YOUR_API_KEY>
 When using the root endpoint, it is important to authenticate via providing your
 `accessToken` (which is your API Key) as a query parameter.
 
-#### GraphQL Playground
+#### GraphQL Playground "AKA Apollo Sandbox"
 
 GraphQL offers an introspection capability with a defined schema. This helps you
 develop the query that suits your specific use case or technical needs without
-having to go through a lot of API Documentation. Through the GraphQL Playground,
+having to go through a lot of API Documentation. Through the Apollo Sandbox,
 you can try out your queries and mutations directly onto the GraphQL
 environment.
 
-Visit the [GraphQL Playground](https://withalpaca.com/api/graphql). Remember to
-add your `?accessToken=` to the URL
+Visit the [Apollo GraphQL Sandbox](https://studio.apollographql.com/sandbox/explorer).
+
+Open the connection settings, and specify the endpoint to the end-point written
+above.
+
+<p align="center">
+  <img src="apollo-sandbox-connection-settings.png" alt="Configuration for apollo sandbox">
+</p>
+
+Rember to add your `?accessToken=` to the URL.
 
 #### New to GraphQL?
 
