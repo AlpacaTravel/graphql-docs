@@ -30,15 +30,16 @@ mutation UpdateItineraryLocationPhotos(
         # Media container id
         id
         __typename
-        
+
         # Read back the uploaded photo resource
-        resource  {
+        resource {
           # Identifiers
-          id
           __typename
 
-          # Content
-          caption
+          ... on MediaImage {
+            id
+            caption
+          }
         }
       }
     }

@@ -1,9 +1,9 @@
 # Adding photos to an itinerary
 
-Itineraries as well as Itinerary Locations can contain a number of media 
-elements, including Photos. 
+Itineraries as well as Itinerary Locations can contain a number of media
+elements, including Photos.
 
-Before you associate a photo with an itinerary, you will need to 
+Before you associate a photo with an itinerary, you will need to
 [upload photos](/topics/media/Uploading%20photos/README.md) to the platform, or
 alternatively use an [photo from a photo sharing site such as unsplash](/topics/media/Using%20unsplash/README.md).
 
@@ -25,7 +25,7 @@ mutation UpdateItineraryPhotos {
       # Create the itinerary media
       createMedia: [
         # Create a photo based on a user upload
-        { resourceId: "media/ABC123" } 
+        { resourceId: "media/ABC123" }
         # Create a photo based on an unsplashed photo
         { resourceId: "media/unsplash:photo:XXX" }
       ]
@@ -41,14 +41,16 @@ mutation UpdateItineraryPhotos {
         # Media container id
         id
         __typename
-        
+
         # Read back the uploaded photo resource
-        resource  {
+        resource {
           # Identifiers
-          id
           __typename
 
           # ... selection of fields
+          ... on MediaResource {
+            id
+          }
         }
       }
     }
@@ -56,9 +58,9 @@ mutation UpdateItineraryPhotos {
 }
 ```
 
-In addition to the above `createMedia` data, you can also `updateMedia`, 
+In addition to the above `createMedia` data, you can also `updateMedia`,
 `moveMedia` and `deleteMedia`. This gives you control over performing a series
-of updates to control the media. It is also possible to create the itinerary 
+of updates to control the media. It is also possible to create the itinerary
 with the media supplied as the input in the `createItinerary()` mutation.
 
 ## Assoication to Itinerary Locations
@@ -79,7 +81,7 @@ mutation UpdateItineraryLocationPhotos {
       # Create the itinerary media
       createMedia: [
         # Create a photo based on a user upload
-        { resourceId: "media/ABC123" } 
+        { resourceId: "media/ABC123" }
         # Create a photo based on an unsplashed photo
         { resourceId: "media/unsplash:photo:XXX" }
       ]
@@ -95,14 +97,16 @@ mutation UpdateItineraryLocationPhotos {
         # Media container id
         id
         __typename
-        
+
         # Read back the uploaded photo resource
-        resource  {
+        resource {
           # Identifiers
-          id
           __typename
 
           # ... selection of fields
+          ... on MediaImage {
+            id
+          }
         }
       }
     }
@@ -112,13 +116,12 @@ mutation UpdateItineraryLocationPhotos {
 
 ## Order of operations for applying updates to media
 
-The order in which the operations are applied to the collection is: 
+The order in which the operations are applied to the collection is:
 
 - Delete
 - Update
 - Move
 - Create
 
-You will need to know this in order to determine how to insert, reorder and 
+You will need to know this in order to determine how to insert, reorder and
 remove media within the same update mutation.
-
