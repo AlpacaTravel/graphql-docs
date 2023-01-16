@@ -19,19 +19,20 @@ single mode of transportation, or support mutli-modal transport.
 - The itinerary will need to be unassigned to a profile, or you'll need your
   private API Key
 
-## Automatic Routing for added locations
+### Quick Note: Automatic Routing for added locations
 
-You can get started with directions by leveraging the [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
-capability that does not require you manually add directions. As you add
-locations to your itinerary, directions will be added automatically.
+As a quick note, you can avoid having to manually add directions by getting
+started with [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md).
+
+Automatic routing will automatically create directions between locations that
+are added to your itinerary. For a lot of use cases, this can be the starting
+point.
 
 ## Adding a Car Route
 
 The below example creates itinerary directions between two locations that are
-existing in your itinerary.
-
-The single segment supplied is a Car segment, that is automatically searched
-for the best path to take.
+existing in your itinerary. The mutation used is the `createItineraryDirections`
+mutation which will accept a [CreateItineraryDirectionsInput](/reference#createitinerarydirectionspayload).
 
 ```graphql
 # Creates itinerary directions for between locations in an itinerary manually.
@@ -63,6 +64,7 @@ mutation CreateItineraryDirections {
       }
       # Contextualise the directions from origin/destination
       # Origin itinerary location
+      # Optionally you can point to also place
       originId: "itinerary/ABC123/item/startABC123"
       # Position under the destination itinerary location
       positionAtEnd: {
@@ -88,6 +90,8 @@ You can also specify directions such as providing a manual track from GPS data.
 
 Provide the GPS observations as the `positions`, and it is not necesarry to use
 `useRouteSearching`.
+
+See [RouteSegmentInput](/reference#routesegmentinput)
 
 ```graphql
 # Creates itinerary directions for between locations in an itinerary by
