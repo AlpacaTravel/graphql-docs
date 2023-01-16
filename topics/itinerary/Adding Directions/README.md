@@ -13,6 +13,19 @@ Alpaca supports a data structure to support manual data or automatic directions
 searching through a search service offered by Alpaca. You can also supply a
 single mode of transportation, or support mutli-modal transport.
 
+- Directions can be added to an itinerary, to indicate a way to move between
+  positions, places or locations
+- Directions support waypoints, automatic route searching for supported types,
+  and manually adding points (such as for a GPS or manual route)
+- Directions can be automatically added between your locations with a simple
+  configuration
+- Directions can have associations to other itinerary locations and/or places
+  so querying your itinerary or options for routing can be easier
+- Directions support multiple modes of transport as well as muliple segments
+  that can use different modes of transportation, route searching etc.
+- Multiple Directions can be created between different locations to offer
+  alternative directions, such as providing alternative modes of transportation
+
 ### Prerequisits
 
 - You'll need an itinerary you want to add to and locate the Itinerary ID
@@ -146,10 +159,32 @@ mutation CreateItineraryDirectionsWithManualPositions {
 }
 ```
 
+## Origin and Destinations
+
+Directions can be created with numerous use cases and associations through the
+origin and destination contexts.
+
+This mechanism allows you to create itineraries offering multiple itinerary
+directions or itineraries that do not have associations to places/locations.
+
+Associations can be to `null`, a `Place` or an `ItineraryLocation`. These are
+managed through the fields of `originId`/`originPlace` or `destinationId`/
+`destinationPlace`.
+
+The following behaviours happen based on your input:
+
+- If you omit `originId`/`originPlace` and/or `destinationId`/`destinationPlace`
+  properties, it will automatically create an association to the parent where
+  the parent is an Itinerary Location, or will return null.
+
 ## Showing directions to and from a location
 
 When querying an itinerary location, you can query the corresponding directions
 for a given location.
+
+This will identify the locations based on the `originId` and `destinationId`,
+or where not specified will query based on where the itinerary directions is
+located.
 
 ```graphql
 # Query an itinerary location and load the associated inbound or outbound
@@ -201,6 +236,11 @@ query QueryItineraryLocationDirections {
 When displaying a sequence of locations, such as a summary of the locations on
 an itinerary and the directions moving between these locations, you can use the
 edge data available between locations to query the connecting directions.
+
+The `directions` edge property supports a number of ways to target directions
+including defining `direction` as `Inbound` or `Outbound`, or also targeting an
+`accuracy` as `Place` or `Location`. You can also restrict associations based
+on parent descendants.
 
 ```graphql
 # Query the itinerary locations, with information about the directions between
