@@ -1267,7 +1267,25 @@ Obtains a profile by a provided id
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
-The unique identifier of the collection
+The unique identifier of the profile to fetch
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>profileByHandle</strong></td>
+<td valign="top"><a href="#profile">Profile</a></td>
+<td>
+
+Obtains a profile with the provided handle
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">handle</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The unique handle of the profile to fetch
 
 </td>
 </tr>
@@ -8699,7 +8717,7 @@ Bounds for the itinerary-directions and it's descendants
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>origin</strong></td>
-<td valign="top"><a href="#itinerarylocation">ItineraryLocation</a></td>
+<td valign="top"><a href="#itinerarydirectionsorigindestination">ItineraryDirectionsOriginDestination</a></td>
 <td>
 
 The itinerary-location that is the starting point of the directions
@@ -8708,7 +8726,7 @@ The itinerary-location that is the starting point of the directions
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>destination</strong></td>
-<td valign="top"><a href="#itinerarylocation">ItineraryLocation</a></td>
+<td valign="top"><a href="#itinerarydirectionsorigindestination">ItineraryDirectionsOriginDestination</a></td>
 <td>
 
 The itinerary-location that is the ending point of the directions
@@ -15432,7 +15450,16 @@ The list of MediaContainers to add to the new ItineraryDirections
 <td valign="top"><a href="#id">ID</a></td>
 <td>
 
-The origin itinerary location item, in the form of item/XYZ
+The ID of the origin ItineraryLocation. Cannot be used with originPlace.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>originPlace</strong></td>
+<td valign="top"><a href="#placeinput">PlaceInput</a></td>
+<td>
+
+The origin place. Cannot be used with originId.
 
 </td>
 </tr>
@@ -17601,7 +17628,16 @@ Delete one or move MediaContainers
 <td valign="top"><a href="#id">ID</a></td>
 <td>
 
-The origin/starting itinerary location item, in the form of item/XYZ
+The ID of the origin ItineraryLocation. Set to null to unset the origin. Cannot be used with originPlace.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>originPlace</strong></td>
+<td valign="top"><a href="#placeinput">PlaceInput</a></td>
+<td>
+
+The origin place. Set to null to unset the origin. Cannot be used with originId.
 
 </td>
 </tr>
@@ -18392,6 +18428,10 @@ The key of the service for a ConnectedApp
 </tr>
 <tr>
 <td valign="top"><strong>AlpacaLegacy</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>StravaApi</strong></td>
 <td></td>
 </tr>
 </tbody>
