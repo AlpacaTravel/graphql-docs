@@ -1,5 +1,7 @@
 # Changelog
 
+Please note this changelog is out of date and will be updated in the future.
+
 ## September, 2021
 
 We are pleased to be releasing our new capabilities and enhnancements for our

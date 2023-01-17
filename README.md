@@ -1,55 +1,44 @@
 <div align="center">
-  <img alt="Developer Documentation" src="https://developer.alpacamaps.com/_media/logo.svg" height="75" width=75 />
+  <img alt="Developer Documentation" src="https://developer.alpacamaps.com/_media/logo.svg" height="75" width="75" />
 </div>
 
-# Alpaca Travel GraphQL API Documentation
+# Alpaca Travel GraphQL API
 
-> [Alpaca Travel](https://alpaca.travel) offers an GraphQL API for developers to
-> build tourism websites and travel applications.
+The Alpaca Travel platform supports a wide range of itineraries, including:
 
-We are offering documentation within this Github repository for developers to
-reference when planning and performing integration with the Alpaca Travel
-services.
+- Road-trips
+- Walking and hiking trails
+- Flights and other modes of transportation
+- Top-10 lists and other types of curated content
 
-## What is it?
+> The [Alpaca Travel](https://alpaca.travel) GraphQL API provides developers
+> with easy access to the platform's itinerary content for use in interactive
+> applications and user interfaces.
 
-> The API is offered as a set of services to enable developers and product
-> managers to build the travel related product they really wanted to.
+- Easily access and manipulate itinerary data through a GraphQL API
+- Incorporate platform's itinerary content into custom interactive applications
+  and user interfaces such as travel itinerary planners and trip planning
+  websites.
+- Retrieve and display itinerary information, including maps, routes, places and
+  uploaded content, in desired format.
+- Engage with your audience and offer personalized travel experience by
+  providing basic itinerary planning features.
+- Convenient tool for including platform's itinerary content in your project,
+  and for providing your users the ability to create and update itineraries.
 
-We are offering the Alpaca Travel services to assist you do things like:
+# Additional Features
 
-- A **places database** to power your website or application information
-- A service to build your own users **trip planning services**, such as
-  favorites lists or complex multi-day itineraries
-- A service to access many **tracks, trails, trips and itineraries** authored on
-  the Alpaca Travel platform
-- A **powerful toolkit** of related services to build travel applications,
-  including accessing routing, travel information, media management, nearby
-  services and more
-- Out of the box place **provider integration services** to access and keep your
-  information up to date
-- **GIS mapping services** to display maps and create interactive content with
-  higher engagement
-- **Platform as a service** capabilities, including CDN, image
-  resizing/optimisation, vector tile creation and hosting with uptime SLAs
-- **Export** data capabilities to PDF, GPX, KML, GeoJSON, Polyline and more
-- Built on **GraphQL** to leverage a great data experience
-- Backed by ongoing active research and development and commercial support
-
-At [Alpaca Travel](https://alpaca.travel), we leverage the API for building our
-editor and client applications. We will be continuing to add capabilities and
-perform R&D work in order to offer enhance what your application or website can
-do.
-
-## Mapping Services
-
-In addition to accessing information with our API, we also provide hosted
-mapping services for accessing and presenting data on maps. You can read the
-[mapping services documentation](https://github.com/AlpacaTravel/mapping-docs).
+The Alpaca Travel platform offers more than just itinerary management, it also
+includes features such as guide and directory creation, location search and
+place information loading to enhance the functionality of your travel-related
+application or website. In addition to the GraphQL API, we also provide hosted
+mapping services for accessing and presenting data on maps. You can access these
+services by visiting our [mapping documentation](https://github.com/AlpacaTravel/mapping-docs)
+for more information.
 
 ## Getting Started with the Alpaca GraphQL API
 
-The Alpaca Travel API is accessed using GraphQL, a powerful and easily
+The Alpaca Travel Platform is accessed using GraphQL, a powerful and easily
 integrated techology for your website or application. You can read some
 supporting information on GraphQL and why it is used below.
 
