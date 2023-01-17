@@ -40,6 +40,25 @@ query CheckItineraryPlacePresent {
 }
 ```
 
+If successful, you'll be returned with a reference to the itinerary location ID
+
+```json
+{
+  "data": {
+    "itinerary": {
+      "descendants": {
+        "nodes": [
+          {
+            "id": "itinerary/ABC123/location/DEF456"
+          }
+        ],
+        "totalCount": 1
+      }
+    }
+  }
+}
+```
+
 ## Additional Resources
 
 - [Creating an itinerary](/topics/itinerary/Creating%20an%20itinerary/README.md)
