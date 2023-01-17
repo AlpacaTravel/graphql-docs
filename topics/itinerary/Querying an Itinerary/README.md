@@ -35,6 +35,20 @@ query QueryItineraryLocationsTotalCount {
 }
 ```
 
+If successful, the response will look like this:
+
+```json
+{
+  "data": {
+    "itinerary": {
+      "children": {
+        "totalCount": 10
+      }
+    }
+  }
+}
+```
+
 ## Showing the Itinerary Locations as a list
 
 Alpaca's supports a wide range of itinerary structures, supporting basic
@@ -90,6 +104,8 @@ query QueryItineraryLocationsAsSimpleList {
           ... on ItineraryLocation {
             # Query the itinerary location
             place {
+              # Obtain the place provider ID
+              id
               # Peel off what information we want from to show about the place
               name
               # Take what level from the address we want
@@ -126,6 +142,72 @@ The above query returns a list of ItineraryLocation type items, in the structure
 of a GraphQL Connection. A GraphQL connection is a consistent scalable approach
 to paginating that has been adopted in the API. You can learn more about using
 a [GraphQL Connection here](/topics/graphql/Pagination%20using%20cursor%20connections/README.md).
+
+```json
+{
+  "data": {
+    "itinerary": {
+      "children": {
+        "edges": [
+          {
+            "node": {
+              "id": "itinerary/ABC123/location/DEF456",
+              "__typename": "ItineraryLocation",
+              "place": {
+                "id": "place/atdw:product:56b23f9cb042386245d47ddb",
+                "name": "Tallaringa Views",
+                "address": {
+                  "locality": "Alstonville"
+                },
+                "layers": [
+                  {
+                    "name": "Accommodation"
+                  },
+                  {
+                    "name": "Apartments"
+                  },
+                  {
+                    "name": "Cottages"
+                  }
+                ]
+              }
+            },
+            "position": 1,
+            "cursor": "eyJvZmZzZXQiOjB9"
+          },
+          {
+            "node": {
+              "id": "itinerary/ABC123/location/GHI789",
+              "__typename": "ItineraryLocation",
+              "place": {
+                "id": "place/atdw:product:5f115e78abc0d44d5a0cd076",
+                "name": "The Farm Cafe at the Collingwood Children's Farm",
+                "address": {
+                  "locality": "Abbotsford"
+                },
+                "layers": [
+                  {
+                    "name": "Food and Drink"
+                  },
+                  {
+                    "name": "Produce"
+                  },
+                  {
+                    "name": "Restaurant and Cafe"
+                  }
+                ]
+              }
+            },
+            "position": 2,
+            "cursor": "eyJvZmZzZXQiOjF9"
+          }
+        ],
+        "totalCount": 2
+      }
+    }
+  }
+}
+```
 
 ## Additional Query Topics
 
