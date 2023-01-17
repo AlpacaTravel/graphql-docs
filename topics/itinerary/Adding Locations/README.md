@@ -71,7 +71,7 @@ If successful, you will have the following response
     "createItineraryLocation": {
       "location": {
         "__typename": "ItineraryLocation",
-        "id": "itinerary/4JhglLgOoo8zlx2yTQK3fq/location/71KzPu21YqJETG5RVnEQ0g"
+        "id": "itinerary/ABC123/location/DEF456"
       }
     }
   }
@@ -137,7 +137,7 @@ If successful, you'll be returned with a reference to the itinerary location ID
       "descendants": {
         "nodes": [
           {
-            "id": "itinerary/4JhglLgOoo8zlx2yTQK3fq/location/71KzPu21YqJETG5RVnEQ0g"
+            "id": "itinerary/ABC123/location/DEF456"
           }
         ],
         "totalCount": 1
