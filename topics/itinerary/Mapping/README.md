@@ -30,6 +30,154 @@ Alpaca API uses a number of data types when used for querying mapping
 information for your content. These data types will return the underlying
 mapping information in various popular formats.
 
+```graphql
+# Query the itinerary. Obtain the lon/lat for each stop, as well as the
+# polyline for directions to each stop.
+
+query listItineraryLocationsWithItineraryDirections {
+  itinerary(
+    # Supply the itinerary ID
+    id: "itinerary/ABC123"
+  ) {
+    # Select the associated itinerary locations using the children selector
+    children(
+      # Limit to querying the itinerary locations
+      type: ItineraryLocation
+      # Using the relay "cursor connection" specification for pagination
+      # See: https://relay.dev/graphql/connections.htm
+      first: 2
+      after: null
+    ) {
+      edges {
+        # Using the edge position, we can get a numbering of the result 1...X
+        edgePositionNumber
+
+        node {
+          # ID/Types
+          id
+          __typename
+          # Specific information drawn from the Itinerary Location
+          ... on ItineraryLocation {
+            # Query the itinerary location
+            # Obtain the position
+            position {
+              lon
+              lat
+            }
+            place {
+              # ID/Types
+              id
+              __typename
+
+              # Peel off what information we want from to show about the place
+              name
+              maki
+            }
+          }
+        }
+        # Query the directions
+        directions(first: 1, direction: Inbound) {
+          nodes {
+            # ID/Types
+            id
+            __typename
+
+            # Duration
+            durationMin
+            # Access the route modes (e.g. Car, etc)
+            route {
+              segments {
+                # Access polyline or geojson for each segment
+                mode
+                polyline
+              }
+            }
+          }
+        }
+      }
+      # Total number of locations
+      totalCount
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}
+```
+
+If successful, your response will be similar to below
+
+```json
+{
+  "data": {
+    "itinerary": {
+      "children": {
+        "edges": [
+          {
+            "edgePositionNumber": 1,
+            "node": {
+              "id": "itinerary/ABC123/location/DEF456",
+              "__typename": "ItineraryLocation",
+              "position": {
+                "lon": 144.9970825017,
+                "lat": -37.803058481
+              },
+              "place": {
+                "id": "place/atdw:product:56b23f9cb042386245d47ddb",
+                "__typename": "Place",
+                "name": "Tallaringa Views"
+              }
+            },
+            "directions": {
+              "nodes": []
+            }
+          },
+          {
+            "edgePositionNumber": 2,
+            "node": {
+              "id": "itinerary/4JhglLgOoo8zlx2yTQK3fq/location/71KzPu21YqJETG5RVnEQ0g",
+              "__typename": "ItineraryLocation",
+              "position": {
+                "lon": 145.0043,
+                "lat": -37.8021
+              },
+              "place": {
+                "id": "place/atdw:product:5f115e78abc0d44d5a0cd076",
+                "__typename": "Place",
+                "name": "The Farm Cafe at the Collingwood Children's Farm"
+              }
+            },
+            "directions": {
+              "nodes": [
+                {
+                  "id": "itinerary/4JhglLgOoo8zlx2yTQK3fq/directions/6AcdRsWojtzzZTDbRcewrb",
+                  "__typename": "ItineraryDirections",
+                  "durationMin": 2.8942833333333335,
+                  "route": {
+                    "segments": [
+                      {
+                        "mode": "Car",
+                        "polyline": "flveFiw~sZ}Ec@eEUiCSl@_Nj@{LdD^bC{L"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "totalCount": 2,
+        "pageInfo": {
+          "hasNextPage": false,
+          "endCursor": "eyJvZmZzZXQiOjF9"
+        }
+      }
+    }
+  }
+}
+```
+
 ## Coordinates
 
 Coordinates are described by the `PositionType`. This provides the ability to
