@@ -4,13 +4,6 @@
 
 # Alpaca Travel GraphQL API
 
-The Alpaca Travel platform supports a wide range of itineraries, including:
-
-- Road-trips
-- Walking and hiking trails
-- Flights and other modes of transportation
-- Top-10 lists and other types of curated content
-
 > The [Alpaca Travel](https://alpaca.travel) GraphQL API provides developers
 > with easy access to the platform's itinerary content for use in interactive
 > applications and user interfaces.
@@ -26,7 +19,12 @@ The Alpaca Travel platform supports a wide range of itineraries, including:
 - Convenient tool for including platform's itinerary content in your project,
   and for providing your users the ability to create and update itineraries.
 
-# Additional Features
+The Alpaca Travel platform supports a wide range of itineraries, including:
+
+- Road-trips
+- Walking and hiking trails
+- Flights and other modes of transportation
+- Top-10 lists and other types of curated content
 
 The Alpaca Travel platform offers more than just itinerary management, it also
 includes features such as guide and directory creation, location search and
