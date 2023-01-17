@@ -197,6 +197,10 @@ You can also access in the query any cascade changes that have happened on the
 itinerary.
 
 ```graphql
+# Creates an itinerary location and reads back any other changes to the
+# itinerary as a result of adding this location, such as additional calculated
+# directions when using auto route
+
 mutation CreateLocationWithCascadedChanges(
   $itineraryId: ID!
   $location: CreateItineraryLocationInput!
