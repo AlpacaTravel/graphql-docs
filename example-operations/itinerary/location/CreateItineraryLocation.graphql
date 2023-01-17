@@ -28,13 +28,10 @@ mutation createItineraryLocation(
       }
     }
   ) {
-    # Select what we need from the itinerary or the result of the operation
-    cascaded {
-      created {
-        # Access the itinerary location ID as needed
-        __typename
-        id
-      }
+    # Read back the location just created
+    location {
+      __typename
+      id
     }
   }
 }

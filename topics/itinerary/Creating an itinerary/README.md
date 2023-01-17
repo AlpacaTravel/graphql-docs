@@ -33,6 +33,21 @@ mutation CreateItinerary {
 }
 ```
 
+If successful, the response will read back the created itinerary ID which can
+be used in subsequent queries or mutations.
+
+```json
+{
+  "data": {
+    "createItinerary": {
+      "itinerary": {
+        "id": "itinerary/123"
+      }
+    }
+  }
+}
+```
+
 ## Association to a Profile
 
 By default, if you don't assign a profile, content is psueo-anonymous and is

@@ -27,8 +27,11 @@ Locations contain the content and information about a particular place on earth.
 Our itineraries can add specific information to contextualise a visit to this
 location, as well as supply information about the physical place itself.
 
+See the [CreateItineraryLocationInput](/reference#createitinerarylocationinput)
+reference for a full set of information you can add for a location.
+
 ```graphql
-# Add a location to our itinerary, associating the place to Mavis The Grocer
+# Add a location to our itinerary, associating the place to The Farm Cafe
 # using the ATDW Product identifier. Once the location is added to the
 # itinerary, we query back the create items on the itinerary.
 
@@ -41,22 +44,34 @@ mutation CreateItineraryLocationWithAtdwPlace {
     location: {
       # Provide some optional content to personalise the itinerary
       title: "Grab a coffee"
-      synopsis: "Nearby, we can find Mavis the Grocer open most days"
+      synopsis: "Nearby, we can find The Farm Cafe open most days"
       # Link the location to a known place
       place: {
         # Referencing the place from ATDW
-        id: "place/atdw:product:5cae80be57a096cd7084b6ab"
+        id: "place/atdw:product:5f115dfde8f9b57738878350"
         # Providing the position lon/lat
-        position: { lon: 144.9970825017, lat: -37.8030584810 }
+        position: { lon: 145.0043, lat: -37.8021 }
       }
     }
   ) {
-    # Select what we need from the itinerary or the result of the operation
-    cascaded {
-      created {
-        # Access the itinerary location ID as needed
-        __typename
-        id
+    # Read back the location just created
+    location {
+      __typename
+      id
+    }
+  }
+}
+```
+
+If successful, you will have the following response
+
+```json
+{
+  "data": {
+    "createItineraryLocation": {
+      "location": {
+        "__typename": "ItineraryLocation",
+        "id": "itinerary/4JhglLgOoo8zlx2yTQK3fq/location/71KzPu21YqJETG5RVnEQ0g"
       }
     }
   }
@@ -113,6 +128,25 @@ query CheckItineraryPlacePresent {
 }
 ```
 
+If successful, you'll be returned with a reference to the itinerary location ID
+
+```json
+{
+  "data": {
+    "itinerary": {
+      "descendants": {
+        "nodes": [
+          {
+            "id": "itinerary/4JhglLgOoo8zlx2yTQK3fq/location/71KzPu21YqJETG5RVnEQ0g"
+          }
+        ],
+        "totalCount": 1
+      }
+    }
+  }
+}
+```
+
 ## Reordering a location
 
 A specific topic exists to assist you with
@@ -156,6 +190,40 @@ an attribute to the location with the ID of
 
 We also support the use custom data to contain further positions that you wish
 to store and leverage in you use case.
+
+## Cascaded changed
+
+You can also access in the query any cascade changes that have happened on the
+itinerary.
+
+```graphql
+mutation CreateLocationWithCascadedChanges(
+  $itineraryId: ID!
+  $location: CreateItineraryLocationInput!
+) {
+  createItineraryLocation(itineraryId: $itineraryId, location: $location) {
+    # Read back the location just created
+    location {
+      __typename
+      id
+    }
+    # Select any other cascaded chages from the operation
+    cascaded {
+      created {
+        __typename
+        id
+        # Add any fields to read from created nodes
+      }
+      updated {
+        __typename
+        id
+        # Add any fields to read from created nodes
+      }
+      deletedIds
+    }
+  }
+}
+```
 
 ## Additional Resources
 
