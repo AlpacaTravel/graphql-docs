@@ -1,5 +1,7 @@
 # Classifications
 
+## Itinerary Classifications
+
 Alpaca Travel Itineraries leverage several attributes in order to provide
 classifications to created content.
 
@@ -70,3 +72,14 @@ If successful, the response will be similar to the following
   }
 }
 ```
+
+## Itinerary Location
+
+Similarly to itineraries, itinerary locations offer some additional standard
+classifications.
+
+| Attribute ID                         | Description                                                       |
+| ------------------------------------ | ----------------------------------------------------------------- |
+| `itinerary/location/classifications` | Any broad associated classifications for this location (string[]) |
+| `itinerary/location/activities`      | Any activities at this location (string[])                        |
+| `itinerary/location/facilities`      | Any facilities at this location (string[])                        |
