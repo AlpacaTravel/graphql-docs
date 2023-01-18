@@ -11,8 +11,6 @@ What this guide covers:
   itineraries using the Alpaca Travel GraphQL API.
 - It includes step-by-step instructions for common operations such as creating
   itineraries, adding locations, working with routing and other services.
-- The guide is designed to be a concise and easy-to-use reference for
-  developers, utilizing dot-points and code examples for clear understanding.
 - The reference covers both GraphQL queries and mutations, providing developers
   with the complete set of tools to create and manage itineraries with the
   Alpaca Travel platform.
