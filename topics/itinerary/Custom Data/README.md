@@ -197,6 +197,7 @@ mutation CreateItineraryLocationWithExternalReferences {
     itineraryId: "itinerary/ABC123"
     location: {
       title: "My Itinerary Location"
+      place: { position: { lon: 1, lat: 2 } }
       attrs: [
         # Use the special custom attributes for linking to your identifiers
         { id: "custom/external-ref", value: "my-reference-UUID" }

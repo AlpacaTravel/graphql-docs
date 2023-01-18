@@ -1,26 +1,60 @@
 # Managing a Curated List of Locations
 
-The Alpaca Travel GraphQL API is a powerful tool for developers to create and
-share curated lists of locations with their customers. This developer reference
-guide will show you how to use the API to create, manipulate, and display lists
-of locations, as well as other related functionality.
+This guide is intended to provide developers with a comprehensive understanding
+of how to use the Alpaca Travel GraphQL API to create and manage lists of
+places. The guide covers the complete lifecycle of creating and managing lists,
+including step-by-step instructions for common operations such as creating
+lists, adding locations, and working with place providers.
+
+The guide covers both GraphQL queries and mutations, providing developers with
+the complete set of tools to create and manage lists with the Alpaca Travel
+platform. The guide is intended to be a simple reference that developers can use
+when they are first getting started with the Alpaca Travel API and are working
+on their projects, so they can easily understand the different GraphQL
+operations they need to create a list and manage it.
+
+Please note that this guide is intended to provide an overview of calling the
+GraphQL API, but there are numerous other operations and use cases covered
+outside of this guide. Additionally, this guide is technology agnostic and
+allows developers to use any GraphQL client to make the API calls.
+
+_Table of Contents_
+
+- [Creating a List](#creating-a-list)
+  - [Defining the Basic Structure of an itinerary](#defining-the-basic-structure-of-an-itinerary)
 
 ## Creating a List
 
-Before you can begin adding locations to your list, you will first need to
-create the list itself. The Alpaca Travel API uses the term "itinerary" to refer
-to lists, trails, and trips. However, the functionality for creating and
-managing a list is the same regardless of the type of itinerary.
+In this section, we will go over the steps to create a new itinerary using the
+Alpaca Travel GraphQL API. We will cover the following topics:
 
-The following GraphQL mutation can be used to create a new list:
+- Defining the basic structure of an itinerary
+- Setting the title and default locale
+- Adding attributes to the itinerary
+- Retrieving the created itinerary
+
+### Defining the Basic Structure of an itinerary
+
+An itinerary is the main structure that contains the list of locations that the
+user wishes to visit. The itinerary can have different types, such as a simple
+list, a trip, or a trail. To create an itinerary, we need to define the basic
+structure of the itinerary.
+
+The following GraphQL mutation can be used to create an itinerary:
 
 ```graphql
 mutation CreateItinerary {
   createItinerary(
     itinerary: {
+      # Initial content
       title: "List of Recommended Places"
+      # Some additional recommended but not required fields
       defaultLocale: "en"
-      attrs: [{ id: "itinerary/type", value: "list" }]
+      attrs: [
+        # Provide hints about the type of itinerary (e.g. list, trip, trail)
+        # Can be omitted or added later
+        { id: "itinerary/type", value: "list" }
+      ]
     }
   ) {
     itinerary {
@@ -31,15 +65,7 @@ mutation CreateItinerary {
 }
 ```
 
-This mutation creates a new itinerary with the title "List of Recommended
-Places" and assigns it a unique ID. The `defaultLocale` field is optional and
-can be set to the desired language of the itinerary. The `attrs` field is also
-optional, but in this example, we are providing a hint about the type of
-itinerary being created by adding an attribute with the ID "itinerary/type" and
-the value "list".
-
-The mutation returns the created itinerary object, which includes the unique ID
-and the timestamp of when the itinerary was created.
+If successful, the expected response will be:
 
 ```json
 {
@@ -47,51 +73,218 @@ and the timestamp of when the itinerary was created.
     "createItinerary": {
       "itinerary": {
         "id": "itinerary/ABC123",
-        "created": "2022-12-01T12:00:00.000Z"
+        "created": "2022-10-15T12:00:00Z"
       }
     }
   }
 }
 ```
 
-Please note that the title of the itinerary is the only required field when
-creating an itinerary. The defaultLocale and attrs fields are optional.
+In this example, the `createItinerary` mutation has been successfully executed,
+and the server has returned the ID and creation date of the newly created
+itinerary. The `id` field will be used to reference this itinerary in future
+operations, such as adding locations or modifying its attributes. The created
+field indicates the date and time when the itinerary was first created.
 
-## Adding locations to a list
+### Setting the Title and Default Locale
 
-Once you have created an itinerary, you can add locations to it using the
-`createItineraryLocation` mutation.
-
-To add a location for "The Farm Cafe" to an itinerary with the ID
-"itinerary/ABC123", using the Australian Tourism Data Warehouse (ATDW) as the
-place provider:
+When creating an itinerary, it is important to provide a title and default
+locale for the itinerary. The title is a brief summary of the itinerary and it
+will be used to identify the itinerary for users. The default locale is the
+language that the itinerary is written in and it will be used as the default
+language for the itinerary.
 
 ```graphql
-mutation CreateItineraryLocationWithAtdwPlace {
-  createItineraryLocation(
-    itineraryId: "itinerary/ABC123"
-    location: {
-      title: "Grab a coffee"
-      synopsis: "Nearby, we can find The Farm Cafe open most days"
-      place: {
-        id: "place/atdw:product:5f115dfde8f9b57738878350"
-        position: { lon: 145.0043, lat: -37.8021 }
-      }
+mutation CreateItinerary {
+  createItinerary(
+    itinerary: {
+      title: "List of Recommended Places"
+      defaultLocale: "en"
+      attrs: [
+        # Provide hints about the type of itinerary (e.g. list, trip, trail)
+        # Can be omitted or added later
+        { id: "itinerary/type", value: "list" }
+      ]
     }
   ) {
-    location {
-      __typename
+    itinerary {
+      id
+      created
+    }
+  }
+}
+```
+
+The above mutation will create an itinerary with the title "List of Recommended
+Places" and the default locale "en". The response will return the id and created
+timestamp of the newly created itinerary.
+
+You can also use the updateItinerary mutation operation to update the title and
+defaultLocale of an existing itinerary.
+
+```graphql
+mutation UpdateItinerary {
+  updateItinerary(
+    id: "itinerary/ABC123"
+    itinerary: { title: "New Title", defaultLocale: "fr" }
+  ) {
+    itinerary {
+      id
+      title
+      defaultLocale
+    }
+  }
+}
+```
+
+### Indicating if a List is Ordered or Unordered
+
+When creating a list, you may want to indicate whether the list is ordered or
+unordered. An ordered list implies that there is a specific order to the items
+on the list, while an unordered list implies that the items on the list have no
+specific order.
+
+To indicate if a list is ordered or unordered, you can use the
+`itinerary/list-presentation` attribute when creating the list. The attribute
+can be set to either "ordered" or "unordered", depending on the desired
+presentation of the list.
+
+For example, the following GraphQL mutation sets the
+`itinerary/list-presentation` attribute to "ordered" when creating a new list:
+
+```graphql
+mutation CreateOrderedList {
+  createItinerary(
+    title: "My Top 10 Destinations"
+    attrs: [{ id: "itinerary/list-presentation", value: "ordered" }]
+  ) {
+    itinerary {
       id
     }
   }
 }
 ```
 
-This mutation associates the location with a specific place, identified by the
-ATDW Product identifier, and also provides the position of the location on the
-map.
+Similarly, the following GraphQL mutation sets the `itinerary/list-presentation`
+attribute to "unordered" when creating a new list:
 
-Example response:
+```graphql
+mutation CreateUnorderedList {
+  createItinerary(
+    title: "My Favorite Places"
+    attrs: [{ id: "itinerary/list-presentation", value: "unordered" }]
+  ) {
+    itinerary {
+      id
+    }
+  }
+}
+```
+
+It is important to note that when creating a list, you should consider whether
+the order of the items on the list is important or not. If the order is
+important, such as in a top 10 list where the order may imply significance, you
+would want to indicate the list as ordered. On the other hand, if the order is
+not important, such as in a list of bookmarks or suggestions without implying
+any hierarchy, you would want to indicate the list as unordered.
+
+By indicating whether a list is ordered or unordered, you can ensure that the
+list is presented in the most appropriate way for your users.
+
+### Retrieving the List
+
+To retrieve the basic structure of a list, you can use the `itinerary` query and
+provide the list ID. This will return the list's ID, title, default locale,
+created and modified timestamps, as well as the number of items in the list.
+
+```graphql
+query GetList {
+  itinerary(id: "itinerary/ABC123") {
+    id
+    title
+    defaultLocale
+    created
+    modified
+    type: attrValue(id: "itinerary/type")
+    presentation: attrValue(id: "itinerary/list-presentation")
+    listItems: children(first: 0) {
+      totalCount
+    }
+  }
+}
+```
+
+Expected Result:
+
+```json
+{
+  "data": {
+    "itinerary": {
+      "id": "itinerary/ABC123",
+      "title": "My Favorite Places",
+      "defaultLocale": "en",
+      "created": "2022-09-18T21:45:13.640Z",
+      "modified": "2022-11-30T11:40:53.103Z",
+      "type": "list",
+      "presentation": "unordered",
+      "listItems": {
+        "totalCount": 0
+      }
+    }
+  }
+}
+```
+
+You can also retrieve the list items by using the children field of the
+itinerary query and providing a limit to the number of items to retrieve. The
+`totalCount` field in the response will indicate the total number of items in
+the list, even if not all of them were retrieved in the current query.
+
+## Adding and Removing Locations to an List
+
+Managing the locations within an itinerary is an important aspect of creating an
+engaging and useful itinerary for your users. The Alpaca Travel API provides a
+number of GraphQL operations that allow you to easily add, remove, and reorder
+locations within your itineraries.
+
+In this section, we will cover the following:
+
+- Adding a location directly to an itinerary
+- Adding a location using a place provider
+- Removing a location from an itinerary
+
+### Adding a Location Directly to an Itinerary
+
+When you want to add a location to your itinerary that does not have an
+associated place provider, you can add the location directly to the itinerary.
+In this case, you need to provide the title and longitude and latitude of the
+location to the `createItineraryLocation` mutation.
+
+Here is an example of how you can add a location directly to an itinerary:
+
+```graphql
+mutation {
+  createItineraryLocation(
+    itineraryId: "itinerary/ABC123"
+    location: {
+      title: "Eiffel Tower"
+      synopsis: "An iconic place of interest"
+      place: { position: { lon: 2.2944, lat: 48.8584 } }
+    }
+  ) {
+    location {
+      id
+    }
+  }
+}
+```
+
+In the above example, we are adding the location "Eiffel Tower" to the itinerary
+with the ID "itinerary/ABC123". The longitude and latitude of the location is
+provided in the `position` field of the `place` object.
+
+If the mutation is successful, the server will return the ID of the newly
+created location, as seen in the `location` field of the response.
 
 ```json
 {
@@ -106,16 +299,40 @@ Example response:
 }
 ```
 
-Alternatively, you can create a place without associating it to any place
-provider by omitting the ID, like this:
+Various information about the location can be stored against the location.
+
+It is important to note that when adding a location directly, you will not have
+access to additional information about the location from a place provider. If
+you want to add a location with more information, you can use a place provider
+as described in the next subsection.
+
+### Adding a Location using a Place Provider
+
+When adding a location to your itinerary, you have the option to associate the
+location with a place provider. This allows you to access additional information
+about the location, such as photos, ratings, contact information, addresses,
+website and social URL's or other information that is available from the place
+provider.
+
+Alpaca supports a number of place providers, including OpenStreetMap/WikiData,
+GeoNames, OpenAddresses, Facebook, and Australian Tourism Data Warehouse. Each
+provider has their own unique identifier format for a place, so make sure to use
+the correct format when creating a location.
+
+For example, to add a location to your itinerary and associate it with a place
+on Facebook, you can use the following mutation:
 
 ```graphql
-mutation CreateItineraryLocation {
+mutation CreateItineraryLocationWithFacebookPlace {
   createItineraryLocation(
     itineraryId: "itinerary/ABC123"
     location: {
-      title: "A Cafe"
-      place: { position: { lon: 145.0043, lat: -37.8021 } }
+      title: "Visit Mavis The Grocer"
+      synopsis: "A great place to grab a breakfast and a coffee"
+      place: {
+        id: "place/facebook:page:mavisthegrocer"
+        position: { lon: 145.0043, lat: -37.8021 }
+      }
     }
   ) {
     location {
@@ -126,8 +343,73 @@ mutation CreateItineraryLocation {
 }
 ```
 
-It is important to note that you always have to provide the lon/lat position of
-the place you are adding.
+In this example, we are using the Facebook place ID
+"place/facebook:page:mavisthegrocer" and providing a fallback position of
+`lon: 145.0043`, `lat: -37.8021`. When querying the itinerary, the position from
+the place provider will be used if available.
+
+It's also worth noting that you can leave the place.id field empty, and instead
+you'll need to supply all the information about the place directly.
+
+Using a place provider can be especially useful when you want to show additional
+information about the location, such as photos, ratings, or contact information,
+to your users. It also allows you to easily update the information about the
+location in case the place provider updates their data.
+
+### Storing your own ID's and data
+
+In addition to linking locations to places provided by external providers, you
+may also want to store your own ID's against a location in your itinerary. To do
+this, you can use the special custom attributes `custom/external-ref` and
+`custom/external-source`.
+
+The `custom/external-ref` attribute accepts a string value, which should be a
+unique identifier per record. The `custom/external-source` attribute is used
+to attribute the identifiers to a source. This attribute should be common
+across all your locations and differentiate between different source locations
+you may have.
+
+Here's an example of creating an itinerary location with external references:
+
+```graphql
+mutation CreateItineraryLocationWithExternalReferences {
+  createItineraryLocation(
+    itineraryId: "itinerary/ABC123"
+    location: {
+      title: "Eiffel Tower"
+      place: { position: { lon: 2.2944, lat: 48.8584 } }
+      attrs: [
+        # Use the special custom attributes for linking to your identifiers
+        { id: "custom/external-ref", value: "12345" }
+        { id: "custom/external-source", value: "site" }
+      ]
+      # Other extended fields can be stored against a location
+      websiteUrl: "https://mywebsite.com/places/eiffel-tower"
+    }
+  ) {
+    location {
+      id
+
+      externalRef: attrValue(id: "custom/external-ref")
+      externalSource: attrValue(id: "custom/external-source")
+
+      websiteUrl
+    }
+  }
+}
+```
+
+With this example, the Alpaca platform will return the external reference ID's
+that you can then use to map your own place information outside of the Alpaca
+Travel GraphQL API call.
+
+The Alpaca Data Structure enables a wide range of predefined fields for you to
+provide and store with your location. You can also store extended data outside
+of this set.
+
+See More:
+
+- [Custom Data](/topics/itinerary/Custom%20Data/)
 
 ## Testing whether a place is present in a list
 
@@ -217,21 +499,26 @@ query QueryItineraryLocationsAsSimpleList {
               }
             }
             place {
+              position {
+                lon
+                lat
+              }
+              # Example drawing basic information from a place provider
               id
               name
               contact {
                 facebookUrl
                 instagramUrl
               }
-              position {
-                lon
-                lat
-              }
               address {
                 addressLineOne
                 locality
               }
             }
+
+            # Othere references you have stored against your list
+            externalRef: attrValue(id: "custom/external-ref")
+            websiteUrl
           }
         }
         position: edgePositionNumber
@@ -396,8 +683,6 @@ making it easy for users to rearrange their itinerary as they see fit.
 
 Like other mutations, you can also read back cascaded changes to identify what
 has been affected by your mutation.
-
-# Advanced Topics
 
 # Further Reading
 
