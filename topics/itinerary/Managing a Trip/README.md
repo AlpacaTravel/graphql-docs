@@ -103,6 +103,7 @@ an example, your response will have unique id.
 See More:
 
 - [Creating an Itinerary](/topics/itinerary/Creating%20an%20itinerary)
+- [Custom Data](/topics/itinerary/Custom%20Data/)
 - [CreateItineraryInput type](/reference#createitineraryinput)
 - [CreateItineraryPayload type](/reference#createitinerarypayload)
 
