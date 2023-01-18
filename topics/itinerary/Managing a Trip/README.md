@@ -421,7 +421,7 @@ operation and the location will be permanently removed from the itinerary.
 
 Example Successful response:
 
-```graphql
+```json
 {
   "data": {
     "deleteItineraryItem": {
@@ -872,3 +872,9 @@ See More:
 
 - [Mapping](/topics/itinerary/Mapping/)
 - [Alpaca Travel Mapping Service](https://github.com/AlpacaTravel/mapping-docs)
+
+# Further Reading
+
+- [Example Itinerary Operations](/example-operations/itinerary/)
+- [Other Itinerary Topics](/topics/itinerary/)
+- [Alpaca Travel GraphQL API Schema Reference](/reference/)
