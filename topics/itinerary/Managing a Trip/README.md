@@ -171,7 +171,7 @@ See More:
 - [CreateItineraryLocationInput type](/reference#createitinerarylocationinput)
 - [CreateItineraryLocationPayload type](/reference#createitinerarylocationpayload)
 
-### Adding a location from a place provider
+### Adding a Location from a Place Provider
 
 Alternatively, you can associate the created location with a specific place
 provided by various supported place provider (such as ATDW, Facebook etc). The
@@ -436,7 +436,7 @@ a local representation, you can also read back the cascaded changes which
 provides the option of reading back any other create/updated or deleted nodes
 that have been affected by mutations.
 
-## Changing the title of a location
+## Changing the Title of a Location
 
 To change the title of a location, you can use the updateItineraryLocation
 mutation. The mutation takes in the ID of the location you wish to update and
@@ -462,7 +462,7 @@ See More:
 
 - [UpdateItineraryLocationInput reference](/reference#updateitinerarylocationinput)
 
-## Reordering itinerary locations
+## Reordering Itinerary Locations
 
 The API allows you to reorder the itinerary locations by using the
 "moveItineraryItem" mutation operation.
@@ -512,7 +512,7 @@ See More:
 
 - [Reordering Locations](/topics/itinerary/Reordering%20Locations/)
 
-## Turning on Auto Routing
+## Turning on Auto-Routing
 
 To turn on auto-routing for an itinerary, you can use the "updateItinerary"
 mutation. This mutation allows you to modify an existing itinerary and specify
@@ -575,7 +575,7 @@ See More:
 
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/)
 
-## Displaying an Itinerary with matched Directions
+## Displaying an Itinerary with Matched Directions
 
 Once you have enabled auto-routing on an itinerary, the itinerary will have
 directions available for querying. You can use the "itinerary" query to access
@@ -684,7 +684,7 @@ See More:
 
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/)
 
-## Add in a place of interest for a location
+## Adding a Place of Interest for a Location
 
 Once you have created an itinerary, you can start adding locations to it. One
 way to structure locations is to create a hierarchy of associations between
@@ -729,7 +729,7 @@ See More:
 
 - [Places of Interest](/topics/itinerary/Managing%20a%20Trip/)
 
-## Display an itinerary on a map
+## Displaying an Itinerary on a Map
 
 Alpaca uses the Web Mercator projection (EPSG:3857/WGS 84) as the default
 coordinate reference system. This is a popular projection used by most web
