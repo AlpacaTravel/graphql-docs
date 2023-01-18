@@ -158,6 +158,10 @@ More coming soon. Make us a suggestion.
 Itineraries are the data structure to store simple lists to complex
 multi-segment scheduled itineraries (and what is in-between).
 
+If you'd like a quick overview of everything, you should start with
+[Managing a Trip](/topics/itinerary/Managing%20a%20Trip/) which will provide
+you with a quick overview of managing an itinerary from start to end.
+
 - **[Creating an itinerary](topics/itinerary/Creating%20an%20itinerary/README.md)**
   Start with creating an itinerary either anonymously or assigned to a profile,
   to house your saved/favourited list, trail, track, trip or itinerary
