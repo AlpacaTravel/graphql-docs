@@ -44,6 +44,25 @@ Additional Resources:
 - Apollo Sandbox for testing queries and seeing what other operations/fields
   are available
 
+_Table of Contents_
+
+- [Managing a Trip](#managing-a-trip)
+  - [Creating an Itinerary](#creating-an-itinerary)
+  - [Adding Locations](#adding-locations)
+    - [Adding a Location from a Place Provider](#adding-a-location-from-a-place-provider)
+  - [Testing Whether a Place is Present in an Itinerary](#testing-whether-a-place-is-present-in-an-itinerary)
+  - [Listing the Itinerary Locations](#listing-the-itinerary-locations)
+  - [Removing a Location](#removing-a-location)
+  - [Changing the Title of a Location](#changing-the-title-of-a-location)
+  - [Reordering Itinerary Locations](#reordering-itinerary-locations)
+  - [Turning on Auto-Routing](#turning-on-auto-routing)
+  - [Displaying an Itinerary with Matched Directions](#displaying-an-itinerary-with-matched-directions)
+  - [Making a Stop Optional](#making-a-stop-optional)
+  - [Adding a Place of Interest for a Location](#adding-a-place-of-interest-for-a-location)
+  - [Displaying an Itinerary on a Map](#displaying-an-itinerary-on-a-map)
+- [Advanced Topics](#advanced-topics)
+- [Further Reading](#further-reading)
+
 ## Creating an Itinerary
 
 The first step in creating an itinerary is to use the "createItinerary"
