@@ -874,6 +874,26 @@ See More:
 - [Mapping](/topics/itinerary/Mapping/)
 - [Alpaca Travel Mapping Service](https://github.com/AlpacaTravel/mapping-docs)
 
+# Advanced Topics
+
+The Alpaca Travel GraphQL API offers a wide range of capabilities for developers
+to build interactive travel itineraries for their customers. While the above
+guide covers many of the most common use cases, there are a number of additional
+features and capabilities that may be of interest to advanced users.
+
+- **[Storing Custom Data](/topics/itinerary/Custom%20Data/)**
+  Learn how to store and retrieve custom data fields for itinerary locations or
+  places.
+- **[Working with ATDW](/topics/places/Working%20with%20the%20ATDW/)**
+  Learn how to associate itineraries with products from the Australian Tourism
+  data warehouse
+- **[Working with Drafts](/topics/itinerary/Drafts%20and%20Publishing/)**
+  Understand how to create and manage drafts of itineraries before publishing
+  changes
+- **[Advanced Routing](/topics/route/)**
+  Learn how to use advanced routing features, such as avoiding tolls or ferries,
+  or optimizing for different modes of transportation.
+
 # Further Reading
 
 - [Example Itinerary Operations](/example-operations/itinerary/)
