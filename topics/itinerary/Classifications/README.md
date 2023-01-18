@@ -16,6 +16,7 @@ classifications to created content.
 | `itinerary/difficulies`         | Difficulties of the Itinerary (string[])                |
 | `itinerary/fitness-type`        | Fitness type for the Itinerary (string)                 |
 | `itinerary/environments`        | Environments for the Itinerary (string[])               |
+| `itinerary/pricing-type`        | Pricing classification for the Itinerary (string[])     |
 | `itinerary/route-type`          | The route type of the itinerary (string)                |
 | `itinerary/route-reference`     | The route reference for the itinerary (string)          |
 | `itinerary/is-route-reversible` | Whether the route can be reversed (boolean)             |

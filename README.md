@@ -188,6 +188,15 @@ you with a quick overview of managing an itinerary from start to end.
 - **[Mapping](topics/itinerary/Mapping/README.md)**
   Accessing information from the API as a GIS data source for itinerary
   information
+- **[Classifications](topics/itinerary/Classifications/)**
+  Apply classifications to itineraries, such as genres, travel styles,
+  audiences, as more.
+- **[Drafts and Publishing](topics/itinerary/Drafts%20and%20Publishing/)**
+  Control how mutations are applied, either to a draft, or to the published
+  version.
+- **[Custom Data](topics/itinerary/Custom%20Data/)**
+  Add in custom data to the itinerary data structure, such as storing your own
+  ID's or other simple values.
 
 ### Collections
 

@@ -209,6 +209,28 @@ a [GraphQL Connection here](/topics/graphql/Pagination%20using%20cursor%20connec
 }
 ```
 
+## List Presentation
+
+When display a list, you may need to consider how you present the list. This
+could include what text you want to display along with the list, and whether
+the list should be presented ordered or unordered.
+
+On an itinerary, these fields can assist determine the way you want to display
+the list.
+
+| Attribute ID                  | Description                                                                              |
+| ----------------------------- | ---------------------------------------------------------------------------------------- |
+| `itinerary/list-name`         | A name to associate with the itinerary list (string, localised)                          |
+| `itinerary/list-presentation` | Whether the list is to be considered ordered or unordered (string: ordered or unordered) |
+
+Similarly, if showing a list of places against an Itinerary Location you can
+use the following attributes:
+
+| Attribute ID                           | Description                                                                              |
+| -------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `itinerary/location/list-name`         | A name to associate with the itinerary list (string, localised)                          |
+| `itinerary/location/list-presentation` | Whether the list is to be considered ordered or unordered (string: ordered or unordered) |
+
 ## Additional Query Topics
 
 ## Matching Directions
