@@ -20,8 +20,22 @@ allows developers to use any GraphQL client to make the API calls.
 
 _Table of Contents_
 
-- [Creating a List](#creating-a-list)
-  - [Defining the Basic Structure of an itinerary](#defining-the-basic-structure-of-an-itinerary)
+- [Managing a Curated List of Locations](#managing-a-curated-list-of-locations)
+  - [Creating a List](#creating-a-list)
+    - [Defining the Basic Structure of an itinerary](#defining-the-basic-structure-of-an-itinerary)
+    - [Setting the Title and Default Locale](#setting-the-title-and-default-locale)
+    - [Indicating if a List is Ordered or Unordered](#indicating-if-a-list-is-ordered-or-unordered)
+    - [Retrieving the List](#retrieving-the-list)
+  - [Adding and Removing Locations to an List](#adding-and-removing-locations-to-an-list)
+    - [Adding a Location Directly to an Itinerary](#adding-a-location-directly-to-an-itinerary)
+    - [Adding a Location using a Place Provider](#adding-a-location-using-a-place-provider)
+    - [Storing your own ID's and data](#storing-your-own-ids-and-data)
+  - [Testing whether a place is present in a list](#testing-whether-a-place-is-present-in-a-list)
+  - [Listing the Locations in a List](#listing-the-locations-in-a-list)
+  - [Removing a Location from a List](#removing-a-location-from-a-list)
+  - [Changing the title of a location in a list](#changing-the-title-of-a-location-in-a-list)
+  - [Reordering the List](#reordering-the-list)
+- [Further Reading](#further-reading)
 
 ## Creating a List
 
