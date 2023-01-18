@@ -170,7 +170,7 @@ mutation UpdateCollectionLocationAddExternalReference {
       # Use upsert to insert/update a record
       upsertAttrs: [
         # Supply an external ID for this record
-        { id: "custom://external-ref", value: "my-reference-UUID" }
+        { id: "custom/external-ref", value: "my-reference-UUID" }
       ]
     }
   ) {
