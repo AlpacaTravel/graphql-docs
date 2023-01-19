@@ -25,15 +25,18 @@ _Table of Contents_
     - [Defining the Basic Structure of an itinerary](#defining-the-basic-structure-of-an-itinerary)
     - [Setting the Title and Default Locale](#setting-the-title-and-default-locale)
     - [Indicating if a List is Ordered or Unordered](#indicating-if-a-list-is-ordered-or-unordered)
+    - [Storing your own References](#storing-your-own-references)
     - [Retrieving the List](#retrieving-the-list)
   - [Adding and Removing Locations to an List](#adding-and-removing-locations-to-an-list)
     - [Adding a Location Directly to an Itinerary](#adding-a-location-directly-to-an-itinerary)
     - [Adding a Location using a Place Provider](#adding-a-location-using-a-place-provider)
-    - [Storing your own ID's and data](#storing-your-own-ids-and-data)
-  - [Testing whether a place is present in a list](#testing-whether-a-place-is-present-in-a-list)
+    - [Storing your own References](#storing-your-own-references-1)
+    - [Testing whether a place is present in a list](#testing-whether-a-place-is-present-in-a-list)
   - [Listing the Locations in a List](#listing-the-locations-in-a-list)
   - [Removing a Location from a List](#removing-a-location-from-a-list)
-  - [Changing the title of a location in a list](#changing-the-title-of-a-location-in-a-list)
+  - [Updating Content](#updating-content)
+    - [Location Content](#location-content)
+    - [Itinerary Content](#itinerary-content)
   - [Reordering the List](#reordering-the-list)
 - [Further Reading](#further-reading)
 
@@ -205,6 +208,19 @@ any hierarchy, you would want to indicate the list as unordered.
 By indicating whether a list is ordered or unordered, you can ensure that the
 list is presented in the most appropriate way for your users.
 
+### Storing your own References
+
+You may also want to store your own identifiers against the list using the
+attributes `custom/external-ref` and `custom/external-source` as well as other
+custom data attributes.
+
+This could be useful to store an important identifier that relates to your
+application.
+
+See More:
+
+- [Custom Data](/topics/itinerary/Custom%20Data/)
+
 ### Retrieving the List
 
 To retrieve the basic structure of a list, you can use the `itinerary` query and
@@ -370,7 +386,7 @@ information about the location, such as photos, ratings, or contact information,
 to your users. It also allows you to easily update the information about the
 location in case the place provider updates their data.
 
-### Storing your own ID's and data
+### Storing your own References
 
 In addition to linking locations to places provided by external providers, you
 may also want to store your own ID's against a location in your itinerary. To do
@@ -425,7 +441,7 @@ See More:
 
 - [Custom Data](/topics/itinerary/Custom%20Data/)
 
-## Testing whether a place is present in a list
+### Testing whether a place is present in a list
 
 Once you have added locations to your list, you may want to check if a
 particular place is already present in the list before adding it again. This can
@@ -603,21 +619,53 @@ Example Successful response:
 
 Please be aware that the operation is irreversible.
 
-## Changing the title of a location in a list
+## Updating Content
+
+Your list can have content attached to both the itinerary as well as the
+individual locations appearing in your list.
+
+### Location Content
 
 Once you have added locations to your list, you may want to update the title of
 a location. This can be done using the `updateItineraryLocation` mutation. The
 mutation takes in the `id` of the location you wish to update and the new
 `title` you want to set.
 
+- Title
+- Synopsis and Descriptions
+- Tags, Read More URL and Website URLs
+- Media (Contained in a [seperate guide](/topics/media/))
+- Place information and extended Attributes
+
+You can provide this content when you are initially creating the location using
+the `createItineraryLocation` mutation, or alternatively use the
+`updateItineraryLocation` mutation to provide or update these values later.
+
 ```graphql
-mutation UpdateItineraryLocationTitle {
+mutation UpdateItineraryLocationContent {
   updateItineraryLocation(
     id: "itinerary/ABC123/location/DEF456"
-    location: { title: "New Title" }
+    location: {
+      # Various standard fields, see "UpdateItineraryLocationInput" type
+      title: "Eiffel Tower"
+      synopsis: "A short summary for the location"
+      description: "Markdown formatted description for the location"
+      # Extended attributes
+      upsertAttrs: [
+        { id: "place/website-url", value: "https://www.toureiffel.paris" }
+        {
+          id: "place/facebook-url"
+          value: "https://www.facebook.com/EiffelTower.OfficialPage"
+        }
+      ]
+      # You can remove values using the deleteAttrs
+      # example value: [{ id: "place/website-url" }]
+      deleteAttrs: []
+    }
   ) {
     location {
       id
+      # Read back updated values in the response
       title
     }
   }
@@ -646,6 +694,57 @@ Example response:
 
 Please note that you can also update other fields for the location using this
 mutation.
+
+See More:
+
+- [CreateItineraryLocationInput type](/reference#createitinerarylocationinput)
+- [UpdateItineraryLocationInput type](/reference#updateitinerarylocationinput)
+
+### Itinerary Content
+
+You may want to also want to store content against the list itself. The
+itinerary data also supports content similar to the itinerary location. This
+structure provides numerous standard fields as well as supporting extended
+attributes to store both custom data as well as other elements such as
+classifications (such as genre, style, audience, etc).
+
+The below example provides a synopsis and description, as well as an example of
+updating a classification.
+
+```graphql
+mutation UpdateItineraryContent {
+  updateItinerary(
+    id: "itinerary/ABC123"
+    itinerary: {
+      # Various standard fields, see "UpdateItineraryInput" type
+      title: "My new title"
+      synopsis: "A short summary of the list"
+      description: "A longer markdown formatted description for the list"
+      # Extended attributes
+      upsertAttrs: [
+        { id: "itinerary/genres", value: ["alpaca:genre:FOOD|CULINARY"] }
+      ]
+      # You can remove values using the deleteAttrs
+      # example value: [{ id: "place/website-url" }]
+      deleteAttrs: []
+    }
+  ) {
+    itinerary {
+      id
+      # Read back any updated values
+      title
+    }
+  }
+}
+```
+
+Like itinerary location, you are able to assign image media.
+
+See More:
+
+- [CreateItineraryInput type](/reference#createitineraryinput)
+- [UpdateItineraryInput type](/reference#updateitineraryinput)
+- [Itinerary Classifications](/topics/itinerary/Classifications/)
 
 ## Reordering the List
 
@@ -697,6 +796,10 @@ making it easy for users to rearrange their itinerary as they see fit.
 
 Like other mutations, you can also read back cascaded changes to identify what
 has been affected by your mutation.
+
+It is also possible to specify the position of the location when you are
+initially creating the location. The same position properties are available
+using the `createItineraryLocation` method.
 
 # Further Reading
 
