@@ -533,6 +533,133 @@ See More:
 
 ## Searching for Places
 
+OpenStretMap is a database that is distributed by many different providers. This
+provides you a number of options you can use for your application in order to
+enhance your search functionality.
+
+## Alpaca Search
+
+The Alpaca API provides a search capability for searching places from OSM. This
+option allows you to provide a search option on your application or website.
+
+```graphql
+query {
+  placeAutocompleteSearch(first: 3, text: "Melbourne", sources: OpenStreetMap) {
+    edges {
+      # Can build single or multiple line responses
+      single {
+        label
+        matches {
+          length
+          offset
+        }
+      }
+
+      # The place information
+      node {
+        # Basic identifiers
+        id
+        name
+
+        # Location to show on a map
+        position {
+          lon
+          lat
+        }
+
+        # Context from adddress
+        address {
+          region
+          country
+        }
+      }
+    }
+  }
+}
+```
+
+If successful, a response may look like the following:
+
+```json
+{
+  "data": {
+    "placeAutocompleteSearch": {
+      "edges": [
+        {
+          "single": {
+            "label": "Melbourne, Australia",
+            "matches": [
+              {
+                "length": 9,
+                "offset": 0
+              }
+            ]
+          },
+          "node": {
+            "id": "place/openstreetmap:relation:4246124",
+            "name": "Melbourne",
+            "position": {
+              "lon": 144.9631608,
+              "lat": -37.8142176
+            },
+            "address": {
+              "region": "Victoria",
+              "country": "Australia"
+            }
+          }
+        },
+        {
+          "single": {
+            "label": "Melbourne, United States",
+            "matches": [
+              {
+                "length": 9,
+                "offset": 0
+              }
+            ]
+          },
+          "node": {
+            "id": "place/openstreetmap:relation:117646",
+            "name": "Melbourne",
+            "position": {
+              "lon": -80.6371513,
+              "lat": 28.106471
+            },
+            "address": {
+              "region": "Florida",
+              "country": "United States"
+            }
+          }
+        },
+        {
+          "single": {
+            "label": "Melbourne, United States",
+            "matches": [
+              {
+                "length": 9,
+                "offset": 0
+              }
+            ]
+          },
+          "node": {
+            "id": "place/openstreetmap:relation:129273",
+            "name": "Melbourne",
+            "position": {
+              "lon": -93.1030319,
+              "lat": 41.9430186
+            },
+            "address": {
+              "region": "Iowa",
+              "country": "United States"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
 ## Nominatim (by OSM)
 
 > [Nominatim](https://nominatim.org/release-docs/develop/api/Search/) (from the
