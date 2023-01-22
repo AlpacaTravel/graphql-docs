@@ -376,6 +376,156 @@ The response if successful will look like the following:
 }
 ```
 
+### Opening Hours
+
+Where opening hours are available, you can use the Alpaca platform to interpret
+and display opening hours of locations.
+
+Alpaca also offers the inclusion of Public Holidays in order to flag to users
+of your website or application that they may have affected operating hours
+due to local observed public holidays.
+
+```graphql
+# Obtain the open/closed hours for the place given a period, such as the
+# upcoming week or future date range. Includes information on local public
+# holidays that could affect opening hours.
+
+query QueryDateRangeOpenClosedTimes($placeId: ID!) {
+  # Use the place() operation
+  place(id: $placeId) {
+    # Access the opening hours (where specified)
+    hours {
+      # Use the forDays operation to obtain days across a range of dates. By
+      # default, without any arguments the next 7 days will be selected. You
+      # can change the range by specifying an alternative offset (which allows
+      # you to specify values like { days: 14 }) or provide a specific start and
+      # end dates (as ISO-8601 date strings)
+      forDays {
+        # Date/day, as ISO-8601, or as formatted for presentation using the
+        # Unicode Technical Standard #35 Date Field Symbols
+        date(format: "EEE, MMM d")
+        # Whether there is a public holiday for this date detected for this
+        # region on this date
+        publicHolidays
+        # Obtain the intervals for this date, requesting the opening status
+        # status is optional, otherwise use Open/Closed to specify your pref
+        intervals(status: Open) {
+          # Hours, from/to as ISO-8601 string, or formatted using the Unicode
+          # Technical Standard #35 Date Field Symbols
+          from(format: "h:mm a")
+          to(format: "h:mm a")
+          # Status (Open/Closed)
+          status
+          # Any corresponding comment for the opening hours
+          comment
+        }
+      }
+    }
+  }
+}
+```
+
+```json
+{
+  "data": {
+    "place": {
+      "hours": {
+        "forDays": [
+          {
+            "date": "Mon, Jan 23",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "7:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Tue, Jan 24",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "7:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Wed, Jan 25",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "7:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Thu, Jan 26",
+            "publicHolidays": ["Australia Day"],
+            "intervals": [
+              {
+                "from": "7:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Fri, Jan 27",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "7:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Sat, Jan 28",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "8:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Sun, Jan 29",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "9:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+See More:
+
+- [Accessing Hours](/topics/places/Accessing%20Hours/)
+
 ## Searching for Places
 
 ## Nominatim (by OSM)

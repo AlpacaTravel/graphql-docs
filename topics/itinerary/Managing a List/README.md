@@ -161,10 +161,7 @@ defaultLocale of an existing itinerary.
 mutation UpdateItinerary {
   updateItinerary(
     id: "itinerary/ABC123"
-    itinerary: {
-      title: "Liste des lieux recommandés",
-      defaultLocale: "fr"
-    }
+    itinerary: { title: "Liste des lieux recommandés", defaultLocale: "fr" }
   ) {
     itinerary {
       id
@@ -406,6 +403,10 @@ Using a place provider can be especially useful when you want to show additional
 information about the location, such as photos, ratings, or contact information,
 to your users. It also allows you to easily update the information about the
 location in case the place provider updates their data.
+
+See More:
+
+- [Using OpenStreetMap (a free place provider)](/topics/places/Working%20with%20OSM/)
 
 ### Storing your own References
 
