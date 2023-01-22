@@ -161,7 +161,10 @@ defaultLocale of an existing itinerary.
 mutation UpdateItinerary {
   updateItinerary(
     id: "itinerary/ABC123"
-    itinerary: { title: "New Title", defaultLocale: "fr" }
+    itinerary: {
+      title: "Liste des lieux recommandés",
+      defaultLocale: "fr"
+    }
   ) {
     itinerary {
       id
