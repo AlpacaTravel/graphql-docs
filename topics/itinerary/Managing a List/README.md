@@ -13,10 +13,27 @@ when they are first getting started with the Alpaca Travel API and are working
 on their projects, so they can easily understand the different GraphQL
 operations they need to create a list and manage it.
 
-Please note that this guide is intended to provide an overview of calling the
-GraphQL API, but there are numerous other operations and use cases covered
-outside of this guide. Additionally, this guide is technology agnostic and
-allows developers to use any GraphQL client to make the API calls.
+What this guide does not cover:
+
+- Numerous alternative use cases; This is provided to give a developer an
+  overview of calling the GraphQL API but there are numerous other operations
+  and use cases covered outside of this guide.
+- This guide does not cover how to make API calls or connect your application to
+  the GraphQL API using a specific client. It is technology agnostic and allows
+  developers to use any GraphQL client to make the calls.
+- It does not cover how to obtain or use an API key to access the Alpaca Travel
+  GraphQL API. Developers must have a valid API key to make calls to the API.
+- It does not cover implementation details such as handling errors or rate
+  limiting, which are important but are out of scope of this guide.
+- It does not cover all the possible options and variations of the GraphQL
+  operations, but it covers the most common and useful ones for managing
+  itineraries.
+
+Additional Resources:
+
+- Alpaca Travel GraphQL API Detailed Schema Reference
+- Apollo Sandbox for testing queries and seeing what other operations/fields are
+  available
 
 _Table of Contents_
 
@@ -34,10 +51,11 @@ _Table of Contents_
     - [Testing whether a place is present in a list](#testing-whether-a-place-is-present-in-a-list)
   - [Listing the Locations in a List](#listing-the-locations-in-a-list)
   - [Removing a Location from a List](#removing-a-location-from-a-list)
+  - [Reordering the List](#reordering-the-list)
   - [Updating Content](#updating-content)
     - [Location Content](#location-content)
     - [Itinerary Content](#itinerary-content)
-  - [Reordering the List](#reordering-the-list)
+  - [Sharing a List](#sharing-a-list)
 - [Further Reading](#further-reading)
 
 ## Creating a List
@@ -529,6 +547,7 @@ query QueryItineraryLocationsAsSimpleList {
               }
             }
             place {
+              # Use this to draw the list on to a map
               position {
                 lon
                 lat
@@ -618,6 +637,61 @@ Example Successful response:
 ```
 
 Please be aware that the operation is irreversible.
+
+## Reordering the List
+
+After you have added multiple locations to your list, you may want to change the
+order of those locations. The Alpaca Travel API allows you to reorder the
+locations within a list by using the "moveItineraryItem" mutation operation.
+
+The `moveItineraryItem` mutation takes an `id` parameter, which is the ID of the
+itinerary location to be moved, and a `positionAtStart`,
+`positionAfterSibling`, `positionAtEnd` or `positionBeforeSibling` property
+that specify the location in the itinerary that the item should be moved to.
+
+To move an itinerary location to the start of the sequence, you can use the
+following mutation:
+
+```graphql
+mutation {
+  moveItineraryItem(
+    id: "itinerary/ABC123/location/DEF456"
+    positionAtStart: {
+      item { id }
+    }
+  ) {
+  }
+}
+```
+
+Alternatively, you can move an itinerary location to a relative position to
+another item in the itinerary by using the `positionAfterSibling`,
+`positionAtEnd` or `positionBeforeSibling` properties in the mutation.
+
+```graphql
+mutation {
+  moveItineraryItem(
+    id: "itinerary/ABC123/location/DEF456"
+    positionAfterSibling: { siblingId: "itinerary/ABC123/location/GHI789" }
+  ) {
+    item {
+      id
+    }
+  }
+}
+```
+
+These mutations allow you to reorder the itinerary locations in a flexible way,
+whether it be moving them to a specific position or relative to other locations.
+This can be used to enable drag-and-drop functionality in your application,
+making it easy for users to rearrange their itinerary as they see fit.
+
+Like other mutations, you can also read back cascaded changes to identify what
+has been affected by your mutation.
+
+It is also possible to specify the position of the location when you are
+initially creating the location. The same position properties are available
+using the `createItineraryLocation` method.
 
 ## Updating Content
 
@@ -746,60 +820,21 @@ See More:
 - [UpdateItineraryInput type](/reference#updateitineraryinput)
 - [Itinerary Classifications](/topics/itinerary/Classifications/)
 
-## Reordering the List
+## Sharing a List
 
-After you have added multiple locations to your list, you may want to change the
-order of those locations. The Alpaca Travel API allows you to reorder the
-locations within a list by using the "moveItineraryItem" mutation operation.
+After you have created a list, you may want to share the list with others. You
+may choose to present your own shareable list, but you can also share an
+interactive map from the Alpaca Travel platform.
 
-The `moveItineraryItem` mutation takes an `id` parameter, which is the ID of the
-itinerary location to be moved, and a `positionAtStart`,
-`positionAfterSibling`, `positionAtEnd` or `positionBeforeSibling` property
-that specify the location in the itinerary that the item should be moved to.
+For this to work, you will need to have the `id` for the itinerary and
+substitute the `id` value in place of the `<ITINERARY_ID>` in the following URL:
 
-To move an itinerary location to the start of the sequence, you can use the
-following mutation:
-
-```graphql
-mutation {
-  moveItineraryItem(
-    id: "itinerary/ABC123/location/DEF456"
-    positionAtStart: {
-      item { id }
-    }
-  ) {
-  }
-}
+```
+https://made.withalpaca.com/view/<ITINERARY_ID>
 ```
 
-Alternatively, you can move an itinerary location to a relative position to
-another item in the itinerary by using the `positionAfterSibling`,
-`positionAtEnd` or `positionBeforeSibling` properties in the mutation.
-
-```graphql
-mutation {
-  moveItineraryItem(
-    id: "itinerary/ABC123/location/DEF456"
-    positionAfterSibling: { siblingId: "itinerary/ABC123/location/GHI789" }
-  ) {
-    item {
-      id
-    }
-  }
-}
-```
-
-These mutations allow you to reorder the itinerary locations in a flexible way,
-whether it be moving them to a specific position or relative to other locations.
-This can be used to enable drag-and-drop functionality in your application,
-making it easy for users to rearrange their itinerary as they see fit.
-
-Like other mutations, you can also read back cascaded changes to identify what
-has been affected by your mutation.
-
-It is also possible to specify the position of the location when you are
-initially creating the location. The same position properties are available
-using the `createItineraryLocation` method.
+The user will be presented with an interactive version of your content by
+following the URL.
 
 # Further Reading
 
