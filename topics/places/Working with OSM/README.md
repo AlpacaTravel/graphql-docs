@@ -381,6 +381,11 @@ The response if successful will look like the following:
 Where opening hours are available, you can use the Alpaca platform to interpret
 and display opening hours of locations.
 
+- Search for a upcoming or future range
+- Localise the hours to a different timezone
+- Identify public holidays that could affect opening hours
+- Change the format and display for dates and times
+
 Alpaca also offers the inclusion of Public Holidays in order to flag to users
 of your website or application that they may have affected operating hours
 due to local observed public holidays.

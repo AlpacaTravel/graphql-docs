@@ -81,6 +81,105 @@ query QueryDateRangeOpenClosedTimes {
 }
 ```
 
+On a success, your response will look similar to the following:
+
+```json
+{
+  "data": {
+    "place": {
+      "hours": {
+        "forDays": [
+          {
+            "date": "Mon, Jan 23",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "7:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Tue, Jan 24",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "7:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Wed, Jan 25",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "7:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Thu, Jan 26",
+            "publicHolidays": ["Australia Day"],
+            "intervals": [
+              {
+                "from": "7:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Fri, Jan 27",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "7:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Sat, Jan 28",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "8:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          },
+          {
+            "date": "Sun, Jan 29",
+            "publicHolidays": [],
+            "intervals": [
+              {
+                "from": "9:00 AM",
+                "to": "3:30 PM",
+                "status": "Open",
+                "comment": null
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
 ### Upcoming Open/Closed hours using `intervals()` connection
 
 The `intervals()` operation provides you the information about the immediate
