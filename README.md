@@ -278,6 +278,8 @@ Topics across our API can be explored from the following list;
 - **[Create React App](topics/javascript/Create%20React%20App/README.md)**
   Get started with a template to build React Apps in Typescript/Apollo with
   added codegen to make development faster.
+- **[React Apollo Client](topics/javascript/react/Apollo%20Client/)**
+  Get started with React and Apollo Client to access an itinerary
 
 ### Alpaca GraphQL JavaScript SDK
 
@@ -285,13 +287,6 @@ Topics across our API can be explored from the following list;
   SDKs based on popular JavaScript development environments, including `React`,
   `Vue`, `Svelte` and `Stencil`. The SDK provides options for developers such as
   leveraging `urql`, `graphql-request`, `react-query`and `apollo`.
-
-## Tutorials
-
-React
-
-- [Connecting to Apollo](tutorials/react/Connecting%20to%20Apollo/README.md)
-- [Connecting to URQL](tutorials/react/Connecting%20URQL/README.md)
 
 More Coming soon
 
@@ -302,6 +297,9 @@ in order to display content from the Alpaca Travel service.
 
 These are provided as working examples you can modify for your own uses.
 
+- **[React/Apollo Load Itinerary](https://codesandbox.io/s/alpaca-travel-react-apollo-client-itinerary-t37bg9)**
+  Simple example of a react application loading an itinerary using the
+  "itinerary" operation.
 - **[React Place Slider](https://codesandbox.io/s/alpaca-travel-collection-location-sliding-cards-2kpjt?file=/src/components/Slider.js)**
   Example loading a "slider" of location cards from a collection pulling in
   information from Australian Tourism Data Warehouse (ATDW). You can customise
