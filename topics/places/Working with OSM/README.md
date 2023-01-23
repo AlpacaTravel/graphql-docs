@@ -263,6 +263,27 @@ sources of information to make it as accurate as possible. Wikidata allows
 developers to access a large amount of information about a place in a structured
 and consistent manner.
 
+You can also find all the attributes that are available for a location with the
+following query:
+
+```graphql
+query {
+  place(id: "place/openstreetmap:relation:4246124") {
+    id
+
+    # Load the first 100 attributes for the product
+    attrs(first: 100) {
+      edges {
+        node {
+          id
+          value
+        }
+      }
+    }
+  }
+}
+```
+
 ### Place Photos via MediaWiki
 
 MediaWiki is an open-source software that is used to power Wikipedia and other
