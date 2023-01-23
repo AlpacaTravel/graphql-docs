@@ -242,6 +242,27 @@ Example Response
 }
 ```
 
+You can also find all the attributes that are available for a location with the
+following query:
+
+```graphql
+query {
+  place(id: "place/atdw:product:5732b88b19f4a4ae38aa1974") {
+    id
+
+    # Load the first 30 attributes for the product
+    attrs(first: 30) {
+      edges {
+        node {
+          id
+          value
+        }
+      }
+    }
+  }
+}
+```
+
 ### Position Attributes
 
 Alpaca offers a additional attributes that can be used to enhance the data

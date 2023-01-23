@@ -224,6 +224,10 @@ information and keep your place information up to date.
   convenient and consistent way, speeding up your integration. You can also
   store additional data beside ATDW data, including missing places or additional
   data attributes (tags, custom data etc)
+- **[Facebook Pages](/topics/places/Working%20with%20Facebook%20Pages/)**
+  Alpaca provides a mechanism to load place information from Facebook Pages.
+  This can help keep your itinerary up to date with loading place information
+  from Facebook, including opening hours and more.
 - **[Accessing Hours](topics/places/Accessing%20Hours/README.md)**
   Access information about opening hours of a vendor, and present them in
   time zone appropriate formats.
