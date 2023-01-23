@@ -317,7 +317,7 @@ See More:
 ## Searching for Pages
 
 You can also leverage the place search capabilities of the API by specifying
-the `sources` as `AustralianTourismDataWarehouse`.
+the `sources` as `Facebook`.
 
 ```graphql
 query SearchPlaceAutocompleteFromFacebook {
