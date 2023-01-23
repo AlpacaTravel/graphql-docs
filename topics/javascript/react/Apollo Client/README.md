@@ -180,7 +180,7 @@ understand and handle pagination correctly for your application.
 
 You should refer to the [Apollo Pagination](https://www.apollographql.com/docs/react/pagination/overview)
 section to understand more about how Apollo covers pagination, and specifially
-you can refer to the section on [Cursor-based pagination]([https://](https://www.apollographql.com/docs/react/pagination/cursor-based)
+you can refer to the section on [Cursor-based pagination](https://www.apollographql.com/docs/react/pagination/cursor-based)
 and refer to the "Relay-style cursor pagination" section.
 
 The below is an example of configuring the `InMemoryCache` object so that it

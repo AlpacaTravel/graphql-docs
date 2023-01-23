@@ -43,9 +43,6 @@ supporting information on GraphQL and why it is used below.
 - **[Topics](#topics)** - We are grouping together common requirements have
   under [topics](#topics) to bring developers up to speed quickly on certain
   concepts they may need.
-- **[Tutorials](#tutorials)** - We will also be expanding on examples and topics
-  to create series in the form of [tutorials](#tutorials) to expand upon
-  concepts and create complete working examples.
 - **[Example Applications](#example-applications)** - We have provided some
   working examples of apps for you to play and adapt that demonstrates the
   technology in use.

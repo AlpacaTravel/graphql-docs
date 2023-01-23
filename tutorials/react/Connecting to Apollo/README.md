@@ -1,5 +1,8 @@
 # Connecting Apollo
 
+_Note: This document is out of date and we recommend you referencing the
+topic of [React Apollo Client](/topics/javascript/react/Apollo%20Client/)_
+
 This guide will quickly setup a React single-page application using
 create-react-app, and configure it using Apollo to connect to the Alpaca
 Travel API.
