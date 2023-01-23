@@ -407,6 +407,7 @@ location in case the place provider updates their data.
 See More:
 
 - [Using OpenStreetMap (a free place provider)](/topics/places/Working%20with%20OSM/)
+- [Using Australian Tourism Data Warehouse](/topics/places/Working%20with%20the%20ATDW/)
 
 ### Storing your own References
 
