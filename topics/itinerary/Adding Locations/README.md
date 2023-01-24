@@ -6,13 +6,13 @@ list through to something more complex (such as organised by segments etc).
 
 You may also wish to review the following guides as starting points:
 
-- [Managing a list](/topics/itinerary/Managing%20a%20List/)
-- [Managing a trip](/topics/itinerary/Managing%20a%20Trip/)
+- [Managing a list](/getting-started/itinerary/Managing%20a%20List/)
+- [Managing a trip](/getting-started/itinerary/Managing%20a%20Trip/)
 
 _Table of Contents_
 
 - [Adding Locations to Itineraries](#adding-locations-to-itineraries)
-    - [Prerequisits](#prerequisits)
+  - [Prerequisits](#prerequisits)
   - [Adding Locations to an Itinerary](#adding-locations-to-an-itinerary)
     - [Adding a Location Directly to an Itinerary](#adding-a-location-directly-to-an-itinerary)
     - [Adding a Location using a Place provider](#adding-a-location-using-a-place-provider)
