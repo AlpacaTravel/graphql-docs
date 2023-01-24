@@ -12,7 +12,7 @@ You may also wish to review the following guides as starting points:
 _Table of Contents_
 
 - [Adding Locations to Itineraries](#adding-locations-to-itineraries)
-  - [Prerequisits](#prerequisits)
+    - [Prerequisits](#prerequisits)
   - [Adding Locations to an Itinerary](#adding-locations-to-an-itinerary)
     - [Adding a Location Directly to an Itinerary](#adding-a-location-directly-to-an-itinerary)
     - [Adding a Location using a Place provider](#adding-a-location-using-a-place-provider)
@@ -219,9 +219,9 @@ mutation {
     location: {
       title: "Eiffel Tower"
       place: { position: { lon: 2.2944, lat: 48.8584 } }
+      # Specify the desired position to add the location
+      positionAfterSibling: { siblingId: "itinerary/ABC123/location/DEF456" }
     }
-    # Specify the desired position to add the location
-    positionAfterSibling: { siblingId: "itinerary/ABC123/location/DEF456" }
   ) {
     location {
       id
@@ -364,7 +364,7 @@ You can also update values using the "updateItineraryLocation" mutation.
 ```graphql
 mutation UpdateItineraryLocationWithContent {
   updateItineraryLocation(
-    itineraryId: "itinerary/ABC123"
+    id: "itinerary/ABC123/location/DEF456"
     location: {
       # Various standard fields, see "UpdateItineraryLocationInput" type
       title: "Eiffel Tower"

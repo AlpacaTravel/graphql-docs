@@ -53,7 +53,7 @@ Once you then query this value, you can obtain the classifcations set
 ```graphql
 # Get the genre for the itinerary
 
-mutation GetItineraryClassifications {
+query GetItineraryClassifications {
   itinerary(id: "itinerary/ABC123") {
     type: attrValue(id: "itinerary/type")
     genres: attrValue(id: "itinerary/genres")

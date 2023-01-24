@@ -494,10 +494,11 @@ following mutation:
 mutation {
   moveItineraryItem(
     id: "itinerary/ABC123/location/DEF456"
-    positionAtStart: {
-      item { id }
-    }
+    positionAtStart: {}
   ) {
+    item {
+      id
+    }
   }
 }
 ```

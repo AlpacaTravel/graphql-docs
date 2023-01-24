@@ -190,8 +190,10 @@ For example, the following GraphQL mutation sets the
 ```graphql
 mutation CreateOrderedList {
   createItinerary(
-    title: "My Top 10 Destinations"
-    attrs: [{ id: "itinerary/list-presentation", value: "ordered" }]
+    itinerary: {
+      title: "My Top 10 Destinations"
+      attrs: [{ id: "itinerary/list-presentation", value: "ordered" }]
+    }
   ) {
     itinerary {
       id
@@ -206,8 +208,10 @@ attribute to "unordered" when creating a new list:
 ```graphql
 mutation CreateUnorderedList {
   createItinerary(
-    title: "My Favorite Places"
-    attrs: [{ id: "itinerary/list-presentation", value: "unordered" }]
+    itinerary: {
+      title: "My Favorite Places"
+      attrs: [{ id: "itinerary/list-presentation", value: "unordered" }]
+    }
   ) {
     itinerary {
       id
@@ -661,10 +665,11 @@ following mutation:
 mutation {
   moveItineraryItem(
     id: "itinerary/ABC123/location/DEF456"
-    positionAtStart: {
-      item { id }
-    }
+    positionAtStart: {}
   ) {
+    item {
+      id
+    }
   }
 }
 ```

@@ -57,7 +57,7 @@ mutation CreateItineraryWithCustomData {
       id
       modified
 
-      value: attrValue("custom/my-field")
+      value: attrValue(id: "custom/my-field")
     }
   }
 }
@@ -69,18 +69,16 @@ action.
 ```graphql
 mutation UpdateItineraryWithCustomData {
   updateItinerary(
-    id: "itinerary/ABC123",
+    id: "itinerary/ABC123"
     itinerary: {
-      upsertAttrs: [
-        { id: "custom/my-field", value: "Updated Value" }
-      ]
+      upsertAttrs: [{ id: "custom/my-field", value: "Updated Value" }]
     }
   ) {
     itinerary {
       id
       modified
 
-      value: attrValue("custom/my-field")
+      value: attrValue(id: "custom/my-field")
     }
   }
 }
@@ -94,7 +92,7 @@ to various elements within the itinerary hierarchy.
 query GetItineraryCustomFieldValue {
   itinerary(id: "itinerary/ABC123") {
     id
-    value: attrValue("custom/my-field")
+    value: attrValue(id: "custom/my-field")
   }
 }
 ```
@@ -119,7 +117,7 @@ the name of your custom attribute.
 mutation RemoveItineraryCustomField {
   updateItinerary(
     id: "itinerary/ABC123"
-    deleteAttrs: [{ id: "custom/my-value" }]
+    itinerary: { deleteAttrs: [{ id: "custom/my-value" }] }
   ) {
     itinerary {
       id
