@@ -66,6 +66,8 @@ When using the root endpoint, it is important to authenticate via providing your
 
 - **[Token Authorization](/topics/graphql/Token%20Authorization/)**
   Understand more about Alpaca Travel API Keys and Tokens
+- **[GraphQL Topics](/topics/graphql/)**
+  Getting started with GraphQL
 - **[Apollo Sandbox](/topics/graphql/Apollo%20Sandbox/)**
   Use the GraphQL Sandbox in order to explore and execute queries and mutations
   against the Alpaca GraphQL API from your web browser
