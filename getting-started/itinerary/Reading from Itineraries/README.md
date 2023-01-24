@@ -40,12 +40,13 @@ _Table of Contents_
   - [Displaying a List of Locations](#displaying-a-list-of-locations)
     - [Enhancing Presentation](#enhancing-presentation)
   - [Querying Directions](#querying-directions)
-  - [Loading a Specific Location](#loading-a-specific-location)
-  - [Reading Content](#reading-content)
+  - [Location Content](#location-content)
+    - [Gallery](#gallery)
+    - [Place Information](#place-information)
+    - [Fetching Inbound/Outbound Directions](#fetching-inboundoutbound-directions)
   - [Drawing Maps](#drawing-maps)
-  - [Enhanced Content](#enhanced-content)
-  - [Embeding and Sharing](#embeding-and-sharing)
-  - [Further Reading](#further-reading)
+    - [Alpaca Mapping Services](#alpaca-mapping-services)
+    - [Mapbox GL Example Code](#mapbox-gl-example-code)
 
 ## Loading an Itinerary
 
@@ -80,15 +81,25 @@ itinerary that matches that ID, providing the title of the itinerary.
 
 It is also possible to retrieve additional information about the itinerary by
 including additional fields in the query. For example, the following query will
-retrieve the title, synopsis, and publish date of an itinerary with the ID
-"itinerary/ABC123":
+retrieve the title, synopsis, and publish date of an itinerary and the preferred
+media image to display for the itinerary with the ID "itinerary/ABC123":
 
 ```graphql
 query {
   itinerary(id: "itinerary/ABC123") {
     title
+    # Add additional fields
     synopsis
     published
+    preferredMedia {
+      resource {
+        ... on MediaImage {
+          id
+          card: url(bestFit: [800, 800])
+          attribution
+        }
+      }
+    }
   }
 }
 ```
@@ -99,10 +110,16 @@ The additional fields requested will be included in the response:
 {
   "data": {
     "itinerary": {
-      "id": "itinerary/ABC123",
       "title": "Wild West Coast",
       "synopsis": "A road trip showcasing Tasmania's World Heritage wilderness and wild untamed west coast.",
-      "published": "2022-12-01T04:54:35.698Z"
+      "published": "2022-12-01T04:54:35.698Z",
+      "preferredMedia": {
+        "resource": {
+          "id": "media/0SkPMi6FnSw3COQDt40Axn",
+          "card": "https://media-cdn.alpacamaps.com/uploads/2a/2PG08okaqm2Hfup0xkdzww/IMG_0746/large_1024h.jpeg",
+          "attribution": "Source: Zoe Manderson"
+        }
+      }
     }
   }
 }
@@ -118,13 +135,28 @@ itineraries associated with the profile ID "profile/ABC123":
 
 ```graphql
 query {
-  itineraries(profileId: "profile/ABC123", first: 10) {
+  itineraries(profileId: "profile/ABC123", first: 10, after: null) {
     edges {
       node {
         id
         title
         synopsis
+
+        preferredMedia {
+          resource {
+            ... on MediaImage {
+              id
+              thumbnail: url(bestFit: [200, 200])
+              attribution
+            }
+          }
+        }
       }
+    }
+
+    pageInfo {
+      hasNextPage
+      endCursor
     }
 
     totalCount
@@ -144,17 +176,35 @@ individually using the "itinerary" query.
           "node": {
             "id": "itinerary/DEF456",
             "title": "Coffee Shops of Tokyo",
-            "synopsis": "Whether it be slow pour overs, cold brews or milky barista style, Tokyo knows how to do coffee. You'll find coffee shops down laneways, hidden in residential streets, behind ivy cloaked buildings, and wedged precariously on busy pavements."
+            "synopsis": "Whether it be slow pour overs, cold brews or milky barista style, Tokyo knows how to do coffee. You'll find coffee shops down laneways, hidden in residential streets, behind ivy cloaked buildings, and wedged precariously on busy pavements.",
+            "preferredMedia": {
+              "resource": {
+                "id": "media/3gf8cBQNipVu1dHEeDOCoM",
+                "card": "https://media-cdn.alpacamaps.com/uploads/b1/68Z48ebjSbttxczfZVMmpB/ScreenShot2022-11-22at2.16.55pm/small_m225w_m200h.png",
+                "attribution": "Source: Zoe Manderson"
+              }
+            }
           }
         },
         {
           "node": {
             "id": "itinerary/ABC123",
             "title": "Wild West Coast",
-            "synopsis": "A road trip showcasing Tasmania's World Heritage wilderness and wild untamed west coast."
+            "synopsis": "A road trip showcasing Tasmania's World Heritage wilderness and wild untamed west coast.",
+            "preferredMedia": {
+              "resource": {
+                "id": "media/0SkPMi6FnSw3COQDt40Axn",
+                "card": "https://media-cdn.alpacamaps.com/uploads/2a/2PG08okaqm2Hfup0xkdzww/IMG_0746/small_m225w_m200h.jpeg",
+                "attribution": "Source: Zoe Manderson"
+              }
+            }
           }
         }
       ],
+      "pageInfo": {
+        "hasNextPage": false,
+        "endCursor": "eyJvZmZzZXQiOjF9"
+      },
       "totalCount": 2
     }
   }
@@ -191,7 +241,7 @@ GraphQL query:
 
 ```graphql
 query {
-  itinerary(id: "itinerary/DEF456") {
+  itinerary(id: "itinerary/0mttpRn7spYNDIV979fHbE") {
     id
 
     # Read in the stops
@@ -205,6 +255,17 @@ query {
 
           # Additional content can be selected here as well, depending on the
           # need of your application/website UI
+
+          # Include the preferred media thumbnail
+          preferredMedia {
+            resource {
+              ... on MediaImage {
+                id
+                thumbnail: url(bestFit: [200, 200])
+                attribution
+              }
+            }
+          }
         }
       }
 
@@ -244,42 +305,78 @@ A successful response to this query may look like the following:
             "node": {
               "id": "itinerary/DEF456/location/5q7KiwXt00q7CkuuJgwPGI",
               "title": "Koffee Mameya",
-              "siblingPositionNumber": 1
+              "siblingPositionNumber": 1,
+              "preferredMedia": {
+                "resource": {
+                  "id": "media/24yfva4idUMfg6mqnbV6XR",
+                  "thumbnail": "https://media-cdn.alpacamaps.com/uploads/4c/7k4IVQoPo8m8K7J9C8BorF/IMG_65783/small_m225w_m200h.jpeg",
+                  "attribution": "Source: Zoe Manderson"
+                }
+              }
             }
           },
           {
             "node": {
               "id": "itinerary/DEF456/location/2Q6thRSfnhhVsKaGqnqrSV",
               "title": "Higuma Doughnuts × Coffee Wrights",
-              "siblingPositionNumber": 2
+              "siblingPositionNumber": 2,
+              "preferredMedia": {
+                "resource": {
+                  "id": "media/5Xri6dflmKq8pJFVyPSC0q",
+                  "thumbnail": "https://media-cdn.alpacamaps.com/uploads/10/76Spj4pXRvbGo58fGufJhe/IMG_65882/small_m225w_m200h.jpeg",
+                  "attribution": "Source: Zoe Manderson"
+                }
+              }
             }
           },
           {
             "node": {
               "id": "itinerary/DEF456/location/2rlIDmk0IeETSiA3iseWc4",
               "title": "Onibus Coffee",
-              "siblingPositionNumber": 3
+              "siblingPositionNumber": 3,
+              "preferredMedia": {
+                "resource": {
+                  "id": "media/1uaq5yNFC0SPiGNN2xhndN",
+                  "thumbnail": "https://media-cdn.alpacamaps.com/uploads/0c/1WXshTWzawS3mDPDLIK6lf/ScreenShot2022-11-22at1.29.19pm/small_m225w_m200h.png",
+                  "attribution": "Source: Zoe Manderson"
+                }
+              }
             }
           },
           {
             "node": {
               "id": "itinerary/DEF456/location/4DjTycRHtTPAlmN0Gw4Yis",
               "title": "About Life Brewers",
-              "siblingPositionNumber": 4
+              "siblingPositionNumber": 4,
+              "preferredMedia": {
+                "resource": {
+                  "id": "media/6G3e4U5GDVWIgbSmb1J9kO",
+                  "thumbnail": "https://media-cdn.alpacamaps.com/uploads/b0/46yxk1FqbcWoOfHM8JU1iP/ScreenShot2022-11-22at1.36.04pm/small_m225w_m200h.png",
+                  "attribution": "Source: Zoe Manderson"
+                }
+              }
             }
           },
           {
             "node": {
               "id": "itinerary/DEF456/location/0bHCYxpyVCYUzPDwrWmt32",
               "title": "Blue Bottle Coffee",
-              "siblingPositionNumber": 5
+              "siblingPositionNumber": 5,
+              "preferredMedia": null
             }
           },
           {
             "node": {
               "id": "itinerary/DEF456/location/5XeXZn2N4b4ndK3VJKqf86",
               "title": "Faro Coffee",
-              "siblingPositionNumber": 6
+              "siblingPositionNumber": 6,
+              "preferredMedia": {
+                "resource": {
+                  "id": "media/15hTveupnLmusowKvigvOT",
+                  "thumbnail": "https://media-cdn.alpacamaps.com/uploads/54/4gYEKXPoonVhXFeiT6TkGy/IMG_4195/small_m225w_m200h.jpeg",
+                  "attribution": "Source: Zoe Manderson"
+                }
+              }
             }
           }
         ],
@@ -506,94 +603,7 @@ If successful, as response may look like this:
               ]
             }
           },
-          {
-            "node": {
-              "id": "itinerary/ABC123/location/5qjQbAnmFFFuxF4EnQIIo0",
-              "title": "Strahan",
-              "siblingPositionNumber": 4
-            },
-            "directions": {
-              "nodes": [
-                {
-                  "durationMin": 97.28673333333333,
-                  "distance": 138.84873499999998,
-                  "route": {
-                    "segments": [
-                      {
-                        "mode": "Car"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "node": {
-              "id": "itinerary/ABC123/location/3ZPvzV7WyAalXWo6hJijBJ",
-              "title": "Corinna",
-              "siblingPositionNumber": 5
-            },
-            "directions": {
-              "nodes": [
-                {
-                  "durationMin": 72.91505000000001,
-                  "distance": 93.231847,
-                  "route": {
-                    "segments": [
-                      {
-                        "mode": "Car"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "node": {
-              "id": "itinerary/ABC123/location/6DuqdpTlTwKFtOjA9zhYZY",
-              "title": "Arthur River",
-              "siblingPositionNumber": 6
-            },
-            "directions": {
-              "nodes": [
-                {
-                  "durationMin": 79.61751666666667,
-                  "distance": 95.459772,
-                  "route": {
-                    "segments": [
-                      {
-                        "mode": "Car"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "node": {
-              "id": "itinerary/ABC123/location/7BuzRTLQYH4rWBoIPh2UvV",
-              "title": "Boat Harbour",
-              "siblingPositionNumber": 7
-            },
-            "directions": {
-              "nodes": [
-                {
-                  "durationMin": 66.4878,
-                  "distance": 91.74235300000001,
-                  "route": {
-                    "segments": [
-                      {
-                        "mode": "Car"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
+          ...
         ],
         "pageInfo": {
           "hasNextPage": false,
@@ -626,14 +636,392 @@ Note: you can also use the "first" argument to limit the number of directions
 returned in the query. Also, you can use the argument "direction" to retrieve
 the directions inbound or outbound, depending on the use case.
 
-## Loading a Specific Location
+## Location Content
 
-## Reading Content
+When querying an itinerary, it is possible to retrieve information about the
+individual locations within the itinerary using the "children" operation.
+However, in some cases, it may be necessary to retrieve additional information
+about a specific location. This is where the "node" operation comes in handy.
+
+Using the "node" operation, developers can make a specific query for an
+itinerary location to retrieve more detailed information about that location.
+The following example shows a query that retrieves information about a specific
+itinerary location using the "node" operation:
+
+```graphql
+query {
+  # Use the node query to access an Itinerary Location node
+  node(id: "itinerary/ABC123/location/6DuqdpTlTwKFtOjA9zhYZY") {
+    id
+    __typename
+
+    # Node loads different types of objects, so we request fields for the
+    # Itinerary Location specifically
+    ... on ItineraryLocation {
+      title
+      synopsis
+
+      siblingPositionNumber
+    }
+  }
+}
+```
+
+The response will look similar to the following:
+
+```json
+{
+  "data": {
+    "node": {
+      "id": "itinerary/ABC123/location/6DuqdpTlTwKFtOjA9zhYZY",
+      "__typename": "ItineraryLocation",
+      "title": "Arthur River",
+      "synopsis": "As you cross the bridge, don't miss the view up the river.",
+      "siblingPositionNumber": 6
+    }
+  }
+}
+```
+
+It is important to note that when using the "node" operation, developers must
+specify the specific fields they want to retrieve for the itinerary location.
+This allows for more granular control over the information retrieved and can
+help to minimize unnecessary data retrieval.
+
+In addition to the fields shown in the example above, developers can also
+retrieve other types of content related to the location, such as places of
+interest, arrival and departure directions, and more. It is recommended that
+developers only request the information they need in their queries and fetch
+additional information as needed.
+
+It is important to be mindful of when to query the information; whether from the
+"children" call or seperately with the "node" call. The "children" call is
+useful when you want to retrieve a list of locations on the itinerary and their
+basic information, while the "node" call is useful when you want to retrieve
+more detailed information about a specific location.
+
+### Gallery
+
+Each location can support a gallery of media objects, that can include things
+like images to display with the location.
+
+The below query demonstrates loading the first series of images from a gallery.
+
+```graphql
+query {
+  node(id: "itinerary/ABC123/location/6DuqdpTlTwKFtOjA9zhYZY") {
+    __typename
+
+    # When fetching an itinerary location..
+    ... on ItineraryLocation {
+      title
+      synopsis
+
+      # Load the first 3 images of the gallery
+      mediaContainers(first: 3) {
+        edges {
+          node {
+            id
+            resource {
+              __typename
+              ... on MediaImage {
+                thumbnail: url(bestFit: [200, 200])
+                large: url(bestFit: [800, 800])
+                attribution
+                caption
+              }
+            }
+          }
+        }
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        totalCount
+      }
+    }
+  }
+}
+```
+
+The response now includes an gallery information to display for the location:
+
+```json
+{
+  "data": {
+    "node": {
+      "__typename": "ItineraryLocation",
+      "title": "Arthur River",
+      "synopsis": "As you cross the bridge, don't miss the view up the river.",
+      "mediaContainers": {
+        "edges": [
+          {
+            "node": {
+              "id": "itinerary/ABC123/location/6DuqdpTlTwKFtOjA9zhYZY/media-container/31456c91c6f2fabad9ec21d515629f20",
+              "resource": {
+                "__typename": "MediaImage",
+                "thumbnail": "https://media-cdn.alpacamaps.com/uploads/11/6d6MmLWncZdobgf5Hu8ApM/IMG_10744/small_m225w_m200h.jpeg",
+                "large": "https://media-cdn.alpacamaps.com/uploads/11/6d6MmLWncZdobgf5Hu8ApM/IMG_10744/large_1024h.jpeg",
+                "attribution": "Source: Zoe Manderson",
+                "caption": "Looking upstream the river"
+              }
+            }
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false,
+          "endCursor": "eyJvZmZzZXQiOjB9"
+        },
+        "totalCount": 1
+      }
+    }
+  }
+}
+```
+
+### Place Information
+
+Each location has a place associated with it. This place can represent a
+simple position like a map marker, or could be attached to a place or address
+that has more information available to read in.
+
+Alpaca is integrated with a number of place providers. The supported place
+providers enable information about the place to be kept up to date, such as
+when information about opening hours are updated or contact details.
+
+### Fetching Inbound/Outbound Directions
+
+The ItineraryLocation type offers a mechanism to search for itinerary directions
+when you are loading them individually, opposed to searching between locations
+within a list.
+
+```graphql
+query {
+  node(id: "itinerary/ABC123/location/6DuqdpTlTwKFtOjA9zhYZY") {
+    id
+    __typename
+
+    # When querying the itinerary location individually
+    ... on ItineraryLocation {
+      # Search for directions used to arrive here from other itinerary locations
+      arriveFrom: directions(first: 1, direction: Inbound) {
+        nodes {
+          origin {
+            ... on ItineraryLocation {
+              id
+              title
+            }
+          }
+          distance
+          durationMin
+          route {
+            modes
+          }
+        }
+        totalCount
+      }
+
+      # Search for directions used to depart here to other itinerary locations
+      departTo: directions(first: 2, direction: Outbound) {
+        nodes {
+          parent {
+            ... on ItineraryLocation {
+              id
+              title
+            }
+          }
+          distance
+          durationMin
+          route {
+            modes
+          }
+        }
+        totalCount
+      }
+    }
+  }
+}
+```
+
+The above can look directions that can link locations between where it was
+coming from, and where it is departing to.
+
+```json
+{
+  "data": {
+    "node": {
+      "id": "itinerary/ABC123/location/6DuqdpTlTwKFtOjA9zhYZY",
+      "__typename": "ItineraryLocation",
+      "arriveFrom": {
+        "nodes": [
+          {
+            "origin": {
+              "id": "itinerary/ABC123/location/3ZPvzV7WyAalXWo6hJijBJ",
+              "title": "Corinna"
+            },
+            "distance": 95.459772,
+            "durationMin": 79.61751666666667,
+            "route": {
+              "modes": ["Car"]
+            }
+          }
+        ],
+        "totalCount": 1
+      },
+      "departTo": {
+        "nodes": [
+          {
+            "parent": {
+              "id": "itinerary/ABC123/location/7BuzRTLQYH4rWBoIPh2UvV",
+              "title": "Boat Harbour"
+            },
+            "distance": 91.74235300000001,
+            "durationMin": 66.4878,
+            "route": {
+              "modes": ["Car"]
+            }
+          }
+        ],
+        "totalCount": 1
+      }
+    }
+  }
+}
+```
 
 ## Drawing Maps
 
-## Enhanced Content
+Many options are available for you to work with drawing itinerary content onto
+various mapping platforms.
 
-## Embeding and Sharing
+From the GraphQL API calls, you can include fields to extract information
+from the API directly for the itinerary content.
 
-## Further Reading
+The below example shows fields that can be queried in order to locate key
+mapping positions and route paths for directions:
+
+```graphql
+query {
+  itinerary(id: "itinerary/ABC123") {
+    id
+
+    # Read in the stops
+    children(first: 10, type: ItineraryLocation, after: null) {
+      edges {
+        node {
+          id
+          ... on ItineraryLocation {
+            # Load the longitude/latitude
+            # Alpaca uses EPSG:3857/WGS 84 CRS
+            position {
+              lon
+              lat
+            }
+          }
+        }
+
+        directions(first: 1, direction: Inbound) {
+          edges {
+            node {
+              route {
+                segments {
+                  # Use the polyline field to access a polyline encoded
+                  # representation of the route path
+                  polyline
+                }
+              }
+            }
+          }
+        }
+      }
+
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+
+      totalCount
+    }
+  }
+}
+```
+
+An example of the output expected is shown below
+
+```json
+{
+  "data": {
+    "itinerary": {
+      "id": "itinerary/ABC123",
+      "children": {
+        "edges": [
+          {
+            "node": {
+              "id": "itinerary/ABC123/location/49Mjaf7N7y6mHiCJRhuwOL",
+              "position": {
+                "lon": 146.37010715588758,
+                "lat": -41.18011907368838
+              }
+            },
+            "directions": {
+              "edges": []
+            }
+          },
+          {
+            "node": {
+              "id": "itinerary/ABC123/location/3jatHEitBPH1aM4G8HX2Gr",
+              "position": {
+                "lon": 146.32474076543986,
+                "lat": -41.382109677628286
+              }
+            },
+            "directions": {
+              "edges": [
+                {
+                  "node": {
+                    "route": {
+                      "segments": [
+                        {
+                          "polyline": "..."
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          ...
+        ],
+        "pageInfo": {
+          "hasNextPage": false,
+          "endCursor": "eyJvZmZzZXQiOjZ9"
+        },
+        "totalCount": 7
+      }
+    }
+  }
+}
+```
+
+### Alpaca Mapping Services
+
+Alpaca provide mapping services that can be used to create great interactive
+maps that interact with itinerary content.
+
+These services also include offering:
+
+- Itinerary GeoJSON
+- Hosted Vector Tiles
+- SVG Paths
+
+**[View Alpaca Mapping Service Documentation](https://github.com/AlpacaTravel/mapping-docs)**
+
+### Mapbox GL Example Code
+
+Alpaca have created examples of how to quickly create mapbox maps that display
+the itineraries. These examples shows how to quickly leverage the Alpaca
+map styles, create your own style and even create more complicated 3D
+visualisations of your content using the Mapbox API.
+
+**[View Alpaca Mapbox Examples](https://www.alpaca.travel/reference/examples/mapbox-gl)**
