@@ -34,7 +34,7 @@ mapping services for accessing and presenting data on maps. You can access these
 services by visiting our [mapping documentation](https://github.com/AlpacaTravel/mapping-docs)
 for more information.
 
-## Getting Started with the Alpaca GraphQL API
+## Documentation Overview
 
 The Alpaca Travel Platform is accessed using GraphQL, a powerful and easily
 integrated techology for your website or application. You can read some
