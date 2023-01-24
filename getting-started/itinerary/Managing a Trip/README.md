@@ -747,7 +747,7 @@ and **typename of its parent location.
 
 See More:
 
-- [Places of Interest](/topics/itinerary/Managing%20a%20Trip/)
+- [Places of Interest](/getting-started/itinerary/Managing%20a%20Trip/)
 
 ## Displaying an Itinerary on a Map
 

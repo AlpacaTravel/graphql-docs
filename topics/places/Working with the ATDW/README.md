@@ -673,7 +673,7 @@ mutation CreateItineraryLocationWithAtdwPlace {
 
 See More:
 
-- [Managing a list](/topics/itinerary/Managing%20a%20List/)
+- [Managing a list](/getting-started/itinerary/Managing%20a%20List/)
 
 ## Creating a Collection Location with a reference to ATDW
 

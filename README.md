@@ -40,6 +40,8 @@ The Alpaca Travel Platform is accessed using GraphQL, a powerful and easily
 integrated techology for your website or application. You can read some
 supporting information on GraphQL and why it is used below.
 
+- **[Getting Started Guides](#getting-started-guides)** - Starting guides for
+  developers around the Alpaca Travel GraphQL API.
 - **[Topics](#topics)** - We are grouping together common requirements have
   under [topics](#topics) to bring developers up to speed quickly on certain
   concepts they may need.
@@ -143,6 +145,20 @@ GraphQL service:
 - An **Itinerary** helps you represent favourites, tracks and trails, trips and
   itineraries
 
+## Getting Started Guides
+
+> We recommend you start with the following guides to familiarize yourself with
+> the queries and mutations available with the GraphQL API
+
+If you are new to the Alpaca Travel GraphQL API, we have created a series of
+guides that can familiarize you with the GraphQL API based on some common
+starting points developers have.
+
+- **[Managing a List](/getting-started/itinerary/Managing%20a%20List/)**
+  Create, update and manage a curated list of locations for users.
+- **[Managing a Trip](/getting-started/itinerary/Managing%20a%20Trip/)**
+  Create and manage a trip with routes and directions between locations.
+
 ## Topics
 
 The following sections can help you become familiar with the GraphQL API for
@@ -151,14 +167,6 @@ your purposes.
 More coming soon. Make us a suggestion.
 
 ### Itinerary
-
-Itineraries are the data structure to store simple lists to complex
-multi-segment scheduled itineraries (and what is in-between).
-
-If you'd like a quick overview of everything, you should start with
-[Managing a List](/topics/itinerary/Managing%20a%20List/) or
-[Managing a Trip](/topics/itinerary/Managing%20a%20Trip/) which will provide
-you with a quick overview of managing an itinerary from start to end.
 
 - **[Creating an itinerary](topics/itinerary/Creating%20an%20itinerary/README.md)**
   Start with creating an itinerary either anonymously or assigned to a profile,
