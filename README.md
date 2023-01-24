@@ -154,6 +154,8 @@ If you are new to the Alpaca Travel GraphQL API, we have created a series of
 guides that can familiarize you with the GraphQL API based on some common
 starting points developers have.
 
+- **[Reading from Itineraries](/getting-started/itinerary/Reading%20from%20Itineraries/)**
+  Read and access content from itineraries created on the Alpaca Platform
 - **[Managing a List](/getting-started/itinerary/Managing%20a%20List/)**
   Create, update and manage a curated list of locations for users.
 - **[Managing a Trip](/getting-started/itinerary/Managing%20a%20Trip/)**
