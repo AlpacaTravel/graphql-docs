@@ -1,8 +1,7 @@
 # Reading from Itineraries
 
-Welcome to the Alpaca Travel GraphQL API technical guide for developers. This
-guide is designed to provide developers with a comprehensive understanding of
-how to access and query itinerary content through our API. The API allows
+This guide is designed to provide developers with a comprehensive understanding
+of how to access and query itinerary content through our API. The API allows
 developers to build applications and websites that access and manage travel
 content, such as curated lists, trips and trails, which we refer to as
 itineraries.
