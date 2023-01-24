@@ -262,18 +262,18 @@ query GetItineraryLocation {
 
       # Access the position and any information relating to this position
       position {
-          lon
-          lat
-          # Use position attributes to query information, available without
-          # a place provider (relies on lon/lat positions)
-          # Access the timezone at the coordinate
-          timezone: attrValue(id: "place/time-zone")
-          # Access the currency for the country
-          currency: attrValue(id: "place/country-currency")
-          # Further information, such as regions..
-          iso3166: attrValue(id: "place/iso-3166-2")
-        }
-      
+        lon
+        lat
+        # Use position attributes to query information, available without
+        # a place provider (relies on lon/lat positions)
+        # Access the timezone at the coordinate
+        timezone: attrValue(id: "place/time-zone")
+        # Access the currency for the country
+        currency: attrValue(id: "place/country-currency")
+        # Further information, such as regions..
+        iso3166: attrValue(id: "place/iso-3166-2")
+      }
+
       # Use any additional attributes you have stored, such as your own ID's
       externalRef: attrValue(id: "custom/external-ref")
 
@@ -300,14 +300,14 @@ query GetItineraryLocation {
 }
 ```
 
-When adding a location to an itinerary without using a place provider, you will 
-not have access to additional information such as the place's name, address, 
-photos, or reviews. However, you can still add additional information to the 
-location by including position attributes, which provide additional information 
-about the longitude/latitude pair, such as the country, timezone, region, or 
-currency used. Additionally, when querying places within Australia, additional 
-geographical information from ABS and Wine Australia are provided. This can be 
-useful if you have your own place data and wish to map it to an itinerary 
+When adding a location to an itinerary without using a place provider, you will
+not have access to additional information such as the place's name, address,
+photos, or reviews. However, you can still add additional information to the
+location by including position attributes, which provide additional information
+about the longitude/latitude pair, such as the country, timezone, region, or
+currency used. Additionally, when querying places within Australia, additional
+geographical information from ABS and Wine Australia are provided. This can be
+useful if you have your own place data and wish to map it to an itinerary
 location.
 
 See More:

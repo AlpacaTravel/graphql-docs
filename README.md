@@ -29,10 +29,7 @@ The Alpaca Travel platform supports a wide range of itineraries, including:
 The Alpaca Travel platform offers more than just itinerary management, it also
 includes features such as guide and directory creation, location search and
 place information loading to enhance the functionality of your travel-related
-application or website. In addition to the GraphQL API, we also provide hosted
-mapping services for accessing and presenting data on maps. You can access these
-services by visiting our [mapping documentation](https://github.com/AlpacaTravel/mapping-docs)
-for more information.
+application or website.
 
 ## Documentation Overview
 
@@ -40,26 +37,25 @@ The Alpaca Travel Platform is accessed using GraphQL, a powerful and easily
 integrated techology for your website or application. You can read some
 supporting information on GraphQL and why it is used below.
 
-- **[Getting Started Guides](#getting-started-guides)** - Starting guides for
-  developers around the Alpaca Travel GraphQL API.
-- **[Topics](#topics)** - We are grouping together common requirements have
-  under [topics](#topics) to bring developers up to speed quickly on certain
-  concepts they may need.
-- **[Example Applications](#example-applications)** - We have provided some
-  working examples of apps for you to play and adapt that demonstrates the
-  technology in use.
-- **[Example Operations](/example-operations)** - We have put together concrete
-  examples of typical calls to the API in our
+- **[Getting Started](#getting-started)**
+  Starting guides for developers around the Alpaca Travel GraphQL API.
+- **[Example Operations](/example-operations)**
+  We have put together concrete examples of typical calls to the API in our
   [example operations](/example-operations) section. These will assist you
   become familiar with GraphQL as well as the capabilities of the platform.
+- **[Example Applications](#example-applications)**
+  We have provided some working examples of apps for you to play and adapt that
+  demonstrates the technology in use.
+- **[Mapping](https://github.com/AlpacaTravel/mapping-docs)**
+  In addition to the GraphQL API, we also provide hosted mapping services for
+  accessing and presenting data on maps. You can access these services by
+  visiting our [mapping documentation](https://github.com/AlpacaTravel/mapping-docs)
+  for more information.
 
-Finally, we recommend the [Apollo Sandbox](https://studio.apollographql.com/sandbox/explorer).
-See below for moree information.
+### GraphQL Endpoint
 
-### Endpoint URL
-
-In order to interact with GraphQL, you will need to use the following root
-endpoint:
+In order to interact with the Alpaca Travel API, you will need to use GraphQL.
+The GraphQL endpoint for the Alpaca Travel API is:
 
 ```
 https://withalpaca.com/api/graphql?accessToken=<YOUR_API_KEY>
@@ -68,217 +64,78 @@ https://withalpaca.com/api/graphql?accessToken=<YOUR_API_KEY>
 When using the root endpoint, it is important to authenticate via providing your
 `accessToken` (which is your API Key) as a query parameter.
 
-#### GraphQL Playground "AKA Apollo Sandbox"
+- **[Token Authorization](/topics/graphql/Token%20Authorization/)**
+  Understand more about Alpaca Travel API Keys and Tokens
+- **[Apollo Sandbox](/topics/graphql/Apollo%20Sandbox/)**
+  Use the GraphQL Sandbox in order to explore and execute queries and mutations
+  against the Alpaca GraphQL API from your web browser
+- **[Schema Reference](/reference)**
+  Generated documentation based on the Alpaca Travel GraphQL Scheme to assist
+  with understanding data types and operations
 
-GraphQL offers an introspection capability with a defined schema. This helps you
-develop the query that suits your specific use case or technical needs without
-having to go through a lot of API Documentation. Through the Apollo Sandbox,
-you can try out your queries and mutations directly onto the GraphQL
-environment.
+## Getting Started
 
-Visit the [Apollo GraphQL Sandbox](https://studio.apollographql.com/sandbox/explorer).
-
-Open the connection settings, and specify the endpoint to the end-point written
-above.
-
-<p align="center">
-  <img src="apollo-sandbox-connection-settings.png" alt="Configuration for apollo sandbox">
-</p>
-
-Rember to add your `?accessToken=` to the URL.
-
-#### New to GraphQL?
-
-GraphQL is a flexible data query language that allows you to design queries that
-match your use case. Opposed to making several REST API requests or over/under
-fetching data for your application, you craft a query to obtain the data you
-need.
-
-GraphQL is sent as JSON using a standard HTTP request. This makes it possible
-for many different languages and frameworks capable of being able to execute
-GraphQL calls to the Alpaca Travel GraphQL API.
-
-If you are new to GraphQL, the following educational resources may be helpful as
-a starting point.
-
-- [Introduction to GraphQL](https://graphql.org/learn/)
-- [How to GraphQL](https://www.howtographql.com/)
-- [Guides and Best Practices](https://www.graphql.com/guides/)
-- [GraphQL Clients](https://graphql.org/graphql-js/graphql-clients/)
-- [Awesome GraphQL](https://github.com/chentsulin/awesome-graphql)
-
-GraphQL implementations can be simple as executing a query, and can then perform
-better tools to handle caching and more advanced topics to support your app.
-
-## Authentication
-
-You will need to obtain your API Key in order to authenticate your application
-when making calls to GraphQL. We accept the API Key as an `?accessToken=` query
-parameter.
-
-### Authorisation
-
-Your API Key will have different read and write scopes, depending on when it is
-created. By default, Alpaca Travel offers both private and public API Keys. A
-private API Key will enable the application to perform mutations on profiles
-it has been assigned, where the public API Key is read only access to content.
-
-- **Public Scope** Able to read from assigned profiles and author anonymous
-  itineraries. For use in front-end applications without priviledges to the
-  profile.
-- **Private Scope** Able to read/write from assigned profiles (full access).
-  Do not share this API Key with the public.
-
-### Obtaining your API Key
-
-Your API Key is available by request during our BETA testing phase. Please
-contact us via <sayhello@alpaca.travel> or following the URL
-<https://alpaca.travel>. You must agree to the terms and conditions to use
-this service.
-
-## Terminology
-
-As a broad starting point to understanding the terminology and parts of the
-GraphQL service:
-
-- A **Collection** provides a way to manage information about your locations
-- An **Itinerary** helps you represent favourites, tracks and trails, trips and
-  itineraries
-
-## Getting Started Guides
-
-> We recommend you start with the following guides to familiarize yourself with
-> the queries and mutations available with the GraphQL API
+### Itinerary
 
 If you are new to the Alpaca Travel GraphQL API, we have created a series of
 guides that can familiarize you with the GraphQL API based on some common
 starting points developers have.
 
+> We recommend you start with the following guides to familiarize yourself with
+> the queries and mutations available with the GraphQL API
+
 - **[Reading from Itineraries](/getting-started/itinerary/Reading%20from%20Itineraries/)**
   Read and access content from itineraries created on the Alpaca Platform
 - **[Managing a List](/getting-started/itinerary/Managing%20a%20List/)**
-  Create, update and manage a curated list of locations for users.
+  Create, update and manage a curated list of locations for users
 - **[Managing a Trip](/getting-started/itinerary/Managing%20a%20Trip/)**
-  Create and manage a trip with routes and directions between locations.
-
-## Topics
-
-The following sections can help you become familiar with the GraphQL API for
-your purposes.
-
-More coming soon. Make us a suggestion.
-
-### Itinerary
-
-- **[Creating an itinerary](topics/itinerary/Creating%20an%20itinerary/README.md)**
-  Start with creating an itinerary either anonymously or assigned to a profile,
-  to house your saved/favourited list, trail, track, trip or itinerary
-- **[Checking if a place is within an itinerary](topics/itinerary/Checking%20if%20a%20place%20is%20within%20an%20itinerary/README.md)**
-  Determine if a place you are viewing is already within an itinerary
-- **[Adding Locations](topics/itinerary/Adding%20Locations/README.md)**
-  Add locations to your itinerary
-- **[Showing/Querying an Itinerary](topics/itinerary/Querying%20an%20Itinerary/README.md)**
-  Present the itinerary back to the user
-- **[Automatic Routing](topics/itinerary/Automatic%20Routing/README.md)**
-  Leverage the automatic routing feature of itineraries, to automatically
-  provide directions between locations
-- **[Places of interest](topics/itinerary/Places%20of%20interest/README.md)**
-  Creating places of interest associated to locations
-- **[Reordering Locations](topics/itinerary/Reordering%20Locations/README.md)**
-  Provide the ability for the user to reorder the itinerary to suit
-- **[Adding Directions](topics/itinerary/Adding%20Directions/README.md)**
-  Add more complex directions, including multi-modal or manual directions (such
-  as GPS tracks)
-- **[Adding Photos](topics/itinerary/Adding%20Photos/README.md)**
-  Add photos for itinerary or itinerary locations
-- **[Segments](topics/itinerary/Segments/README.md)**
-  Group itinerary items into trip segments
-- **[Mapping](topics/itinerary/Mapping/README.md)**
-  Accessing information from the API as a GIS data source for itinerary
-  information
-- **[Classifications](topics/itinerary/Classifications/)**
-  Apply classifications to itineraries, such as genres, travel styles,
-  audiences, as more.
-- **[Drafts and Publishing](topics/itinerary/Drafts%20and%20Publishing/)**
-  Control how mutations are applied, either to a draft, or to the published
-  version.
-- **[Custom Data](topics/itinerary/Custom%20Data/)**
-  Add in custom data to the itinerary data structure, such as storing your own
-  ID's or other simple values.
+  Create and manage a trip with routes and directions between locations
+- **[Example Itinerary Operations](/example-operations/itinerary/)**
+  A series of GraphQL documents that provide examples for working with itinerary
+  operations
+- **[Specific Topics](/topics/itinerary/)**
+  Specific reference topics for working with itineraries
 
 ### Collections
 
 Collections support the ability to create groups of places or itineraries to
 power your website or application.
 
-- **[Managing collection locations](topics/collection/Managing%20collection%20locations/README.md)**
-  Managing collection locations, including listing, creating, updating and
-  removing
-- **[Importing Locations](topics/collection/Importing%20Locations/README.md)**
-  Working with concepts of importing 3rd party locations from another platform
+- **[Working with Collections](topics/collection)**
+  Understand how to manage collections and your place library
+- **[Example Collection Operations](/example-operations/collection/)**
+  A series of GraphQL documents that provide examples for working with
+  collection and collection location operations
 
 ### Places / Place Information
 
 We support working with various place providers on the platform, to access place
 information and keep your place information up to date.
 
-- **[Working with Open Street Map (OSM)](topics/places/Working%20with%20OSM/README.md)** Access
-  information directly from OpenStreetMaps database
-- **[Australian Tourism Data Warehouse (ATDW)](topics/places/Working%20with%20the%20ATDW/README.md)**
-  Alpaca provides the ability to query and use data from the ATDW API through a
-  GraphQL interface, allowing you to easily structure the data into itineraries
-  or your own collections, as well as access all the rich data from ATDW in a
-  convenient and consistent way, speeding up your integration. You can also
-  store additional data beside ATDW data, including missing places or additional
-  data attributes (tags, custom data etc)
-- **[Facebook Pages](/topics/places/Working%20with%20Facebook%20Pages/)**
-  Alpaca provides a mechanism to load place information from Facebook Pages.
-  This can help keep your itinerary up to date with loading place information
-  from Facebook, including opening hours and more.
-- **[Accessing Hours](topics/places/Accessing%20Hours/README.md)**
-  Access information about opening hours of a vendor, and present them in
-  time zone appropriate formats.
-- **[Standard place attributes](topics/places/Standard%20place%20attributes/README.md)**
-  Standardised place attributes used to provide extensible information around
-  places.
+- **[Working with Places](topics/places)**
+  Understand how to work with places on Alpaca, including integration with
+  various place provides such as OSM, Australian Tourism Data Warehouse (ATDW),
+  and Facebook Pages. Learn how to access opening hours or other place
+  attributes.
 
-Other providers integrated include; TripAdvisor, Zomato, Yelp, WOF, GeoNames,
-Foursquare, Facebook, Wikidata are more.
+### Other References
 
-### Position
-
-- **[Position attributes](topics/position/Position%20attributes/README.md)**
+- **[GraphQL Topics](/topics/graphql)**
+  Get started with GraphQL and understand some specific related topics
+- **[Example Operations](/example-operations/)**
+  Example operations across the full Alpaca Travel GraphQL API
+- **[Working with Media](topics/media)**
+  Upload media and query media to display in your application or website
+- **[Working with Positions](topics/position)**
   Access global information about a position, such as region, time-zone or ISO
   data, or local data such as information about a location from the ABS dataset
-
-### Media
-
-Various media can be accessed on the Alpaca platform.
-
-- **[Uploading photos](topics/media/Uploading%20photos/README.md)** Upload
-  photos to be served in content leveraging optimising and serving via CDN
-- **[Using Unsplash](topics/media/Using%20unsplash/README.md)** Referencing a
-  photo on the unsplash platform
-- **[Querying media](topics/media/Querying%20media/README.md)** Querying media
-
-### Icons
-
-- **[Managing profile icons](topics/icons/Managing%20profile%20icons/README.md)**
-  Managing profile icon sets
-- **[Associating itinerary icons](topics/icons/Associating%20itinerary%20icons/README.md)**
-  Associating icons for use in itineraries
-
-### GraphQL
-
-Topics across our API can be explored from the following list;
-
-- **[Pagination using cursor connections](/topics/graphql/Pagination%20using%20cursor%20connections/README.md)**
-  Using the standarised best practice for pagination using cursor connections
-- **[Attributes](/topics/graphql/Attributes/README.md)**
-  Using attributes to access or update extended data for resources, including
-  storing localisation or custom values against supported resources
+- **[Working with Icons](topics/icons/)**
+  Manage profile icons sets and associate them with Itineraries
 
 ### JavaScript
+
+Any GraphQL client can be used with JavaScript but the below guides may
+assist you getting started with JavaScript.
 
 - **[Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)**
   Simple methods for executing GraphQL using JavaScript
@@ -287,15 +144,10 @@ Topics across our API can be explored from the following list;
   added codegen to make development faster.
 - **[React Apollo Client](topics/javascript/react/Apollo%20Client/)**
   Get started with React and Apollo Client to access an itinerary
-
-### Alpaca GraphQL JavaScript SDK
-
 - **[Alpaca GraphQL JavaScript SDK](https://github.com/AlpacaTravel/graph-sdk)** (New)
   SDKs based on popular JavaScript development environments, including `React`,
   `Vue`, `Svelte` and `Stencil`. The SDK provides options for developers such as
   leveraging `urql`, `graphql-request`, `react-query`and `apollo`.
-
-More Coming soon
 
 ## Example Applications
 
@@ -321,10 +173,6 @@ More examples to come
 
 A catalogue of example [GraphQL queries and mutations](/example-operations) are
 provided as example gists for you to refer to for specific functionality.
-
-## GraphQL Schema Reference
-
-You can [review the reference schema documentation](reference/README.md).
 
 ## Support :thumbsup:
 

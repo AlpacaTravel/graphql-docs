@@ -46,6 +46,7 @@ _Table of Contents_
   - [Drawing Maps](#drawing-maps)
     - [Alpaca Mapping Services](#alpaca-mapping-services)
     - [Mapbox GL Example Code](#mapbox-gl-example-code)
+  - [Creating and Managing Itineraries](#creating-and-managing-itineraries)
 
 ## Loading an Itinerary
 
@@ -1024,3 +1025,20 @@ map styles, create your own style and even create more complicated 3D
 visualisations of your content using the Mapbox API.
 
 **[View Alpaca Mapbox Examples](https://www.alpaca.travel/reference/examples/mapbox-gl)**
+
+## Creating and Managing Itineraries
+
+It is also possible to create applications and website functionality built
+around creating and managing itineraries via the GraphQL API. This functionality
+allows developers to issue mutations to the API and create content.
+
+This could have relevance for integrating within content management systems or
+building website trip planning or favouriting functionality.
+
+To understand more about this functionality, you can refer to to the following
+resources:
+
+- **[Managing a List](/getting-started/itinerary/Managing%20a%20List)**
+  Build curated list content, such as top-10's, favorites or other lists.
+- **[Managing a Trip](/getting-started/itinerary/Managing%20a%20Trip)**
+  Build trips, allowing users to plan out stops along a route.

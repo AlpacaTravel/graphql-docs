@@ -18,12 +18,12 @@ to other localisations based on the needs of your users.
 ## Custom Attributes
 
 Where attributes are offered (such as within itineraries), it is possible to
-store some data that can assist you integrate the content within your 
+store some data that can assist you integrate the content within your
 application.
 
 When creating an attribute containing your own custom data, you must use the
-prefix of `custom://` before your ID. You should identify your attribute using
-kebab case naming, such as `custom://application-record-id`. This provides your
+prefix of `custom/` before your ID. You should identify your attribute using
+kebab case naming, such as `custom/application-record-id`. This provides your
 application a namespace for your own additional custom data to be stored against
 resources in the platform.
 
@@ -41,29 +41,27 @@ mutation UpdateItineraryWithCustomAttributeData {
       # itineraries
       upsertAttrs: [
         # Custom data that is being stored within the itinerary
-        {
-          id: "custom://my-custom-data"
-          value: "Example Custom Data JSON"
-        }
+        { id: "custom/my-custom-data", value: "Example Custom Data JSON" }
       ]
     }
   ) {
     itinerary {
       id
       __typename
-      
+
       # Read back the custom data from the attribute
-      myCustomData: attrValue(id: "custom://my-custom-data")
+      myCustomData: attrValue(id: "custom/my-custom-data")
     }
   }
 }
 ```
-*Note*: We recommend using the id `custom://external-ref` and 
-`custom://external-source` when assocating resources to your platform. Alpaca
+
+_Note_: We recommend using the id `custom/external-ref` and
+`custom/external-source` when assocating resources to your platform. Alpaca
 can provide some query integration with data in these fields.
 
-*Important*: Do not store sensitive or personal information within these
-attributes. You should store this information within your platform as 
+_Important_: Do not store sensitive or personal information within these
+attributes. You should store this information within your platform as
 custom attributes are not approprtiate for storing this type of data.
 
 ## Lifecycle of attributes
@@ -81,9 +79,7 @@ select the desired data:
 
 - `attrs` Selects attributes via a series of attribute inputs
 - `attr` Selects an attribute with the supplied ID and locale value
-- `attrsById` Returning all matching attributes regardless of locale
 - `attrValue` Returning the value without the wrapper
-- `allAttrs` Returning all the attributes for the resource
 
 ### Updating Attributes
 
