@@ -1,7 +1,8 @@
 # Pagination using Cursor Connections
 
 > For consistency, the Alpaca API uses the GraphQL Cursor Connections
-> Specification to control pagination
+> Specification to control pagination. This is also known as implementing
+> "Cursor-based Pagination".
 
 Alpaca have adopted the
 [GraphQL Cursor Connections Specification](https://relay.dev/graphql/connections.htm)
