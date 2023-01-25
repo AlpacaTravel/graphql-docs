@@ -106,7 +106,7 @@ async function main() {
     .use(recommended)
     .use(toc)
     .use(prettier)
-    .use(debug)
+    // .use(debug)
     .process(fs.readFileSync(ref, "utf8"));
 
   fs.writeFileSync(ref, file.toString("utf8"));

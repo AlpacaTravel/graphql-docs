@@ -14,6 +14,7 @@ use this icon to create icons for your itineraries.
 ### Prerequisits
 
 - You'll need to know your profile ID
+
 - You'll need to work on obtaining your and SVG view box and path data
 
 ## Understanding SVG view box and silhouette path data
@@ -22,16 +23,17 @@ When creating an icon, you need to provide two important pieces of information;
 the viewBox, and the path data. The icon will be described using this data.
 
 - [View Box](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox)
+
 - ["d" Attribute](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d)
 
 While the SVG object can create numerous different types of objects, including
-circles, rect, animation objects, embeded objects etc, you must flatten these
-to only support the creation of a silhouette for the icon.
+circles, rect, animation objects, embeded objects etc, you must flatten these to
+only support the creation of a silhouette for the icon.
 
 _Example icon path data_
 
-The below example icon has a viewBox of `0 0 1024 1024` and the path data
-of `["M 100 ..."]`. These two elements are used to define the path data by
+The below example icon has a viewBox of `0 0 1024 1024` and the path data of
+`["M 100 ..."]`. These two elements are used to define the path data by
 providing an idea of the view box area for the path data, as well as the array
 of path data strings to recreate the icon.
 
@@ -77,13 +79,16 @@ mutation CreateIconSilhouette {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHYpHASyghoCNjyEwdGcUALBHcjAAOQgDa12OAMoA1AOI4hpHjjCliAOhwBBGvS4Mk5WuRTkAOklxCCtOMVuiAnpwBmVHEmKIANIuWU1BwAbhIA7kwQAB5+TDAoVKLkEALCQhAEZlQoKLZxZJSuGZa4phm0SADmVGBgtCi0jMSidIaq6hqWlnDxpI00hCRkAJKGUrSiPBAwCDn8wJY4OLgAqmzcfDhQRKQIo4wAFACUnEIIBH1cKCnbQ-zUrYyLWzsjYxNTM3MHz0u4AJrTAiKAgQVwTfjDAAivxBYIhwzA6Bw5hANnhogQAHptAAhPAARgATABmVGw3AAFU2+j0SCE8VhtORwE83gQyNRAFkXPskKi-KEEGFcdFOSAAAw4KUEiVEgAsOFlCoF-l45GRAG1uUqJVKNJ0QABdHAAX2eJwWNCWyxwACUSBwWFAANYbfi3XYcWlMtpWm023DaKBQCiUXiQsDIBrg85+IgARxgtCIHCKwNcMEyfGBSfOTixPRQlyMsKWAH1yygnGcvIgy3QwLDzdaW6aQKagA)
+
 ## Listing Icons
 
 For any icon that is created and associated with a profile, you'll be able to
 list those icons to see what icons are available for that user.
 
-You can leverage the `iconResources()` field operation to list icons for a specific
-profile ID.
+You can leverage the `iconResources()` field operation to list icons for a
+specific profile ID.
 
 ```graphql
 # Lists icons that have been created for a supplied profile.
@@ -131,6 +136,9 @@ query ListIconSilhouettes {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEAZASwGcUicCoIkyUALAQxRwYDcEcAjBZHKAJwSMEYHADMIfHPRxEYABzkAbAsJxy+EUQUUIAdAB0khgI4wEfAJ75iKAJKUkAZW20IZlCgRlghnDlwAqkTsdOwUVEQAFACUOBBy5owEVORIcXxg5jgoEDgC9CIc9FAA1uQOZOKSoWoaWjq+5VQASl5ufFBekY1+uACabjgA7tqKOEjcIjnM9Gw4Fu21mtrstgAi2bmm5hY9S-UItmDoOPog6ss6APQAggBCAMIAjABMAMxne7gACvQA5gQkEkUg4UBpFJUJHkEIp6FYzrA+EQoQ4JlAUMlqJ80n5-DhHNwTrQPHIiOgrlcBLCLLpMiwrn8+PQ5LRjIorqiEOjMURdMS4HstEiUCcngAGPH0USePgnBEwJESbF+WI+HG9HBBQF-KTQ6kyFAWHSnECI5GSTncqhnGQJKAELRQYFpAREOQRBB7YR-Lw4NW43G4AAqtHYSAgmWGo14VBQ9EBOEEUFoTSM6tx4cj-oDgZwQYsCSkSBE6z2AYIYDLuIA+tXDQkgYhDFWNQA5eiIIsiCChSQV5AYrTmIgt8Ydz3pgMlBC7NM53OOABqAHEcL86DhbEgqnBnWIoeE0nJGCmiC43AgPBP535dHe4ml7FRnIpXO5PH7R34WCohncIAAHl+agniOk64gAvlWUHgcGtDEOQNChrwCrmnEojZPBZCZggAA08yDE6aQwMEmEIVUIFEGeSA6tMZxSjKyo5rgQyhi6CDbCQ2rQrIiikFI0pZHQCECJQGRVmaSrpjBXx5j29BjIeYEBjkcaKA8bioLJvwAkCGIpICO7Onsx4+lu4ifuBDBEK2CAASgOnXjmyBgA8qFSQGMF+DBEEgBBQA)
+
 If you know what the icon ID is, you will be able to directly load the icon by
 and ID. You can either use `iconResource()` or `node()` query operations.
 
@@ -156,6 +164,9 @@ query GetIconSilhouette {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEAlBFAJwEsEA3BAZxwEMkcSoIGAjATzpyoAcEoSAMyY4AkgBEAdDgCaEGDij0cMKghwoAFuqYsAFAEocEIjiQQwCQxogAdJLlpRNZShpdVJ9+wEcYCIk4AcUJRZiQAZRIAG015QhR1YHscHFwAVTV3HXDrCD4iWhQSFhscIkJSCnUOOgYJFMZwgip5IigrEjB0HFsQXSQAelEAYQB5ADkARgAmAGY+o2SGVLSxS1QhMiIqRtSuvZwAfSOUdj4kWkRvFdTcMdYUWhIGAHdNIpx2eRxX+hQcIIiBA4NkmixDpdrrccABrBDsG6rHCSVHGerhKKxeIoRI4ZbI1LkMivABCEAAHodUjwippdjCAL6NZlIRkgRlAA)
 
 ## Update Icons
 
@@ -191,6 +202,9 @@ mutation UpdateIconSilhouette {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBVABzAEMUEBnHFACwRwNOsuPPOgEtSEwqIdikOdlAhIAdAB0kUuDBSl2o-ES4BJEUgDK7ADbUIMBCjI5gUnDlyESJmnWFKdCAG4IATsQDm7JJ6q0cGBUydVEACgBKHAgCdwVRc0DghFCtXX1DYwQwxIt2MHQcCRAHJAB6VQBhAHkAOQBGACYAZmLcoQ1Cs0ELXtwABTcIZ3y6OxwRNzcKAlEwHz8RhAB3HAAjCAAPdosl5YAhLcLigAYcM-qTxoAWHEubtp7eyxxB4dH-ew0ccnSDIxMDBoOBsxB29EY5EKAG1igBZO4nM5iFFFEAAXXaAF9ElFus9cAAlBDEHhrYhQADWnxwcAg8wAZuxuB0Ek9WYJ8c8XqowMgUOwme5yOD8uCAPrilAAT1iSGIiCk4NwABFSMR-KQcNQWOsEMgkjYWWtpYa1N8YnEBWzuTg9odtuyLECmNjEjikFiQFigA)
+
 ## Removing Icons
 
 You can easily remove icons at any stage with the ID. You can leverage the
@@ -210,6 +224,9 @@ mutation DeleteIcon {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEAlBOCANwQGccBDJHASygiQDoAdJNuGFSlWxnACIIANghQIAkgxrA2OHLgCqZBDhQALVWBFjJ0nBAAOCAE48+NFBBwnCJVdTrS5ObaPFTGBMhBgmoCAAULvK4AMowhobCAJ44Mb4mOBICBgBmappO-FY2dqQ4gUjWMEiQAJQhdGDoOCwg9IwA9BIAwgDyAHIAjABMAMz1LuU4sjTyCjhhOlAoOABGlFAA1pmqKelr2ZbqPDgA7pQUtkSkYFW05+MAvmzXINdAA)
 
 Note: If you remove icons that are used in the application, the resources will
 return null in the queries.

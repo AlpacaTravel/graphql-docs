@@ -11,12 +11,11 @@ the Alpaca Travel GraphQL API. We will discuss the use of secret and public
 tokens, the process of creating and reading profiles and itineraries, and
 provide code examples for various operations.
 
-_Table of Contents_
+## Table of Contents
 
-- [Accessing Profiles](#accessing-profiles)
-  - [Understanding Secret and Public Tokens](#understanding-secret-and-public-tokens)
-  - [Reading Profiles](#reading-profiles)
-  - [Creating Profile Associated to an Itinerary](#creating-profile-associated-to-an-itinerary)
+- [Understanding Secret and Public Tokens](#understanding-secret-and-public-tokens)
+- [Reading Profiles](#reading-profiles)
+- [Creating Profile Associated to an Itinerary](#creating-profile-associated-to-an-itinerary)
 
 ## Understanding Secret and Public Tokens
 
@@ -46,8 +45,8 @@ and retrieve information about the profile but not make any changes to it.
 
 ## Reading Profiles
 
-In order to read a profile using the Alpaca Travel GraphQL API, you may need
-to locate the authorized profiles that correspond to your access token. The
+In order to read a profile using the Alpaca Travel GraphQL API, you may need to
+locate the authorized profiles that correspond to your access token. The
 following query can be used to do this:
 
 ```graphql
@@ -62,6 +61,9 @@ query GetAuthorizedProfiles {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCCMKAFhHgJYBeCYACnhAGYMA2CAZyLAAOkiJEAhtTqMW7Tj34CAFDzwCU6IgEYAlMLESJSCGEGHxxiQzBHrRAPqOUBAA7JJie9ZqSkYPw+xkheCMEAvvZRSBEgEUA)
 
 This query will return a the first authorized profile, including the profile's
 ID, type, handle, and name.
@@ -83,8 +85,8 @@ ID, type, handle, and name.
 }
 ```
 
-Once you have located the authorized profile, you can use the profile ID to
-read in a specific profile. The following query can be used to read a profile:
+Once you have located the authorized profile, you can use the profile ID to read
+in a specific profile. The following query can be used to read a profile:
 
 ```graphql
 query GetProfile {
@@ -98,6 +100,9 @@ query GetProfile {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKeEAZgJYA2CRwAOkkUQA7X1MAUdMOiKsQPWowQB6AIIAhAMIBGAEwBmMQEoW7TpyF79AfWMoCXZAENERzgAsrSMEztEkNhG4BGdCG4B3BG8AZzoUBABVPAYjAF92OJA4oA)
 
 This query will return the profile's ID, type, handle, name, bio, and website
 URL. If the profile ID is invalid or the user does not have access to the
@@ -143,6 +148,9 @@ mutation CreateItinerary {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPE4AHVJKipvoFGzNgApuJSSQAOFCADMCAGzph0JTiFkLlCAPQBBAEJkAjACYAzJolSCDJi1bquPKSUIoV6zQFl2AKIwctLUpAZgAG7IKMEINm5SAM6sSBDSSQRJPiAGvME0YCRKWSgkCiTYSSgAtEkICDJKuFAISSRCJEEh8SC2kgC+tgCUHP0dDiLsru6SBGDjkgD6SyisoUi4iIse9io7KWkZWeNDPGcDIANAA)
 
 This mutation creates an itinerary with the title "My European Adventure", the
 synopsis "A curated list of must-see places in Europe" and associates it to the

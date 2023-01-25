@@ -1,8 +1,8 @@
 # Connecting URQL
 
 This guide will quickly setup a React single-page application using
-create-react-app, and configure it using URQL in order to send and receive
-data from the Alpaca Travel API
+create-react-app, and configure it using URQL in order to send and receive data
+from the Alpaca Travel API
 
 You can bypass the need for this tutorial now by reviewing the
 [Alpaca GraphQL JavaScript SDK For URQL](https://github.com/AlpacaTravel/graph-sdk/tree/develop/packages/urql)
@@ -13,8 +13,11 @@ its simple to advanced use. The aim is to create something lightweight, opposed
 to traditionally larger frameworks such as Apollo or Relay.
 
 - Lightweight and "blazingly" fast
+
 - Extensible at the core to support wider use cases
+
 - Effective caching
+
 - Great for a basic app, through to larger more complex projects
 
 ## Getting Started
@@ -63,6 +66,7 @@ Svelte. The below is based on the
 [urql quickstart](https://formidable.com/open-source/urql/docs/).
 
 - `urql`: The main package we will be using
+
 - `graphql`: For working with our grapql queries
 
 ```shell
@@ -88,11 +92,9 @@ configure the urql URI yourself.
 
 Create a file in your project called `.env` with the following
 
-```
-# .env
-REACT_APP_ALPACA_GRAPHQL_ENDPOINT=https://withalpaca.com/api/graphql
-REACT_APP_ALPACA_ACCESS_TOKEN=<your-api-public-key>
-```
+    # .env
+    REACT_APP_ALPACA_GRAPHQL_ENDPOINT=https://withalpaca.com/api/graphql
+    REACT_APP_ALPACA_ACCESS_TOKEN=<your-api-public-key>
 
 Update the `<your-api-public-key>` section in the above with your API Key.
 

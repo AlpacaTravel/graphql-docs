@@ -4,8 +4,8 @@
 > simply a HTTP call encapsulating your query.
 
 GraphQL is sent as JSON across HTTP. This makes it possible for many different
-languages and frameworks capable of being able to execute GraphQL calls to
-the Alpaca Travel GraphQL API.
+languages and frameworks capable of being able to execute GraphQL calls to the
+Alpaca Travel GraphQL API.
 
 A number of languages and frameworks already offer tools to connect and make
 calling GraphQL easy. See this
@@ -17,12 +17,15 @@ alternatives.
 For basic requirements, consider using:
 
 - Fetch (native for browsers - see below)
+
 - [GraphQL Request](https://github.com/prisma-labs/graphql-request)
 
 For comprehensive requirements, consider using:
 
 - [urql](https://formidable.com/open-source/urql/docs/)
+
 - [Apollo](https://www.apollographql.com/)
+
 - [Relay](https://relay.dev/)
 
 ## Requirements for configuring clients
@@ -64,6 +67,7 @@ fetch("https://withalpaca.com/api/graphql?accessToken=xxx", {
 
 ## Using Apollo React Client
 
-You can view the topic [React + Apollo Client](/topics/javascript/react/Apollo%20Client/)
-which will provide you information about how to configure your react application
-with Apollo.
+You can view the topic
+[React + Apollo Client](/topics/javascript/react/Apollo%20Client/) which will
+provide you information about how to configure your react application with
+Apollo.

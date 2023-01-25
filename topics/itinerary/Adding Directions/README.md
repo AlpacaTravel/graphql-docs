@@ -6,8 +6,8 @@ itineraries.
 
 Alpaca can provide automatic routing to assist this process, of you can create
 your own directions to represent more complex directions and their
-representations. Various modes of transportation are supported to represent
-the movements of the traveller.
+representations. Various modes of transportation are supported to represent the
+movements of the traveller.
 
 Alpaca supports a data structure to support manual data or automatic directions
 searching through a search service offered by Alpaca. You can also supply a
@@ -16,22 +16,24 @@ single mode of transportation, or support mutli-modal transport.
 ### Prerequisits
 
 - You'll need an itinerary you want to add to and locate the Itinerary ID
+
 - The itinerary will need to be unassigned to a profile, or you'll need your
   private API Key
 
 ## Automatic Routing for added locations
 
-You can get started with directions by leveraging the [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
-capability that does not require you manually add directions. As you add
-locations to your itinerary, directions will be added automatically.
+You can get started with directions by leveraging the
+[Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md) capability
+that does not require you manually add directions. As you add locations to your
+itinerary, directions will be added automatically.
 
 ## Adding a Car Route
 
 The below example creates itinerary directions between two locations that are
 existing in your itinerary.
 
-The single segment supplied is a Car segment, that is automatically searched
-for the best path to take.
+The single segment supplied is a Car segment, that is automatically searched for
+the best path to take.
 
 ```graphql
 # Creates itinerary directions for between locations in an itinerary manually.
@@ -81,6 +83,9 @@ mutation CreateItineraryDirections {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHASxSqQQOIIE8cwqipaIlKAzCARwAjBCgDuCZDgA20UlR6U6OYkmq16jFjjhqYxGTOYA6ADpJceNSIQ4Y5BGBwoIOKEVJ32nbr2q8ZMTOEHz25HQA5i4AFnYAkpoMTKzEMK4AShDpCBa4iCgxECFCAkLicUSxdjR0yTpUlK7uPCjEKnAwMrQADjJ24sTMTW5wEABudqISUkh5svJ+lAAUhmQESAqTusUUOKEujLw9gii2M9JyUApKAJT7Qs09BBNUYLmW+z1+hjgvOV8lrFSLohiJmD1iORKOQeggoFQ+FQoAtrkCVMQcI4AI4wZBQBDmOZITptPz4TxkRJ1bTMAAiHHhQOAFhwOFwDjsHhIVKStIZvkU-ma3K8bEZXCFynUNlqWhSrPclIQ1PlLAFTKly0VbNwAGUYD0+qxCjU+SkcPE6TqNDSUvEwOgcGYQHL6swAPQAQQAQngAIwAJgAzC6bbgAAovcZvOymnbvGQ4MriwVKG0+TVKJ0s9Rs-OR6Ox6p-bJkZOCEuZyXpvP50s5HM2+uOSKIVDkJ0AbWb9fZFJ5dlb7ZQ-ErJCgMQThJwXrAzmC7B+SeHyFHWIQuLXVEMxl79dwlTsUJwkixhpOBDOYzAhgANDhCZETDgAGIQCBnAC0AD58EwcF-N8PzOMQoBfd44SQdgkGiHh9wLEskUTGhWAOeNqyWBC2VzPs8P7eJoORMV4xvOx0KOWFTgrR4YkaBty1XVBsPzMinWsAgWN1S0iLRAY4lNcohyKLpnEcJhJxo2J6P+MguPCBAshyPUSAIScoidFACDxFiAF8EIAXV7fS60QvBWgQAAPFADBkRo4ziVMs38PgXjgB4qEiOgPXechNBuYk8NwAB5AhPJUN1aVRALe0EcKkAdJ0XUilJvT9INgw9GgEDgD0-KYFBfQDEMw1M7iIwgCJyRgaCGCrCh-PJFKdCuGKypwE4qqFL0UAAUWgpt2u4ukGroALbTVVhWr8BDISIVBEudV1zRYNLisy7LcuQMATjoQr0pKkBjJtEy2XuXDEIARTxHQKhBQZKGIPg+CZJxVEev4KBOXgPnra5yGud5nAuv7lWBhC3gQgB9KGUAhZBiEQY7TNOnATN0kBdKAA)
 
 ## Adding a GPS Track (manual path)
 
@@ -142,6 +147,9 @@ mutation CreateItineraryDirectionsWithManualPositions {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHASxSqQQOIIE8cwqipaIlKAzCARwAjBCgDuCZDgA20UlR6U6OYkmq16jFiOYAdJLnIwADiZnM6Ac1UyZOFAAsEOExDopqSAQTgKeOOI0jqo4sOQoEHA4cBBgLhB8Doy8bgQo-kgAdAYGcDAZ3OqEJGQAkpoMTMwAIhwIXIq8AOrBALJqMMQyAAoQ5DRNlMAGODi4MOQuUESkCBV0VSx1nEWUkWGzZGz1jUpequqDWtWjm6Xzldq1u2sAFGdjuADKpuasTi7HS6xlNY8aRbXMpgdA4PQgb7XAD0AEEAEJ4ACMACYAMwQgG4HoECAANyo8QczhicQQ9h8O1WQwB7GpSjBI3UYxZ2NxBKJnxwuIKLkpXLpDTWALGPLIjJFLKmVkQqHIYIA2pKWeMcLCwGADsQcNLZZ4nKRqJQkBBPJNrNyILydSQCFBHBa1JrjGYZFQKMrWcSXG4PORPWMmSrg16ykh2FA5t7SUTEsk1OQ0p5+Q7KGKXLrkCgAyzYvEwTUIFZnjIEGAc08cDj8YSXFy6D4-EUcCmMwgZVmKzhJggAEpWsjPW326xgvjdKZdtwDNaKruVgAyVAi0eng32rctvPnOGAsh4YJRABYsuiAKwADjRAE4L0e0QB2I-Xl8ANgANLJSGDXwAGLJ-r+R5nmiQGga+F4omer44AAvjue5yEgh5olkaJIneF5IkewHoVBn4yN+OCvkiWS-r+Z6-g+Z5PtRGFIg+cEIfuyE4MeWQgceD5Ub+eFngRREkWh17YZeWEogxR4oteTHMiGIaIQebFnlkD53iJEm-tej78V+KA-qRWm-kiEHoX+lFniZsnyfJimsVBaHokeF6vmiKLic+14fnpP7-q5Z7OdelmvkeEFnjJ8FyTZOAALo5pFNlxVFYwJcGuB4DwZAAB4oF0bpTNGgp7LwLa4tEghUFYdDQvEER0Jkkq4AA8gQlUqFC1T7pGRSShVVVICCYIQh1LBwoiqJotCNAIHA0IREwKAIsi6KYslqp9DOTTduGDCFRQmiZICJw6HI3VNJKa5FLCKAAKLhhKa2VjU+31c2I2sKdDWPa4TBZoN4KQlc1Rjctk3TbNyBgL6qBLRNq0hqlKVnAAlLuWI4AAijADCsOIjiGuIxCUMQfB8EKZaqMT3IUG4vAIACkbkJG8SakGwYzBcrOeoSnoAPq8ygzAmMgxCIJKiPWbJsEgLBQA)
+
 ## Showing directions to and from a location
 
 When querying an itinerary location, you can query the corresponding directions
@@ -191,6 +199,9 @@ query QueryItineraryLocationDirections {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBFGBAJwE8cBDJHASxWqWPNJwBtpy6IrKxWJzeKABYIKAZzHRqHBL3oAjCDCS8IRHEpSLlYADpJcYakQRROSMfv0BHQswLESASToMiTEgBl25gCLHTczEcYH0cHFwAVTFRYVFaekZSbygOai4NAAdGczCcJAgwBAAKPPDcAGUYTMyWMjiaVySyNlTzHCdfMpowdBxdEAS3DwB6AEEAIQBhAEYAJgBmEdoEOBHfAFEAMQAWAFYANgG8gEoQ7oA6K40qF0T3ZJ90qlCqcPfcB2YGsA5yHBIShwAHdKCgcAAzNQ4BpDZp8NrPAA0ODEMCgQnE3XKOCgXBQyHB0PoUKIcDSGXI2nBDVq5CgCGxMNoLEZb3eODpDPO7I5FDAYBMEh5fL5rXILFoJCZ4QAvjKcOSANbUBUscgkYjBV6ijlIciIBXy3lypmfOxkShkOEPMhGExmZ7BFAQDTqCFECBwGFCajBcW5E04e2BJ3FCHGMQoPpzM463WyADmCG1CpxTiQ2hUbo0MC0SmzIcdXDTwYCxaQpYKRRFuo55scPtEd2GpH8DvaIhMpfCYBg7nMAFl6D2y1HKAzR5686J43WOTFE4hUKmg-PFYU2euOcbtzhd-OD6Kj+8TwfjbKQLKgA)
 
 ## Showing directions as part of an list of locations
 
@@ -264,7 +275,11 @@ query QueryItineraryLocationsWithDirections {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBFGBAJwE8cUALBHASxRqWIENScAbaJ+iJAZwBocAdzoVaSAGYQicLjR44mAIwgwU5KjjA0iCKNz44lCFEITIAOklwImUMRAkbqHKHJ68rVgI6FWBYhIASXpGIhYSABlOA14AdVEAER09WJxgKxxaUOZSAApMrJxcAGUYAAdytjJKajoGXLIgxMKsmjB0HAsQerCIgHoAQQAhAGEARgAmAGZuwoBKdNbinBKENlTnRV5eaBouBDBshvDWV3dDGF4GAHMt+xo2MF0kHF511Ollh6eXgteillcJEaHA6OQIDhfIFblteo12DF5HxllkUCRyghOiEThFom4DKiVgBVa5IO61HC6NhMMjdWBEXZEHBQHiMfTI7pvTFQGgSGgE5E4KTM8pMG4MC5E0rmToUFAocq8dD9frU2kAOjACAAbv0buFyhRvGx+qykOzYhr5XAifzGShOuMAAzLRYZAGAw43BC8JaewE4JAQbX+wOB3DNfoAFQxvqJgPaCaKAH0U+jMUgmIhk0DVjy+QLxCLZAYtOEhK8JEQIHAtji+qx8VKA+GNe2cAoG41m2WPeHw7gAqxKfDTmRzoTWwOqnZqP2B4OcAAFcxsTsSJxCChcYvSUtCszCJioYU1usoSG8CgQISKFRqLazqAIXOBrM56eL3DRpgAa2obddw2HV1jPWstiYMBnl9P0jyEE8UDfQEoJgnYw0XAdzjYOgSGQooAF98LzUYDhuaQaF9QQcIAqlfRQJgYHCVBBBvFAwJMKBiPYWliD9BdMPfbNXy-AciNEwFxMEqSxOTXBBmg+oeCYNhqkEaER00Gs1F9IwTDMZAtknZE-SYP1vWoMAuCYfg5OECgBTEERVM7JQGIYLQUg5DxwIvTQxwiDRdxYIgaFAnA8iCJAHyQMB5jsy8NBoP1jJ4QRqwgykaV4dRUteDzKQst4EGhJAX2TbRdG8vg8ntHKnUESrUmRbFotUWL3TfYNtX4-DcESJiW0ErIwEGgwAFkGD6nBBigF90MpbT2JwOAQ10vIEA1G4NRwUiiEETj4okoolvnbj3huRBUF646l1m+a-XKCBqhwxhO2ZH0IAAK12KtpBwWx7GKy7kCQ27A1W7VuJk6TpuHMgTzICBamZbtx2SKq0ishicCoXR2zfGHAyJwFcAAeTcpgCs0BkmQhHAxXQpQ7D-bYtm6JgJHYoguXKGtMSIdFk1pr5pxJlZo2RlSg3gYxmUcRFBQ8IlLwYthRnasHJMKcSCJAAigA)
+
 ## Additional Resources
 
 - [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
+
 - [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)

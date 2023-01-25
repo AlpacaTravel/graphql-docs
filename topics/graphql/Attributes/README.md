@@ -8,6 +8,7 @@ values.
 There are two types of attribute classes.
 
 - **Core Attributes** - A maintained list of attributes managed by Alpaca
+
 - **Custom Attributes** - An open namespace for custom data to be stored for
   application specific use case.
 
@@ -56,21 +57,24 @@ mutation UpdateItineraryWithCustomAttributeData {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBVABzAEMUEdikcBLFapBAJ2MYE8AaCpMHAZxQiNyvCIhyx+oiihSNqAIxhkcJFMQA6STXCWlqEKoVUIAknQbM2AdVoALAMIxJcAIIy5isgBFSxHME0cHFw8XnIUW3IYIlJTcyYWVgAKAEocHTU6AwpeHCRBOGIAG0CcaOMzegS2JNKg3ABlaIIi1hwI8loqyzaTLzqaMHQcdRAui0SAehcAIXsARgAmAGZRgZCY5Q6VXxwAM0F2yJp4noHx6tZhgKogu9wAGQQANwSAc3JSWQUlBFyBPgCIQ4BAADzI3AQPFUfmIz2I1CKxHkRXIB0YA3qJ26LGof0xZQIYUYKDcsl4wwA2gSsY5nDs1EdSDRcvIEPQ3oDBFCcAB3Oz0I6dU6JGn+QbDUYSARwSZwVgAWmlogVMNGnHhRRgCElIAAoqDiHAWuQ6TKcD5GQApBoAeQAcqMcABfAkAXQGrtuaRud2xEzY-gJ1DABIA+mGUKwCMgjQhNATcAAlBDEHjyYhQADWQvETnNMP2jCk2y+Hl+BPlZtEluIwzLADVitqkiHdcrZfKlfmVWqQClPaUvc6QM6gA)
+
 _Note_: We recommend using the id `custom/external-ref` and
-`custom/external-source` when assocating resources to your platform. Alpaca
-can provide some query integration with data in these fields.
+`custom/external-source` when assocating resources to your platform. Alpaca can
+provide some query integration with data in these fields.
 
 _Important_: Do not store sensitive or personal information within these
-attributes. You should store this information within your platform as
-custom attributes are not approprtiate for storing this type of data.
+attributes. You should store this information within your platform as custom
+attributes are not approprtiate for storing this type of data.
 
 ## Lifecycle of attributes
 
 ### Creating Attributes
 
-For supported resources, attributes can be created and supplied leveraging
-the operation argument of `attrs` on the resource. These will create the
-supplied resource containing the supplied attributes as offered by your input.
+For supported resources, attributes can be created and supplied leveraging the
+operation argument of `attrs` on the resource. These will create the supplied
+resource containing the supplied attributes as offered by your input.
 
 ### Querying Attributes
 
@@ -78,7 +82,9 @@ In order to access the attributes, there are a number of queries in order to
 select the desired data:
 
 - `attrs` Selects attributes via a series of attribute inputs
+
 - `attr` Selects an attribute with the supplied ID and locale value
+
 - `attrValue` Returning the value without the wrapper
 
 ### Updating Attributes

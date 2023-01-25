@@ -15,9 +15,13 @@ If you are new to GraphQL, the following educational resources may be helpful as
 a starting point.
 
 - [Introduction to GraphQL](https://graphql.org/learn/)
+
 - [How to GraphQL](https://www.howtographql.com/)
+
 - [Guides and Best Practices](https://www.graphql.com/guides/)
+
 - [GraphQL Clients](https://graphql.org/graphql-js/graphql-clients/)
+
 - [Awesome GraphQL](https://github.com/chentsulin/awesome-graphql)
 
 GraphQL implementations can be simple as executing a query, and can then perform

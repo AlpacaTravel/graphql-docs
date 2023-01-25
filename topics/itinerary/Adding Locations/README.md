@@ -9,10 +9,16 @@ You may also wish to review the following guides as starting points:
 - [Managing a list](/getting-started/itinerary/Managing%20a%20List/)
 - [Managing a trip](/getting-started/itinerary/Managing%20a%20Trip/)
 
-_Table of Contents_
+_Prerequisits_
+
+- You'll need an itinerary you want to add to and locate the Itinerary ID
+- The itinerary will need to be unassigned to a profile, or you'll need your
+  private API Key
+
+## Table of Contents
 
 - [Adding Locations to Itineraries](#adding-locations-to-itineraries)
-    - [Prerequisits](#prerequisits)
+  - [Prerequisits](#prerequisits)
   - [Adding Locations to an Itinerary](#adding-locations-to-an-itinerary)
     - [Adding a Location Directly to an Itinerary](#adding-a-location-directly-to-an-itinerary)
     - [Adding a Location using a Place provider](#adding-a-location-using-a-place-provider)
@@ -27,12 +33,6 @@ _Table of Contents_
   - [Reordering a location](#reordering-a-location)
   - [Removing a location](#removing-a-location)
   - [Additional Resources](#additional-resources)
-
-### Prerequisits
-
-- You'll need an itinerary you want to add to and locate the Itinerary ID
-- The itinerary will need to be unassigned to a profile, or you'll need your
-  private API Key
 
 ## Adding Locations to an Itinerary
 
@@ -155,10 +155,10 @@ this, you can use the special custom attributes `custom/external-ref` and
 `custom/external-source`.
 
 The `custom/external-ref` attribute accepts a string value, which should be a
-unique identifier per record. The `custom/external-source` attribute is used
-to attribute the identifiers to a source. This attribute should be common
-across all your locations and differentiate between different source locations
-you may have.
+unique identifier per record. The `custom/external-source` attribute is used to
+attribute the identifiers to a source. This attribute should be common across
+all your locations and differentiate between different source locations you may
+have.
 
 Here's an example of creating an itinerary location with external references:
 
@@ -241,8 +241,8 @@ See More:
 ## Retrieving Locations
 
 Using the Alpaca GraphQL API, there are many different ways to query and
-retrieve the locations of the itinerary. This is typically done using either
-the `node` or `itinerary` query depending if you want to read back multiple
+retrieve the locations of the itinerary. This is typically done using either the
+`node` or `itinerary` query depending if you want to read back multiple
 locations at once, or want to target a specific location node.
 
 The below example shows how to use the `node` query to retrieve a specific
@@ -479,8 +479,8 @@ The Location can also contain other positions that can assist with presenting
 the location to the user.
 
 For instance, for a place, your place provider may provide a position in order
-to draw a pin or draw a label. This position is not the location we wish to
-send the user to when actually visiting this location physically.
+to draw a pin or draw a label. This position is not the location we wish to send
+the user to when actually visiting this location physically.
 
 Further to the example, you may also wish to have the user first navigate to a
 position such as a car park or entry gates.
@@ -488,8 +488,8 @@ position such as a car park or entry gates.
 This leads to the possibility of many different positions being used to describe
 the location being added.
 
-You can assign a preferred position using the `location.position` or add
-an attribute to the location with the ID of
+You can assign a preferred position using the `location.position` or add an
+attribute to the location with the ID of
 `itinerary/location/directions-position-preference`
 
 We also support the use custom data to contain further positions that you wish

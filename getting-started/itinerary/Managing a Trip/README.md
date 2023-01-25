@@ -9,31 +9,37 @@ What this guide covers:
 
 - This reference guide covers the complete lifecycle of creating and managing
   itineraries using the Alpaca Travel GraphQL API.
+
 - It includes step-by-step instructions for common operations such as creating
   itineraries, adding locations, working with routing and other services.
+
 - The reference covers both GraphQL queries and mutations, providing developers
   with the complete set of tools to create and manage itineraries with the
   Alpaca Travel platform.
 
-This article is intended to be a simple guide that developers can reference
-when they are first getting started with the Alpaca Travel and
-are working on their projects, so they can easily understand the different
-GraphQL operations they need to create an itinerary and manage it. The guide
-provides a clear and step by step instructions, code examples and other
-resources that could help developers to be more productive and efficient.
+This article is intended to be a simple guide that developers can reference when
+they are first getting started with the Alpaca Travel and are working on their
+projects, so they can easily understand the different GraphQL operations they
+need to create an itinerary and manage it. The guide provides a clear and step
+by step instructions, code examples and other resources that could help
+developers to be more productive and efficient.
 
 What this guide does not cover:
 
 - Numerous alternative use cases; This is provided to give a developer an
   overview of calling the GraphQL API but there are numerous other operations
   and use cases covered outside of this guide.
+
 - This guide does not cover how to make API calls or connect your application to
   the GraphQL API using a specific client. It is technology agnostic and allows
   developers to use any GraphQL client to make the calls.
+
 - It does not cover how to obtain or use an API key to access the Alpaca Travel
   GraphQL API. Developers must have a valid API key to make calls to the API.
+
 - It does not cover implementation details such as handling errors or rate
   limiting, which are important but are out of scope of this guide.
+
 - It does not cover all the possible options and variations of the GraphQL
   operations, but it covers the most common and useful ones for managing
   itineraries.
@@ -41,25 +47,38 @@ What this guide does not cover:
 Additional Resources:
 
 - Alpaca Travel GraphQL API Detailed Schema Reference
-- Apollo Sandbox for testing queries and seeing what other operations/fields
-  are available
 
-_Table of Contents_
+- Apollo Sandbox for testing queries and seeing what other operations/fields are
+  available
 
-- [Managing a Trip](#managing-a-trip)
-  - [Creating an Itinerary](#creating-an-itinerary)
+## Table of Contents
+
+- - [Creating an Itinerary](#creating-an-itinerary)
+
   - [Adding Locations](#adding-locations)
+
     - [Adding a Location from a Place Provider](#adding-a-location-from-a-place-provider)
+
   - [Testing Whether a Place is Present in an Itinerary](#testing-whether-a-place-is-present-in-an-itinerary)
+
   - [Listing the Itinerary Locations](#listing-the-itinerary-locations)
+
   - [Removing a Location](#removing-a-location)
+
   - [Changing the Title of a Location](#changing-the-title-of-a-location)
+
   - [Reordering Itinerary Locations](#reordering-itinerary-locations)
+
   - [Turning on Auto-Routing](#turning-on-auto-routing)
+
   - [Displaying an Itinerary with Matched Directions](#displaying-an-itinerary-with-matched-directions)
+
   - [Making a Stop Optional](#making-a-stop-optional)
+
   - [Adding a Place of Interest for a Location](#adding-a-place-of-interest-for-a-location)
+
   - [Displaying an Itinerary on a Map](#displaying-an-itinerary-on-a-map)
+
 - [Advanced Topics](#advanced-topics)
 - [Further Reading](#further-reading)
 
@@ -93,6 +112,9 @@ mutation CreateItinerary {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPE4AHVJKipvoFGzNgApuJSSQIMmLVug4SpkgMQlaSGQVwAbXsRTIUylYRS6EiziABCuAM4EoG2SPYBRAB644AB0sbUyl1AGUIRBJcMDBtYj0SKigIxCQwBDASACMcEiQIFESEAEcYAipMgDMCBF0wB2DJdMrcGF0UABloPSsSG2QgnhV8FAoHRQBtRpCSAAUKCAA3AnSSAAshFAcorIhclDWEEhRWPyOISuk3eRJRBAA6AHN7kl0CBxQAGmOKAj9v0a4Ai6ACU0zU5FwpCy5zgMiMmQgFCiMQyrxoFHBHGkYGsIG0wnkAHoTmcbN9FnoYL0bKM-jYSABfaYAXWCzJ4IKUQyuQjkbG5KkkK3Zyg5jJAjKAA)
+
 If the operation is successful, the response will return the id of the created
 itinerary. This id is required for all subsequent queries or mutations that you
 will make to the itinerary.
@@ -116,14 +138,19 @@ an example, your response will have unique id.
 
 - You can also add additional fields such as description and cover images at the
   time of creation
+
 - Additional attributes that can store ID's or other references can be stored
+
 - Can be associated to a specific profile ID if correct permissions are in place
 
 See More:
 
 - [Creating an Itinerary](/topics/itinerary/Creating%20an%20itinerary)
+
 - [Custom Data](/topics/itinerary/Custom%20Data/)
+
 - [CreateItineraryInput type](/reference#createitineraryinput)
+
 - [CreateItineraryPayload type](/reference#createitinerarypayload)
 
 ## Adding Locations
@@ -157,6 +184,9 @@ mutation CreateItineraryLocation {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyNOAB1SJKFRr0CjZm05RuxABQCSSkgGISAZRgAHLQBtWJCDAokxElgZQQSuMGBIoAFghIEUCOA4iLlb8UwtaMHQSPhA-czYAegBBACEyAEYAJgBmMJ8lNQARBABnYQIAIxcnF10uQmJMkgqZKqQQ-kFlVRIABQoIADcCMBc8iERDLQbcXSFid1QvEi0mQaRxgjzS51cGALYapUIUXQQQsJjyXAAzBAyW5T1cKEOSZtbWtU6evvEAcwd1rQg8vzEWrEKK6fA7G7-QGNR7AmGJAAsAFYAHQABjRCNSABpavgQgBaVIAdhRAA40clEiQAL4QunXBlKACUjxqagAStR7EU7gBrH7lSo8EgAKxgeRQQhE7jANTqsl4EIA+sqUKx5ktEBC+jUmbSBDSQDSgA)
+
 If the operation is successful, the response will return the id of the created
 location, as well as the **typename. The id can be used for queries and
 mutations related to that specific location, and the **typename can be used to
@@ -180,28 +210,32 @@ Example Successful response:
 You can also provide various information to store against your place.
 
 - Place information embedded within the location
-- Reference to a place provider where information can be kept up to date such
-  as ATDW, Facebook, etc.
+
+- Reference to a place provider where information can be kept up to date such as
+  ATDW, Facebook, etc.
+
 - Provide an 'external ref' attribute that can store the ID of a place within
   your platform that can be used to map on information from your platform
 
 See More:
 
 - [Adding Locations](/topics/itinerary/Adding%20Locations/)
+
 - [CreateItineraryLocationInput type](/reference#createitinerarylocationinput)
+
 - [CreateItineraryLocationPayload type](/reference#createitinerarylocationpayload)
 
 ### Adding a Location from a Place Provider
 
 Alternatively, you can associate the created location with a specific place
 provided by various supported place provider (such as ATDW, Facebook etc). The
-benefit to associating a created location with a place provider is that when
-you query the itinerary, you can also load in information such as opening hours
-that are kept up to date based on the place provider information.
+benefit to associating a created location with a place provider is that when you
+query the itinerary, you can also load in information such as opening hours that
+are kept up to date based on the place provider information.
 
 This operation allows you to associate a place to a location in the itinerary.
-In this example, we will be linking the location to The Farm Cafe using the
-ATDW Product identifier.
+In this example, we will be linking the location to The Farm Cafe using the ATDW
+Product identifier.
 
 ```graphql
 mutation CreateItineraryLocationWithAtdwPlace {
@@ -230,6 +264,9 @@ mutation CreateItineraryLocationWithAtdwPlace {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyKQHUCUACwCCKMAHcACgBtcUBCWAAdUiShUa9Ao2ZtOUbsQAUKkmZIBiEgGUYABzvTWJCDAoktOls5QQSuMDASIQUBBDhgiFNzAW0mb1owdBIlEFivNgB6YQAhMgBGACYAZlTosysAEQQAZ3UCACMFEJJpLkJictb2nmTlVXNLEkkKCAA3AjAFGohEFzsOpFxpNWIUZBRIkjsmGaXpAhrmwVCGeLYus0IUaQRk1IBxZgb-VYAzN4QEMoHzGtYkBA7DVDvcQAA5agUBqsAA0JHECgMpDe2iCABUTiQAGIsCJkXCfebIEhwCA1TZgXCsGo-QYVEjsbQAa2CWLaBkWW1wJGZgPEpEccm+vzMQvkfUu5isACUEJ8qEgoNoAOZshTihRvUYRYToyq8KVmSZgzWZfASdB2UZgGBQFDoACsb3y+UdYDeUwAHG8AJwNR0AdkDxS9XsDXuKjoADHT6QyRuNJqr1dtybFiN0kJlZCgjWmQYs+lnkvkACyOgB00ejZeK8NzyQAtMVA5WvdHCvkSABfKV934DswASkUXVl1CCDTkrJaHMMpAAVjAKWoNOswF151z+vGAPp7lCsHZLRBSyZdIe9lQ9kA9oA)
 
 The created location will be associated with the ATDW product
 "5f115dfde8f9b57738878350" which is "The Farm Cafe". When you query the
@@ -272,6 +309,9 @@ query CheckItineraryPlacePresent {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAMIAWCUA1gJIoCWS+AhoQAoA2zUCbeCAZ2QoiwADpIiRegyZ5WBABT0w6ImJAzGLQgHoAggCESARgBMAZg0BKURKlSwgnkjDNUAxfYdSADlx4aMAE1AG0Nf24EXWYUMAB3dF88CDAYKBR0AFYoZgQADgAGACMELIB2ZkKATgA2KDBywvyAFmLa5mKNAF1vHwAzejwBTKITPqJbcUkfIiRUwTsZ2ekwCakAX3WiFAgUZg4SCBhUCa2Z842QDaA)
+
 If the operation is successful, the response will return the id of the location
 that has the specified place associated with it, as well as the totalCount of
 how many times the place is present in the itinerary.
@@ -298,13 +338,14 @@ Example Successful response:
 See More:
 
 - [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/)
+
 - [Checking if a place is within an itinerary](/topics/itinerary/Checking%20if%20a%20place%20is%20within%20an%20itinerary/)
 
 ## Listing the Itinerary Locations
 
-In order to list the locations that have been added to an itinerary, you can
-use the "itinerary" query and select the associated itinerary locations using
-the "children" selector. The query can also be paginated using the relay "cursor
+In order to list the locations that have been added to an itinerary, you can use
+the "itinerary" query and select the associated itinerary locations using the
+"children" selector. The query can also be paginated using the relay "cursor
 connection" specification.
 
 Here is an example of how to use the "itinerary" query to list the locations in
@@ -339,6 +380,9 @@ query QueryItineraryLocationsAsSimpleList {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAIq6ECSKAlkvgIaEAy09NESAzgIKcDK1OAAcANgibVOKIsAA6SIkWo06eRgQAU1MOiKyQy2g0IB6bgCEAwgEYATAGZ9AShnzFiqAAtqIsHmQaKARCCLpURmrMrOxIADREAGbUeFK61gAMLnIK7ooIYADmCJyuObmKSBBgCKXl5dpude4A+s1BIUj0iI1NRAB0A0QcROGq6ixQbNTD2b25ovRQNbNzuQ1lq0Sd3Rur9GB+xSUrm+4irCLKBD2bAL43qyL0BPjHD5vbCO+997tNv6sAf9vkQhBBOIYOLp8kUAArgyFIABy8AARvhAsFQiMVMYCBMphwnCDYCkIHh3kDcigICh6CJLBAYKgbkDfrcQLcgA)
 
 If the operation is successful, the response will return a list of itinerary
 locations, in the structure of a GraphQL connection. Each location will include
@@ -435,6 +479,9 @@ mutation DeleteItineraryLocation {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIARBAGwRQQElCkEAnXZgTwBlp8jTgAOqRJgqNeoxZt2DBHAAUBMOhICQBSaw4B6AIIAhAMIBGAEwBmbRrnayAUQBiAFgCsANjUBKEoOEkSSkL+AL5CwSDBQA)
+
 If the operation is successful, the response will return the ID of the itinerary
 location that was removed. Please note that there is no undo option for this
 operation and the location will be permanently removed from the itinerary.
@@ -451,10 +498,10 @@ Example Successful response:
 }
 ```
 
-If you are not planning on querying back the itinerary list or maintaining
-a local representation, you can also read back the cascaded changes which
-provides the option of reading back any other create/updated or deleted nodes
-that have been affected by mutations.
+If you are not planning on querying back the itinerary list or maintaining a
+local representation, you can also read back the cascaded changes which provides
+the option of reading back any other create/updated or deleted nodes that have
+been affected by mutations.
 
 ## Changing the Title of a Location
 
@@ -477,6 +524,9 @@ mutation UpdateItineraryLocationTitle {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwBlp8ikAVAigA2CEsAA6pEjCo16BRi3ZcoPYgApJJbSQJh0JcSEELmrNgHoAggCEAwgEYATAGYLQ7oWIWAIgFEAMQAWAFYANiMtHQ9VLyQDYBJCYQQDIwA5BAB3EgEUoxIAXyiASjEo7Ri1UgkpHV0wCp1kkSbiqXbCkEKgA)
 
 See More:
 
@@ -503,6 +553,9 @@ mutation {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAJgAdUkuCANwQElCkEAnXVgTyYTgApKJISQJh0JciALM2HTgHoAggCEAwgEYATAGZ5AG2j4iSeQBEAogDEALAFYAbJMHCADhADO044pQBlPKwo4sAAvs4AlGTOQtK8UVTCImDRJGFUaSEgIUA)
+
 Alternatively, you can move an itinerary location to a relative position to
 another item in the itinerary by using the `positionAfterSibling`,
 `positionAtEnd` or `positionBeforeSibling` properties in the mutation:
@@ -519,6 +572,9 @@ mutation {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAJgAdUkuCANwQElCkEAnXVgTyYTgApKJISQJh0JciALM2HTgHoAggCEAwgEYATAGZ5AG2j4iSeQBEAogDEALAFYAbJMHCADhADO044oBmKNgDKBABGegRIAObiwCSeoeERDGISUjLsXEpqWroGUEbE8gDiABIMAOwAHACckiQAvs4AlGTOQtK8LVTCImCt9c4NSHUgdUA)
 
 These mutations allow you to reorder the itinerary locations in a flexible way,
 whether it be moving them to a specific position or relative to other locations.
@@ -556,6 +612,9 @@ mutation UpdateItineraryAssignCarAutoRoute {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwEEBnLggcyQBhVhxwQAShBwISwADqkSMKjXoFGLdgAoFJPSQJh0JOSAINmrNgHoOAIUEBGAEwBmU7v3n1l9seAkuGKS0v4kYAgAZkEANigAshARxsJMJAC+GZ4AlLKeet4aVnmK+gZg+fpBKBJSKDLypWXhUbEJSQiVeumVPYp96SDpQA)
+
 When this mutation is successful, the response will include the id of the
 itinerary and the defaultMode that was set. This means that the auto-routing
 feature has been turned on for this itinerary and the default mode of
@@ -581,16 +640,18 @@ or use advanced profiles like MountainBike, Bus, Motorcycle, Scooter etc.
 
 Once auto-routing is turned on, the API will automatically generate directions
 between the locations in the itinerary. The directions will include information
-such as duration and distance estimates as well as providing map data for rendering.
+such as duration and distance estimates as well as providing map data for
+rendering.
 
 There are numerous other options available to customise the auto routing
 behaviour, including:
 
 - Specifying alternative modes of transportation between locations
+
 - Adding waypoints to directions
 
-It is also possible to change the mode of transport for the entire itinerary
-or specify it at the point of creation.
+It is also possible to change the mode of transport for the entire itinerary or
+specify it at the point of creation.
 
 See More:
 
@@ -646,23 +707,27 @@ query QueryItineraryLocationsWithDirections {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAIq6ECSKAlkvgIaEAy09NESAzgOrUoAWAEWp4EUdlyLAAOkiJE+tBoQAU1MOiLSQiunkYEA9AEEAQgGEAjACYAzNoCUU2fPlR+1ADZhRSFSgIABwRNKiV9ZlYJABoiADMRThRNSwAGJxk5V3kEMABzBE5nLOyc-IQABQhORQ4AOXgAI3xZF1L5JAgwBGL27PU2vqIAfWGA4KR6REG+gDp5og4iML0DFig2aiXMoezAz3ooHp3d7MnpktOiejAfQqKTq9dPVk8+AhnTgF9P3YOCfAPX6nc4IYF9H6XIaQ77gmF9MAiMQSTgqBJ4JIpWKI0TiLZIUJIRoQGBIMAZcEdLqFXpXMAwfQSACytEprjwJJQxzZ2U4CDyiFQQKhVzg1J5rnhsJF2SlpTl2VgGIgeF+CqIKAgKHonnMJNQM3hkK+IC+QA)
+
 If the operation is successful, the response will return a list of itinerary
 locations, with information about the directions between each of the locations.
 The response will also include the total number of locations in the itinerary,
 as well as a cursor that can be used for pagination.
 
 In the response, you will get the name, address and the type of the place you
-added to the itinerary. And also the duration and the mode of transport you
-will use to travel between the locations.
+added to the itinerary. And also the duration and the mode of transport you will
+use to travel between the locations.
 
 It is also possible to search for directions inbound and outbound against each
-of the locations. There are numerous ways that you can query in directions
-and has an entire topic dedicated to understanding querying itineraries and
+of the locations. There are numerous ways that you can query in directions and
+has an entire topic dedicated to understanding querying itineraries and
 stops/directions.
 
 See More:
 
 - [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/)
+
 - [Matching Directions](/topics/itinerary/Querying%20an%20Itinerary/Matching%20Directions/)
 
 ## Making a Stop Optional
@@ -675,8 +740,8 @@ of the "optional" field.
 Optional will remove the location from the path on auto-routing, and instead
 directions will link to a prior non-optional stop.
 
-Here is an example of how to use the "updateItineraryLocation" operation to
-mark a location as an optional stop:
+Here is an example of how to use the "updateItineraryLocation" operation to mark
+a location as an optional stop:
 
 ```graphql
 mutation UpdateItineraryLocationAsOptional {
@@ -690,6 +755,9 @@ mutation UpdateItineraryLocationAsOptional {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwBlp8ikBBAM4B5CoWK4ANiWAAdUiRhUa9AoxbsuUHsQAUckgZIEw6EjJAEGzVmwD0fAEIBhAIwAmAMzn9hidzFIpsAkEKK8kqYoTDAIJAC+PgCU0j4GfloBKfKGIWHiEqnxPglIcSBxQA)
 
 This operation accepts variables for the ID and optional field, where you can
 pass in the actual values for the location ID and whether the location is
@@ -741,10 +809,13 @@ mutation CreatePlaceOfInterestLocation {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQAUAbXKBAeQDMBJVBKgZxQAy0fEVLAAOqRJQqNDoSQ9cFAJ5CoI4gApJJPSQIKlqjmHQlxIQwUUVlKgPQBBAEJkAjACYAzJd376YUJicwkpfRJCFHoEc0sAWRUSBiYEEgg2Ei4UHgR+P3D9AAdGZlCSIoheaxCSYBJApHN3ABYWgBoG-HMAWm8AdhIAX2H-CMrq4KQnFABRJDM6iuVkFFM4qyM7VWc3L28HQI0phwARWYAxfctRwqH-AEo6sYag0WfCvQIwF70AfT+KBURWQuEQv2WVFQHwiEW+EP+gOBoPBn1uEXuUkxQxAQyAA)
+
 The parentId field in the positionAtEnd argument specifies the top-level
-location under which the place of interest will be created. The response
-will include the id and **typename of the created location, as well as the id
-and **typename of its parent location.
+location under which the place of interest will be created. The response will
+include the id and **typename of the created location, as well as the id and
+**typename of its parent location.
 
 See More:
 
@@ -764,7 +835,7 @@ popular website mapping clients like Mapbox, Google Maps, Leaflet, or Pigeon
 Maps.
 
 Alpaca also provides various mapping services, which are documented here:
-https://github.com/AlpacaTravel/mapping-docs.
+<https://github.com/AlpacaTravel/mapping-docs>.
 
 To display an itinerary on a map, you can use the
 "listItineraryLocationsWithItineraryDirections" query. This query allows you to
@@ -816,6 +887,9 @@ query listItineraryLocationsWithItineraryDirections {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABADYCWAzigJIplL4CGhAMtI3REhQOpkoALWvSaEAImTwIonbkWAAdJESL8ReZgQAUZMOiIKQahhsIB6AIIAhAMIBGAEwBmQwEp5SlSqgCyJMFJIWigEAA4I+sImmmxQHGRcADREAGaSVPoOyYwpKPj6SDAkJO6Kyl4qCGAA5ggUHuUVlTUIAAoQFGpcAHLwAEb4nk0qSBBgCA3DFbpDU0QA+vMh4UiMiLNTAHTbRFxEUaIEsfF7ZXMVoR1dymfnFSRcG3ckHE9TAL5vw6EvUBO3dxUM0agMWy2QawQXymq3WILmn3hTURCOhYEk0lkFC0aTwGSIdmS6KkMgSSEiSD6EBgSDApWhIzGdUmgOBgIWSzCELh7LAMA0sgAsvQGV48NS8iz2RQENVEKh6gD2UQ4EzRcMAMREdokAjkBjJADiCAgACsKHsECgoOqmpddfqoUjUc7kaKUR83h6KigIChGCQbNTUG9QoxatQkCkIFKmgJGBRuggAB4oVrhp1zZBgGz8i14L0bD2I94gd5AA)
 
 If the query is successful, the response will be similar to the following:
 
@@ -892,6 +966,7 @@ If the query is successful, the response will be similar to the following:
 See More:
 
 - [Mapping](/topics/itinerary/Mapping/)
+
 - [Alpaca Travel Mapping Service](https://github.com/AlpacaTravel/mapping-docs)
 
 # Advanced Topics
@@ -901,21 +976,25 @@ to build interactive travel itineraries for their customers. While the above
 guide covers many of the most common use cases, there are a number of additional
 features and capabilities that may be of interest to advanced users.
 
-- **[Storing Custom Data](/topics/itinerary/Custom%20Data/)**
-  Learn how to store and retrieve custom data fields for itinerary locations or
-  places.
-- **[Working with ATDW](/topics/places/Working%20with%20the%20ATDW/)**
-  Learn how to associate itineraries with products from the Australian Tourism
-  data warehouse
+- **[Storing Custom Data](/topics/itinerary/Custom%20Data/)** Learn how to store
+  and retrieve custom data fields for itinerary locations or places.
+
+- **[Working with ATDW](/topics/places/Working%20with%20the%20ATDW/)** Learn how
+  to associate itineraries with products from the Australian Tourism data
+  warehouse
+
 - **[Working with Drafts](/topics/itinerary/Drafts%20and%20Publishing/)**
   Understand how to create and manage drafts of itineraries before publishing
   changes
-- **[Advanced Routing](/topics/route/)**
-  Learn how to use advanced routing features, such as avoiding tolls or ferries,
-  or optimizing for different modes of transportation.
+
+- **[Advanced Routing](/topics/route/)** Learn how to use advanced routing
+  features, such as avoiding tolls or ferries, or optimizing for different modes
+  of transportation.
 
 # Further Reading
 
 - [Example Itinerary Operations](/example-operations/itinerary/)
+
 - [Other Itinerary Topics](/topics/itinerary/)
+
 - [Alpaca Travel GraphQL API Schema Reference](/reference/)

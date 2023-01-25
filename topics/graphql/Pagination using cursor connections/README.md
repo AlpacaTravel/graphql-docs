@@ -50,14 +50,20 @@ query CollectionItemsUsingCursorConnections {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBRADwEM4AHAGwRwEcYEAnATxwEtzyYBnFeolFpAHMcKABZV6CTqQhJOVbvRhQUMSTggAzHERyx6nCPT2ykCFS1kAdJDdoNmAYQjtz-WQEkUCOJwCqnAKCjmqG9M5IZhaynDjANjg4uACCSDR0TCKifDik9BAAbixgUjp6oUYmkW6WaZLSMQgJJq7RSF4+nAAUzYm4hCQUVPaZUDE8RAIonL0tlG0eYJzoOADaViBjre5IAPTJAEKOAIwATADMGwC6s7gAYiwGKFU8LrFiCuQsUEEANDiSVT0JBBHDHAAMVSiO1Y3l8s00j24KwhtxwyU03mMY1Q+XI73EuSIgiCADocAAFfJFEpZKj6MIabQfHDkIjcHAIMCCKgoCBEklIPhNNKJJI6TEMLI5Lk88kebSMCAwHCQJAAcme8iQYDKDKM-xZiKeAKkMHI0x0kjRgLUZjAsyIkvoKw2EFIRHsIQMRg2zQAlHFZrLSvFRWLyj76LNEkgILSwxGI8UY2L+ChKKmAL6zHPhgUIDxITT8xNJ7KcAByCAIKApxJFEbziTzWZAWaAA)
+
 - Slicing is done by providing the `first` argument to `collectionItems`. This
   asks the connection to return 10 collection items
+
 - Pagination is done by providing the `after` argument to `collectionItems`. We
   provided a value of for the cursor so we should load collection items after
   that cursor
+
 - For each edge, we asked for a `cursor`. This cursor is an opaque string, and
   is precisely what we would pass to the `after` argument to paginate after this
   edge.
+
 - We asked for `hasNextPage`, which will tell us whether there are more edges
   available.
 

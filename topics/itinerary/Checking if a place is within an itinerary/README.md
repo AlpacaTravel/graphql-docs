@@ -7,6 +7,7 @@ performing a query and supplying the place identifier.
 
 - You will need to supply an ID in order to check the place exists in an
   Itinerary
+
 - You will need to have access to the ID of the itinerary to check for a place
 
 ```graphql
@@ -40,6 +41,9 @@ query CheckItineraryPlacePresent {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhACwSgGsBnHAdyJSICccBDHABwBtGoEcDGKAjBMiZgwCMDhQQmSHAEsUcpAjqM6ATwA0OAGYQGUOgkaKkAcyY5+MFFKQAdJLjIoT3CLMaz7IAIKjJaQBJUxU1dR8rGzsAOhwgnUsjMhg2FHkKIxQYOmUwbXUIGBw4RnVJIgcnKi90qXkkMDkoN0CK7hgyFXl0uQpGNiNGMHKWZORe2VoEOQYFJTCNbX1HXAgdHW7puDajOAgAN24FOIBNIpwW2RY+CmmSkygCJQt55VUNHDZoEzkPeIAIhUTKseHwKn1WBwuEwyGRoHI3BIdHQIDtaJCAI4wFTler3MRsBAoBAhBYfdQhBA7CAsMKKDyORzY3H4IikMnvcIABWhCG541QOGAjhwOFwAFUuu0euTwjgWUscCkWOx1C8ZW9FuUgkD6k9iCRRbKuRoABRyMDoHA+LUUgD0vgAQngAIwAJgAzD4AJTC41i3AARRxnwJCDIXEatTI2jGh0tGvhiEuHhcqiUKDIAZwYkjyDAMbNOcDOAFCbEMvYnGOYlQch0chUd2kBtIJahNaCYDI1oA2j5q1x7R7vSAALod3DnYqlcoqlj6dLDJrmSxD7hwVKKdjcRSIWNRdJ6Bj7Fw4IarsxTqycEg4DzcShyNhsKzcZBFMwEDuNugua1XRzP0RVkMVwKQCA839MDwPA3AAHl+FcJQZV1bR4SobgrgvalDj3Z4KG+FoGVkToNXuWl6T+Ko4Lg3BCWJUlQgpKk4DNP16j2fDNRJHYUTRXi5Q0GIOzFS0OwAXxvAAVCBXDfPAiiFMgCCKNgJEEHAzCGEkGFoLwcAABm0cF7g3VNUk07gV3EEp9AQG8DNkDwYXqQy7XCDspAUpSYFQHNpLAoLJJASSgA)
+
 If successful, you'll be returned with a reference to the itinerary location ID
 
 ```json
@@ -62,4 +66,5 @@ If successful, you'll be returned with a reference to the itinerary location ID
 ## Additional Resources
 
 - [Creating an itinerary](/topics/itinerary/Creating%20an%20itinerary/README.md)
+
 - [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)

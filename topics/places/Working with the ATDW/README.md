@@ -28,6 +28,7 @@ commercial distributors to list information about the business.
 ### Prerequisits
 
 - Your ATDW API Key has been associated with your profile (connect application)
+
 - You have your Alpaca API Key for querying GraphQL
 
 ## Place Identification
@@ -40,15 +41,18 @@ These product IDs can be used to retrieve information for different types of
 content on the ATDW such as:
 
 - Accommodation
+
 - Attractions
+
 - Events
+
 - Tours
 
 To reference an ATDW place in the Alpaca platform, you will need to use the
-format "place/atdw:product:<product_id>", where <product_id> is the product ID
-of the place you want to reference. For example, to reference the ATDW place
-with the product ID "5cae80be57a096cd7084b6ab", you would use the identifier
-"place/atdw:product:5cae80be57a096cd7084b6ab" in the Alpaca platform.
+format "place/atdw:product:\\\\\<product_id>", where \\\\\<product_id> is the
+product ID of the place you want to reference. For example, to reference the
+ATDW place with the product ID "5cae80be57a096cd7084b6ab", you would use the
+identifier "place/atdw:product:5cae80be57a096cd7084b6ab" in the Alpaca platform.
 
 `place/atdw:product:<product_id>`
 
@@ -155,6 +159,9 @@ query GetWinery {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEAZCAQzBwEskAzCAJzkJVIiR0ICMIYUWcB3chagE8cFahDg4AgjADOKaoQA2pQswAqHaqRkSAIvUI4A6oWoIAFhxkIAOkjsBHGAOEBxBCiP8hOYHZw4uLIIOCjmIQAOioRQCAAUAJQ4Ti6hEDiKRCTkVLT0jMxsHFyGMhEIUKQUpFC83oL+OFEx8aRg6Dg2IM2xAPT0YDzoEWJgMFAo6ACsAOwAzABMrAAcy6wAjACcFAAshHsIc8uEhFszO11JfswBgTgAkmDIDNUCMr1qguWNAW0-OAB9AEoL7IQiIOz-XAAIUIMhqZEoNDoDCY-yQ4NsNwCTxkUC0EVR9mJtzuADVTIxZDgoEwUDEuIgwhAwDIRDRQuEmtFYv9aagGb5-gEKC12BAANYAVWoimFoT4KBQAhlcuxt3IckIAHMFHBVfLxRLyNqDeqAL6Q9W4e50bUIGT-Uh2h0dRBgFQAYTphG8Mji1Wocg6cyu8qQLIdQvVpLMMk0sWjpOTOAAdOmcEwcABZBAewi2nUha4plMwWVxVgOlAAMVIkxwAG0FgAGFsAGhwrZbAF0EvKU7SIoItNrzCgB8n6PJSKxOAVJ6SoIRCQuY8nLeuApuUzvbpuoTgAMoJkKqEiSJVaOdEvl06+cGhW0m4ABKCCcpDMJGnD6JvXkGJjSQbV2WoTlIh5EJcikNRdCMf5f1necsxLZMIlIAAPBA1VJA9rSkMAwDjNl7iRPJb3VYhiIdNk0NJaiSLwfgAHkkCxFNMmXZQQXlMxtTXFMIggLVFG9J5-nwl8cHcdJvRoD0MWVR11WE+EiSTZNMhJLT6Ek59blwPBCEEN5ek9egEG1GhSAdf5olMoNNNJDEIQtAyAlwLx2JwMoKiqBEkJvB101TQ81HCMwWCiugkGEILOCjMJ6BpVQcCrTNWHpcgWHYThuRaNkeHMGpzF4EJzEIAA3DjDNS+lMm1ZwwE7MJtBwBBMPBKIQmIwgeDZURxF88pKmqWo+B8nJkXyNECO8kIKS0DxbJU0lJoQJbbIYV0WCvOI2g6LoegQXoNoAWiqykVrskAw3XK7FGcfT5v4KRFGVaglNIGrjxBRQ7PVDbJA+gRvpqo9-t238DvaTpuigs7+HOpRPvBhBzrkQQAcdO7nNuR7nvc16fLJesahgD7yyUHAAAUFAmGpAfW-gyYYWAqYURR6YZJmZA6GH5UO+GTqR9i6GA7VLvJjmUGpxRzpGXnYlx-57pTQnau3Q8Fpwd8BKYNbbg2-WCn5vb5Fho6EZaMWMf4s3LnxgJNZe6ST0QFgiPJpglFCw9JCgfE83rWakEGjkyWQImGKD79Q6Jc2YeF47EZiYOPXpROnfogmlBj-dD09GBtDez5yiNgJYFL9jy+h-aU5tvpq-hdjzpBCuc-lV3iekwOVfhVhSB4hoqKD2jZ2H+tBAFhu4dT2304n1gAfO2k4EQVAu4e-OtZwPdN3NEBzSAA)
 
 Example Response
 
@@ -263,6 +270,9 @@ query {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFEAOANgIZQIAUAlmOkaSLQwgPR0UYAO7oqeCGBhQU6AKwB2AMwAmAEYAODWoCMATgBmAFjomESjXTr6FRrgEoS5SpTblnLgMREAMhDpgRCgAFghEBix4AM4oREoADESCKHgsajAoCFHhEHhBodQSUjIelMnRTBHRsnHxjmQULpQIYADmWU6NTZRIkmEN3d1uXYNEAG50NLil3QC+M5TzI0uL5LMgs0A)
+
 ### Position Attributes
 
 Alpaca offers a additional attributes that can be used to enhance the data
@@ -291,6 +301,9 @@ query GetPlace {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQJHAA6SRRADrfQBQCWY6IkxCc6CAPQ0UYAO7p2eCGBhQU6AKwB2AMwAmAEYAOQ-oCMATgBmAFhq2E2wzRoXN14QEpGLNm3YQAZ14UXghWZlZfNiownyiiWhQWOKiAYiIAQSh6AICiFAALBhDEAC8whil8oqIoCAg8MF4kKQQU3xKEcqQEQSkUPAA1GipcPgEhES4JToBabraQD2TItKIAMRg8QvwiZssGuClQpAAaIgCVAqIaPLwEAHMTgIA6F-a2XgCIbVMANj+fRQA2GowQ40EwlE9HEXwgs1+ANmuk8K3iRHSGRgAQGI14NFY+0OxzC50uUGutwS0DxKAI5weEAAbudyFAPtSoLSCECQSMxvxIVMxJJ9AF0DEuVRggRUatfFQHjReUN+eDBZNoRIaGKJTSqLNGUz8EhEKhZjR7jQ5eiEFQEKoGiMVaCBRModNReK6nA4GEZAgRoVZnaHSgnQamkyvicbfFw1svnAAEqPE4utUQzWenXihN4JOze5PWJLdoAXzilaQ5ZA5aAA)
+
 The response if successful will look like the following:
 
 ```json
@@ -318,13 +331,16 @@ Where opening hours are available, you can use the Alpaca platform to interpret
 and display opening hours of locations.
 
 - Search for a upcoming or future range
+
 - Localise the hours to a different timezone
+
 - Identify public holidays that could affect opening hours
+
 - Change the format and display for dates and times
 
-Alpaca also offers the inclusion of Public Holidays in order to flag to users
-of your website or application that they may have affected operating hours
-due to local observed public holidays.
+Alpaca also offers the inclusion of Public Holidays in order to flag to users of
+your website or application that they may have affected operating hours due to
+local observed public holidays.
 
 ```graphql
 # Obtain the open/closed hours for the place given a period, such as the
@@ -365,6 +381,9 @@ query QueryDateRangeOpenClosedTimes($placeId: ID!) {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEB5AIxQEMBLJHFACwRwgAdkB6KAGwgGcEwcqIYAThxwAzCAMo0c9VsSi0A5qQBuyHMWkIBpCGAA0ODjChV1w6ggA6SXDHpQIccgpwB3BAgDWdCSJgpBWjBiFFoBYiQFBAA6HABJJDYYMARhcjEBOBCdCggKdihiVmkYAlZSKGtcPnLggE9zKhCcBxhWHmIREQQoFDpGJGdefiFo62sARxgtOpwARWmBOoAREIQAJQiovAGAYXYuMAAVUkQOAAoAEhk5BDiwdHjlgEIAShxgaxwcXABVLkktBu8nO7wYWmyeS+0lkINIDxw11hdzA70+FG+PxwAEEoPIOI1aODBpFhoJhOdXDQBLQOIwoKQRKRuK9od8+OSPmzMX8ARZROJVg1+hCUDlKBA6EQyBR6sI5AJOPKcOFIkSRDhgqEOLEAEJ1bnfXApETENooAyuUjUfh9CKzYgCBTwZAoQk4JAIAAefQA7JriMKraxigRaQhWD1QmBYgBNfiGrGFCgmLa0fmqqI4AizOk9Rl1IYRdSsUICJDZVR0LpcPqUqgVUxFdiuDiJ3B1fgSwz0gs4ZRFabCcqeWjAAMNR4ARgALDgAL5giT0RXKeG0DR5hlMqCGEgCO1IMDtnDIHha1I4c7EYRxADKeAAtAAOABsAAYpwHQnvtJEOKyGKYgKAhCsI6LAcBuCrKETD1AYN7xA+L4flOBjiGYIFZCg0YgdINJcKgkIUDAHBDBYiZGjgvyDA4KQ4EcPRULRRQ4HeJBHo6PBYAAzAArDgMG0AAYsy7RsXUcAEBArBtkBkEXucGTYY8lggAAoppBgALK6ZqamAZBPI4AA6jQFgSBZtCkMq9ClOUu41PCgZ4dQNnfkECChL03CuQ2clGVRNJKHkdAUG5wgXpRJRlBUAASMnOQ00W4IQJDkICODkGWA6yX57kXgYNJTKkYqkvyxJDBwJABAFgW4NVISkVlwgMGKeRFOhFlWgCpG0DszD7JwvkoJKW59p2gj4QgIjRdlWi5RcjW1Y8A1IGi0VUQl5IGCIipwEwo2YfeT5vp+v7OOhvjiNhuGkeRUg0RUuhWPJRm4IxJgscU7ERMEAjcfxglrDgokRjwd6SdJsmbaI+1KTdISqSAVDoHAcDqAZsOjQjmRIzgamo+jmMgIZgVUb9tVXmtTBDYcZPk8tpGw7g2JILMDgCAR9B5GAQwOOjrp+USAxDByQiwwLiCoNF86JnL8kK98CvziA85AA)
 
 ```json
 {
@@ -469,8 +488,8 @@ See More:
 
 ## Searching for Places
 
-You can also leverage the place search capabilities of the API by specifying
-the `sources` as `AustralianTourismDataWarehouse`.
+You can also leverage the place search capabilities of the API by specifying the
+`sources` as `AustralianTourismDataWarehouse`.
 
 ```graphql
 # Search the Australian Tourism Data Warehouse (ATDW) for places using an
@@ -516,6 +535,9 @@ query SearchPlaceAutocompleteFromATDW {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBlBAQwCcoALHFMhHAQRgGcVjCAbAS0KRwBUIZi7BnBwARQikI4A6iQRl+DGgApaPUdICUOAGYRiOAA6tCUBAxyN2SAOY4uAHSS5CMFNAhxjCFDSYBPVhpfAA8UHABHGARifwA6fCJSCmsoVhgwcxwydhsyDjyUazs9A2JzGFYUBicXJDAcBng4EiFioxMzC2t3HAAmHBbrAHolKAh6kn8cEwAjBFYapCcomOmCEnIABU6EendxryDfADFiTzUNHGAnHBxcRmDqDtM9tw8jnwQN5JwIQxiEnYE0oEEi0VidHU0luLzM+w+3l8P3Iylhd1CKHQOAcIAAEkQqONfDJrGtcej7vgYIZjNN6EwWBwuLx+IJhGIJFJZOUFI97BYGGyzJShQIutiGcw2JwkHwBEI4OJJDz5IoEJTcFtzgA3diZSjPFohHBIeDzAwQHQ4crjYhgCy9cooATcZRgdg6HQxCyzaaGXX6mKaSk6djEJjYgCssO0N24dxwCDANiy8cTiaQEAN6Yzia1uxwAElMqhPewYsMUP4AUs84n9ZSMwB9ZvVgFIQiIJv5v6zSTWOE0aylFpFEHUcpxac9gC+PdwCMOSJoAFkJORigucOvB3MFrp9EOe0NuLn6-vWD27rgeAgwoMNzlbIeDJjsrl8p+ii+QeUmlU16Pig5BpkBdxWjoSgoOBMzIDYVBAfOCYZsh9a4AQ4yTJCl6vkOODKIQYAeuOnasI0NKGPoP52JiAA0-T1DMZKUPeKAhihiZjBMYBTNcQGXkBt5sY+m4vqUrEPjkeQFGQNF-Nw-6VDBnEZmOoEWOe9Z-F60GwUEtiIapiZoXmpl3KZyGziAs5AA)
 
 ```json
 {
@@ -629,8 +651,8 @@ query SearchPlaceAutocompleteFromATDW {
 
 ## Creating an Itinerary Location with a reference to ATDW
 
-If you are creating an itinerary (or list of saved places), you can supply
-the reference to the product when creating the itinerary location.
+If you are creating an itinerary (or list of saved places), you can supply the
+reference to the product when creating the itinerary location.
 
 You can see further examples of how to work with itineraries by visiting our
 sections about Itineraries.
@@ -670,6 +692,9 @@ mutation CreateItineraryLocationWithAtdwPlace {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBBMMHAQxwBtpiUBLCJHFCHCGAJx2pqQVeNYE8ANCQDOI6NSrUkAcwYALBDgAOZYlCWMcAWWIA3aiJwAVRTgDiraDwA6SXDBHS5KM3mMARAOo4AClbAYKBQOMGQaADNqHgA6HAB5JA0FJQooKToOI2JCBCItVwQ7XE5pHj4hHAB3JQBHGB5+HAAjdQBrFJwoVgQqJU4EOCNMwo4ucoEYuzs4GBQM+gBhHr6ASXHeAQAZSho6L055PBQwKt81ZOA7HBxcAFURTTNu3pQEdbLN-h30vfpZ+Z-ZjKcp-a5dFZvD7cL4-BYACnBN1wAGUYMpVE0WOxoRMmlocvkzAM4AwIEixp8KqswOgcDYQKUYRUAPR4ABCiwAjAAmADMDIpuA8CBE3WozSeqV2tCQFLSCzpV3oN1VuH8EAMYRw4kQwL+xDIXTob1QZJUPHESENhillOZAgpNxoKDICDpDMsxGaJGNEQiCCKICdOv4SAgyicIg9IAAcr1WM1KjUusR6FEkERdAYjKNLNZ2BHkDg4BARCEwMR+CJBSrVbccFtpB1RgqgQScG1w1V6Kp1EU66q+xolSHkTgAEoIAM9JLOTrDpQRKyk9zeMehGOLllUU7oZQBIIodAAVnSCAAHAAGSUngDsxCvAE4AGxQMB3q8XgAszRf3tret63VKwtXnUZlDLUpMgoJAWTUFAN0gpw-iVcg6DpLlv2-GInyfT8Lx5E8ry5O9hAQukAFo+TvGJrz5K8Tx-C8uSvHAAF8Q04wduJuABKHBlWAnAUQQN1gmqeQqGqJRuDyHBlwgUlRiZPFmHYUYehEGAyBCCAIk6IteDBQd0jFHJ5KEoCXj6IgrKAhs8CgDQxE6VSvnQ35ZRwVYPFEHA5LCMANwAfRClB+BBa1EA3ahgsHG5eNVJLuPYkB2KAA)
 
 See More:
 
@@ -711,3 +736,6 @@ mutation CreateCollectionLocation {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHY-CAG1oShQEsIkcAZaU19gd2YoAFs3bUodBk14AdJHLgwUPNviKkEeSYxZsuUFe2BycOXDHIIcUdWS30dvfYZwAzCARzDmlCAAcEAkMTa1tNbWk9bl0kAAoQ01wAZRg-P1oATy8hKwkHSPYUCBx04igrYVyImJxaaN4cAW95dlNrat4ASTB0HBkQPKkYgHoAQQAhPABGACYAZn6EsxwUtMzsqzBSandPStr61TgIMARaJbqDGN7jVrblgAUCCAA3ZlP21GQUNw8N9vyNUECDgS0SKwySH85B8ABovMQAObkeGncg2Zh+GLwxBgZjEeF8BAAIxhZBwCBQUAAdGCvIIGL1+gBZYhvSj7ADiz3KBEWdzayVS6SyymROFiROsxHYtA0ngAjjBAllVN5yABKOli8i9ADa-QMrgQ-QAunTcAA5CBkXpJBBWBAADzIBCQxFoOCIrnIw3IEBgBHKOGYrhwGQDjRlPyKOHIRSI4YDnggfHY72+oeYgXIFpwT1eGaoXoQxqISGDsf2pXKwz8EDJDV2-xrVkuwQFplbNzppneTJAreGpDAfHQfmeYBgTHQAFYDAgABwABmJCFnAHZiMuAJwANigYA3y8XABZiXviMT+fd7vXG2wbgckL0pqfT9Sdzvj4uZrPl1MG7wnKKC9AAtHMG7UiuczLrOZ6LlMOAAL50qhAroaYGo4Lc9ztjUuG3rgABKlKBkglBNEI-yDI4qj4Q0ABWFg-DYJBkGAdLvHSAD6PEoBkATuogSyYShcjISAyFAA)

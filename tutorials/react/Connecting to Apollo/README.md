@@ -1,11 +1,11 @@
 # Connecting Apollo
 
-_Note: This document is out of date and we recommend you referencing the
-topic of [React Apollo Client](/topics/javascript/react/Apollo%20Client/)_
+_Note: This document is out of date and we recommend you referencing the topic
+of [React Apollo Client](/topics/javascript/react/Apollo%20Client/)_
 
 This guide will quickly setup a React single-page application using
-create-react-app, and configure it using Apollo to connect to the Alpaca
-Travel API.
+create-react-app, and configure it using Apollo to connect to the Alpaca Travel
+API.
 
 You can bypass the need for this tutorial now by reviewing the
 [Alpaca GraphQL JavaScript SDK For React/Apollo](https://github.com/AlpacaTravel/graph-sdk/tree/develop/packages/react-apollo)
@@ -18,15 +18,18 @@ caching as you advance. The alternative fully-featured client is Relay offered
 by Facebook which offers an advanced environment but requires more learning.
 
 - Very popular with a lot of learning resources available
+
 - An ecosystem to offer solutions to a wide range of challenges
+
 - Backed by significant investment
+
 - Decent documentation
 
 ## Getting Started
 
 We've chosen to simplify the setup of a React application by using the
-[Create React App](https://github.com/facebook/create-react-app) project.
-This project is recommended by the React team for when you are learning React or
+[Create React App](https://github.com/facebook/create-react-app) project. This
+project is recommended by the React team for when you are learning React or
 creating a new single-page app. While it is quick to setup, it offers a
 reasonable toolset using the latest JavaScript features and provides a nice
 developer experience while optimising for production.
@@ -39,7 +42,9 @@ a connection to the Alpaca Travel API through Apollo Boost.
 This package uses:
 
 - Typescript (recommended)
+
 - Apollo Client
+
 - GraphQL Codegen (for generating types and hooks)
 
 ```shell
@@ -57,9 +62,7 @@ for help with this template.
 Create a `.env` file and replace `REACT_APP_ALPACA_ACCESS_TOKEN=...` with your
 API Key.
 
-```
-REACT_APP_ALPACA_ACCESS_TOKEN=<your-api-public-key>
-```
+    REACT_APP_ALPACA_ACCESS_TOKEN=<your-api-public-key>
 
 ### Start the development server
 
@@ -79,6 +82,7 @@ For any issues starting your React application, refer to the
 You can add Apollo to your existing react application using the following:
 
 - `@apollo/client`: The main package we will be using
+
 - `graphql`: For working with our grapql queries
 
 ```shell
@@ -104,11 +108,9 @@ configure the apollo URI yourself.
 
 Create a file in your project called `.env` with the following
 
-```
-# .env
-REACT_APP_ALPACA_GRAPHQL_ENDPOINT=https://withalpaca.com/api/graphql
-REACT_APP_ALPACA_ACCESS_TOKEN=<your-api-public-key>
-```
+    # .env
+    REACT_APP_ALPACA_GRAPHQL_ENDPOINT=https://withalpaca.com/api/graphql
+    REACT_APP_ALPACA_ACCESS_TOKEN=<your-api-public-key>
 
 Update the `<your-api-public-key>` section in the above with your API Key.
 

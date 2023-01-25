@@ -20,21 +20,17 @@ $ npx create-react-app my-app --template "@alpaca-travel/typescript-apollo-codeg
 
 ## Building your application
 
-The template configures a basic react application in a similar starting point
-to the standard create react app setup.
+The template configures a basic react application in a similar starting point to
+the standard create react app setup.
 
-```
-yarn start
-```
+    yarn start
 
 ### Environment Configuration
 
 You will need to place your API Key in your environment file, which for local
 development can be done by creating a `.env.local` folder similar to below:
 
-```
-REACT_APP_GRAPHQL_ACCESS_TOKEN=pk/sk...
-```
+    REACT_APP_GRAPHQL_ACCESS_TOKEN=pk/sk...
 
 ### Writing Operations
 
@@ -44,9 +40,7 @@ You can write you GraphQL documents into the `src/graphql/` directory, such as:
 Once you have your first operation, you can run the following to generate your
 typescript types as well as React Hooks for accessing and using your operations.
 
-```
-yarn graphql-codegen
-```
+    yarn graphql-codegen
 
 ## More Resources
 

@@ -1,17 +1,22 @@
 # Uploading Photos
 
-The Alpaca API offers a method for you to upload your photo assets and attach
-to itineraries or collections. We can take care of storage of the file assets,
-as well as the resizing and distribution via CDN.
+The Alpaca API offers a method for you to upload your photo assets and attach to
+itineraries or collections. We can take care of storage of the file assets, as
+well as the resizing and distribution via CDN.
 
 There are a number of features that are included to assist your application,
 including:
 
 - Resizing and optimising assets for use at the desired width/height aspect
+
 - Accessing EXIF data for information about the camera used to take the photo
+
 - Information about the original image upload stats
+
 - AI or manual crop-hint placement for cropping assets
+
 - AI label detection on the photo
+
 - Content association, including attribution, copyright, captions and extended
   data attributes
 
@@ -29,24 +34,29 @@ assets on your own infrastructure and CDN.
 
 To upload your process, you'll need to follow three steps:
 
-1. Request information to perform a upload using `startMediaUpload`
-2. Perform the upload via HTTPS with supplied details
-3. Perform `finalizeMediaUpload` to identify when the media is ready to use
+1.  Request information to perform a upload using `startMediaUpload`
+
+2.  Perform the upload via HTTPS with supplied details
+
+3.  Perform `finalizeMediaUpload` to identify when the media is ready to use
 
 ### Prerequisits
 
 - A supported image type and filesize (up to 5mb JPEG/PNG)
+
 - Your API Key
 
 ## Requesting Upload Target
 
-The API will determine the location that you should upload to and issue you
-with a `token`. You will need to take the `url` and `fields` list supplied, in
-order to compose a HTTP multi-part request along with your upload file.
+The API will determine the location that you should upload to and issue you with
+a `token`. You will need to take the `url` and `fields` list supplied, in order
+to compose a HTTP multi-part request along with your upload file.
 
 - The `token` is required to finalize your upload once you have completed your
   photo upload.
+
 - The `url` is the HTTPs end-point to send your request
+
 - The `fields` contain data to include along with your file in your request in
   order to identify/authorize your request
 
@@ -72,6 +82,9 @@ mutation StartPhotoUpload {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEAlBARxgQGcUcBLJAMwgCc4BDFSiJHFCHKCORJFAQ4mOAA4ALCFxwwxAGwhMwOAG6VRACQAq2gAqkAOkmNwYKFmw4BlC-RR6pXAKoKlK4MZw5cz0sJQJYXImewBZBDANV0VlAAoAShwIMQR6S3YvHBDwyOi3eKzvXGs5BQBPTiCcGkp5ZCZEHHkmACMEeSKauobEdBxDEF4IeQBaZnVSUclpCAA6ACtUgHNBrpKy+UrA4V5UZAoUctSuvZQD7WOEfsHKZmWEAHolhFWQLKTPDm8ffCIScgiDhyWIqLgAa2Qcxw2gklFIOAA7nV5Dh2rJ-ComDRzvQqsIQe5ONwoEx5J1vsVukgyZQAF4ICJRJgxInUZL0MBpYlUWgMOD4nAAQT0AEkkXCoBJuvVZAUVIjhKEEOscPQEDQ0tRlsS5l0IchVc48AAZGGhB6Hbj+JBg6q1epdGD0Ck-X4AMUoHTACJk1Cg8hgXN5OB0+gR6uIZAocWslGWSG13W9pASXVqKayAF9jFmQFmgA)
 
 ## Finalise Upload
 
@@ -113,6 +126,9 @@ mutation ProcessPhotoUploadProgress {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEAxASyQEMAbAgZwR2KRxgAdSJiwcGAnaBCinKCHERIoCNgHcCKABY4KKYhxQBZMQWIBVJizAAaOYyYBPIgHN+EVMhQAdJLlptivaOpQFLfFBHZcAZgSkCAB0OAAq0pQ4EAwIHMTuljiSpKQ4HAimlChxODLUjMysYjgBQXYOSGwUhqRGOEYQMMlSsgCSACIA5HxICKK8ivXeNC5QbtSSMtH5HDgAggAKbXlGsRR2dnAwCol0i1wDFIvSEN5aRWAHEKYZvDjAdjg4uDBUedLUASTkAF4IqjA6guOmisXieyepSIZAI-0BwO0rAAFFDnrgAMq1YafPIQADWyH4GQSJQARvV5IoVGpNEiwGi8YSkOgcDYQN5mQBGABMAGZ2YzMdiPtROBAytROg0mjQMjQdqcOHCSiM4BAgX4jKENO9iIqIMr-ld-IEeEKwXEEh46AQ-DLmn1VT4CGBrHacWLTUEcNK-IaHXMlitCUZGeLJW0wKz2RGzQB6eYAIQAwryBSALViGMYLFZUKUA-kcIggcRGXcmhxRKzHnRng3hTm6nmcgX-XNi3cYKR3EhzKX1OkeFXRIznlBiAw9jGQPN2KcRhL6HwqVUzNEdqLSlwC8vlMQAG5RYsAcUOcUF9eeAF8oQBKB5Z3ZvFqpHBk6js+biYhSMwgqw7L6Oy1xHGYwFsiAKaCEwCA5Oy0QcBaoEXrwZh4H+QQMiAeLDpwPDWNuh6KB4r5UjkfDLt8sK-BuxaDuW15yC+GzMZWMDVtQdYNo2OAAPJkgoRDboxOCuu6ARxKEERRCkaSfnIBBwIEih4eyjGJqm6ZXrxzyuoyd71kZN4gDeQA)
+
 ## Modifying the upload
 
 Once you have completed an upload, your asset will become a MediaResource. You
@@ -146,3 +162,6 @@ mutation UpdatePhotoContent {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBZCMASwDMiEBnHAQx0WNuoooRRxQhygAtqkBzBDgBu1AE5EIMKtRQoJAIxgpKOCGK4RUyFAB0k+uMtmSkOAKoAHMLIQAFbhA4BhLStQ5g+nDlzmW7NxCMNa2eAgMAEqUUmJQQhCWCGImWt44ITYq4VExMHEIABTpPrgAyiGWADYAnoFCAJIAIjgk6vV0EUTUADQ0MlDxzBGtYhBwrURI1FVEAF4IOd1WVRDUYCU4RGDoOLog9N0A9ACCAELOAIwATADM+5tieQW7XmY+H36hKiLiktKabSoPoUGA8fodWTyIhKFCmPpQaiWOFaBGJGoSfjcPTvD40OSKZSmXb7PB1BxOCD8FKWIJiB64j6I5HEvYgKxZEbMlFmNoaQ7UBl4gC+6QAlJ5NrgAIowZJ1BTUKAAaxwAHdeGwpny4KkzDUpDgkAgRlp4jhQYNKBQSDAqrU6IRSOQwPUpYD3GxCpbuBDMrZXVMALSIODqOqInhCURVOUUMWPZ7mt540o4BpgHTO5IUTY+bZ5nAAfSLKBqSWmiH0ha+nNdZAQVTAucZPihhJ5he5pk2ovefeFIGFQA)

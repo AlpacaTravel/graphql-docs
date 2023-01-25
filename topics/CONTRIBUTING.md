@@ -2,16 +2,14 @@
 
 Ideally, in this section, follow this template for contributing:
 
-```
-# Topic
+    # Topic
 
-Introduction about what the topic and what is supported.
+    Introduction about what the topic and what is supported.
 
-### Prerequisites
+    ### Prerequisites
 
-- Any requirements listed
+    - Any requirements listed
 
-## Further Reading
+    ## Further Reading
 
-- Any further sections
-```
+    - Any further sections

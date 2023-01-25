@@ -9,7 +9,9 @@ information further than what is provided by a standard place provider.
 
 - Attributes are a mechanism in the Alpaca GraphQL in order to offer
   extensibility of data relating to resources
+
 - Attributes have a specific ID and data structure supported for the official
   attributes, but attributes can be used for your own extensible data
+
 - Attributes can also have locale based values, enabling localisation for
   content

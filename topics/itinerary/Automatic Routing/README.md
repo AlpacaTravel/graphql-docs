@@ -4,12 +4,18 @@ To assist with a common use case, you can leverage a basic feature known as
 automatic routing for your itinerary.
 
 - Add directions automatically between Locations
+
 - Can be enabled on existing itineraries (such as simple lists or favourites)
+
 - Supports making stops optional
+
 - Can use preferred entry positions for locations
+
 - Supports a wide range of direction modes, including Car, Foot, Bike, Hike etc
+
 - Can change the directions to use specific modes of transport, such as
   alternating between Car/Foot/etc.
+
 - Can customise to include waypoints or preferred directions
 
 This feature when applied will assist creation of an itinerary by automatically
@@ -27,11 +33,13 @@ There are a number of supported routing modes provided by Alpaca Travel that can
 be used to search for routes
 
 - Basic Profiles: Car, Foot, Bike, etc
+
 - Advanced Profiles: MountainBike, Hike, Bus, Motorcycle, Scooter, etc.
 
 ### Prerequisits
 
 - GraphQL development environment (or GraphQL Playground)
+
 - Your API Key
 
 ```graphql
@@ -58,6 +66,9 @@ mutation CreateItineraryWithCarAutoRoute {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHYpHASxVqQQOIIE8AaKpMHKCJADNaAcxhFK9HCghVy5UTWIwZcUrSg4CEFRQB0OAIIqIahlAA6SXNt2UA7rQA2TuQvIocAI2ILN9RmZWWgpvNhxyBABHGGQGYhdwp0YAa0YRHCdodQFKFAALUitcVgQqMDAEXkcCnDBaIigGXK4AB20AN1p6pAzGQQgCM1oBKi8dTzgILt7vBBR7BGRpfIoEYszs5qRyPSsrOBUcmkISMgBJBiYWdgB1eny8VmMZACUJsuArHBxcW9WaDAFLMCmUoERSAhLoEbuFDihjtJZOCzmUdAQ6FcguxvnwIRcsbCABS4n4Ba6sNjoHBfGg-em4QwVHDo7y+DRaaIwBpVHDCBBOMDkUn0hgoJwIakWEAAUQAHsQ4K0JThoRScSART9cOceBpISsyl4EIUuqyZFQTFoPjggel8Kw5Ia6ghBMonJMIJUtZa3h9qcAXW6YB6ALJeyUOjEAXxFsbpAEoaSLcK8SLwfFAUs6UZDeOTsWwRQXYcm6fTfkYoFAKHlVqrKqhaPyCFwiDEebwBhjBOJQRiYsw2AB6eHHYXl+ndOO4+PRkDRoA)
 
 ## Enabling on an existing Itinerary
 
@@ -86,6 +97,9 @@ mutation UpdateItineraryAssignCarAutoRoute {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBRJAQwCMAbBHAHREJhQgFoAnCOhanYhAC0IDcAlqyY56OQkhwIAHgIDOKAUgDmOAYqQImhJgE8AdDgCCdRizY4A7gNKlxcufJSUkuGHK1ycUJgkIoKdSUtHQEEL2sUbhwwAV8oRQgkL1p6OH8BKEJbXXEwMAQwTgQUSwRkHFJoDKS5Fxc4OhrJAFUABzB-BABJDRC9IwcBZSQAYR0TegAlVgCcYBccHFwWj1FuChgOrt7g7T1RCBw4CFiAM1yJKVkFJVUgzX3dRZwtzoDdx51dAAoXpdwAGUtm1SLkooECqgBGcwiIIGd1oE+k9-mowOgqCAHv1dAB6IwAIVGAEYAEwAZmoaNwo14KgoEJwbRYbS0KFyCPEphmFjEhCGI3EMQQZ1opBQx1O7EkSzUKO+mOA3OmswQSpFYpgEoAstLMeMRABfHBGl4ASnmNJwUz8RWIhCgAGs1EgzhAmOlEkg0TinlbZXL0WilqkILy5gtA0HNeKUHqCiHTWizbLU0aQEagA)
 
 ## Making locations "optional"
 
@@ -139,10 +153,13 @@ mutation UpdateItineraryLocationAsOptional {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBVABzAEMUEBnHYpHASxVqQQCdjmBPHAG2lNohrUwOOGwDWlFAAsEdBk1YduvBgKqVqOCAVVJiXADpJc5FNqNG4MFHzWESZAJLyWbdgBkV-JAEFyAeR1vfRxgIxwcXDxyWRgiUgRnRlcOTyhbGisbXRwAMwhmEWIxRgBzHCgpalKKHDMcJIU3NIzwnDiHRJdFDy8BAAo2iNwAZTiCLk52CBhC+mSe5XSc6VIcaZgcAHdacik6iCKxWW1dfSG6MHQcAxB5po4Aeh8AIQBhAEYAJgBmR-oEHBHgARACiADEACwAVgAbLcLqNxpM6jIlhk8rQEFwwJRKtUyhceMtvNcwjQIpSovEyKjZMSMfUAEayUTMY7CYiUU7BQwUylaIICfTXFDMGAIC4AXzaAEpQoicABFCVKJnEKBidYzQoM3REvo0ckC4Y4QJnLg4PYzHE4JAQLY4Fl1cWS-mUnnCvkCmXu3Dm3komKyLZVFA4bExHBVSgs5BUXK5BBQMhgAA0VpglXUVBwzAoMC44YguTpiuI1gKM1pLKqADd+LN2jSynaEI6hBGAB67eTlRopdjA2j5lPeSih5CKmDkVvSXZ5BCkWYIAB0F3S5HSYAQwmNJqg+YSe4uAtoYFPlIA+leUOwCMhiIhL76Tc3Oif3WeL1-r7f74+z6-q+Jo7lwCCpo4uLSm0vpSiAUpAA)
+
 ### Modifying the itinerary direction
 
-You can also switch the directions mode of transport for a specific section
-of your itinerary, such as switching from a car direction to a foot direction.
+You can also switch the directions mode of transport for a specific section of
+your itinerary, such as switching from a car direction to a foot direction.
 
 ```graphql
 # Updates an itinerary directions to switch the mode of transportation from one
@@ -181,14 +198,17 @@ mutation UpdateItineraryDirectionMode {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBVABzAEMUEBnHYpHASxVqQQCdjmBPHMW5hKBiEkooIOcgHd6UABY4U0hDjgQwiiADM5rIQQjMUpWoJzrmEODkEIAOklzLVOABTkYMqpShsAlHNHUqABsyVgYAN0UHBAAaMTdZYkp1CAgUW1s4GAMBGkISMgBJBiZWDgARHj4cgFkVRWBbHBxcPHJFGCJSBCLGFjZ2Ct5+IyFLAj6cvxwO-MVuIZzyRunOwuK+8srhwXInZabcAAUzMNpHeUV6XtLOeaqRygKyqZmu-bowdBxrECuS-oA9ABBABCAGEAIwAJgAzAD6Ag4ACygBRABiABYAKwANh+71wAGUOgRApwLlwtot3ndtkIvg0aE1mbhatx1OSFDgzFlFJJ5HIubTqUzmdyILyGe8xW0AOaIVDkL4AbWlYuaOCBYkYssCih5ZDECHlyBQADoLbF2BKcF4aDA2koYMFaKSEGa1WLGeqfRqCkhuF5DRSopZNChtORdPoTHpBbRKAbFHKFWlRb6mlEvmiUmmM2KjiczooKYxksw4IZjOXBcnjanPeqHQgAEoSsiEhBsGQ6r4RmA2dMZwsQU6OXTkK47FUAXRwCl4dE01pgOHE1BQUygggjEECtfFWR1jaaAF9GzO1ef09emr5vSycABFAccNfSUhrxJUdTqKoIMAPCobkKF0IRBzFLxyC8VRAIfMVXjIODGzORsAH00JQdhxiQYhECvd5bxwa9TxAU8gA)
+
 You can manage the created itinerary direction as a normal itinerary direction.
 As such, you can refer to the
 [adding directions documentation](/topics/itinerary/Adding%20Directions/README.md)
 
 It is also possible to create more complex representations of a route, including
 directing the user to a point, and then switching the mode of transport to move
-the user to another point. This is known as "multi-modal" transportation and
-is supported by the Alpaca Travel platform.
+the user to another point. This is known as "multi-modal" transportation and is
+supported by the Alpaca Travel platform.
 
 ## Advanced: Assigning waypoints or alternative transport modes when adding locations
 
@@ -202,9 +222,12 @@ automatic route behaviour, including:
 
 - Alternative GPS positions to navigate the user to, such as a preferred
   entrance locations, car-parks etc
+
 - Guiding the resulting searched route, by providing waypoints
+
 - Creating manual route paths, supply positions, duration, distances and
   disabling search behaviours
+
 - Switching the mode of transport used, deferring from the default mode of the
   itinerary
 
@@ -261,8 +284,13 @@ mutation CreateItineraryLocationWithAutoRouteOptions {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBBMMAZxwEMckEB3HAG2lJQEsIkcUIy2nnKAnUnwCe7ABaMc4kqRgccfCLIQ5kpAEa0EYADRcwAHSS5YRDnCZEEJFKOUyOAWgVKcahOIBuLGHxxFONhI8ODCW0myktCgIfEiMTB7KcBBgyhAAZoa4KAJIRAAOEHwoOFS2EYRMSADmAHQ4ACq2fHYtOOk+NjGu7qReinwk+QpeqWDsnAgAHtFIBkZkshBOirzVumqy7Z3NYqRsNha6Qoo4UPt0CIkC1cpdWWctjAgAkrwxgkIAIkwtUMysEhwWTxQF7ErnNhEGD5QrFHDAqJMBzJMCRdi5ApFFDaB4AcQACgBlPwIACOMGQUCsOCK22KzUMhmBKFBbAAwk9om8qh9hAAZBgApAAdR4ojwSwASqsEAB5fLCkjAQw4HC4EXlR4IeI1Lg4Hi8gTCOhClhIVXa548-ifQXnYUACktatwBJGTFSYmUhttJrkqKY6SELoN72NQheYHQOH0IF9fKEAHo8AAhdlxplsNXqnDuiCjO62U0O81J-K0UjUnCOsDwOAiaakOAVhAASlD9FLrBjKuzOdzXysUD4TDc3pw+VEQiITHOtEnlepobVFarCF7K5zuCJCGUoggNDkLXSMSpdjmZEIJbZQwU+RitBD-YHk4gs+FvdNSBjAEYAEwAMy6JWKAxgALAArDgAC+W5wS+ro4ESMIViIBQIFAQZzmQKA5GOSjWJwJhmBYRYWDewpbowOREDGADaW5Ifmhb6pE0SxPEiRvh+5oTDgYC-JhSoUH0TDVLq1T8YcRBMbmXZsn4MBQKIZAkJYcxVFJXQhJYvhyDpyA5Ou7R0jpCnCroRRybg7ExHEzDcfR9BINooEALpyX2r6vp6MZxgmEZJhZZaCX8SoOIUvGsJFJ5nkgy4gHJaoeJElIMQBwE4FBtQAGyeYhOYIT5BUDghoa4AAsikQYiDp9icM40Q9J43i+GUyBWmsYgUSFrD1AAchA0Qxk0FgVQaJBIMNZCTjEcD7EZZziDUdwBMWgWfLo+zjBRVSmDq4yBsGWkTTpLTQkieoNU1RYSFQii0OM44jjq0TjBIOlEM2dxMIgoYNTKSiboVqIbjgABiEDDVuuByl0vgQIq5pEAA3DxhqArogmmPs1LYz4bK6KECBA9Eu6CCpWm1DTobFTgbY4N5ObnEQ5xjEzsM4FKh2uFWADWpTiCUUg9J1r3POMHUVIJNRbhL72c4VSEAKJTA+-xaTgNqJvaik7dr4afD84UozWDXyLKHbKzgAD6tsoEID5xP9NuevBdOWghMEgDBQA)
+
 ## Additional Resources
 
 - [Reordering locations](/topics/itinerary/Reordering%20Locations/README.md)
+
 - [Querying the itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
+
 - [Adding specific or alternative directions](/topics/itinerary/Adding%20Directions/README.md)

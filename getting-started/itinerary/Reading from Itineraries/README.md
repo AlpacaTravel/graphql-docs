@@ -15,13 +15,17 @@ What this guide does not cover:
 - Numerous alternative use cases; This is provided to give a developer an
   overview of calling the GraphQL API but there are numerous other operations
   and use cases covered outside of this guide.
+
 - This guide does not cover how to make API calls or connect your application to
   the GraphQL API using a specific client. It is technology agnostic and allows
   developers to use any GraphQL client to make the calls.
+
 - It does not cover how to obtain or use an API key to access the Alpaca Travel
   GraphQL API. Developers must have a valid API key to make calls to the API.
+
 - It does not cover implementation details such as handling errors or rate
   limiting, which are important but are out of scope of this guide.
+
 - It does not cover all the possible options and variations of the GraphQL
   operations, but it covers the most common and useful ones for managing
   itineraries.
@@ -29,24 +33,32 @@ What this guide does not cover:
 Additional Resources:
 
 - Alpaca Travel GraphQL API Detailed [Schema Reference](/reference/)
+
 - Apollo Sandbox for testing queries and seeing what other operations/fields are
   available
 
-_Table of Contents_
+## Table of Contents
 
-- [Reading from Itineraries](#reading-from-itineraries)
-  - [Loading an Itinerary](#loading-an-itinerary)
-  - [Displaying a List of Locations](#displaying-a-list-of-locations)
-    - [Enhancing Presentation](#enhancing-presentation)
-  - [Querying Directions](#querying-directions)
-  - [Location Content](#location-content)
-    - [Gallery](#gallery)
-    - [Place Information](#place-information)
-    - [Fetching Inbound/Outbound Directions](#fetching-inboundoutbound-directions)
-  - [Drawing Maps](#drawing-maps)
-    - [Alpaca Mapping Services](#alpaca-mapping-services)
-    - [Mapbox GL Example Code](#mapbox-gl-example-code)
-  - [Creating and Managing Itineraries](#creating-and-managing-itineraries)
+- [Loading an Itinerary](#loading-an-itinerary)
+
+- [Displaying a List of Locations](#displaying-a-list-of-locations)
+
+  - [Enhancing Presentation](#enhancing-presentation)
+
+- [Querying Directions](#querying-directions)
+
+- [Location Content](#location-content)
+
+  - [Gallery](#gallery)
+  - [Place Information](#place-information)
+  - [Fetching Inbound/Outbound Directions](#fetching-inboundoutbound-directions)
+
+- [Drawing Maps](#drawing-maps)
+
+  - [Alpaca Mapping Services](#alpaca-mapping-services)
+  - [Mapbox GL Example Code](#mapbox-gl-example-code)
+
+- [Creating and Managing Itineraries](#creating-and-managing-itineraries)
 
 ## Loading an Itinerary
 
@@ -65,6 +77,9 @@ query {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AQQBCAYQCMAJgDMXAJQlylSrRQAbBEqIBfctpDagA)
 
 By including the itinerary ID in the query, the API will return the specific
 itinerary that matches that ID, providing the title of the itinerary.
@@ -103,6 +118,9 @@ query {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AQQBCAYQCMAJgDMXAJQlylSrRQAbBEuUBiIoLBgiDAzwhIGaogDMqCNWADOWyg4JIIABwdUnFZR5gAIzUfAAsEMGciDzwEK3xYsABZCKoGRT9lIliHCBg8KAQMrKyAOnKiMyIUsDSASTgGAHMiskySyjYojqgmdiJ8tWZAhAcUADEaDgBtAA4ABnmAGiIF+YBdOW6ShhQUPCpAmFozbcoAX23L9uuL8nOQc6A)
 
 The additional fields requested will be included in the response:
 
@@ -163,6 +181,9 @@ query {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhnlQgM4AUADnhAGZUAbBAEkw6IqRDc+ghAHoAggCEAwgEYATAGZJAGiL88rFOLUAGfQ14p84pDAECAlCXKVKCMAHM2riu8okCDAEPwCAqjA3cMpaFCFomNYCIM5WKlZyRPDuBF58PE8AWU8qBjCY90LWCBg8KFCyf0r3ADp2oggKErAy4TgGHwqWiKjmkdiAC3gAIyQGQXE6gXYZthQAMRpxAG0NMwsifbMAXSdsiYYUFGYZmFoui8qAXyeA1-H3p4+vpGzOQYiJC8CDDdyTBisAByCAAHigAAqAp7IMAqOo1PDZD7ZFAQFAMAQqWqoaIfZ4gZ5AA)
 
 The response will contain a number of itineraries that can be displayed
 individually using the "itinerary" query.
@@ -279,6 +300,9 @@ query {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0ABjgoUABwBKSAOwBnMQE0AcgBEAkgDUAnNK0AzABIAjAKJcAlCXKVKbctZsBiIhIQMw1CigAWCIrJQIMVkHSihvKgAbMDxkZj0qPACOAEZBABoiFAIxBA41Wno8JgIAGWgGWggkTIY9FHwOJBhIyMsyChtKBDAAcwRZK06uyiQIMD8OkZG7YemsmkiEeznp2SojSLpegAUIdaqkJXgjfBX5pyIAQTAwHmqGSKIoaobUZ4YKU-8EJagGjy+WJEBiDADuv0imQmuSQdyQvSI1SyvlC82c9B6SL0RAIEBgeBBYjEWyglSo1X4EKMBz8AFU1OcLkRnGokFBIjAJii-GJYnp8LEPIg7gwUSckAwomjpnyEAK8EKALI9KhiqbMyixWT4vBQSYy5kAOhNSIoKtFajgDH6Q0101m9pGPglUsiHAJkWYpwCADEaBwANoAJkEGSIocEAF1zIbNZUUHgNjBDnH5gBfNNdTOrEY5i75vNMrpiG0INl6CB2+beUFKBAADxQOzLaeQYAAwgSdXhDTnDYEUI8O-jUGjCzn0yB00A)
 
 This query retrieves the list of locations for the itinerary with the ID
 "itinerary/DEF456". The "children" field is used to retrieve the list of
@@ -401,8 +425,8 @@ It's important to note that the Alpaca Travel GraphQL API uses a cursor-based
 pagination approach. This means that if the total number of locations for an
 itinerary exceeds the number specified in the "first" parameter, the API will
 return a cursor in the "endCursor" field of the "pageInfo" object. To retrieve
-the next page of locations, you can pass this cursor as the "after" parameter
-in the "children" field in a subsequent query.
+the next page of locations, you can pass this cursor as the "after" parameter in
+the "children" field in a subsequent query.
 
 In summary, the Alpaca Travel GraphQL API allows developers to easily retrieve a
 list of locations for an itinerary, and to paginate and sort the results to meet
@@ -418,9 +442,9 @@ See More:
 ### Enhancing Presentation
 
 When presenting itineraries to users, it may be useful to tailor the
-presentation based on the type of itinerary and how it should be displayed.
-The Alpaca Travel GraphQL API offers several attributes that can be used to
-enhance the presentation of itineraries.
+presentation based on the type of itinerary and how it should be displayed. The
+Alpaca Travel GraphQL API offers several attributes that can be used to enhance
+the presentation of itineraries.
 
 The "itinerary/type" attribute can be used to determine the type of itinerary
 and tailor the presentation accordingly. It will return "list", "trip" or
@@ -436,6 +460,9 @@ query {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AEQCiAMQAsAVgBsXAJQlylSm3JLlAYiKCEKfHF5EUACwRGCABzMQAZtVr08TAusopLCDgxQo8ANQYAG1xWdk5uBz4CfncreXUAX3IEkASgA)
 
 If successful, the response may look like the following:
 
@@ -466,6 +493,9 @@ query {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AEQCiAMQAsAVgBsXAJQlylSm3JLlAYiKCEKfHF5EUACwREANlQDOKIgAc8CK8hQNaEChABmR09Vr0eEwE6pSWNgAKjs6oblQeHG4oeABqDOa4rOyc3AF8BPzhKAC0Dk4ucR7y6gC+5DUgNUA)
 
 If successful, the response may look like the following:
 
@@ -540,6 +570,9 @@ query {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AQQBCAYQCMAJgDMXAJQlylSlAAWVADZg8yZigIAHBBwCSteniYEAMtAa0ISADREAZlTwBnFB3EAGBTIKZUoEMABzBE9FYJDKJAgwBBi4uLYlVOVaFA0EcgzMok8qACMNOnCABQhihyQAOXgS-AK4gF9WkIBiIkEwMB5HBg0NAhccfGIUVWS8CBgUKKJmlAB3BGQiaeSNOzrohmiwyKIwewYnTuUe1fU1IlXNDSIIEpQGOlOPBCh9tzm4FsZtRzHwpqp7EQmHgqAA3ZLMExIErzJBgORXSg9FAQIFUaK7KD2KiOFyuAFAnaHFBEQnExzUCjbIjHZKeBATJBQPKxOIDHS-ElITzMdxeHxEcQufk-OqmZGo9EpQpEBJJaJBFXXIgAERgljqRFYFDgdAWUQxvMKYH19KQAFk6Ji4j0dfj3lyEZ9EIsvJatZQBt4GJ7nd1elBuZ5osy5uaiHBEktmAgAHThVNEURMFwIFBQf0BuOLZUBooIcKIVAasOZRNJWshDpWzLNrVt1tXZtXAwMSJI1y4zWZCGeeoIAAeKEqfZ5hWQYFE+s8EDwXfyLZx7w0olRKFaHebbRAbSAA)
 
 If successful, as response may look like this:
 
@@ -667,6 +700,9 @@ query {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFEDERAqgM4JEoAWTSEYTO+xKERAIZQoCevSEUAkigCWSfIMJEAMtEFyIFDl3KUdCABSyw6IqRCy5CvEoIB6AIIAhAMIBGAEwBmewBt1TSR7ADYAERgsMAAHABU-WIB3AGkAMRQAeQArRwBOAC8WAE0ALSKLAEoSPUoiExrKAH1GlAJo5EFEcgbqIgA5TiYAwTAJMFkAMwn8ZBRmNrEiCAmlgCMshCgUegAaInoBRKY8BB56OYnZBD9RogmIPGY2HpoZeUVlNSgNWS199qgk1k3z8fgIPQAdFCltJrB8CF8fn8yBRapQ5Cg-AgepR6AQONF6LJ6N1UWiias-PIAOYABQgRKCfXgq3wPQAvjVOUh2SB2UA)
+
 The response will look similar to the following:
 
 ```json
@@ -744,6 +780,9 @@ query {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFFIRgIAUAlmOkaSAyg0vgIaED0AQQBCAYQCMAJgDM-ADbQenCEn4A2ACIwsYAA4AVOfoDuAaQBiKAPIArQQE4AXgAsAmgC1XbAJQlylSgB9QJQCXWQeRHJ-AIBiIgB1Z2QiADMEFChnLgBzIh4KDi5eQiIFKCUGFQA6apjKWuqiFSIASU5uPD4CABlFZQoyCgDKThQ5BHqAgGcCal1phmno4ZH4vp4wIhRktIY8aZQiaSIGOB4chGnm1O3dnJ45CcIpykQwBh5RFRQeYoO6Kl9ocWNJfEMRiMEGBLtcIZCRtRaH5VgiAkxXmi8FcIDA8FAECi0WjgqFwkhIpNUcSGrVmhQALLQz6tc6XIk0hE7eAAIwpDDkLDxcjoPKuKHMHBYAG1JAAGOUAGiI8rlAF1vJjOXI+JchXgRWLDpKUDKABwK5UW9Wa6mc-IoFB4Bg8mADLU0iq6d124kAXw9IwDvoCwf9Ht0FwQrSQqQgHOJzh40wAcggAB4oAAKUcDRGQYFEeOmEDwHrDaJQEF+cm+MFQmIrlArwb9ID9QA)
+
 The response now includes an gallery information to display for the location:
 
 ```json
@@ -781,13 +820,13 @@ The response now includes an gallery information to display for the location:
 
 ### Place Information
 
-Each location has a place associated with it. This place can represent a
-simple position like a map marker, or could be attached to a place or address
-that has more information available to read in.
+Each location has a place associated with it. This place can represent a simple
+position like a map marker, or could be attached to a place or address that has
+more information available to read in.
 
 Alpaca is integrated with a number of place providers. The supported place
-providers enable information about the place to be kept up to date, such as
-when information about opening hours are updated or contact details.
+providers enable information about the place to be kept up to date, such as when
+information about opening hours are updated or contact details.
 
 ### Fetching Inbound/Outbound Directions
 
@@ -843,6 +882,9 @@ query {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFFIRgIAUAlmOkaSAyg0vgIaED0AQQBCAYQCMAJgDM-ADbQenCEn4A2ACIwsYAA4AVOfoDuAaQBiKAPIArQQE4AXgAsAmgC1XbAJQlylSiZ-AIB9EJQCXWQeRHJgygBiIgB1Z2QiHHwCLgBzIhQ0og4uXkIiBSglBhUipDAGADcmGB45OQJ4ogA6HqIagElObjw+AgAZRWUKMgoAxKIAZQQ+KGciADMIPCJ6vAQoKYBnIhhDhDB8iCI+PEaEIjS9jbwIOD6C-CKh0uIKqpVDp1KDc7uYXnAWLt9kc6OsGHhDigWOIADQ7eHQ6pIFj9JAAIwgMDqvhmczm1Fox1JZLmWwYOS4flmNLmPS6fQogxKI0IE0qUyZLJZQWZQoCnBQcgQQJZAF8ZXN5aKafVETwkFBpcqyWAYCMpgBZLgKgIvGAoe7UsVEOA0BCA7WKk1KoUoCAoVqiQmoGVKmVJJYrNabbZQg5Y46nc6XHYIXR8FAPfD3N3vR5fbmjcqTCMy2jxvAofQQSEY8MA2HwxEsSRosNTFhWc0EolgEkmin2wVigvIRNWsVsjlELnDUZ8-7TE00kXWuYSqXTgIusUroWqj0arXW3X6rFGpBLs0W7vW22UpdrslX+fuz3elC+zorpWykCyoA)
+
 The above can look directions that can link locations between where it was
 coming from, and where it is departing to.
 
@@ -894,8 +936,8 @@ coming from, and where it is departing to.
 Many options are available for you to work with drawing itinerary content onto
 various mapping platforms.
 
-From the GraphQL API calls, you can include fields to extract information
-from the API directly for the itinerary content.
+From the GraphQL API calls, you can include fields to extract information from
+the API directly for the itinerary content.
 
 The below example shows fields that can be queried in order to locate key
 mapping positions and route paths for directions:
@@ -945,6 +987,9 @@ query {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AQQBCAYQCMAJgDMXAJQlylSm3JLlAYiIAlBAzDUKKABYIiAZxQQADufWUoxqgBsweZMwBmVPJY7iABgAaIhQCawQOAElaejwmAgAZaAZaCCQQhk8UfA4kGGdnBTIKZUoEMABzBHNFUrLKJAgwMxKGhtV69qIAOj6idKIY3njCZKhUqkG27rKtZP1Q0yJndMqaGBb+Z0mUTYR7WaItQWdrBgmiGHMaogBRAAUAZQBxdGkADgBWAHZ+AHUXk8iB8ACxEUTaJ6HWbWCDmHjTGFHVZIZGzHYodENAC+2MoeK6ZUJ2LAPgQUDSSHMXh8fiI4hCZPclKmSGiSAARhAYEgwMV8UQKtVajMjkQmi06uKyngeTlpTKyjdKohUKLBbMtABVG5LMxw5wEZy8IjeBCuUIQIgXKA1WoMIiG42m5BQZoVTXdLTuazuG6oSaDCCefVEOUwBXnExe9rOk30WPKQlKglelNHDPtLPJtREp0MapRJCea1ihrGBjmAByCAAHigHoWDvnynzRDBfBA8MiSfmrCgGM5RDzUIcM4ScSAcUA)
 
 An example of the output expected is shown below
 
@@ -1012,7 +1057,9 @@ maps that interact with itinerary content.
 These services also include offering:
 
 - Itinerary GeoJSON
+
 - Hosted Vector Tiles
+
 - SVG Paths
 
 **[View Alpaca Mapping Service Documentation](https://github.com/AlpacaTravel/mapping-docs)**
@@ -1020,9 +1067,9 @@ These services also include offering:
 ### Mapbox GL Example Code
 
 Alpaca have created examples of how to quickly create mapbox maps that display
-the itineraries. These examples shows how to quickly leverage the Alpaca
-map styles, create your own style and even create more complicated 3D
-visualisations of your content using the Mapbox API.
+the itineraries. These examples shows how to quickly leverage the Alpaca map
+styles, create your own style and even create more complicated 3D visualisations
+of your content using the Mapbox API.
 
 **[View Alpaca Mapbox Examples](https://www.alpaca.travel/reference/examples/mapbox-gl)**
 
@@ -1038,7 +1085,8 @@ building website trip planning or favouriting functionality.
 To understand more about this functionality, you can refer to to the following
 resources:
 
-- **[Managing a List](/getting-started/itinerary/Managing%20a%20List)**
-  Build curated list content, such as top-10's, favorites or other lists.
-- **[Managing a Trip](/getting-started/itinerary/Managing%20a%20Trip)**
-  Build trips, allowing users to plan out stops along a route.
+- **[Managing a List](/getting-started/itinerary/Managing%20a%20List)** Build
+  curated list content, such as top-10's, favorites or other lists.
+
+- **[Managing a Trip](/getting-started/itinerary/Managing%20a%20Trip)** Build
+  trips, allowing users to plan out stops along a route.
