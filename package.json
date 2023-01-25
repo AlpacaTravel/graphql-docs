@@ -10,7 +10,7 @@
     "generate:operations-toc": "cd example-operations && node generate-toc.js && cd -",
     "test:markdown-links": "find ./ -not -path \"*/node_modules/*\" -type f -name \"*.md\" -print0 | xargs -0 -n 1 node validate-links.js",
     "test:markdown-graphql": "find ./ -not -path \"*/node_modules/*\" -type f -name \"*.md\" -print0 | xargs -0 -n 1 node validate-graphql.js",
-    "generate:sandbox": "find ./ -not -path \"*/node_modules/*\" -type f -name \"*.md\" -print0 | xargs -0 -n 1 node insert-sandbox.js"
+    "format": "find ./ -not -path \"*/node_modules/*\" -type f -name \"*.md\" -print0 | xargs -0 -n 1 node format.mjs"
   },
   "repository": {
     "type": "git",
@@ -36,8 +36,22 @@
     "@graphql-codegen/typescript-operations": "1.17.8",
     "lz-string": "^1.4.4",
     "remark": "^8.0.0",
+    "remark-cli": "^11.0.0",
+    "remark-preset-lint-consistent": "^5.1.1",
+    "remark-preset-lint-recommended": "^6.1.2",
+    "remark-preset-prettier": "^2.0.1",
+    "remark-prettier": "^2.0.0",
+    "remark-toc": "^7.2.0",
     "unified": "^9.2.0",
     "unist-util-remove": "^2.1.0",
     "unist-util-visit": "^2.0.3"
+  },
+  "remarkConfig": {
+    "plugins": [],
+    "settings": {
+      "bullet": "-",
+      "listItemIndent": "one",
+      "tightDefinitions": true
+    }
   }
 }
