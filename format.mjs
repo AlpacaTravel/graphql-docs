@@ -15,15 +15,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const studio = `https://studio.apollographql.com/sandbox/explorer`;
-const endpoint = `https://withalpaca.com/api/graphql?accessToken=UPDATE_TOKEN`;
+// const endpoint = `https://withalpaca.com/api/graphql?accessToken=UPDATE_TOKEN`;
 
 function removeExisting() {
   return (tree) => {
-    console.log(tree);
-
     remove(tree, (node) => {
       const [first] = node.children || [];
-      if (first && /^Link to/.test(first.value)) {
+      if (first && /^Sandbox:/.test(first.value)) {
         return true;
       }
 
@@ -37,26 +35,12 @@ function link(doc) {
     JSON.stringify({ document: doc })
   );
 
-  return `${studio}?endpoint=${encodeURIComponent(
-    endpoint
-  )}&explorerURLState=${explorerURLState}`;
-}
-
-function tightenLists() {
-  return (tree) => {
-    visit(tree, "list", (node) => {
-      node.loose = false;
-    });
-
-    visit(tree, "listItem", (node) => {
-      node.loose = false;
-    });
-  };
+  return `${studio}?explorerURLState=${explorerURLState}`;
 }
 
 function debug() {
   return (tree) => {
-    visit(tree, "listItem", (node) => {
+    visit(tree, "link", (node) => {
       console.log(node);
     });
   };
@@ -73,7 +57,22 @@ function addLink() {
             children: [
               {
                 type: "text",
-                value: "Link to ",
+                value: "Sandbox: ",
+              },
+              {
+                type: "link",
+                title: null,
+                url: "/topics/graphql/Apollo%20Sandbox/",
+                children: [
+                  {
+                    type: "text",
+                    value: "Setup",
+                  },
+                ],
+              },
+              {
+                type: "text",
+                value: " ",
               },
               {
                 type: "link",
@@ -82,7 +81,7 @@ function addLink() {
                 children: [
                   {
                     type: "text",
-                    value: "Apollo Sandbox",
+                    value: "View Operation",
                   },
                 ],
               },
@@ -102,11 +101,12 @@ async function main() {
 
   const file = await remark()
     .use(removeExisting)
-    // .use(addLink)
+    .use(addLink)
     .use(consistent)
     .use(recommended)
     .use(toc)
     .use(prettier)
+    .use(debug)
     .process(fs.readFileSync(ref, "utf8"));
 
   fs.writeFileSync(ref, file.toString("utf8"));
