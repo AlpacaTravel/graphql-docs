@@ -34,7 +34,7 @@ mutation CreateItinerary {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHYpHASRQEskEDiCBPHdiGHKanDHIIcAMwgEqOAO4MwI1kgDmIiKMHC+xYZXIwoACyqUANg3IpyAHSS4JOYQEcYyKAjA4GjFmwYUAdDY2cDAopAwQNIQkZPRMPhw4wDY4OLgAMggAbj4qlCgGIlYgUESkCHHMrBzFOCFhjJE4EAAOPo00KBB8ZWRUNF7x1ewpaTJeRuQQiJ5Ig8QmfJFkqKOlMRWMVWzsABSjqbgAyjAtLSacBSJM84tQy8goVABGPE9XnlsJIzSpn0M7dBJHCMFAmBBA4oAIW0DCgdC+wxwAFEAB7EODnBC1AC+owAlEkDmMAEokDzPYhQADWIMKPQ2HkG2xqv1SzO+RLZf1wAEEoG5yPl6bR5KgGKI-AQADQ4IjOBhEDziSSiGAEK6SZwsdgAenq4Ui1m57LAxLxvwtOJAOKAA)
 
 If successful, the response will read back the created itinerary ID which can be
@@ -84,7 +84,7 @@ mutation CreateItineraryAssociatedToProfile {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHYpHASxVqQQOIIE8qkwrzzpbSFOihwoIogBYIc5GAAc5AG1oJucghABmtRdICSAEQB0OPZpxsIMHE1UAdJLjF0wyBpo6WYBHOq079AwAaHBhyaRQpHABHGGYOYhhIiAJaAC9VAAUNbV1yBwc4JNJaCBpCEjI9BiYWdgBBXn5BMAAVCGz-XRxgBxwcKCJBasZmVjYACj7+nFxOgDdaV0lpP1yI8WJeWgBzGkjpelG6tmn+tYC9MHQcOxAL3QB6eoAhPABGACYAZjuz2dMSCOxEUwmO4wGZTIqH+R1q4xuwFE9F0NzuI3h7B4fCgAjI3GcD0CdxwAF9pgBKHr-XAAJRI3AARsQoABrFYDIb4sGY040GZwsZY3r8mYA+pQKAUSgHUwGf79Jb-cn8lWkkCkoA)
 
 ## Creating an itinerary with Auto Routing
@@ -119,7 +119,7 @@ mutation CreateItineraryWithCarAutoRoute {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHYpHASxVqQQOIIE8AaKpMHKCJADNaAcxhFK9HCghVy5UTWIwZcUrSg4CEFRQB0OAIIqIahlAA6SXNt2UA7rQA2TuQvIocAI2ILN9RmZWWgpvNhxyBABHGGQGYhdwp0YAa0YRHCdodQFKFAALUitcVgQqMDAEXkcCnDBaIigGXK4AB20AN1p6pAzGQQgCM1oBKi8dTzgILt7vBBR7BGRpfIoEYszs5qRyPSsrOBUcmkISMgBJBiYWdgB1eny8VmMZACUJsuArHBxcW9WaDAFLMCmUoERSAhLoEbuFDihjtJZOCzmUdAQ6FcguxvnwIRcsbCABS4n4Ba6sNjoHBfGg-em4QwVHDo7y+DRaaIwBpVHDCBBOMDkUn0hgoJwIakWEAAUQAHsQ4K0JThoRScSART9cOceBpISsyl4EIUuqyZFQTFoPjggel8Kw5Ia6ghBMonJMIJUtZa3h9qcAXW6YB6ALJeyUOjEAXxFsbpAEoaSLcK8SLwfFAUs6UZDeOTsWwRQXYcm6fTfkYoFAKHlVqrKqhaPyCFwiDEebwBhjBOJQRiYsw2AB6eHHYXl+ndOO4+PRkDRoA)
 
 Learn more about

@@ -62,7 +62,7 @@ query GetAuthorizedProfiles {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCCMKAFhHgJYBeCYACnhAGYMA2CAZyLAAOkiJEAhtTqMW7Tj34CAFDzwCU6IgEYAlMLESJSCGEGHxxiQzBHrRAPqOUBAA7JJie9ZqSkYPw+xkheCMEAvvZRSBEgEUA)
 
 This query will return a the first authorized profile, including the profile's
@@ -101,7 +101,7 @@ query GetProfile {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKeEAZgJYA2CRwAOkkUQA7X1MAUdMOiKsQPWowQB6AIIAhAMIBGAEwBmMQEoW7TpyF79AfWMoCXZAENERzgAsrSMEztEkNhG4BGdCG4B3BG8AZzoUBABVPAYjAF92OJA4oA)
 
 This query will return the profile's ID, type, handle, name, bio, and website
@@ -149,7 +149,7 @@ mutation CreateItinerary {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPE4AHVJKipvoFGzNgApuJSSQAOFCADMCAGzph0JTiFkLlCAPQBBAEJkAjACYAzJolSCDJi1bquPKSUIoV6zQFl2AKIwctLUpAZgAG7IKMEINm5SAM6sSBDSSQRJPiAGvME0YCRKWSgkCiTYSSgAtEkICDJKuFAISSRCJEEh8SC2kgC+tgCUHP0dDiLsru6SBGDjkgD6SyisoUi4iIse9io7KWkZWeNDPGcDIANAA)
 
 This mutation creates an itinerary with the title "My European Adventure", the

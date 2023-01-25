@@ -50,7 +50,7 @@ query CollectionItemsUsingCursorConnections {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBRADwEM4AHAGwRwEcYEAnATxwEtzyYBnFeolFpAHMcKABZV6CTqQhJOVbvRhQUMSTggAzHERyx6nCPT2ykCFS1kAdJDdoNmAYQjtz-WQEkUCOJwCqnAKCjmqG9M5IZhaynDjANjg4uACCSDR0TCKifDik9BAAbixgUjp6oUYmkW6WaZLSMQgJJq7RSF4+nAAUzYm4hCQUVPaZUDE8RAIonL0tlG0eYJzoOADaViBjre5IAPTJAEKOAIwATADMGwC6s7gAYiwGKFU8LrFiCuQsUEEANDiSVT0JBBHDHAAMVSiO1Y3l8s00j24KwhtxwyU03mMY1Q+XI73EuSIgiCADocAAFfJFEpZKj6MIabQfHDkIjcHAIMCCKgoCBEklIPhNNKJJI6TEMLI5Lk88kebSMCAwHCQJAAcme8iQYDKDKM-xZiKeAKkMHI0x0kjRgLUZjAsyIkvoKw2EFIRHsIQMRg2zQAlHFZrLSvFRWLyj76LNEkgILSwxGI8UY2L+ChKKmAL6zHPhgUIDxITT8xNJ7KcAByCAIKApxJFEbziTzWZAWaAA)
 
 - Slicing is done by providing the `first` argument to `collectionItems`. This

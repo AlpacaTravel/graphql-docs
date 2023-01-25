@@ -112,7 +112,7 @@ mutation CreateItinerary {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPE4AHVJKipvoFGzNgApuJSSQIMmLVug4SpkgMQlaSGQVwAbXsRTIUylYRS6EiziABCuAM4EoG2SPYBRAB644AB0sbUyl1AGUIRBJcMDBtYj0SKigIxCQwBDASACMcEiQIFESEAEcYAipMgDMCBF0wB2DJdMrcGF0UABloPSsSG2QgnhV8FAoHRQBtRpCSAAUKCAA3AnSSAAshFAcorIhclDWEEhRWPyOISuk3eRJRBAA6AHN7kl0CBxQAGmOKAj9v0a4Ai6ACU0zU5FwpCy5zgMiMmQgFCiMQyrxoFHBHGkYGsIG0wnkAHoTmcbN9FnoYL0bKM-jYSABfaYAXWCzJ4IKUQyuQjkbG5KkkK3Zyg5jJAjKAA)
 
 If the operation is successful, the response will return the id of the created
@@ -184,7 +184,7 @@ mutation CreateItineraryLocation {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyNOAB1SJKFRr0CjZm05RuxABQCSSkgGISAZRgAHLQBtWJCDAokxElgZQQSuMGBIoAFghIEUCOA4iLlb8UwtaMHQSPhA-czYAegBBACEyAEYAJgBmMJ8lNQARBABnYQIAIxcnF10uQmJMkgqZKqQQ-kFlVRIABQoIADcCMBc8iERDLQbcXSFid1QvEi0mQaRxgjzS51cGALYapUIUXQQQsJjyXAAzBAyW5T1cKEOSZtbWtU6evvEAcwd1rQg8vzEWrEKK6fA7G7-QGNR7AmGJAAsAFYAHQABjRCNSABpavgQgBaVIAdhRAA40clEiQAL4QunXBlKACUjxqagAStR7EU7gBrH7lSo8EgAKxgeRQQhE7jANTqsl4EIA+sqUKx5ktEBC+jUmbSBDSQDSgA)
 
 If the operation is successful, the response will return the id of the created
@@ -265,7 +265,7 @@ mutation CreateItineraryLocationWithAtdwPlace {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyKQHUCUACwCCKMAHcACgBtcUBCWAAdUiShUa9Ao2ZtOUbsQAUKkmZIBiEgGUYABzvTWJCDAoktOls5QQSuMDASIQUBBDhgiFNzAW0mb1owdBIlEFivNgB6YQAhMgBGACYAZlTosysAEQQAZ3UCACMFEJJpLkJictb2nmTlVXNLEkkKCAA3AjAFGohEFzsOpFxpNWIUZBRIkjsmGaXpAhrmwVCGeLYus0IUaQRk1IBxZgb-VYAzN4QEMoHzGtYkBA7DVDvcQAA5agUBqsAA0JHECgMpDe2iCABUTiQAGIsCJkXCfebIEhwCA1TZgXCsGo-QYVEjsbQAa2CWLaBkWW1wJGZgPEpEccm+vzMQvkfUu5isACUEJ8qEgoNoAOZshTihRvUYRYToyq8KVmSZgzWZfASdB2UZgGBQFDoACsb3y+UdYDeUwAHG8AJwNR0AdkDxS9XsDXuKjoADHT6QyRuNJqr1dtybFiN0kJlZCgjWmQYs+lnkvkACyOgB00ejZeK8NzyQAtMVA5WvdHCvkSABfKV934DswASkUXVl1CCDTkrJaHMMpAAVjAKWoNOswF151z+vGAPp7lCsHZLRBSyZdIe9lQ9kA9oA)
 
 The created location will be associated with the ATDW product
@@ -309,7 +309,7 @@ query CheckItineraryPlacePresent {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAMIAWCUA1gJIoCWS+AhoQAoA2zUCbeCAZ2QoiwADpIiRegyZ5WBABT0w6ImJAzGLQgHoAggCESARgBMAZg0BKURKlSwgnkjDNUAxfYdSADlx4aMAE1AG0Nf24EXWYUMAB3dF88CDAYKBR0AFYoZgQADgAGACMELIB2ZkKATgA2KDBywvyAFmLa5mKNAF1vHwAzejwBTKITPqJbcUkfIiRUwTsZ2ekwCakAX3WiFAgUZg4SCBhUCa2Z842QDaA)
 
 If the operation is successful, the response will return the id of the location
@@ -381,7 +381,7 @@ query QueryItineraryLocationsAsSimpleList {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAIq6ECSKAlkvgIaEAy09NESAzgIKcDK1OAAcANgibVOKIsAA6SIkWo06eRgQAU1MOiKyQy2g0IB6bgCEAwgEYATAGZ9AShnzFiqAAtqIsHmQaKARCCLpURmrMrOxIADREAGbUeFK61gAMLnIK7ooIYADmCJyuObmKSBBgCKXl5dpude4A+s1BIUj0iI1NRAB0A0QcROGq6ixQbNTD2b25ovRQNbNzuQ1lq0Sd3Rur9GB+xSUrm+4irCLKBD2bAL43qyL0BPjHD5vbCO+997tNv6sAf9vkQhBBOIYOLp8kUAArgyFIABy8AARvhAsFQiMVMYCBMphwnCDYCkIHh3kDcigICh6CJLBAYKgbkDfrcQLcgA)
 
 If the operation is successful, the response will return a list of itinerary
@@ -479,7 +479,7 @@ mutation DeleteItineraryLocation {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIARBAGwRQQElCkEAnXZgTwBlp8jTgAOqRJgqNeoxZt2DBHAAUBMOhICQBSaw4B6AIIAhAMIBGAEwBmbRrnayAUQBiAFgCsANjUBKEoOEkSSkL+AL5CwSDBQA)
 
 If the operation is successful, the response will return the ID of the itinerary
@@ -525,7 +525,7 @@ mutation UpdateItineraryLocationTitle {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwBlp8ikAVAigA2CEsAA6pEjCo16BRi3ZcoPYgApJJbSQJh0JcSEELmrNgHoAggCEAwgEYATAGYLQ7oWIWAIgFEAMQAWAFYANiMtHQ9VLyQDYBJCYQQDIwA5BAB3EgEUoxIAXyiASjEo7Ri1UgkpHV0wCp1kkSbiqXbCkEKgA)
 
 See More:
@@ -553,7 +553,7 @@ mutation {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAJgAdUkuCANwQElCkEAnXVgTyYTgApKJISQJh0JciALM2HTgHoAggCEAwgEYATAGZ5AG2j4iSeQBEAogDEALAFYAbJMHCADhADO044pQBlPKwo4sAAvs4AlGTOQtK8UVTCImDRJGFUaSEgIUA)
 
 Alternatively, you can move an itinerary location to a relative position to
@@ -573,7 +573,7 @@ mutation {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAJgAdUkuCANwQElCkEAnXVgTyYTgApKJISQJh0JciALM2HTgHoAggCEAwgEYATAGZ5AG2j4iSeQBEAogDEALAFYAbJMHCADhADO044oBmKNgDKBABGegRIAObiwCSeoeERDGISUjLsXEpqWroGUEbE8gDiABIMAOwAHACckiQAvs4AlGTOQtK8LVTCImCt9c4NSHUgdUA)
 
 These mutations allow you to reorder the itinerary locations in a flexible way,
@@ -612,7 +612,7 @@ mutation UpdateItineraryAssignCarAutoRoute {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwEEBnLggcyQBhVhxwQAShBwISwADqkSMKjXoFGLdgAoFJPSQJh0JOSAINmrNgHoOAIUEBGAEwBmU7v3n1l9seAkuGKS0v4kYAgAZkEANigAshARxsJMJAC+GZ4AlLKeet4aVnmK+gZg+fpBKBJSKDLypWXhUbEJSQiVeumVPYp96SDpQA)
 
 When this mutation is successful, the response will include the id of the
@@ -707,7 +707,7 @@ query QueryItineraryLocationsWithDirections {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAIq6ECSKAlkvgIaEAy09NESAzgOrUoAWAEWp4EUdlyLAAOkiJE+tBoQAU1MOiLSQiunkYEA9AEEAQgGEAjACYAzNoCUU2fPlR+1ADZhRSFSgIABwRNKiV9ZlYJABoiADMRThRNSwAGJxk5V3kEMABzBE5nLOyc-IQABQhORQ4AOXgAI3xZF1L5JAgwBGL27PU2vqIAfWGA4KR6REG+gDp5og4iML0DFig2aiXMoezAz3ooHp3d7MnpktOiejAfQqKTq9dPVk8+AhnTgF9P3YOCfAPX6nc4IYF9H6XIaQ77gmF9MAiMQSTgqBJ4JIpWKI0TiLZIUJIRoQGBIMAZcEdLqFXpXMAwfQSACytEprjwJJQxzZ2U4CDyiFQQKhVzg1J5rnhsJF2SlpTl2VgGIgeF+CqIKAgKHonnMJNQM3hkK+IC+QA)
 
 If the operation is successful, the response will return a list of itinerary
@@ -756,7 +756,7 @@ mutation UpdateItineraryLocationAsOptional {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwBlp8ikBBAM4B5CoWK4ANiWAAdUiRhUa9AoxbsuUHsQAUckgZIEw6EjJAEGzVmwD0fAEIBhAIwAmAMzn9hidzFIpsAkEKK8kqYoTDAIJAC+PgCU0j4GfloBKfKGIWHiEqnxPglIcSBxQA)
 
 This operation accepts variables for the ID and optional field, where you can
@@ -809,7 +809,7 @@ mutation CreatePlaceOfInterestLocation {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQAUAbXKBAeQDMBJVBKgZxQAy0fEVLAAOqRJQqNDoSQ9cFAJ5CoI4gApJJPSQIKlqjmHQlxIQwUUVlKgPQBBAEJkAjACYAzJd376YUJicwkpfRJCFHoEc0sAWRUSBiYEEgg2Ei4UHgR+P3D9AAdGZlCSIoheaxCSYBJApHN3ABYWgBoG-HMAWm8AdhIAX2H-CMrq4KQnFABRJDM6iuVkFFM4qyM7VWc3L28HQI0phwARWYAxfctRwqH-AEo6sYag0WfCvQIwF70AfT+KBURWQuEQv2WVFQHwiEW+EP+gOBoPBn1uEXuUkxQxAQyAA)
 
 The parentId field in the positionAtEnd argument specifies the top-level
@@ -888,7 +888,7 @@ query listItineraryLocationsWithItineraryDirections {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABADYCWAzigJIplL4CGhAMtI3REhQOpkoALWvSaEAImTwIonbkWAAdJESL8ReZgQAUZMOiIKQahhsIB6AIIAhAMIBGAEwBmQwEp5SlSqgCyJMFJIWigEAA4I+sImmmxQHGRcADREAGaSVPoOyYwpKPj6SDAkJO6Kyl4qCGAA5ggUHuUVlTUIAAoQFGpcAHLwAEb4nk0qSBBgCA3DFbpDU0QA+vMh4UiMiLNTAHTbRFxEUaIEsfF7ZXMVoR1dymfnFSRcG3ckHE9TAL5vw6EvUBO3dxUM0agMWy2QawQXymq3WILmn3hTURCOhYEk0lkFC0aTwGSIdmS6KkMgSSEiSD6EBgSDApWhIzGdUmgOBgIWSzCELh7LAMA0sgAsvQGV48NS8iz2RQENVEKh6gD2UQ4EzRcMAMREdokAjkBjJADiCAgACsKHsECgoOqmpddfqoUjUc7kaKUR83h6KigIChGCQbNTUG9QoxatQkCkIFKmgJGBRuggAB4oVrhp1zZBgGz8i14L0bD2I94gd5AA)
 
 If the query is successful, the response will be similar to the following:

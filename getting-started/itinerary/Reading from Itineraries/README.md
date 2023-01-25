@@ -78,7 +78,7 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AQQBCAYQCMAJgDMXAJQlylSrRQAbBEqIBfctpDagA)
 
 By including the itinerary ID in the query, the API will return the specific
@@ -100,7 +100,7 @@ retrieve the title, synopsis, and publish date of an itinerary and the preferred
 media image to display for the itinerary with the ID "itinerary/ABC123":
 
 ```graphql
-query {
+query GetItinerary {
   itinerary(id: "itinerary/ABC123") {
     title
     # Add additional fields
@@ -119,8 +119,8 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AQQBCAYQCMAJgDMXAJQlylSrRQAbBEuUBiIoLBgiDAzwhIGaogDMqCNWADOWyg4JIIABwdUnFZR5gAIzUfAAsEMGciDzwEK3xYsABZCKoGRT9lIliHCBg8KAQMrKyAOnKiMyIUsDSASTgGAHMiskySyjYojqgmdiJ8tWZAhAcUADEaDgBtAA4ABnmAGiIF+YBdOW6ShhQUPCpAmFozbcoAX23L9uuL8nOQc6A)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaFHAA6SRR1NdejBAFNTDoiLEF1oNCAegCCAIQDCARgBMAZjEBKZmw4caKADYI9+gMRFZYMEXo2JEJPSNEAZtQRGwAZzMcfAiQIAAcfaj92fRCYACMjCIALBDB-IhC8BDd8TLAAWRTqel0o-SJMnwgYPCgEErKygDpmoiciArAiijh6AHM61lKGjiE04ahGYSJqo35YhB8UADEuEQBtAA4ABi2AGiJtrYBdLTGG+hQUPGpYmBonM44AXzOXobfntieQJ6A)
 
 The additional fields requested will be included in the response:
 
@@ -152,7 +152,7 @@ For example, the following query will retrieve a list of the first 10
 itineraries associated with the profile ID "profile/ABC123":
 
 ```graphql
-query {
+query GetProfileItineraries {
   itineraries(profileId: "profile/ABC123", first: 10, after: null) {
     edges {
       node {
@@ -182,8 +182,8 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhnlQgM4AUADnhAGZUAbBAEkw6IqRDc+ghAHoAggCEAwgEYATAGZJAGiL88rFOLUAGfQ14p84pDAECAlCXKVKCMAHM2riu8okCDAEPwCAqjA3cMpaFCFomNYCIM5WKlZyRPDuBF58PE8AWU8qBjCY90LWCBg8KFCyf0r3ADp2oggKErAy4TgGHwqWiKjmkdiAC3gAIyQGQXE6gXYZthQAMRpxAG0NMwsifbMAXSdsiYYUFGYZmFoui8qAXyeA1-H3p4+vpGzOQYiJC8CDDdyTBisAByCAAHigAAqAp7IMAqOo1PDZD7ZFAQFAMAQqWqoaIfZ4gZ5AA)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKeEAZgJYA2CAkinUvgIZ50IDORYAB0kRInTYc83XnwAUAB2r0mzMOiJCQS2owQB6AIIAhAMIBGAEwBmLQBoi9PHxQbzABgecaKfBqQwDAwAlIIiYmIIYADm-GGiEWJIEGAI8YmJdGDhGWJsKEw5uXwEyQp8dHwiRRlKCDT4eFEAslF0nOm5EU18EDB4UGnCCV0RAHQTRBCirWDtzHCcsZ2jmdkjq3kAFvAARkicjBr9DHK7-CgAYhIaANqW7p5ED+4AusE1m5woKDy7MGxpp8ugBfYGJMEbCHAyHQpA1BRLFhIGgQFYRLacPgAOQQAA9KEjgcgwKZ+r08DVITUUBAUJwGKY+qgcpCQSAQUA)
 
 The response will contain a number of itineraries that can be displayed
 individually using the "itinerary" query.
@@ -261,7 +261,7 @@ To retrieve a list of locations for an itinerary, you can use the following
 GraphQL query:
 
 ```graphql
-query {
+query GetItineraryLocationList {
   itinerary(id: "itinerary/0mttpRn7spYNDIV979fHbE") {
     id
 
@@ -301,8 +301,8 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0ABjgoUABwBKSAOwBnMQE0AcgBEAkgDUAnNK0AzABIAjAKJcAlCXKVKbctZsBiIhIQMw1CigAWCIrJQIMVkHSihvKgAbMDxkZj0qPACOAEZBABoiFAIxBA41Wno8JgIAGWgGWggkTIY9FHwOJBhIyMsyChtKBDAAcwRZK06uyiQIMD8OkZG7YemsmkiEeznp2SojSLpegAUIdaqkJXgjfBX5pyIAQTAwHmqGSKIoaobUZ4YKU-8EJagGjy+WJEBiDADuv0imQmuSQdyQvSI1SyvlC82c9B6SL0RAIEBgeBBYjEWyglSo1X4EKMBz8AFU1OcLkRnGokFBIjAJii-GJYnp8LEPIg7gwUSckAwomjpnyEAK8EKALI9KhiqbMyixWT4vBQSYy5kAOhNSIoKtFajgDH6Q0101m9pGPglUsiHAJkWYpwCADEaBwANoAJkEGSIocEAF1zIbNZUUHgNjBDnH5gBfNNdTOrEY5i75vNMrpiG0INl6CB2+beUFKBAADxQOzLaeQYAAwgSdXhDTnDYEUI8O-jUGjCzn0yB00A)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaEAy09NEST1AzikcAB0kRItRp08jAgApqYdEQEgxtBoQD0ABjgoUABwBKSAOzc9ATQByAEQoA1AJzGHAMwASAIwCiSgJT8hERE5IUCggGIiAwR6MFFhFAALBCJeCD1uMJEoROoAGzA8ZGkXajxeBQBGTQAaIhQCPQQFKlVJZlZ2JDr6FxR8BSQYPLz-QWEgkQQwAHMEbgCJyZEkCDAU8eXlkKWt+rE8hFDdre5qDzzaGYAFCDOuy3gPfGO9iKIAQTAwFQ56PKIUA4-VQgPowmeqQQhyg-TiySKRHoCwA7tC8nV1k0kD8kDMiBx6sksntInRpgSXEQCBAYHgkXo9JcoGxqBx1GiPPcUgBVCivN5ESIUJBQPIwdZElJ6IoufBFOKIH70IlPJD0fIkrYyhByvAKgCy02oKs2gpERW4tLwUA2WsFADonQThEblRQ4PQ5otzVsdr7lkk1Rq8go6XlpM9eAAxMQKADaACZNLUiMnNABdXz281sFB4c4wLo5vYAXxLk3LJ2WVbetZrAsmei9CBFLggPr2iWRlgQAA8UNcWyXkGAAMJ0q14e1V+0oCAof5j2moEn1qulkCloA)
 
 This query retrieves the list of locations for the itinerary with the ID
 "itinerary/DEF456". The "children" field is used to retrieve the list of
@@ -451,7 +451,7 @@ and tailor the presentation accordingly. It will return "list", "trip" or
 "trail" if set. For example:
 
 ```graphql
-query {
+query GetItineraryType {
   itinerary(id: "itinerary/DEF456") {
     id
 
@@ -461,8 +461,8 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AEQCiAMQAsAVgBsXAJQlylSm3JLlAYiKCEKfHF5EUACwRGCABzMQAZtVr08TAusopLCDgxQo8ANQYAG1xWdk5uBz4CfncreXUAX3IEkASgA)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaEAqBADgkcADpJFHU06eRgQAU1MOiJcQA2g0IB6ACIBRAGIAWAKwA2GQEpOPPnwk8TpgMRFl5fHHlEUACw4o2HCADN+ghQSWfB7sUvQoKHgAavQANrjiktKy-sJKIQiGlgC+PNkg2UA)
 
 If successful, the response may look like the following:
 
@@ -484,7 +484,7 @@ ordering which is not intended. For this, you can check the attribute
 "unordered" or "ordered".
 
 ```graphql
-query {
+query GetItineraryListPresentation {
   itinerary(id: "itinerary/DEF456") {
     id
 
@@ -494,8 +494,8 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AEQCiAMQAsAVgBsXAJQlylSm3JLlAYiKCEKfHF5EUACwREANlQDOKIgAc8CK8hQNaEChABmR09Vr0eEwE6pSWNgAKjs6oblQeHG4oeABqDOa4rOyc3AF8BPzhKAC0Dk4ucR7y6gC+5DUgNUA)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaEAy1AzigAp4KvIr00ISIsAA6wotRp08jAgApqYdEVEgptBoQD0AEQCiAMQAsAVgBsagJQjxRe5LDi7DgMRFd5fHE1EUACwQiABs2FCIAB25eVAFqISIIADM-QMlpLQIXe1D2Lh4+OKEVARQ8ADV6YNxFZVV1DNkdXJQAWiiC2MEkaxcAX3E+kD6gA)
 
 If successful, the response may look like the following:
 
@@ -531,7 +531,7 @@ Here is an example of how to query for directions between locations in an
 itinerary:
 
 ```graphql
-query {
+query GetItineraryListWithDirections {
   itinerary(id: "itinerary/ABC123") {
     children(type: ItineraryLocation, first: 10) {
       edges {
@@ -571,8 +571,8 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AQQBCAYQCMAJgDMXAJQlylSlAAWVADZg8yZigIAHBBwCSteniYEAMtAa0ISADREAZlTwBnFB3EAGBTIKZUoEMABzBE9FYJDKJAgwBBi4uLYlVOVaFA0EcgzMok8qACMNOnCABQhihyQAOXgS-AK4gF9WkIBiIkEwMB5HBg0NAhccfGIUVWS8CBgUKKJmlAB3BGQiaeSNOzrohmiwyKIwewYnTuUe1fU1IlXNDSIIEpQGOlOPBCh9tzm4FsZtRzHwpqp7EQmHgqAA3ZLMExIErzJBgORXSg9FAQIFUaK7KD2KiOFyuAFAnaHFBEQnExzUCjbIjHZKeBATJBQPKxOIDHS-ElITzMdxeHxEcQufk-OqmZGo9EpQpEBJJaJBFXXIgAERgljqRFYFDgdAWUQxvMKYH19KQAFk6Ji4j0dfj3lyEZ9EIsvJatZQBt4GJ7nd1elBuZ5osy5uaiHBEktmAgAHThVNEURMFwIFBQf0BuOLZUBooIcKIVAasOZRNJWshDpWzLNrVt1tXZtXAwMSJI1y4zWZCGeeoIAAeKEqfZ5hWQYFE+s8EDwXfyLZx7w0olRKFaHebbRAbSAA)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaEAy1AzigOrUoAWAItTwIoNCElZFgAHSREi3Wg0IAKamHREpIBXTyMCAegCCAIQDCARgBMAZi0BKSTLlyoPagBswQpMpQEABwQNKkU9Zmh6USQAGiIAM0F2DQsABkdpWRc5BDAAcwQJTOzspAgwBCcskpc1ZxqXGhQPBBl6hqJWagAjD1o8gAUILuiAOXhu-HaSgF9p7IBiIiMwMAUxeg8PAjicfGJeSrwIGBRCokmUAHcEZCJDog9I6Il6CVyCojAo+hj5lyWV3cbiIV08HiIEG6KHotC+gmELwSxzg9x4lR0SgOPCiREYeGoADdKsoKEhuickGB7P85EsUBA0WxHs9qGI4vEUWjKh43igWVAomzZHCHh9KqwEHskFBWtUSmshCJhaxlIk8MkiBY4orEcKQuTKdSqh05GUKkVaSUlnwYHpokRVLI4LRToUafKOmA7UKxABZWhWxZEATsegyklwxBnDUe00uNZhiNBgHLKCy1gSB7HN1EODlc7KBAAOjyxaIZkYcXIUDj8aIObOJvrckleUQqEtnvr+YqKeyc27NUH8ZHDTHA7a3YC9AKZPijOKDRxrFGCAAHigBrO5R1kGAzHbWBA8P9B-8GTCPGZKShpmPBzMQDMgA)
 
 If successful, as response may look like this:
 
@@ -682,7 +682,7 @@ The following example shows a query that retrieves information about a specific
 itinerary location using the "node" operation:
 
 ```graphql
-query {
+query GetItineraryLocation {
   # Use the node query to access an Itinerary Location node
   node(id: "itinerary/ABC123/location/6DuqdpTlTwKFtOjA9zhYZY") {
     id
@@ -700,8 +700,8 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFEDERAqgM4JEoAWTSEYTO+xKERAIZQoCevSEUAkigCWSfIMJEAMtEFyIFDl3KUdCABSyw6IqRCy5CvEoIB6AIIAhAMIBGAEwBmewBt1TSR7ADYAERgsMAAHABU-WIB3AGkAMRQAeQArRwBOAC8WAE0ALSKLAEoSPUoiExrKAH1GlAJo5EFEcgbqIgA5TiYAwTAJMFkAMwn8ZBRmNrEiCAmlgCMshCgUegAaInoBRKY8BB56OYnZBD9RogmIPGY2HpoZeUVlNSgNWS199qgk1k3z8fgIPQAdFCltJrB8CF8fn8yBRapQ5Cg-AgepR6AQONF6LJ6N1UWiias-PIAOYABQgRKCfXgq3wPQAvjVOUh2SB2UA)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaEAy09NESRwAOp0QMREAqgGcERFAAtxSCGHE58xFBCL0oUBCJFrOVWg0JEWUNtQ5FZ83kUtyEACmph0RbiGo06eRgQD0AIIAQgDCAIwATADMfgA2rOxIfgBsACIwWGAADgAqsTkA7gDSAGIoAPIAVgEAnABekgCaAFqN7gCUXDa2RM7dtgD6AygEWcj0iLz9AkQAcvZE8fRgOmDUAGbr+MgoEqNaRBDrhwBGlQhQKCIANEQiqgXieAiKIrvr1AixK0TrEHgSaTTQT6by+YwJcycERjKAbaimWKxAjTAB06MOei8hgIJjMFh4fB6Ek8sQQ01sIgIsiyImoIimRJ6dJOsVoAHMAAoQOmJWbwE74aYAX26oqQwpAwqAA)
 
 The response will look similar to the following:
 
@@ -744,7 +744,7 @@ like images to display with the location.
 The below query demonstrates loading the first series of images from a gallery.
 
 ```graphql
-query {
+query GetItineraryLocationGallery {
   node(id: "itinerary/ABC123/location/6DuqdpTlTwKFtOjA9zhYZY") {
     __typename
 
@@ -780,8 +780,8 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFFIRgIAUAlmOkaSAyg0vgIaED0AQQBCAYQCMAJgDM-ADbQenCEn4A2ACIwsYAA4AVOfoDuAaQBiKAPIArQQE4AXgAsAmgC1XbAJQlylSgB9QJQCXWQeRHJ-AIBiIgB1Z2QiADMEFChnLgBzIh4KDi5eQiIFKCUGFQA6apjKWuqiFSIASU5uPD4CABlFZQoyCgDKThQ5BHqAgGcCal1phmno4ZH4vp4wIhRktIY8aZQiaSIGOB4chGnm1O3dnJ45CcIpykQwBh5RFRQeYoO6Kl9ocWNJfEMRiMEGBLtcIZCRtRaH5VgiAkxXmi8FcIDA8FAECi0WjgqFwkhIpNUcSGrVmhQALLQz6tc6XIk0hE7eAAIwpDDkLDxcjoPKuKHMHBYAG1JAAGOUAGiI8rlAF1vJjOXI+JchXgRWLDpKUDKABwK5UW9Wa6mc-IoFB4Bg8mADLU0iq6d124kAXw9IwDvoCwf9Ht0FwQrSQqQgHOJzh40wAcggAB4oAAKUcDRGQYFEeOmEDwHrDaJQEF+cm+MFQmIrlArwb9ID9QA)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaEAy09NESJ9ANt-scAA6SIkSQQwCABTUw6IoJDUadPIwIB6AIIAhAMIBGAEwBmDd1bskGgGwARGFjAAHACrdXAdwDSAMRQA8gBWWgCcAF4AFgCaAFrRigCUREIiokQA+hkoBM7I9IjCwulEAMREAOqRyEQAZuRQkbQA5kT0Isq0DIREFlBs1BwAdEPF6SNDRBxEVF1qzJaDIqklojQofGMlAM4E4s7b1NtFaSXlLPRgRCjVddR42yhEJkTUcPTNCNtTtde3zTw+IQtulEGBqPQ9BwUPQ5tspLV7o95CZkitVqIEGBPt90RjROJJCkQfjXmASfi8F8IDA8FAEMTTqT0lkcnkkAUEBTSRMpiIALJYiEUd6fRnM-E3eAAIw51G48lp3Ck0q+KF8ynkAG0jAAGXUAGiIet1AF1EtzmdxGJ9FXhlarHhqUNqABz6o3us0WpkS0RsFB4ajSmBWS2k-rOMO+5kAX3D6XjMZKSdJqfxzg+CAoSFqEHFzMi9G2ADkEAAPFAABSzCeQYD0tO2EDwlvTGJQEBh3ChMFQFPbRHTSdjIFjQA)
 
 The response now includes an gallery information to display for the location:
 
@@ -835,7 +835,7 @@ when you are loading them individually, opposed to searching between locations
 within a list.
 
 ```graphql
-query {
+query GetItineraryLocationDirections {
   node(id: "itinerary/ABC123/location/6DuqdpTlTwKFtOjA9zhYZY") {
     id
     __typename
@@ -882,8 +882,8 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFFIRgIAUAlmOkaSAyg0vgIaED0AQQBCAYQCMAJgDM-ADbQenCEn4A2ACIwsYAA4AVOfoDuAaQBiKAPIArQQE4AXgAsAmgC1XbAJQlylSiZ-AIB9EJQCXWQeRHJgygBiIgB1Z2QiHHwCLgBzIhQ0og4uXkIiBSglBhUipDAGADcmGB45OQJ4ogA6HqIagElObjw+AgAZRWUKMgoAxKIAZQQ+KGciADMIPCJ6vAQoKYBnIhhDhDB8iCI+PEaEIjS9jbwIOD6C-CKh0uIKqpVDp1KDc7uYXnAWLt9kc6OsGHhDigWOIADQ7eHQ6pIFj9JAAIwgMDqvhmczm1Fox1JZLmWwYOS4flmNLmPS6fQogxKI0IE0qUyZLJZQWZQoCnBQcgQQJZAF8ZXN5aKafVETwkFBpcqyWAYCMpgBZLgKgIvGAoe7UsVEOA0BCA7WKk1KoUoCAoVqiQmoGVKmVJJYrNabbZQg5Y46nc6XHYIXR8FAPfD3N3vR5fbmjcqTCMy2jxvAofQQSEY8MA2HwxEsSRosNTFhWc0EolgEkmin2wVigvIRNWsVsjlELnDUZ8-7TE00kXWuYSqXTgIusUroWqj0arXW3X6rFGpBLs0W7vW22UpdrslX+fuz3elC+zorpWykCyoA)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaEAy09NESAItXglO0gDORYAB0kRIkghgEACmph0RUSGo06eRgQD0AQQBCAYQCMAJgDMOgDasBOgGycYWMAAcAKtY8B3ANIAYigA8gBWegCcAF4AFgCaAFpxqgCUIuKSkooZmQD6uSgEbsj0iOI5kgDERADqMchEOPgEtADmRCj1ROq0DIREtlBs1BzdSGDUAG6KMPTW1gQVRAB0q0SjVL1azHYjEmISmVVEAMoIjFAxRABmEHhEE7z8e8IwgghgHRBEjHhTCER6rwbngIHB1p18N0NH1iINhhxBEtJL9-gFQXBlI8+AJBHJrjxBChlCYADQPHg4vbKChIABGEBg4zSByOR2ksmErLZRzu1FatHShx5R1Wy3WEk2mm0LCGAiFIpF2WFisyNBQ1gQyJFAF9tUc9SqeRMifQkFAtUa2WAYFoBABZWj6zKgmAoAHc1VEOAyBBIq0G52GxUoCAoOZGRmobWG7XVM4XK63e7Y56IohvD5fB4INyMFCA-AA0MQoHQrbaAa7RHa2R5vAoDwQLGUtNCfGE4lEMzk1MCZTBN0MplgFnOjl+hWq+vIAue1ViiVEKWw2UI-bOnnKr1HdWazeZYOqo+Kk3h82Wr02u17R1IA+u91Tr0+zkHk9sj+7sMRqMoGNLEeho6iAOpAA)
 
 The above can look directions that can link locations between where it was
 coming from, and where it is departing to.
@@ -943,7 +943,7 @@ The below example shows fields that can be queried in order to locate key
 mapping positions and route paths for directions:
 
 ```graphql
-query {
+query GetItineraryMapData {
   itinerary(id: "itinerary/ABC123") {
     id
 
@@ -988,8 +988,8 @@ query {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFECWKVS+AhoQBRVjpGkg12OED0AQQBCAYQCMAJgDMXAJQlylSm3JLlAYiIAlBAzDUKKABYIiAZxQQADufWUoxqgBsweZMwBmVPJY7iABgAaIhQCawQOAElaejwmAgAZaAZaCCQQhk8UfA4kGGdnBTIKZUoEMABzBHNFUrLKJAgwMxKGhtV69qIAOj6idKIY3njCZKhUqkG27rKtZP1Q0yJndMqaGBb+Z0mUTYR7WaItQWdrBgmiGHMaogBRAAUAZQBxdGkADgBWAHZ+AHUXk8iB8ACxEUTaJ6HWbWCDmHjTGFHVZIZGzHYodENAC+2MoeK6ZUJ2LAPgQUDSSHMXh8fiI4hCZPclKmSGiSAARhAYEgwMV8UQKtVajMjkQmi06uKyngeTlpTKyjdKohUKLBbMtABVG5LMxw5wEZy8IjeBCuUIQIgXKA1WoMIiG42m5BQZoVTXdLTuazuG6oSaDCCefVEOUwBXnExe9rOk30WPKQlKglelNHDPtLPJtREp0MapRJCea1ihrGBjmAByCAAHigHoWDvnynzRDBfBA8MiSfmrCgGM5RDzUIcM4ScSAcUA)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaECy9ADgCL0r1HAA6SIkWo06eRgQAU1MOiJ8QI2g0IB6AIIAhAMIBGAEwBmBQEpeAoUJkCLlgMREASgnphhglAAsERAM4oIVl9bIShPagAbMDxkSQAzajx-OV0ABgAaIhQCVgQ5KmVxQgAZaC5qCCRM+jiUfDkkGAiIs35BSyEEMABzBF9zdo6hJAgwHzahoetByaIAOgWiSqICsQlSqHLlidmOh1LXLO8iCMrukRgx1QjylEuEEN2iB3UI1npNohhfPqIAUQACgBlEjoQwADgArAB2VQAdRIQKI4IALERtI4gY9dqwIL4lNtsU9TkgibsbigyUMAL5UoS0mYdBlUsCJBBQGiVXzxRLJIi6TKsmIcipIfJIABGEBgSDArTpRC6vX6OyeRBGYwGao6eGldS12o6P26iFQKoVuwcAFUfkcfLiIgQIsoiAkEFEshAiB8oH1+jwHU6XcgoKMuhbZg4YqwYj9UFtBBA4naiLqYPr3l4I5NA866NnLAzDfSI0WnmXJhXCzZGUR3r0KEg4l7VUNPPRfAA5BAADxQAPovSpyDA2hgSQgeCJzNrAW4EW00tQjzLDOpIGpQA)
 
 An example of the output expected is shown below
 

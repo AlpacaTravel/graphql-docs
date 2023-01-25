@@ -117,7 +117,7 @@ mutation CreateItinerary {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPE4AHVJKipvoFGzNgApuJSSQIMmLVug4SpkgMQlaSGQVwAbXsRTIUylYRS6EiziAAyBAM4oSEAGYkASgigQ4iJGAIYCQACrq4UAgONqZS6gDKvggkuGBg2sR6JFQ+fsiBwQBGOCRIEM5UAI4wBFTBrgQIumDRPCqBrrgwuii20HpWJDbIMW1S+CgUDooA2rEq6iEUEABuBIEkABZCKA4phRAlKJvJKKwADslu0rIi7KIIAHQA5o8kuo4oADQkkwTnP0muAIugAlPM4uRcKRClc4DIjMEIBQUmkgu8aBQIZJgNIwNYQNphPIAPRnS42H4rPQwQY2D5OGwkAC+EIAurFWTxQUoxkS5GxeSpJOsIXxqIjOcoucyQMygA)
 
 If successful, the expected response will be:
@@ -170,7 +170,7 @@ mutation CreateItinerary {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPE4AHVJKipvoFGzNgApuJSSQIMmLVug4SpkwigA2CRZxAAZAgGcUJCADMSAJQRQIcREjAIwJAArrcUBAZ3KVj07gw6ii60Lia2iDIPjwq+CgUBooA2r4qJADErhQQAG4EjiQAFkIoBiS4AEYQOCQoRQh1rAAOjWbSsiLsoggAdADmvSTqhigANHUUBM0TCbgE6gCUaSpZZLiklW1wMihOJhQVYI7O7nsUK1LA0mCRMkJybAD0KC0IOhO54TBaJDojRh0JAAvpcALppUE8RZKWIdB5dWHpG6XPjUPZgSHKKHAkDAoA)
 
 The above mutation will create an itinerary with the title "List of Recommended
@@ -195,7 +195,7 @@ mutation UpdateItinerary {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTxOAB1SSYqa9AoxbsAFDxJSSBMOhJcQBBs1ZsA9AEEAQgGEAjACYAzIsnTlw1e3nAShFABsE8xQBkCAZxQISYBJ4kjgQIMAAeJEwIUBBwcLhIYACXnooANH4IAGa4MI4obtC4zq4gWUyKJAC+5gCUnOZSliJqDbzSMmCN0g7O3VL+OXkFRX3t1eY1SFUgVUA)
 
 ### Indicating if a List is Ordered or Unordered
@@ -228,7 +228,7 @@ mutation CreateOrderedList {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQHkKwEqwAZAgZxROAB1SSoVGgElCSJrgoBPABR8SCkgTETp6bvMULCKADYJ1PEAFkpJACoQADiQCMABhIARBJwJJ8RJOyOat+FAp2dQBtYCUwQxBld1UpAHpdDhQAWisqdmQ8QmIjABoSADdcXRgDEiMIBiYEMCMSAF8AXT9GzQBKDX4FGPEKSTNebsUCOuGGzQmkBpAGoA)
 
 Similarly, the following GraphQL mutation sets the `itinerary/list-presentation`
@@ -249,7 +249,7 @@ mutation CreateUnorderedList {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQFUkIKwEqwAZAgZxROAB1SJKFRoBJQkha4KATwAUAkkpIEJU2el6LlSwigA2CTXxABZGSQBiuAG6NVCEgAV9uKAk4ntO-CgqdNAG1gFTBjEFUCSQppGQB6fS4UAFoABypOZDxCYhMAGhIbXH0YIxITGAYmFgQwExIAXwBdb0btAEotQSVI6NiunR667rbBBoEGkAagA)
 
 It is important to note that when creating a list, you should consider whether
@@ -298,7 +298,7 @@ query GetList {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAyAlgM4pHAA6SRRVKVS+AhoQBRUw6IoxDtOPQgHoAggCEAwgEYATAGZRASgbNWrQbr0cUAGwSHWYBADNuME5WjczFolDwJuKBGFdwIYFTWVD6uKAQADgjCXih4AGrOuAJCImIcXHi8BFLhUVquER40yCheVBBIMShxiSbJgsKi4pnZUia0KAC0RQglqOWVBSx6HXQAkt5wNMJQABZUJmAeSHzBeHTCAAzaTCN6RCgQZSYKEDCorgC+hjdIVyBXQA)
 
 Expected Result:
@@ -368,7 +368,7 @@ mutation {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAJgAdUkqAJwXwQElCkEbcaBPAGWnyKQAKSiVEkCLNh06Mw6EuRASCrdlwD0AQQBCAYQCMAJgDMikWIA2fQsXkUqYkoRQWE8xQFECAM28ILJAAqEADubGYOYgDOnEgQAA5RBFHuIJqkBFDEmSTxFrhQCCQQ3uKobAhRKBGOonkFbmS5EEk2SHYkVu0khgB0hgCcACxDADSd+PJDABy90wCs00MkAL6r5qIr5gCUZBud1gJ7kaIEYPtbVJcrICtAA)
 
 In the above example, we are adding the location "Eiffel Tower" to the itinerary
@@ -435,7 +435,7 @@ mutation CreateItineraryLocationWithFacebookPlace {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyKQHUCUACwBiuKAgBGECAGsACgBsxCEsAA6pElCo16BRszaco3YgAoNJKyQH6mLVrTDoSakLYMOA9AEEAQmQAjABMAMxultYKXITELuqa1iSEKAoILm4AagQAzgIkALK4AG65JAAqgioA4hTQTBGJ1jmsSBAADnk5GSA+JADmOigk7UriyRADzBIkuCQSOjIAZrg5w7hIYLNaEEtLCAiNSVajyvGRxzbOriCn4l4r4lKy6O24-elwJblCCIP1FCOlxGEDysSQ8RI0QhJECABYAKwAOgADCi4aEADRQ-AuAC0oQA7EiABwo4KBEgAXwu1hpTXpVgAlKpadETODWU0rAB9HkoVjtZC4RC0qwEMC0xnUjRUkBUoA)
 
 In this example, we are using the Facebook place ID
@@ -500,7 +500,7 @@ mutation CreateItineraryLocationWithExternalReferences {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyKQHUCUACwCiADxRMkuADYAlBADMmyKAgDOJYAB1SJKFRr0CjZm05RuxABQ6SdkgONMWrWmHQktIRyZcB6AEEAITIARgAmAGYvW3tpLkJiD21dexJCFGkEDy9hAgUlaRIAFQgAdyYY1PsAB2lcVWSSGog1RyTNEnikD3CAOnCATgAWYYAaLvwPYYAOPpmAVhnhkgBfNdi0-BQKNQ8AbU20kgBiEgBVNQR0wWu1GoQoAhk9GDUUCDgSbYoCACMcOoSAoIBQusYANbGADm6QgJFYEBgYIIYGQhAUBCYaiOaWADncnhAsHenz8CHEkhkAFoqAovBMAG4yGDZIkRSLDBZeDbVPEEnLEt4fODkykUKTSalqJEUVQMkjM6SswVtCQ81a4kgAXS1ZwA8kImCQKRIkGiwMCsdIwBoLKQ-ncPlRLbhobhjO9vl0EjwtRU-mqEOcKNJBYIUCgans-H44KwA0G+lAyXUGupyflCtSPhUKFU0prdABKTRHeIWRKkFLHAk6LWmqlyRQeH4ANRZCCsqMFJJFYokEppdK8xYb4slAGVZY1vpGKB3lV2e0S+2TG0OpTLkfKQGOkP6EIGBMHQ0ci3Yi6sQKsgA)
 
 With this example, the Alpaca platform will return the external reference ID's
@@ -539,7 +539,7 @@ query CheckItineraryPlacePresent {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAMIAWCUA1gJIoCWS+AhoQAoA2zUCbeCAZ2QoiwADpIiRegyZ5WBABT0w6ImJAzGLQgHoAggCESARgBMAZg0BKURKlSwgnkjDNUAxQAcuPGmAE1AG0NH24EXXMrEABdABoiADN6PAEUNRNbcUkHKSQIJwE7HNypFXtSgF8K3JQIFGYOEggYVBqiapzOypBKoA)
 
 The `itinerary` query is used, supplying the `id` of the list to check. The
@@ -639,7 +639,7 @@ query QueryItineraryLocationsAsSimpleList {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAIq6ECSKAlkvgIaEAy09NESAzgIKcDK1OAAcANgibVOKIsAA6SIkWo06eRgQAU1MOiKyQy2g0IB6bgCEAwgEYATAGZ9AShnzFiqAAtqIsHmQaKARCCLpURmrMrOxIADREAGbUeFK61gAMLnIK7ooIYADmCJyuObmKSBBgCKXl5dpude4A+s1BIUj0iI1NRAB0A0QcROGq6ixQbNTD2b25NChiPXOcBJVCnJLLvUL+Cfj+YACy+dT0tXO5-pwQMHhQNbOX5QN9QwonYGcUcPRFF89yncRBoAEbFFAAMWUugA2rZ0ul4gj0gBdJzbQFESZCGKYwFQCBCAh4agFTwofHPegiFAAFQQAA9KWUsQBfKl1Dms3rcwGiegPAHPADERAAqpwaihvCUUBAiH56AB3IgymoiSTSYbyojnX5CTnlIQQTYxYWAkQcI11ERsG3uPlYsUAUUZXVENSVytoBSIoPomygSiQCQgeF+5oSeAgcD1RAFQt2EAAbtp8A7FA0eXNOt0c71CahBdInljEoKEKCIBAANbivAiTPuWhSP5qOANpsFppOwH0MB+YolMtYgdDzicCR0ADydGbiitk01QWbfbm3IdYpn6v8RD2+GQDxKBFuRE89BTNSk4fyeoK9Fb0lPdyImqkDqZKHwnREACUEASXQ2BQPAADUaVwLQdD0EBYBvOATC-H8aQAWj2ZwHWVKszQQLsjXXXJCPcE0zWmJBdHyIoAAVTUMDgADl4HBPAqVgFJw0xYj5RQGlLFuVBlidbk2RANkgA)
 
 The `itinerary` query is used, supplying the `id` of the list to display. The
@@ -683,7 +683,7 @@ mutation DeleteItineraryLocation {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIARBAGwRQQElCkEAnXZgTwBlp8jTgAOqRJgqNeoxZt2DBHAAUBMOhICQBSaw4B6AIIAhAMIBGAEwBmbRrnayAUQBiAFgCsANjUBKEoOEkSSkL+AL5CwSDBQA)
 
 When the operation is successful, the response will return the `id` of the
@@ -731,7 +731,7 @@ mutation {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAJgAdUkuCANwQElCkEAnXVgTyYTgApKJISQJh0JciALM2HTgHoAggCEAwgEYATAGZ5AG2j4iSeQBEAogDEALAFYAbJMHCADhADO044pQBlPKwo4sAAvs4AlGTOQtK8UVTCImDRJGFUaSEgIUA)
 
 Alternatively, you can move an itinerary location to a relative position to
@@ -751,7 +751,7 @@ mutation {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAJgAdUkuCANwQElCkEAnXVgTyYTgApKJISQJh0JciALM2HTgHoAggCEAwgEYATAGZ5AG2j4iSeQBEAogDEALAFYAbJMHCADhADO044oBmKNgDKBABGegRIAObiwCSeoeERDGISUjLsXEpqWroGUEbE8gDiABIMAOwAHACckiQAvs4AlGTOQtK8LVTCImCt9c4NSHUgdUA)
 
 These mutations allow you to reorder the itinerary locations in a flexible way,
@@ -823,7 +823,7 @@ mutation UpdateItineraryLocationContent {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwBlp8ikBhYimQoSwADqkSMKjXoFGLdlyg9iACgkktJAmHQkxIAg2as2AegCCAIT4BGAEwBmcwBtuhYuYAiAUQBiACwArABshpra7iqeSPriktokAMQkAGqsRDAAziTZeEjUTGAkAGYECK5g2QA0eQgIBiCU1EJyCmbKqki0SBQ4hiQobBQIkUmEKK4I+oa+BKWllSQAKhAA7swRidrZbEgQFNkE2bMglnkAFhBMItnwcGZlN0OXjdHd20laYAjZUEwCBRYmcALKsADWkHWpFKN0eKCEJV+-0BwN4zyYr3eHl4X2+qV8AA8hIUECV8ChAQAjHB-cbaaTZZgoSyIpinEgAbQZSWAOj0TQorlwUAQ5k21OOQgAtDAmK5DHUAG64VwwGZNS6Io7ocwS9brAB0KAg8oQCyWriNFEy2UGAF9edoEt9vrozsLReLSt7qRAIBC5Qr8W6tKr1ZrDNqULr9Ybjb6xf7A0aoBA4OZ5otKmtNkwjQB5RYEKAENUABVwAHMxiBnVonTstABdZ2pACaZpIKlITAQcAgysaEY1uRy8mr2JIv2mQjZVPtzZSJAQRNwcGFI7VGv0XP5HqFIrFEoQUuMCGDipAJAdbeXs4Q8-ZnK596STa0AEpRAyPrFf2XXR2xIAAlBBcBKalRQhKQZCREhRz+HRSBQN4SH7bIKGIZlnUmaYGU-W8JAdEAHSAA)
 
 The location field contains the new title you want to set for the location.
@@ -893,7 +893,7 @@ mutation UpdateItineraryContent {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwGFiVkUTgAOqRIwqNegUYt2ACiEkFJAmHQkBIAg2as2AegCCAIQ4BGAEwBmdfMWbJ29qsHDFJAMQkAaqyIwAziR+eEjUTGAkAGYECAA2YH4ANIEICGoglNQ8ElI6tEgUOOokKGwUCDauhCgxCKrqALJsJIwA7sWaNdYuin5sSBAUfgR+dSD6gQAWEEx8fvBwOiQQEcUTqTHDKF2uCmAIflBMBBSExKPjMcQA5swkC0wA1pAtpBHTCyg84XsHRydEr2mq3Wm22Ow8AFEAB48EIIcL4FBHABGOH2FUUoj8zBQ+k+TBGJAA2hjXMAlCo0nYcuxdDckEx0SAkgA3XAxGC1YnqdkUXBQXDoemM9AAMQA8uKACIAHw4ZAAMrQAHL6ABKAE11ABdEgAX1JJG1ho8GogMBIAtIjLgEBZqTZHP2IiGSCuwJIexqPDxSL8JpICChuDgFBqJEdnNURPJylGYf5CF0LQQyKGPAAtDAmDEinrjd1drEED78YSiQXXAbhABKfgY6kOJrOHYUgNqhC4cLI-kPEi4JBNUSZeER9mc-2F9rVcrdasKat6kB6oA)
 
 Like itinerary location, you are able to assign image media.

@@ -64,7 +64,7 @@ mutation CreateItineraryWithCustomData {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAdQJQAsyYBnFBDgARfLhLAAOqRIBiclRolcpegUbM2JAO5duKkrEHCSANwIId53ABsYCGSSNKUdBkxasAFE+ckuDU82dEk-fxJCFFsEUKkQAFEAD1w4AAcYgI8tVl19IwEhOBIwcQDSVRUUFAoCACMcRxBw-3wa-lCAbWAAsDiQYyKAejhWAFoAM0tbMHiAGht7WJJ45NSMhBIANTsHeJIAXwBdFoO-AEow2WdAzS8riJvZ6-84CDACKYRnluczXeWbQoOyW3gIfRWA0KwhG4y+M3i51OfjOSAOIAOQA)
 
 Alternatively, you can manage custom data using an update and upsert attribute
@@ -88,7 +88,7 @@ mutation UpdateItineraryWithCustomData {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwHUCUALAYRgBnFBDgARfLhLAAOqRIwqNegUYt2ACjkkdJAmHQkZIbquas2AegCCAIT4BGAEwBmY9t2m1Fw7Pm6FCkFmFGsUFCZBQwBtYD0DIxBYYVFLODYAWgAzAgQAGzBjABoSADdcPJgEQ2NKahQEMBIANQqq4xIAXwBdDx1OjwBKaT69BnN2Ef9PQumdOAgwAhzGuVGdcsrqknwI1q2NfRqkoRE4NMyVguNB0YH5e86QTqA)
 
 This is also able to be associated with "ItineraryLocations" and
@@ -104,7 +104,7 @@ query GetItineraryCustomFieldValue {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaEDCMAzihHAGLUIA2YAGr0+uIsAA6SIkWo06eRgQAU1MOiISQc2g0IB6AIIAhJgEYATAGYtASnFSZMtY6cA3Ebg30UKPMNEEVXVNEFh2Tn04AgBaADNeATtXAF8pFJAUoA)
 
 If successful, the data response would look similar to:
@@ -140,7 +140,7 @@ mutation RemoveItineraryCustomField {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIAlBOCANwQElCkEAnXZgTwGEYBnFCOADECCADZgSwADqkSMAA5h89RizbsAFDJI6SBMOhJSQBVaw4B6AIIAhTgEYATAGZj23aYJNz7Q8BJgYggoCFYoKMw8hgDa-vqGxrB8AhZw7AC01LiiMAjGJAC+ALqF7gCUku46nt7qlbK6emBVulRgBABmIs1ILToAxCQAcjCion0kWTkIhvgRAGrZuRrxRiBJ-HCpGVO5xmUtBe5HSAUgBUA)
 
 ## Itinerary Location
@@ -167,7 +167,7 @@ mutation UpdateItineraryLocationWithCustomData {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwBlp8ikB1AigAWAYRgBnFBDgARfLhLAAOqRIwqNegUYt2XKD2IAKFSTMkCYdCSUhB25qzYB6AIIAhEQEYATAGZbU3MAG25CYmtgNQpxZhRXFBQmcWsAbSjLa1tYSWlnODYAWgAzAgRgsFsAGhIAN1xgmAQskFcSADUGptsSAF8AXT6ggEpFILN7HScx1XMLStnzOAgwAlKEBfHzesbmknwkzt2jTJsQHKk4fKL1itthrd6gp6RekF6gA)
 
 ## External source / External reference
@@ -206,7 +206,7 @@ mutation CreateItineraryWithExternalReferences {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAdQJQAsBRADxRMkuADYAlBADMmyKAgDOJYAB1SJKFRr0CjZmwAUakiZJddTFq3TLjpk4RSiENlSAG44AB2dmGlthIAdy5uEioZKiR5EhQIElYIGApghAAjBS4EEgBVHNoAEQU3O3t8FAoFGwBtUvsSAGJchWyebIUvBCgCMQ0YBTi4EnKKAjScRRIpCBTRXQBrXQBzWPjE5LMwZEIpAiZi9XrlTdcQWAGIOAB6BEFhMQBaCLcAGhIANzEYFxI3OFYntJZNEEA88oU3CQAL51ezAE6-M79QY3O4UESiB4KJIUeSvD5fH5uILpTJCSEww6mAC6dUpJgAlLYqeY9FZmUcCGA1LCSLchOixJIpDYRgA1QkGLmnc4o-n3THPEAM3nywWiADKOPkopQFQlom+UrAMuRl1RAoxWO1CDcKqp9OhaihIChQA)
 
 ```graphql
@@ -233,5 +233,5 @@ mutation CreateItineraryLocationWithExternalReferences {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/)
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
 [View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyKQHUCUACwCiADxRMkuADYAlBADMmyKAgDOJYAB1SJKFRr0CjZm05RuxABQ6SdkgONMWrWmHQktIRyZcB6AEEAITIARgAmAGYvW3tpLkJiD21dexJCFGkEDy8AWVYSI182EnNLJBjU+wAHaVxVZJJqiDVHJM0SeKQPUIAaTvwPcJIAX1HYtPwUCjUPAG0JtJIAYhIAVTUEdMEttWqEKAIZPRg1FAg4EimKAgAjHHUSBQgKTuMAa2MAc3SIElYIDBXgQwMhCAoCEw1Is0sAHO5PCBYGcLn4EOJJDIALRUBRefoANxkMGyiLgrBximUSFUWLWa1oABEvOMqrD4TkkadznA0RiKFJpFi1ICKKp8SQidISZyAO4IW6tCQskYwkgAXUWqt0AEpNIt4hZEqQUkt4To1eiJAKZPIFB5rgA1YkIKwgznInl862Cyl4kA6y38wUAZVFDSuKGmzulrvdiM9qKtmKFIqB4oDWti2pGIBGQA)
