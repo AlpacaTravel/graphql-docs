@@ -155,6 +155,9 @@ information and keep your place information up to date.
 Any GraphQL client can be used with JavaScript but the below guides may assist
 you getting started with JavaScript.
 
+- **[References](https://alpaca.travel/reference)** Examples of displaying
+  content in the browser
+
 - **[Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)**
   Simple methods for executing GraphQL using JavaScript
 
@@ -168,7 +171,7 @@ you getting started with JavaScript.
 - **[Alpaca GraphQL JavaScript SDK](https://github.com/AlpacaTravel/graph-sdk)**
   (New) SDKs based on popular JavaScript development environments, including
   `React`, `Vue`, `Svelte` and `Stencil`. The SDK provides options for
-  developers such as leveraging `urql`, `graphql-request`, `react-query`and
+  developers such as leveraging `urql`, `graphql-request`, `react-query` and
   `apollo`.
 
 ## Example Applications
@@ -177,6 +180,9 @@ We have included some example stand-alone code that you can use to build upon in
 order to display content from the Alpaca Travel service.
 
 These are provided as working examples you can modify for your own uses.
+
+- **[Browser Examples](https://alpaca.travel/reference)** We have some examples
+  of interactive maps that display in your browser.
 
 - **[React/Apollo Load Itinerary](https://codesandbox.io/s/alpaca-travel-react-apollo-client-itinerary-t37bg9)**
   Simple example of a react application loading an itinerary using the
