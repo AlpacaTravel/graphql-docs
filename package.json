@@ -33,8 +33,10 @@
     "@graphql-codegen/typescript": "^1.17.8",
     "@graphql-codegen/typescript-graphql-files-modules": "1.17.8",
     "@graphql-codegen/typescript-operations": "1.17.8",
+    "lz-string": "^1.4.4",
     "remark": "^8.0.0",
     "unified": "^9.2.0",
+    "unist-util-remove": "^2.1.0",
     "unist-util-visit": "^2.0.3"
   }
 }
