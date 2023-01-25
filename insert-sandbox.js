@@ -68,10 +68,12 @@ function addLink() {
 main();
 
 async function main() {
+  const ref = path.resolve(__dirname, fileReference);
+
   const file = await remark()
     .use(removeExisting)
     .use(addLink)
-    .process(fs.readFileSync(path.resolve(__dirname, fileReference), "utf8"));
+    .process(fs.readFileSync(ref, "utf8"));
 
-  console.log(String(file));
+  fs.writeFileSync(ref, file);
 }
