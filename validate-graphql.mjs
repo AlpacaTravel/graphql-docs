@@ -1,16 +1,21 @@
-const unified = require("unified");
-const visit = require("unist-util-visit");
-const parse = require("remark-parse");
-const stringify = require("remark-stringify");
-const fs = require("fs");
-const path = require("path");
-const { graphql, buildClientSchema, buildASTSchema } = require("graphql");
-const { validate } = require("graphql/validation");
+import { unified } from "unified";
+import { visit } from "unist-util-visit";
+import parse from "remark-parse";
+import stringify from "remark-stringify";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { graphql, buildClientSchema, validate } from "graphql";
+import { parse as parser } from "graphql";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
 const schema = require("./graphql.schema.json");
-const { parse: parser } = require("graphql");
 
 // Obtain the target file
 const [, , file] = process.argv;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 if (!file) {
   throw new Error("Provide the target file");

@@ -1,9 +1,9 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import remark from "remark";
-import remove from "unist-util-remove";
-import visit from "unist-util-visit";
+import { remark } from "remark";
+import { remove } from "unist-util-remove";
+import { visit } from "unist-util-visit";
 import lz from "lz-string";
 import prettier from "remark-prettier";
 import toc from "remark-toc";
@@ -98,6 +98,8 @@ main();
 
 async function main() {
   const ref = path.resolve(__dirname, fileReference);
+
+  console.log(`Formatting: ${ref}`);
 
   const file = await remark()
     .use(removeExisting)

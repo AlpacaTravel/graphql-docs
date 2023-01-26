@@ -1,12 +1,15 @@
-const unified = require("unified");
-const visit = require("unist-util-visit");
-const parse = require("remark-parse");
-const stringify = require("remark-stringify");
-const path = require("path");
-const fs = require("fs");
+import { unified } from "unified";
+import { visit } from "unist-util-visit";
+import parse from "remark-parse";
+import stringify from "remark-stringify";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
 
 // Obtain the target file
 const [, , file] = process.argv;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 if (!file) {
   throw new Error("Provide the target file");
