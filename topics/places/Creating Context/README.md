@@ -33,6 +33,17 @@ more comprehensive and meaningful travel experience for their users.
 
 ## Table of Contents
 
+- [Simplifying Orientation: Simple Contextualization](#simplifying-orientation-simple-contextualization)
+
+  - [Navigating with Bearings: Understanding Direction](#navigating-with-bearings-understanding-direction)
+  - [Line of Sight Distance: Enhancing Navigation](#line-of-sight-distance-enhancing-navigation)
+  - [Google Maps Integration: Live Navigation](#google-maps-integration-live-navigation)
+
+- [Building Advanced Context: Advanced Planning Tools](#building-advanced-context-advanced-planning-tools)
+
+  - [Distance and Duration Estimates: Personalized Planning](#distance-and-duration-estimates-personalized-planning)
+  - [Isochrone Representations: Understanding Reachability](#isochrone-representations-understanding-reachability)
+
 ## Simplifying Orientation: Simple Contextualization
 
 Simple contextualization refers to the collection of tools and information
@@ -71,6 +82,9 @@ query GetPlaceBearings {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQIBCCNeAlkgOYDORwAOkiJEADrXoAKVmHRE+IUXQQB6AGaKARhAgBrdMJocE6ODQBurLigAWCDnmj45ASl4ChQlBADuLMF3HCEFysKKwQSFwyANrARFThMgCMACwArAB0AAyZAEwAHAA0cTQoMgC0AMwA7Ol5uVVEAL4Aui78gu5C6sxsnG6dRFAQcPpcXP1Cjf1TSI0gjUA)
 
 If successful, the resulting response will look like the following:
 
@@ -112,6 +126,9 @@ query GetPlaceLineOfSightDistances {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQIAyAlkggPIBmAykwOYAWKACJMAzihpJ6oosAA6SIkQAOtegAomYdETkhVdBAHoOhgEYQIAa3TKavBOjg0AbmJT8EvPNHx6AlLIKSkooEADuNHhgourKEKJMKEwQSKI6ANrARFSpOgCMACwArAB0AAzlAEwAHAA0OTQoOgC0AMwA7KU11R1EAL4AuoHyiiFKYO6SGjBISToA0ky5iCj4ov7BIf1bO0j9IP1AA)
+
 The expected response will look like the following:
 
 ```json
@@ -149,6 +166,9 @@ query GetGoogleMapsDirections {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIokQQDmANggLICGADgM4AiAlnglClwhI2RYAB0kRIi1pMoCABRcw6ImJAy5CAPQAzLQCMqAa3Qsm1BOjhMAblzYoAFgmp5o+dQEpREqVKQ7LmomASEAVTxaBRZ3ezB8VUoaei8-IgBfCQyQDKA)
 
 The expected response will look like the following:
 
@@ -225,6 +245,9 @@ query FindRoutesBetweenPositions {
 }
 ```
 
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBFGBAJwEsEBnHIiGFCnFACwEMUcEAPE8tp6mAOaMGjBDnIwADpIA2ZMDkkRyJFCQhJyAOhwBlKUqIpKzHAHcSYBAB0kuIsyQCxEAGY4wJV6+LJeDgDcEGRw4CCsTJAUzZgBPJRJUcltbAEdCIlicADFEsAAlGjpyACEEFDMEZAAFZVV1TRxgWxwcXABVcjEmMX5igAoAShx04iyUCBGMrL76ACNyyuRxAzkEBSUVNQ1kpFbZ8n6W1ra9AwgjSklqVxIZejkAawR0HABhZiIAGhwSkmeftkIBAUD8ABL-BA-cpQY6tMJWV4fIhw076aQyLIxeIQRLGHD9OCJV4AJh+cGYHBwAFYAAyDVGbeo7V4AbVRrWAOBkGleAEYACwCrQATgAbAAOADsYqlMpJfIlAsFPxkrFeAFoAMxSrQSxW02kimVa6USiU4AC+HKa3N5OEFwpF4oFEupUr5tMdXtV6pw2t1UpF+upWupJOpAtpEtpWqtqIAuqjcNVqAFLGI+VQijY9idbkQePzjsNmnnWkhwvQyycTl0BIgkk0ba1cABBKBQCiUcgQRA4RKuC4U7Z7ZhzIoiMSeHiOLsAejAMAco-nwQQAVYDRbpzeGhQ1BCPRwMCQqkoTFYOE+YhgXR3M5Qc4Q-VPqleAGk7n3ysRyAzy1rDxly3DRXzPFBXgAWUSWgKAAoCTnXTdR2bQDEKJJBwPfHAoN-QsEMQk4KQ4bDINw-D-x3a10PjQCaNaGjLRAS0gA)
+
 The expected result will look similar to the following:
 
 ```json
@@ -282,6 +305,9 @@ query GetNearbyIsochrone {
   }
 }
 ```
+
+Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
+[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoByCAhngEYECSAztABZ4RIJHAA6SIkQDERAMo08UNkQBmEPERRseABwgAbAgHMuRPAlUHmyFNRQBLPRFlEA7ioNECEGESjVBd6hoDW9i2ULQQBWIjhgmBQEZgEhURsiaiJtCwA3ZCINaHMrJDiiC1ZpTm4ACgKhKFN8dF4srjqARgAWFoA6AE5OgHYABgAmABos8zqAWgBmHvaADj7Jpr7uogBfSqIwGDxcxqIQjbgIMAQ6gDEICBQCgEpeDfUtXXzBNYFVkFWgA)
 
 The expected result will be a polygon representation of the area you could walk
 within 5 minutes.
