@@ -244,4 +244,4 @@ make sure we don't have dead links. Please check against mistakes using
 Copyright © 2020-2022 Alpaca Travel. All rights reserved.
 
 Please be aware that use of this API is subject to an services agreement with
-Alpaca Tavel.
+Alpaca Travel.
