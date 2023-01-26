@@ -109,6 +109,9 @@ query GetPlace {
 }
 ```
 
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQJHAA6SRRADrfQBQCWY6IkxCc6CAPQR2yAM4o8CcnBrt0SCGAToATAEYArAHYAnLu2HhASkYs2bJDUQtbdgMREAglHoyZRFAAWDLQARghULmzsEDK8KLwQrMysdmxUiZF2tCiZAL7OKWzuXj5+gQwhEDBIYH4AZhB4-kEcXAiZldW1NoV2AO6ZbDKDRO299nku+Ui5ILlAA)
+
 ```json
 {
   "data": {
@@ -208,6 +211,9 @@ query GetPlace {
 }
 ```
 
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQJHAA6SRRADrfQBQCWY6IkxCc6CAPQR2yAM4o8CcnBrt0SCGAToATAEYArAHYAnLu2HhASkYs2bJDUQtbdgMREAKnhpIZtFAhgRA6IMi72jggAggBKgjQo8gBqNFS4fAJCIlwSIQjCADREVNCpWlk0eFbOrG5EAPIAZo28UKlEAO4IAEYyvAFhtWxdvf0IAKp4VDV2RO5RUPQyMkQyEIhEmgjSeES8SI0QeMoovBBI4RxSMP5nSPGJeClpCBmCwqL04uzXt+fVQ06vAA1vwEjQHslUul+O9smJxB0QbxpGBeDQALQwKaFYqlKjlYTIAGXdwAWRU7H2AHNNuDLj8+qdzjZAWwShc2cUEpcAL6XboQGBIMArZhcjqXNiDWZsfJczmzfmKuoASWU1IQMrsvA1WsEiDRNAAwucUDR9vgZNwWng5IIAMzWcWy4IaLWs11sBRrbH0T1etgAOhDRBZZMC6PVNE1AcDbGxVG43S1KAAYv1BABtbQABlzRTzuYAupYpV6oFICHheNSABYocuuhLyXjdGDMlXxohtdidpt2ZWBoeykdsZWkogAZSFeH9PiCUUebY7d0uldQNfbKCOLmVvJAvKAA)
+
 ```json
 {
   "data": {
@@ -243,8 +249,8 @@ query GetPlace {
 Wikidata is a free and open-source knowledge base that can be read and edited by
 both humans and machines. It is a collaborative project run by the Wikimedia
 Foundation and is closely connected to Wikipedia. Wikidata stores structured
-data and can be used to provide additional information, such as translations
-and relationships between different pieces of information.
+data and can be used to provide additional information, such as translations and
+relationships between different pieces of information.
 
 For places and locations, Wikidata provides a wealth of information, such as:
 
@@ -284,6 +290,9 @@ query {
 }
 ```
 
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFEAOANgIZQIAUAlmOkaSLQwgPQQqyAM4o8CBCjh0q6cfRQsISdABYATKoBsARk1cAlCXKVKbcidMBiIgBkIdMERQALBEQBmLPKKI6ADP5EdChiLABGMCgIwp4QeM5u1HgQYDBQKJaUIWLCTF4+KBwB-kZkFKaUCGAA5jHGFZWUSKnu5U1N5o0dRABudDS4WU0AvsOUY92TE+QjICNAA)
+
 ### Place Photos via MediaWiki
 
 MediaWiki is an open-source software that is used to power Wikipedia and other
@@ -296,9 +305,9 @@ One of the features of MediaWiki is the ability to upload and organize images
 and other media. Alpaca Travel API leverages this feature by providing links to
 photos from MediaWiki for the places in your itinerary. This allows developers
 to access a wide variety of high-quality photos of the places they are
-interested in, which can be used to enhance the user experience and provide
-more information about the place. The photos can be used for different purposes,
-such as creating visual itineraries, displaying photos on maps, and more.
+interested in, which can be used to enhance the user experience and provide more
+information about the place. The photos can be used for different purposes, such
+as creating visual itineraries, displaying photos on maps, and more.
 
 ### Place Icons
 
@@ -327,6 +336,9 @@ query GetPlaceMaki($placeId: ID!) {
   }
 }
 ```
+
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQICyNA1gJYAUAJAA630CSYdEX4ARAIQBKIsAA6SIkV50E7VkKI8+CQdLkLFRdfMNKIAZ1YpWEBftOKqtkw9ooXigL4eicFqxdvJE8QTyA)
 
 ### Position Attributes
 
@@ -357,6 +369,9 @@ query GetPlace {
   }
 }
 ```
+
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQJHAA6SRRADrfQBQCWY6IkxCc6CAPQR2yAM4o8CcnBrt0SCGAToATAEYArAHYAnLu2HhASkYs2bdhBm8UvCK2as7bKm9teitCgsfl4AxEQAglD0MjJEKAAWDC6IAF5uDDQo8UlEUBAQeGC8SFkIIXYpCOlIWkRZ8gBqNFS4fAJCIlwSVQC0NeUglhVs4VExcYkMsHgKSFDEAGaFOdMQMKiEI3kws8gLgg14za0I7YLCovTi+RvyBL0zcwtWwZ5hRABiu1N4RCXLPDKFxuAA0RBkMCgCXqcQUAHNXEgZAA6FHbXgyCAAZl0ADY8YcUE0Wm1+BcumJxJiIL1cQTetpXkhtmMYHI8C1eDRWADCsCkeDIdDYQFoFyUARwfCIAA3cHkKDbHxQCUEIkk07nTpXCQ0ABGMnQKrVzP8AXhNA1x1JZ3JOu64gNRpNVF6Mtl+CQiFQvRoChoZv8CCoCCgKEKLWtJzJHUujud6HycDgbgA7ggWoleiGwxHOW7irLMUig14I7tMXAAEoIRFuaO27XxqmJit4Ku9BGloYVAC+fgHSD7ID7QA)
 
 The response if successful will look like the following:
 
@@ -407,9 +422,9 @@ and display opening hours of locations.
 - Identify public holidays that could affect opening hours
 - Change the format and display for dates and times
 
-Alpaca also offers the inclusion of Public Holidays in order to flag to users
-of your website or application that they may have affected operating hours
-due to local observed public holidays.
+Alpaca also offers the inclusion of Public Holidays in order to flag to users of
+your website or application that they may have affected operating hours due to
+local observed public holidays.
 
 ```graphql
 # Obtain the open/closed hours for the place given a period, such as the
@@ -450,6 +465,9 @@ query QueryDateRangeOpenClosedTimes($placeId: ID!) {
   }
 }
 ```
+
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEB5AIxQEMBLJHFACwRwgAdkB6KAGwgGcEwcqIYAThxwAzCAMo0c9VsSi0A5qQBuyHMWkIBpCGAA0ODjChV1w6ggA6SXDHpQIccgpwB3BAgDWdCSJgpBWjBiFFoBYiQFBAA6HABJJDYYMARhcjEBOBCdCggKdihiVmkYAlZSKGtcPnLggE9zKhCcBxhWHmIREQQoFDpGJGdefiFo62sARxgtOpwARWmBOoAREIQAJQiovAGAYXYuMAAVUkQOAAoAEhk5BDiwdHjlgEIAShxgaxwcXABVLkktBu8nO7wYWmyeS+0lkINIDxw11hdzA70+FG+PxwAEEoPIOI1aODBpFhoJhOdXDQBLQOIwoKQRKRuK9od8+OSPmzMX8ARZROJVg1+hCUDlKBA6EQyBR6sI5AJOPKcOFIkSRDhgqEOLEAEJ1bnfXApETENooAyuUjUfh9CKzYgCBTwZAoQk4JAIAAefQA7JriMKraxigRaQhWD1QmBYgBNfiGrGFCgmLa0fmqqI4AizOk9Rl1IYRdSsUICJDZVR0LpcPqUqgVUxFdiuDiJ3B1fgSwz0gs4ZRFabCcqeWjAAMNR4ARgALDgAL5giT0RXKeG0DR5hlMqCGEgCO1IMDtnDIHha1I4c7EYRxADKeAAtAAOABsAAYpwHQnvtJEOKyGKYgKAhCsI6LAcBuCrKETD1AYN7xA+L4flOBjiGYIFZCg0YgdINJcKgkIUDAHBDBYiZGjgvyDA4KQ4EcPRULRRQ4HeJBHo6PBYAAzAArDgMG0AAYsy7RsXUcAEBArBtkBkEXucGTYY8lggAAoppBgALK6ZqamAZBPI4AA6jQFgSBZtCkMq9ClOUu41PCgZ4dQNnfkECChL03CuQ2clGVRNJKHkdAUG5wgXpRJRlBUAASMnOQ00W4IQJDkICODkGWA6yX57kXgYNJTKkYqkvyxJDBwJABAFgW4NVISkVlwgMGKeRFOhFlWgCpG0DszD7JwvkoJKW59p2gj4QgIjRdlWi5RcjW1Y8A1IGi0VUQl5IGCIipwEwo2YfeT5vp+v7OOhvjiNhuGkeRUg0RUuhWPJRm4IxJgscU7ERMEAjcfxglrDgokRjwd6SdJsmbaI+1KTdISqSAVDoHAcDqAZsOjQjmRIzgamo+jmMgIZgVUb9tVXmtTBDYcZPk8tpGw7g2JILMDgCAR9B5GAQwOOjrp+USAxDByQiwwLiCoNF86JnL8kK98CvziA85AA)
 
 ```json
 {
@@ -598,6 +616,9 @@ query {
   }
 }
 ```
+
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABMADpJFEAOANgIZQICCMK0EctCKCAygnTxQAFgAoAZgEs8AZxToiAZgA0RHgA95RUiACyCGgCMIMPEgQ7VMk0IQyFAeSrJeKPAm666VAJQlylJQIYADmdv4UgZQAxEQAwnQUhjCSNGBEMpJIITQIRBB4RHAwNCiSXEQ0WXnuMlQQSDJ2AVEZWTl5ZJGtlXSGBi09cHQoIuFdPVG52SjCg5MQ4uJNKPNRAL5rRJtIW7EAKsJ5tAx5WeIFw2UNW0gQYJ1bMUQAQnSZUESSD6iSUvgyJ5fMBApB0RDkIGxAAy0BGkgaaggGWEEAA7vkKHQit4gfVMtcKBNJpQaDdupN6KsKRtITTArE4g0NCgiOI8BwiHQwDzaoD6ZRuWA+RESZR3CEEbsBYEoCZUIQgTsesrAqqdusQOsgA)
 
 If successful, a response may look like the following:
 

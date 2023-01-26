@@ -76,7 +76,9 @@ to determine the bearing and compass.
 query GetPlaceBearings {
   place(id: "place/facebook:page:mavisthegrocer") {
     towards(positions: [{ lon: 145.0028, lat: -37.8027 }]) {
-      bearing
+      # Bearing, supporting Degrees or Radians
+      bearing(unit: Degrees)
+      # 16 point compass
       compass
     }
   }
@@ -84,7 +86,7 @@ query GetPlaceBearings {
 ```
 
 Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
-[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQIBCCNeAlkgOYDORwAOkiJEADrXoAKVmHRE+IUXQQB6AGaKARhAgBrdMJocE6ODQBurLigAWCDnmj45ASl4ChQlBADuLMF3HCEFysKKwQSFwyANrARFThMgCMACwArAB0AAyZAEwAHAA0cTQoMgC0AMwA7Ol5uVVEAL4Aui78gu5C6sxsnG6dRFAQcPpcXP1Cjf1TSI0gjUA)
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQIBCCNeAlkgOYDORwAOkiJEADrXoAKVmHRE+IUXQQB6AGaKARhAgBrdMJocE6ODQBurLigAWCDnmj45ASl4ChQlBADuLMF3HCEFysKKwQSFwyANrARFThMgCMACwArAB0AAyZAEwAHAA0cTQoMgC0AMwA7Ol5uVVEAL4Aui78gu5CAMRETCzsHEVcMMKBeKGcRAAitngICDwQeEQASjRgrDQRbp1E6sxsnOIwSCEyM3bzXE47nT2JAGwiEOwoRFAQcPpcXLfuH18aD8-o0dqCkI0QI0gA)
 
 If successful, the resulting response will look like the following:
 
@@ -120,6 +122,7 @@ can provide multiple positions to calculate the line-of-sight distance
 query GetPlaceLineOfSightDistances {
   place(id: "place/facebook:page:mavisthegrocer") {
     towards(positions: [{ lon: 145.0028, lat: -37.8027 }]) {
+      # Distance available in metric or imperial measurements
       distance(unit: Kilometers)
     }
   }
@@ -127,7 +130,7 @@ query GetPlaceLineOfSightDistances {
 ```
 
 Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
-[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQIAyAlkggPIBmAykwOYAWKACJMAzihpJ6oosAA6SIkQAOtegAomYdETkhVdBAHoOhgEYQIAa3TKavBOjg0AbmJT8EvPNHx6AlLIKSkooEADuNHhgourKEKJMKEwQSKI6ANrARFSpOgCMACwArAB0AAzlAEwAHAA0OTQoOgC0AMwA7KU11R1EAL4AuoHyiiFKYO6SGjBISToA0ky5iCj4ov7BIf1bO0j9IP1AA)
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKANgIZQIAyAlkggPIBmAykwOYAWKACJMAzihpJ6oosAA6SIkQAOtegAomYdETkhVdBAHoOhgEYQIAa3TKavBOjg0AbmJT8EvPNHx6AlLIKSkooEADuNHhgourKEKJMKEwQSKI6ANrARFSpOgCMACwArAB0AAzlAEwAHAA0OTQoOgC0AMwA7KU11R1EAL4AuoHyiiFKAMREIuKS9ESuNEy0ZlQIRCxEiCh4TFBEEHgbcMr4TDRUWwg0ojB4CIioosHjRGDucwjqMEhJOgDSywg23won8LyU-ReUKQ-RA-SAA)
 
 The expected response will look like the following:
 

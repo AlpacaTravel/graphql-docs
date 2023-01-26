@@ -12,8 +12,8 @@ key user interface considerations:
 - Venues can be open always/24H, open late or closed all day
 - Public holidays can affect regular trading hours
 - Some open/closed times can be restricted (provide space for a comment)
-- Time zones can be critical for local visitors or distant travellers trying
-  to contact the operator
+- Time zones can be critical for local visitors or distant travellers trying to
+  contact the operator
 
 Note: The source/provider of opening hours can affect the quality of the opening
 hours, and how up to date the information may be. It is generally recommended
@@ -26,8 +26,8 @@ These are made accessible through the API in order for you to present to the
 user.
 
 - Use `forDays()` to query a range of dates for opening hours for a place. Use
-  this to present a weeks worth of opening hours, or possibly more (such as
-  a calendar).
+  this to present a weeks worth of opening hours, or possibly more (such as a
+  calendar).
 - Use `intervals()` to access the next series of opening hours for a place. Use
   this to present the immediate open/closed times
 - Use `osmTag` field to return a single string representation of the opening
@@ -80,6 +80,9 @@ query QueryDateRangeOpenClosedTimes {
   }
 }
 ```
+
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEB5AIxQEMBLJHFACwRwgAdkB6KAGwgGcEwcqIYAThxwAzCAMo0c9VsSi0A5qQBuyHMWkIBpCGAA0ODjChV1w6ggA6SXDHpQIccgpwB3BAgDWdCSJgpBWjBiFFoBYiQFBAA6HABJJDYYMARhcjEBOBCdCggKdihiVmkYAlZSKGtcPnLggE9zKhCcBxhWHmIREQQoFDpGJGdefiFo62sARxgtOpwARWmBOoAREIQAJQiovAGAYXYuMAAVUkRhYGscHFwAVS5JWhk5BAAKAEp+rWy8y+lZeRepDA6BwlhAT3kTBEzwIEAgnnQ9GIUXQWWUpA4FgUAmgWjBHwuFCu1xwAEEoPIOI1aAxkEM+IJhC9XDQBLQOIwoKQRKRuG9flcGUIcITicTbvcLKJxKsGp9wigcpQIHQiGQKPVhHIcVT1DhwpEaSIcMFQhxYgAhOoC8UmhDQtooAyuUjUfh9CKzYgCBTwZAoak4JAIAAefQA7CbiHKXaxigR2QhWD1QmBYgBNfg2q64QoUExbWhSg1RHAEWYcnrcupDCLqVihARIbKqOhdLh9ZlUCqmIrsVwcbMkur8ZWGTnVnDKIrTYTlTy0YBRhoggCMABYcABfD7iaQ49EpPWVrk8qCGEgCD1IMBD3DIHim1I4F7EYRxADKeAAtAAOABsAAMq5RqEF7aJEHD8kSYoZLK5xDjmOCrKETD1AYb7xF+f5AauBh7phGRZCgqbShI9BslwqDfBQMAcEMFiISSNyDA4R5HD0VCsUUOAfiQN7ejwWAAMwAKzIWsOAAGK8u0vF1HAsKsIOMFiqBrxESEIJggAonpBgALJGSa+JMbgADqNAWBI1m0Bier0KU5TnjUQLRmRkj2U+dqhL03AedQGJmfqCBKHkdAUIFwhPkxjllBUAASEC1NGKlqbahAkOQDw4OQjbTspAXdtFawGGyUypIqkQ5bSgzVZiIR0cFDUBGkwgMIqeRFPh1kuvcdG0DszD7Jw-koCqJ6TiOgj7vaTF5VoBUcC8LV0SCQ1IASTFIUljIGCIOJwEw41mFhP4AcB4HOPhvjiMRpF0QxUgsRUuhWKp6W4BxJjccUfERMEAhCWJElgTJSY8B+ClKWl6XEgdjgvJpKDaSAVConA6imR9anjUjd1aaCaMY1jIDQXDtr-a1L4bUwI2HOTFMXo1sMU7gpJILMDgCJR9B5GAQwOHAiCoEVNIDPSIys3DQsiygTFbkOiuqcrVzK1uIBbkAA)
 
 On a success, your response will look similar to the following:
 
@@ -229,23 +232,24 @@ query QueryUpcomingOpenClosedTimes {
 }
 ```
 
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBFGBAJwE8cUALBHJBADxRwGdiBLBJnCAMy4AdkAeigAbCCzA4KEGEU7cIRHAEMcfEcqgIANDlZIuRMMXIQ1RDshQAdJLn0KicZSlYQDAdyqUTPnADdkQj1OCAEkXVFxBDBdMOR9AHNmCHdIsSYklLTbXAQUKAA6W1sAR0JSfAqSAFU+KAg4JIB5cIBhDJiAFVZETmBbHBxcGpZyKjUNLQAKAEp+Yhc3JEHJzQRp1jB0HGsQdXXBbnWAI1SAa3Q+ZUSEdGd-ViYfRKJoYj35gYMh4ZwAQSgWiYnD88SQWWksk40y8xGoTAEUFY3HYYFmqyGULkOG+v1+uEBwNBE1oDBwHn0kA84xc42oBy0IQWSEKOAAyjA+HxFChOCwRAgoK4kMllJiCcw2BwuLxWkIOtFJNjOMokJIoGqcCdqDAJKYcILGHriJxzkgIDS4SsfvjcKpAkhgpSRCJtdRwcJOpIyShirbfvoUMR-MoRExpqi5CgdgAmL4Su04ABirGjNAgxmZflgRAsqGYKBcOilDXVGazT3pOC5DSaopwUAoatuiclPELLj1-vx+Itxn6baTPT6OG4bzgghQZmUnAAkuzmgBaAAcADYAAwARkLRCScSUjmcKGDkj1WT8NQhDWMQ8lXSFFGvYY5RfVyiMwwAzABWHAAEWLFN2BESR2RIOAznDO8hnHRpI0UY8dj2ABRNDdAAWSwnBYike44BUT4YNMBCnBcZCQDQlDMOw3CKHwwiQAxANez+NoLCA1QLA0VxAhweg+AsEFlhwTYDAADRwesYGDJhBBVfiCnmE5ZxiLgDHFFje3tZguXUNEcG4pY+OnHAF2aHB123A8aBgV1RMcDMPGY1j8SM3i7jHCdpnc1hAi6CAdidV0XNcoZcHZIsUD1HB5SQQRFQkYjni7JhiMJJAyDrRBUFVE9NCoSRTLBcJIRkORiOyqx0oBIEOFVTLDWgF8+BgE4RFYKApAgDqwGUEgSTpZwyGUbhuCFRgfDGFViNa9rOoACR6rZ+sHLTWKQZREGIgBfO89q0g78SOnADp2kAdqAA)
+
 #### Checking a status at a future specific datetime
 
 Note: You can also use the `interval()` method to check the opening hours at a
-specific date/time in the future. This can give you spot checks when assisting
-a user with checking a future travel date. You can also access whether there
-are any public holidays that could affect that time. Use a query providing the
-`from` field argument (with optional `to` value) in order to check the status
-at a point of time: `interval(from:"<ISO8601_DATE>", first: 1) { status }`.
+specific date/time in the future. This can give you spot checks when assisting a
+user with checking a future travel date. You can also access whether there are
+any public holidays that could affect that time. Use a query providing the
+`from` field argument (with optional `to` value) in order to check the status at
+a point of time: `interval(from:"<ISO8601_DATE>", first: 1) { status }`.
 
 ### OpenStreetMap Opening Hours Specification `osmTag`
 
-Opening Hours can also be accessed as a string according to the [OpenStreetMap
-(OSM) opening hours tag specification](https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification).
+Opening Hours can also be accessed as a string according to the
+[OpenStreetMap (OSM) opening hours tag specification](https://wiki.openstreetmap.org/wiki/Key:opening_hours/specification).
 
-```
-Mo,Tu,Th,Fr 12:00-18:00; Sa,PH 12:00-17:00
-```
+    Mo,Tu,Th,Fr 12:00-18:00; Sa,PH 12:00-17:00
 
 ## Working with Date/Times
 
@@ -253,8 +257,8 @@ The fields of `date`/`from`/`to` return ISO-8601 strings with time zones. You
 can supply arguments to these fields to format the return string so that you can
 control the presentation.
 
-Supply `format` to provide an output based on the [Unicode Technical Standard
-TR35 - Date Field Symboles](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)
+Supply `format` to provide an output based on the
+[Unicode Technical Standard TR35 - Date Field Symboles](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)
 to return dates such as `Wed, Mar 31` etc. These can make dates easier to
 include on the front-end.
 
@@ -284,9 +288,9 @@ places using the `place/time-zone` attribute.
 
 Alpaca source a list of public holidays from publicly accessible and maintained
 sources. If you would like to access the public holiday information from an
-alternative source, it may be beneficial to use some of the other attributes
-to locate the place against other sources. For this purpose, Alpaca provides
-the ISO-3166-2 for the place, allowing you to access the country and region.
+alternative source, it may be beneficial to use some of the other attributes to
+locate the place against other sources. For this purpose, Alpaca provides the
+ISO-3166-2 for the place, allowing you to access the country and region.
 
 | Attribute ID       | Value      | Example |
 | ------------------ | ---------- | ------- |

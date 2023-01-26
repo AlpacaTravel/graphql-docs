@@ -188,8 +188,8 @@ Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
 [Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyNOAB1SJKFRr0CjZm05RuxABQCSSkgGISAZRgAHLQBtWJCDAokxElgZQQSuMGBIoAFghIEUCOA4iLlb8UwtaMHQSPhA-czYAegBBACEyAEYAJgBmMJ8lNQARBABnYQIAIxcnF10uQmJMkgqZKqQQ-kFlVRIABQoIADcCMBc8iERDLQbcXSFid1QvEi0mQaRxgjzS51cGALYapUIUXQQQsJjyXAAzBAyW5T1cKEOSZtbWtU6evvEAcwd1rQg8vzEWrEKK6fA7G7-QGNR7AmGJAAsAFYAHQABjRCNSABpavgQgBaVIAdhRAA40clEiQAL4QunXBlKACUjxqagAStR7EU7gBrH7lSo8EgAKxgeRQQhE7jANTqsl4EIA+sqUKx5ktEBC+jUmbSBDSQDSgA)
 
 If the operation is successful, the response will return the id of the created
-location, as well as the **typename. The id can be used for queries and
-mutations related to that specific location, and the **typename can be used to
+location, as well as the \*\*typename. The id can be used for queries and
+mutations related to that specific location, and the \*\*typename can be used to
 determine the type of object returned.
 
 Example Successful response:
@@ -814,8 +814,8 @@ Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
 
 The parentId field in the positionAtEnd argument specifies the top-level
 location under which the place of interest will be created. The response will
-include the id and **typename of the created location, as well as the id and
-**typename of its parent location.
+include the id and \*\*typename of the created location, as well as the id and
+\*\*typename of its parent location.
 
 See More:
 

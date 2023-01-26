@@ -3,8 +3,8 @@
 The API provides mechanisms for searching directions to locations. Directions
 are managed by strategies such as via
 [automatic routing](/topics/itinerary/Automatic%20Routing/README.md) or by
-[adding directions](/topics/itinerary/Adding%20Directions/README.md)
-yourself between your itinerary locations.
+[adding directions](/topics/itinerary/Adding%20Directions/README.md) yourself
+between your itinerary locations.
 
 ## Matching Directions to a List of Itinerary Locations
 
@@ -13,17 +13,17 @@ return any itinerary directions available between locations. This query method
 makes it easier to display a list of locations, and between each of those
 locations, indicate the directions that connect them.
 
-We can differentiate between directions between locations by querying whether
-we would like `Inbound` or `Outbound` directions.
+We can differentiate between directions between locations by querying whether we
+would like `Inbound` or `Outbound` directions.
 
 <p align="center">
   <img src="../_assets/list-with-directions.png" alt="Understanding direction inbound or outbound">
 </p>
 
-We can leverage the same `itinerary()` query with the `children()` operation
-and add in the `directions()` operation. This operation allows you to query any
-routes that can exist between the sequence of itinerary locations that you
-have queried, in order to provide information on travel time.
+We can leverage the same `itinerary()` query with the `children()` operation and
+add in the `directions()` operation. This operation allows you to query any
+routes that can exist between the sequence of itinerary locations that you have
+queried, in order to provide information on travel time.
 
 ```graphql
 # Query the itinerary locations, with information about the directions between
@@ -94,6 +94,9 @@ query QueryItineraryLocationsWithDirections {
 }
 ```
 
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBFGBAJwE8cUALBHASxRqWIENScAbaJ+iJAZwBocAdzoVaSAGYQicLjR44mAIwgwU5KjjA0iCKNz44lCFEITIAOklwImUMRAkbqHKHJ68rVgI6FWBYhIASXpGIhYSABlOA14AdVEAER09WJxgKxxaUOZSAApMrJxcAGUYAAdytjJKajoGXLIgxMKsmjB0HAsQerCIgHoAQQAhAGEARgAmAGZuwoBKdNbinBKENlTnRV5eaBouBDBshvDWV3dDGF4GAHMt+xo2MF0kHF511Ollh6eXgteillcJEaHA6OQIDhfIFblteo12DF5HxllkUCRyghOiEThFom4DKiVgBVa5IO61HC6NhMMjdWBEXZEHBQHiMfTI7pvTFQGgSGgE5E4KTM8pMG4MC5E0rmToUFAocq8dD9frU2kAOjACAAbv0buFyhRvGx+qykOzYhr5XAifzGShOuMAAzLRYZAGAw43BC8JaewEkskUzTe6jlCDXAyCMwspivH3qJg4JDwYxEWGOLa6XgwNjqcYaosADSJWTDAAVI-UeAA5NPELwBwFICDa-2BwO4Zr9AAqGN9ZaK7SHWQA+mP0ZikExEKOViUeXyBeIRbIDFpwkJXhIiBA4FscX1WPipc3A0WNTgFEfGqeNx7O53cAFWJT4acyOdCefO1U7NQj5Ps+OAVuYbDXhIThCBQXCrtI65CrGQjxuou77hCbwUBAQiKCoahbP+UAIPOLaziRv5PrgvZMAA1tQMFwRsOrrMKe4HpSTBgM8vp+shqGkUUXE8TsHbAU+5xsHQJCCVkAC+skrKMBw3NINC+oIUn0VSvooEwMDhKggjYSgrEmFAik0iQxB+kB4mBjOc6UZ2CnOUUrn2R5T5eSBgzcTWM5sNUgjQm+mh7movpGCYZjIFs37In6TB+mGWhcEw-BDrgMECmIIhBdeSh6QwWgpByHhsRh745J+GhwSwGYsTgeRBEg+FIGA8xZZhlA0H6CU8II6EcZoNK8OoA2vCVlKpe80JIMRQ7aLo5V8Hk9rjU6gjLakyLYm1qgde686ttqtmCbgiQGWe9lZGA10GAAsgwF04IMUDEaJlIRaZOBwG2UV5AgGo3FeylEII5ldW5WQ-YBinvDciCoOdMNdm9H28TgEbVFJjDXsyPoQAAVrsO7SDgtj2G8CBI8gKCKVk-3aopPniWzwEvn4ZDxmQEC1Myt6fskK1pGA6U4FQuhFvOHPud1ADyRVMNNmgMkymFiqJSh2LR2xbN0TASKZRBcuUe6YkQ6JDurXznnL1H80wEGpnA6aQYigoeESKBO2woyHQzAZea5ckgHJQA)
+
 We support the ability to support alternative directions between locations,
 enabling the `Itinerary` to describe optional modes, routes or directions
 between locations.
@@ -105,8 +108,8 @@ locations.
 
 ### Understanding `children()` query options `limitImmediate` and `skipOptional`
 
-In more complex scenarios, it is possible to create itineraries that contain
-a number of optional stops, auto-routing behaviour or manually added itinerary
+In more complex scenarios, it is possible to create itineraries that contain a
+number of optional stops, auto-routing behaviour or manually added itinerary
 directions (such as providing alternative modes of transportation etc).
 
 <p align="center">
@@ -123,10 +126,10 @@ Within the `directions()` query, you can control the selection criteria basis:
 - `limitImmediate` will limit the which locations prior/next will be queried for
   directions. By default, we will only check for the immediately prior or next
   locations in the sequence. (Default = true)
-- `skipOptional` will be used to determine whether to include optional stops
-  in determining the immediate prior or next locations. By default, the query
-  will bypass optional locations and continue to seek the immediate where
-  optional is false. (Default = true)
+- `skipOptional` will be used to determine whether to include optional stops in
+  determining the immediate prior or next locations. By default, the query will
+  bypass optional locations and continue to seek the immediate where optional is
+  false. (Default = true)
 
 #### `limitImediate`: true, `skipOptional`: true (Default)
 
@@ -231,8 +234,11 @@ query QueryItineraryLocationDirections {
 }
 ```
 
-You can adapt the above query to support loading information specifically
-about the `ItineraryDirection`.
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBFGBAJwE8cBDJHASxWqWPNJwBtpy6IrKxWJzeKABYIKAZzHRqHBL3oAjCDCS8IRHEpSLlYADpJcYakQRROSMfv0BHQswLESASToMiTEgBl25gCLHTczEcYH0cHFwAVTFRYVFaekZSbygOai4NAAdGczCcJAgwBAAKPPDcAGUYTMyWMjiaVySyNlTzHCdfMpowdBxdEAS3DwB6AEEAIQBhAEYAJgBmEdoEOBHfAFEAMQAWAFYANgG8gEoQ7oA6K40qF0T3ZJ90qlCqcPfcB2YGsA5yHBIShwAHdKCgcAAzNQ4BpDZp8NrPAA0ODEMCgQnE3XKOCgXBQyHB0PoUKIcDSGXI2nBDVq5CgCGxMNoLEZb3eODpDPO7I5FDAYBMEh5fL5rXILFoJCZ4QAvjKcOSANbUBUscgkYjBV6ijlIciIBXy3lyqwmiL4OxkShkOEPMhGExmZ7BFAQDTqCFECBwGFCajBcW5c2VBDxJCk8ntKmaRUcDH0ADmOEdgRdTNTzq4YmKEOMYhQfTmZx1utkiYQ2oVOKcSG0Kg9GhgWiUDczwd173bz2r+UKolLnZxX3qIg6TXt-id7REJl74TAMHc5gAsvR5ymAyhKAyN97mwON+EYonEKgq+ah4r+0ecMar6bL+977qXxy33e8sbZSBZUA)
+
+You can adapt the above query to support loading information specifically about
+the `ItineraryDirection`.
 
 ## Additional Resources
 

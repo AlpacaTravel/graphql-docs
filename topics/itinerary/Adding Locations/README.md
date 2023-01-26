@@ -17,22 +17,31 @@ _Prerequisits_
 
 ## Table of Contents
 
-- [Adding Locations to Itineraries](#adding-locations-to-itineraries)
-  - [Prerequisits](#prerequisits)
-  - [Adding Locations to an Itinerary](#adding-locations-to-an-itinerary)
-    - [Adding a Location Directly to an Itinerary](#adding-a-location-directly-to-an-itinerary)
-    - [Adding a Location using a Place provider](#adding-a-location-using-a-place-provider)
-    - [Storing your own References](#storing-your-own-references)
-  - [Add to a specific position within the Itinerary](#add-to-a-specific-position-within-the-itinerary)
-  - [Retrieving Locations](#retrieving-locations)
-  - [Managing Content](#managing-content)
-  - [Formatting Descriptions](#formatting-descriptions)
-    - [Common Attributes](#common-attributes)
-  - [Checking if a place is present](#checking-if-a-place-is-present)
-  - [Using multiple positions](#using-multiple-positions)
-  - [Reordering a location](#reordering-a-location)
-  - [Removing a location](#removing-a-location)
-  - [Additional Resources](#additional-resources)
+- [Adding Locations to an Itinerary](#adding-locations-to-an-itinerary)
+
+  - [Adding a Location Directly to an Itinerary](#adding-a-location-directly-to-an-itinerary)
+  - [Adding a Location using a Place provider](#adding-a-location-using-a-place-provider)
+  - [Storing your own References](#storing-your-own-references)
+
+- [Add to a specific position within the Itinerary](#add-to-a-specific-position-within-the-itinerary)
+
+- [Retrieving Locations](#retrieving-locations)
+
+- [Managing Content](#managing-content)
+
+- [Formatting Descriptions](#formatting-descriptions)
+
+  - [Common Attributes](#common-attributes)
+
+- [Checking if a place is present](#checking-if-a-place-is-present)
+
+- [Using multiple positions](#using-multiple-positions)
+
+- [Reordering a location](#reordering-a-location)
+
+- [Removing a location](#removing-a-location)
+
+- [Additional Resources](#additional-resources)
 
 ## Adding Locations to an Itinerary
 
@@ -69,6 +78,9 @@ mutation {
   }
 }
 ```
+
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAJgAdUkqAJwXwQElCkEbcaBPAGWnyKQAKSiVEkCLNh06Mw6EuRASCrdlwD0AQQBCAYQCMAJgDMikWIA2fQsXkUqYkoRQWE8xQFECAM28ILJAAqEADubGYOYgDOnEgQAA5RBFHuIJqkBFDEmSTxFrhQCCQQ3uKobAhRKBGOonkFbmS5EEk2SHYkVu0khgB0hgCcACxDADSd+PJDABy90wCs00MkAL6r5qIr5gCUZBud1gJ7kaIEYPtbVJcrICtAA)
 
 In the above example, we are adding the location "Eiffel Tower" to the itinerary
 with the ID "itinerary/ABC123". The longitude and latitude of the location is
@@ -134,6 +146,9 @@ mutation CreateItineraryLocationWithFacebookPlace {
 }
 ```
 
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyKQHUCUACwBiuKAgBGECAGsACgBsxCEsAA6pElCo16BRszaco3YgAoNJKyQH6mLVrTDoSakLYMOA9AEEAQmQAjABMAMxultYKXITELuqa1iSEKAoILm4AagQAzgIkALK4AG65JAAqgioA4hTQTBGJ1jmsSBAADnk5GSA+JADmOigk7UriyRADzBIkuCQSOjIAZrg5w7hIYLNaEEtLCAiNSVajyvGRxzbOriCn4l4r4lKy6O24-elwJblCCIP1FCOlxGEDysSQ8RI0QhJECABYAKwAOgADCi4aEADRQ-AuAC0oQA7EiABwo4KBEgAXwu1hpTXpVgAlKpadETODWU0rAB9HkoVjtZC4RC0qwEMC0xnUjRUkBUoA)
+
 In this example, we are using the Facebook place ID
 "place/facebook:page:mavisthegrocer" and providing a fallback position of
 `lon: 145.0043`, `lat: -37.8021`. When querying the itinerary, the position from
@@ -190,6 +205,9 @@ mutation CreateItineraryLocationWithExternalReferences {
 }
 ```
 
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyKQHUCUACwCiADxRMkuADYAlBADMmyKAgDOJYAB1SJKFRr0CjZm05RuxABQ6SdkgONMWrWmHQktIRyZcB6AEEAITIARgAmAGYvW3tpLkJiD21dexJCFGkEDy9hAgUlaRIAFQgAdyYY1PsAB2lcVWSSGog1RyTNEnikD3CAOnCATgAWYYAaLvwPYYAOPpmAVhnhkgBfNdi0-BQKNQ8AbU20kgBiEgBVNQR0wWu1GoQoAhk9GDUUCDgSbYoCACMcOoSAoIBQusYANbGADm6QgJFYEBgYIIYGQhAUBCYaiOaWADncnhAsHenz8CHEkhkAFoqAovBMAG4yGDZIkRSLDBZeDbVPEEnLEt4fODkykUKTSalqJEUVQMkjM6SswVtCQ81a4kgAXS1ZwA8kImCQKRIkGiwMCsdIwBoLKQ-ncPlRLbhobhjO9vl0EjwtRU-mqEOcKNJBYIUCgans-H44KwA0G+lAyXUGupyflCtSPhUKFU0prdABKTRHeIWRKkFLHAk6LWmqlyRQeH4ANRZCCsqMFJJFYokEppdK8xYb4slAGVZY1vpGKB3lV2e0S+2TG0OpTLkfKQGOkP6EIGBMHQ0ci3Yi6sQKsgA)
+
 With this example, the Alpaca platform will return the external reference ID's
 that you can then use to map your own place information outside of the Alpaca
 Travel GraphQL API call.
@@ -229,6 +247,9 @@ mutation {
   }
 }
 ```
+
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAJgAdUkqAJwXwQElCkEbcaBPAGWnyKQAKSiVEkCLNh06Mw6EuRASCrdlwD0AQQBCAYQCMAJgDMikWIA2fQsXkUqYkoRQWE8xQFECAM28ILJAAqEADubGYOYgAOFrhQbmQkURAAzsq2iVZI8oYAdIYAnAAsRQA0JLEo8kUAHLk1AKw1RSQAvm3mjgDEJADKUQhQPpxOABYIJGAIaXRgSanppCgQJLhgcyjjFdYCndELNkia3ihsvQQARhYqAOZ2JGlXt7LuSpJqnFp6RsbqVlD8YjqAAiHgAYkUGgA2RQdSKtcwASjIe3+gNI9kcogIYD2CKo+NaIFaQA)
 
 In the above query, the `positionAfterSibling` property allows you to specify
 the `siblingId` to another existing location that you wish to insert the new
@@ -300,6 +321,9 @@ query GetItineraryLocation {
 }
 ```
 
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaEAy09NESRwAOp0QMREAKgAsERJBDDic+YlHqcA5sgYAbNcRSMVKIouIUAIryISpCABTUw6ItxDUadPIwIB6AIIAhAMIBGACYAZnc1VnYkdyMAUQAxABYAVgA2BwBKLlMzIhtsswB9ApQCAAdkekRefKIAOnqiDiIqWgZmCOomnj4cgSIAdXEFTllCIhQxXOc24nCFSKIAM2oENTAAZyJ18qhqZYUNAhqzGhQ1BGOtgklS9ep16p6cwU8oKAR1zYnxUog7hcUYH0SGItEWEDwcDYnU4eFW0KQSnGEHGInuRF+-xhl0xThhWSevXCSEuZjUbFJfQAqusfn88U02Cg8NQAEYwFAfZFEUagpDgyHQjgAGn0ADd6NRyazzkQAO5OEQQDmUwT0DHk94YvAQMU2fBESxwtQrTZNYlhNgY+mRdbpVVEV7vT6o8Q0RAALw44it3yIUAgELAtDYF0JOXdCC9dDsTLwADV6GpcNZbPYQKVNQh3JGALTRi4ge3hswvN4fL6TWB4OFIKDEAWu-3K1CESnV2v12MoZmJ5NWGx2ByZ+jvdwBmCtgi5jvIesZB1xGB4b54XL8iFQyKi9YwKAifSbOFKGHreqU+4QYL+FIpbu9pMpwfpkdjy+56+33OBBfhgC+jy9KWRA0j6IL6GAwaREm+g9iy7KcpsBDKkQIj0GK4jrCgEIIGAO57ge9BIcqa4QHKnDGAA5A84YIAAHpyeBIEmABKCCLPeCaPgOaYOLAWEQHA7j0YxzFqLmcKLL+OJZgSQHPAMYicDAdyIvoGqjj8Op6tIeCimCm5CpwwxEKyPrlp8uGofgYbyWYeQlhIlRhpS9CQXCLrdHZORuWAHnrEwrQAPJ0JSZKsCaJRhUQx7Yo5ZgTlOlIASSjmCDEDHINIQKvj6cFshyHyUqUSp0AAcvAZl4JxfZPrxGZZu4JXermSCVfgv7eXKCCsv8CBUngag1dxqZDg1mnuN1vVOAgubLmonV2YsmmsoGADWA1DbBD79qNL6Nct7yrRAa1zYNi3ybQWH0EorhwJtw27c+w6NVd2i3ZUZ0LUWlwpb0f1EClf4gH+QA)
+
 When adding a location to an itinerary without using a place provider, you will
 not have access to additional information such as the place's name, address,
 photos, or reviews. However, you can still add additional information to the
@@ -359,6 +383,9 @@ mutation CreateItineraryLocationWithContent {
 }
 ```
 
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPAGWnyKQHUCUACzLEUyFCWAAdUiShUa9Ao2ZtOUbsQAUMknpIDlTFq1ph0JKSEMqTAegCCAITIBGAEwBmK7v0AbLkJiC2lZfRIABz9cKAQQyIgAZ0NgyRIApAt3ADp3AE4AFgKAGnT8CwKADmzKgFZKgpIAX2bfcIBiEgA1FiIYRJJEvCQwFjASADMCBD8wRNLEhARLEEpqMSVbNUCeWiQInCsSFFYIhDb9QhQ-OJWAUQIJiZmSABUIAHcmHzD9RNYkBAIslEhYrA5BoIIBQJIl4HATJNocdBMsAhogkgfuE9GAEIl5AQIpiwSAALIsADWkA+pAm0IRKDE4zxBIoRMxSIoKLRO2I2JxnTuAA8xCMEON8Ch2QAjHD4i56KUUUEkADaiv0wAM5hWURiCDsXxlyTEAFoYBQ-FZSgA3XB+GC3KyCJnA9B2I0fD7ZFAQS0IR7PPzZCK9RJ2ZBHJqavShHE4gi6qz62J2CYGmUQCCUi1WgUJvT2x3OkCulDuz3en0Z2JZnPZKAQOB2B5PGbvL4UbIAeSeBCgBAdAAVcABzc4gWOtX56AC6FxjsgAlJILujNKR44mwIvfEumiAmkA)
+
 You can also update values using the "updateItineraryLocation" mutation.
 
 ```graphql
@@ -389,6 +416,9 @@ mutation UpdateItineraryLocationWithContent {
   }
 }
 ```
+
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBVABzHwQElCkEAnXJgTwBlp8ikB1AigAWAYWIpkKEsAA6pEjCo16BRi3ZcoPYgAo5JAyQJh0JGSEGrmrNgHoAggCERARgBMAZlsAbboWK2ACIAogBiACwArABs5vqGvlr+SKay8oYkAMQkAGqsRDAAziSFeEjUTGAkAGYECN5ghQA0JQgIZiCU1BIqajaa2ki0SBQ45iQobBQI8RmEKN4IpubBBNXV9SQAKhAA7sxx6YaFbEgQFIUEhcsg9iVCEExShfBwNjWPE0LtiYOHGQYwAhClAmAQKMkbgBZVgAa0gu1I1UebxQEiqQJBYIhvA+TC+Pz8vH+AOywQAHhJyggqvgUGCAEY4YGzQyKQrMFD2NFMa4kADarIywCMJg6FG8uCgCFs+wZlwkAFoYExvOYWgA3XDeGBLDpCNEXdC2WW7XYAOhQEBVCDWG285oo+UKtmQ4wAvkLDGkAQDjDcJVKZdUgwyIBBYcrVSTfQYtTq9eYDSgjSazRaQ9KwxHzVAIHBbKt1vUdvsmOaAPLrAhQAjagAKuAA5jMQF6DJ6jgYALpe7IATWtJC0pCYCDgEA17XjuuKRVUTYJJCBiwk3PphT7JAQ5NwcAl0+1utM-JF-vFkulsoQ8sECCjapAJHdva7y-qCDXPL5-NfGU7BgAJTSKyvzJCBb7GKyAHPnI7ogO6QA)
 
 See More:
 
@@ -439,6 +469,9 @@ query CheckItineraryPlacePresent {
   }
 }
 ```
+
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAMIAWCUA1gJIoCWS+AhoQAoA2zUCbeCAZ2QoiwADpIiRegyZ5WBABT0w6ImJAzGLQgHoAggCESARgBMAZg0BKURKlSwgnkjDNUAxQAcuPGmAE1AG0NH24EXXMrEABdABoiADN6PAEUNRNbcUkHKSQIJwE7HNypFXtSgF8K3JQIFGYOEggYVBqiapzOypBKoA)
 
 The `itinerary` query is used, supplying the `id` of the list to check. The
 `descendants` field is then queried, providing the `placeIds` to check and the
@@ -520,6 +553,9 @@ mutation DeleteItineraryLocation {
   }
 }
 ```
+
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEAlBOCANwQGccBDJHASxVqQQCdLmBPOlQgGhzJhQAFlQqUcAG2iUGEJAB0FSODBQzacnABEEEhNwCSDJqw4AZabJrBFOHLgCqZBDhRCXYXfoRHGLNuxGhDgQAA7+Vq4QOMyEJC7UXH6mnFJQ6nK2OJ56hsb+HEFwABRZdrgAyjChoRKc7BAwzDgGWiEAZq7uSSYBkpYaNCjRsUSkOMVI0TBIkACUZXRg6DjyIPTJAQD0AIIAQgDCAIwATADMW-SEW1oAogBiACwArABsa1lzODY0dvY4FS8UBQOAARpQoABrLouVodGE9AqpAaaNwyHAAd0oFFG8TAi1o+N+AF9FMSQMSgA)
 
 ## Additional Resources
 

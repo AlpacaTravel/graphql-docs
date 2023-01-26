@@ -245,4 +245,4 @@ for more information about leveraging SVGs.
 The coordinate reference system used by default in Alpaca is the the popular Web
 [Mercator projection](https://en.wikipedia.org/wiki/Mercator_projection). This
 is used by a majority of web mapping technology. Alpaca uses the
-[https://epsg.io/3857]\(EPSG:3857/WGS 84).
+\[https://epsg.io/3857]\(EPSG:3857/WGS 84).
