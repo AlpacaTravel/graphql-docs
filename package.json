@@ -1,7 +1,7 @@
 {
-  "name": "@alpaca-travel/graph-sdk-gists",
+  "name": "@alpaca-travel/graphql-docs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Documentation for the Alpaca Travel GraphQL API",
   "main": "index.js",
   "scripts": {
     "test": "npm run graphql-codegen && npm run test:markdown-graphql && npm run test:markdown-links",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlpacaTravel/graph-sdk-gists.git"
+    "url": "git+https://github.com/AlpacaTravel/graphql-docs.git"
   },
-  "author": "",
+  "author": "Tom Manderson <tom@alpaca.travel>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlpacaTravel/graph-sdk-gists/issues"
+    "url": "https://github.com/AlpacaTravel/graphql-docs/issues"
   },
-  "homepage": "https://github.com/AlpacaTravel/graph-sdk-gists#readme",
+  "homepage": "https://github.com/AlpacaTravel/graphql-docs#readme",
   "dependencies": {
     "glob": "^7.1.6",
     "graphql": "^15.4.0",

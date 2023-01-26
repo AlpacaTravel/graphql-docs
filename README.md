@@ -241,4 +241,7 @@ make sure we don't have dead links. Please check against mistakes using
 
 ## Legal Statement
 
-Copyright © 2020-2021 Alpaca Travel. All right reserved.
+Copyright © 2020-2022 Alpaca Travel. All rights reserved.
+
+Please be aware that use of this API is subject to an services agreement with
+Alpaca Tavel.
