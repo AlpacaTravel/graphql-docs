@@ -1,5 +1,10 @@
 # Managing a Curated List of Locations
 
+> This guide provides developers with the knowledge to create and read from 
+> curated lists on the Alpaca Travel Platform. By following this guide, 
+> developers can build integrations that manage and access lists of locations on
+> the platform.
+
 This guide is intended to provide developers with a comprehensive understanding
 of how to use the Alpaca Travel GraphQL API to create and manage lists of
 places. The guide covers the complete lifecycle of creating and managing lists,

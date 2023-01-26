@@ -1,5 +1,10 @@
 # Reading from Itineraries
 
+> The Alpaca Travel Platform enables developers to access and manage travel 
+> content, including curated lists, trips, and trails, known as itineraries. 
+> Read this guide to get started integrating and building apps and websites 
+> accessing itineraries on the platform.
+
 This guide is designed to provide developers with a comprehensive understanding
 of how to access and query itinerary content through our API. The API allows
 developers to build applications and websites that access and manage travel
