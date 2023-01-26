@@ -1267,7 +1267,25 @@ Obtains a profile by a provided id
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
-The unique identifier of the collection
+The unique identifier of the profile to fetch
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>profileByHandle</strong></td>
+<td valign="top"><a href="#profile">Profile</a></td>
+<td>
+
+Obtains a profile with the provided handle
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">handle</td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The unique handle of the profile to fetch
 
 </td>
 </tr>
