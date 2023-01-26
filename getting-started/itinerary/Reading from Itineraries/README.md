@@ -1,9 +1,9 @@
 # Reading from Itineraries
 
-> The Alpaca Travel Platform enables developers to access and manage
-> travel&#x20; content, including curated lists, trips, and trails, known as
-> itineraries.&#x20; Read this guide to get started integrating and building
-> apps and websites&#x20; accessing itineraries on the platform.
+> The Alpaca Travel Platform enables developers to access and manage travel
+> content, including curated lists, trips, and trails, known as itineraries.
+> Read this guide to get started integrating and building apps and websites
+> accessing itineraries on the platform.
 
 This guide is designed to provide developers with a comprehensive understanding
 of how to access and query itinerary content through our API. The API allows
@@ -57,6 +57,7 @@ Additional Resources:
   - [Gallery](#gallery)
   - [Place Information](#place-information)
   - [Fetching Inbound/Outbound Directions](#fetching-inboundoutbound-directions)
+  - [Creating Context around a Location](#creating-context-around-a-location)
 
 - [Drawing Maps](#drawing-maps)
 
@@ -935,6 +936,19 @@ coming from, and where it is departing to.
   }
 }
 ```
+
+### Creating Context around a Location
+
+Creating context around a location is essential for building good travel
+planning experiences. By providing users with information about their
+surroundings, such as distances and estimated travel times for different modes
+of transport, isochrone representations of distance and duration, and bearings,
+compass, line of sight distances, developers can help users to understand their
+location and plan their movements effectively. This can greatly enhance the
+user's travel experience by providing them with the necessary information to
+understand their location and plan their itinerary more effectively. To learn
+more about how to create context for your users, refer to our guide on
+[Place Context](/topics/places/Creating%20Context/)
 
 ## Drawing Maps
 
