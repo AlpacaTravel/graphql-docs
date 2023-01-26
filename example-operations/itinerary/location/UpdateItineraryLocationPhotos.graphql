@@ -26,19 +26,24 @@ mutation UpdateItineraryLocationPhotos(
       __typename
 
       # Read in the media
-      media(limit: 10) {
-        # Media container id
-        id
-        __typename
-        
-        # Read back the uploaded photo resource
-        resource  {
-          # Identifiers
-          id
-          __typename
+      mediaContainers(first: 10) {
+        edges {
+          node {
+            # Media container id
+            id
+            __typename
 
-          # Content
-          caption
+            # Read back the uploaded photo resource
+            resource {
+              # Identifiers
+              __typename
+              ... on MediaImage {
+                id
+                # Content
+                caption
+              }
+            }
+          }
         }
       }
     }
