@@ -66,7 +66,7 @@ function addLink() {
                 children: [
                   {
                     type: "text",
-                    value: "Setup",
+                    value: "Configure",
                   },
                 ],
               },
@@ -81,7 +81,7 @@ function addLink() {
                 children: [
                   {
                     type: "text",
-                    value: "View Operation",
+                    value: "Try Operation",
                   },
                 ],
               },

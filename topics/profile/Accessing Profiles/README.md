@@ -62,8 +62,8 @@ query GetAuthorizedProfiles {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCCMKAFhHgJYBeCYACnhAGYMA2CAZyLAAOkiJEAhtTqMW7Tj34CAFDzwCU6IgEYAlMLESJSCGEGHxxiQzBHrRAPqOUBAA7JJie9ZqSkYPw+xkheCMEAvvZRSBEgEUA)
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCCMKAFhHgJYBeCYACnhAGYMA2CAZyLAAOkiJEAhtTqMW7Tj34CAFDzwCU6IgEYAlMLESJSCGEGHxxiQzBHrRAPqOUBAA7JJie9ZqSkYPw+xkheCMEAvvZRSBEgEUA)
 
 This query will return a the first authorized profile, including the profile's
 ID, type, handle, and name.
@@ -101,8 +101,8 @@ query GetProfile {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKeEAZgJYA2CRwAOkkUQA7X1MAUdMOiKsQPWowQB6AIIAhAMIBGAEwBmMQEoW7TpyF79AfWMoCXZAENERzgAsrSMEztEkNhG4BGdCG4B3BG8AZzoUBABVPAYjAF92OJA4oA)
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoAKeEAZgJYA2CRwAOkkUQA7X1MAUdMOiKsQPWowQB6AIIAhAMIBGAEwBmMQEoW7TpyF79AfWMoCXZAENERzgAsrSMEztEkNhG4BGdCG4B3BG8AZzoUBABVPAYjAF92OJA4oA)
 
 This query will return the profile's ID, type, handle, name, bio, and website
 URL. If the profile ID is invalid or the user does not have access to the
@@ -149,8 +149,8 @@ mutation CreateItinerary {
 }
 ```
 
-Sandbox: [Setup](/topics/graphql/Apollo%20Sandbox/) |
-[View Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPE4AHVJKipvoFGzNgApuJSSQAOFCADMCAGzph0JTiFkLlCAPQBBAEJkAjACYAzJolSCDJi1bquPKSUIoV6zQFl2AKIwctLUpAZgAG7IKMEINm5SAM6sSBDSSQRJPiAGvME0YCRKWSgkCiTYSSgAtEkICDJKuFAISSRCJEEh8SC2kgC+tgCUHP0dDiLsru6SBGDjkgD6SyisoUi4iIse9io7KWkZWeNDPGcDIANAA)
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4RxighigSwiQAIBhAJwXwQElCkELcKBPE4AHVJKipvoFGzNgApuJSSQAOFCADMCAGzph0JTiFkLlCAPQBBAEJkAjACYAzJolSCDJi1bquPKSUIoV6zQFl2AKIwctLUpAZgAG7IKMEINm5SAM6sSBDSSQRJPiAGvME0YCRKWSgkCiTYSSgAtEkICDJKuFAISSRCJEEh8SC2kgC+tgCUHP0dDiLsru6SBGDjkgD6SyisoUi4iIse9io7KWkZWeNDPGcDIANAA)
 
 This mutation creates an itinerary with the title "My European Adventure", the
 synopsis "A curated list of must-see places in Europe" and associates it to the
