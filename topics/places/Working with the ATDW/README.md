@@ -49,8 +49,8 @@ content on the ATDW such as:
 - Tours
 
 To reference an ATDW place in the Alpaca platform, you will need to use the
-format "place/atdw:product:\\\\\\\\\\\<product_id>", where
-\\\\\\\\\\\<product_id> is the product ID of the place you want to reference.
+format "place/atdw:product:\\\\\\\\\\\\\<product_id>", where
+\\\\\\\\\\\\\<product_id> is the product ID of the place you want to reference.
 For example, to reference the ATDW place with the product ID
 "5cae80be57a096cd7084b6ab", you would use the identifier
 "place/atdw:product:5cae80be57a096cd7084b6ab" in the Alpaca platform.
