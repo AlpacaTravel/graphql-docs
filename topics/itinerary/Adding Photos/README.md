@@ -38,17 +38,21 @@ mutation UpdateItineraryPhotos {
       __typename
 
       # Read in the media
-      media(limit: 10) {
-        # Media container id
-        id
-        __typename
-
-        # Read back the uploaded photo resource
-        resource {
-          __typename
-          ... on MediaImage {
+      mediaContainers(first: 10) {
+        edges {
+          node {
+            # Media container id
             id
-            # ... selection of fields
+            __typename
+
+            # Read back the uploaded photo resource
+            resource {
+              __typename
+              ... on MediaImage {
+                id
+                # ... selection of fields
+              }
+            }
           }
         }
       }
@@ -95,17 +99,21 @@ mutation UpdateItineraryLocationPhotos {
       __typename
 
       # Read in the media
-      media(limit: 10) {
-        # Media container id
-        id
-        __typename
-
-        # Read back the uploaded photo resource
-        resource {
-          __typename
-          ... on MediaImage {
+      mediaContainers(first: 10) {
+        edges {
+          node {
+            # Media container id
             id
-            # ... selection of fields
+            __typename
+
+            # Read back the uploaded photo resource
+            resource {
+              __typename
+              ... on MediaImage {
+                id
+                # ... selection of fields
+              }
+            }
           }
         }
       }
