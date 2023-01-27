@@ -170,6 +170,13 @@ You can view the above application on
 . Make sure you update your API Key with your own API Key otherwise you will be
 presented with a message "Invalid bearer token".
 
+## Alpaca Travel React-Apollo SDK
+
+You can also use the
+[Alpaca Travel React-Apollo SDK](https://github.com/AlpacaTravel/graph-sdk/tree/master/packages/react-apollo)
+to leverage a number of functions without requiring you to write your own
+GraphQL operations.
+
 ## Recommendations
 
 ### Configure Apollo for Cursor-based Pagination
