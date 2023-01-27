@@ -172,10 +172,17 @@ presented with a message "Invalid bearer token".
 
 ## Alpaca Travel React-Apollo SDK
 
+![npm](https://img.shields.io/npm/v/@alpaca-travel/graph-sdk-react-apollo)![npm bundle size](https://img.shields.io/bundlephobia/minzip/@alpaca-travel/graph-sdk-react-apollo)![NPM](https://img.shields.io/npm/l/@alpaca-travel/graph-sdk-react-apollo)![npm type definitions](https://img.shields.io/npm/types/@alpaca-travel/graph-sdk-react-apollo)
+
 You can also use the
 [Alpaca Travel React-Apollo SDK](https://github.com/AlpacaTravel/graph-sdk/tree/master/packages/react-apollo)
 to leverage a number of functions without requiring you to write your own
 GraphQL operations.
+
+See More:
+
+- [NPM Package](https://www.npmjs.com/package/@alpaca-travel/graph-sdk-react-apollo)
+- [SDK API Documentation](https://alpacatravel.github.io/graph-sdk/packages/react-apollo/docs)
 
 ## Recommendations
 
