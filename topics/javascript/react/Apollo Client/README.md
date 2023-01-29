@@ -200,72 +200,25 @@ you can refer to the section on
 [Cursor-based pagination](https://www.apollographql.com/docs/react/pagination/cursor-based)
 and refer to the "Relay-style cursor pagination" section.
 
-The below is an example of configuring the `InMemoryCache` object so that it can
-better handle pagination in your application when using common query operations
-on Itinerary, ItineraryLocation and Place types. It leverages the
-"relayStylePagination" utility to try first, opposed to manual merging.
+Apollo Client works to identify how to merge together your pagination results.
+As operations can seem similar to Apollo without additional schema
+configuration, we need to give type policies to Apollo in order for it to
+differentiate queries based on which arguments will result in different results.
+
+[An example type policy is avialable](https://github.com/AlpacaTravel/graph-sdk/blob/master/packages/react-apollo/example-type-policies.ts)
+is available as a reference for your application, so that it can handle
+pagination correctly.
 
 ```javascript
-import { relayStylePagination } from "@apollo/client/utilities";
+// Refer to the example as reference
+// https://github.com/AlpacaTravel/graph-sdk/blob/master/packages/react-apollo/example-type-policies.ts
+const typePolicies = {
+  // ...
+};
 
-const cache = new InMemoryCache({
-  typePolicies: {
-    Query: {
-      fields: {
-        Itinerary: {
-          fields: {
-            children: relayStylePagination([
-              "type",
-              "placeIds",
-              "segmentIds",
-              "@connection",
-              ["key"],
-            ]),
-            descendants: relayStylePagination([
-              "type",
-              "placeIds",
-              "segmentIds",
-              "parentType",
-              "depthMin",
-              "depthMax",
-              "@connection",
-              ["key"],
-            ]),
-            mediaContainers: relayStylePagination(),
-          },
-        },
-        ItineraryLocation: {
-          fields: {
-            children: relayStylePagination([
-              "type",
-              "segmentIds",
-              "placeIds",
-              "@connection",
-              ["key"],
-            ]),
-            descendants: relayStylePagination([
-              "type",
-              "parentType",
-              "placeIds",
-              "segmentIds",
-              "depthMax",
-              "depthMin",
-              "@connection",
-              ["key"],
-            ]),
-            mediaContainers: relayStylePagination(),
-          },
-        },
-        Place: {
-          fields: {
-            mediaContainers: relayStylePagination(),
-          },
-        },
-      },
-    },
-  },
+// Create a client
+const client = new ApolloClient({
+  uri: `https://withalpaca.com/api/graphql?accessToken=${accessToken}`,
+  cache: new InMemoryCache({ typePolicies }),
 });
 ```
-
-Where using Cursor-based operations, you may need to provide additional type
-policies in your cache configuration.
