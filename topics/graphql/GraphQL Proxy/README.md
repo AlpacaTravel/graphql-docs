@@ -16,9 +16,7 @@ in the query.
 
 The URL format for performing a query using the HTTP GET method is as follows:
 
-```
-https://graphql-proxy.withalpaca.travel/graphql?query=QUERY&variables=VARIABLES&operationName=OPERATION_NAME
-```
+    https://graphql-proxy.withalpaca.travel/graphql?query=QUERY&variables=VARIABLES&operationName=OPERATION_NAME
 
 Where QUERY is the URL escaped version of your GraphQL query, VARIABLES is the
 URL escaped JSON containing the variable values used in the query, and
@@ -35,6 +33,9 @@ query GetItinerary($id: ID!) {
 }
 ```
 
+Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QEcYIE4CeABAOIIoCSKAlkvgIaEAUAJNWOkRQCICEAlEWAAdJESLUadPIwJN2nNmEEix4ojRQAbBKPVEwCAM5Q81AA40ISPUQC+ouyDtA)
+
 Variables:
 
 ```json
@@ -43,9 +44,7 @@ Variables:
 
 Could be sent to the server like the following:
 
-```
-https://graphql-proxy.withalpaca.travel/graphql?query=query%20GetItinerary%28%24id%3A%20ID%21%29%20%7B%20itinerary%28id%3A%20%24id%29%20%7B%20title%20description%20%7D%20%7D&variables=%7B%20%22id%22%3A%20%22itinerary%2F123%22%20%7D&operationName=GetItinerary
-```
+    https://graphql-proxy.withalpaca.travel/graphql?query=query%20GetItinerary%28%24id%3A%20ID%21%29%20%7B%20itinerary%28id%3A%20%24id%29%20%7B%20title%20description%20%7D%20%7D&variables=%7B%20%22id%22%3A%20%22itinerary%2F123%22%20%7D&operationName=GetItinerary
 
 Please note, due to restrictions on the length of data that can be included in
 the URL, this method is limited in the length of the query that can be included
@@ -59,9 +58,7 @@ against a specific resource. To do this, users need to add the resource ID to
 the end of the proxied API gateway address. The URL for the proxied API gateway
 with resource ID is as follows:
 
-```
-https://graphql-proxy.withalpaca.travel/graphql/<resource-id>?...
-```
+    https://graphql-proxy.withalpaca.travel/graphql/<resource-id>?...
 
 When caching specific queries against a specific resource, it is important to
 add the resource ID in the URL based on the resource you want to cache against.
