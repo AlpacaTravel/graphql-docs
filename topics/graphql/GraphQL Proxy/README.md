@@ -16,11 +16,12 @@ in the query.
 
 The URL format for performing a query using the HTTP GET method is as follows:
 
-    https://graphql-proxy.withalpaca.travel/graphql?query=QUERY&variables=VARIABLES&operationName=OPERATION_NAME
+    https://graphql-proxy.withalpaca.travel/graphql?query=QUERY&variables=VARIABLES&operationName=OPERATION_NAME&accessToken=ACCESS_TOKEN
 
 Where QUERY is the URL escaped version of your GraphQL query, VARIABLES is the
 URL escaped JSON containing the variable values used in the query, and
-OPERATION_NAME is the name of the operation in the query.
+OPERATION_NAME is the name of the operation in the query. Your ACCESS_TOKEN is
+required for the operation.
 
 Example Query:
 
@@ -44,7 +45,7 @@ Variables:
 
 Could be sent to the server like the following:
 
-    https://graphql-proxy.withalpaca.travel/graphql?query=query%20GetItinerary%28%24id%3A%20ID%21%29%20%7B%20itinerary%28id%3A%20%24id%29%20%7B%20title%20description%20%7D%20%7D&variables=%7B%20%22id%22%3A%20%22itinerary%2F123%22%20%7D&operationName=GetItinerary
+    https://graphql-proxy.withalpaca.travel/graphql?query=query%20GetItinerary%28%24id%3A%20ID%21%29%20%7B%20itinerary%28id%3A%20%24id%29%20%7B%20title%20description%20%7D%20%7D&variables=%7B%20%22id%22%3A%20%22itinerary%2F123%22%20%7D&operationName=GetItinerary&accessToken=pk.123
 
 Please note, due to restrictions on the length of data that can be included in
 the URL, this method is limited in the length of the query that can be included
