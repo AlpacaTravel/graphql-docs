@@ -1,3 +1,8 @@
+[//]: # "Weight: 2"
+[//]:
+  #
+  "Description: This developer reference guide will show you how to use the API to create, manipulate, and display itineraries, as well as other related functionality"
+
 # Managing a Trip
 
 The Alpaca Travel GraphQL API is a powerful tool for developers to create and

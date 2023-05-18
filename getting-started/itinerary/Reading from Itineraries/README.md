@@ -1,3 +1,8 @@
+[//]: # "Weight: 2"
+[//]:
+  #
+  "Description: Read this guide to get started integrating and building apps and websites accessing itineraries on the platform"
+
 # Reading from Itineraries
 
 > The Alpaca Travel Platform enables developers to access and manage travel
