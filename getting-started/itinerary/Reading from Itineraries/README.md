@@ -1,4 +1,4 @@
-[//]: # "Weight: 2"
+[//]: # "Weight: 0"
 [//]:
   #
   "Description: Read this guide to get started integrating and building apps and websites accessing itineraries on the platform"
