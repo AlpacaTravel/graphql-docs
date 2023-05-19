@@ -1,3 +1,6 @@
+[//]: # "Title: Automatic Routing"
+[//]: # "Weight: 8"
+
 # Automatic Routing between Locations
 
 To assist with a common use case, you can leverage a basic feature known as
@@ -22,7 +25,7 @@ This feature when applied will assist creation of an itinerary by automatically
 creating directions between the sequence of locations as they are added to the
 itinerary.
 
-<p align="center">
+<p align="center" className="image">
   <img src="autorouting.png" alt="Enabling automatic routing between locations">
 </p>
 
@@ -36,7 +39,7 @@ be used to search for routes
 
 - Advanced Profiles: MountainBike, Hike, Bus, Motorcycle, Scooter, etc.
 
-### Prerequisits
+### Prerequisites
 
 - GraphQL development environment (or GraphQL Playground)
 

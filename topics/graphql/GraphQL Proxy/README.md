@@ -1,3 +1,6 @@
+[//]: # "Title: Proxy"
+[//]: # "Weight: 5"
+
 # GraphQL Proxy
 
 This document is a quick reference guide for the Alpaca Travel GraphQL API

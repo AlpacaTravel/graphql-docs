@@ -1,3 +1,5 @@
+[//]: # "Weight: 3"
+
 # Creating Itineraries
 
 You can create itineraries directly with GraphQL, allowing you to integrate
@@ -8,7 +10,7 @@ lists to multi-day, multi-modal itineraries able to model all travel movements.
 Itineraries also support detailed mapping data and GPS tracks, enabling you to
 also have powerful maps to assist users.
 
-### Prerequisits
+### Prerequisites
 
 - GraphQL development environment (or GraphQL Playground)
 

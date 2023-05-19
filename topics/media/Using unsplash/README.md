@@ -1,3 +1,6 @@
+[//]: # "Title: Unsplash Stock Photography"
+[//]: # "Weight: 2"
+
 # Using Unsplash
 
 Unsplash provides access to high quality photographer imagery. The Alpaca

@@ -1,3 +1,7 @@
+[//]: # "Title: GraphQL API"
+[//]: # "Forward: true"
+[//]: # "Weight: 1"
+
 <div align="center">
   <img alt="Developer Documentation" src="https://developer.alpacamaps.com/_media/logo.svg" height="75" width="75" />
 </div>

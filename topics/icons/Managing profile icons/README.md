@@ -1,3 +1,6 @@
+[//]: # "Title: Profile Icons"
+[//]: # "Weight: 1"
+
 # Adding Profile Icons
 
 Profile Icons allow you to create icon sihouttes for use in UI components or
@@ -11,7 +14,7 @@ The first step to working with icons is understanding how to prepare your icon
 data, and then creating the icons associated with a profile. You can then later
 use this icon to create icons for your itineraries.
 
-### Prerequisits
+### Prerequisites
 
 - You'll need to know your profile ID
 

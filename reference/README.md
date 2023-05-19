@@ -1,3 +1,8 @@
+[//]: # "Title: Type Reference"
+[//]: # "Weight: 10"
+[//]:
+  #
+  "Redirect: https://github.com/AlpacaTravel/graphql-docs/tree/master/reference"
 # Schema Types
 
 <details>
@@ -10,6 +15,7 @@
     * [Attribute](#attribute)
     * [AttributeConnection](#attributeconnection)
     * [AttributeEdge](#attributeedge)
+    * [BeginMutationSessionPayload](#beginmutationsessionpayload)
     * [BillingAddress](#billingaddress)
     * [BillingDetails](#billingdetails)
     * [BillingPlan](#billingplan)
@@ -43,8 +49,11 @@
     * [CreateIconSilhouettePayload](#createiconsilhouettepayload)
     * [CreateItineraryCollectionPayload](#createitinerarycollectionpayload)
     * [CreateItineraryDirectionsPayload](#createitinerarydirectionspayload)
+    * [CreateItineraryLinkCollectionLocationPayload](#createitinerarylinkcollectionlocationpayload)
+    * [CreateItineraryLinkItineraryPayload](#createitinerarylinkitinerarypayload)
     * [CreateItineraryLocationPayload](#createitinerarylocationpayload)
     * [CreateItineraryPayload](#createitinerarypayload)
+    * [CreateItinerarySegmentPayload](#createitinerarysegmentpayload)
     * [CreateProfilePayload](#createprofilepayload)
     * [CreateUserAgreementPayload](#createuseragreementpayload)
     * [DeleteCollectionItemPayload](#deletecollectionitempayload)
@@ -57,6 +66,7 @@
     * [DenyProfileFollowPayload](#denyprofilefollowpayload)
     * [DuplicateItineraryPayload](#duplicateitinerarypayload)
     * [Elevation](#elevation)
+    * [EndMutationSessionPayload](#endmutationsessionpayload)
     * [FinalizeMediaUploadPayload](#finalizemediauploadpayload)
     * [FollowProfilePayload](#followprofilepayload)
     * [IconComposition](#iconcomposition)
@@ -74,13 +84,17 @@
     * [ItineraryDirectionsConnection](#itinerarydirectionsconnection)
     * [ItineraryDirectionsDurations](#itinerarydirectionsdurations)
     * [ItineraryDirectionsEdge](#itinerarydirectionsedge)
+    * [ItineraryFailedToLoad](#itineraryfailedtoload)
     * [ItineraryItemCascadedChanges](#itineraryitemcascadedchanges)
     * [ItineraryItemConnection](#itineraryitemconnection)
     * [ItineraryItemEdge](#itineraryitemedge)
+    * [ItineraryLinkCollectionLocation](#itinerarylinkcollectionlocation)
+    * [ItineraryLinkItinerary](#itinerarylinkitinerary)
     * [ItineraryLocation](#itinerarylocation)
     * [ItinerarySearchConnection](#itinerarysearchconnection)
     * [ItinerarySearchEdge](#itinerarysearchedge)
     * [ItinerarySearchNode](#itinerarysearchnode)
+    * [ItinerarySegment](#itinerarysegment)
     * [MediaContainer](#mediacontainer)
     * [MediaContainerConnection](#mediacontainerconnection)
     * [MediaContainerEdge](#mediacontaineredge)
@@ -89,11 +103,13 @@
     * [MediaImageSource](#mediaimagesource)
     * [MediaResourceFailedToLoad](#mediaresourcefailedtoload)
     * [MoveItineraryItemPayload](#moveitineraryitempayload)
+    * [MutationSession](#mutationsession)
     * [PageInfo](#pageinfo)
     * [Place](#place)
     * [PlaceAddress](#placeaddress)
     * [PlaceAttribution](#placeattribution)
     * [PlaceContact](#placecontact)
+    * [PlaceFrom](#placefrom)
     * [PlaceHours](#placehours)
     * [PlaceHoursForDay](#placehoursforday)
     * [PlaceHoursInterval](#placehoursinterval)
@@ -106,6 +122,8 @@
     * [PlaceSearchNode](#placesearchnode)
     * [PlaceTowards](#placetowards)
     * [Position](#position)
+    * [PositionFrom](#positionfrom)
+    * [PositionTowards](#positiontowards)
     * [Profile](#profile)
     * [ProfileConnection](#profileconnection)
     * [ProfileEdge](#profileedge)
@@ -129,8 +147,11 @@
     * [UpdateIconSilhouettePayload](#updateiconsilhouettepayload)
     * [UpdateItineraryCollectionPayload](#updateitinerarycollectionpayload)
     * [UpdateItineraryDirectionsPayload](#updateitinerarydirectionspayload)
+    * [UpdateItineraryLinkCollectionLocationPayload](#updateitinerarylinkcollectionlocationpayload)
+    * [UpdateItineraryLinkItineraryPayload](#updateitinerarylinkitinerarypayload)
     * [UpdateItineraryLocationPayload](#updateitinerarylocationpayload)
     * [UpdateItineraryPayload](#updateitinerarypayload)
+    * [UpdateItinerarySegmentPayload](#updateitinerarysegmentpayload)
     * [UpdateMediaResourcePayload](#updatemediaresourcepayload)
     * [UpdateProfilePayload](#updateprofilepayload)
     * [UserAgreement](#useragreement)
@@ -153,7 +174,10 @@
     * [CreateItineraryCollectionInput](#createitinerarycollectioninput)
     * [CreateItineraryDirectionsInput](#createitinerarydirectionsinput)
     * [CreateItineraryInput](#createitineraryinput)
+    * [CreateItineraryLinkCollectionLocationInput](#createitinerarylinkcollectionlocationinput)
+    * [CreateItineraryLinkItineraryInput](#createitinerarylinkitineraryinput)
     * [CreateItineraryLocationInput](#createitinerarylocationinput)
+    * [CreateItinerarySegmentInput](#createitinerarysegmentinput)
     * [CreateMediaContainerInput](#createmediacontainerinput)
     * [CreateProfileInput](#createprofileinput)
     * [CreateUserAgreementInput](#createuseragreementinput)
@@ -189,12 +213,16 @@
     * [UpdateItineraryCollectionInput](#updateitinerarycollectioninput)
     * [UpdateItineraryDirectionsInput](#updateitinerarydirectionsinput)
     * [UpdateItineraryInput](#updateitineraryinput)
+    * [UpdateItineraryLinkCollectionLocationInput](#updateitinerarylinkcollectionlocationinput)
+    * [UpdateItineraryLinkItineraryInput](#updateitinerarylinkitineraryinput)
     * [UpdateItineraryLocationInput](#updateitinerarylocationinput)
+    * [UpdateItinerarySegmentInput](#updateitinerarysegmentinput)
     * [UpdateMediaContainerInput](#updatemediacontainerinput)
     * [UpdateMediaResourceInput](#updatemediaresourceinput)
     * [UpdateProfileInput](#updateprofileinput)
   * [Enums](#enums)
     * [AngleUnit](#angleunit)
+    * [BeginMutationSessionResult](#beginmutationsessionresult)
     * [BillingPriceRecurringInterval](#billingpricerecurringinterval)
     * [BillingSubscriptionStatus](#billingsubscriptionstatus)
     * [CollectionDiscriminator](#collectiondiscriminator)
@@ -229,6 +257,7 @@
     * [CollectionItem](#collectionitem)
     * [IconResource](#iconresource)
     * [ItineraryItem](#itineraryitem)
+    * [ItineraryLink](#itinerarylink)
     * [MediaResource](#mediaresource)
     * [Node](#node)
 
@@ -1469,6 +1498,24 @@ Filter by the profile associated with the agreement
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong>mutationSession</strong></td>
+<td valign="top"><a href="#mutationsession">MutationSession</a></td>
+<td>
+
+Get the mutation session for a given resource
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">resourceId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The ID of the resource to get the mutation session for
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -2271,6 +2318,222 @@ If set to true, the mutation will be automatically published.
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>createItinerarySegment</strong></td>
+<td valign="top"><a href="#createitinerarysegmentpayload">CreateItinerarySegmentPayload</a>!</td>
+<td>
+
+Create a new ItinerarySegment item inside the given itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">itineraryId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The itinerary identifier for this itinerary segment to be created within, in the form of itinerary/XYZ
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segment</td>
+<td valign="top"><a href="#createitinerarysegmentinput">CreateItinerarySegmentInput</a>!</td>
+<td>
+
+The fields for creating the itinerary segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updateItinerarySegment</strong></td>
+<td valign="top"><a href="#updateitinerarysegmentpayload">UpdateItinerarySegmentPayload</a>!</td>
+<td>
+
+Update an ItinerarySegment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The itinerary segment identifier, in the form of item/XYZ
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segment</td>
+<td valign="top"><a href="#updateitinerarysegmentinput">UpdateItinerarySegmentInput</a>!</td>
+<td>
+
+The fields to update on the itinerary segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createItineraryLinkItinerary</strong></td>
+<td valign="top"><a href="#createitinerarylinkitinerarypayload">CreateItineraryLinkItineraryPayload</a>!</td>
+<td>
+
+Create a new ItineraryLinkItinerary item inside the given itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">itineraryId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The itinerary identifier for this itinerary link to be created within, in the form of itinerary/XYZ
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">link</td>
+<td valign="top"><a href="#createitinerarylinkitineraryinput">CreateItineraryLinkItineraryInput</a>!</td>
+<td>
+
+The fields for creating the itinerary link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updateItineraryLinkItinerary</strong></td>
+<td valign="top"><a href="#updateitinerarylinkitinerarypayload">UpdateItineraryLinkItineraryPayload</a>!</td>
+<td>
+
+Update an ItineraryLinkItinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The itinerary link identifier, in the form of item/XYZ
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">link</td>
+<td valign="top"><a href="#updateitinerarylinkitineraryinput">UpdateItineraryLinkItineraryInput</a>!</td>
+<td>
+
+The fields to update on the itinerary link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createItineraryLinkCollectionLocation</strong></td>
+<td valign="top"><a href="#createitinerarylinkcollectionlocationpayload">CreateItineraryLinkCollectionLocationPayload</a>!</td>
+<td>
+
+Create a new ItineraryLinkCollectionLocation item inside the given itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">itineraryId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The itinerary identifier for this itinerary link to be created within, in the form of itinerary/XYZ
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">link</td>
+<td valign="top"><a href="#createitinerarylinkcollectionlocationinput">CreateItineraryLinkCollectionLocationInput</a>!</td>
+<td>
+
+The fields for creating the itinerary link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updateItineraryLinkCollectionLocation</strong></td>
+<td valign="top"><a href="#updateitinerarylinkcollectionlocationpayload">UpdateItineraryLinkCollectionLocationPayload</a>!</td>
+<td>
+
+Update an ItineraryLinkCollectionLocation
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The itinerary link identifier, in the form of item/XYZ
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">link</td>
+<td valign="top"><a href="#updateitinerarylinkcollectionlocationinput">UpdateItineraryLinkCollectionLocationInput</a>!</td>
+<td>
+
+The fields to update on the itinerary link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">publish</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+If set to true, the mutation will be automatically published.
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>startMediaUpload</strong></td>
 <td valign="top"><a href="#startmediauploadpayload">StartMediaUploadPayload</a>!</td>
 <td>
@@ -2722,6 +2985,51 @@ The new user agreement
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong>beginMutationSession</strong></td>
+<td valign="top"><a href="#beginmutationsessionpayload">BeginMutationSessionPayload</a>!</td>
+<td>
+
+Begin a mutation session for a given resource, or extend it if one belonging to the user already exists
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">resourceId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The ID of the resource to begin a mutation session for
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">force</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Whether to force the session if it is already taken
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>endMutationSession</strong></td>
+<td valign="top"><a href="#endmutationsessionpayload">EndMutationSessionPayload</a>!</td>
+<td>
+
+End the mutation session for a given resource if one belonging to the user exists
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">resourceId</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The ID of the resource to end a mutation session for
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -2913,6 +3221,41 @@ The cursor string pointing to this item
 <td>
 
 The item
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BeginMutationSessionPayload
+
+The MutationSession that was created or extended
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>result</strong></td>
+<td valign="top"><a href="#beginmutationsessionresult">BeginMutationSessionResult</a>!</td>
+<td>
+
+The result of the mutation
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mutationSession</strong></td>
+<td valign="top"><a href="#mutationsession">MutationSession</a>!</td>
+<td>
+
+The newly created mutation session
 
 </td>
 </tr>
@@ -5262,6 +5605,94 @@ Other changes to the itinerary caused by the creation of the itinerary-direction
 </tbody>
 </table>
 
+### CreateItineraryLinkCollectionLocationPayload
+
+The fields available after creating an itinerary link
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>link</strong></td>
+<td valign="top"><a href="#itinerarylinkcollectionlocation">ItineraryLinkCollectionLocation</a></td>
+<td>
+
+The created itinerary link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The modified itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>cascaded</strong></td>
+<td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
+<td>
+
+Other changes to the itinerary caused by the creation of the itinerary-link
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CreateItineraryLinkItineraryPayload
+
+The fields available after creating an itinerary link
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>link</strong></td>
+<td valign="top"><a href="#itinerarylinkitinerary">ItineraryLinkItinerary</a></td>
+<td>
+
+The created itinerary link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The modified itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>cascaded</strong></td>
+<td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
+<td>
+
+Other changes to the itinerary caused by the creation of the itinerary-link
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### CreateItineraryLocationPayload
 
 The fields available after creating an itinerary location
@@ -5326,6 +5757,50 @@ The fields available after creating an itinerary
 <td>
 
 The newly created itinerary
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CreateItinerarySegmentPayload
+
+The fields available after creating an itinerary segment
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>segment</strong></td>
+<td valign="top"><a href="#itinerarysegment">ItinerarySegment</a></td>
+<td>
+
+The created itinerary segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The modified itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>cascaded</strong></td>
+<td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
+<td>
+
+Other changes to the itinerary caused by the creation of the itinerary-segment
 
 </td>
 </tr>
@@ -5737,6 +6212,32 @@ The maximum elevation
 <td>
 
 The unit of the output value
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### EndMutationSessionPayload
+
+The MutationSession that was ended
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>mutationSession</strong></td>
+<td valign="top"><a href="#mutationsession">MutationSession</a></td>
+<td>
+
+The ended mutation session
 
 </td>
 </tr>
@@ -8023,6 +8524,15 @@ Bounds for the itinerary item
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong>autoRoute</strong></td>
+<td valign="top"><a href="#itineraryautoroute">ItineraryAutoRoute</a></td>
+<td>
+
+If true, itinerary-directions will be created to automatically route between descendant itinerary-locations
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -8717,7 +9227,7 @@ Bounds for the itinerary-directions and it's descendants
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>origin</strong></td>
-<td valign="top"><a href="#itinerarylocation">ItineraryLocation</a></td>
+<td valign="top"><a href="#itinerarydirectionsorigindestination">ItineraryDirectionsOriginDestination</a></td>
 <td>
 
 The itinerary-location that is the starting point of the directions
@@ -8726,7 +9236,7 @@ The itinerary-location that is the starting point of the directions
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>destination</strong></td>
-<td valign="top"><a href="#itinerarylocation">ItineraryLocation</a></td>
+<td valign="top"><a href="#itinerarydirectionsorigindestination">ItineraryDirectionsOriginDestination</a></td>
 <td>
 
 The itinerary-location that is the ending point of the directions
@@ -8967,6 +9477,32 @@ Whether this itinerary-directions is inbound or outbound from the itinerary-loca
 </tbody>
 </table>
 
+### ItineraryFailedToLoad
+
+Represents an embedded Itinerary that failed to load
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The Globally Unique ID of the object.
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### ItineraryItemCascadedChanges
 
 Changes to an itinerary caused by a mutation
@@ -9183,6 +9719,1426 @@ Limit to only directions under nodes that come immediately before or after this 
 <td>
 
 Limit to only directions under nodes that are not optional locations. Will be applied before limitImmediate.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### ItineraryLinkCollectionLocation
+
+An itinerary item representing a link to a CollectionLocation
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+Unique identifier for the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>siblingPositionNumber</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td>
+
+A number corresponding to the item's position compared to it's siblings.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+Only count items of the given type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOptional</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count locations that are optional. Non-locations will always be counted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOmitList</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count items that have the omit-list attrubute set to true
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The supplied title
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A short text summary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A longer text description
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]!</td>
+<td>
+
+A series of strings applied to label this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
+<td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>preferredMedia</strong></td>
+<td valign="top"><a href="#mediacontainer">MediaContainer</a></td>
+<td>
+
+The preferred MediaContainer to use
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the read-more attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the website-url attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The itinerary this item belongs to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>before</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The sibling item that comes before this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>after</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The sibling item that comes after this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>parent</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The parent item of this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ancestors</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All ancestors of the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>descendants</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All the descendants of the itinerary-item in depth-first-search order
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">depthMax</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+
+Optionally limit the maximum depth of the traversal
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">depthMin</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+
+Optionally limit the minimum depth of the traversal
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>children</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All the direct children of the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attr</strong></td>
+<td valign="top"><a href="#attribute">Attribute</a></td>
+<td>
+
+Arbitrary JSON value stored on this resource, keyed by an id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrValue</strong></td>
+<td valign="top"><a href="#json">JSON</a></td>
+<td>
+
+Shortcut for the attr.value, returns null if the attribute doesn't exist
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td>
+
+Query multiple attributes optionally filtering by id and/or locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>bounds</strong></td>
+<td valign="top"><a href="#bounds">Bounds</a></td>
+<td>
+
+The bounds of the link in the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>position</strong></td>
+<td valign="top"><a href="#position">Position</a></td>
+<td>
+
+The position of the link in the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>resource</strong></td>
+<td valign="top"><a href="#collectionlocationembedded">CollectionLocationEmbedded</a>!</td>
+<td>
+
+The CollectionLocation this item links to
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### ItineraryLinkItinerary
+
+An itinerary item representing a link to another itinerary
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+Unique identifier for the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>siblingPositionNumber</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td>
+
+A number corresponding to the item's position compared to it's siblings.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+Only count items of the given type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOptional</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count locations that are optional. Non-locations will always be counted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOmitList</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count items that have the omit-list attrubute set to true
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The supplied title
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A short text summary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A longer text description
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]!</td>
+<td>
+
+A series of strings applied to label this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
+<td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>preferredMedia</strong></td>
+<td valign="top"><a href="#mediacontainer">MediaContainer</a></td>
+<td>
+
+The preferred MediaContainer to use
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the read-more attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the website-url attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The itinerary this item belongs to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>before</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The sibling item that comes before this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>after</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The sibling item that comes after this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>parent</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The parent item of this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ancestors</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All ancestors of the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>descendants</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All the descendants of the itinerary-item in depth-first-search order
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">depthMax</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+
+Optionally limit the maximum depth of the traversal
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">depthMin</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+
+Optionally limit the minimum depth of the traversal
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>children</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All the direct children of the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attr</strong></td>
+<td valign="top"><a href="#attribute">Attribute</a></td>
+<td>
+
+Arbitrary JSON value stored on this resource, keyed by an id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrValue</strong></td>
+<td valign="top"><a href="#json">JSON</a></td>
+<td>
+
+Shortcut for the attr.value, returns null if the attribute doesn't exist
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td>
+
+Query multiple attributes optionally filtering by id and/or locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>bounds</strong></td>
+<td valign="top"><a href="#bounds">Bounds</a></td>
+<td>
+
+The bounds of the link in the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>position</strong></td>
+<td valign="top"><a href="#position">Position</a></td>
+<td>
+
+The position of the link in the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>resource</strong></td>
+<td valign="top"><a href="#itineraryembedded">ItineraryEmbedded</a>!</td>
+<td>
+
+The Itinerary this item links to
 
 </td>
 </tr>
@@ -10506,6 +12462,716 @@ The source of this itinerary's externalId
 </tbody>
 </table>
 
+### ItinerarySegment
+
+An itinerary item representing a segment in the itinerary
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+Unique identifier for the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>siblingPositionNumber</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td>
+
+A number corresponding to the item's position compared to it's siblings.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+Only count items of the given type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOptional</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count locations that are optional. Non-locations will always be counted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOmitList</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count items that have the omit-list attrubute set to true
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The supplied title
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A short text summary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A longer text description
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]!</td>
+<td>
+
+A series of strings applied to label this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
+<td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>preferredMedia</strong></td>
+<td valign="top"><a href="#mediacontainer">MediaContainer</a></td>
+<td>
+
+The preferred MediaContainer to use
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the read-more attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the website-url attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The itinerary this item belongs to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>before</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The sibling item that comes before this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>after</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The sibling item that comes after this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>parent</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The parent item of this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ancestors</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All ancestors of the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>descendants</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All the descendants of the itinerary-item in depth-first-search order
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">depthMax</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+
+Optionally limit the maximum depth of the traversal
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">depthMin</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+
+Optionally limit the minimum depth of the traversal
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>children</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All the direct children of the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attr</strong></td>
+<td valign="top"><a href="#attribute">Attribute</a></td>
+<td>
+
+Arbitrary JSON value stored on this resource, keyed by an id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrValue</strong></td>
+<td valign="top"><a href="#json">JSON</a></td>
+<td>
+
+Shortcut for the attr.value, returns null if the attribute doesn't exist
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td>
+
+Query multiple attributes optionally filtering by id and/or locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>bounds</strong></td>
+<td valign="top"><a href="#bounds">Bounds</a></td>
+<td>
+
+Bounds for the itinerary item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>color</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The color for the itinerary segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>contrastColor</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The contrasting color for the itinerary segment
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### MediaContainer
 
 A container for a MediaResource
@@ -11101,6 +13767,209 @@ Other changes to the itinerary that caused by moving the itinerary-item
 </tbody>
 </table>
 
+### MutationSession
+
+A session indicating a user has (un-enforced) exclusive access to a resource
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>resourceId</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The ID of the resource that is locked
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>created</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The date when the session was started
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updated</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The date when the session was last extended
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>expires</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+The date when the session will expire
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">format</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the date according to the given format specifier string.
+
+Cannot be used with "relativeTo".
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">relativeTo</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Output the difference between this date and the given date.
+Set to null to output the difference between this date and the current date.
+
+Should be an ISO 8601 formatted string.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">timeZone</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the time zone of the date
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Set the output locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>forceTaken</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Whether the session was forcibly taken
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>userGivenName</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The given name of the user who owns the session
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>userFamilyName</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The family name of the user who owns the session
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### PageInfo
 
 Details regarding a page in a connnection
@@ -11521,7 +14390,25 @@ The provider of the navigation url
 <td valign="top">[<a href="#placetowards">PlaceTowards</a>!]!</td>
 <td>
 
-Calculate distance and bearing information from the specified positions to this place
+Calculate distance and bearing information towards the specified positions to this place
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">positions</td>
+<td valign="top">[<a href="#positioninput">PositionInput</a>!]!</td>
+<td>
+
+Positions to calculate against
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>from</strong></td>
+<td valign="top">[<a href="#placefrom">PlaceFrom</a>!]!</td>
+<td>
+
+Calculate distance and bearing information from this place to the specified positions
 
 </td>
 </tr>
@@ -11750,6 +14637,77 @@ Twitter for this place
 <td>
 
 Instagram for this place
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### PlaceFrom
+
+Place bearing and distance information from position
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>position</strong></td>
+<td valign="top"><a href="#position">Position</a>!</td>
+<td>
+
+The position
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>bearing</strong></td>
+<td valign="top"><a href="#float">Float</a>!</td>
+<td>
+
+The bearing angle from the position to the place
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">unit</td>
+<td valign="top"><a href="#angleunit">AngleUnit</a>!</td>
+<td>
+
+The unit of the output value
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>distance</strong></td>
+<td valign="top"><a href="#float">Float</a>!</td>
+<td>
+
+The distance from the position to the place
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">unit</td>
+<td valign="top"><a href="#distanceunit">DistanceUnit</a>!</td>
+<td>
+
+The unit of the output value
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>compass</strong></td>
+<td valign="top"><a href="#compasspoint">CompassPoint</a>!</td>
+<td>
+
+Compass point from given position
 
 </td>
 </tr>
@@ -12622,7 +15580,7 @@ Source of the place data
 
 ### PlaceTowards
 
-Place bearing and distance information towards point
+Place bearing and distance information towards position
 
 <table>
 <thead>
@@ -12639,7 +15597,7 @@ Place bearing and distance information towards point
 <td valign="top"><a href="#position">Position</a>!</td>
 <td>
 
-The point
+The position
 
 </td>
 </tr>
@@ -12648,7 +15606,7 @@ The point
 <td valign="top"><a href="#float">Float</a>!</td>
 <td>
 
-The bearing angle from the place to the point
+The bearing angle from the place to the position
 
 </td>
 </tr>
@@ -12666,7 +15624,7 @@ The unit of the output value
 <td valign="top"><a href="#float">Float</a>!</td>
 <td>
 
-The distance from the place to the point
+The distance from the place to the position
 
 </td>
 </tr>
@@ -12684,7 +15642,7 @@ The unit of the output value
 <td valign="top"><a href="#compasspoint">CompassPoint</a>!</td>
 <td>
 
-Compass point towards given point
+Compass point towards given position
 
 </td>
 </tr>
@@ -12864,6 +15822,184 @@ The locale of the attribute to select. This will only apply to attributes with a
 <td>
 
 Whether or not to include attributes without locales in the results
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>towards</strong></td>
+<td valign="top">[<a href="#positiontowards">PositionTowards</a>!]!</td>
+<td>
+
+Calculate distance and bearing information towards the specified positions to this position
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">positions</td>
+<td valign="top">[<a href="#positioninput">PositionInput</a>!]!</td>
+<td>
+
+Positions to calculate against
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>from</strong></td>
+<td valign="top">[<a href="#positionfrom">PositionFrom</a>!]!</td>
+<td>
+
+Calculate distance and bearing information from this position to the specified positions
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">positions</td>
+<td valign="top">[<a href="#positioninput">PositionInput</a>!]!</td>
+<td>
+
+Positions to calculate against
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### PositionFrom
+
+Position bearing and distance information from position
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>position</strong></td>
+<td valign="top"><a href="#position">Position</a>!</td>
+<td>
+
+The position
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>bearing</strong></td>
+<td valign="top"><a href="#float">Float</a>!</td>
+<td>
+
+The bearing angle from the position to the position
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">unit</td>
+<td valign="top"><a href="#angleunit">AngleUnit</a>!</td>
+<td>
+
+The unit of the output value
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>distance</strong></td>
+<td valign="top"><a href="#float">Float</a>!</td>
+<td>
+
+The distance from the position to the position
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">unit</td>
+<td valign="top"><a href="#distanceunit">DistanceUnit</a>!</td>
+<td>
+
+The unit of the output value
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>compass</strong></td>
+<td valign="top"><a href="#compasspoint">CompassPoint</a>!</td>
+<td>
+
+Compass point from given position
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### PositionTowards
+
+Position bearing and distance information towards position
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>position</strong></td>
+<td valign="top"><a href="#position">Position</a>!</td>
+<td>
+
+The position
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>bearing</strong></td>
+<td valign="top"><a href="#float">Float</a>!</td>
+<td>
+
+The bearing angle from the position to the position
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">unit</td>
+<td valign="top"><a href="#angleunit">AngleUnit</a>!</td>
+<td>
+
+The unit of the output value
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>distance</strong></td>
+<td valign="top"><a href="#float">Float</a>!</td>
+<td>
+
+The distance from the position to the position
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">unit</td>
+<td valign="top"><a href="#distanceunit">DistanceUnit</a>!</td>
+<td>
+
+The unit of the output value
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>compass</strong></td>
+<td valign="top"><a href="#compasspoint">CompassPoint</a>!</td>
+<td>
+
+Compass point towards given position
 
 </td>
 </tr>
@@ -14152,6 +17288,94 @@ Other changes to the itinerary that caused by deleting the itinerary-item
 </tbody>
 </table>
 
+### UpdateItineraryLinkCollectionLocationPayload
+
+The fields available after updating the itinerary link
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>link</strong></td>
+<td valign="top"><a href="#itinerarylinkcollectionlocation">ItineraryLinkCollectionLocation</a></td>
+<td>
+
+The itinerary link that was created
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The modified itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>cascaded</strong></td>
+<td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
+<td>
+
+Other changes to the itinerary that caused by deleting the itinerary-item
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### UpdateItineraryLinkItineraryPayload
+
+The fields available after updating the itinerary link
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>link</strong></td>
+<td valign="top"><a href="#itinerarylinkitinerary">ItineraryLinkItinerary</a></td>
+<td>
+
+The itinerary link that was created
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The modified itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>cascaded</strong></td>
+<td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
+<td>
+
+Other changes to the itinerary that caused by deleting the itinerary-item
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### UpdateItineraryLocationPayload
 
 The fields available after updating a location
@@ -14225,6 +17449,50 @@ The updated itinerary
 <td>
 
 Other changes to the itinerary that caused by updating the itinerary
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### UpdateItinerarySegmentPayload
+
+The fields available after updating the itinerary segment
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>segment</strong></td>
+<td valign="top"><a href="#itinerarysegment">ItinerarySegment</a></td>
+<td>
+
+The itinerary segment that was created
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The modified itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>cascaded</strong></td>
+<td valign="top"><a href="#itineraryitemcascadedchanges">ItineraryItemCascadedChanges</a>!</td>
+<td>
+
+Other changes to the itinerary that caused by deleting the itinerary-item
 
 </td>
 </tr>
@@ -15313,6 +18581,15 @@ The list of MediaContainers to add to the new ItineraryCollection
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>autoRoute</strong></td>
+<td valign="top"><a href="#itineraryautorouteinput">ItineraryAutoRouteInput</a></td>
+<td>
+
+Enable auto routing, or set to null to disable
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>positionAtStart</strong></td>
 <td valign="top"><a href="#itineraryitempositionatstart">ItineraryItemPositionAtStart</a></td>
 <td>
@@ -15450,7 +18727,16 @@ The list of MediaContainers to add to the new ItineraryDirections
 <td valign="top"><a href="#id">ID</a></td>
 <td>
 
-The origin itinerary location item, in the form of item/XYZ
+The ID of the origin ItineraryLocation. Cannot be used with originPlace.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>originPlace</strong></td>
+<td valign="top"><a href="#placeinput">PlaceInput</a></td>
+<td>
+
+The origin place. Cannot be used with originId.
 
 </td>
 </tr>
@@ -15662,6 +18948,290 @@ The list of IconCompositions to add to the new Itinerary
 </tbody>
 </table>
 
+### CreateItineraryLinkCollectionLocationInput
+
+Creates an itinerary link to a CollectionLocation
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The title for the new itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The synopsis for the new itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The description for the new itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td>
+
+The tags for the new itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the read-more attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the website-url attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>resourceId</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The ID of the CollectionLocation to link to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
+<td>
+
+Additional data defined on the link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>media</strong></td>
+<td valign="top">[<a href="#createmediacontainerinput">CreateMediaContainerInput</a>!]</td>
+<td>
+
+The list of MediaContainers to add to the new ItineraryLink
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionAtStart</strong></td>
+<td valign="top"><a href="#itineraryitempositionatstart">ItineraryItemPositionAtStart</a></td>
+<td>
+
+Creates the item positioned before all its siblings
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionAtEnd</strong></td>
+<td valign="top"><a href="#itineraryitempositionatend">ItineraryItemPositionAtEnd</a></td>
+<td>
+
+Creates the item positioned after all its siblings
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionAfterSibling</strong></td>
+<td valign="top"><a href="#itineraryitempositionaftersibling">ItineraryItemPositionAfterSibling</a></td>
+<td>
+
+Create the item positioned after the given sibling
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionBeforeSibling</strong></td>
+<td valign="top"><a href="#itineraryitempositionbeforesibling">ItineraryItemPositionBeforeSibling</a></td>
+<td>
+
+Create the item positioned before the given sibling
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionOnLastCollection</strong></td>
+<td valign="top"><a href="#itineraryitempositiononlastcollection">ItineraryItemPositionOnLastCollection</a></td>
+<td>
+
+Create the item at last position of the last itinerary-collection item
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CreateItineraryLinkItineraryInput
+
+Creates an itinerary link to another itinerary
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The title for the new itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The synopsis for the new itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The description for the new itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td>
+
+The tags for the new itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the read-more attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the website-url attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>resourceId</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The ID of the itinerary to link to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
+<td>
+
+Additional data defined on the link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>media</strong></td>
+<td valign="top">[<a href="#createmediacontainerinput">CreateMediaContainerInput</a>!]</td>
+<td>
+
+The list of MediaContainers to add to the new ItineraryLink
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionAtStart</strong></td>
+<td valign="top"><a href="#itineraryitempositionatstart">ItineraryItemPositionAtStart</a></td>
+<td>
+
+Creates the item positioned before all its siblings
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionAtEnd</strong></td>
+<td valign="top"><a href="#itineraryitempositionatend">ItineraryItemPositionAtEnd</a></td>
+<td>
+
+Creates the item positioned after all its siblings
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionAfterSibling</strong></td>
+<td valign="top"><a href="#itineraryitempositionaftersibling">ItineraryItemPositionAfterSibling</a></td>
+<td>
+
+Create the item positioned after the given sibling
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionBeforeSibling</strong></td>
+<td valign="top"><a href="#itineraryitempositionbeforesibling">ItineraryItemPositionBeforeSibling</a></td>
+<td>
+
+Create the item positioned before the given sibling
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionOnLastCollection</strong></td>
+<td valign="top"><a href="#itineraryitempositiononlastcollection">ItineraryItemPositionOnLastCollection</a></td>
+<td>
+
+Create the item at last position of the last itinerary-collection item
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### CreateItineraryLocationInput
 
 The fields to create an itinerary location
@@ -15789,6 +19359,157 @@ Whether this is an optional location on the itinerary
 <td>
 
 Set the optional icon, passed ID must exist in the Itinerary.icons
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionAtStart</strong></td>
+<td valign="top"><a href="#itineraryitempositionatstart">ItineraryItemPositionAtStart</a></td>
+<td>
+
+Creates the item positioned before all its siblings
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionAtEnd</strong></td>
+<td valign="top"><a href="#itineraryitempositionatend">ItineraryItemPositionAtEnd</a></td>
+<td>
+
+Creates the item positioned after all its siblings
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionAfterSibling</strong></td>
+<td valign="top"><a href="#itineraryitempositionaftersibling">ItineraryItemPositionAfterSibling</a></td>
+<td>
+
+Create the item positioned after the given sibling
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionBeforeSibling</strong></td>
+<td valign="top"><a href="#itineraryitempositionbeforesibling">ItineraryItemPositionBeforeSibling</a></td>
+<td>
+
+Create the item positioned before the given sibling
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>positionOnLastCollection</strong></td>
+<td valign="top"><a href="#itineraryitempositiononlastcollection">ItineraryItemPositionOnLastCollection</a></td>
+<td>
+
+Create the item at last position of the last itinerary-collection item
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### CreateItinerarySegmentInput
+
+Creates an itinerary item segment type
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The title for the new itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The synopsis for the new itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The description for the new itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td>
+
+The tags for the new itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the read-more attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the website-url attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>color</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The color for the itinerary segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>contrastColor</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The contrasting color for the itinerary segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
+<td>
+
+Additional data defined on the segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>media</strong></td>
+<td valign="top">[<a href="#createmediacontainerinput">CreateMediaContainerInput</a>!]</td>
+<td>
+
+The list of MediaContainers to add to the new ItinerarySegment
 
 </td>
 </tr>
@@ -17490,6 +21211,24 @@ Delete one or move MediaContainers
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong>autoRoute</strong></td>
+<td valign="top"><a href="#itineraryautorouteinput">ItineraryAutoRouteInput</a></td>
+<td>
+
+Enable auto routing, or set to null to disable
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>autoRouteRemoveExisting</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Remove any routes that were created with auto routing
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -17619,7 +21358,16 @@ Delete one or move MediaContainers
 <td valign="top"><a href="#id">ID</a></td>
 <td>
 
-The origin/starting itinerary location item, in the form of item/XYZ
+The ID of the origin ItineraryLocation. Set to null to unset the origin. Cannot be used with originPlace.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>originPlace</strong></td>
+<td valign="top"><a href="#placeinput">PlaceInput</a></td>
+<td>
+
+The origin place. Set to null to unset the origin. Cannot be used with originId.
 
 </td>
 </tr>
@@ -17849,6 +21597,272 @@ Elevation data of the new itinerary
 </tbody>
 </table>
 
+### UpdateItineraryLinkCollectionLocationInput
+
+The intinerary link fields to update
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The title for the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The synopsis for the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The description for the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td>
+
+The tags for the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the read-more attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the website-url attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>resourceId</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The ID of the itinerary to link to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
+<td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
+<td>
+
+Insert or update attributes to the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
+<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
+<td>
+
+Delete attributes to the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createMedia</strong></td>
+<td valign="top">[<a href="#createmediacontainerinput">CreateMediaContainerInput</a>!]</td>
+<td>
+
+Add multiple Media with MediaResources
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>moveMedia</strong></td>
+<td valign="top">[<a href="#movemediacontainerinput">MoveMediaContainerInput</a>!]</td>
+<td>
+
+Move one or move MediaContainers
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updateMedia</strong></td>
+<td valign="top">[<a href="#updatemediacontainerinput">UpdateMediaContainerInput</a>!]</td>
+<td>
+
+Update one or move MediaContainers
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteMedia</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Delete one or move MediaContainers
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### UpdateItineraryLinkItineraryInput
+
+The intinerary link fields to update
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The title for the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The synopsis for the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The description for the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td>
+
+The tags for the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the read-more attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the website-url attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>resourceId</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The ID of the itinerary to link to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
+<td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
+<td>
+
+Insert or update attributes to the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
+<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
+<td>
+
+Delete attributes to the itinerary-link
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createMedia</strong></td>
+<td valign="top">[<a href="#createmediacontainerinput">CreateMediaContainerInput</a>!]</td>
+<td>
+
+Add multiple Media with MediaResources
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>moveMedia</strong></td>
+<td valign="top">[<a href="#movemediacontainerinput">MoveMediaContainerInput</a>!]</td>
+<td>
+
+Move one or move MediaContainers
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updateMedia</strong></td>
+<td valign="top">[<a href="#updatemediacontainerinput">UpdateMediaContainerInput</a>!]</td>
+<td>
+
+Update one or move MediaContainers
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteMedia</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Delete one or move MediaContainers
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### UpdateItineraryLocationInput
 
 The fields to update on an itinerary location
@@ -18012,6 +22026,148 @@ Whether the location specified is optional on the itinerary
 <td>
 
 Set or remove the optional icon, passed ID must exist in the Itinerary.icons
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### UpdateItinerarySegmentInput
+
+The intinerary segment fields to update
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The title for the itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The synopsis for the itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The description for the itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td>
+
+The tags for the itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the read-more attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the website-url attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>color</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The color for the itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>contrastColor</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The contrast color for the itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>upsertAttrs</strong></td>
+<td valign="top">[<a href="#attributeinput">AttributeInput</a>!]</td>
+<td>
+
+Insert or update attributes to the itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteAttrs</strong></td>
+<td valign="top">[<a href="#attributeidentifierinput">AttributeIdentifierInput</a>!]</td>
+<td>
+
+Delete attributes to the itinerary-segment
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>createMedia</strong></td>
+<td valign="top">[<a href="#createmediacontainerinput">CreateMediaContainerInput</a>!]</td>
+<td>
+
+Add multiple Media with MediaResources
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>moveMedia</strong></td>
+<td valign="top">[<a href="#movemediacontainerinput">MoveMediaContainerInput</a>!]</td>
+<td>
+
+Move one or move MediaContainers
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>updateMedia</strong></td>
+<td valign="top">[<a href="#updatemediacontainerinput">UpdateMediaContainerInput</a>!]</td>
+<td>
+
+Update one or move MediaContainers
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>deleteMedia</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Delete one or move MediaContainers
 
 </td>
 </tr>
@@ -18233,6 +22389,31 @@ Angle unit
 </tbody>
 </table>
 
+### BeginMutationSessionResult
+
+The result of attempting to begin a mutation session
+
+<table>
+<thead>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>Begun</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Extended</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>Denied</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### BillingPriceRecurringInterval
 
 The interval type
@@ -18397,6 +22578,10 @@ The key of the service for a ConnectedApp
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>AustralianTourismDataWarehouseContributor</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>CrowdriffApi</strong></td>
 <td></td>
 </tr>
@@ -18410,6 +22595,10 @@ The key of the service for a ConnectedApp
 </tr>
 <tr>
 <td valign="top"><strong>AlpacaLegacy</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>StravaApi</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -18610,6 +22799,14 @@ Possible types of ItineraryItem
 </tr>
 <tr>
 <td valign="top"><strong>ItineraryDirections</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ItinerarySegment</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ItineraryLink</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -20649,6 +24846,707 @@ Whether or not to include attributes without locales in the results
 <td>
 
 Bounds for the itinerary item
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### ItineraryLink
+
+An itinerary item representing a link to another resource
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+Unique identifier for the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>siblingPositionNumber</strong></td>
+<td valign="top"><a href="#float">Float</a></td>
+<td>
+
+A number corresponding to the item's position compared to it's siblings.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+Only count items of the given type
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOptional</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count locations that are optional. Non-locations will always be counted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skipOmitList</td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+Don't count items that have the omit-list attrubute set to true
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>title</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The supplied title
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>synopsis</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A short text summary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>description</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+A longer text description
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tags</strong></td>
+<td valign="top">[<a href="#string">String</a>!]!</td>
+<td>
+
+A series of strings applied to label this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>media</strong> ⚠️</td>
+<td valign="top">[<a href="#mediacontainer">MediaContainer</a>!]!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+<p>⚠️ <strong>DEPRECATED</strong></p>
+<blockquote>
+
+use mediaContainers instead
+
+</blockquote>
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">limit</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+The number of media to return
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>mediaContainers</strong></td>
+<td valign="top"><a href="#mediacontainerconnection">MediaContainerConnection</a>!</td>
+<td>
+
+List of MediaContainers containing images or other media
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>preferredMedia</strong></td>
+<td valign="top"><a href="#mediacontainer">MediaContainer</a></td>
+<td>
+
+The preferred MediaContainer to use
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>readMoreUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the read-more attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>websiteUrl</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Alias for the website-url attribute
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>itinerary</strong></td>
+<td valign="top"><a href="#itinerary">Itinerary</a>!</td>
+<td>
+
+The itinerary this item belongs to
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>before</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The sibling item that comes before this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>after</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The sibling item that comes after this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>parent</strong></td>
+<td valign="top"><a href="#itineraryitem">ItineraryItem</a></td>
+<td>
+
+The parent item of this item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>ancestors</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All ancestors of the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>descendants</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All the descendants of the itinerary-item in depth-first-search order
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">depthMax</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+
+Optionally limit the maximum depth of the traversal
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">depthMin</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+
+Optionally limit the minimum depth of the traversal
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>children</strong></td>
+<td valign="top"><a href="#itineraryitemconnection">ItineraryItemConnection</a>!</td>
+<td>
+
+All the direct children of the itinerary-item
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">type</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by item type
+eg: "ItineraryCollection"
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">parentType</td>
+<td valign="top"><a href="#itineraryitemtype">ItineraryItemType</a></td>
+<td>
+
+
+Optionally filter by type of the item's parent
+eg: "ItineraryCollection"
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">placeIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+
+Optionally look for items that contain any of the given places
+Only looks at the place field on ItineraryLocations
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">segmentIds</td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td>
+
+Optionally look for items that belong to all of the given segments
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attr</strong></td>
+<td valign="top"><a href="#attribute">Attribute</a></td>
+<td>
+
+Arbitrary JSON value stored on this resource, keyed by an id
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrValue</strong></td>
+<td valign="top"><a href="#json">JSON</a></td>
+<td>
+
+Shortcut for the attr.value, returns null if the attribute doesn't exist
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>attrs</strong></td>
+<td valign="top"><a href="#attributeconnection">AttributeConnection</a>!</td>
+<td>
+
+Query multiple attributes optionally filtering by id and/or locale
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+Returns up to the first n elements in the list
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">after</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+Returns elements that come after the given cursor
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a></td>
+<td>
+
+The id of the attribute to select
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">locale</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+
+The locale of the attribute to select. This will only apply to attributes with a locale, attributes that don't will not be excluded.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">includeNoLocale</td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+Whether or not to include attributes without locales in the results
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>bounds</strong></td>
+<td valign="top"><a href="#bounds">Bounds</a></td>
+<td>
+
+The bounds of the link in the itinerary
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>position</strong></td>
+<td valign="top"><a href="#position">Position</a></td>
+<td>
+
+The position of the link in the itinerary
 
 </td>
 </tr>

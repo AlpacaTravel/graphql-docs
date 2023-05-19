@@ -1,3 +1,6 @@
+[//]: # "Title: Adding Routes and Directions"
+[//]: # "Weight: 7"
+
 # Adding Directions
 
 A key part of an itinerary is to assist the user understand their movements.
@@ -13,7 +16,7 @@ Alpaca supports a data structure to support manual data or automatic directions
 searching through a search service offered by Alpaca. You can also supply a
 single mode of transportation, or support mutli-modal transport.
 
-### Prerequisits
+### Prerequisites
 
 - You'll need an itinerary you want to add to and locate the Itinerary ID
 

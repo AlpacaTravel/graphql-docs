@@ -1,3 +1,5 @@
+[//]: # "Weight: 10"
+
 # Drafts and Publishing Itineraries
 
 The Alpaca Platform offers the ability to work with drafts before publishing

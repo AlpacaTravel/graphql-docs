@@ -1,3 +1,6 @@
+[//]: # "Title: Locations"
+[//]: # "Weight: 1"
+
 # Managing collection locations
 
 A collection provides you the ability to manage a single, large number of
@@ -8,7 +11,7 @@ Note: If you are considering an integration from an external data source to a
 collection, consider also reviewing the
 [importing locations topic](/topics/collection/Importing%20Locations/README.md).
 
-### Prerequisits
+### Prerequisites
 
 - Your API Key
 

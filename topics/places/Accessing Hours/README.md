@@ -1,3 +1,6 @@
+[//]: # "Title: Opening Hours"
+[//]: # "Weight: 2"
+
 # Accessing Hours
 
 The opening hours is a crucial part of place information. This information can

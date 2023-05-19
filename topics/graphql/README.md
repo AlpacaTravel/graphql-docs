@@ -1,3 +1,5 @@
+[//]: # "Weight: 1"
+
 # GraphQL
 
 ## New to GraphQL?

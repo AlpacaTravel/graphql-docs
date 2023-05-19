@@ -1,3 +1,5 @@
+[//]: # "Weight: 12"
+
 # Custom Data
 
 The `Itinerary` related data structures, including locations, directions and the

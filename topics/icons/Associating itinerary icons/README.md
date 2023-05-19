@@ -1,3 +1,6 @@
+[//]: # "Title: Itinerary Icons"
+[//]: # "Weight: 2"
+
 # Associating Itinerary Icons
 
 An Itinerary can have an icon set that can be used for assigning to various

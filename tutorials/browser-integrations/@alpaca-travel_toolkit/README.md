@@ -1,3 +1,6 @@
+[//]: # "Title: Legacy Embedding"
+[//]: # "Weight: 3"
+
 # Alpaca Toolkit
 
 The [Alpaca Toolkit](https://developer.alpacamaps.com/) provides a method of

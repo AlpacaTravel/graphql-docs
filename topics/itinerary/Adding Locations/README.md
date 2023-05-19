@@ -1,3 +1,6 @@
+[//]: # "Title: Adding Locations"
+[//]: # "Weight: 4"
+
 # Adding Locations to Itineraries
 
 Using GraphQL, you can locations to your itinerary. Alpaca will organise the
@@ -9,7 +12,7 @@ You may also wish to review the following guides as starting points:
 - [Managing a list](/getting-started/itinerary/Managing%20a%20List/)
 - [Managing a trip](/getting-started/itinerary/Managing%20a%20Trip/)
 
-_Prerequisits_
+_Prerequisites_
 
 - You'll need an itinerary you want to add to and locate the Itinerary ID
 - The itinerary will need to be unassigned to a profile, or you'll need your

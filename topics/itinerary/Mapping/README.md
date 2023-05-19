@@ -1,3 +1,5 @@
+[//]: # "Weight: 2"
+
 # Mapping
 
 <img alt="Mapping Data" src="./map.png" width="803" height="598" />
@@ -18,7 +20,7 @@ Alpaca provides access to the underlying mapping data via the GraphQL API, but
 also provides various mapping services (which as documented
 [here](https://github.com/AlpacaTravel/mapping-docs)).
 
-### Prerequisits
+### Prerequisites
 
 - GraphQL development environment (or GraphQL Playground)
 
