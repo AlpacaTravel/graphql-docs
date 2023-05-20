@@ -79,6 +79,13 @@ will need to have the itinerary ID handy and include it in the query. The query
 should include the necessary fields for the itinerary, such as the title and
 synopsis.
 
+If you are getting started, you can use the Alpaca Travel itinerary editor to
+edit an itinerary, and obtain the Itinerary ID from the "Integrations" tab.
+
+<div align="center">
+  <img src="./integration-tab.png" alt="The integration tab shows the itinerary ID" />
+</div>
+
 For example, the following query will retrieve an itinerary with the ID
 "itinerary/ABC123" and retrieve the title and synopsis of the itinerary:
 
