@@ -21,8 +21,12 @@ Alpaca's primary GraphQL endpoint:
 https://graphql.withalpaca.travel/?accessToken=pk.XXX
 ```
 
-Your `accessToken` is unique and will define what scope of services you have
-access to. Tokens are scoped to
+<aside class="information">
+  Your `accessToken` is unique and will define what scope of services you have
+  access to. Tokens are scoped to secret or public, allowing you to use 
+  different keys for your public website to read in content, opposed to your 
+  secret keys that can allow broader range of write related calls.
+</aside>
 
 ## Making Requests
 
@@ -49,11 +53,15 @@ const response = await fetch(
   }
 );
 
-// Access the response
-const data = response.json();
-
-console.log(data); // { data: { ... } }
+// Access the response data
+const { data } = await response.json();
+console.log(data); // { ... }
 ```
+
+<aside class="note">
+  GraphQL calls are HTTP post requests containing the query. The response
+  data is contained within the response body making it easy to integrate.
+</aside>
 
 In addition to using basic HTTP requests, many additional libraries are
 available to assist manage your calls.
