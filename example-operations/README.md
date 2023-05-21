@@ -1,3 +1,6 @@
+[//]: # "Title: Example Operations"
+[//]: # "Weight: 5"
+
 # GraphQL Example Operations
 
 The following area provides a number of example operations to perform common

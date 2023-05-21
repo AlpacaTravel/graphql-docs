@@ -1,3 +1,6 @@
+[//]: # "Title: Adding Photos"
+[//]: # "Weight: 9"
+
 # Adding photos to an itinerary
 
 Itineraries as well as Itinerary Locations can contain a number of media

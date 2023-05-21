@@ -1,3 +1,6 @@
+[//]: # "Title: Node Attributes"
+[//]: # "Weight: 6"
+
 # Attributes
 
 The API enables the storage and retrieval of extended data through key/value

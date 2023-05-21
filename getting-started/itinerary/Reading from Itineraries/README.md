@@ -1,3 +1,9 @@
+[//]: # "Title: Reading and Querying"
+[//]: # "Weight: 0"
+[//]:
+  #
+  "Description: Read this guide to get started integrating and building apps and websites accessing itineraries on the platform"
+
 # Reading from Itineraries
 
 > The Alpaca Travel Platform enables developers to access and manage travel
@@ -72,6 +78,13 @@ To load an individual itinerary from the Alpaca Travel GraphQL API, developers
 will need to have the itinerary ID handy and include it in the query. The query
 should include the necessary fields for the itinerary, such as the title and
 synopsis.
+
+If you are getting started, you can use the Alpaca Travel itinerary editor to
+edit an itinerary, and obtain the Itinerary ID from the "Integrations" tab.
+
+<div align="center">
+  <img src="./integration-tab.png" alt="The integration tab shows the itinerary ID" />
+</div>
 
 For example, the following query will retrieve an itinerary with the ID
 "itinerary/ABC123" and retrieve the title and synopsis of the itinerary:

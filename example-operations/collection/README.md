@@ -1,3 +1,5 @@
+[//]: # "Weight: 7"
+
 # Collection
 
 - **[Create Collection](/example-operations/collection/CreateCollection.graphql)**

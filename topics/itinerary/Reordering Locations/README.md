@@ -1,3 +1,5 @@
+[//]: # "Weight: 6"
+
 # Reordering locations
 
 Often, a user may wish to reorder the itinerary to suit their preferences. Using

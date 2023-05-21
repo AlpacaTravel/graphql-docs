@@ -1,3 +1,5 @@
+[//]: # "Weight: 2"
+
 # Media
 
 - **[Get Media Image](/example-operations/media/GetMediaImage.graphql)** Loads a

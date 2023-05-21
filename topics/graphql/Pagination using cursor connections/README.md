@@ -1,3 +1,6 @@
+[//]: # "Title: Pagination Cursors"
+[//]: # "Weight: 1"
+
 # Pagination using Cursor Connections
 
 > For consistency, the Alpaca API uses the GraphQL Cursor Connections

@@ -2,12 +2,25 @@ const glob = require("glob");
 const fs = require("fs");
 const path = require("path");
 
+const sectionWeights = {
+  Itinerary: 1,
+  Media: 2,
+  Place: 3,
+  Route: 4,
+  Icon: 5,
+  Profile: 6,
+  Collection: 7,
+};
+
 glob("**/*.graphql", (er, files) => {
   const structures = files.map(info).reduce((c, t) => {
     return Object.assign({}, c, { [t.dir]: (c[t.dir] || []).concat(t) });
   }, {});
 
   const title = `
+[//]: # "Title: GraphQL Examples"
+[//]: # "Weight: 5"
+
 # GraphQL Example Operations
 
 The following area provides a number of example operations to perform common
@@ -51,7 +64,12 @@ generated markdown
   fs.writeFileSync(path.resolve(__dirname, "./README.md"), doc);
 
   sections.forEach((s) => {
-    const sectionStart = `# ${s.title}\n\n${s.toc}\n\n`;
+    let metadata = "";
+    if (sectionWeights[s.title] != null) {
+      metadata = `${metadata}[//]: # "Weight: ${sectionWeights[s.title]}"\n`;
+    }
+
+    const sectionStart = `${metadata}# ${s.title}\n\n${s.toc}\n\n`;
     const sectionMiddle = sections.reduce((c, sect) => {
       if (sect.parent[0] === s.key) {
         return c.concat(`## ${sect.title}\n\n${sect.toc}\n\n`);

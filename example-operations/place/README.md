@@ -1,3 +1,5 @@
+[//]: # "Weight: 3"
+
 # Place
 
 - **[Find Open Closed Times For Place By Date Range](/example-operations/place/FindOpenClosedTimesForPlaceByDateRange.graphql)**

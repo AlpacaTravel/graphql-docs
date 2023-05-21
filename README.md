@@ -1,3 +1,7 @@
+[//]: # "Title: GraphQL API"
+[//]: # "Forward: true"
+[//]: # "Weight: 1"
+
 <div align="center">
   <img alt="Developer Documentation" src="https://developer.alpacamaps.com/_media/logo.svg" height="75" width="75" />
 </div>
@@ -67,7 +71,7 @@ supporting information on GraphQL and why it is used below.
 In order to interact with the Alpaca Travel API, you will need to use GraphQL.
 The GraphQL endpoint for the Alpaca Travel API is:
 
-    https://withalpaca.com/api/graphql?accessToken=<YOUR_API_KEY>
+    https://graphql.withalpaca.travel/?accessToken=<YOUR_API_KEY>
 
 When using the root endpoint, it is important to authenticate via providing your
 `accessToken` (which is your API Key) as a query parameter.

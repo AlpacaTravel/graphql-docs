@@ -1,3 +1,6 @@
+[//]: # "Title: Authorization"
+[//]: # "Weight: 1"
+
 # Token Authorization
 
 ## Authentication

@@ -1,3 +1,6 @@
+[//]: # "Title: Location Context"
+[//]: # "Weight: 1"
+
 # Creating Contextualisation around Places
 
 Creating contextualization of a place for travelers can be beneficial for

@@ -1,9 +1,12 @@
+[//]: # "Title: Checking for a Place"
+[//]: # "Weight: 5"
+
 # Checking if a place is within an itinerary
 
 You can check whether a place has already been added to an itinerary by
 performing a query and supplying the place identifier.
 
-### Prerequisits
+### Prerequisites
 
 - You will need to supply an ID in order to check the place exists in an
   Itinerary

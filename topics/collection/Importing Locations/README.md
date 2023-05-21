@@ -1,3 +1,12 @@
+[comment]: # "Title: Importing Locations"
+[comment]:
+  #
+  "Keywords: import, location, collection, external-ref, external-source"
+[comment]:
+  #
+  "Description: Learn how to simplify the import of collection locations into Alpaca by utilizing external-source and external-id attributes. This article guides you through the process, highlighting their role in tracking and querying data based on source identifiers. Discover how Alpaca's custom attribute functionality enhances data storage and retrieval, with a special focus on importing data with references to external foreign keys."
+[//]: # "Weight: 2"
+
 # Importing Locations
 
 In certain integrations, collection locations may originate in a remote system,
@@ -14,7 +23,7 @@ future calls. The two mentioned attribute ID's are specially recognised, in
 order to suit the use case of importing data with references to foriegn keys
 outside of the platform.
 
-### Prerequisits
+### Prerequisites
 
 - Private API Key for querying and mutations
 

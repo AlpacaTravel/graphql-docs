@@ -1,3 +1,6 @@
+[//]: # "Title: Attributes"
+[//]: # "Weight: 1"
+
 # Standard Place Attributes
 
 Alpaca maintain a series of standard place attributes that are used to collate

@@ -1,3 +1,5 @@
+[//]: # "Weight: 13"
+
 # Places of Interest
 
 A common structuring of locations can include some hierarchical associations

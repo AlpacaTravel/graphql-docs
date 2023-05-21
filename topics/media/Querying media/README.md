@@ -1,3 +1,6 @@
+[//]: # "Title: Querying"
+[//]: # "Weight: 1"
+
 # Querying Media
 
 Alpaca supports a wide range of media types. These include being able to access

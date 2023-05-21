@@ -1,3 +1,6 @@
+[//]: # "Title: Uploading Photos"
+[//]: # "Weight: 3"
+
 # Uploading Photos
 
 The Alpaca API offers a method for you to upload your photo assets and attach to
@@ -40,7 +43,7 @@ To upload your process, you'll need to follow three steps:
 
 3.  Perform `finalizeMediaUpload` to identify when the media is ready to use
 
-### Prerequisits
+### Prerequisites
 
 - A supported image type and filesize (up to 5mb JPEG/PNG)
 

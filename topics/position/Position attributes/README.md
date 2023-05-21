@@ -1,3 +1,6 @@
+[//]: # "Title: Boundary Information"
+[//]: # "Weight: 1"
+
 # Position Attributes
 
 A position longitude and latitude coordinate for a projected coordinate system.

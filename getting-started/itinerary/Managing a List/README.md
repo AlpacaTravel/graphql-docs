@@ -1,3 +1,9 @@
+[//]: # "Title: Creating Lists"
+[//]: # "Weight: 1"
+[//]:
+  #
+  "Description: This guide provides developers with the knowledge to create and read from curated lists on the Alpaca Travel Platform. By following this guide, developers can build integrations that manage and access lists of locations on the platform"
+
 # Managing a Curated List of Locations
 
 > This guide provides developers with the knowledge to create and read from

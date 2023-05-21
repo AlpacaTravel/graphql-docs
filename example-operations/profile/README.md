@@ -1,3 +1,5 @@
+[//]: # "Weight: 6"
+
 # Profile
 
 - **[Get Authorized Profiles](/example-operations/profile/GetAuthorizedProfiles.graphql)**

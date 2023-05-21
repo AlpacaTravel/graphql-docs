@@ -1,3 +1,5 @@
+[//]: # "Weight: 1"
+
 # Itinerary
 
 - **[Create Itinerary](/example-operations/itinerary/CreateItinerary.graphql)**

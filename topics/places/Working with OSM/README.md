@@ -1,3 +1,6 @@
+[//]: # "Title: OpenStreetMap"
+[//]: # "Weight: 4"
+
 # Working with OpenStreetMap (OSM)
 
 The Alpaca Travel GraphQL API allows developers to build curated lists and full

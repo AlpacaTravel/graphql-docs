@@ -1,3 +1,6 @@
+[//]: # "Title: Sandbox"
+[//]: # "Weight: 3"
+
 # Apollo Sandbox - a GraphQL Playground
 
 <p align="center">

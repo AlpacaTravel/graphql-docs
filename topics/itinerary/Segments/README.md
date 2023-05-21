@@ -1,3 +1,5 @@
+[//]: # "Weight: 15"
+
 # Segments
 
 Segments provide a mechanism available to associate itinerary items, such as the

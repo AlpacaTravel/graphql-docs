@@ -1,8 +1,15 @@
+[//]: # "Title: Unsplash Stock Photography"
+[//]: # "Weight: 2"
+
 # Using Unsplash
 
 Unsplash provides access to high quality photographer imagery. The Alpaca
 platform enables access to reference unsplash images for use in itineraries and
 collection items.
+
+- Unsplashd is a popular source of images
+- Use their API in order to search and find images
+- Use the Photo ID's to associate in content
 
 ## Identification of Photos
 
