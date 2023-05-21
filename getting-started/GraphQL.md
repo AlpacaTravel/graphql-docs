@@ -28,7 +28,7 @@ https://graphql.withalpaca.travel/?accessToken=pk.XXX
   secret keys that can allow broader range of write related calls.
 </aside>
 
-## Making Requests
+## Request Example
 
 GraphQL allows developers many options for making requests. GraphQL requests are
 made via HTTP Post calls, including your query. The query can be sent as a plain
@@ -63,7 +63,19 @@ console.log(data); // { ... }
   data is contained within the response body making it easy to integrate.
 </aside>
 
+## Popular Clients
+
 In addition to using basic HTTP requests, many additional libraries are
 available to assist manage your calls.
 
-- [Code using GraphQL](https://graphql.org/code/)
+Popular choices for GraphQL include:
+
+- [Apollo GraphQL](https://www.apollographql.com/apollo-client)
+- [GraphQL Request](https://github.com/jasonkuhrt/graphql-request)
+- [Relay](https://relay.dev/)
+
+<aside class="info">
+  You can see alternative libraries for PHP, Go, .NET, Java/Kotlin,
+  Swift/Objective-C etc by viewing
+  [Code options for using GraphQL](https://graphql.org/code/)
+</aside>
