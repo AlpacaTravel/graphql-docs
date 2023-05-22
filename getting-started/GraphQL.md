@@ -91,10 +91,10 @@ within the response body, allowing for seamless integration and straightforward
 handling within your code.
 
 To assist developers in utilizing our API effectively, we provide a
-comprehensive set of example operations that serve as references. These examples
-cover a wide range of use cases, empowering you to harness the full potential of
-our GraphQL API and effortlessly implement the desired functionality in your
-application or website.
+comprehensive set of [example operations](/example-operations/) that serve as
+references. These examples cover a wide range of use cases, empowering you to
+harness the full potential of our GraphQL API and effortlessly implement the
+desired functionality in your application or website.
 
 ## Popular Clients
 
