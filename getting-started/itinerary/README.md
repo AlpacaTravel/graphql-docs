@@ -1,5 +1,7 @@
 [//]: # "Title: Lists, Trips and Trails"
 [//]: # "Weight: 2"
+[//]: # "Layout: 1-col"
+[//]: # "TOC: false"
 
 # Lists, Trips and Trails
 

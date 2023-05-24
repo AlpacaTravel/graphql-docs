@@ -1,15 +1,17 @@
 [//]: # "Title: GraphQL"
 [//]: # "Weight: 1"
+[//]: # "Layout: 1-col"
+[//]: # "TOC: false"
 [//]:
   #
   "Description: Getting started with GraphQL API to integrate and build itinerary based applications and website functionality."
 
 # GraphQL API
 
-Welcome to Alpaca's GraphQL API documentation! We are excited to provide
-developers with a powerful integration solution for their applications and
-websites. With our GraphQL API, you can unlock a wide array of possibilities to
-enhance user experiences and drive the success of your app or website.
+> Welcome to Alpaca's GraphQL API documentation! We are excited to provide
+> developers with a powerful integration solution for their applications and
+> websites. With our GraphQL API, you can unlock a wide array of possibilities
+> to enhance user experiences and drive the success of your app or website.
 
 By integrating Alpaca's GraphQL API into your projects, developers gain seamless
 access to a comprehensive set of tools and features that enable you to
