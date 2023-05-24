@@ -1,5 +1,6 @@
 [//]: # "Title: Reading and Querying"
 [//]: # "Weight: 0"
+[//]: # "Keywords: Guide, Itinerary"
 [//]:
   #
   "Description: Read this guide to get started integrating and building apps and websites accessing itineraries on the platform"

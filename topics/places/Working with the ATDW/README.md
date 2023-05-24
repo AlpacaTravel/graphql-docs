@@ -1,5 +1,6 @@
 [//]: # "Title: ATDW Products"
 [//]: # "Weight: 6"
+[//]: # "Keywords: atdw"
 [//]:
   #
   "Description: The Alpaca GraphQL API allows you to connect to ATDW in a single integration, accessing product information as well as performing search, and adding those products to your own collection."

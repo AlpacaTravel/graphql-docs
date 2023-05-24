@@ -61,7 +61,7 @@ straightforward HTTP fetch requests.
 
 Here's an example of how you can make a GraphQL request using a fetch call:
 
-```typescript
+```javascript
 // Your query describes exactly what you want returned. There are loads of
 // examples in this documentation to help you out.
 const query = `...`;
@@ -121,9 +121,9 @@ Swift/Objective-C, or other popular languages, you can explore a wealth of
 alternative libraries tailored to your specific technology stack.
 
 For a comprehensive list of code options and libraries across various languages,
-you can refer to Code options for using GraphQL. This resource provides a wealth
-of information and recommendations to assist you in finding the most suitable
-GraphQL library for your development needs.
+you can refer to [Code options for using GraphQL](https://graphql.org/code/).
+This resource provides a wealth of information and recommendations to assist you
+in finding the most suitable GraphQL library for your development needs.
 
 With these libraries at your disposal, you can confidently build and integrate
 GraphQL into your projects, leveraging the power of existing tools and packages
