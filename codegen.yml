@@ -4,11 +4,11 @@ generates:
   # Schema for general autocomplete
   # Place this at the root of your project
   ./graphql.schema.json:
-    schema: "https://withalpaca.com/api/graphql"
+    schema: "https://graphql.withalpaca.travel"
     plugins:
       - "introspection"
   ./types.ts:
-    schema: "https://withalpaca.com/api/graphql"
+    schema: "https://graphql.withalpaca.travel"
     documents: "example-operations/**/*.graphql"
     plugins:
       - "typescript"

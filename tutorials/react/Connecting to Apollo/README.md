@@ -1,7 +1,8 @@
 # Connecting Apollo
 
 _Note: This document is out of date and we recommend you referencing the topic
-of [React Apollo Client](/topics/javascript/react/Apollo%20Client/)_
+of
+[React Apollo Client](/topics/graphql/Making%20GraphQL%20Calls/Apollo%20Client/)_
 
 This guide will quickly setup a React single-page application using
 create-react-app, and configure it using Apollo to connect to the Alpaca Travel
@@ -97,7 +98,7 @@ Apollo will be used as the client to connect to the Alpaca Travel API. All
 GraphQL clients send requests to a single "root endpoint" which is shown below.
 We will configure this into our app in the next section.
 
-`https://withalpaca.com/api/graphql?accessToken=<YOUR_API_KEY>`
+`https://graphql.withalpaca.travel?accessToken=<YOUR_API_KEY>`
 
 #### Adding in the required environment variables
 
@@ -109,7 +110,7 @@ configure the apollo URI yourself.
 Create a file in your project called `.env` with the following
 
     # .env
-    REACT_APP_ALPACA_GRAPHQL_ENDPOINT=https://withalpaca.com/api/graphql
+    REACT_APP_ALPACA_GRAPHQL_ENDPOINT=https://graphql.withalpaca.travel
     REACT_APP_ALPACA_ACCESS_TOKEN=<your-api-public-key>
 
 Update the `<your-api-public-key>` section in the above with your API Key.

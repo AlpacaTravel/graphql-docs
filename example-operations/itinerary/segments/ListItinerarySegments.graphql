@@ -1,0 +1,41 @@
+# Query the itinerary segments for an itinerary.
+
+query listItinerarySegments($itineraryId: ID!, $first: Int!, $after: String) {
+  itinerary(
+    # Supply the itinerary ID
+    id: $itineraryId
+  ) {
+    # Select the associated itinerary segments using the children selector
+    children(
+      # Limit to querying the itinerary segments
+      type: ItinerarySegment
+      # Using the relay "cursor connection" specification for pagination
+      # See: https://relay.dev/graphql/connections.htm
+      first: $first
+      after: $after
+    ) {
+      edges {
+        node {
+          # ID/Types
+          id
+          __typename
+
+          # Specific information drawn from the Itinerary Segment
+          ... on ItinerarySegment {
+            title
+            color
+            contrastColor
+          }
+        }
+        # Obtain the cursor to pass back as the "after" property
+        cursor
+      }
+      # Total number of segments
+      totalCount
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}

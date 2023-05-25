@@ -1,4 +1,4 @@
-[//]: # "Title: Location Context"
+[//]: # "Title: Bearings and Navigation"
 [//]: # "Weight: 1"
 
 # Creating Contextualisation around Places

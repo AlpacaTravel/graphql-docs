@@ -4,7 +4,7 @@
   "extensions": {
     "endpoints": {
       "Remote GraphQL Endpoint": {
-        "url": "https://withalpaca.com/api/graphql",
+        "url": "https://graphql.withalpaca.travel",
         "introspect": true
       }
     }

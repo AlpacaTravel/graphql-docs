@@ -1,0 +1,13 @@
+# Removes an itinerary item, such as a segment. Please note, this does not
+# remove any segment associations, it only removes the itinerary item itself.
+
+mutation deleteItinerarySegment($id: ID!) {
+  # Use the deleteItineraryItem operation to remove an itinerary segment
+  deleteItineraryItem(
+    # Supply your ID of the itinerary segment to remove (no undo)
+    id: $id
+  ) {
+    # Select back the ID of the itinerary segment that was removed
+    id
+  }
+}

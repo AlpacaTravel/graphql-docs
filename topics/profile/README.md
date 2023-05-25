@@ -1,5 +1,5 @@
 [//]: # "Title: Profiles"
-[//]: # "Weight: 9"
+[//]: # "Weight: 6"
 [//]: # "Forward: true"
 
 # Getting Started

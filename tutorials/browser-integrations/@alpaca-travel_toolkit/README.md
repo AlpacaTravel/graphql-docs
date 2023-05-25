@@ -117,7 +117,7 @@ _Example integrations_
 
 - Create "Add to Itinerary" buttons on your website application that can
   determine whether a
-  [place is present within an itinerary](topics/itinerary/Checking%20if%20a%20place%20is%20within%20an%20itinerary/README.md)
+  [place is present within an itinerary](topics/itinerary/Location/Checking%20if%20a%20place%20is%20within%20an%20itinerary/README.md)
 
 - Show the number of places added to a users itinerary
 

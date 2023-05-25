@@ -1,5 +1,5 @@
 [//]: # "Title: Opening Hours"
-[//]: # "Weight: 2"
+[//]: # "Weight: 1"
 
 # Accessing Hours
 

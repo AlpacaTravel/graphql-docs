@@ -1,5 +1,5 @@
 [//]: # "Title: Photos and Media"
-[//]: # "Weight: 4"
+[//]: # "Weight: 3"
 [//]: # "Forward: true"
 
 # Getting Started

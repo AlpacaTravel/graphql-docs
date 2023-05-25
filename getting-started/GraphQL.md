@@ -41,9 +41,7 @@ and unlock the full potential of your projects!
 
 Alpaca's primary GraphQL endpoint:
 
-```
-https://graphql.withalpaca.travel/?accessToken=pk.XXX
-```
+    https://graphql.withalpaca.travel/?accessToken=pk.XXX
 
 <aside class="information">
   Your `accessToken` is a unique identifier that determines the scope of 

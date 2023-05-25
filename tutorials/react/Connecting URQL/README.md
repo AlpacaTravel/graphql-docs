@@ -81,7 +81,7 @@ URQL will be used as the client to connect to the Alpaca Travel API. All GraphQL
 clients send requests to a single "root endpoint" which is shown below. We will
 configure this into our app in the next section.
 
-`https://withalpaca.com/api/graphql?accessToken=<YOUR_API_KEY>`
+`https://graphql.withalpaca.travel?accessToken=<YOUR_API_KEY>`
 
 #### Adding in the required environment variables
 
@@ -93,7 +93,7 @@ configure the urql URI yourself.
 Create a file in your project called `.env` with the following
 
     # .env
-    REACT_APP_ALPACA_GRAPHQL_ENDPOINT=https://withalpaca.com/api/graphql
+    REACT_APP_ALPACA_GRAPHQL_ENDPOINT=https://graphql.withalpaca.travel
     REACT_APP_ALPACA_ACCESS_TOKEN=<your-api-public-key>
 
 Update the `<your-api-public-key>` section in the above with your API Key.

@@ -1,4 +1,5 @@
-[//]: # "Weight: 3"
+[//]: # "Title: Creating"
+[//]: # "Weight: 1"
 
 # Creating Itineraries
 
@@ -25,7 +26,12 @@ mutation CreateItinerary {
   # with some initial content
   createItinerary(
     # Supply the initial content about the itinerary
-    itinerary: { title: "Basic Itinerary Example" }
+    itinerary: {
+      # Include a title
+      title: "Basic Itinerary Example"
+      # Recommended: Include a BCP-47 Locale
+      defaultLocale: "en"
+    }
   ) {
     # Read back the created itinerary
     itinerary {
@@ -37,7 +43,7 @@ mutation CreateItinerary {
 ```
 
 Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
-[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHYpHASRQEskEDiCBPHdiGHKanDHIIcAMwgEqOAO4MwI1kgDmIiKMHC+xYZXIwoACyqUANg3IpyAHSS4JOYQEcYyKAjA4GjFmwYUAdDY2cDAopAwQNIQkZPRMPhw4wDY4OLgAMggAbj4qlCgGIlYgUESkCHHMrBzFOCFhjJE4EAAOPo00KBB8ZWRUNF7x1ewpaTJeRuQQiJ5Ig8QmfJFkqKOlMRWMVWzsABSjqbgAyjAtLSacBSJM84tQy8goVABGPE9XnlsJIzSpn0M7dBJHCMFAmBBA4oAIW0DCgdC+wxwAFEAB7EODnBC1AC+owAlEkDmMAEokDzPYhQADWIMKPQ2HkG2xqv1SzO+RLZf1wAEEoG5yPl6bR5KgGKI-AQADQ4IjOBhEDziSSiGAEK6SZwsdgAenq4Ui1m57LAxLxvwtOJAOKAA)
+[Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHYpHASRQEskEDiCBPHdiGHKanDHIIcAMwgEqOAO4MwI1kgDmIiKMHC+xYZXIwoACyqUANg3IpyAHSS4JOYQEcYyKAjA4GjFmwYUAdDY2cDAopAwQNIQkZPRMPhw4wDY4OLgAMggAbj4qlCgGIlYgUESkCHHMrBzFOCFhjJE4EAAOPo00KBB8ZWRUNF7x1ewpaTJeRuQQiJ5Ig8QmfJFkqKOlMRWMVWzsABSjqbgAyjAtLSacBSJM84tQy8goVABGPE9XnlsJIzSpn0M7dBJA5-XC0JBQEwweRSRgoEwIEGpOEIoHFABC2gYUDoX2GOAAogAPYhwc6IkBIsYAJQQ9zgiCQ8jAQPBkOhImIOHReAACgBaAAsAHYcOloAtEb8-jh5KJiDATChxfxUThishiiCAL6jACUwOlNJIHmexCgAGscB91uUPINtjUjQ7voaZYccABBKBucj5Qp0eSoBiiPwEAA0OCIzgYRA84kkohgBCukmcLHYAHp6uFItYjak5DrRrqkNqQNqgA)
 
 If successful, the response will read back the created itinerary ID which can be
 used in subsequent queries or mutations.
@@ -125,16 +131,17 @@ Sandbox: [Configure](/topics/graphql/Apollo%20Sandbox/) |
 [Try Operation](https://studio.apollographql.com/sandbox/explorer?explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4QGIAEBhAJwQEMUEBnHYpHASxVqQQOIIE8AaKpMHKCJADNaAcxhFK9HCghVy5UTWIwZcUrSg4CEFRQB0OAIIqIahlAA6SXNt2UA7rQA2TuQvIocAI2ILN9RmZWWgpvNhxyBABHGGQGYhdwp0YAa0YRHCdodQFKFAALUitcVgQqMDAEXkcCnDBaIigGXK4AB20AN1p6pAzGQQgCM1oBKi8dTzgILt7vBBR7BGRpfIoEYszs5qRyPSsrOBUcmkISMgBJBiYWdgB1eny8VmMZACUJsuArHBxcW9WaDAFLMCmUoERSAhLoEbuFDihjtJZOCzmUdAQ6FcguxvnwIRcsbCABS4n4Ba6sNjoHBfGg-em4QwVHDo7y+DRaaIwBpVHDCBBOMDkUn0hgoJwIakWEAAUQAHsQ4K0JThoRScSART9cOceBpISsyl4EIUuqyZFQTFoPjggel8Kw5Ia6ghBMonJMIJUtZa3h9qcAXW6YB6ALJeyUOjEAXxFsbpAEoaSLcK8SLwfFAUs6UZDeOTsWwRQXYcm6fTfkYoFAKHlVqrKqhaPyCFwiDEebwBhjBOJQRiYsw2AB6eHHYXl+ndOO4+PRkDRoA)
 
 Learn more about
-[Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md).
+
+- [Automatic Routing](/topics/itinerary/Directions/Automatic%20Routing/README.md).
 
 ## Additional Resources
 
 - [Obtaining your profile IDs](/example-operations/profile/GetAuthorizedProfiles.graphql)
 
-- [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)
+- [Adding Locations](/topics/itinerary/Location/Adding%20Locations/README.md)
 
 - [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/README.md)
 
-- [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
+- [Automatic Routing](/topics/itinerary/Directions/Automatic%20Routing/README.md)
 
 - [Deleting an Itinerary](/example-operations/itinerary/DeleteItinerary.graphql)

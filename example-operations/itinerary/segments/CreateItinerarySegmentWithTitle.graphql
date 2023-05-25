@@ -1,0 +1,12 @@
+# Creates an Itinerary Segment with a title
+
+mutation createItinerarySegmentWithTitle($itineraryId: ID!, $title: String) {
+  createItinerarySegment(
+    itineraryId: $itineraryId
+    segment: { title: $title }
+  ) {
+    segment {
+      id
+    }
+  }
+}

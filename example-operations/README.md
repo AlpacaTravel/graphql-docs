@@ -1,4 +1,4 @@
-[//]: # "Title: Example Operations"
+[//]: # "Title: GraphQL Examples"
 [//]: # "Weight: 5"
 
 # GraphQL Example Operations
@@ -91,15 +91,33 @@ Articles also located in this repository first.
   Updates the icons associated with an Itinerary
 - **[Update Itinerary Photos](/example-operations/itinerary/UpdateItineraryPhotos.graphql)**
   Updates an itinerary with a selection of photos
-- **[Update Itinerary Segments](/example-operations/itinerary/UpdateItinerarySegments.graphql)**
-  Updates an itinerary to add in segments
 - **[Update Itinerary Title](/example-operations/itinerary/UpdateItineraryTitle.graphql)**
   Modify an existing Itinerary by changing the title
+
+#### Itinerary Collection
+
+- **[Create Itinerary Collection](/example-operations/itinerary/collection/CreateItineraryCollection.graphql)**
+  Creates an Itinerary Collection, which can be used to create new
+  sub-listsmutation createItineraryCollection( $itineraryId: ID!
+  $itineraryCollection: CreateItineraryCollectionInput!) {
+  createItineraryCollection( itineraryId: $itineraryId collection:
+  $itineraryCollection ) { collection { id } }}
 
 #### Itinerary Directions
 
 - **[Create Itinerary Directions](/example-operations/itinerary/directions/CreateItineraryDirections.graphql)**
   Creates itinerary directions for between locations in an itinerary manually
+
+#### Itinerary Link
+
+- **[Create Itinerary Link Itinerary](/example-operations/itinerary/link/CreateItineraryLinkItinerary.graphql)**
+  Creates a link between itineraries from one itinerary to another
+- **[List Itinerary Links](/example-operations/itinerary/link/ListItineraryLinks.graphql)**
+  Query the itinerary linksquery listItineraryLinks($itineraryId: ID!, $first:
+  Int!, $after: String) { itinerary( Supply the itinerary ID id: $itineraryId )
+  { Select the associated itinerary links using the children selector children(
+  Limit to querying the itinerary links type: ItineraryLink Using the relay
+  "cursor connection" specification for pagination See: https://relay
 
 #### Itinerary Location
 
@@ -134,6 +152,21 @@ Articles also located in this repository first.
   Updates an itinerary location with a selection of photos
 - **[Update Itinerary Location Segments](/example-operations/itinerary/location/UpdateItineraryLocationSegments.graphql)**
   Assign a series of segments to your itinerary locations
+
+#### Itinerary Segments
+
+- **[Create Itinerary Segment](/example-operations/itinerary/segments/CreateItinerarySegment.graphql)**
+  Creates an Itinerary Segment, which can be used to break up a list into
+  smaller discrete sections
+- **[Create Itinerary Segment With Title](/example-operations/itinerary/segments/CreateItinerarySegmentWithTitle.graphql)**
+  Creates an Itinerary Segment with a titlemutation
+  createItinerarySegmentWithTitle($itineraryId: ID!, $title: String) {
+  createItinerarySegment( itineraryId: $itineraryId segment: { title: $title } )
+  { segment { id } }}
+- **[Delete Itinerary Segment](/example-operations/itinerary/segments/DeleteItinerarySegment.graphql)**
+  Removes an itinerary item, such as a segment
+- **[List Itinerary Segments](/example-operations/itinerary/segments/ListItinerarySegments.graphql)**
+  Query the itinerary segments for an itinerary
 
 ### Media
 

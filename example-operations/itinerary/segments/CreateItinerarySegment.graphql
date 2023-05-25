@@ -1,0 +1,16 @@
+# Creates an Itinerary Segment, which can be used to break up a list into
+# smaller discrete sections.
+
+mutation createItinerarySegment(
+  $itineraryId: ID!
+  $itinerarySegment: CreateItinerarySegmentInput!
+) {
+  createItinerarySegment(
+    itineraryId: $itineraryId
+    segment: $itinerarySegment
+  ) {
+    segment {
+      id
+    }
+  }
+}

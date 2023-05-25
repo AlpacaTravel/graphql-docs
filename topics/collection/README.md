@@ -1,5 +1,5 @@
 [//]: # "Title: Collections"
-[//]: # "Weight: 8"
+[//]: # "Weight: 4"
 [//]: # "Forward: true"
 
 # Getting Started

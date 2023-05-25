@@ -147,12 +147,12 @@ information and keep your place information up to date.
 - **[Working with Media](topics/media)** Upload media and query media to display
   in your application or website
 
-- **[Working with Positions](topics/position)** Access global information about
-  a position, such as region, time-zone or ISO data, or local data such as
-  information about a location from the ABS dataset
+- **[Working with Positions](/topics/places/Position%20attributes/)** Access
+  global information about a position, such as region, time-zone or ISO data, or
+  local data such as information about a location from the ABS dataset
 
-- **[Working with Icons](topics/icons/)** Manage profile icons sets and
-  associate them with Itineraries
+- **[Working with Icons](topics/profile/Managing%20profile%20icons/)** Manage
+  profile icons sets and associate them with Itineraries
 
 ### JavaScript
 
@@ -162,15 +162,11 @@ you getting started with JavaScript.
 - **[References](https://alpaca.travel/reference)** Examples of displaying
   content in the browser
 
-- **[Making GraphQL Calls](topics/javascript/Making%20GraphQL%20Calls/README.md)**
-  Simple methods for executing GraphQL using JavaScript
+- **[Making GraphQL Calls](topics/graphql/Making%20GraphQL%20Calls/)** Simple
+  methods for executing GraphQL using JavaScript
 
-- **[Create React App](topics/javascript/Create%20React%20App/README.md)** Get
-  started with a template to build React Apps in Typescript/Apollo with added
-  codegen to make development faster.
-
-- **[React Apollo Client](topics/javascript/react/Apollo%20Client/)** Get
-  started with React and Apollo Client to access an itinerary
+- **[React Apollo Client](topics/graphql/Making%20GraphQL%20Calls/Apollo%20Client/)**
+  Get started with React and Apollo Client to access an itinerary
 
 - **[Alpaca GraphQL JavaScript SDK](https://github.com/AlpacaTravel/graph-sdk)**
   (New) SDKs based on popular JavaScript development environments, including

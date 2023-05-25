@@ -1,5 +1,5 @@
-[//]: # "Title: Place Data"
-[//]: # "Weight: 3"
+[//]: # "Title: Place Information"
+[//]: # "Weight: 2"
 [//]: # "Forward: true"
 [//]:
   #

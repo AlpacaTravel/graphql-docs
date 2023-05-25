@@ -1,0 +1,15 @@
+# Creates an Itinerary Collection, which can be used to create new sub-lists
+
+mutation createItineraryCollection(
+  $itineraryId: ID!
+  $itineraryCollection: CreateItineraryCollectionInput!
+) {
+  createItineraryCollection(
+    itineraryId: $itineraryId
+    collection: $itineraryCollection
+  ) {
+    collection {
+      id
+    }
+  }
+}

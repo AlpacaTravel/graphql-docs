@@ -153,7 +153,7 @@ See More:
 
 - [Creating an Itinerary](/topics/itinerary/Creating%20an%20itinerary)
 
-- [Custom Data](/topics/itinerary/Custom%20Data/)
+- [Custom Data](/topics/itinerary/Additional%20Concepts/Custom%20Data/)
 
 - [CreateItineraryInput type](/reference#createitineraryinput)
 
@@ -225,7 +225,7 @@ You can also provide various information to store against your place.
 
 See More:
 
-- [Adding Locations](/topics/itinerary/Adding%20Locations/)
+- [Adding Locations](/topics/itinerary/Location/Adding%20Locations/)
 
 - [CreateItineraryLocationInput type](/reference#createitinerarylocationinput)
 
@@ -281,7 +281,7 @@ such as addresses, categories, photos and more as provided by the provider.
 
 See More:
 
-- [Working with the ATDW](/topics/places/Working%20with%20the%20ATDW/)
+- [Working with the ATDW](/topics/places/Place%20Providers/Working%20with%20the%20ATDW/)
 
 ## Testing Whether a Place is Present in an Itinerary
 
@@ -345,7 +345,7 @@ See More:
 
 - [Querying an Itinerary](/topics/itinerary/Querying%20an%20Itinerary/)
 
-- [Checking if a place is within an itinerary](/topics/itinerary/Checking%20if%20a%20place%20is%20within%20an%20itinerary/)
+- [Checking if a place is within an itinerary](/topics/itinerary/Location/Checking%20if%20a%20place%20is%20within%20an%20itinerary/)
 
 ## Listing the Itinerary Locations
 
@@ -593,7 +593,7 @@ has been affected by your mutation.
 
 See More:
 
-- [Reordering Locations](/topics/itinerary/Reordering%20Locations/)
+- [Reordering Locations](/topics/itinerary/Location/Reordering%20Locations/)
 
 ## Turning on Auto-Routing
 
@@ -661,7 +661,7 @@ specify it at the point of creation.
 
 See More:
 
-- [Automatic Routing](/topics/itinerary/Automatic%20Routing/)
+- [Automatic Routing](/topics/itinerary/Directions/Automatic%20Routing/)
 
 ## Displaying an Itinerary with Matched Directions
 
@@ -777,7 +777,7 @@ cascaded field.
 
 See More:
 
-- [Automatic Routing](/topics/itinerary/Automatic%20Routing/)
+- [Automatic Routing](/topics/itinerary/Directions/Automatic%20Routing/)
 
 ## Adding a Place of Interest for a Location
 
@@ -982,20 +982,21 @@ to build interactive travel itineraries for their customers. While the above
 guide covers many of the most common use cases, there are a number of additional
 features and capabilities that may be of interest to advanced users.
 
-- **[Storing Custom Data](/topics/itinerary/Custom%20Data/)** Learn how to store
-  and retrieve custom data fields for itinerary locations or places.
+- **[Storing Custom Data](/topics/itinerary/Additional%20Concepts/Custom%20Data/)**
+  Learn how to store and retrieve custom data fields for itinerary locations or
+  places.
 
-- **[Working with ATDW](/topics/places/Working%20with%20the%20ATDW/)** Learn how
-  to associate itineraries with products from the Australian Tourism data
-  warehouse
+- **[Working with ATDW](/topics/places/Place%20Providers/Working%20with%20the%20ATDW/)**
+  Learn how to associate itineraries with products from the Australian Tourism
+  data warehouse
 
-- **[Working with Drafts](/topics/itinerary/Drafts%20and%20Publishing/)**
+- **[Working with Drafts](/topics/itinerary/Additional%20Concepts/Drafts%20and%20Publishing/)**
   Understand how to create and manage drafts of itineraries before publishing
   changes
 
-- **[Advanced Routing](/topics/route/)** Learn how to use advanced routing
-  features, such as avoiding tolls or ferries, or optimizing for different modes
-  of transportation.
+- **[Advanced Routing](/topics/itinerary/Directions/Searching%20for%20routes/)**
+  Learn how to use advanced routing features, such as avoiding tolls or ferries,
+  or optimizing for different modes of transportation.
 
 # Further Reading
 

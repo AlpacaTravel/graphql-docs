@@ -1,4 +1,4 @@
-[//]: # "Weight: 1"
+[//]: # "Weight: 2"
 [//]: # "Title: Querying"
 
 # Querying an Itinerary
@@ -261,4 +261,4 @@ See
 ## Additional Resources
 
 - [Creating an itinerary](/topics/itinerary/Creating%20an%20itinerary/README.md)
-- [Adding Locations](/topics/itinerary/Adding%20Locations/README.md)
+- [Adding Locations](/topics/itinerary/Location/Adding%20Locations/README.md)

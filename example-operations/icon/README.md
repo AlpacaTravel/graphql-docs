@@ -1,4 +1,5 @@
 [//]: # "Weight: 5"
+
 # Icon
 
 - **[Delete Icon Resource](/example-operations/icon/DeleteIconResource.graphql)**

@@ -15,7 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const studio = `https://studio.apollographql.com/sandbox/explorer`;
-// const endpoint = `https://withalpaca.com/api/graphql?accessToken=UPDATE_TOKEN`;
+// const endpoint = `https://graphql.withalpaca.travel/?accessToken=UPDATE_TOKEN`;
 
 function removeExisting() {
   return (tree) => {

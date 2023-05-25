@@ -2,9 +2,10 @@
 
 The API provides mechanisms for searching directions to locations. Directions
 are managed by strategies such as via
-[automatic routing](/topics/itinerary/Automatic%20Routing/README.md) or by
-[adding directions](/topics/itinerary/Adding%20Directions/README.md) yourself
-between your itinerary locations.
+[automatic routing](/topics/itinerary/Directions/Automatic%20Routing/README.md)
+or by
+[adding directions](/topics/itinerary/Directions/Adding%20Directions/README.md)
+yourself between your itinerary locations.
 
 ## Matching Directions to a List of Itinerary Locations
 
@@ -102,8 +103,9 @@ enabling the `Itinerary` to describe optional modes, routes or directions
 between locations.
 
 These itinerary directions can be pre-determined or automatically added using
-the [automatic routing](/topics/itinerary/Automatic%20Routing/README.md) when
-enabled on an itinerary, or you can manually create directions between
+the
+[automatic routing](/topics/itinerary/Directions/Automatic%20Routing/README.md)
+when enabled on an itinerary, or you can manually create directions between
 locations.
 
 ### Understanding `children()` query options `limitImmediate` and `skipOptional`
@@ -242,5 +244,5 @@ the `ItineraryDirection`.
 
 ## Additional Resources
 
-- [Automatic Routing](/topics/itinerary/Automatic%20Routing/README.md)
-- [Adding Directions](/topics/itinerary/Adding%20Directions/README.md)
+- [Automatic Routing](/topics/itinerary/Directions/Automatic%20Routing/README.md)
+- [Adding Directions](/topics/itinerary/Directions/Adding%20Directions/README.md)

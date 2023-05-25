@@ -1,0 +1,15 @@
+# Creates a link between itineraries from one itinerary to another.
+
+mutation CreateItineraryLinkItinerary(
+  $itineraryId: ID!
+  $itineraryLinkItinerary: CreateItineraryLinkItineraryInput!
+) {
+  createItineraryLinkItinerary(
+    itineraryId: $itineraryId
+    link: $itineraryLinkItinerary
+  ) {
+    link {
+      id
+    }
+  }
+}

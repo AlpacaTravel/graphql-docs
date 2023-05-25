@@ -284,7 +284,7 @@ application.
 
 See More:
 
-- [Custom Data](/topics/itinerary/Custom%20Data/)
+- [Custom Data](/topics/itinerary/Additional%20Concepts/Custom%20Data/)
 
 ### Retrieving the List
 
@@ -464,9 +464,9 @@ location in case the place provider updates their data.
 
 See More:
 
-- [Using OpenStreetMap (a free place provider)](/topics/places/Working%20with%20OSM/)
+- [Using OpenStreetMap (a free place provider)](/topics/places/Place%20Providers/Working%20with%20OSM/)
 
-- [Using Australian Tourism Data Warehouse](/topics/places/Working%20with%20the%20ATDW/)
+- [Using Australian Tourism Data Warehouse](/topics/places/Place%20Providers/Working%20with%20the%20ATDW/)
 
 ### Storing your own References
 
@@ -524,7 +524,7 @@ of this set.
 
 See More:
 
-- [Custom Data](/topics/itinerary/Custom%20Data/)
+- [Custom Data](/topics/itinerary/Additional%20Concepts/Custom%20Data/)
 
 ### Testing whether a place is present in a list
 
@@ -915,7 +915,7 @@ See More:
 
 - [UpdateItineraryInput type](/reference#updateitineraryinput)
 
-- [Itinerary Classifications](/topics/itinerary/Classifications/)
+- [Itinerary Classifications](/topics/itinerary/Content%20and%20Media/Classifications/)
 
 ## Sharing a List
 

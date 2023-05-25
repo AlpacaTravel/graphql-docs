@@ -37,7 +37,7 @@ Open the connection settings ⚙️.
 In order to interact with GraphQL, you will need to use the following root
 endpoint and update `?accessToken=<YOUR_API_KEY>` with your credentials.
 
-    https://withalpaca.com/api/graphql?accessToken=<YOUR_API_KEY>
+    https://graphql.withalpaca.travel?accessToken=<YOUR_API_KEY>
 
 ## Further Reading
 

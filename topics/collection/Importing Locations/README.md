@@ -5,7 +5,8 @@
 [comment]:
   #
   "Description: Learn how to simplify the import of collection locations into Alpaca by utilizing external-source and external-id attributes. This article guides you through the process, highlighting their role in tracking and querying data based on source identifiers. Discover how Alpaca's custom attribute functionality enhances data storage and retrieval, with a special focus on importing data with references to external foreign keys."
-[//]: # "Weight: 2"
+
+\[//]: # "Weight: 2"
 
 # Importing Locations
 

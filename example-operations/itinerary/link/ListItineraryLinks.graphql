@@ -1,0 +1,46 @@
+# Query the itinerary links
+
+query listItineraryLinks($itineraryId: ID!, $first: Int!, $after: String) {
+  itinerary(
+    # Supply the itinerary ID
+    id: $itineraryId
+  ) {
+    # Select the associated itinerary links using the children selector
+    children(
+      # Limit to querying the itinerary links
+      type: ItineraryLink
+      # Using the relay "cursor connection" specification for pagination
+      # See: https://relay.dev/graphql/connections.htm
+      first: $first
+      after: $after
+    ) {
+      edges {
+        node {
+          # ID/Types
+          id
+          __typename
+
+          # Specific information drawn from the linked itinerary
+          ... on ItineraryLinkItinerary {
+            id
+            title
+
+            # Resolve the linked itinerary
+            itinerary {
+              title
+              synopsis
+            }
+          }
+        }
+        # Obtain the cursor to pass back as the "after" property
+        cursor
+      }
+      # Total number of links
+      totalCount
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}
