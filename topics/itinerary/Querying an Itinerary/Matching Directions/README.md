@@ -18,7 +18,8 @@ We can differentiate between directions between locations by querying whether we
 would like `Inbound` or `Outbound` directions.
 
 <p align="center">
-  <img src="../_assets/list-with-directions.png" alt="Understanding direction inbound or outbound">
+  <img src="../_assets/list-with-directions.png" alt="Understanding direction inbound or outbound"
+  width="261" height="252">
 </p>
 
 We can leverage the same `itinerary()` query with the `children()` operation and
@@ -115,7 +116,8 @@ number of optional stops, auto-routing behaviour or manually added itinerary
 directions (such as providing alternative modes of transportation etc).
 
 <p align="center">
-  <img src="../_assets/list-with-directions-and-optional.png" alt="Complex itinerary showing numerous concepts">
+  <img src="../_assets/list-with-directions-and-optional.png" alt="Complex itinerary showing numerous concepts"
+  width="264" height="371">
 </p>
 
 A reasonable default is used in order to identify which directions by default

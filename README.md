@@ -1,4 +1,4 @@
-[//]: # "Title: GraphQL API"
+[//]: # "Title: GraphQL"
 [//]: # "Forward: true"
 [//]: # "Weight: 1"
 

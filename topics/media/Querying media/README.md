@@ -1,5 +1,7 @@
 [//]: # "Title: Querying"
 [//]: # "Weight: 1"
+[//]: # "TOC: false"
+[//]: # "Layout: 1-col"
 
 # Querying Media
 

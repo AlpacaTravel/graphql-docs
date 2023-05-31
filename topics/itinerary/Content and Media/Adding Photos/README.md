@@ -73,7 +73,7 @@ In addition to the above `createMedia` data, you can also `updateMedia`,
 of updates to control the media. It is also possible to create the itinerary
 with the media supplied as the input in the `createItinerary()` mutation.
 
-## Assoication to Itinerary Locations
+## Association to Itinerary Locations
 
 The itinerary locations mutation resembles a very similar GraphQL mutation as
 for the itinerary.
