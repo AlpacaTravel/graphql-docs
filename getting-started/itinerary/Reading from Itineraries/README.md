@@ -12,6 +12,16 @@
 > Read this guide to get started integrating and building apps and websites
 > accessing itineraries on the platform.
 
+<iframe src="https://www.alpaca.travel/api/examples/mapbox-gl-js/display-itinerary-on-a-map/index.html"
+  style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
+  ></iframe>
+  
+<aside class="integration">
+  Displaying maps of content doesn't require GraphQL in most cases, and you can
+  simply work with output of the mapping services directly to display content
+  using native formats. [View source](https://www.alpaca.travel/reference/article/display-an-itinerary-on-a-map)
+</aside>
+
 This guide is designed to provide developers with a comprehensive understanding
 of how to access and query itinerary content through our API. The API allows
 developers to build applications and websites that access and manage travel
@@ -1085,7 +1095,9 @@ An example of the output expected is shown below
 ### Alpaca Mapping Services
 
 Alpaca provide mapping services that can be used to create great interactive
-maps that interact with itinerary content.
+maps that interact with itinerary content. You can use any preferred mapping
+environment (such as mapbox, google, leaflet or more) in order to create
+presentation of your map.
 
 These services also include offering:
 
